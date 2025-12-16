@@ -1,122 +1,119 @@
 [build]
-  publish = "dist"
-  command = "npm run build"
-
-# Handle 404s by serving index.html for SPA routing
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-# Specific redirects for common 404 pages
-[[redirects]]
-  from = "/home"
-  to = "/"
-  status = 301
+publish = "dist"
+command = "npx vite build"
 
 [[redirects]]
-  from = "/portfolio"
-  to = "/work"
-  status = 301
+from = "/*"
+to = "/index.html"
+status = 200
 
 [[redirects]]
-  from = "/projects"
-  to = "/work"
-  status = 301
-
-# Handle old blog URLs
-[[redirects]]
-  from = "/blog/old-post"
-  to = "/blog/building-data-driven-design-systems"
-  status = 301
-
-# Handle old service URLs
-[[redirects]]
-  from = "/services/old-service"
-  to = "/services/web-development"
-  status = 301
-
-# Handle common misspellings and variations
-[[redirects]]
-  from = "/service"
-  to = "/services"
-  status = 301
+from = "/home"
+to = "/"
+status = 301
 
 [[redirects]]
-  from = "/service/*"
-  to = "/services/:splat"
-  status = 301
+from = "/portfolio"
+to = "/work"
+status = 301
 
 [[redirects]]
-  from = "/case-study/*"
-  to = "/work/case-studies/:splat"
-  status = 301
+from = "/projects"
+to = "/work"
+status = 301
 
 [[redirects]]
-  from = "/case-studies/*"
-  to = "/work/case-studies/:splat"
-  status = 301
+from = "/blog/old-post"
+to = "/blog/building-data-driven-design-systems"
+status = 301
 
-# Primary SPA fallback (must be last)
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+from = "/services/old-service"
+to = "/services/web-development"
+status = 301
 
-# Force HTTPS
 [[redirects]]
-  from = "http://*"
-  to = "https://:splat"
-  status = 301
-  force = true
+from = "/service"
+to = "/services"
+status = 301
 
-# Redirect non-www to www for canonical consistency
 [[redirects]]
-  from = "https://marcfriedmanportfolio.com/*"
-  to = "https://www.marcfriedmanportfolio.com/:splat"
-  status = 301
-  force = true
+from = "/service/*"
+to = "/services/:splat"
+status = 301
 
-# Custom headers for security and caching
-[[headers]]
-  for = "/index.html"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
+[[redirects]]
+from = "/case-study/*"
+to = "/work/case-studies/:splat"
+status = 301
+
+[[redirects]]
+from = "/case-studies/*"
+to = "/work/case-studies/:splat"
+status = 301
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
+[[redirects]]
+from = "http://*"
+to = "https://:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://marcfriedmanportfolio.com/*"
+to = "https://www.marcfriedmanportfolio.com/:splat"
+status = 301
+force = true
 
 [[headers]]
-  for = "/*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+for = "/index.html"
+
+[headers.values]
+Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
-  for = "/*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+for = "/*.js"
+
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "/*.woff2"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+for = "/*.css"
+
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "/icons/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+for = "/*.woff2"
+
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "/assets/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+for = "/icons/*"
 
-# Add security headers for all pages
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
 [[headers]]
-  for = "/*"
-  [headers.values]
-    X-Content-Type-Options = "nosniff"
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
-    Cross-Origin-Opener-Policy = "same-origin"
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; object-src 'none'; img-src 'self' https://ik.imagekit.io https://i.imgur.com https://images.unsplash.com data: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://www.google-analytics.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"
+for = "/assets/*"
+
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/*"
+
+[headers.values]
+X-Content-Type-Options = "nosniff"
+X-Frame-Options = "DENY"
+X-XSS-Protection = "1; mode=block"
+Referrer-Policy = "strict-origin-when-cross-origin"
+Permissions-Policy = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+Cross-Origin-Opener-Policy = "same-origin"
+Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; object-src 'none'; img-src 'self' https://ik.imagekit.io https://i.imgur.com https://images.unsplash.com data: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://www.google-analytics.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"
