@@ -2,176 +2,103 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { 
-    Menu as MenuIcon, X, ChevronDown, Linkedin, Calendar, Trophy, ArrowRight, 
-    Globe, Palette, Award, ShoppingCart, Code2, Layers, Zap, Package, 
-    Compass, BookOpen, User, Briefcase, Map, BarChart3, Clock, Rocket 
-} from 'lucide-react'; // Added Rocket and Clock
-
+import { Menu as MenuIcon, X, ChevronDown, Linkedin, Calendar, Trophy, ArrowRight, Award, MessageSquare } from 'lucide-react';
 import { useAppStore } from '@/stores/useAppStore';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import MagneticButton from '@/components/MagneticButton';
 
-// Map Lucide icons for easy use in the data structure
-const Icons = {
-    Code2, Layers, Zap, Package, Compass, BookOpen, User, Briefcase, Map, BarChart3, 
-    Palette, ShoppingCart, Trophy, Globe, Clock, Rocket, ArrowRight
-};
-
-// --- Types ---
 interface NavigationItem {
   label: string;
   to?: string;
   badge?: string;
   popular?: boolean;
-  icon?: React.ElementType; 
   children?: {
     title: string;
-    items: { label: string; to: string; description?: string; icon?: React.ElementType }[];
+    description?: string;
+    items: { label: string; to: string; description?: string }[];
   }[];
 }
 
-// --- Navigation Data Structure ---
 const navigationLinks: NavigationItem[] = [
   {
     label: 'Services',
     popular: true,
     children: [
       {
-        title: 'Design & UX',
+        title: 'Design Services',
         items: [
-          { label: 'UI/UX Design', to: '/services/design', description: 'Beautiful, intuitive interfaces that convert', icon: Icons.Palette },
-          { label: 'Design Systems', to: '/services/design-systems', description: 'Scalable design frameworks', icon: Icons.Layers },
-          { label: 'Brand Design', to: '/services/brand-design', description: 'Complete brand identity solutions', icon: Icons.Trophy }
+          { label: 'UI/UX Design', to: '/services/design', description: 'Beautiful, intuitive interfaces that convert' },
+          { label: 'Design Systems', to: '/services/design-systems', description: 'Scalable design frameworks' },
+          { label: 'Brand Design', to: '/services/brand-design', description: 'Complete brand identity solutions' }
         ]
       },
       {
-        title: 'Development',
+        title: 'Development Services',
         items: [
-          { label: 'Web Development', to: '/services/web-development', description: 'Custom websites and applications', icon: Icons.Code2 },
-          { label: 'SaaS Development', to: '/services/saas', description: 'End-to-end SaaS solutions', icon: Icons.Zap },
-          { label: 'API Development', to: '/services/api', description: 'Robust APIs and integrations', icon: Icons.Package }
+          { label: 'Web Development', to: '/services/web-development', description: 'Custom websites and applications' },
+          { label: 'SaaS Development', to: '/services/saas', description: 'End-to-end SaaS solutions' },
+          { label: 'API Development', to: '/services/api', description: 'Robust APIs and integrations' }
         ]
       },
       {
-        title: 'Strategy & Growth',
+        title: 'Specialized Services',
         items: [
-          { label: 'AI Integration', to: '/services/ai-integration', description: 'AI-powered solutions and automation', icon: Icons.Map },
-          { label: 'Startup MVP', to: '/services/startup-mvp', description: 'Validate and launch your idea quickly', icon: Icons.Rocket },
-          { label: 'Marketing Partner', to: '/services/fractional-cmo', description: 'Design & dev execution for marketing strategy', icon: Icons.BarChart3 }
+          { label: 'AI Integration', to: '/services/ai-integration', description: 'AI-powered solutions and automation' },
+          { label: 'Cybersecurity', to: '/services/cybersecurity', description: 'Comprehensive security solutions' },
+          { label: 'Startup MVP', to: '/services/startup-mvp', description: 'Validate and launch your idea' },
+          { label: 'Design Mentorship', to: '/services/mentorship', description: 'Design mentorship and guidance' },
+          { label: 'Marketing Partner', to: '/services/fractional-cmo', description: 'Design & dev execution for marketing strategy' }
         ]
       }
     ]
   },
-  {
+  { 
     label: 'Work',
-    to: '/work',
+    to: '/work', 
     children: [
         {
             title: 'Case Studies',
             items: [
-                { label: 'Untapped Africa', to: '/work/case-studies/untapped-africa', description: 'Water infrastructure solutions platform', icon: Icons.Globe },
-                { label: 'Binns Media Group', to: '/work/case-studies/binns-media', description: 'Digital media platform transformation', icon: Icons.Briefcase },
-                { label: 'iLight Care', to: '/work/case-studies/ilight', description: 'Healthcare technology platform', icon: Icons.Package }
-            ]
-        },
-        {
-            title: 'By Industry',
-            items: [
-                { label: 'Media & Entertainment', to: '/work?filter=media', description: 'Content platforms and media websites', icon: Icons.Code2 },
-                { label: 'SaaS & Technology', to: '/work?filter=saas', description: 'Software platforms and tech solutions', icon: Icons.Zap },
-                { label: 'E-commerce Solutions', to: '/work?filter=ecommerce', description: 'High-converting online stores', icon: Icons.ShoppingCart }
+                { label: 'Binns Media Group', to: '/work/case-studies/binns-media', description: 'Digital media platform transformation' },
+                { label: 'Untapped Africa', to: '/work/case-studies/untapped-africa', description: 'Water infrastructure solutions platform' },
+                { label: 'iLight Care', to: '/work/case-studies/ilight', description: 'Healthcare technology platform' }
             ]
         },
         {
             title: 'Full Portfolio',
             items: [
-                { label: 'View All Projects', to: '/work', description: 'Complete portfolio and case studies', icon: Icons.Compass }
+                { label: 'View All Projects', to: '/work', description: 'Complete portfolio and case studies' }
             ]
         }
     ]
   },
-  // Re-added Blog and About as top-level simple links
-  { label: 'Blog', to: '/blog', icon: Icons.BookOpen }, 
-  { label: 'About', to: '/about', icon: Icons.User },
-  
-  {
+  { label: 'Blog', to: '/blog' },
+  { label: 'Press', to: '/press' },
+  { 
     label: 'Tools',
     children: [
       {
         title: 'Free Tools',
         items: [
-          { label: 'Website Analyzer', to: '/tools/website-analyzer', description: 'Get an instant analysis of your website', icon: Icons.Zap },
-          { label: 'ROI Calculator', to: '/tools/roi-calculator', description: 'Calculate your website investment returns', icon: Icons.BarChart3 },
-          { label: 'Project Timeline', to: '/tools/project-timeline', description: 'See our transparent development process', icon: Icons.Clock }
+          { label: 'Website Analyzer', to: '/tools/website-analyzer', description: 'Get an instant analysis of your website' },
+          { label: 'ROI Calculator', to: '/tools/roi-calculator', description: 'Calculate your website investment returns' },
+          { label: 'Project Timeline', to: '/tools/project-timeline', description: 'See our transparent development process' },
+          { label: 'AI Optimization', to: '/tools/ai-crawler-optimization', description: 'Optimize your site for AI crawlers' }
         ]
-      }
+      },
     ]
   },
+  { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact', badge: 'Free Consultation' }
 ];
 
-// --- Desktop Mega-Menu Component ---
-const MegaMenuDropdown: React.FC<{ item: NavigationItem, toggle: (label: string) => void }> = ({ item, toggle }) => {
-    return (
-        <motion.div 
-            className="absolute left-1/2 -translate-x-1/2 mt-0 w-full max-w-7xl 
-                       bg-black border-4 border-[#A3D1FF] 
-                       shadow-[0_0_50px_rgba(163,209,255,0.2)] z-50 overflow-hidden rounded-none" // Explicitly no rounded corners
-            initial={{ opacity: 0, y: 10, scaleY: 0.95, transformOrigin: 'top' }}
-            animate={{ opacity: 1, y: 0, scaleY: 1 }}
-            exit={{ opacity: 0, y: 10, scaleY: 0.95 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            onMouseLeave={() => toggle(item.label)}
-        >
-            <div className="p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {item.children?.map((section, sectionIdx) => (
-                    <div key={sectionIdx} className={`border-l border-white/10 pl-4 ${sectionIdx === 0 ? 'border-l-0 pl-0' : ''}`}>
-                        <h3 className="text-sm font-bold uppercase tracking-wider text-[#A3D1FF] mb-4 border-b border-[#A3D1FF]/10 pb-2">
-                            {section.title}
-                        </h3>
-                        <ul className="space-y-4">
-                            {section.items.map((subItem, subIdx) => {
-                                const IconComponent = subItem.icon || Icons.ArrowRight;
-                                return (
-                                    <li key={subIdx}>
-                                        <Link 
-                                            to={subItem.to} 
-                                            className="group block p-3 bg-transparent hover:bg-white/5 transition-colors duration-200 rounded-none"
-                                            onClick={() => { toggle(item.label); }}
-                                        >
-                                            <div className="flex items-start gap-3">
-                                                <IconComponent className="w-5 h-5 text-[#A3D1FF] group-hover:scale-110 transition-transform flex-shrink-0 mt-0.5" />
-                                                <div>
-                                                    <span className="text-white font-semibold block text-base group-hover:text-[#A3D1FF] transition-colors">
-                                                        {subItem.label}
-                                                    </span>
-                                                    <span className="text-gray-400 text-sm block mt-0.5">
-                                                        {subItem.description}
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    </div>
-                ))}
-            </div>
-        </motion.div>
-    );
-}
-
-// --- Main Layout Component ---
 export default function Layout() {
   const location = useLocation();
   const navigate = useNavigate();
   const { isMenuOpen, setMenuOpen } = useAppStore();
   const [isScrolled, setIsScrolled] = useState(false);
   const [expandedMobileSection, setExpandedMobileSection] = useState<string | null>(null);
-  const [expandedDesktopSection, setExpandedDesktopSection] = useState<string | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
   const lastScrollY = useRef(0);
@@ -185,13 +112,17 @@ export default function Layout() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
+      // Determine if we should show/hide header based on scroll direction
       if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
         setIsHeaderVisible(false);
       } else {
         setIsHeaderVisible(true);
       }
       
+      // Update scroll state for styling
       setIsScrolled(currentScrollY > 20);
+      
+      // Update last scroll position
       lastScrollY.current = currentScrollY;
     };
 
@@ -203,7 +134,6 @@ export default function Layout() {
   useEffect(() => {
     setMenuOpen(false);
     setExpandedMobileSection(null);
-    setExpandedDesktopSection(null);
   }, [location.pathname, setMenuOpen]);
 
   // Handle keyboard navigation and clicks outside menu
@@ -211,23 +141,13 @@ export default function Layout() {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setMenuOpen(false);
-        setExpandedDesktopSection(null);
       }
     };
 
     const handleClickOutside = (e: MouseEvent) => {
-      // Logic for closing the mobile menu when clicking outside
+      // Simple check to close mobile menu if clicking outside of the menu container
       if (isMenuOpen && menuRef.current && !menuRef.current.contains(e.target as Node) && headerRef.current && !headerRef.current.contains(e.target as Node)) {
-          setMenuOpen(false);
-      }
-      // Logic for closing the desktop mega-menu when clicking outside
-      if (expandedDesktopSection && headerRef.current && !headerRef.current.contains(e.target as Node)) {
-          // Check if the click target is outside of the header entirely
-          const target = e.target as HTMLElement;
-          const isInsideHeader = headerRef.current.contains(target);
-          if (!isInsideHeader) {
-            setExpandedDesktopSection(null);
-          }
+        setMenuOpen(false);
       }
     };
 
@@ -238,14 +158,7 @@ export default function Layout() {
       document.removeEventListener('keydown', handleEscape);
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [setMenuOpen, isMenuOpen, expandedDesktopSection]);
-  
-  // Close desktop menu if mobile menu opens
-  useEffect(() => {
-      if (isMenuOpen) {
-          setExpandedDesktopSection(null);
-      }
-  }, [isMenuOpen]);
+  }, [setMenuOpen, isMenuOpen]);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -263,15 +176,10 @@ export default function Layout() {
     navigate(to);
     setMenuOpen(false);
     setExpandedMobileSection(null);
-    setExpandedDesktopSection(null);
   };
 
   const toggleMobileSection = (label: string) => {
     setExpandedMobileSection(expandedMobileSection === label ? null : label);
-  };
-
-  const toggleDesktopSection = (label: string) => {
-    setExpandedDesktopSection(expandedDesktopSection === label ? null : label);
   };
 
   // Get current page title based on location
@@ -320,8 +228,8 @@ export default function Layout() {
       <motion.header 
         ref={headerRef}
         className={`fixed w-full z-[100] transition-all duration-300 ${
-          isScrolled ? 'bg-[#1b1b1b]/95 backdrop-blur-md shadow-[0_4px_15px_rgba(163,209,255,0.1)]' : 'bg-transparent'
-        } border-b border-white/10`}
+          isScrolled ? 'bg-[#1b1b1b]/95 backdrop-blur-md shadow-md' : 'bg-transparent'
+        }`}
         initial={{ y: 0 }}
         animate={{ 
           y: isHeaderVisible ? 0 : -100,
@@ -357,71 +265,50 @@ export default function Layout() {
               </MagneticButton>
             </div>
             
-            {/* Desktop Navigation Links (Mega Menu & Normal Links) - Hidden on mobile (lg:hidden) */}
+            {/* Desktop Navigation Links (Restored Simple Links) */}
             <nav className="hidden lg:flex items-center space-x-1 relative z-50" aria-label="Main Navigation">
                 {navigationLinks.map((item) => (
                     <div 
                         key={item.label}
                         className="relative h-full flex items-center"
-                        onMouseEnter={() => item.children && toggleDesktopSection(item.label)}
-                        onMouseLeave={() => item.children && toggleDesktopSection(item.label)}
                     >
-                        {item.children ? (
-                            <button
-                                onClick={() => item.to && handleNavigation(item.to)}
-                                className={`flex items-center gap-1 px-4 py-2 text-sm font-semibold transition-colors duration-200 
-                                            ${expandedDesktopSection === item.label ? 'text-[#A3D1FF] bg-white/5' : 'text-white hover:text-[#A3D1FF]'} 
-                                            ${item.to ? 'cursor-pointer' : 'cursor-default'}`}
-                                aria-expanded={expandedDesktopSection === item.label}
-                                style={{ borderRadius: '0px' }} 
-                            >
-                                {item.label}
-                                <ChevronDown 
-                                    className={`w-3 h-3 transition-transform ${expandedDesktopSection === item.label ? 'rotate-180 text-[#A3D1FF]' : ''}`} 
-                                    aria-hidden="true"
-                                />
-                            </button>
-                        ) : (
-                            <Link
-                                to={item.to || '/'}
-                                className={`flex items-center gap-1 px-4 py-2 text-sm font-semibold transition-colors duration-200 text-white hover:text-[#A3D1FF]`}
-                                onClick={() => setExpandedDesktopSection(null)}
-                                style={{ borderRadius: '0px' }} 
-                            >
-                                {item.label}
-                                {item.badge && (
-                                    <span className="ml-1 px-2 py-0.5 bg-[#A3D1FF] text-black rounded-none text-[10px] font-bold uppercase tracking-wider">
-                                        {item.badge}
-                                    </span>
-                                )}
-                            </Link>
-                        )}
-                        
-                        {/* Desktop Mega Menu Dropdown */}
-                        <AnimatePresence>
-                            {item.children && expandedDesktopSection === item.label && (
-                                <MegaMenuDropdown item={item} toggle={toggleDesktopSection} />
+                        <Link
+                            to={item.to || '/'}
+                            className={`flex items-center gap-1 px-4 py-2 text-sm font-semibold transition-colors duration-200 text-white hover:text-[#A3D1FF]`}
+                            // Removing rounded-none/explicit styling to use original CSS or Tailwind defaults
+                        >
+                            {item.label}
+                            {item.children && (
+                                <ChevronDown className={`w-3 h-3 transition-transform`} aria-hidden="true" />
                             )}
-                        </AnimatePresence>
+                            {item.badge && (
+                                <span className="ml-1 px-2 py-0.5 bg-[#A3D1FF] text-black text-[10px] font-bold uppercase tracking-wider">
+                                    {item.badge}
+                                </span>
+                            )}
+                        </Link>
+                        
+                        {/* Note: Complex nested dropdowns are now hidden in this simple navigation state. 
+                            If you need the old simple dropdowns, we would need the CSS/JS for them.
+                            For now, clicking the top-level link navigates to the 'to' path if present. */}
                     </div>
                 ))}
             </nav>
             
             {/* Contact Button & Mobile Menu Button */}
             <div className="flex items-center gap-4">
-                {/* Desktop CTA Button - Hidden on mobile */}
                 <a
                     href={calendlyUXAuditLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hidden lg:inline-flex items-center px-5 py-2 text-sm font-bold bg-[#A3D1FF] text-black 
-                                hover:bg-white transition-all duration-300 relative z-50 shadow-lg rounded-none"
+                                hover:bg-white transition-all duration-300 relative z-50 shadow-lg"
                 >
                     Book Free Audit
                     <ArrowRight className="ml-2 w-4 h-4" />
                 </a>
 
-                {/* Mobile Menu Button - Visible only on mobile */}
+                {/* Mobile Menu Button */}
                 <button 
                   onClick={() => setMenuOpen(!isMenuOpen)}
                   className="p-2 text-white hover:text-[#A3D1FF] transition-colors lg:hidden"
@@ -457,7 +344,7 @@ export default function Layout() {
           </div>
         </div>
 
-        {/* Mobile Menu Overlay - Hidden on desktop (hidden lg:block removed, uses lg:hidden) */}
+        {/* Mobile Menu Overlay (Kept the mobile accordion functionality) */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div 
@@ -477,7 +364,6 @@ export default function Layout() {
                        to="/"
                        className="block px-4 py-3 text-xl font-semibold text-white hover:text-[#A3D1FF] hover:bg-white/5 transition-colors duration-200 border-b border-white/10"
                        onClick={() => setMenuOpen(false)}
-                       style={{ borderRadius: '0px' }}
                     >
                        Home
                     </Link>
@@ -492,7 +378,6 @@ export default function Layout() {
                               className="w-full flex items-center justify-between px-4 py-3 text-xl font-semibold text-white hover:text-[#A3D1FF] transition-colors hover:bg-white/5"
                               aria-expanded={expandedMobileSection === item.label}
                               aria-controls={`mobile-menu-${item.label.toLowerCase().replace(/\s/g, '-')}`}
-                              style={{ borderRadius: '0px' }}
                             >
                               {item.label}
                               <ChevronDown 
@@ -524,9 +409,8 @@ export default function Layout() {
                                               to={subItem.to}
                                               className="block px-4 py-2 text-base text-gray-300 hover:text-white hover:bg-white/10 transition-colors group flex items-center gap-2"
                                               onClick={() => setMenuOpen(false)}
-                                              style={{ borderRadius: '0px' }}
                                             >
-                                                <Icons.ArrowRight className="w-4 h-4 text-[#A3D1FF] opacity-70 group-hover:opacity-100 transition-opacity" />
+                                                <ArrowRight className="w-4 h-4 text-[#A3D1FF] opacity-70 group-hover:opacity-100 transition-opacity" />
                                                 <span className='flex-1'>{subItem.label}</span>
                                             </Link>
                                           </li>
@@ -544,11 +428,10 @@ export default function Layout() {
                             to={item.to || '/'}
                             className="flex items-center justify-between px-4 py-3 text-xl font-semibold text-white hover:text-[#A3D1FF] hover:bg-white/5 transition-colors duration-200"
                             onClick={() => setMenuOpen(false)}
-                            style={{ borderRadius: '0px' }}
                           >
                             <span>{item.label}</span>
                             {item.badge && (
-                                <span className="ml-2 px-2 py-0.5 bg-[#A3D1FF] text-black rounded-none text-xs font-bold uppercase tracking-wider">
+                                <span className="ml-2 px-2 py-0.5 bg-[#A3D1FF] text-black text-xs font-bold uppercase tracking-wider">
                                     {item.badge}
                                 </span>
                             )}
@@ -591,11 +474,11 @@ export default function Layout() {
       </motion.header>
 
       {/* Main Content */}
-      <main className="relative pt-20"> {/* Increased padding top to account for the header height */}
+      <main className="relative pt-20"> 
         <Outlet />
       </main>
 
-      {/* Footer (No changes needed, but included for completeness) */}
+      {/* Footer (Restored original rounded classes where possible) */}
       <footer className="bg-[#1b1b1b] border-t border-white/10">
         <div className="container-custom section-spacing-sm mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12">
@@ -614,13 +497,13 @@ export default function Layout() {
                 </p>
               </div>
               
-              {/* Social Links */}
+              {/* Social Links - Re-adding a rounded look to match original */}
               <div className="flex gap-3">
                 <a 
                   href="https://www.linkedin.com/in/portfolio2/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-[#2d3035] flex items-center justify-center text-gray-400 hover:text-[#0077B5] hover:bg-[#0077B5]/10 transition-all group rounded-none"
+                  className="w-10 h-10 bg-[#2d3035] rounded-lg flex items-center justify-center text-gray-400 hover:text-[#0077B5] hover:bg-[#0077B5]/10 transition-all group"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -629,7 +512,7 @@ export default function Layout() {
                   href={calendlyUXAuditLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-[#2d3035] flex items-center justify-center text-gray-400 hover:text-[#00A2FF] hover:bg-[#00A2FF]/10 transition-all group rounded-none"
+                  className="w-10 h-10 bg-[#2d3035] rounded-lg flex items-center justify-center text-gray-400 hover:text-[#00A2FF] hover:bg-[#00A2FF]/10 transition-all group"
                   aria-label="Schedule a Call"
                 >
                   <Calendar className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -638,7 +521,7 @@ export default function Layout() {
                   href="https://www.awwwards.com/marc-friedman/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-[#2d3035] flex items-center justify-center text-gray-400 hover:text-[#FFB800] hover:bg-[#FFB800]/10 transition-all group rounded-none"
+                  className="w-10 h-10 bg-[#2d3035] rounded-lg flex items-center justify-center text-gray-400 hover:text-[#FFB800] hover:bg-[#FFB800]/10 transition-all group"
                   aria-label="Awwwards"
                 >
                   <Trophy className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -651,52 +534,22 @@ export default function Layout() {
               <h3 className="text-white font-semibold mb-6 text-lg">Services</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link
-                    to="/services/web-development"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Web Development
-                  </Link>
+                  <Link to="/services/web-development" className="text-gray-400 hover:text-white transition-colors">Web Development</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/services/design"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    UI/UX Design
-                  </Link>
+                  <Link to="/services/design" className="text-gray-400 hover:text-white transition-colors">UI/UX Design</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/services/saas"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    SaaS Development
-                  </Link>
+                  <Link to="/services/saas" className="text-gray-400 hover:text-white transition-colors">SaaS Development</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/services/api"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    API Development
-                  </Link>
+                  <Link to="/services/api" className="text-gray-400 hover:text-white transition-colors">API Development</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/services/startup-mvp"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Startup MVP
-                  </Link>
+                  <Link to="/services/startup-mvp" className="text-gray-400 hover:text-white transition-colors">Startup MVP</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/services/mentorship"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Mentorship
-                  </Link>
+                  <Link to="/services/mentorship" className="text-gray-400 hover:text-white transition-colors">Mentorship</Link>
                 </li>
               </ul>
             </div>
@@ -706,46 +559,20 @@ export default function Layout() {
               <h3 className="text-white font-semibold mb-6 text-lg">Portfolio & Work</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link
-                    to="/work"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    All Projects
-                  </Link>
+                  <Link to="/work" className="text-gray-400 hover:text-white transition-colors">All Projects</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/work/case-studies/binns-media"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Binns Media Group
-                  </Link>
+                  <Link to="/work/case-studies/binns-media" className="text-gray-400 hover:text-white transition-colors">Binns Media Group</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/work/case-studies/untapped-africa"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Untapped Africa
-                  </Link>
+                  <Link to="/work/case-studies/untapped-africa" className="text-gray-400 hover:text-white transition-colors">Untapped Africa</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/work/case-studies/automarginx"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    AutoMarginX
-                  </Link>
+                  <Link to="/work/case-studies/automarginx" className="text-gray-400 hover:text-white transition-colors">AutoMarginX</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/work/case-studies/ask-africa"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Ask Africa
-                  </Link>
+                  <Link to="/work/case-studies/ask-africa" className="text-gray-400 hover:text-white transition-colors">Ask Africa</Link>
                 </li>
-                {/* Dribbble Link */}
                 <li>
                   <a 
                     href="https://dribbble.com/marcf9199/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22marcf9199%22&utm_content=%22About%20marcf9199%22&utm_medium=Social_Share"
@@ -766,36 +593,16 @@ export default function Layout() {
               <h3 className="text-white font-semibold mb-6 text-lg">Free Tools</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link
-                    to="/tools/website-analyzer"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Website Analyzer
-                  </Link>
+                  <Link to="/tools/website-analyzer" className="text-gray-400 hover:text-white transition-colors">Website Analyzer</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/tools/roi-calculator"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    ROI Calculator
-                  </Link>
+                  <Link to="/tools/roi-calculator" className="text-gray-400 hover:text-white transition-colors">ROI Calculator</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/tools/project-timeline"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Project Timeline
-                  </Link>
+                  <Link to="/tools/project-timeline" className="text-gray-400 hover:text-white transition-colors">Project Timeline</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/tools/ai-crawler-optimization"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    AI Optimization
-                  </Link>
+                  <Link to="/tools/ai-crawler-optimization" className="text-gray-400 hover:text-white transition-colors">AI Optimization</Link>
                 </li>
               </ul>
             </div>
@@ -805,36 +612,16 @@ export default function Layout() {
               <h3 className="text-white font-semibold mb-6 text-lg">Company & Resources</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link
-                    to="/about"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    About Marc
-                  </Link>
+                  <Link to="/about" className="text-gray-400 hover:text-white transition-colors">About Marc</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/blog"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Blog & Insights
-                  </Link>
+                  <Link to="/blog" className="text-gray-400 hover:text-white transition-colors">Blog & Insights</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/press"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Press & Media
-                  </Link>
+                  <Link to="/press" className="text-gray-400 hover:text-white transition-colors">Press & Media</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/contact"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Contact
-                  </Link>
+                  <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link>
                 </li>
                 <li>
                   <a 
