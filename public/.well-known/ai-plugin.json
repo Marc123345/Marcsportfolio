@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Marc Friedman Portfolio",
+  "name_for_model": "marc_friedman_portfolio",
+  "description_for_human": "Learn about Marc Friedman's design and development services, portfolio, and expertise.",
+  "description_for_model": "This plugin provides information about Marc Friedman's design and development services, portfolio projects, and professional expertise. Use it to learn about web development, UI/UX design, and SaaS development services offered.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://marcfriedmanportfolio.com/.well-known/openapi.yaml"
+  },
+  "logo_url": "https://marcfriedmanportfolio.com/icons/apple-touch-icon.png",
+  "contact_email": "marcf@marcfriedmanwebdesign.com",
+  "legal_info_url": "https://app.termly.io/policy-viewer/policy.html?policyUUID=03f555bd-c705-46c1-a042-acea6d9e1ddf"
+}

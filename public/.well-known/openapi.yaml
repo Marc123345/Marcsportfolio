@@ -1,0 +1,98 @@
+openapi: 3.0.1
+info:
+  title: Marc Friedman Portfolio API
+  description: API for accessing information about Marc Friedman's services and portfolio
+  version: 'v1'
+servers:
+  - url: https://marcfriedmanportfolio.com
+paths:
+  /api/services:
+    get:
+      operationId: getServices
+      summary: Get all services offered
+      description: Returns a list of all services offered by Marc Friedman
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Service'
+  /api/portfolio:
+    get:
+      operationId: getPortfolio
+      summary: Get portfolio projects
+      description: Returns a list of portfolio projects
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Project'
+  /api/contact:
+    post:
+      operationId: contactRequest
+      summary: Submit a contact request
+      description: Submits a contact form request
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContactRequest'
+      responses:
+        "200":
+          description: OK
+components:
+  schemas:
+    Service:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        features:
+          type: array
+          items:
+            type: string
+    Project:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        category:
+          type: string
+        image:
+          type: string
+        technologies:
+          type: array
+          items:
+            type: string
+    ContactRequest:
+      type: object
+      required:
+        - firstName
+        - lastName
+        - email
+        - message
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        message:
+          type: string

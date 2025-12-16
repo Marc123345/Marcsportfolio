@@ -1,0 +1,7 @@
+# Netlify redirects file
+# Primary redirect for SPA routing
+/*    /index.html   200
+
+# Redirect old URLs to new ones (add your specific redirects here)
+/blog/old-post    /blog/building-data-driven-design-systems    301
+/services/old-service    /services/web-development    301

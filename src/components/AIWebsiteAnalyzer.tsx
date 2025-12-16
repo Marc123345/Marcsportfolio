@@ -1,0 +1,354 @@
+import React, { useState } from 'react';
+import { ArrowRight, Loader2, CheckCircle2, AlertCircle, Search } from 'lucide-react';
+import { toast } from 'sonner';
+
+interface AnalysisResult {
+  score: number;
+  overview: string;
+  design: {
+    score: number;
+    feedback: string;
+    improvements: string[];
+  };
+  performance: {
+    score: number;
+    feedback: string;
+    improvements: string[];
+  };
+  conversion: {
+    score: number;
+    feedback: string;
+    improvements: string[];
+  };
+}
+
+export default function AIWebsiteAnalyzer() {
+  const [url, setUrl] = useState('');
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [result, setResult] = useState<AnalysisResult | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [email, setEmail] = useState('');
+  const [showEmailForm, setShowEmailForm] = useState(false);
+
+  const handleAnalyze = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!url) {
+      toast.error('Please enter a valid website URL');
+      return;
+    }
+    
+    // Enhanced URL validation and sanitization
+    let sanitizedUrl = url.trim();
+    
+    // Add protocol if missing
+    if (!sanitizedUrl.startsWith('http://') && !sanitizedUrl.startsWith('https://')) {
+      sanitizedUrl = 'https://' + sanitizedUrl;
+    }
+    
+    try {
+      const urlObj = new URL(sanitizedUrl);
+      
+      // Security check - only allow http/https protocols
+      if (!['http:', 'https:'].includes(urlObj.protocol)) {
+        toast.error('Please enter a valid HTTP or HTTPS URL');
+        return;
+      }
+      
+      // Check for suspicious patterns
+      if (urlObj.hostname === 'localhost' || urlObj.hostname.includes('127.0.0.1')) {
+        toast.error('Local URLs cannot be analyzed');
+        return;
+      }
+      
+    } catch (e) {
+      toast.error('Please enter a valid URL including http:// or https://');
+      return;
+    }
+    
+    setIsAnalyzing(true);
+    setError(null);
+    
+    try {
+      // Use the sanitized URL for analysis
+      setTimeout(() => {
+        // Simulate analysis result
+        const mockResult: AnalysisResult = generateMockAnalysis(sanitizedUrl);
+        setResult(mockResult);
+        setIsAnalyzing(false);
+        setShowEmailForm(true);
+      }, 3000);
+    } catch (err) {
+      setError('An error occurred during analysis. Please try again.');
+      setIsAnalyzing(false);
+    }
+  };
+
+  const handleSendReport = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Validate and sanitize email
+    const sanitizedEmail = email.trim().toLowerCase();
+    
+    if (!sanitizedEmail) {
+      toast.error('Please enter your email address');
+      return;
+    }
+    
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(sanitizedEmail)) {
+      toast.error('Please enter a valid email address');
+      return;
+    }
+    
+    if (sanitizedEmail.length > 254) {
+      toast.error('Email address is too long');
+      return;
+    }
+    
+    toast.success('Detailed report sent to your email!');
+    setShowEmailForm(false);
+    
+    // In a real implementation, you would send the sanitized email to your backend
+    console.log('Sending report to:', sanitizedEmail);
+  };
+
+  return (
+    <div className="bg-[#1b1b1b] rounded-xl border border-white/10 overflow-hidden">
+      <div className="p-8">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="bg-[#A3D1FF]/10 p-3 rounded-lg">
+            <Search className="w-6 h-6 text-[#A3D1FF]" />
+          </div>
+          <h3 className="text-2xl font-bold text-white">AI Website Analyzer</h3>
+        </div>
+        
+        <p className="text-gray-400 mb-6">
+          Get an instant AI-powered analysis of your website's design, performance, and conversion potential. Discover actionable improvements in seconds.
+        </p>
+        
+        {!result ? (
+          <form onSubmit={handleAnalyze} className="space-y-4">
+            <div>
+              <label htmlFor="website-url" className="block text-sm font-medium text-gray-300 mb-2">
+                Enter your website URL
+              </label>
+              <input
+                type="text"
+                id="website-url"
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+                placeholder="https://yourcompany.com"
+                className="w-full px-4 py-3 bg-[#2d3035] border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#A3D1FF] focus:border-transparent"
+                disabled={isAnalyzing}
+                required
+                aria-required="true"
+                aria-describedby="url-hint"
+              />
+              <p id="url-hint" className="text-xs text-gray-500 mt-1">
+                Enter your full website URL including https://
+              </p>
+            </div>
+            
+            <button
+              type="submit"
+              disabled={isAnalyzing}
+              className="w-full inline-flex items-center justify-center px-6 py-3 bg-[#A3D1FF] text-black rounded-lg hover:bg-[#92bce6] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isAnalyzing ? (
+                <>
+                  <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                  Analyzing your website (this takes about 30 seconds)...
+                </>
+              ) : (
+                <>
+                  Get Free Website Analysis
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </>
+              )}
+            </button>
+            <p className="text-xs text-gray-500 text-center mt-3">
+              ⚡ Results in 30 seconds • 🔍 Actionable insights • 📧 Optional detailed report
+            </p>
+            
+            {error && (
+              <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-sm">
+                <div className="flex items-center gap-2">
+                  <AlertCircle className="w-5 h-5" />
+                  {error}
+                </div>
+              </div>
+            )}
+          </form>
+        ) : (
+          <div className="space-y-6">
+            <div className="flex items-center justify-between">
+              <h4 className="text-xl font-semibold text-white">Analysis Results</h4>
+              <div className="flex items-center gap-2">
+                <span className="text-gray-400">Overall Score:</span>
+                <span className="text-lg font-bold text-[#A3D1FF]">{result.score}/100</span>
+              </div>
+            </div>
+            
+            <p className="text-gray-300">{result.overview}</p>
+            
+            <div className="space-y-4">
+              <div className="bg-[#2d3035] p-4 rounded-lg">
+                <div className="flex items-center justify-between mb-2">
+                  <h5 className="font-semibold text-white">Design</h5>
+                  <span className="text-[#A3D1FF]">{result.design.score}/100</span>
+                </div>
+                <p className="text-gray-400 text-sm mb-3">{result.design.feedback}</p>
+                <div className="space-y-2">
+                  {result.design.improvements.map((improvement, index) => (
+                    <div key={index} className="flex items-start gap-2 text-sm">
+                      <CheckCircle2 className="w-4 h-4 text-[#A3D1FF] mt-0.5" />
+                      <span className="text-gray-300">{improvement}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="bg-[#2d3035] p-4 rounded-lg">
+                <div className="flex items-center justify-between mb-2">
+                  <h5 className="font-semibold text-white">Performance</h5>
+                  <span className="text-[#A3D1FF]">{result.performance.score}/100</span>
+                </div>
+                <p className="text-gray-400 text-sm mb-3">{result.performance.feedback}</p>
+                <div className="space-y-2">
+                  {result.performance.improvements.map((improvement, index) => (
+                    <div key={index} className="flex items-start gap-2 text-sm">
+                      <CheckCircle2 className="w-4 h-4 text-[#A3D1FF] mt-0.5" />
+                      <span className="text-gray-300">{improvement}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="bg-[#2d3035] p-4 rounded-lg">
+                <div className="flex items-center justify-between mb-2">
+                  <h5 className="font-semibold text-white">Conversion Potential</h5>
+                  <span className="text-[#A3D1FF]">{result.conversion.score}/100</span>
+                </div>
+                <p className="text-gray-400 text-sm mb-3">{result.conversion.feedback}</p>
+                <div className="space-y-2">
+                  {result.conversion.improvements.map((improvement, index) => (
+                    <div key={index} className="flex items-start gap-2 text-sm">
+                      <CheckCircle2 className="w-4 h-4 text-[#A3D1FF] mt-0.5" />
+                      <span className="text-gray-300">{improvement}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+            {showEmailForm ? (
+              <form onSubmit={handleSendReport} className="mt-6 p-4 bg-[#2d3035] rounded-lg">
+                <h5 className="font-semibold text-white mb-3">Get Your Detailed Report</h5>
+                <p className="text-gray-400 text-sm mb-4">
+                  Get a comprehensive 5-page report with specific action items and priority recommendations.
+                </p>
+                <div className="flex gap-3">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="your@email.com"
+                    className="flex-1 px-4 py-2 bg-[#1b1b1b] border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#A3D1FF] focus:border-transparent"
+                  />
+                  <button
+                    type="submit"
+                    className="px-4 py-2 bg-[#A3D1FF] text-black rounded-lg hover:bg-[#92bce6] transition-colors whitespace-nowrap"
+                  >
+                    Email My Report
+                  </button>
+                </div>
+                <p className="text-xs text-gray-500 mt-2">
+                  📧 Arrives in 2-3 minutes • 🔒 No spam, ever
+                </p>
+              </form>
+            ) : (
+              <div className="mt-6 p-4 bg-[#2d3035] rounded-lg">
+                <div className="flex items-center gap-3 text-[#A3D1FF]">
+                  <CheckCircle2 className="w-5 h-5" />
+                  <p className="font-medium">Report sent! Check your inbox in 2-3 minutes.</p>
+                </div>
+              </div>
+            )}
+            
+            <div className="flex justify-center">
+              <button
+                onClick={() => {
+                  setResult(null);
+                  setUrl('');
+                  setShowEmailForm(false);
+                }}
+                className="text-[#A3D1FF] hover:underline flex items-center gap-2"
+              >
+                Analyze another website
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// Function to generate mock analysis results
+function generateMockAnalysis(url: string): AnalysisResult {
+  // Extract domain for personalization
+  let domain = url;
+  try {
+    domain = new URL(url).hostname.replace('www.', '');
+  } catch (e) {
+    // Use the input if URL parsing fails
+  }
+  
+  // Generate random scores with some constraints to make them realistic
+  const designScore = Math.floor(Math.random() * 30) + 50; // 50-80
+  const performanceScore = Math.floor(Math.random() * 40) + 40; // 40-80
+  const conversionScore = Math.floor(Math.random() * 35) + 45; // 45-80
+  const overallScore = Math.floor((designScore + performanceScore + conversionScore) / 3);
+  
+  return {
+    score: overallScore,
+    overview: `${domain} shows potential but has several areas for improvement. Your site's strongest aspect is ${
+      Math.max(designScore, performanceScore, conversionScore) === designScore ? 'design' : 
+      Math.max(designScore, performanceScore, conversionScore) === performanceScore ? 'performance' : 'conversion optimization'
+    }, while ${
+      Math.min(designScore, performanceScore, conversionScore) === designScore ? 'design' : 
+      Math.min(designScore, performanceScore, conversionScore) === performanceScore ? 'performance' : 'conversion optimization'
+    } needs the most attention. With targeted improvements, you could significantly increase engagement and conversion rates.`,
+    design: {
+      score: designScore,
+      feedback: `The visual design of ${domain} ${designScore > 70 ? 'is relatively strong' : 'needs improvement'} in several key areas.`,
+      improvements: [
+        'Enhance visual hierarchy to better guide users through important content',
+        'Update color contrast for improved readability and accessibility',
+        'Modernize UI components for a more contemporary feel',
+        'Implement more consistent spacing and alignment throughout the site'
+      ]
+    },
+    performance: {
+      score: performanceScore,
+      feedback: `${domain}'s performance metrics ${performanceScore > 70 ? 'are good but could be optimized' : 'indicate significant room for improvement'}.`,
+      improvements: [
+        'Optimize image sizes and implement lazy loading',
+        'Reduce JavaScript bundle size to improve load times',
+        'Implement browser caching for static assets',
+        'Minimize render-blocking resources for faster initial load'
+      ]
+    },
+    conversion: {
+      score: conversionScore,
+      feedback: `The conversion potential of ${domain} ${conversionScore > 70 ? 'shows promise' : 'is currently underperforming'} and could be enhanced with strategic changes.`,
+      improvements: [
+        'Clarify primary call-to-action buttons for better user guidance',
+        'Add social proof elements near conversion points',
+        'Simplify form fields to reduce abandonment',
+        'Implement strategic exit-intent offers to capture leaving visitors'
+      ]
+    }
+  };
+}

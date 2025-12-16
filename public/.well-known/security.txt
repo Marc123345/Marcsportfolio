@@ -1,0 +1,7 @@
+Contact: mailto:marcf@marcfriedmanwebdesign.com
+Expires: 2025-12-31T23:59:59.000Z
+Encryption: https://marcfriedmanportfolio.com/pgp-key.txt
+Preferred-Languages: en
+Canonical: https://marcfriedmanportfolio.com/.well-known/security.txt
+Policy: https://marcfriedmanportfolio.com/security-policy
+Hiring: https://marcfriedmanportfolio.com/contact

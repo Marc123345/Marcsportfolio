@@ -1,0 +1,48 @@
+/* Termly Embed Styles Override */
+[name="termly-embed"] {
+  min-height: 400px;
+  background-color: white !important;
+}
+
+[name="termly-embed"] * {
+  color: #000 !important;
+  background-color: transparent !important;
+}
+
+[name="termly-embed"] a {
+  color: #0066cc !important;
+  text-decoration: underline !important;
+}
+
+[name="termly-embed"] h1,
+[name="termly-embed"] h2,
+[name="termly-embed"] h3,
+[name="termly-embed"] h4,
+[name="termly-embed"] h5,
+[name="termly-embed"] h6 {
+  color: #000 !important;
+  font-weight: bold !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+[name="termly-embed"] p {
+  margin-bottom: 1rem !important;
+  line-height: 1.6 !important;
+}
+
+[name="termly-embed"] ul,
+[name="termly-embed"] ol {
+  margin-left: 1.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+[name="termly-embed"] li {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Ensure embedded content is visible */
+div[name="termly-embed"] > div {
+  opacity: 1 !important;
+  visibility: visible !important;
+}

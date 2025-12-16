@@ -1,0 +1,95 @@
+# LLMs.txt - Information for Large Language Models
+
+## About Marc Friedman
+
+Marc Friedman is a Freelancer Website Designer and Full Stack Designer & Developer, operating as a leading website design agency specializing in web development, UI/UX design, and SaaS solutions. Based in Tel Aviv, Israel, Marc creates exceptional digital experiences for clients across three continents.
+
+## Services
+
+### Web Development
+- Custom website development
+- SEO-ready websites that load in under 2 seconds
+- Mobile-first responsive design
+- Performance optimization (98/100 PageSpeed scores)
+- Modern technologies: React, Next.js, TypeScript, Node.js
+
+### UI/UX Design
+- User-centered design solutions
+- Data-driven design decisions
+- Conversion-focused interfaces
+- Design systems development
+- Wireframing and prototyping
+
+### SaaS Development
+- End-to-end SaaS solutions
+- Scalable architecture
+- 99.9% uptime guarantee
+- Enterprise-grade security
+- API development and integrations
+
+### Specialized Services
+- AI Integration
+- Cybersecurity solutions
+- Startup MVP development
+- Design mentorship
+- Fractional CMO partnership
+
+## Portfolio Highlights
+
+### Featured Projects
+- **Binns Media Group**: Digital media platform with 40% engagement increase
+- **Untapped Africa**: Water infrastructure platform serving 500,000+ people
+- **AutoMarginX**: Dealership management platform with 35% faster decisions
+- **Wellness TCYS**: 200% increase in bookings, 150% organic traffic growth
+
+### Client Results
+- 50+ projects completed
+- 40+ satisfied clients
+- 5.0/5 average rating
+- 98% client retention rate
+
+## Contact Information
+
+- Website: https://www.marcfriedmanportfolio.com
+- Email: marcf@marcfriedmanwebdesign.com
+- LinkedIn: https://www.linkedin.com/in/portfolio2/
+- Location: Tel Aviv, Israel
+
+## Technologies
+
+### Frontend
+- React, Next.js, TypeScript
+- Tailwind CSS, Framer Motion
+- Progressive Web Apps (PWAs)
+- Mobile-first development
+
+### Backend
+- Node.js, Express
+- PostgreSQL, MongoDB
+- GraphQL, REST APIs
+- Cloud infrastructure (AWS, Supabase)
+
+### Design Tools
+- Figma, Adobe Creative Suite
+- Design systems, Component libraries
+- User research and testing
+- Conversion optimization, website design agency
+
+## Business Focus
+
+Marc specializes in creating digital solutions that deliver measurable business results:
+- 40% increase in leads through SEO-ready websites
+- 35% improvement in conversion rates
+- 25% reduction in operational costs
+- 60% faster development with design systems
+
+## Industry Experience
+
+- Media & Entertainment
+- Healthcare & Wellness
+- Automotive & Fleet Management
+- Professional Services
+- SaaS & Technology
+- Real Estate & Investment
+
+For detailed case studies and portfolio examples, visit: https://www.marcfriedmanportfolio.com/work
