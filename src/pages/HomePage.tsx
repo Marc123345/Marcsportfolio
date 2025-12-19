@@ -209,123 +209,444 @@ export default function HomePage() {
       <AccessibilityPanel />
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20" style={{ backgroundColor: '#3d5a6d' }}>
-        {/* Background with tilted mockup */}
+      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20" style={{ backgroundColor: '#1a2332' }}>
+        {/* Background with subtle overlay */}
         <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
-          {/* Tilted website mockup on the left */}
-          <motion.div
-            className="absolute left-0 top-1/2 -translate-y-1/2 w-1/2 h-3/4"
-            initial={{ opacity: 0, x: -100, rotateY: -25 }}
-            animate={{ opacity: 0.2, x: -50, rotateY: -15 }}
-            transition={{ duration: 1.2 }}
-            style={{
-              transformStyle: 'preserve-3d',
-              perspective: '1500px'
-            }}
-          >
-            <img
-              src="https://ik.imagekit.io/qcvroy8xpd/Screenshot.png?updatedAt=1754018965491"
-              alt="Website Mockup"
-              className="w-full h-full object-cover rounded-lg shadow-2xl"
-              style={{
-                transform: 'rotateY(-15deg) rotateX(5deg)',
-                filter: 'blur(1px)'
-              }}
-            />
-          </motion.div>
-
-          {/* Subtle gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#3d5a6d]/80 to-transparent"></div>
+          <div className="absolute inset-0 w-full h-full">
+            {!isVideoError && (
+              <video
+                ref={videoRef}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover mix-blend-overlay"
+                style={{
+                  opacity: isVideoLoaded ? 0.15 : 0,
+                  transition: 'opacity 0.3s ease-in-out'
+                }}
+                onPlay={() => setIsVideoPlaying(true)}
+                onPause={() => setIsVideoPlaying(false)}
+              >
+                <source src="https://ik.imagekit.io/qcvroy8xpd/Closeup.mp4?updatedAt=1761739938909" type="video/mp4" />
+              </video>
+            )}
+          </div>
+          {/* Glowing orbs */}
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#A3D1FF]/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="container mx-auto max-w-6xl px-6 sm:px-8 lg:px-12 relative z-10">
-          <div className="text-center">
-            {/* Main Headline */}
-            <motion.h1
-              className="text-[clamp(3rem,8vw,6rem)] font-black tracking-tight leading-[1.1] mb-8"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <span className="text-white">Award-Winning Websites</span>
-              <br />
-              <span className="text-white">That Turn </span>
-              <span className="text-[#A3D1FF]">Attention Into Revenue</span>
-            </motion.h1>
+        {isVideoLoaded && !isVideoError && (
+          <motion.button
+            onClick={toggleVideoPlayback}
+            className="absolute bottom-8 left-8 z-20 w-12 h-12 bg-black/10 backdrop-blur-sm rounded-full flex items-center justify-center text-black hover:bg-[#A3D1FF] transition-all duration-300"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.5, duration: 0.5 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label={isVideoPlaying ? 'Pause video' : 'Play video'}
+          >
+            {isVideoPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 ml-0.5" />}
+          </motion.button>
+        )}
 
-            {/* Social Proof Badge Bar */}
+        <div className="container mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Side - Content */}
             <motion.div
-              className="inline-flex items-center gap-4 bg-white/95 backdrop-blur-sm px-8 py-4 rounded-full mb-10 flex-wrap justify-center border border-gray-200 shadow-xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-left"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
-              {/* Shield with Reviews */}
-              <div className="flex items-center gap-2 border-r border-gray-300 pr-4">
-                <Shield className="w-5 h-5 text-[#3d5a6d]" />
-                <span className="font-bold text-gray-800 text-sm">20+ Verified 5 Star Reviews</span>
-              </div>
+              <motion.h1
+                className="text-[clamp(2.5rem,6vw,5.5rem)] font-roboto font-black tracking-tight text-white leading-[1.1] mb-8"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                Websites that Convert for <span className="text-[#A3D1FF]">Agencies, Ecommerce, and B2B</span>
+              </motion.h1>
 
-              {/* Google Business */}
-              <div className="flex items-center gap-2 border-r border-gray-300 pr-4">
-                <div className="w-6 h-6 bg-white rounded flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" className="w-5 h-5">
-                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                  </svg>
-                </div>
-                <span className="font-semibold text-gray-800 text-sm">Google Business</span>
-                <div className="flex items-center gap-0.5">
-                  <Star className="w-4 h-4 fill-[#FFD700] text-[#FFD700]" />
-                  <span className="font-bold text-gray-800 text-sm">5.0</span>
-                </div>
-              </div>
+              <motion.p
+                className="text-xl sm:text-2xl text-gray-300 mb-12 font-roboto font-medium"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                High-performance React/Node sites built to attract more visitors, convert more leads, and close more clients.
+              </motion.p>
 
-              {/* LinkedIn */}
-              <div className="flex items-center gap-2 border-r border-gray-300 pr-4">
-                <div className="w-6 h-6 bg-[#0A66C2] rounded flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                </div>
-                <span className="font-semibold text-gray-800 text-sm">LinkedIn</span>
-                <div className="flex items-center gap-0.5">
-                  <Star className="w-4 h-4 fill-[#FFD700] text-[#FFD700]" />
-                  <span className="font-bold text-gray-800 text-sm">4.9</span>
-                </div>
-              </div>
+              <motion.div
+                className="flex flex-col sm:flex-row gap-4 mb-12"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <Link
+                  to="/contact"
+                  className="mr_btn mr_btn_outline inline-block"
+                >
+                  <span>Get Free Quote</span>
+                </Link>
 
-              {/* DesignRush */}
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 bg-white rounded flex items-center justify-center overflow-hidden">
-                  <img src="https://ik.imagekit.io/qcvroy8xpd/download%20(4).jpeg" alt="DesignRush" className="w-full h-full object-cover" />
-                </div>
-                <span className="font-semibold text-gray-800 text-sm">DesignRush</span>
-                <div className="flex items-center gap-0.5">
-                  <Star className="w-4 h-4 fill-[#FFD700] text-[#FFD700]" />
-                  <span className="font-bold text-gray-800 text-sm">4.9</span>
-                </div>
-              </div>
+                <a
+                  href={calendlyLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mr_btn mr_btn_outline inline-block"
+                >
+                  <span>Book Strategy Call</span>
+                </a>
+              </motion.div>
+
+
             </motion.div>
 
-            {/* CTA Button */}
+            {/* Right Side - Website Showcase */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              className="relative hidden lg:flex items-center justify-center"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              style={{ perspective: '1500px' }}
             >
-              <a
-                href={calendlyLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-12 py-6 bg-[#A3D1FF] text-[#1a2332] font-black text-xl tracking-wide rounded-lg hover:bg-[#92bce6] transition-all duration-300 shadow-2xl uppercase"
-              >
-                BOOK A FREE STRATEGY CALL
-              </a>
+              <div className="relative w-full">
+                {/* Background glow effects */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#A3D1FF]/10 to-blue-500/10 blur-3xl"></div>
+
+                {/* Structured Grid Layout */}
+                <div className="grid grid-cols-2 gap-4 relative" style={{ transformStyle: 'preserve-3d' }}>
+                  {/* Featured Large Card - Top Left */}
+                  <motion.div
+                    className="col-span-2 row-span-2 overflow-hidden shadow-2xl border border-white/10 bg-black/20 backdrop-blur-sm group relative rounded-lg"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0, rotateY: -5, rotateX: 2 }}
+                    transition={{ duration: 0.8, delay: 0.5 }}
+                    whileHover={{
+                      scale: 1.02,
+                      rotateY: 0,
+                      rotateX: 0,
+                      transition: { duration: 0.3 }
+                    }}
+                    style={{ transformStyle: 'preserve-3d' }}
+                  >
+                    <div className="aspect-[16/10] overflow-hidden">
+                      <img
+                        src="https://ik.imagekit.io/qcvroy8xpd/Screenshot.png?updatedAt=1754018965491"
+                        alt="Featured Website Design"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#A3D1FF]/10 via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                  </motion.div>
+
+                  {/* Grid of Smaller Cards */}
+                  <motion.div
+                    className="overflow-hidden shadow-2xl border border-white/10 bg-black/20 backdrop-blur-sm group relative rounded-lg"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0, rotateY: 8, rotateX: -3 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    whileHover={{
+                      scale: 1.05,
+                      rotateY: 0,
+                      rotateX: 0,
+                      zIndex: 10,
+                      transition: { duration: 0.3 }
+                    }}
+                    style={{ transformStyle: 'preserve-3d' }}
+                  >
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img
+                        src="https://ik.imagekit.io/qcvroy8xpd/mockuuups-kzccsqfybhcjamey4qqdwh.jpeg?updatedAt=1754029601130"
+                        alt="Client Website Design"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#A3D1FF]/10 via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                  </motion.div>
+
+                  <motion.div
+                    className="overflow-hidden shadow-2xl border border-white/10 bg-black/20 backdrop-blur-sm group relative rounded-lg"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0, rotateY: -8, rotateX: 3 }}
+                    transition={{ duration: 0.8, delay: 0.7 }}
+                    whileHover={{
+                      scale: 1.05,
+                      rotateY: 0,
+                      rotateX: 0,
+                      zIndex: 10,
+                      transition: { duration: 0.3 }
+                    }}
+                    style={{ transformStyle: 'preserve-3d' }}
+                  >
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img
+                        src="https://ik.imagekit.io/qcvroy8xpd/IU0mmH7.jpeg"
+                        alt="Portfolio Website Design"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#A3D1FF]/10 via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                  </motion.div>
+
+                  <motion.div
+                    className="overflow-hidden shadow-2xl border border-white/10 bg-black/20 backdrop-blur-sm group relative rounded-lg"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0, rotateY: 6, rotateX: -2 }}
+                    transition={{ duration: 0.8, delay: 0.8 }}
+                    whileHover={{
+                      scale: 1.05,
+                      rotateY: 0,
+                      rotateX: 0,
+                      zIndex: 10,
+                      transition: { duration: 0.3 }
+                    }}
+                    style={{ transformStyle: 'preserve-3d' }}
+                  >
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img
+                        src="https://ik.imagekit.io/qcvroy8xpd/mockuuups-nrj4c3wejgjaheqlyj4zax%20(2).jpeg?updatedAt=1763459817705"
+                        alt="Business Website Design"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#A3D1FF]/10 via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                  </motion.div>
+
+                  <motion.div
+                    className="overflow-hidden shadow-2xl border border-white/10 bg-black/20 backdrop-blur-sm group relative rounded-lg"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0, rotateY: -6, rotateX: 2 }}
+                    transition={{ duration: 0.8, delay: 0.9 }}
+                    whileHover={{
+                      scale: 1.05,
+                      rotateY: 0,
+                      rotateX: 0,
+                      zIndex: 10,
+                      transition: { duration: 0.3 }
+                    }}
+                    style={{ transformStyle: 'preserve-3d' }}
+                  >
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img
+                        src="https://ik.imagekit.io/qcvroy8xpd/1761600224232.jpeg?updatedAt=1763459215073"
+                        alt="Ecommerce Website Design"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#A3D1FF]/10 via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                  </motion.div>
+                </div>
+
+                {/* Verified Reviews Badge */}
+                <motion.div
+                  className="mt-8 bg-black/80 backdrop-blur-sm px-6 py-5 border border-white/10"
+                  style={{ clipPath: 'polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%)' }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.0 }}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <Shield className="w-5 h-5 text-[#A3D1FF]" />
+                    <span className="text-white font-bold text-sm uppercase tracking-wider">20+ Verified 5 Star Reviews</span>
+                  </div>
+
+                  {/* Review Platforms */}
+                  <div className="space-y-3">
+                    {/* Google Business */}
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 bg-white rounded flex items-center justify-center p-1">
+                          <svg viewBox="0 0 24 24" className="w-full h-full">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                          </svg>
+                        </div>
+                        <span className="text-white font-semibold text-sm">Google Business</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 fill-[#FFD700] text-[#FFD700]" />
+                        ))}
+                        <span className="text-white font-bold text-sm ml-2">5.0</span>
+                      </div>
+                    </div>
+
+                    {/* DesignRush */}
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 bg-white rounded flex items-center justify-center overflow-hidden">
+                          <img src="https://ik.imagekit.io/qcvroy8xpd/download%20(4).jpeg" alt="DesignRush" className="w-full h-full object-cover" />
+                        </div>
+                        <span className="text-white font-semibold text-sm">DesignRush</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className={`w-4 h-4 ${i < 4 ? 'fill-[#FFD700] text-[#FFD700]' : 'fill-[#FFD700]/50 text-[#FFD700]/50'}`} />
+                        ))}
+                        <span className="text-white font-bold text-sm ml-2">4.9</span>
+                      </div>
+                    </div>
+
+                    {/* LinkedIn */}
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 bg-[#0A66C2] rounded flex items-center justify-center">
+                          <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                          </svg>
+                        </div>
+                        <span className="text-white font-semibold text-sm">LinkedIn</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className={`w-4 h-4 ${i < 4 ? 'fill-[#FFD700] text-[#FFD700]' : 'fill-[#FFD700]/50 text-[#FFD700]/50'}`} />
+                        ))}
+                        <span className="text-white font-bold text-sm ml-2">4.9</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Client photos */}
+                  <div className="flex items-center gap-2 mt-4 pt-4 border-t border-white/10">
+                    <span className="text-gray-400 text-xs">Trusted by:</span>
+                    <div className="flex items-center -space-x-2">
+                      <div className="w-7 h-7 rounded-full border-2 border-black overflow-hidden">
+                        <img src="https://ik.imagekit.io/qcvroy8xpd/1682479506906.jpeg?updatedAt=1754019693073" alt="Client" className="w-full h-full object-cover" />
+                      </div>
+                      <div className="w-7 h-7 rounded-full border-2 border-black overflow-hidden">
+                        <img src="https://ik.imagekit.io/qcvroy8xpd/4c91361b-27ee-453b-88e0-af3026cac747_1_ro3hez_e_background_removal_f_png_vkfbub.png?updatedAt=1754023286922" alt="Client" className="w-full h-full object-cover" />
+                      </div>
+                      <div className="w-7 h-7 rounded-full border-2 border-black overflow-hidden">
+                        <img src="https://ik.imagekit.io/qcvroy8xpd/1732338426448%20(1).jpeg?updatedAt=1749337717019" alt="Client" className="w-full h-full object-cover" />
+                      </div>
+                      <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#A3D1FF] to-blue-500 border-2 border-black flex items-center justify-center">
+                        <span className="text-[9px] font-bold text-white">20+</span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Decorative blur orbs */}
+                <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#A3D1FF]/10 rounded-full blur-3xl -z-10"></div>
+                <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl -z-10"></div>
+              </div>
             </motion.div>
           </div>
+
+          {/* Trusted by Industry Leaders - Company Logos */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="mt-20 relative z-10"
+          >
+            <div className="text-center mb-12">
+              <p className="text-white text-sm uppercase tracking-wider font-bold">Trusted by Industry Leaders</p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 items-center justify-items-center">
+              {/* Binns Media Group */}
+              <div className="transition-all duration-300 hover:scale-110">
+                <img
+                  src="https://i.imgur.com/uliFOja.png"
+                  alt="Binns Media Group"
+                  className="h-12 md:h-16 w-auto object-contain filter brightness-0 invert opacity-70 hover:opacity-100"
+                />
+              </div>
+
+              {/* Untapped Africa */}
+              <div className="transition-all duration-300 hover:scale-110">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/GOLD%20TEXT%20LOGO%20NO%20GLOW%20EFFECT%20ADDED%201.png?updatedAt=1748753342858"
+                  alt="Untapped Africa"
+                  className="h-12 md:h-16 w-auto object-contain opacity-70 hover:opacity-100"
+                />
+              </div>
+
+              {/* Diamonds by CS */}
+              <div className="transition-all duration-300 hover:scale-110">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/downloads/diqalz8giyxk0bjucqwv.png?updatedAt=1754396322363"
+                  alt="Diamonds by CS"
+                  className="h-12 md:h-16 w-auto object-contain filter brightness-0 invert opacity-70 hover:opacity-100"
+                />
+              </div>
+
+              {/* Company Logo 1 */}
+              <div className="transition-all duration-300 hover:scale-110">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/image%201%20(5).png?updatedAt=1763319654171"
+                  alt="Partner Company"
+                  className="h-12 md:h-16 w-auto object-contain filter brightness-0 invert opacity-70 hover:opacity-100"
+                />
+              </div>
+
+              {/* Company Logo 2 */}
+              <div className="transition-all duration-300 hover:scale-110">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/logo%20(1).svg?updatedAt=1763381682176"
+                  alt="Partner Company"
+                  className="h-12 md:h-16 w-auto object-contain filter brightness-0 invert opacity-70 hover:opacity-100"
+                />
+              </div>
+
+              {/* Secure Annapolis */}
+              <div className="transition-all duration-300 hover:scale-110">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/image%201%20(7).png"
+                  alt="Secure Annapolis"
+                  className="h-12 md:h-16 w-auto object-contain filter brightness-0 invert opacity-70 hover:opacity-100"
+                />
+              </div>
+
+              {/* Company Logo 4 */}
+              <div className="transition-all duration-300 hover:scale-110">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/9uafCUp%201%20(1).png?updatedAt=1755247790037"
+                  alt="Partner Company"
+                  className="h-12 md:h-16 w-auto object-contain filter brightness-0 invert opacity-70 hover:opacity-100"
+                />
+              </div>
+
+              {/* Company Logo 5 */}
+              <div className="transition-all duration-300 hover:scale-110">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/f9f3cab4-1ac2-4216-9590-33ea4b61faea.jpeg?updatedAt=1751550631056"
+                  alt="Partner Company"
+                  className="h-12 md:h-16 w-auto object-contain filter brightness-0 invert opacity-70 hover:opacity-100"
+                />
+              </div>
+
+              {/* iLight Logo */}
+              <div className="transition-all duration-300 hover:scale-110">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/White%20logo%20-%20no%20background.svg?updatedAt=1749030562412"
+                  alt="iLight"
+                  className="h-12 md:h-16 w-auto object-contain opacity-70 hover:opacity-100"
+                />
+              </div>
+
+              {/* Uza Entertainment */}
+              <div className="transition-all duration-300 hover:scale-110">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/downloads/logo-uzan-1-mv02DeERKlcy9DzM%20(1).avif?updatedAt=1755253233172"
+                  alt="Uza Entertainment"
+                  className="h-12 md:h-16 w-auto object-contain filter brightness-0 invert opacity-70 hover:opacity-100"
+                />
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
