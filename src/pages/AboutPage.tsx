@@ -1,36 +1,29 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, Target, Users, Code, Sparkles, Lightbulb, Layers, Database, Zap, Shield } from 'lucide-react';
+import { ArrowRight, Target, Users, Code, CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
-import SplitText from '@/components/SplitText';
+import PageWrapper from '@/components/PageWrapper';
 import MagneticButton from '@/components/MagneticButton';
 
-interface ExpertiseCardProps {
-  icon: any;
-  title: string;
-  description: string;
-  features?: string[];
-}
-
-function ExpertiseCard({ icon: Icon, title, description, features }: ExpertiseCardProps) {
+// Refined Expertise Card using the .card utility
+function ExpertiseCard({ icon: Icon, title, description, features }: any) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group h-full">
-      <div className="relative mb-6">
-        <div className="absolute inset-0 bg-[#A3D1FF]/20 blur-xl rounded-full"></div>
-        <div className="bg-[#A3D1FF]/10 p-4 rounded-xl relative">
-          <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
+    <div className="card group h-full">
+      <div className="relative mb-8 w-fit">
+        <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full group-hover:bg-primary/40 transition-colors"></div>
+        <div className="bg-white/5 p-4 rounded-2xl relative border border-white/10">
+          <Icon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-500" />
         </div>
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
-      <p className="text-gray-400">{description}</p>
+      <h3 className="text-2xl font-black mb-4 tracking-tighter text-white">{title}</h3>
+      <p className="text-gray-400 leading-relaxed mb-6">{description}</p>
       {features && (
-        <div className="flex flex-wrap gap-2 mt-4">
-          {features.map((feature, index) => (
+        <div className="flex flex-wrap gap-2">
+          {features.map((feature: string, index: number) => (
             <span 
               key={index} 
-              className="px-3 py-1 bg-white/5 rounded-full text-sm text-[#A3D1FF]"
+              className="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[10px] font-bold uppercase tracking-widest text-primary"
             >
               {feature}
             </span>
@@ -41,31 +34,17 @@ function ExpertiseCard({ icon: Icon, title, description, features }: ExpertiseCa
   );
 }
 
-function BenefitCard({ title, description }: {
-  title: string;
-  description: string;
-}) {
+// Refined Process Card with numbering
+function ProcessCard({ title, description, items, index }: any) {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-sm border">
-      <h3 className="text-lg font-semibold mb-2">{title}</h3>
-      <p className="text-gray-600">{description}</p>
-    </div>
-  );
-}
-
-function ProcessCard({ title, description, items }: {
-  title: string;
-  description: string;
-  items: string[];
-}) {
-  return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all h-full">
-      <h3 className="text-xl font-semibold text-white mb-4">{title}</h3>
-      <p className="text-gray-400 mb-6">{description}</p>
-      <ul className="space-y-2">
-        {items.map((item, index) => (
-          <li key={index} className="flex items-center text-gray-300">
-            <ArrowRight className="w-4 h-4 text-[#A3D1FF] mr-2 flex-shrink-0" />
+    <div className="card h-full flex flex-col">
+      <span className="text-4xl font-black text-white/5 mb-4">0{index + 1}</span>
+      <h3 className="text-2xl font-black text-white mb-4 tracking-tighter">{title}</h3>
+      <p className="text-gray-400 mb-8 flex-grow">{description}</p>
+      <ul className="space-y-3">
+        {items.map((item: string, idx: number) => (
+          <li key={idx} className="flex items-start text-sm text-gray-300">
+            <CheckCircle2 className="w-4 h-4 text-primary mr-3 mt-0.5 flex-shrink-0" />
             <span>{item}</span>
           </li>
         ))}
@@ -76,18 +55,18 @@ function ProcessCard({ title, description, items }: {
 
 function SkillBar({ name, percentage }: { name: string; percentage: string }) {
   return (
-    <div className="mb-6">
-      <div className="flex justify-between items-center mb-2">
-        <span className="text-white">{name}</span>
-        <span className="text-gray-400">{percentage}</span>
+    <div className="mb-8">
+      <div className="flex justify-between items-center mb-3">
+        <span className="text-xs font-bold uppercase tracking-widest text-gray-400">{name}</span>
+        <span className="text-xs font-mono text-primary">{percentage}</span>
       </div>
-      <div className="h-2 bg-[#1b1b1b] rounded-full overflow-hidden">
+      <div className="h-1 bg-white/5 rounded-full overflow-hidden">
         <motion.div
-          className="h-full bg-[#A3D1FF] rounded-full transition-all duration-1000"
+          className="h-full bg-primary"
           initial={{ width: 0 }}
           whileInView={{ width: percentage }}
           viewport={{ once: true }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
         ></motion.div>
       </div>
     </div>
@@ -96,658 +75,144 @@ function SkillBar({ name, percentage }: { name: string; percentage: string }) {
 
 export default function AboutPage() {
   const navigate = useNavigate();
-  
-  // Person schema for structured data
-  const personSchema = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Marc Friedman",
-    "jobTitle": "Full Stack Designer & Developer",
-    "description": "A passionate full-stack designer and developer creating exceptional digital experiences.",
-    "knowsAbout": [
-      "Web Development",
-      "UI/UX Design",
-      "SaaS Development",
-      "API Development",
-      "Design Systems"
-    ],
-    "url": "https://www.marcfriedmanportfolio.com/about",
-    "sameAs": [
-      "https://www.linkedin.com/in/portfolio2/",
-      "https://g.co/kgs/78fRZ6r"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Tel Aviv",
-      "addressCountry": "IL"
-    }
-  };
-
-  // Animation variants
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
-        duration: 0.8, 
-        ease: [0.22, 1, 0.36, 1] 
-      }
-    }
-  };
 
   return (
     <>
       <Helmet>
-        <title>About Marc Friedman - Full Stack Designer & Developer</title>
-        <meta name="description" content="Meet Marc Friedman, a passionate full-stack designer and developer creating exceptional digital experiences. Specializing in web development, UI/UX design, and SaaS solutions for clients across three continents." />
-        
-        <meta property="og:type" content="profile" />
-        <meta property="og:title" content="About Marc Friedman - Full Stack Designer & Developer" />
-        <meta property="og:description" content="Meet Marc Friedman, a passionate full-stack designer and developer creating exceptional digital experiences." />
-        <meta property="og:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
-        <meta property="og:url" content="https://marcfriedmanportfolio.com/about" />
-        
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Marc Friedman - Full Stack Designer & Developer" />
-        <meta name="twitter:description" content="Meet Marc Friedman, a passionate full-stack designer and developer creating exceptional digital experiences." />
-        <meta name="twitter:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
-        
-        <meta name="keywords" content="Marc Friedman, Full Stack Developer, UI/UX Designer, Web Development, SaaS Development, Design Systems, Portfolio" />
-        <meta name="author" content="Marc Friedman" />
-        <link rel="canonical" href="https://www.marcfriedmanportfolio.com/about" />
-        
-        <script type="application/ld+json">
-          {JSON.stringify(personSchema)}
-        </script>
+        <title>About Marc Friedman | B2B Growth Engineer</title>
+        <meta name="description" content="Marc Friedman is a growth-focused designer and developer building high-performance digital ecosystems for B2B brands." />
       </Helmet>
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
-            alt="Marc Friedman - Full Stack Designer & Developer"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black/90"></div>
-        </div>
-
-        <div className="container-custom relative z-10">
+      <PageWrapper 
+        category="The Partner"
+        title="Engineering Results Through Design"
+        subtitle="I bridge the gap between stunning visuals and robust engineering to solve real business challenges."
+      >
+        {/* Profile/Intro Section */}
+        <div className="grid lg:grid-cols-[1fr_1.5fr] gap-20 items-start mb-32">
           <motion.div 
-            className="max-w-3xl"
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: {
-                  staggerChildren: 0.1
-                }
-              }
-            }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            className="sticky top-40 aspect-[4/5] rounded-[3rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 border border-white/10"
           >
-            <motion.h1 
-              className="text-4xl sm:text-5xl font-bold text-white mb-6"
-              variants={fadeInUp}
-            >
-              About Marc Friedman
-            </motion.h1>
-            <motion.h2 
-              className="text-xl sm:text-2xl text-[#A3D1FF] mb-6"
-              variants={fadeInUp}
-            >
-              Full Stack Designer & Developer
-            </motion.h2>
-            <motion.p 
-              className="text-2xl sm:text-3xl font-semibold text-[#A3D1FF] mb-6"
-              variants={fadeInUp}
-            >
-              Solving Digital Challenges Through Design & Development Excellence
-            </motion.p>
-            <motion.p 
-              className="text-xl text-gray-300 mb-8"
-              variants={fadeInUp}
-            > 
-              I'm a full-stack designer and developer who bridges the gap between stunning visuals and robust functionality. Transforming ideas into digital realities for clients across three continents, I've built a reputation for creating <strong className="text-white">conversion-focused experiences that solve real business problems</strong>.
-            </motion.p>
-            <motion.p className="text-xl text-gray-300 mb-8" variants={fadeInUp}>As a freelance website designer, I bring a unique blend of creative vision and technical expertise to every project, ensuring your digital presence is not only beautiful but also highly functional and effective.</motion.p>
-            <motion.div 
-              variants={fadeInUp}
-              className="flex flex-wrap gap-4"
-            >
-              <MagneticButton>
-                <Link to="/work" className="mr_btn mr_btn_outline">
-                  <span>View Portfolio</span>
-                </Link>
-              </MagneticButton>
-            </motion.div>
+            <img src="/images/marc-friedman-profile.jpg" alt="Marc" className="w-full h-full object-cover" />
           </motion.div>
-        </div>
-      </section>
 
-      {/* Featured Images */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
-            <motion.div 
-              className="space-y-8"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <div className="aspect-[4/3] overflow-hidden rounded-xl">
-                <img
-                  src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
-                  alt="Marc Friedman Working"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="aspect-[4/3] overflow-hidden rounded-xl">
-                <img 
-                  src="https://i.imgur.com/IU0mmH7.jpeg"
-                  alt="Marc's Project"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-            </motion.div>
-            <motion.div 
-              className="space-y-8"
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <div className="aspect-[4/3] overflow-hidden rounded-xl">
-                <img 
-                  src="https://ik.imagekit.io/qcvroy8xpd/uoq5Ztg.jpeg"
-                  alt="Marc Coding"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="aspect-[4/3] overflow-hidden rounded-xl">
-                <img 
-                  src="https://ik.imagekit.io/qcvroy8xpd/TTV8Liw.jpg"
-                  alt="Technical Skills"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            <h2 className="text-3xl font-bold mb-12 text-white">The Problems I Solve</h2>
-            <div className="bg-[#1b1b1b] p-8 rounded-lg shadow-md mb-16">
-              <p className="text-xl text-gray-300 mb-6">
-                My clients typically come to me with specific challenges that are holding back their digital growth:
+          <div className="space-y-12">
+            <div className="space-y-6">
+              <h2 className="text-3xl font-black tracking-tighter text-primary uppercase">The Philosophy</h2>
+              <p className="text-xl text-gray-300 leading-relaxed">
+                Transforming ideas into digital realities for clients across three continents, I've built a reputation for creating <strong className="text-white">conversion-focused experiences</strong>. I don't just build websites; I engineer sales systems.
               </p>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3 flex-shrink-0" />
-                    <p className="text-white"><strong>Outdated digital presence</strong> that fails to reflect their brand quality and vision</p>
-                  </div>
-                  <div className="flex items-start">
-                    <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3 flex-shrink-0" />
-                    <p className="text-white"><strong>Low conversion rates</strong> despite decent traffic, with users dropping off before taking action</p>
-                  </div>
-                  <div className="flex items-start">
-                    <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3 flex-shrink-0" />
-                    <p className="text-white"><strong>Slow, poorly performing websites</strong> that frustrate users and hurt search rankings</p>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3 flex-shrink-0" />
-                    <p className="text-white"><strong>Disconnected systems</strong> requiring manual work that could be automated</p>
-                  </div>
-                  <div className="flex items-start">
-                    <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3 flex-shrink-0" />
-                    <p className="text-white"><strong>Difficulty translating business ideas</strong> into technical requirements</p>
-                  </div>
-                  <div className="flex items-start">
-                    <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3 flex-shrink-0" />
-                    <p className="text-white"><strong>Lack of strategic direction</strong> for digital initiatives and technology investments</p>
-                  </div>
-                </div>
-              </div>
-              <p className="text-xl text-gray-300 mt-6">
-                My approach combines strategic thinking with technical excellence to solve these challenges. I don't just build websites or apps—I create <strong className="text-white">digital experiences that solve real business problems and drive measurable results</strong>.
+              <p className="text-xl text-gray-400">
+                As a freelance partner, I bring a unique blend of creative vision and technical expertise to every project, ensuring your digital presence is beautiful, functional, and profitable.
               </p>
             </div>
-          </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <h2 className="text-3xl font-bold text-white mb-12">My Expertise</h2>
-              <div className="grid gap-8">
-                <ExpertiseCard
-                  icon={Target}
-                  title="Strategy & Planning"
-                  description="Strategic planning and roadmap development that aligns with your business goals."
-                  features={[
-                    "Market Research",
-                    "User Analysis",
-                    "Competitive Analysis",
-                    "ROI Planning"
-                  ]}
-                />
-                <ExpertiseCard
-                  icon={Users}
-                  title="UI/UX Design"
-                  description="User-centered design that transforms visitors into customers."
-                  features={[
-                    "User Research",
-                    "Wireframing",
-                    "Prototyping",
-                    "Design Systems"
-                  ]}
-                />
-                <ExpertiseCard
-                  icon={Code}
-                  title="Development"
-                  description="Modern technologies and performance optimization for exceptional results."
-                  features={[
-                    "React/Next.js",
-                    "Node.js",
-                    "TypeScript",
-                    "API Development"
-                  ]}
-                />
+            <div className="grid sm:grid-cols-2 gap-8 pt-8">
+              <div className="p-8 border border-white/5 rounded-3xl bg-white/[0.02]">
+                <h4 className="text-5xl font-black mb-2 tracking-tighter">10+</h4>
+                <p className="text-gray-500 uppercase tracking-widest text-[10px] font-bold">Years Experience</p>
               </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <img
-                src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
-                alt="Marc Friedman"
-                className="rounded-xl shadow-2xl hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <img 
-                src="https://i.imgur.com/PiKh199.png"
-                alt="Technical Skills"
-                className="rounded-xl shadow-2xl hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <h2 className="text-3xl font-bold text-white mb-12">Technical Skills</h2>
-              <div className="grid gap-8">
-                <div>
-                  <h3 className="text-xl font-semibold mb-6 text-white">Design</h3>
-                  <SkillBar name="UI/UX Design" percentage="95%" />
-                  <SkillBar name="Design Systems" percentage="90%" />
-                  <SkillBar name="Wireframing" percentage="95%" />
-                  <SkillBar name="Prototyping" percentage="90%" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-6 text-white">Development</h3>
-                  <SkillBar name="React/Next.js" percentage="95%" />
-                  <SkillBar name="TypeScript" percentage="90%" />
-                  <SkillBar name="Node.js" percentage="85%" />
-                  <SkillBar name="PostgreSQL" percentage="80%" />
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.h2 
-            className="text-3xl font-bold text-white mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            My Approach
-          </motion.h2>
-          <div className="grid md:grid-cols-4 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <ProcessCard
-                title="Discover"
-                description="Understanding your business goals, challenges, and market position."
-                items={[
-                  "In-depth stakeholder interviews",
-                  "Comprehensive market analysis",
-                  "User research with real customers",
-                  "Competitive audit with actionable insights"
-                ]}
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <ProcessCard
-                title="Define"
-                description="Translating research insights into clear strategies and requirements."
-                items={[
-                  "Strategic roadmap with measurable KPIs",
-                  "Detailed user personas based on research",
-                  "Information architecture optimized for conversions",
-                  "Technical requirements with scalability in mind"
-                ]}
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <ProcessCard
-                title="Design"
-                description="Creating intuitive interfaces and seamless user experiences."
-                items={[
-                  "Data-driven wireframing process",
-                  "Conversion-focused UI design",
-                  "Interactive prototyping for user testing",
-                  "Comprehensive design systems for consistency"
-                ]}
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <ProcessCard
-                title="Develop"
-                description="Building robust and scalable solutions with modern technologies."
-                items={[
-                  "SEO-optimized frontend development",
-                  "Secure backend integration",
-                  "High quality scores through best practices",
-                  "Comprehensive testing & QA process"
-                ]}
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
-        <div className="max-w-7xl mx-auto">
-          <motion.h2
-            className="text-3xl font-bold text-white mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            Client Success Stories
-          </motion.h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
-                <h3 className="text-xl font-semibold text-white mb-4">Binns Media Group</h3>
-                <p className="text-gray-400 mb-4">
-                  <strong className="text-white">Challenge:</strong> Outdated platform with poor user engagement and high bounce rates.
-                </p>
-                <p className="text-gray-400 mb-4">
-                  <strong className="text-white">Solution:</strong> Complete redesign with modern architecture, intuitive navigation, and optimized performance.
-                </p>
-                <p className="text-gray-400">
-                  <strong className="text-white">Result:</strong> Increased engagement, faster load times, and improved content discovery.
-                </p>
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
-                <h3 className="text-xl font-semibold text-white mb-4">Wellness TCYS</h3>
-                <p className="text-gray-400 mb-4">
-                  <strong className="text-white">Challenge:</strong> Manual booking processes consuming hours weekly and limiting business growth.
-                </p>
-                <p className="text-gray-400 mb-4">
-                  <strong className="text-white">Solution:</strong> Comprehensive digital platform with automated booking and client management.
-                </p>
-                <p className="text-gray-400">
-                  <strong className="text-white">Result:</strong> Dramatic increase in bookings, reduced administrative work, and improved client retention.
-                </p>
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
-                <h3 className="text-xl font-semibold text-white mb-4">MarginX</h3>
-                <p className="text-gray-400 mb-4">
-                  <strong className="text-white">Challenge:</strong> Dealerships making decisions based on outdated, fragmented market data.
-                </p>
-                <p className="text-gray-400 mb-4">
-                  <strong className="text-white">Solution:</strong> Real-time data platform with intuitive visualizations and AI-powered recommendations.
-                </p>
-                <p className="text-gray-400">
-                  <strong className="text-white">Result:</strong> Faster decisions, higher profits, and significant time savings for dealerships.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.h2
-            className="text-3xl font-bold text-white mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            Why Work With Me
-          </motion.h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
-                <h3 className="text-xl font-semibold text-white mb-4">Results-Driven</h3>
-                <p className="text-gray-400"> 
-                  I focus on creating digital experiences that drive <strong className="text-white">measurable business outcomes</strong>, not just pretty designs. My projects deliver <strong className="text-white">increased conversions</strong>.
-                </p>
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
-                <h3 className="text-xl font-semibold text-white mb-4">Full-Stack Expertise</h3>
-                <p className="text-gray-400"> 
-                  With skills spanning design and development, I deliver <strong className="text-white">cohesive solutions without handoff issues</strong>. This integrated approach <strong className="text-white">reduces project timelines</strong>.
-                </p>
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
-                <h3 className="text-xl font-semibold text-white mb-4">Strategic Partner</h3>
-                <p className="text-gray-400"> 
-                  I work as an extension of your team, providing <strong className="text-white">strategic guidance beyond just execution</strong>. My clients report <strong className="text-white">improvement in decision-making</strong> efficiency.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Personal Life Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            <h2 className="text-3xl font-bold text-white mb-8">Beyond Work</h2>
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <p className="text-xl text-gray-300 mb-6">
-                  When I'm not designing or coding, you'll find me exploring new technologies, contributing to open-source projects, or mentoring aspiring developers. I believe in continuous learning and giving back to the community that has supported my growth.
-                </p>
-                <p className="text-xl text-gray-300 mb-6">
-                  I'm also passionate about photography, hiking, and discovering new coffee shops in Tel Aviv. These activities help me maintain a fresh perspective and bring creative energy to my work.
-                </p>
-                <p className="text-xl text-gray-300">
-                  My background in both design and development gives me a unique perspective on digital projects. I understand the challenges and opportunities from multiple angles, which helps me create solutions that are both beautiful and functional.
-                </p>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="aspect-square overflow-hidden rounded-xl">
-                  <img
-                    src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
-                    alt="Marc Friedman Portrait"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="aspect-square overflow-hidden rounded-xl">
-                  <img
-                    src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
-                    alt="Marc Friedman Working"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="aspect-square overflow-hidden rounded-xl">
-                  <img 
-                    src="https://ik.imagekit.io/qcvroy8xpd/uoq5Ztg.jpeg"
-                    alt="Marc Coding"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="aspect-square overflow-hidden rounded-xl">
-                  <img 
-                    src="https://ik.imagekit.io/qcvroy8xpd/TTV8Liw.jpg"
-                    alt="Marc's Workspace"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
+              <div className="p-8 border border-white/5 rounded-3xl bg-white/[0.02]">
+                <h4 className="text-5xl font-black mb-2 tracking-tighter">3</h4>
+                <p className="text-gray-500 uppercase tracking-widest text-[10px] font-bold">Continents Served</p>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
-      </section>
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            <h2 className="text-3xl font-bold text-white mb-4">Ready to Discuss Your Project?</h2>
-            <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-              Let's schedule a call to explore how I can help you achieve your digital goals.
-            </p>
+        {/* Expertise Grid */}
+        <section className="mb-32">
+          <h2 className="text-4xl font-black mb-16 tracking-tighter uppercase">Core Expertise</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <ExpertiseCard
+              icon={Target}
+              title="Strategy & Planning"
+              description="Strategic roadmap development that aligns with your bottom-line business goals."
+              features={["Market Research", "User Analysis", "ROI Planning"]}
+            />
+            <ExpertiseCard
+              icon={Users}
+              title="UI/UX Design"
+              description="User-centered design that transforms passive visitors into loyal customers."
+              features={["Wireframing", "Prototyping", "Design Systems"]}
+            />
+            <ExpertiseCard
+              icon={Code}
+              title="Development"
+              description="Modern tech stacks and performance optimization for sub-second load times."
+              features={["React/Next.js", "TypeScript", "API Systems"]}
+            />
+          </div>
+        </section>
+
+        {/* Skills & Tech */}
+        <section className="mb-32 grid lg:grid-cols-2 gap-20 items-center">
+          <div>
+            <h2 className="text-4xl font-black mb-12 tracking-tighter uppercase">Technical Benchmarks</h2>
+            <div className="space-y-2">
+              <SkillBar name="UI/UX Design" percentage="95%" />
+              <SkillBar name="React/Next.js" percentage="95%" />
+              <SkillBar name="Design Systems" percentage="90%" />
+              <SkillBar name="TypeScript" percentage="90%" />
+            </div>
+          </div>
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-primary/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+            <img 
+              src="https://ik.imagekit.io/qcvroy8xpd/TTV8Liw.jpg" 
+              className="relative rounded-[2.5rem] border border-white/10 shadow-2xl" 
+              alt="Workspace" 
+            />
+          </div>
+        </section>
+
+        {/* Process Section */}
+        <section className="mb-32">
+          <h2 className="text-4xl font-black mb-16 tracking-tighter uppercase text-center">The Workflow</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: "Discover", desc: "Understanding goals, market position, and obstacles.", items: ["Stakeholder Interviews", "Market Analysis"] },
+              { title: "Define", desc: "Translating insights into clear strategies.", items: ["KPI Framework", "Information Architecture"] },
+              { title: "Design", desc: "Creating intuitive, high-conversion interfaces.", items: ["Wireframing", "Interactive Prototypes"] },
+              { title: "Develop", desc: "Building scalable, secure React solutions.", items: ["SEO Optimization", "Clean Code QA"] }
+            ].map((step, i) => (
+              <ProcessCard key={i} index={i} {...step} />
+            ))}
+          </div>
+        </section>
+
+        {/* Success Stories / Proof */}
+        <section className="mb-32 bg-white/[0.03] p-12 md:p-20 rounded-[3rem] border border-white/5">
+          <h2 className="text-4xl font-black mb-12 tracking-tighter uppercase">Success Stories</h2>
+          <div className="grid md:grid-cols-3 gap-12">
+            {[
+              { client: "Binns Media Group", result: "Complete redesign, intuitive navigation, and 40% faster load times." },
+              { client: "Wellness TCYS", result: "Automated booking system reducing admin overhead by 15 hours/week." },
+              { client: "MarginX", result: "Real-time data platform with AI-powered dealership recommendations." }
+            ].map((story, i) => (
+              <div key={i} className="space-y-4">
+                <h3 className="text-xl font-black text-primary uppercase tracking-widest">{story.client}</h3>
+                <p className="text-gray-400 leading-relaxed">{story.result}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Final CTA */}
+        <section className="text-center py-20">
+          <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter">Ready to start?</h2>
+          <p className="text-xl text-gray-500 mb-12 max-w-xl mx-auto">Let's schedule a call to explore how we can hit your growth targets this quarter.</p>
+          <div className="flex justify-center gap-6">
             <MagneticButton>
               <button onClick={() => navigate('/contact')} className="mr_btn mr_btn_primary">
-                <span>Get in Touch</span>
+                <span>Book Free Audit</span>
               </button>
             </MagneticButton>
-            
-            {/* Related Links */}
-            <div className="mt-12 pt-8 border-t border-white/10">
-              <h3 className="text-xl font-semibold text-white mb-6">Explore My Work</h3>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link 
-                  to="/work" 
-                  className="px-4 py-2 bg-white/5 text-[#A3D1FF] rounded-lg hover:bg-white/10 transition-colors"
-                  title="View portfolio and case studies"
-                >
-                  Portfolio & Case Studies
-                </Link>
-                <Link 
-                  to="/blog" 
-                  className="px-4 py-2 bg-white/5 text-[#A3D1FF] rounded-lg hover:bg-white/10 transition-colors"
-                  title="Read design and development insights"
-                >
-                  Blog & Insights
-                </Link>
-                <Link 
-                  to="/tools/website-analyzer" 
-                  className="px-4 py-2 bg-white/5 text-[#A3D1FF] rounded-lg hover:bg-white/10 transition-colors"
-                  title="Try our free website analyzer"
-                >
-                  Free Website Analysis
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+          </div>
+        </section>
+      </PageWrapper>
     </>
   );
 }
