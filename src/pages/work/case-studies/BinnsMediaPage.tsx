@@ -34,9 +34,15 @@ const BinnsMediaPage = () => {
           </p>
         </div>
 
-        {/* 3D Mockup - This is the component we created in Step 1 */}
+        {/* 3D Mockup - Maintaining original structure with updated assets */}
         <div className="w-full max-w-6xl -mt-10">
           <BMG3DMockup />
+          {/* Embedding extra preview page as requested */}
+          <img 
+            src="https://ik.imagekit.io/qcvroy8xpd/67eb0d66be3ae182020253.png" 
+            alt="Binns Media Platform Overview"
+            className="w-full rounded-2xl border border-white/10 shadow-2xl mt-12"
+          />
         </div>
       </section>
 
@@ -65,14 +71,15 @@ const BinnsMediaPage = () => {
           <p className="text-gray-400 text-lg leading-relaxed mb-8">
             Binns Media Group (BMG) manages hundreds of hours of high-fidelity video and audio content. Their legacy platform was buckling under the weight of the media, leading to slow load times and a poor mobile experience for listeners on the go.
           </p>
+          <img 
+            src="https://ik.imagekit.io/qcvroy8xpd/67eaf9f50f188319226484%20(2).png" 
+            alt="Mobile UI Performance"
+            className="w-full rounded-xl mb-8 border border-white/5"
+          />
           <div className="space-y-6">
             <div className="flex gap-4 p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#A3D1FF]/50 transition-colors">
               <Star className="text-[#A3D1FF] shrink-0" />
               <p className="text-gray-300"><strong className="text-white">Goal:</strong> Centralize podcasts, TV, and exclusive talent interviews into one seamless ecosystem.</p>
-            </div>
-            <div className="flex gap-4 p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#A3D1FF]/50 transition-colors">
-              <Code2 className="text-[#A3D1FF] shrink-0" />
-              <p className="text-gray-300"><strong className="text-white">Solution:</strong> A custom Headless CMS architecture using Supabase for real-time data sync and React 18 for non-blocking UI updates.</p>
             </div>
           </div>
         </div>
@@ -82,6 +89,11 @@ const BinnsMediaPage = () => {
           <div className="absolute -inset-1 bg-gradient-to-r from-[#A3D1FF] to-blue-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
           <div className="relative bg-[#111] border border-white/10 p-10 rounded-3xl shadow-3xl">
             <h3 className="text-2xl font-bold mb-6">Engineering Decisions</h3>
+            <img 
+              src="https://ik.imagekit.io/qcvroy8xpd/67eb0d66b12c7394660719%20(1).jpeg" 
+              alt="Backend Architecture"
+              className="w-full rounded-lg mb-8 opacity-80"
+            />
             <ul className="space-y-8 text-gray-400">
               <li className="flex gap-5">
                 <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
@@ -90,15 +102,6 @@ const BinnsMediaPage = () => {
                 <div>
                   <h4 className="text-white font-bold mb-1">Optimized Asset Delivery</h4>
                   <p className="text-sm">Implemented lazy-loading and WebP image optimization, reducing initial bundle size by 45%.</p>
-                </div>
-              </li>
-              <li className="flex gap-5">
-                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                  <ShieldCheck className="text-white w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-white font-bold mb-1">Infrastructure</h4>
-                  <p className="text-sm">Utilized Supabase Row Level Security (RLS) to protect exclusive talent data while maintaining speed.</p>
                 </div>
               </li>
             </ul>
@@ -111,8 +114,8 @@ const BinnsMediaPage = () => {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="relative inline-block mb-10">
             <img 
-              src="https://i.imgur.com/NKjkUC9.jpeg" 
-              className="w-28 h-28 rounded-full border-4 border-[#A3D1FF] shadow-2xl relative z-10" 
+              src="https://ik.imagekit.io/qcvroy8xpd/67eb0c3957638498868399.jpeg" 
+              className="w-28 h-28 rounded-full border-4 border-[#A3D1FF] shadow-2xl relative z-10 object-cover" 
               alt="Omar Turner, BMG CEO" 
             />
             <div className="absolute -bottom-2 -right-2 bg-white text-black p-2 rounded-full z-20">
