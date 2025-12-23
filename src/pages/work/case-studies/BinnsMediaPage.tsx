@@ -1,23 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   BarChart3, Code2, Globe, Layout, 
   PlayCircle, Rocket, ShieldCheck, Zap, 
-  ChevronRight, ExternalLink, ArrowRight, Star
+  ExternalLink, ArrowRight, Star, Monitor, Smartphone, Settings
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-// Import our interactive component
-import BMG3DMockup from '@/components/BMG3DMockup';
-
 const BinnsMediaPage = () => {
   const navigate = useNavigate();
+  // State to control which "page" is embedded in the viewer
+  const [activeTab, setActiveTab] = useState<'desktop' | 'mobile' | 'admin'>('desktop');
+
+  // Define the URLs you want to embed. 
+  // NOTE: Target sites must allow iframe embedding (CSP/X-Frame-Options)
+  const views = {
+    desktop: {
+      title: 'Live Ecosystem',
+      url: 'https://binnsmediagroup.com', // Replace with actual URL
+      description: 'The primary high-performance media hub.'
+    },
+    mobile: {
+      title: 'Mobile Experience',
+      url: 'https://binnsmediagroup.com', // You can use CSS to constrain this
+      description: 'Optimized for listeners on the go.'
+    },
+    admin: {
+      title: 'Content Dashboard',
+      url: '/tools/website-analyzer', // Example of embedding an internal page
+      description: 'The Supabase-powered backend for talent management.'
+    }
+  };
 
   return (
     <div className="bg-[#0a0a0a] text-white selection:bg-[#A3D1FF] selection:text-black min-h-screen font-sans">
       
-      {/* --- HERO SECTION: The Visual Hook --- */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
-        <div className="max-w-4xl text-center z-10 pt-20">
+      {/* --- HERO SECTION --- */}
+      <section className="relative pt-32 pb-20 px-6 overflow-hidden">
+        <div className="max-w-4xl mx-auto text-center z-10">
           <div className="inline-flex items-center gap-2 py-1 px-4 rounded-full bg-white/5 border border-white/10 text-[#A3D1FF] text-sm font-medium mb-8">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A3D1FF] opacity-75"></span>
@@ -30,114 +49,76 @@ const BinnsMediaPage = () => {
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
             Re-engineering the digital home for the voices that matter. 
-            A high-performance media hub built with React 18, Supabase, and a focus on radical speed.
+            A multi-platform hub designed for speed and scale.
           </p>
         </div>
 
-        {/* 3D Mockup - This is the component we created in Step 1 */}
-        <div className="w-full max-w-6xl -mt-10">
-          <BMG3DMockup />
-        </div>
-      </section>
-
-      {/* --- STRATEGIC OVERVIEW: Hard Data --- */}
-      <section className="py-24 border-y border-white/5 bg-gradient-to-b from-transparent via-white/[0.02] to-transparent">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
-          {[
-            { label: 'Speed Increase', value: '60%', icon: Zap },
-            { label: 'SEO Performance', value: '98/100', icon: Globe },
-            { label: 'New Users', value: '+40%', icon: BarChart3 },
-            { label: 'Architecture', value: 'Type-Safe', icon: ShieldCheck },
-          ].map((stat, i) => (
-            <div key={i} className="group cursor-default">
-              <stat.icon className="w-6 h-6 text-gray-600 group-hover:text-[#A3D1FF] transition-colors mx-auto mb-4" />
-              <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
-              <div className="text-gray-500 uppercase text-xs tracking-widest">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* --- NARRATIVE: The Problem & The Solution --- */}
-      <section className="py-32 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-start">
-        <div>
-          <h2 className="text-4xl font-bold mb-8">The Friction</h2>
-          <p className="text-gray-400 text-lg leading-relaxed mb-8">
-            Binns Media Group (BMG) manages hundreds of hours of high-fidelity video and audio content. Their legacy platform was buckling under the weight of the media, leading to slow load times and a poor mobile experience for listeners on the go.
-          </p>
-          <div className="space-y-6">
-            <div className="flex gap-4 p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#A3D1FF]/50 transition-colors">
-              <Star className="text-[#A3D1FF] shrink-0" />
-              <p className="text-gray-300"><strong className="text-white">Goal:</strong> Centralize podcasts, TV, and exclusive talent interviews into one seamless ecosystem.</p>
-            </div>
-            <div className="flex gap-4 p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#A3D1FF]/50 transition-colors">
-              <Code2 className="text-[#A3D1FF] shrink-0" />
-              <p className="text-gray-300"><strong className="text-white">Solution:</strong> A custom Headless CMS architecture using Supabase for real-time data sync and React 18 for non-blocking UI updates.</p>
-            </div>
+        {/* --- THE INTERACTIVE VIEWER (Replaces the "TT" movement) --- */}
+        <div className="max-w-6xl mx-auto mt-12">
+          {/* Viewer Controls */}
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            {[
+              { id: 'desktop', icon: Monitor, label: 'Main Site' },
+              { id: 'mobile', icon: Smartphone, label: 'Mobile App' },
+              { id: 'admin', icon: Settings, label: 'Admin Panel' }
+            ].map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id as any)}
+                className={`flex items-center gap-2 px-6 py-3 rounded-xl border transition-all ${
+                  activeTab === tab.id 
+                    ? 'bg-[#A3D1FF] text-black border-[#A3D1FF]' 
+                    : 'bg-white/5 border-white/10 text-gray-400 hover:bg-white/10'
+                }`}
+              >
+                <tab.icon size={18} />
+                <span className="font-bold uppercase text-xs tracking-wider">{tab.label}</span>
+              </button>
+            ))}
           </div>
-        </div>
-        
-        {/* Technical Deep Dive Block */}
-        <div className="relative group">
-          <div className="absolute -inset-1 bg-gradient-to-r from-[#A3D1FF] to-blue-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-          <div className="relative bg-[#111] border border-white/10 p-10 rounded-3xl shadow-3xl">
-            <h3 className="text-2xl font-bold mb-6">Engineering Decisions</h3>
-            <ul className="space-y-8 text-gray-400">
-              <li className="flex gap-5">
-                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                  <Rocket className="text-white w-5 h-5" />
+
+          {/* Browser-style Container */}
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#A3D1FF] to-blue-600 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
+            <div className="relative bg-[#111] border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
+              {/* Browser Top Bar */}
+              <div className="bg-white/5 border-b border-white/10 px-4 py-3 flex items-center justify-between">
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/50"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500/50"></div>
                 </div>
-                <div>
-                  <h4 className="text-white font-bold mb-1">Optimized Asset Delivery</h4>
-                  <p className="text-sm">Implemented lazy-loading and WebP image optimization, reducing initial bundle size by 45%.</p>
+                <div className="text-[10px] text-gray-500 font-mono truncate max-w-[200px]">
+                  {views[activeTab].url}
                 </div>
-              </li>
-              <li className="flex gap-5">
-                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                  <ShieldCheck className="text-white w-5 h-5" />
+                <div className="w-10"></div>
+              </div>
+
+              {/* Iframe Content Area */}
+              <div className={`transition-all duration-500 ease-in-out bg-black ${
+                activeTab === 'mobile' ? 'max-w-[375px] mx-auto' : 'w-full'
+              }`}>
+                <div className={`relative ${activeTab === 'mobile' ? 'aspect-[9/19]' : 'aspect-video'}`}>
+                  <iframe 
+                    src={views[activeTab].url}
+                    className="w-full h-full border-none"
+                    title={views[activeTab].title}
+                    loading="lazy"
+                  />
+                  {/* Optional Overlay to describe the view */}
+                  <div className="absolute bottom-6 right-6 p-4 bg-black/80 backdrop-blur-md border border-white/10 rounded-lg max-w-[240px] pointer-events-none">
+                     <h4 className="text-white font-bold text-sm mb-1">{views[activeTab].title}</h4>
+                     <p className="text-gray-400 text-[11px]">{views[activeTab].description}</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-white font-bold mb-1">Infrastructure</h4>
-                  <p className="text-sm">Utilized Supabase Row Level Security (RLS) to protect exclusive talent data while maintaining speed.</p>
-                </div>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* --- TESTIMONIAL: The Result --- */}
-      <section className="py-32 bg-[#111] border-y border-white/5">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="relative inline-block mb-10">
-            <img 
-              src="https://i.imgur.com/NKjkUC9.jpeg" 
-              className="w-28 h-28 rounded-full border-4 border-[#A3D1FF] shadow-2xl relative z-10" 
-              alt="Omar Turner, BMG CEO" 
-            />
-            <div className="absolute -bottom-2 -right-2 bg-white text-black p-2 rounded-full z-20">
-              <PlayCircle size={20} />
-            </div>
-          </div>
-          <blockquote className="text-3xl italic text-gray-200 mb-10 leading-snug tracking-tight">
-            "Marc executed the vision perfectly. He’s big on communication and ensures the client is completely satisfied at each step. He didn't just build a site; he built our future platform."
-          </blockquote>
-          <p className="font-bold text-white text-xl">Omar Turner</p>
-          <p className="text-[#A3D1FF] uppercase text-xs tracking-[0.2em] mt-2 font-bold">CEO, Binns Media Group</p>
-        </div>
-      </section>
-
-      {/* --- FOOTER CTA --- */}
-      <section className="py-40 text-center px-6">
-        <h2 className="text-5xl md:text-7xl font-bold mb-12 tracking-tighter">Your project is next.</h2>
-        <button 
-          onClick={() => navigate('/contact')}
-          className="group relative px-12 py-6 bg-white text-black font-black rounded-full transition-all hover:pr-16 active:scale-95"
-        >
-          LET'S WORK TOGETHER
-          <ArrowRight className="absolute right-8 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all" />
-        </button>
-      </section>
+      {/* --- REST OF THE PAGE (Stats, Narrative, Testimonial) --- */}
+      {/* ... keep your existing Stats, Narrative, and Footer CTA here ... */}
     </div>
   );
 };
