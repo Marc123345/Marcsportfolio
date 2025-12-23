@@ -1,6 +1,8 @@
+// src/pages/Layout.tsx
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { Menu as MenuIcon, X, ChevronDown, Linkedin, Calendar, Trophy, ArrowRight, Globe, Palette, Award, ShoppingCart } from 'lucide-react';
+import { Menu as MenuIcon, X, ChevronDown, Linkedin, Calendar, Trophy, ArrowRight, Award, MessageSquare } from 'lucide-react';
 import { useAppStore } from '@/stores/useAppStore';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -26,153 +28,49 @@ const navigationLinks: NavigationItem[] = [
       {
         title: 'Design Services',
         items: [
-          {
-            label: 'UI/UX Design',
-            to: '/services/design',
-            description: 'Beautiful, intuitive interfaces that convert'
-          },
-          {
-            label: 'Design Systems',
-            to: '/services/design-systems',
-            description: 'Scalable design frameworks'
-          },
-          {
-            label: 'Brand Design',
-            to: '/services/brand-design',
-            description: 'Complete brand identity solutions'
-          }
+          { label: 'UI/UX Design', to: '/services/design', description: 'Beautiful, intuitive interfaces that convert' },
+          { label: 'Design Systems', to: '/services/design-systems', description: 'Scalable design frameworks' },
+          { label: 'Brand Design', to: '/services/brand-design', description: 'Complete brand identity solutions' }
         ]
       },
       {
         title: 'Development Services',
         items: [
-          {
-            label: 'Web Development',
-            to: '/services/web-development',
-            description: 'Custom websites and applications'
-          },
-          {
-            label: 'SaaS Development',
-            to: '/services/saas',
-            description: 'End-to-end SaaS solutions'
-          },
-          {
-            label: 'API Development',
-            to: '/services/api',
-            description: 'Robust APIs and integrations'
-          }
+          { label: 'Web Development', to: '/services/web-development', description: 'Custom websites and applications' },
+          { label: 'SaaS Development', to: '/services/saas', description: 'End-to-end SaaS solutions' },
+          { label: 'API Development', to: '/services/api', description: 'Robust APIs and integrations' }
         ]
       },
       {
         title: 'Specialized Services',
         items: [
-          {
-            label: 'AI Integration',
-            to: '/services/ai-integration',
-            description: 'AI-powered solutions and automation'
-          },
-          {
-            label: 'Cybersecurity',
-            to: '/services/cybersecurity',
-            description: 'Comprehensive security solutions'
-          },
-          {
-            label: 'Startup MVP',
-            to: '/services/startup-mvp',
-            description: 'Validate and launch your idea'
-          },
-          {
-            label: 'Design Mentorship',
-            to: '/services/mentorship',
-            description: 'Design mentorship and guidance'
-          },
-          {
-            label: 'Marketing Partner',
-            to: '/services/fractional-cmo',
-            description: 'Design & dev execution for marketing strategy'
-          }
+          { label: 'AI Integration', to: '/services/ai-integration', description: 'AI-powered solutions and automation' },
+          { label: 'Cybersecurity', to: '/services/cybersecurity', description: 'Comprehensive security solutions' },
+          { label: 'Startup MVP', to: '/services/startup-mvp', description: 'Validate and launch your idea' },
+          { label: 'Design Mentorship', to: '/services/mentorship', description: 'Design mentorship and guidance' },
+          { label: 'Marketing Partner', to: '/services/fractional-cmo', description: 'Design & dev execution for marketing strategy' }
         ]
       }
     ]
   },
   { 
-    label: 'Case Studies',
+    label: 'Work',
+    to: '/work', 
     children: [
-      {
-        title: 'Featured Projects',
-        items: [
-          { 
-            label: 'Binns Media Group', 
-            to: '/work/case-studies/binns-media',
-            description: 'Digital media platform transformation'
-          },
-          { 
-            label: 'Untapped Africa', 
-            to: '/work/case-studies/untapped-africa',
-            description: 'Water infrastructure solutions platform'
-          },
-          { 
-            label: 'iLight Care', 
-            to: '/work/case-studies/ilight',
-            description: 'Healthcare technology platform'
-          }
-        ]
-      },
-      {
-        title: 'All Case Studies',
-        items: [
-          { 
-            label: 'View All Projects', 
-            to: '/work',
-            description: 'Complete portfolio and case studies'
-          }
-        ]
-      }
-    ]
-  },
-  { 
-    label: 'Work By Industry',
-    children: [
-      {
-        title: 'Industries',
-        items: [
-          { 
-            label: 'Media & Entertainment', 
-            to: '/work?filter=media',
-            description: 'Content platforms and media websites'
-          },
-          { 
-            label: 'SaaS & Technology', 
-            to: '/work?filter=saas',
-            description: 'Software platforms and tech solutions'
-          },
-          { 
-            label: 'Health & Wellness', 
-            to: '/work?filter=wellness',
-            description: 'Healthcare technology platforms'
-          },
-          { 
-            label: 'Automotive', 
-            to: '/work?filter=automotive',
-            description: 'Dealership and automotive solutions'
-          },
-          { 
-            label: 'Professional Services', 
-            to: '/work?filter=professional',
-            description: 'B2B, legal, and professional services'
-          },
-          { 
-            label: 'Social Impact', 
-            to: '/work?filter=social-impact',
-            description: 'Non-profit and social good platforms'
-          },
-          { 
-            label: 'Sports & Entertainment', 
-            to: '/work?filter=sports',
-            description: 'Sports coaching and entertainment'
-          }
-        ]
-      }
+        {
+            title: 'Case Studies',
+            items: [
+                { label: 'Binns Media Group', to: '/work/case-studies/binns-media', description: 'Digital media platform transformation' },
+                { label: 'Untapped Africa', to: '/work/case-studies/untapped-africa', description: 'Water infrastructure solutions platform' },
+                { label: 'iLight Care', to: '/work/case-studies/ilight', description: 'Healthcare technology platform' }
+            ]
+        },
+        {
+            title: 'Full Portfolio',
+            items: [
+                { label: 'View All Projects', to: '/work', description: 'Complete portfolio and case studies' }
+            ]
+        }
     ]
   },
   { label: 'Blog', to: '/blog' },
@@ -183,26 +81,10 @@ const navigationLinks: NavigationItem[] = [
       {
         title: 'Free Tools',
         items: [
-          { 
-            label: 'Website Analyzer', 
-            to: '/tools/website-analyzer',
-            description: 'Get an instant analysis of your website'
-          },
-          { 
-            label: 'ROI Calculator', 
-            to: '/tools/roi-calculator',
-            description: 'Calculate your website investment returns'
-          },
-          { 
-            label: 'Project Timeline', 
-            to: '/tools/project-timeline',
-            description: 'See our transparent development process'
-          },
-          { 
-            label: 'AI Optimization', 
-            to: '/tools/ai-crawler-optimization',
-            description: 'Optimize your site for AI crawlers'
-          }
+          { label: 'Website Analyzer', to: '/tools/website-analyzer', description: 'Get an instant analysis of your website' },
+          { label: 'ROI Calculator', to: '/tools/roi-calculator', description: 'Calculate your website investment returns' },
+          { label: 'Project Timeline', to: '/tools/project-timeline', description: 'See our transparent development process' },
+          { label: 'AI Optimization', to: '/tools/ai-crawler-optimization', description: 'Optimize your site for AI crawlers' }
         ]
       },
     ]
@@ -217,7 +99,6 @@ export default function Layout() {
   const { isMenuOpen, setMenuOpen } = useAppStore();
   const [isScrolled, setIsScrolled] = useState(false);
   const [expandedMobileSection, setExpandedMobileSection] = useState<string | null>(null);
-  const [expandedDesktopSection, setExpandedDesktopSection] = useState<string | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
   const lastScrollY = useRef(0);
@@ -253,7 +134,6 @@ export default function Layout() {
   useEffect(() => {
     setMenuOpen(false);
     setExpandedMobileSection(null);
-    setExpandedDesktopSection(null);
   }, [location.pathname, setMenuOpen]);
 
   // Handle keyboard navigation and clicks outside menu
@@ -261,12 +141,12 @@ export default function Layout() {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setMenuOpen(false);
-        setExpandedDesktopSection(null);
       }
     };
 
     const handleClickOutside = (e: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+      // Simple check to close mobile menu if clicking outside of the menu container
+      if (isMenuOpen && menuRef.current && !menuRef.current.contains(e.target as Node) && headerRef.current && !headerRef.current.contains(e.target as Node)) {
         setMenuOpen(false);
       }
     };
@@ -278,7 +158,7 @@ export default function Layout() {
       document.removeEventListener('keydown', handleEscape);
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [setMenuOpen]);
+  }, [setMenuOpen, isMenuOpen]);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -296,15 +176,10 @@ export default function Layout() {
     navigate(to);
     setMenuOpen(false);
     setExpandedMobileSection(null);
-    setExpandedDesktopSection(null);
   };
 
   const toggleMobileSection = (label: string) => {
     setExpandedMobileSection(expandedMobileSection === label ? null : label);
-  };
-
-  const toggleDesktopSection = (label: string) => {
-    setExpandedDesktopSection(expandedDesktopSection === label ? null : label);
   };
 
   // Get current page title based on location
@@ -352,7 +227,7 @@ export default function Layout() {
       {/* Navigation */}
       <motion.header 
         ref={headerRef}
-        className={`fixed w-full z-50 transition-all duration-300 ${
+        className={`fixed w-full z-[100] transition-all duration-300 ${
           isScrolled ? 'bg-[#1b1b1b]/95 backdrop-blur-md shadow-md' : 'bg-transparent'
         }`}
         initial={{ y: 0 }}
@@ -365,11 +240,11 @@ export default function Layout() {
           top: 0,
           left: 0,
           right: 0,
-          zIndex: 50
+          zIndex: 100
         }}
       >
-        <div className="container-custom">
-          <div className="flex items-center justify-between h-[4.236rem]">
+        <div className="container-custom mx-auto px-6">
+          <div className="flex items-center justify-between h-20">
             <div className="flex-shrink-0">
               <MagneticButton>
                 <button 
@@ -381,7 +256,7 @@ export default function Layout() {
                   <img 
                     src="/images/marc-friedman-primary.svg" 
                     alt="Marc Friedman logo - Full Stack Designer & Developer" 
-                    className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain pt-2 sm:pt-3 md:pt-4"
+                    className="h-8 w-auto object-contain transition-all duration-300"
                     loading="eager"
                     width="80"
                     height="32"
@@ -389,121 +264,154 @@ export default function Layout() {
                 </button>
               </MagneticButton>
             </div>
-
-            {/* Menu Button */}
+            
+            {/* Desktop Navigation Links (Restored Simple Links) */}
+            <nav className="hidden lg:flex items-center space-x-1 relative z-50" aria-label="Main Navigation">
+                {navigationLinks.map((item) => (
+                    <div 
+                        key={item.label}
+                        className="relative h-full flex items-center"
+                    >
+                        <Link
+                            to={item.to || '/'}
+                            className={`flex items-center gap-1 px-4 py-2 text-sm font-semibold transition-colors duration-200 text-white hover:text-[#A3D1FF]`}
+                            // Removing rounded-none/explicit styling to use original CSS or Tailwind defaults
+                        >
+                            {item.label}
+                            {item.children && (
+                                <ChevronDown className={`w-3 h-3 transition-transform`} aria-hidden="true" />
+                            )}
+                            {item.badge && (
+                                <span className="ml-1 px-2 py-0.5 bg-[#A3D1FF] text-black text-[10px] font-bold uppercase tracking-wider">
+                                    {item.badge}
+                                </span>
+                            )}
+                        </Link>
+                        
+                        {/* Note: Complex nested dropdowns are now hidden in this simple navigation state. 
+                            If you need the old simple dropdowns, we would need the CSS/JS for them.
+                            For now, clicking the top-level link navigates to the 'to' path if present. */}
+                    </div>
+                ))}
+            </nav>
+            
+            {/* Contact Button & Mobile Menu Button */}
             <div className="flex items-center gap-4">
-              <button 
-                onClick={() => setMenuOpen(!isMenuOpen)}
-                className="p-2 text-white hover:text-[#A3D1FF] transition-colors"
-                aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-                aria-expanded={isMenuOpen}
-                title={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-              >
-                <AnimatePresence mode="wait">
-                  {isMenuOpen ? (
-                    <motion.div
-                      key="close"
-                      initial={{ rotate: -90, opacity: 0 }}
-                      animate={{ rotate: 0, opacity: 1 }}
-                      exit={{ rotate: 90, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <X className="w-6 h-6" />
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key="menu"
-                      initial={{ rotate: 90, opacity: 0 }}
-                      animate={{ rotate: 0, opacity: 1 }}
-                      exit={{ rotate: -90, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <MenuIcon className="w-6 h-6" />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </button>
+                <a
+                    href={calendlyUXAuditLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hidden lg:inline-flex items-center px-5 py-2 text-sm font-bold bg-[#A3D1FF] text-black 
+                                hover:bg-white transition-all duration-300 relative z-50 shadow-lg"
+                >
+                    Book Free Audit
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                </a>
+
+                {/* Mobile Menu Button */}
+                <button 
+                  onClick={() => setMenuOpen(!isMenuOpen)}
+                  className="p-2 text-white hover:text-[#A3D1FF] transition-colors lg:hidden"
+                  aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+                  aria-expanded={isMenuOpen}
+                  title={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+                >
+                    <AnimatePresence mode="wait">
+                      {isMenuOpen ? (
+                        <motion.div
+                          key="close"
+                          initial={{ rotate: -90, opacity: 0 }}
+                          animate={{ rotate: 0, opacity: 1 }}
+                          exit={{ rotate: 90, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <X className="w-6 h-6" />
+                        </motion.div>
+                      ) : (
+                        <motion.div
+                          key="menu"
+                          initial={{ rotate: 90, opacity: 0 }}
+                          animate={{ rotate: 0, opacity: 1 }}
+                          exit={{ rotate: -90, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <MenuIcon className="w-6 h-6" />
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                </button>
             </div>
           </div>
         </div>
 
-        {/* Menu Overlay */}
+        {/* Mobile Menu Overlay (Kept the mobile accordion functionality) */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div 
               ref={menuRef}
-              className="fixed inset-0 bg-black/95 backdrop-blur-lg overflow-y-auto"
-              style={{ top: '4.236rem', height: 'calc(100vh - 4.236rem)' }}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
+              className="fixed inset-0 bg-black/95 backdrop-blur-lg overflow-y-auto lg:hidden"
+              style={{ top: '5rem', height: 'calc(100vh - 5rem)', marginTop: '0', paddingTop: '0' }}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 100 }}
               transition={{ duration: 0.3 }}
             >
               <div className="h-full overflow-y-auto">
-                <div className="container-custom py-[1.618rem]">
-                  <nav className="space-y-[1.618rem]" aria-label="Main Navigation">
+                <div className="container-custom py-8 px-6">
+                  <nav className="space-y-0" aria-label="Main Navigation">
+                    {/* Explicit Home Link */}
                     <Link
-                      to="/"
-                      className="block px-4 py-[0.618rem] text-lg font-semibold text-white hover:text-[#A3D1FF] transition-colors"
-                      onClick={() => setMenuOpen(false)}
+                       to="/"
+                       className="block px-4 py-3 text-xl font-semibold text-white hover:text-[#A3D1FF] hover:bg-white/5 transition-colors duration-200 border-b border-white/10"
+                       onClick={() => setMenuOpen(false)}
                     >
-                      Home
+                       Home
                     </Link>
+                    
                     {navigationLinks.map((item) => (
-                      <div key={item.label}>
+                      <div key={item.label} className="border-b border-white/10 last:border-b-0">
                         {item.children ? (
-                          <div className="space-y-[1.618rem]">
+                            // Mobile Dropdown Section (Accordion)
+                          <div className="space-y-0">
                             <button
                               onClick={() => toggleMobileSection(item.label)}
-                              className="w-full flex items-center justify-between px-4 py-[0.618rem] text-lg font-semibold text-white hover:text-[#A3D1FF] transition-colors"
+                              className="w-full flex items-center justify-between px-4 py-3 text-xl font-semibold text-white hover:text-[#A3D1FF] transition-colors hover:bg-white/5"
                               aria-expanded={expandedMobileSection === item.label}
-                              aria-controls={`menu-${item.label.toLowerCase()}`}
+                              aria-controls={`mobile-menu-${item.label.toLowerCase().replace(/\s/g, '-')}`}
                             >
                               {item.label}
                               <ChevronDown 
                                 className={`w-5 h-5 transition-transform duration-300 ${
-                                  expandedMobileSection === item.label ? 'rotate-180' : ''
+                                  expandedMobileSection === item.label ? 'rotate-180 text-[#A3D1FF]' : ''
                                 }`} 
                                 aria-hidden="true"
                               />
                             </button>
-                            <AnimatePresence>
+                            <AnimatePresence initial={false}>
                               {expandedMobileSection === item.label && (
                                 <motion.div 
-                                  id={`menu-${item.label.toLowerCase()}`}
-                                  className="pl-4 space-y-[1.618rem]"
+                                  id={`mobile-menu-${item.label.toLowerCase().replace(/\s/g, '-')}`}
+                                  className="pl-4 pb-4 overflow-hidden"
                                   initial={{ height: 0, opacity: 0 }}
                                   animate={{ height: 'auto', opacity: 1 }}
                                   exit={{ height: 0, opacity: 0 }}
                                   transition={{ duration: 0.3 }}
                                 >
                                   {item.children.map((section, idx) => (
-                                    <div key={idx}>
-                                      <div className="px-4 py-2">
-                                        <h3 className="text-sm font-semibold text-[#A3D1FF] mb-1">
-                                          {section.title}
-                                        </h3>
-                                        {section.description && (
-                                          <p className="text-xs text-gray-500">{section.description}</p>
-                                        )}
-                                      </div>
-                                      <ul className="space-y-[0.618rem]">
+                                    <div key={idx} className="mt-4">
+                                      <h3 className="text-sm font-bold uppercase tracking-wider text-[#A3D1FF] px-4 pt-2 pb-1">
+                                        {section.title}
+                                      </h3>
+                                      <ul className="space-y-1">
                                         {section.items.map((subItem, subIdx) => (
                                           <li key={subIdx}>
                                             <Link
                                               to={subItem.to}
-                                              className="block px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-colors group"
+                                              className="block px-4 py-2 text-base text-gray-300 hover:text-white hover:bg-white/10 transition-colors group flex items-center gap-2"
                                               onClick={() => setMenuOpen(false)}
                                             >
-                                              <div className="flex items-center justify-between">
-                                                <span className="block font-medium group-hover:text-[#A3D1FF] transition-colors">{subItem.label}</span>
-                                                <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                                              </div>
-                                              {subItem.description && (
-                                                <span className="block text-sm text-gray-400 mt-1">
-                                                  {subItem.description}
-                                                </span>
-                                              )}
+                                                <ArrowRight className="w-4 h-4 text-[#A3D1FF] opacity-70 group-hover:opacity-100 transition-opacity" />
+                                                <span className='flex-1'>{subItem.label}</span>
                                             </Link>
                                           </li>
                                         ))}
@@ -515,64 +423,47 @@ export default function Layout() {
                             </AnimatePresence>
                           </div>
                         ) : (
+                            // Simple Link (Blog, About, Contact)
                           <Link
                             to={item.to || '/'}
-                            className="flex items-center justify-between px-4 py-[0.618rem] text-lg font-semibold text-white hover:text-[#A3D1FF] transition-colors"
+                            className="flex items-center justify-between px-4 py-3 text-xl font-semibold text-white hover:text-[#A3D1FF] hover:bg-white/5 transition-colors duration-200"
                             onClick={() => setMenuOpen(false)}
                           >
                             <span>{item.label}</span>
-                            <div className="flex items-center gap-2">
-                              {item.badge && (
-                                <span className="px-2 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-xs">
-                                  {item.badge}
+                            {item.badge && (
+                                <span className="ml-2 px-2 py-0.5 bg-[#A3D1FF] text-black text-xs font-bold uppercase tracking-wider">
+                                    {item.badge}
                                 </span>
-                              )}
-                              {item.popular && (
-                                <span className="px-2 py-1 bg-green-500/10 text-green-400 rounded-full text-xs">
-                                  Popular
-                                </span>
-                              )}
-                            </div>
+                            )}
                           </Link>
                         )}
                       </div>
                     ))}
                   </nav>
 
-                  {/* Social Links */}
-                  <div className="mt-[2.618rem] px-4 space-y-[1.618rem]">
+                  {/* Mobile Footer/Social Links */}
+                  <div className="mt-12 px-4 space-y-4 border-t border-white/10 pt-6">
                     <a 
                       href="https://www.linkedin.com/in/portfolio2/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 text-gray-300 hover:text-[#0077B5] transition-colors"
+                      className="flex items-center gap-3 text-gray-300 hover:text-[#0077B5] transition-colors text-lg"
                       aria-label="Marc Friedman's LinkedIn profile"
                       onClick={() => setMenuOpen(false)}
                     >
-                      <Linkedin className="w-5 h-5" aria-hidden="true" />
+                      <Linkedin className="w-6 h-6" aria-hidden="true" />
                       <span>LinkedIn</span>
                     </a>
                     <a 
                       href={calendlyUXAuditLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 text-gray-300 hover:text-[#00A2FF] transition-colors"
+                      className="flex items-center gap-3 text-gray-300 hover:text-[#00A2FF] transition-colors text-lg"
                       aria-label="Schedule a call with Marc Friedman"
                       onClick={() => setMenuOpen(false)}
                     >
-                      <Calendar className="w-5 h-5" aria-hidden="true" />
+                      <Calendar className="w-6 h-6" aria-hidden="true" />
                       <span>Schedule a Call</span>
-                    </a>
-                    <a 
-                      href="https://www.awwwards.com/marc-friedman/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3 text-gray-300 hover:text-[#FFB800] transition-colors"
-                      aria-label="Marc Friedman's Awwwards profile"
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      <Trophy className="w-5 h-5" aria-hidden="true" />
-                      <span>Awwwards</span>
                     </a>
                   </div>
                 </div>
@@ -583,14 +474,14 @@ export default function Layout() {
       </motion.header>
 
       {/* Main Content */}
-      <main className="relative pt-[4.236rem]">
+      <main className="relative pt-20"> 
         <Outlet />
       </main>
 
-      {/* Footer */}
+      {/* Footer (Restored original rounded classes where possible) */}
       <footer className="bg-[#1b1b1b] border-t border-white/10">
-        <div className="container-custom section-spacing-sm">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+        <div className="container-custom section-spacing-sm mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12">
             {/* Brand Section */}
             <div>
               <div className="mb-6">
@@ -606,7 +497,7 @@ export default function Layout() {
                 </p>
               </div>
               
-              {/* Social Links */}
+              {/* Social Links - Re-adding a rounded look to match original */}
               <div className="flex gap-3">
                 <a 
                   href="https://www.linkedin.com/in/portfolio2/"
@@ -643,99 +534,44 @@ export default function Layout() {
               <h3 className="text-white font-semibold mb-6 text-lg">Services</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link
-                    to="/services/web-development"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Web Development
-                  </Link>
+                  <Link to="/services/web-development" className="text-gray-400 hover:text-white transition-colors">Web Development</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/services/design"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    UI/UX Design
-                  </Link>
+                  <Link to="/services/design" className="text-gray-400 hover:text-white transition-colors">UI/UX Design</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/services/saas"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    SaaS Development
-                  </Link>
+                  <Link to="/services/saas" className="text-gray-400 hover:text-white transition-colors">SaaS Development</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/services/api"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    API Development
-                  </Link>
+                  <Link to="/services/api" className="text-gray-400 hover:text-white transition-colors">API Development</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/services/startup-mvp"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Startup MVP
-                  </Link>
+                  <Link to="/services/startup-mvp" className="text-gray-400 hover:text-white transition-colors">Startup MVP</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/services/mentorship"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Mentorship
-                  </Link>
+                  <Link to="/services/mentorship" className="text-gray-400 hover:text-white transition-colors">Mentorship</Link>
                 </li>
               </ul>
             </div>
             
             {/* Portfolio */}
             <div>
-              <h3 className="text-white font-semibold mb-6 text-lg">Portfolio</h3>
+              <h3 className="text-white font-semibold mb-6 text-lg">Portfolio & Work</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link
-                    to="/work"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    All Projects
-                  </Link>
+                  <Link to="/work" className="text-gray-400 hover:text-white transition-colors">All Projects</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/work/case-studies/binns-media"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Binns Media Group
-                  </Link>
+                  <Link to="/work/case-studies/binns-media" className="text-gray-400 hover:text-white transition-colors">Binns Media Group</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/work/case-studies/untapped-africa"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Untapped Africa
-                  </Link>
+                  <Link to="/work/case-studies/untapped-africa" className="text-gray-400 hover:text-white transition-colors">Untapped Africa</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/work/case-studies/automarginx"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    AutoMarginX
-                  </Link>
+                  <Link to="/work/case-studies/automarginx" className="text-gray-400 hover:text-white transition-colors">AutoMarginX</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/work/case-studies/ask-africa"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Ask Africa
-                  </Link>
+                  <Link to="/work/case-studies/ask-africa" className="text-gray-400 hover:text-white transition-colors">Ask Africa</Link>
                 </li>
                 <li>
                   <a 
@@ -749,42 +585,6 @@ export default function Layout() {
                     <span>Dribbble</span>
                   </a>
                 </li>
-                <li>
-                  <a 
-                    href="https://g.co/kgs/a8iqMhU"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-400 hover:text-[#4285F4] transition-colors group"
-                    aria-label="Google Business Profile"
-                  >
-                    <Globe className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                    <span>5.0/5 Google Reviews</span>
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="https://www.designrush.com/agency/profile/marc-friedman-design-agency"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-400 hover:text-[#FF3D2E] transition-colors group"
-                    aria-label="Design Rush Profile"
-                  >
-                    <Palette className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                    <span>Design Rush</span>
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="https://clutch.co/profile/marc-friedman-design-agency"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-400 hover:text-[#FF6B35] transition-colors group"
-                    aria-label="Clutch Profile"
-                  >
-                    <Award className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                    <span>Clutch</span>
-                  </a>
-                </li>
               </ul>
             </div>
             
@@ -793,90 +593,45 @@ export default function Layout() {
               <h3 className="text-white font-semibold mb-6 text-lg">Free Tools</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link
-                    to="/tools/website-analyzer"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Website Analyzer
-                  </Link>
+                  <Link to="/tools/website-analyzer" className="text-gray-400 hover:text-white transition-colors">Website Analyzer</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/tools/roi-calculator"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    ROI Calculator
-                  </Link>
+                  <Link to="/tools/roi-calculator" className="text-gray-400 hover:text-white transition-colors">ROI Calculator</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/tools/project-timeline"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Project Timeline
-                  </Link>
+                  <Link to="/tools/project-timeline" className="text-gray-400 hover:text-white transition-colors">Project Timeline</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/tools/ai-crawler-optimization"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    AI Optimization
-                  </Link>
+                  <Link to="/tools/ai-crawler-optimization" className="text-gray-400 hover:text-white transition-colors">AI Optimization</Link>
                 </li>
               </ul>
             </div>
             
-            {/* Company */}
+            {/* Company & Legal */}
             <div>
-              <h3 className="text-white font-semibold mb-6 text-lg">Company</h3>
+              <h3 className="text-white font-semibold mb-6 text-lg">Company & Resources</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link
-                    to="/about"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    About Marc
-                  </Link>
+                  <Link to="/about" className="text-gray-400 hover:text-white transition-colors">About Marc</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/blog"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Blog & Insights
-                  </Link>
+                  <Link to="/blog" className="text-gray-400 hover:text-white transition-colors">Blog & Insights</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/press"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Press & Media
-                  </Link>
+                  <Link to="/press" className="text-gray-400 hover:text-white transition-colors">Press & Media</Link>
                 </li>
                 <li>
-                  <Link
-                    to="/contact"
-                    className="text-gray-400 hover:text-white transition-colors"
+                  <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link>
+                </li>
+                <li>
+                  <a 
+                    href="mailto:marcf@marcfriedmanwebdesign.com"
+                    className="text-gray-400 hover:text-[#A3D1FF] transition-colors block text-sm mt-4"
                   >
-                    Contact
-                  </Link>
+                    marcf@marcfriedmanwebdesign.com
+                  </a>
                 </li>
               </ul>
-            </div>
-
-            {/* Get In Touch */}
-            <div>
-              <h3 className="text-white font-semibold mb-6 text-lg">Get In Touch</h3>
-              <div className="space-y-2">
-                <a 
-                  href="mailto:marcf@marcfriedmanwebdesign.com"
-                  className="text-gray-400 hover:text-white transition-colors block"
-                >
-                  marcf@marcfriedmanwebdesign.com
-                </a>
-              </div>
             </div>
           </div>
           
