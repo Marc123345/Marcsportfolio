@@ -7,7 +7,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 
 // Import our interactive component
-import BMG3DMockup from './BMG3DMockup';
+import BMG3DMockup from '@/components/BMG3DMockup';
 
 const BinnsMediaPage = () => {
   const navigate = useNavigate();

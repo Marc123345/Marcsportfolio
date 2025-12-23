@@ -346,55 +346,7 @@ function App() {
               </Suspense>
             }
           />
-          <Route
-            path="blog/building-data-driven-design-systems"
-            element={
-              <Suspense fallback={<PageLoader />}>
-                {lazyLoad(() => import('@/pages/blog/building-data-driven-design-systems'))}
-              </Suspense>
-            }
-          />
-          <Route
-            path="blog/conversion-rate-optimization-techniques"
-            element={
-              <Suspense fallback={<PageLoader />}>
-                {lazyLoad(() => import('@/pages/blog/conversion-rate-optimization-techniques'))}
-              </Suspense>
-            }
-          />
-          <Route
-            path="blog/designing-platforms-for-automotive-dealers"
-            element={
-              <Suspense fallback={<PageLoader />}>
-                {lazyLoad(() => import('@/pages/blog/designing-platforms-for-automotive-dealers'))}
-              </Suspense>
-            }
-          />
-          <Route
-            path="blog/future-of-saas-web-design"
-            element={
-              <Suspense fallback={<PageLoader />}>
-                {lazyLoad(() => import('@/pages/blog/future-of-saas-web-design'))}
-              </Suspense>
-            }
-          />
-          <Route
-            path="blog/mobile-first-design-principles"
-            element={
-              <Suspense fallback={<PageLoader />}>
-                {lazyLoad(() => import('@/pages/blog/mobile-first-design-principles'))}
-              </Suspense>
-            }
-          />
-          <Route
-            path="blog/optimizing-websites-for-ai-crawlers"
-            element={
-              <Suspense fallback={<PageLoader />}>
-                {lazyLoad(() => import('@/pages/blog/optimizing-websites-for-ai-crawlers'))}
-              </Suspense>
-            }
-          />
-          
+
           {/* Tools Routes */}
           <Route
             path="tools/website-analyzer"
