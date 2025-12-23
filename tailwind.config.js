@@ -13,85 +13,78 @@ export default {
     extend: {
       fontFamily: {
         asen: ['Asen Pro', 'sans-serif'],
-        inter: ['Roboto', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
+        // Using Roboto as the sleek default for B2B authority
+        sans: ['Roboto', 'sans-serif'], 
       },
       colors: {
-        primary: '#A3D1FF',
-        dark: '#1b1b1b',
-        'dark-lighter': '#212529',
-        'gray-custom': '#9CA3AF',
-        'primary-transparent': '#A3D1FF1A',
+        primary: {
+          DEFAULT: '#A3D1FF',
+          dark: '#92bce6',
+          transparent: 'rgba(163, 209, 255, 0.1)',
+        },
+        dark: {
+          DEFAULT: '#000000',
+          lighter: '#1b1b1b',
+          card: '#0a0a0a', // Deeper black for high-end cards
+        },
+        gray: {
+          custom: '#9CA3AF',
+          muted: '#6B7280',
+        },
+      },
+      // Premium easing for Framer Motion and CSS transitions
+      transitionTimingFunction: {
+        'expo-out': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'expo-in-out': 'cubic-bezier(0.87, 0, 0.13, 1)',
       },
       animation: {
         'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+        'subtle-float': 'float 6s ease-in-out infinite',
+      },
+      letterSpacing: {
+        'tighter': '-0.04em', // High-end agency look for H1s
+        'tight': '-0.02em',
+        'widest': '0.3em',    // For small uppercase labels
       },
       boxShadow: {
         'glow-sm': '0 0 15px -3px rgba(163, 209, 255, 0.1)',
-        'glow': '0 0 25px -5px rgba(163, 209, 255, 0.1)',
-        'glow-lg': '0 0 35px -7px rgba(163, 209, 255, 0.1)',
-      },
-      backdropBlur: {
-        xs: '2px',
+        'glow': '0 0 40px -10px rgba(163, 209, 255, 0.15)', // Refined glow
+        'glass': 'inset 0 0 0 1px rgba(255, 255, 255, 0.05)', // Inner border for glass
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.300'),
+            color: theme('colors.gray.400'),
+            maxWidth: '65ch', // Optimized for readability
             h1: {
               color: theme('colors.white'),
-              fontFamily: theme('fontFamily.roboto'),
-              letterSpacing: '-0.025em',
-              lineHeight: '1.0',
+              fontWeight: '900',
+              letterSpacing: theme('letterSpacing.tighter'),
+              lineHeight: '0.9',
             },
             h2: {
               color: theme('colors.white'),
-              fontFamily: theme('fontFamily.roboto'),
-              letterSpacing: '-0.025em',
-              lineHeight: '1.1',
+              fontWeight: '900',
+              letterSpacing: theme('letterSpacing.tighter'),
+              lineHeight: '1.0',
             },
-            h3: {
-              color: theme('colors.white'),
-              fontFamily: theme('fontFamily.roboto'),
-              letterSpacing: '-0.025em',
-              lineHeight: '1.1',
-            },
-            h4: {
-              color: theme('colors.white'),
-              fontFamily: theme('fontFamily.roboto'),
-              letterSpacing: '-0.025em',
-              lineHeight: '1.3',
-            },
-            strong: {
-              color: theme('colors.white'),
-            },
+            strong: { color: theme('colors.white') },
             a: {
-              color: theme('colors.primary'),
+              color: theme('colors.primary.DEFAULT'),
+              textDecoration: 'none',
+              borderBottom: `1px solid transparent`,
+              transition: 'all 0.3s ease',
               '&:hover': {
-                color: theme('colors.primary'),
+                borderBottomColor: theme('colors.primary.DEFAULT'),
               },
             },
-            code: {
-              color: theme('colors.primary'),
-            },
-            'ul > li::before': {
-              backgroundColor: theme('colors.gray.600'),
-            },
-            hr: {
-              borderColor: theme('colors.gray.800'),
-            },
             blockquote: {
-              color: theme('colors.gray.400'),
-              borderLeftColor: theme('colors.gray.800'),
-              fontFamily: theme('fontFamily.roboto'),
+              color: theme('colors.gray.300'),
+              borderLeftColor: theme('colors.primary.DEFAULT'),
               fontStyle: 'normal',
-              fontWeight: '500',
-            },
-            'blockquote p:first-of-type::before': {
-              content: 'none',
-            },
-            'blockquote p:last-of-type::after': {
-              content: 'none',
+              fontWeight: '400',
+              fontSize: '1.25rem',
             },
           },
         },
