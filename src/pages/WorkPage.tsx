@@ -1,604 +1,165 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, ArrowUpRight, Star, CheckCircle2, Globe, Palette, Award } from 'lucide-react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
-import TextReveal from '@/components/TextReveal';
-import HoverCard3D from '@/components/HoverCard3D';
-import ProjectCard3D from '@/components/ProjectCard3D';
-import ParticleBackground from '@/components/ParticleBackground';
-import DynamicBackground from '@/components/DynamicBackground';
-import PortfolioFilter from '@/components/PortfolioFilter';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { ArrowRight, Globe, Zap, Target, Plus } from 'lucide-react';
+import PageWrapper from '@/components/PageWrapper';
+import MagneticButton from '@/components/MagneticButton';
 
-interface Project {
-  title: string;
-  description: string;
-  image: string;
-  liveUrl?: string;
-  caseStudyUrl?: string;
-  impact: string[];
-  technologies: string[];
-  category: 'website' | 'landing' | 'saas';
-  featured?: boolean;
-  customContent?: React.ReactNode;
-}
-
-const projects: Project[] = [
-  // Featured Project
+// Reusing your existing projects data structure
+const projects = [
   {
+    id: "01",
     title: "Untapped Africa",
-    description: "Revolutionizing water infrastructure solutions across Africa with innovative technology and sustainable practices. A comprehensive platform for project management, data visualization, and community engagement.",
+    category: "Infrastructure System",
+    description: "Revolutionizing water solutions with high-performance data visualization and project management architecture.",
     image: "https://ik.imagekit.io/qcvroy8xpd/Screenshot.png?updatedAt=1754018965491",
     liveUrl: "https://untappedafrica.co.za",
-    caseStudyUrl: "/work/case-studies/untapped-africa",
-    impact: [
-      "250% increase in engagement",
-      "8 countries impacted",
-      "500,000+ people served"
-    ],
-    technologies: ["Next.js", "TypeScript", "Supabase", "Mapbox GL"],
-    category: "website",
-    featured: true
+    technologies: ["Next.js", "Supabase", "Mapbox"],
+    year: "2025"
   },
-  
-  // Original Featured Project now as regular
   {
-    title: "Binns Media Group Platform",
-    description: "A cutting-edge digital media platform designed to showcase BMG's diverse content portfolio including podcasts, TV shows, and exclusive content. The platform serves as both a content hub and a representation of BMG's commitment to amplifying diverse voices in media.",
+    id: "02",
+    title: "Binns Media",
+    category: "Digital Platform",
+    description: "A content-first ecosystem designed to amplify diverse voices through sub-second load times.",
     image: "https://i.imgur.com/IU0mmH7.jpeg",
     liveUrl: "https://www.binnsmediagroup.com",
-    caseStudyUrl: "/work/case-studies/binns-media",
-    impact: [
-      "High performance score",
-      "Increased engagement",
-      "Faster load times",
-      "Excellent uptime"
-    ],
-    technologies: ["React 18", "TypeScript", "Supabase", "GSAP"],
-    category: "website"
-  },
-
-  // Websites
-  {
-    title: "A Secure Annapolis Locksmith",
-    description: "Professional locksmith website showcasing residential, commercial, and automotive services.",
-    image: "https://images.unsplash.com/photo-1587613864521-9ef8dfe617cc?auto=format&fit=crop&w=2000&q=80",
-    liveUrl: "https://www.asecureannapolislocksmith.com",
-    caseStudyUrl: "/work/case-studies/secure-annapolis",
-    impact: [
-      "Increased leads",
-      "Strong mobile conversion",
-      "Excellent customer rating"
-    ],
-    technologies: ["React", "Node.js", "Tailwind CSS", "Local SEO"],
-    category: "website"
+    technologies: ["React 18", "GSAP", "Tailwind"],
+    year: "2025"
   },
   {
-    title: "Friedman & Cohen",
-    description: "Professional B2B procurement platform for property developers.",
-    image: "https://i.imgur.com/6kjURhx.jpeg",
-    liveUrl: "https://b2b.fandc.co.za",
-    caseStudyUrl: "/work/case-studies/friedman-cohen",
-    impact: [
-      "100+ years of excellence",
-      "High customer rating",
-      "Multiple property partners"
-    ],
-    technologies: ["React", "Node.js", "PostgreSQL"],
-    category: "website"
-  },
-  {
-    title: "Ask Africa",
-    description: "Corporate website rebrand for South Africa's leading market research firm.",
-    image: "https://ik.imagekit.io/qcvroy8xpd/mockuuups-kzccsqfybhcjamey4qqdwh.jpeg?updatedAt=1754029601130",
-    liveUrl: "https://askafrika.co.za",
-    caseStudyUrl: "/work/case-studies/ask-africa",
-    impact: [
-      "1-week development timeline",
-      "Multiple stakeholder coordination",
-      "30+ years industry leadership"
-    ],
-    technologies: ["React", "Tailwind CSS", "Local SEO"],
-    category: "website"
-  },
-
-  // Landing Pages
-  {
-    title: "Chad Le Clos Swimming",
-    description: "Professional landing page for Olympic champion's swimming clinics.",
-    image: "https://i.imgur.com/ApfYPlH.jpg",
-    liveUrl: "https://chadleclosswimming.com",
-    caseStudyUrl: "/work/case-studies/chad-le-clos",
-    impact: [
-      "Numerous sign-ups in days",
-      "High form completion rate",
-      "Strong mobile conversion rate"
-    ],
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    category: "landing"
-  },
-  {
-    title: "Irreplicable",
-    description: "High-converting landing page for premium ghostwriting services.",
-    image: "https://i.imgur.com/y4U7SPl.jpeg",
-    liveUrl: "https://irreplicable.net",
-    caseStudyUrl: "/work/case-studies/irreplicable",
-    impact: [
-      "Increased conversions",
-      "Improved lead quality",
-      "High client satisfaction"
-    ],
-    technologies: ["React", "Tailwind CSS", "GSAP"],
-    category: "landing"
-  },
-
-  // SaaS Projects
-  {
-    title: "MyTube Platform",
-    description: "Video metadata management system for media and manufacturing.",
-    image: "https://i.imgur.com/QNHXpzT.jpeg",
-    caseStudyUrl: "/work/case-studies/mytube",
-    impact: [
-      "Faster metadata processing",
-      "High user satisfaction",
-      "Significant time saved in analysis"
-    ],
-    technologies: ["React", "Node.js", "AI/ML", "PostgreSQL"],
-    category: "saas"
-  },
-  {
-    title: "Fleet Management System",
-    description: "Comprehensive fleet tracking and management solution.",
-    image: "https://i.imgur.com/EwgHAuK.png",
-    caseStudyUrl: "/work/case-studies/fleet-management",
-    impact: [
-      "Improved fleet efficiency",
-      "Cost reduction",
-      "High user satisfaction"
-    ],
-    technologies: ["React Native", "Node.js", "MongoDB"],
-    category: "saas"
-  },
-  {
+    id: "03",
     title: "AutoMarginX",
-    description: "Dealership management platform with real-time analytics.",
+    category: "SaaS Application",
+    description: "Dealership management with AI-powered margin optimization and real-time market data.",
     image: "https://i.imgur.com/PiKh199.png",
-    caseStudyUrl: "/work/case-studies/automarginx",
-    impact: [
-      "Faster decisions",
-      "Higher profits",
-      "Significant time saved"
-    ],
-    technologies: ["React", "Node.js", "PostgreSQL"],
-    category: "saas"
-  },
-  {
-    title: "Videoleap",
-    description: "AI-powered video editing platform with template marketplace.",
-    image: "https://i.imgur.com/SubVB9A.jpeg",
-    caseStudyUrl: "/work/case-studies/videoleap",
-    impact: [
-      "Increased template usage",
-      "Better user retention",
-      "Enhanced content sharing"
-    ],
-    technologies: ["React", "Node.js", "AI/ML", "AWS"],
-    category: "saas"
+    technologies: ["Node.js", "PostgreSQL", "React"],
+    year: "2024"
   }
 ];
 
-const portfolioSchema = {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Portfolio - Marc Friedman's Digital Design & Development Work",
-  "description": "Explore our portfolio of results-driven digital solutions that combine thoughtful design with robust development. Featured projects include websites, landing pages, and SaaS applications.",
-  "creator": {
-    "@type": "Person",
-    "name": "Marc Friedman",
-    "jobTitle": "Full Stack Designer & Developer",
-    "url": "https://marcfriedmanportfolio.com"
-  },
-  "mainEntity": {
-    "@type": "ItemList",
-    "itemListElement": projects.map((project, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "item": {
-        "@type": "CreativeWork",
-        "name": project.title,
-        "description": project.description,
-        "image": project.image,
-        "url": project.liveUrl || `https://marcfriedmanportfolio.com/work/case-studies/${project.caseStudyUrl?.split('/').pop()}`,
-        "creator": {
-          "@type": "Person",
-          "name": "Marc Friedman"
-        }
-      }
-    }))
-  }
-};
-
-function FeaturedProjectCard({ project }: { project: Project }) {
+function ProjectRow({ project, index }: { project: any; index: number }) {
   const navigate = useNavigate();
+  const container = useRef(null);
   
-  return (
-    <motion.div 
-      className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group col-span-full mb-12"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      viewport={{ once: true, amount: 0.3 }}
-    >
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="aspect-[16/10] overflow-hidden relative">
-          <img 
-            src={project.image} 
-            alt={project.title} 
-            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1b1b1b] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        </div>
-        <div className="p-6 md:p-8">
-          <div className="flex items-center justify-between mb-4">
-            <span className="text-[#A3D1FF] text-sm bg-[#A3D1FF]/10 px-4 py-2 rounded-full">Featured Project</span>
-          </div>
-          <h3 className="text-xl md:text-3xl font-bold text-white mb-3 md:mb-4">{project.title}</h3>
-          <p className="text-sm md:text-base text-gray-400 mb-4 md:mb-6">{project.description}</p>
-          <div className="space-y-3 md:space-y-4 mb-4 md:mb-6">
-            {project.impact.map((impact, index) => (
-              <div key={index} className="flex items-center text-xs md:text-sm">
-                <CheckCircle2 className="w-4 h-4 text-[#A3D1FF] mr-2 flex-shrink-0" />
-                <span className="text-gray-300">{impact}</span>
-              </div>
-            ))}
-          </div>
-          <div className="flex flex-wrap gap-2 mb-4 md:mb-6">
-            {project.technologies.map((tech, index) => (
-              <span 
-                key={index} 
-                className="px-2 md:px-3 py-1 bg-white/5 text-[#A3D1FF] rounded-full text-xs md:text-sm"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-          <div className="flex flex-wrap gap-3">
-            {project.liveUrl && (
-              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="mr_btn mr_btn_outline">
-                <span>View Live Website</span>
-              </a>
-            )}
-            {project.caseStudyUrl && (
-              <button onClick={() => navigate(project.caseStudyUrl)} className="mr_btn mr_btn_primary">
-                <span>Read Case Study</span>
-              </button>
-            )}
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
+  // Parallax effect for the image
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "end start"]
+  });
 
-function CategoryButton({ children, isActive = false, onClick }: { 
-  children: React.ReactNode; 
-  isActive?: boolean;
-  onClick: () => void;
-}) {
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1.1, 1]);
+  const textY = useTransform(scrollYProgress, [0, 1], [100, -100]);
+
   return (
-    <button
-      onClick={onClick}
-      className={`px-4 md:px-6 py-2 rounded-full transition-all duration-300 text-sm ${
-        isActive
-          ? 'bg-[#A3D1FF] text-black'
-          : 'bg-white/5 text-gray-300 hover:bg-white/10'
-      }`}
-    >
-      {children}
-    </button>
+    <div ref={container} className="relative w-full min-h-screen flex items-center mb-32 md:mb-64">
+      <div className="container-custom grid lg:grid-cols-12 gap-10 items-center">
+        
+        {/* Project Info - Left Side */}
+        <div className="lg:col-span-5 z-10 space-y-8 order-2 lg:order-1">
+          <motion.div style={{ y: textY }}>
+            <div className="flex items-center gap-4 mb-4">
+              <span className="text-[10px] font-black text-primary uppercase tracking-[0.5em]">{project.id}</span>
+              <div className="h-px w-12 bg-white/10"></div>
+              <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">{project.category}</span>
+            </div>
+            
+            <h2 className="text-6xl md:text-8xl font-black tracking-tighter mb-8 group-hover:text-primary transition-colors">
+              {project.title}
+            </h2>
+            
+            <p className="text-xl text-gray-400 max-w-sm leading-relaxed mb-10">
+              {project.description}
+            </p>
+
+            <div className="flex flex-wrap gap-3 mb-12">
+              {project.technologies.map((tech: string) => (
+                <span key={tech} className="text-[10px] font-bold text-gray-600 border border-white/5 px-3 py-1 rounded-full uppercase tracking-widest">
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            <MagneticButton>
+              <button 
+                onClick={() => navigate(`/work/case-studies/${project.title.toLowerCase().replace(/ /g, '-')}`)}
+                className="group flex items-center gap-4 text-sm font-black uppercase tracking-[0.2em]"
+              >
+                Explore Project 
+                <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
+                  <ArrowRight className="w-5 h-5" />
+                </div>
+              </button>
+            </MagneticButton>
+          </motion.div>
+        </div>
+
+        {/* Project Image - Right Side (The "Awwwards" Large Image) */}
+        <div className="lg:col-span-7 order-1 lg:order-2">
+          <motion.div 
+            className="relative aspect-[4/5] md:aspect-[16/11] rounded-[2rem] md:rounded-[4rem] overflow-hidden bg-white/5 group cursor-pointer shadow-2xl"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <motion.img 
+              src={project.image} 
+              style={{ scale: imageScale }}
+              alt={project.title}
+              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+            />
+            {/* Hover Overlay */}
+            <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+              <div className="w-24 h-24 bg-white text-black rounded-full flex items-center justify-center font-black uppercase text-[10px] tracking-widest">
+                View
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+      </div>
+    </div>
   );
 }
 
 export default function WorkPage() {
-  const navigate = useNavigate();
-  const [activeFilter, setActiveFilter] = useState('all');
-  const [scrollY, setScrollY] = useState(0);
-  const heroRef = useRef<HTMLElement>(null);
-  
-  // Get filter from URL params
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const filter = urlParams.get('filter');
-    if (filter) {
-      setActiveFilter(filter);
-    }
-  }, []);
-  
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
-    : projects.filter(project => {
-        switch (activeFilter) {
-          case 'media':
-            return ['Binns Media Group Platform', 'Videoleap', 'MyTube Platform'].includes(project.title);
-          case 'saas':
-            return project.category === 'saas';
-          case 'wellness':
-            return ['iLight Care'].includes(project.title);
-          case 'automotive':
-            return ['AutoMarginX', 'Fleet Management System'].includes(project.title);
-          case 'professional':
-            return ['A Secure Annapolis Locksmith', 'Friedman & Cohen', 'Ask Africa', 'Irreplicable'].includes(project.title);
-          case 'social-impact':
-            return ['Untapped Africa', 'Give 2 Grow'].includes(project.title);
-          case 'sports':
-            return ['Chad Le Clos Swimming'].includes(project.title);
-          default:
-            return true;
-        }
-      });
-
-  const filterOptions = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'media', label: 'Media & Entertainment' },
-    { id: 'saas', label: 'SaaS & Technology' },
-    { id: 'wellness', label: 'Health & Wellness' },
-    { id: 'automotive', label: 'Automotive' },
-    { id: 'professional', label: 'Professional Services' },
-    { id: 'social-impact', label: 'Social Impact' },
-    { id: 'sports', label: 'Sports & Entertainment' }
-  ];
-  
-  // Handle scroll effects
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <>
       <Helmet>
-        <title>Portfolio - Marc Friedman's Award-Winning Digital Design & Development Work</title>
-        <meta name="description" content="Explore our award-winning portfolio of 50+ digital solutions that drive real business results. Featured projects include high-converting websites, SaaS platforms, and mobile applications for clients across three continents." />
-        <meta name="keywords" content="web development portfolio, UI/UX design portfolio, SaaS development case studies, website design examples, digital solutions portfolio, Marc Friedman projects" />
-        
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Portfolio - Marc Friedman's Award-Winning Digital Design & Development Work" />
-        <meta property="og:description" content="Explore our award-winning portfolio of 50+ digital solutions that drive real business results." />
-        <meta property="og:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
-        <meta property="og:url" content="https://marcfriedmanportfolio.com/work" />
-        
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Portfolio - Marc Friedman's Award-Winning Digital Design & Development Work" />
-        <meta name="twitter:description" content="Explore our award-winning portfolio of 50+ digital solutions that drive real business results." />
-        <meta name="twitter:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
-        
-        {/* Additional SEO meta tags */}
-        <meta name="keywords" content="portfolio, web development, UI/UX design, SaaS development, case studies, digital projects, Marc Friedman" />
-        <meta name="author" content="Marc Friedman" />
-        <link rel="canonical" href="https://www.marcfriedmanportfolio.com/work" />
-        
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify(portfolioSchema)}
-        </script>
+        <title>Portfolio | Award-Winning Digital Architecture</title>
       </Helmet>
 
-      <section 
-        ref={heroRef}
-        className="relative min-h-[60vh] md:min-h-[80vh] flex items-center justify-center bg-black overflow-hidden"
+      <PageWrapper 
+        category="Gallery"
+        title="Selected Works"
+        subtitle="Exploring the intersection of aesthetic precision and technical performance."
       >
-        {/* Dynamic Background with Depth */}
-        <DynamicBackground streakCount={15} particleCount={40} color="#A3D1FF" />
+        {/* Sticky Year/Meta side-scroller can go here */}
         
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://i.imgur.com/IU0mmH7.jpeg"
-            alt="Featured portfolio projects by Marc Friedman - web development and design showcase"
-            className="w-full h-full object-cover"
-            style={{ 
-              transform: `translateY(${scrollY * 0.2}px)`,
-              transition: 'transform 0.2s ease-out'
-            }}
-          />
-          <div 
-            className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black/90"
-            style={{ backdropFilter: 'blur(2px)' }}
-          ></div>
+        <div className="mt-20">
+          {projects.map((project, index) => (
+            <ProjectRow key={project.id} project={project} index={index} />
+          ))}
         </div>
 
-        <div className="container-custom relative z-10 py-16 md:py-0">
-          <TextReveal className="max-w-3xl">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
-              Featured Work
-            </h1>
-            <p className="text-base md:text-xl text-gray-300 mb-6 md:mb-8">
-              Explore our portfolio of results-driven digital solutions that combine thoughtful design with robust development.
-            </p>
-          </TextReveal>
-
-          <motion.div 
-            className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-8 mt-8 md:mt-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
+        {/* Massive Footer CTA */}
+        <section className="py-64 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
           >
-            <div className="bg-[#1b1b1b]/80 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center">
-              <div className="text-2xl md:text-4xl font-bold text-[#A3D1FF] mb-1 md:mb-2 counter">50+</div>
-              <div className="text-xs md:text-base text-gray-400">Projects Completed</div>
-            </div>
-            <div className="bg-[#1b1b1b]/80 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center">
-              <div className="text-2xl md:text-4xl font-bold text-[#A3D1FF] mb-1 md:mb-2 counter">40+</div>
-              <div className="text-xs md:text-base text-gray-400">Happy Clients</div>
-            </div>
-            <div className="bg-[#1b1b1b]/80 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center">
-              <div className="text-2xl md:text-4xl font-bold text-[#A3D1FF] mb-1 md:mb-2 counter">5+</div>
-              <div className="text-xs md:text-base text-gray-400">Years Experience</div>
-            </div>
-            <div className="bg-[#1b1b1b]/80 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center">
-              <div className="text-2xl md:text-4xl font-bold text-[#A3D1FF] mb-1 md:mb-2 counter">99%</div>
-              <div className="text-xs md:text-base text-gray-400">Client Satisfaction</div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Filter Section */}
-      <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-[#1b1b1b]">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
-            <h2 className="text-2xl font-bold text-white">Filter by Industry</h2>
-            <div className="flex flex-wrap gap-2">
-              {filterOptions.map((option) => (
-                <CategoryButton
-                  key={option.id}
-                  isActive={activeFilter === option.id}
-                  onClick={() => setActiveFilter(option.id)}
-                >
-                  {option.label}
-                </CategoryButton>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Grid */}
-      <section className="py-8 md:py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">Portfolio Projects</h2>
-          <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.9 }}
-          >
-            {filteredProjects.map((project, index) => (
-              project.featured ? (
-                <FeaturedProjectCard key={index} project={project} />
-              ) : (
-                <ProjectCard3D 
-                  key={index}
-                  title={project.title}
-                  description={project.description}
-                  image={project.image}
-                  liveUrl={project.liveUrl}
-                  caseStudyUrl={project.caseStudyUrl}
-                  impact={project.impact}
-                  technologies={project.technologies}
-                  index={index}
-                />
-              )
-            ))}
-          </motion.div>
-          
-          {/* Related Content Links */}
-          <div className="mt-16 bg-[#1b1b1b] p-8 rounded-xl border border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-6">Explore More</h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div>
-                <h4 className="text-lg font-semibold text-white mb-4">Our Services</h4>
-                <div className="space-y-2">
-                  <Link 
-                    to="/services/web-development" 
-                    className="block text-[#A3D1FF] hover:text-white transition-colors"
-                    title="Professional web development services"
-                  >
-                    Web Development Services
-                  </Link>
-                  <Link 
-                    to="/services/design" 
-                    className="block text-[#A3D1FF] hover:text-white transition-colors"
-                    title="UI/UX design solutions"
-                  >
-                    UI/UX Design Solutions
-                  </Link>
-                  <Link 
-                    to="/services/saas" 
-                    className="block text-[#A3D1FF] hover:text-white transition-colors"
-                    title="SaaS development services"
-                  >
-                    SaaS Development
-                  </Link>
-                </div>
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold text-white mb-4">Free Tools</h4>
-                <div className="space-y-2">
-                  <Link 
-                    to="/tools/website-analyzer" 
-                    className="block text-[#A3D1FF] hover:text-white transition-colors"
-                    title="Free website analysis tool"
-                  >
-                    Website Analyzer Tool
-                  </Link>
-                  <Link 
-                    to="/tools/roi-calculator" 
-                    className="block text-[#A3D1FF] hover:text-white transition-colors"
-                    title="Calculate website ROI"
-                  >
-                    ROI Calculator
-                  </Link>
-                  <Link 
-                    to="/tools/project-timeline" 
-                    className="block text-[#A3D1FF] hover:text-white transition-colors"
-                    title="Project timeline visualization"
-                  >
-                    Project Timeline
-                  </Link>
-                </div>
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold text-white mb-4">Learn More</h4>
-                <div className="space-y-2">
-                  <Link 
-                    to="/about" 
-                    className="block text-[#A3D1FF] hover:text-white transition-colors"
-                    title="About Marc Friedman"
-                  >
-                    About Marc Friedman
-                  </Link>
-                  <Link 
-                    to="/blog" 
-                    className="block text-[#A3D1FF] hover:text-white transition-colors"
-                    title="Design and development insights"
-                  >
-                    Design & Development Blog
-                  </Link>
-                  <Link 
-                    to="/contact" 
-                    className="block text-[#A3D1FF] hover:text-white transition-colors"
-                    title="Get in touch for your project"
-                  >
-                    Start Your Project
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#1b1b1b] to-black relative overflow-hidden">
-        <DynamicBackground streakCount={8} particleCount={20} color="#A3D1FF" />
-        
-        <div className="max-w-7xl mx-auto text-center relative z-10">
-          <TextReveal>
-            <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 md:mb-6">Ready to Create Your Success Story?</h2>
-            <p className="text-base md:text-xl text-gray-400 mb-6 md:mb-10 max-w-2xl mx-auto">
-              Let's build something extraordinary together that drives real results for your business.
-            </p>
+            <h2 className="text-7xl md:text-[12rem] font-black tracking-tighter leading-none mb-12">
+              Next?
+            </h2>
             <Link to="/contact" className="mr_btn mr_btn_primary">
-              <span>Start Your Project</span>
+              <span>Start a conversation</span>
             </Link>
-          </TextReveal>
-        </div>
-      </section>
+          </motion.div>
+        </section>
+      </PageWrapper>
     </>
   );
 }
