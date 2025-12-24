@@ -79,7 +79,7 @@ function App() {
         <meta name="googlebot" content="index, follow" />
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
         {/* Add preload for critical resources */}
-        <link rel="preload" href="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp" as="image" />
+        <link rel="preload" href="/generated-1766594483929-xmayh.png" as="image" />
         {/* Add base styles to prevent FOUC */}
         <style>{`
           body {

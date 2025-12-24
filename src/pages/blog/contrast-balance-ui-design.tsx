@@ -605,9 +605,9 @@ export default function ContrastBalanceUIDesignPage() {
           {/* Author Section */}
           <div className="mt-12 pt-8 border-t border-white/10">
             <div className="flex items-center gap-4">
-              <img 
-                src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp" 
-                alt="Marc Friedman" 
+              <img
+                src="/generated-1766594483929-xmayh.png"
+                alt="Marc Friedman"
                 className="w-16 h-16 rounded-full object-cover"
               />
               <div>

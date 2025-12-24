@@ -166,7 +166,7 @@ export default function AboutPage() {
       <section className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
+            src="/generated-1766594483929-xmayh.png"
             alt="Marc Friedman - Full Stack Designer & Developer"
             className="w-full h-full object-cover"
           />
@@ -240,7 +240,7 @@ export default function AboutPage() {
             >
               <div className="aspect-[4/3] overflow-hidden rounded-xl">
                 <img
-                  src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
+                  src="/generated-1766594483929-xmayh.png"
                   alt="Marc Friedman Working"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
@@ -379,7 +379,7 @@ export default function AboutPage() {
               viewport={{ once: true, amount: 0.3 }}
             >
               <img
-                src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
+                src="/generated-1766594483929-xmayh.png"
                 alt="Marc Friedman"
                 className="rounded-xl shadow-2xl hover:scale-105 transition-transform duration-500"
               />
@@ -668,14 +668,14 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="aspect-square overflow-hidden rounded-xl">
                   <img
-                    src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
+                    src="/generated-1766594483929-xmayh.png"
                     alt="Marc Friedman Portrait"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="aspect-square overflow-hidden rounded-xl">
                   <img
-                    src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
+                    src="/generated-1766594483929-xmayh.png"
                     alt="Marc Friedman Working"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />

@@ -142,7 +142,7 @@ export default function WebDevelopmentPage() {
         {/* Hero Image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp" 
+            src="/generated-1766594483929-xmayh.png" 
             alt="Web Development Hero"
             className="w-full h-full object-cover"
           />

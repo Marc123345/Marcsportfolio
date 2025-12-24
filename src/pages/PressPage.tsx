@@ -330,7 +330,7 @@ export default function PressPage() {
             
             <div>
               <img
-                src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
+                src="/generated-1766594483929-xmayh.png"
                 alt="Marc Friedman - Professional headshot for media use"
                 className="rounded-xl shadow-2xl hover:scale-105 transition-transform duration-500"
               />
