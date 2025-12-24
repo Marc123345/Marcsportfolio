@@ -347,6 +347,7 @@ export default function Layout() {
         <title>{`${getPageTitle()} | Marc Friedman`}</title>
         <meta name="description" content="Full-stack design and development solutions that transform your vision into exceptional digital experiences." />
         <link rel="canonical" href={`https://www.marcfriedmanportfolio.com${location.pathname}`} />
+        <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
       </Helmet>
 
       {/* Navigation */}
@@ -879,7 +880,21 @@ export default function Layout() {
               </div>
             </div>
           </div>
-          
+
+          {/* Clutch Widget */}
+          <div className="mt-12 pt-8 border-t border-white/10 flex justify-center">
+            <div
+              className="clutch-widget"
+              data-url="https://widget.clutch.co"
+              data-widget-type="1"
+              data-height="40"
+              data-nofollow="false"
+              data-expandifr="true"
+              data-scale="100"
+              data-clutchcompany-id="2527093"
+            ></div>
+          </div>
+
           <div className="mt-12 pt-8 border-t border-white/10 text-center text-gray-400">
             <div className="flex flex-col md:flex-row justify-between items-center gap-6">
               <div className="flex flex-col sm:flex-row items-center gap-4">
