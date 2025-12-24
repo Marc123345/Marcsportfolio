@@ -1,6 +1,6 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
-import { ArrowRight, CircleCheck as CheckCircle, Target, TrendingUp, Zap, Shield, Users, Award, Clock, Star, Sparkles, Play, Pause, Send, MessageSquare, Rocket, ChartBar as BarChart3, Code as Code2 } from 'lucide-react';
+import { ArrowRight, CircleCheck as CheckCircle, Target, TrendingUp, Zap, Shield, Users, Award, Clock, Star, Sparkles, Send, MessageSquare, Rocket, ChartBar as BarChart3, Code as Code2 } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import TrustedBy from '@/components/TrustedBy';
 import SEO from '@/components/SEO';
@@ -84,10 +84,6 @@ const homeSchema = {
 
 export default function HomePage() {
   const navigate = useNavigate();
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const [isVideoError, setIsVideoError] = useState(false);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(true);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const heroRef = useRef<HTMLElement>(null);
 
   const calendlyLink = "https://calendly.com/marc-friedman-web-design--meeting-link/30min";
@@ -150,44 +146,6 @@ export default function HomePage() {
   const y = useTransform(scrollYProgress, [0, 1], [0, 300]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
-  useEffect(() => {
-    if (videoRef.current) {
-      const video = videoRef.current;
-
-      const handleVideoLoad = () => {
-        setIsVideoLoaded(true);
-      };
-
-      const handleVideoError = (e: Event) => {
-        console.error('Video loading error:', e);
-        setIsVideoError(true);
-      };
-
-      video.addEventListener('loadeddata', handleVideoLoad);
-      video.addEventListener('error', handleVideoError);
-
-      if (video.readyState >= 3) {
-        handleVideoLoad();
-      }
-
-      return () => {
-        video.removeEventListener('loadeddata', handleVideoLoad);
-        video.removeEventListener('error', handleVideoError);
-      };
-    }
-  }, []);
-
-  const toggleVideoPlayback = () => {
-    if (videoRef.current) {
-      if (isVideoPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsVideoPlaying(!isVideoPlaying);
-    }
-  };
-
   return (
     <>
       <SEO
@@ -212,45 +170,29 @@ export default function HomePage() {
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20" style={{ backgroundColor: '#1a2332' }}>
         {/* Background with subtle overlay */}
         <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
-          <div className="absolute inset-0 w-full h-full">
-            {!isVideoError && (
-              <video
-                ref={videoRef}
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover mix-blend-overlay"
-                style={{
-                  opacity: isVideoLoaded ? 0.15 : 0,
-                  transition: 'opacity 0.3s ease-in-out'
-                }}
-                onPlay={() => setIsVideoPlaying(true)}
-                onPause={() => setIsVideoPlaying(false)}
-              >
-                <source src="https://ik.imagekit.io/qcvroy8xpd/Closeup.mp4?updatedAt=1761739938909" type="video/mp4" />
-              </video>
-            )}
-          </div>
+          {/* 3D Laptop Image with Marc popping out */}
+          <motion.div
+            className="absolute inset-0 w-full h-full flex items-center justify-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 0.2, scale: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            style={{ perspective: '2000px' }}
+          >
+            <img
+              src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=1200&q=80"
+              alt="Marc Friedman emerging from laptop"
+              className="w-full h-full object-cover mix-blend-overlay"
+              style={{
+                transform: 'translateZ(50px) scale(1.1)',
+                transformStyle: 'preserve-3d'
+              }}
+            />
+          </motion.div>
+
           {/* Glowing orbs */}
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#A3D1FF]/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"></div>
         </div>
-
-        {isVideoLoaded && !isVideoError && (
-          <motion.button
-            onClick={toggleVideoPlayback}
-            className="absolute bottom-8 left-8 z-20 w-12 h-12 bg-black/10 backdrop-blur-sm rounded-full flex items-center justify-center text-black hover:bg-[#A3D1FF] transition-all duration-300"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.5, duration: 0.5 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            aria-label={isVideoPlaying ? 'Pause video' : 'Play video'}
-          >
-            {isVideoPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 ml-0.5" />}
-          </motion.button>
-        )}
 
         <div className="container mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
