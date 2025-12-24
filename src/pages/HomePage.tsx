@@ -302,6 +302,20 @@ export default function HomePage() {
                 </a>
               </motion.div>
 
+              <motion.div
+                className="flex justify-start"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
+                <iframe
+                  width="360"
+                  height="360"
+                  src="https://clutch.co/share/badges/2527093/99988?utm_source=clutch_top_company_badge&utm_medium=image_embed"
+                  title="Top Clutch Web Design Company Freelance Israel"
+                  className="border-0"
+                ></iframe>
+              </motion.div>
 
             </motion.div>
 
