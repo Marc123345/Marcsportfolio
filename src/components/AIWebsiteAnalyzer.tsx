@@ -32,53 +32,73 @@ export default function AIWebsiteAnalyzer() {
 
   const handleAnalyze = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!url) {
       toast.error('Please enter a valid website URL');
       return;
     }
-    
+
     // Enhanced URL validation and sanitization
     let sanitizedUrl = url.trim();
-    
+
     // Add protocol if missing
     if (!sanitizedUrl.startsWith('http://') && !sanitizedUrl.startsWith('https://')) {
       sanitizedUrl = 'https://' + sanitizedUrl;
     }
-    
+
     try {
       const urlObj = new URL(sanitizedUrl);
-      
+
       // Security check - only allow http/https protocols
       if (!['http:', 'https:'].includes(urlObj.protocol)) {
         toast.error('Please enter a valid HTTP or HTTPS URL');
         return;
       }
-      
+
       // Check for suspicious patterns
       if (urlObj.hostname === 'localhost' || urlObj.hostname.includes('127.0.0.1')) {
         toast.error('Local URLs cannot be analyzed');
         return;
       }
-      
+
     } catch (e) {
       toast.error('Please enter a valid URL including http:// or https://');
       return;
     }
-    
+
     setIsAnalyzing(true);
     setError(null);
-    
+
     try {
-      // Use the sanitized URL for analysis
-      setTimeout(() => {
-        // Simulate analysis result
-        const mockResult: AnalysisResult = generateMockAnalysis(sanitizedUrl);
-        setResult(mockResult);
-        setIsAnalyzing(false);
+      // Call the edge function for real analysis
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+      const response = await fetch(`${supabaseUrl}/functions/v1/analyze-website`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${supabaseAnonKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ url: sanitizedUrl }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Analysis failed');
+      }
+
+      const data = await response.json();
+
+      if (data.success && data.analysis) {
+        setResult(data.analysis);
         setShowEmailForm(true);
-      }, 3000);
+      } else {
+        throw new Error('Invalid response format');
+      }
+
+      setIsAnalyzing(false);
     } catch (err) {
+      console.error('Analysis error:', err);
       setError('An error occurred during analysis. Please try again.');
       setIsAnalyzing(false);
     }
@@ -86,30 +106,57 @@ export default function AIWebsiteAnalyzer() {
 
   const handleSendReport = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validate and sanitize email
     const sanitizedEmail = email.trim().toLowerCase();
-    
+
     if (!sanitizedEmail) {
       toast.error('Please enter your email address');
       return;
     }
-    
+
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(sanitizedEmail)) {
       toast.error('Please enter a valid email address');
       return;
     }
-    
+
     if (sanitizedEmail.length > 254) {
       toast.error('Email address is too long');
       return;
     }
-    
-    toast.success('Detailed report sent to your email!');
-    setShowEmailForm(false);
-    
-    // In a real implementation, you would send the sanitized email to your backend
-    console.log('Sending report to:', sanitizedEmail);
+
+    try {
+      // Save to database with analysis scores
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+      let sanitizedUrl = url.trim();
+      if (!sanitizedUrl.startsWith('http://') && !sanitizedUrl.startsWith('https://')) {
+        sanitizedUrl = 'https://' + sanitizedUrl;
+      }
+
+      const response = await fetch(`${supabaseUrl}/functions/v1/analyze-website`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${supabaseAnonKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          url: sanitizedUrl,
+          email: sanitizedEmail,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to save report');
+      }
+
+      toast.success('Detailed report sent to your email!');
+      setShowEmailForm(false);
+    } catch (error) {
+      console.error('Error saving report:', error);
+      toast.error('Failed to send report. Please try again.');
+    }
   };
 
   return (
@@ -293,62 +340,4 @@ export default function AIWebsiteAnalyzer() {
       </div>
     </div>
   );
-}
-
-// Function to generate mock analysis results
-function generateMockAnalysis(url: string): AnalysisResult {
-  // Extract domain for personalization
-  let domain = url;
-  try {
-    domain = new URL(url).hostname.replace('www.', '');
-  } catch (e) {
-    // Use the input if URL parsing fails
-  }
-  
-  // Generate random scores with some constraints to make them realistic
-  const designScore = Math.floor(Math.random() * 30) + 50; // 50-80
-  const performanceScore = Math.floor(Math.random() * 40) + 40; // 40-80
-  const conversionScore = Math.floor(Math.random() * 35) + 45; // 45-80
-  const overallScore = Math.floor((designScore + performanceScore + conversionScore) / 3);
-  
-  return {
-    score: overallScore,
-    overview: `${domain} shows potential but has several areas for improvement. Your site's strongest aspect is ${
-      Math.max(designScore, performanceScore, conversionScore) === designScore ? 'design' : 
-      Math.max(designScore, performanceScore, conversionScore) === performanceScore ? 'performance' : 'conversion optimization'
-    }, while ${
-      Math.min(designScore, performanceScore, conversionScore) === designScore ? 'design' : 
-      Math.min(designScore, performanceScore, conversionScore) === performanceScore ? 'performance' : 'conversion optimization'
-    } needs the most attention. With targeted improvements, you could significantly increase engagement and conversion rates.`,
-    design: {
-      score: designScore,
-      feedback: `The visual design of ${domain} ${designScore > 70 ? 'is relatively strong' : 'needs improvement'} in several key areas.`,
-      improvements: [
-        'Enhance visual hierarchy to better guide users through important content',
-        'Update color contrast for improved readability and accessibility',
-        'Modernize UI components for a more contemporary feel',
-        'Implement more consistent spacing and alignment throughout the site'
-      ]
-    },
-    performance: {
-      score: performanceScore,
-      feedback: `${domain}'s performance metrics ${performanceScore > 70 ? 'are good but could be optimized' : 'indicate significant room for improvement'}.`,
-      improvements: [
-        'Optimize image sizes and implement lazy loading',
-        'Reduce JavaScript bundle size to improve load times',
-        'Implement browser caching for static assets',
-        'Minimize render-blocking resources for faster initial load'
-      ]
-    },
-    conversion: {
-      score: conversionScore,
-      feedback: `The conversion potential of ${domain} ${conversionScore > 70 ? 'shows promise' : 'is currently underperforming'} and could be enhanced with strategic changes.`,
-      improvements: [
-        'Clarify primary call-to-action buttons for better user guidance',
-        'Add social proof elements near conversion points',
-        'Simplify form fields to reduce abandonment',
-        'Implement strategic exit-intent offers to capture leaving visitors'
-      ]
-    }
-  };
 }
