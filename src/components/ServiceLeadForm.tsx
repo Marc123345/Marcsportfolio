@@ -71,10 +71,10 @@ export default function ServiceLeadForm({ service, benefits }: Props) {
     <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10">
       <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
         <div>
-          <h2 className="text-2xl sm:text-display-medium text-white mb-6">Start Your Project</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Start Your Project</h2>
           <div className="space-y-8">
             <div>
-              <h3 className="text-body-large font-semibold text-white mb-4">Why Choose Us</h3>
+              <h3 className="text-xl font-semibold text-white mb-4">Why Choose Us</h3>
               <ul className="space-y-3">
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-center text-gray-300">
@@ -86,7 +86,7 @@ export default function ServiceLeadForm({ service, benefits }: Props) {
             </div>
             
             <div>
-              <h3 className="text-body-large font-semibold text-white mb-4">Prefer a Quick Call?</h3>
+              <h3 className="text-xl font-semibold text-white mb-4">Prefer a Quick Call?</h3>
               <a 
                 href={calendlyUXAuditLink}
                 target="_blank"

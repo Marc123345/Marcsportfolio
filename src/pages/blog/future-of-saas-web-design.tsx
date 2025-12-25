@@ -203,7 +203,7 @@ export default function FutureOfSaasWebDesignPage() {
                 className="w-16 h-16 rounded-full object-cover"
               />
               <div>
-                <h3 className="text-body-large font-semibold text-white">Marc Friedman</h3>
+                <h3 className="text-xl font-semibold text-white">Marc Friedman</h3>
                 <p className="text-gray-400">Full Stack Designer & Developer</p>
               </div>
             </div>
@@ -211,7 +211,7 @@ export default function FutureOfSaasWebDesignPage() {
           
           {/* Share Section */}
           <div className="mt-8 pt-8 border-t border-white/10">
-            <h3 className="text-body-large font-semibold text-white mb-4">Share this article</h3>
+            <h3 className="text-xl font-semibold text-white mb-4">Share this article</h3>
             <div className="flex gap-3">
               <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#1877F2]/20 text-[#1877F2] transition-colors">
                 <Facebook className="w-5 h-5" />
@@ -281,7 +281,7 @@ export default function FutureOfSaasWebDesignPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-display-medium text-white mb-4">Ready to Transform Your SaaS Platform?</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Your SaaS Platform?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's create a SaaS experience that balances beautiful design with powerful functionality to drive user engagement and business growth.
           </p>

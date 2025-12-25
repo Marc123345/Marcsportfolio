@@ -15,7 +15,7 @@ function FeatureCard({ icon: Icon, title, description }: {
           <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
         </div>
       </div>
-      <h3 className="text-body-large font-semibold mb-2 text-white">{title}</h3>
+      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
       <p className="text-gray-400">{description}</p>
     </div>
   );
@@ -50,7 +50,7 @@ function UntappedAfricaPage() {
         {/* Content */}
         <div className="container-custom relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-display-large text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               Untapped Africa
             </h1>
             <p className="text-xl text-gray-300 mb-8">
@@ -77,7 +77,7 @@ function UntappedAfricaPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-display-medium text-white mb-6">Project Overview</h2>
+              <h2 className="text-3xl font-bold text-white mb-6">Project Overview</h2>
               <p className="text-gray-400 mb-6">
                 Untapped Africa is revolutionizing water infrastructure solutions across Africa with innovative technology and sustainable practices. This comprehensive platform manages project development, data visualization, and community engagement to address one of Africa's most critical challenges.
               </p>
@@ -98,7 +98,7 @@ function UntappedAfricaPage() {
             </div>
             <div className="space-y-6">
               <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10">
-                <h3 className="text-body-large font-semibold text-white mb-4">Impact Metrics</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">Impact Metrics</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center text-gray-300">
                     <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
@@ -124,7 +124,7 @@ function UntappedAfricaPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-display-medium text-white mb-6">The Challenge</h2>
+              <h2 className="text-3xl font-bold text-white mb-6">The Challenge</h2>
               <p className="text-gray-400 mb-6">
                 Africa faces a critical water crisis affecting millions of people:
               </p>
@@ -148,7 +148,7 @@ function UntappedAfricaPage() {
               </ul>
             </div>
             <div>
-              <h2 className="text-display-medium text-white mb-6">The Solution</h2>
+              <h2 className="text-3xl font-bold text-white mb-6">The Solution</h2>
               <div className="grid gap-6">
                 <FeatureCard
                   icon={Droplets}
@@ -174,7 +174,7 @@ function UntappedAfricaPage() {
       {/* Key Features */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-display-medium text-white mb-12">Platform Features</h2>
+          <h2 className="text-3xl font-bold text-white mb-12">Platform Features</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <FeatureCard
               icon={Target}
@@ -198,7 +198,7 @@ function UntappedAfricaPage() {
       {/* Results */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-display-medium text-white mb-12">Results & Impact</h2>
+          <h2 className="text-3xl font-bold text-white mb-12">Results & Impact</h2>
           <div className="grid md:grid-cols-4 gap-8">
             <StatCard
               value="250%"
@@ -240,7 +240,7 @@ function UntappedAfricaPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-display-medium text-white mb-4">Ready to Create Social Impact?</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to Create Social Impact?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's build a platform that drives meaningful change and creates lasting impact for communities.
           </p>

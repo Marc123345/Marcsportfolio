@@ -110,7 +110,7 @@ export default function PremiumWebPackage() {
       {/* Description Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-display-medium text-white mb-6">About this Service</h2>
+          <h2 className="text-3xl font-bold text-white mb-6">About this Service</h2>
           <div className="prose prose-invert max-w-none">
             <p className="text-lg text-gray-300 mb-6">
               A complete, high-end website solution tailored for law firms, SaaS startups, and media teams. This package includes strategic planning, UX wireframes, custom UI design, and full frontend development using React. We integrate GSAP animations, SEO optimization, CRM workflows (like HubSpot or Salesforce), and host everything securely with Cloudflare. Designed for scale, speed, and conversion.
@@ -124,7 +124,7 @@ export default function PremiumWebPackage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-display-medium text-white mb-8">Includes</h2>
+              <h2 className="text-3xl font-bold text-white mb-8">Includes</h2>
               <ul className="space-y-4">
                 {includedFeatures.map((feature, index) => (
                   <li key={index} className="flex items-start">
@@ -136,7 +136,7 @@ export default function PremiumWebPackage() {
             </div>
 
             <div>
-              <h2 className="text-display-medium text-white mb-8">Optional Add-ons</h2>
+              <h2 className="text-3xl font-bold text-white mb-8">Optional Add-ons</h2>
               <ul className="space-y-4">
                 {optionalAddons.map((addon, index) => (
                   <li key={index} className="flex items-start">
@@ -156,7 +156,7 @@ export default function PremiumWebPackage() {
       {/* Related Services */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-heading-large text-white mb-6">Browse Related Services</h2>
+          <h2 className="text-2xl font-bold text-white mb-6">Browse Related Services</h2>
           <div className="flex flex-wrap gap-3">
             {relatedServices.map((service, index) => (
               <span

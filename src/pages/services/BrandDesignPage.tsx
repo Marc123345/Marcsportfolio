@@ -17,7 +17,7 @@ function FeatureCard({ icon: Icon, title, description }: {
           <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
         </div>
       </div>
-      <h3 className="text-body-large font-semibold mb-2 text-white">{title}</h3>
+      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
       <p className="text-gray-400">{description}</p>
     </div>
   );
@@ -38,7 +38,7 @@ export default function BrandDesignPage() {
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
-            <h1 className="text-display-large text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               Brand Design
             </h1>
             <p className="text-xl text-gray-400 mb-8">
@@ -97,14 +97,14 @@ export default function BrandDesignPage() {
       {/* Process Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-display-medium text-white mb-12">Brand Design Process</h2>
+          <h2 className="text-3xl font-bold text-white mb-12">Brand Design Process</h2>
           <div className="space-y-12">
             <div className="flex items-start">
               <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
                 1
               </div>
               <div>
-                <h3 className="text-body-large font-semibold text-white mb-2">Discovery & Research</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">Discovery & Research</h3>
                 <p className="text-gray-400">Deep dive into your business, audience, and competitive landscape to inform brand strategy.</p>
               </div>
             </div>
@@ -113,7 +113,7 @@ export default function BrandDesignPage() {
                 2
               </div>
               <div>
-                <h3 className="text-body-large font-semibold text-white mb-2">Strategy Development</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">Strategy Development</h3>
                 <p className="text-gray-400">Define brand positioning, personality, and messaging that resonates with your target audience.</p>
               </div>
             </div>
@@ -122,7 +122,7 @@ export default function BrandDesignPage() {
                 3
               </div>
               <div>
-                <h3 className="text-body-large font-semibold text-white mb-2">Visual Design</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">Visual Design</h3>
                 <p className="text-gray-400">Create logo concepts and visual identity elements that bring your brand strategy to life.</p>
               </div>
             </div>
@@ -131,7 +131,7 @@ export default function BrandDesignPage() {
                 4
               </div>
               <div>
-                <h3 className="text-body-large font-semibold text-white mb-2">Implementation</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">Implementation</h3>
                 <p className="text-gray-400">Develop comprehensive brand guidelines and assets for consistent application.</p>
               </div>
             </div>
@@ -163,7 +163,7 @@ export default function BrandDesignPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-display-medium text-white mb-4">Ready to Build Your Brand?</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to Build Your Brand?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's create a <strong className="text-white">powerful brand identity</strong> that sets you apart from the competition.
           </p>

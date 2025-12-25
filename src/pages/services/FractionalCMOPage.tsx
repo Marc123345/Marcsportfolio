@@ -19,7 +19,7 @@ function FeatureCard({ icon: Icon, title, description }: {
           <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
         </div>
       </div>
-      <h3 className="text-body-large font-semibold mb-2 text-white">{title}</h3>
+      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
       <p className="text-gray-400">{description}</p>
     </div>
   );
@@ -66,7 +66,7 @@ export default function FractionalCMOPage() {
             <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm rounded-full px-4 py-2 border border-white/10 hover:border-[#A3D1FF] transition-all duration-300 mb-6">
               <span className="text-[#A3D1FF] text-sm font-medium">🔧 Web Partner for Fractional CMOs</span>
             </div>
-            <h1 className="text-display-large text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               Design & Dev Execution for Go-To-Market Strategy, Without the Bottlenecks
             </h1>
             <p className="text-xl text-gray-300 mb-4">
@@ -98,7 +98,7 @@ export default function FractionalCMOPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <TextReveal>
-            <h2 className="text-display-medium text-white mb-12">✅ What I Handle</h2>
+            <h2 className="text-3xl font-bold text-white mb-12">✅ What I Handle</h2>
           </TextReveal>
           <div className="grid md:grid-cols-2 gap-8">
             <FeatureCard
@@ -129,7 +129,7 @@ export default function FractionalCMOPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
           <TextReveal>
-            <h2 className="text-display-medium text-white mb-12">Why CMOs Work With Me</h2>
+            <h2 className="text-3xl font-bold text-white mb-12">Why CMOs Work With Me</h2>
           </TextReveal>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-8">
@@ -160,7 +160,7 @@ export default function FractionalCMOPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <TextReveal>
-            <h2 className="text-display-medium text-white mb-12">Tools & Tech</h2>
+            <h2 className="text-3xl font-bold text-white mb-12">Tools & Tech</h2>
           </TextReveal>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="space-y-4">
@@ -182,11 +182,11 @@ export default function FractionalCMOPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
           <TextReveal>
-            <h2 className="text-display-medium text-white mb-12">Success Stories</h2>
+            <h2 className="text-3xl font-bold text-white mb-12">Success Stories</h2>
           </TextReveal>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-[#2d3035] p-8 rounded-xl border border-white/10">
-              <h3 className="text-heading-large text-white mb-4">SaaS Go-to-Market Launch</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">SaaS Go-to-Market Launch</h3>
               <p className="text-gray-400 mb-6">
                 Partnered with a Fractional CMO to execute a complete website redesign and product launch for a B2B SaaS platform.
               </p>
@@ -213,7 +213,7 @@ export default function FractionalCMOPage() {
               </button>
             </div>
             <div className="bg-[#2d3035] p-8 rounded-xl border border-white/10">
-              <h3 className="text-heading-large text-white mb-4">Multi-Channel Campaign</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Multi-Channel Campaign</h3>
               <p className="text-gray-400 mb-6">
                 Created a series of landing pages for a multi-channel marketing campaign, each optimized for different traffic sources.
               </p>
@@ -247,7 +247,7 @@ export default function FractionalCMOPage() {
       <section id="contact-form" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <TextReveal>
-            <h2 className="text-display-medium text-white mb-12 text-center">Let's Collaborate</h2>
+            <h2 className="text-3xl font-bold text-white mb-12 text-center">Let's Collaborate</h2>
           </TextReveal>
           <p className="text-xl text-gray-400 mb-12 text-center max-w-3xl mx-auto">
             If you're looking for a design+dev partner who gets it — and gets it done — I'd love to be your go-to.
@@ -273,7 +273,7 @@ export default function FractionalCMOPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-display-medium text-white mb-4">Ready to Execute Your Strategy?</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to Execute Your Strategy?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's discuss how I can help bring your marketing vision to life with <strong className="text-white">fast, conversion-focused execution</strong>.
           </p>

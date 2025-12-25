@@ -23,7 +23,7 @@ function ExpertiseCard({ icon: Icon, title, description, features }: ExpertiseCa
           <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
         </div>
       </div>
-      <h3 className="text-body-large font-semibold mb-2 text-white">{title}</h3>
+      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
       <p className="text-gray-400">{description}</p>
       {features && (
         <div className="flex flex-wrap gap-2 mt-4">
@@ -60,7 +60,7 @@ function ProcessCard({ title, description, items }: {
 }) {
   return (
     <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all h-full">
-      <h3 className="text-body-large font-semibold text-white mb-4">{title}</h3>
+      <h3 className="text-xl font-semibold text-white mb-4">{title}</h3>
       <p className="text-gray-400 mb-6">{description}</p>
       <ul className="space-y-2">
         {items.map((item, index) => (
@@ -189,7 +189,7 @@ export default function AboutPage() {
             }}
           >
             <motion.h1 
-              className="text-display-large text-white mb-6"
+              className="text-4xl sm:text-5xl font-bold text-white mb-6"
               variants={fadeInUp}
             >
               About Marc Friedman
@@ -287,7 +287,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <h2 className="text-display-medium mb-12 text-white">The Problems I Solve</h2>
+            <h2 className="text-3xl font-bold mb-12 text-white">The Problems I Solve</h2>
             <div className="bg-[#1b1b1b] p-8 rounded-lg shadow-md mb-16">
               <p className="text-xl text-gray-300 mb-6">
                 My clients typically come to me with specific challenges that are holding back their digital growth:
@@ -335,7 +335,7 @@ export default function AboutPage() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <h2 className="text-display-medium text-white mb-12">My Expertise</h2>
+              <h2 className="text-3xl font-bold text-white mb-12">My Expertise</h2>
               <div className="grid gap-8">
                 <ExpertiseCard
                   icon={Target}
@@ -409,17 +409,17 @@ export default function AboutPage() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <h2 className="text-display-medium text-white mb-12">Technical Skills</h2>
+              <h2 className="text-3xl font-bold text-white mb-12">Technical Skills</h2>
               <div className="grid gap-8">
                 <div>
-                  <h3 className="text-body-large font-semibold mb-6 text-white">Design</h3>
+                  <h3 className="text-xl font-semibold mb-6 text-white">Design</h3>
                   <SkillBar name="UI/UX Design" percentage="95%" />
                   <SkillBar name="Design Systems" percentage="90%" />
                   <SkillBar name="Wireframing" percentage="95%" />
                   <SkillBar name="Prototyping" percentage="90%" />
                 </div>
                 <div>
-                  <h3 className="text-body-large font-semibold mb-6 text-white">Development</h3>
+                  <h3 className="text-xl font-semibold mb-6 text-white">Development</h3>
                   <SkillBar name="React/Next.js" percentage="95%" />
                   <SkillBar name="TypeScript" percentage="90%" />
                   <SkillBar name="Node.js" percentage="85%" />
@@ -434,7 +434,7 @@ export default function AboutPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.h2 
-            className="text-display-medium text-white mb-12"
+            className="text-3xl font-bold text-white mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -518,7 +518,7 @@ export default function AboutPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
           <motion.h2
-            className="text-display-medium text-white mb-8"
+            className="text-3xl font-bold text-white mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -534,7 +534,7 @@ export default function AboutPage() {
               viewport={{ once: true, amount: 0.3 }}
             >
               <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
-                <h3 className="text-body-large font-semibold text-white mb-4">Binns Media Group</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">Binns Media Group</h3>
                 <p className="text-gray-400 mb-4">
                   <strong className="text-white">Challenge:</strong> Outdated platform with poor user engagement and high bounce rates.
                 </p>
@@ -553,7 +553,7 @@ export default function AboutPage() {
               viewport={{ once: true, amount: 0.3 }}
             >
               <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
-                <h3 className="text-body-large font-semibold text-white mb-4">Wellness TCYS</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">Wellness TCYS</h3>
                 <p className="text-gray-400 mb-4">
                   <strong className="text-white">Challenge:</strong> Manual booking processes consuming hours weekly and limiting business growth.
                 </p>
@@ -572,7 +572,7 @@ export default function AboutPage() {
               viewport={{ once: true, amount: 0.3 }}
             >
               <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
-                <h3 className="text-body-large font-semibold text-white mb-4">MarginX</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">MarginX</h3>
                 <p className="text-gray-400 mb-4">
                   <strong className="text-white">Challenge:</strong> Dealerships making decisions based on outdated, fragmented market data.
                 </p>
@@ -591,7 +591,7 @@ export default function AboutPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.h2
-            className="text-display-medium text-white mb-8"
+            className="text-3xl font-bold text-white mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -607,7 +607,7 @@ export default function AboutPage() {
               viewport={{ once: true, amount: 0.3 }}
             >
               <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
-                <h3 className="text-body-large font-semibold text-white mb-4">Results-Driven</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">Results-Driven</h3>
                 <p className="text-gray-400"> 
                   I focus on creating digital experiences that drive <strong className="text-white">measurable business outcomes</strong>, not just pretty designs. My projects deliver <strong className="text-white">increased conversions</strong>.
                 </p>
@@ -620,7 +620,7 @@ export default function AboutPage() {
               viewport={{ once: true, amount: 0.3 }}
             >
               <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
-                <h3 className="text-body-large font-semibold text-white mb-4">Full-Stack Expertise</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">Full-Stack Expertise</h3>
                 <p className="text-gray-400"> 
                   With skills spanning design and development, I deliver <strong className="text-white">cohesive solutions without handoff issues</strong>. This integrated approach <strong className="text-white">reduces project timelines</strong>.
                 </p>
@@ -633,7 +633,7 @@ export default function AboutPage() {
               viewport={{ once: true, amount: 0.3 }}
             >
               <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
-                <h3 className="text-body-large font-semibold text-white mb-4">Strategic Partner</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">Strategic Partner</h3>
                 <p className="text-gray-400"> 
                   I work as an extension of your team, providing <strong className="text-white">strategic guidance beyond just execution</strong>. My clients report <strong className="text-white">improvement in decision-making</strong> efficiency.
                 </p>
@@ -652,7 +652,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <h2 className="text-display-medium text-white mb-8">Beyond Work</h2>
+            <h2 className="text-3xl font-bold text-white mb-8">Beyond Work</h2>
             <div className="grid md:grid-cols-2 gap-12">
               <div>
                 <p className="text-xl text-gray-300 mb-6">
@@ -708,7 +708,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <h2 className="text-display-medium text-white mb-4">Ready to Discuss Your Project?</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">Ready to Discuss Your Project?</h2>
             <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
               Let's schedule a call to explore how I can help you achieve your digital goals.
             </p>
@@ -720,7 +720,7 @@ export default function AboutPage() {
             
             {/* Related Links */}
             <div className="mt-12 pt-8 border-t border-white/10">
-              <h3 className="text-body-large font-semibold text-white mb-6">Explore My Work</h3>
+              <h3 className="text-xl font-semibold text-white mb-6">Explore My Work</h3>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link 
                   to="/work" 

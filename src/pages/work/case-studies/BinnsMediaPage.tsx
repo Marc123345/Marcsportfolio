@@ -88,7 +88,7 @@ const BinnsMediaPage = () => {
         <div className="relative group">
           <div className="absolute -inset-1 bg-gradient-to-r from-[#A3D1FF] to-blue-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
           <div className="relative bg-[#111] border border-white/10 p-10 rounded-3xl shadow-3xl">
-            <h3 className="text-heading-large mb-6">Engineering Decisions</h3>
+            <h3 className="text-2xl font-bold mb-6">Engineering Decisions</h3>
             <img 
               src="https://ik.imagekit.io/qcvroy8xpd/67eb0d66b12c7394660719%20(1).jpeg" 
               alt="Backend Architecture"

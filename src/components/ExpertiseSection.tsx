@@ -52,7 +52,7 @@ function ExpertiseCard({ icon: Icon, title, description, features, delay = 0 }: 
           <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
         </div>
       </div>
-      <h3 className="text-lg sm:text-xl md:text-heading-large text-white mb-2 sm:mb-4">{title}</h3>
+      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-4">{title}</h3>
       <p className="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6">{description}</p>
       <div className="flex flex-wrap gap-1.5 sm:gap-2">
         {features.map((feature, index) => (
@@ -192,7 +192,7 @@ export default function ExpertiseSection() {
         <div className="mt-8 sm:mt-12 md:mt-20 bg-[#1b1b1b] p-6 sm:p-8 rounded-xl border border-white/10 transform transition-all duration-1000 hover:border-[#A3D1FF]">
           <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
             <div>
-              <h3 className="text-xl sm:text-heading-large text-white mb-4 sm:mb-6">Our Development Process</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Our Development Process</h3>
               <div className="space-y-4 sm:space-y-6">
                 <div className="flex items-start">
                   <div className="bg-[#A3D1FF] text-black w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold mr-3 sm:mr-4 flex-shrink-0">
@@ -233,7 +233,7 @@ export default function ExpertiseSection() {
               </div>
             </div>
             <div>
-              <h3 className="text-xl sm:text-heading-large text-white mb-4 sm:mb-6">Technologies We Use</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Technologies We Use</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-white/5 p-4 rounded-lg hover:bg-white/10 transition-colors">
                   <h4 className="text-base sm:text-lg font-semibold text-white mb-2">Frontend</h4>

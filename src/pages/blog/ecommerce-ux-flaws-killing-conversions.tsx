@@ -240,15 +240,15 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
               </h4>
               <div className="grid md:grid-cols-3 gap-4">
                 <div>
-                  <div className="text-display-medium text-green-400 mb-1">+156%</div>
+                  <div className="text-3xl font-bold text-green-400 mb-1">+156%</div>
                   <div className="text-gray-300 text-sm">Product page views</div>
                 </div>
                 <div>
-                  <div className="text-display-medium text-green-400 mb-1">-43%</div>
+                  <div className="text-3xl font-bold text-green-400 mb-1">-43%</div>
                   <div className="text-gray-300 text-sm">Bounce rate</div>
                 </div>
                 <div>
-                  <div className="text-display-medium text-green-400 mb-1">+82%</div>
+                  <div className="text-3xl font-bold text-green-400 mb-1">+82%</div>
                   <div className="text-gray-300 text-sm">Conversion rate</div>
                 </div>
               </div>
@@ -353,15 +353,15 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
               </h4>
               <div className="grid md:grid-cols-3 gap-4">
                 <div>
-                  <div className="text-display-medium text-green-400 mb-1">+218%</div>
+                  <div className="text-3xl font-bold text-green-400 mb-1">+218%</div>
                   <div className="text-gray-300 text-sm">Mobile checkout completion</div>
                 </div>
                 <div>
-                  <div className="text-display-medium text-green-400 mb-1">-64%</div>
+                  <div className="text-3xl font-bold text-green-400 mb-1">-64%</div>
                   <div className="text-gray-300 text-sm">Cart abandonment rate</div>
                 </div>
                 <div>
-                  <div className="text-display-medium text-green-400 mb-1">+47%</div>
+                  <div className="text-3xl font-bold text-green-400 mb-1">+47%</div>
                   <div className="text-gray-300 text-sm">Mobile revenue</div>
                 </div>
               </div>
@@ -478,19 +478,19 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
               </h4>
               <div className="grid md:grid-cols-4 gap-4">
                 <div>
-                  <div className="text-display-medium text-green-400 mb-1">+127%</div>
+                  <div className="text-3xl font-bold text-green-400 mb-1">+127%</div>
                   <div className="text-gray-300 text-sm">Product page conversion</div>
                 </div>
                 <div>
-                  <div className="text-display-medium text-green-400 mb-1">-68%</div>
+                  <div className="text-3xl font-bold text-green-400 mb-1">-68%</div>
                   <div className="text-gray-300 text-sm">Product returns</div>
                 </div>
                 <div>
-                  <div className="text-display-medium text-green-400 mb-1">+156%</div>
+                  <div className="text-3xl font-bold text-green-400 mb-1">+156%</div>
                   <div className="text-gray-300 text-sm">Time on product pages</div>
                 </div>
                 <div>
-                  <div className="text-display-medium text-green-400 mb-1">-41%</div>
+                  <div className="text-3xl font-bold text-green-400 mb-1">-41%</div>
                   <div className="text-gray-300 text-sm">Support tickets</div>
                 </div>
               </div>
@@ -753,7 +753,7 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
           </div>
 
           <div className="mt-12 pt-8 border-t border-white/10">
-            <h3 className="text-body-large font-semibold text-white mb-4">Related Articles</h3>
+            <h3 className="text-xl font-semibold text-white mb-4">Related Articles</h3>
             <div className="grid md:grid-cols-3 gap-6">
               <Link to="/blog/conversion-rate-optimization-techniques" className="block group">
                 <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all h-full">
@@ -786,7 +786,7 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
 
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-display-medium text-white mb-4">Ready to Optimize Your Store?</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to Optimize Your Store?</h2>
           <p className="text-xl text-gray-400 mb-8">
             Let's identify the UX issues costing you conversions and create a data-driven optimization plan.
           </p>

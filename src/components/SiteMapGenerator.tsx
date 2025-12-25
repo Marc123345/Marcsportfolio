@@ -22,7 +22,7 @@ export default function SiteMapGenerator() {
           <div className="bg-[#A3D1FF]/10 p-3 rounded-lg">
             <FileText className="w-6 h-6 text-[#A3D1FF]" />
           </div>
-          <h3 className="text-heading-large text-white">Sitemap Generator</h3>
+          <h3 className="text-2xl font-bold text-white">Sitemap Generator</h3>
         </div>
         
         <p className="text-gray-400 mb-6">

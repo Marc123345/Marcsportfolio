@@ -121,7 +121,7 @@ export default function MonthlyRetainerPackage() {
       {/* Description Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-display-medium text-white mb-6">About this Service</h2>
+          <h2 className="text-3xl font-bold text-white mb-6">About this Service</h2>
           <div className="prose prose-invert max-w-none">
             <p className="text-lg text-gray-300 mb-6">
               Transform your website into a high-performing growth engine. This service includes full website management, premium hosting, technical SEO, on-page SEO, content creation, landing page design, analytics, and a monthly optimization strategy.
@@ -139,7 +139,7 @@ export default function MonthlyRetainerPackage() {
       {/* What's Included Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-display-medium text-white mb-12 text-center">What's Included Every Month</h2>
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">What's Included Every Month</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {includedFeatures.map((feature, index) => (
               <div key={index} className="flex items-start">
@@ -154,7 +154,7 @@ export default function MonthlyRetainerPackage() {
       {/* Technologies Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-display-medium text-white mb-8">Technologies & Tools Used</h2>
+          <h2 className="text-3xl font-bold text-white mb-8">Technologies & Tools Used</h2>
           <div className="flex flex-wrap gap-4">
             {technologies.map((tech, index) => (
               <div
@@ -171,28 +171,28 @@ export default function MonthlyRetainerPackage() {
       {/* Benefits Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-display-medium text-white mb-8 text-center">Why Choose a Monthly Retainer?</h2>
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">Why Choose a Monthly Retainer?</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-black/50 p-6 rounded-xl border border-white/10">
-              <h3 className="text-body-large font-semibold text-[#A3D1FF] mb-3">Consistent Growth</h3>
+              <h3 className="text-xl font-semibold text-[#A3D1FF] mb-3">Consistent Growth</h3>
               <p className="text-gray-300">
                 Your website is always improving with regular updates, content, and optimization strategies that drive measurable results.
               </p>
             </div>
             <div className="bg-black/50 p-6 rounded-xl border border-white/10">
-              <h3 className="text-body-large font-semibold text-[#A3D1FF] mb-3">Higher Rankings</h3>
+              <h3 className="text-xl font-semibold text-[#A3D1FF] mb-3">Higher Rankings</h3>
               <p className="text-gray-300">
                 Monthly SEO work ensures your site climbs search rankings and attracts more organic traffic consistently.
               </p>
             </div>
             <div className="bg-black/50 p-6 rounded-xl border border-white/10">
-              <h3 className="text-body-large font-semibold text-[#A3D1FF] mb-3">Better Conversions</h3>
+              <h3 className="text-xl font-semibold text-[#A3D1FF] mb-3">Better Conversions</h3>
               <p className="text-gray-300">
                 Continuous UX improvements and A/B testing lead to higher conversion rates and more qualified leads.
               </p>
             </div>
             <div className="bg-black/50 p-6 rounded-xl border border-white/10">
-              <h3 className="text-body-large font-semibold text-[#A3D1FF] mb-3">Peace of Mind</h3>
+              <h3 className="text-xl font-semibold text-[#A3D1FF] mb-3">Peace of Mind</h3>
               <p className="text-gray-300">
                 Professional website management means you can focus on your business while we handle all technical aspects.
               </p>
@@ -204,7 +204,7 @@ export default function MonthlyRetainerPackage() {
       {/* Related Services */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-heading-large text-white mb-6">Browse Related Services</h2>
+          <h2 className="text-2xl font-bold text-white mb-6">Browse Related Services</h2>
           <div className="flex flex-wrap gap-3">
             {relatedServices.map((service, index) => (
               <span

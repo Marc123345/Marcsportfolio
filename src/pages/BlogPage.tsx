@@ -330,7 +330,7 @@ function BlogPostCard({ post }: { post: typeof blogPosts[0] }) {
             </span>
           ))}
         </div>
-        <h3 className="text-heading-large text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">
+        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">
           {post.title}
         </h3>
         <p className="text-gray-400 mb-4 text-sm line-clamp-2">
@@ -388,7 +388,7 @@ function FeaturedBlogPost({ post }: { post: typeof blogPosts[0] }) {
               </span>
             ))}
           </div>
-          <h3 className="text-heading-large text-white mb-3 group-hover:text-[#A3D1FF] transition-colors">
+          <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#A3D1FF] transition-colors">
             {post.title}
           </h3>
           <p className="text-gray-400 mb-4">
@@ -475,7 +475,7 @@ export default function BlogPage() {
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
           <TextReveal>
-            <h1 className="text-display-large text-white mb-4">
+            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
               Blog
             </h1>
             <h2 className="text-xl sm:text-2xl text-[#A3D1FF] mb-6">
@@ -571,7 +571,7 @@ export default function BlogPage() {
       {featuredPosts.length > 0 && activeCategory === 'all' && !searchQuery && (
         <section className="py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-heading-large text-white mb-6">Featured Blog Articles</h2>
+            <h2 className="text-2xl font-bold text-white mb-6">Featured Blog Articles</h2>
             <div className="space-y-8">
               {featuredPosts.map((post, index) => (
                 <FeaturedBlogPost key={post.id} post={post} />
@@ -584,7 +584,7 @@ export default function BlogPage() {
       {/* All Posts Grid */}
       <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-heading-large text-white mb-6">
+          <h2 className="text-2xl font-bold text-white mb-6">
             {searchQuery 
               ? `Search Results for "${searchQuery}"` 
               : activeCategory !== 'all' 
@@ -594,7 +594,7 @@ export default function BlogPage() {
           
           {filteredPosts.length === 0 ? (
             <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 text-center">
-              <h3 className="text-body-large font-semibold text-white mb-2">No articles found</h3>
+              <h3 className="text-xl font-semibold text-white mb-2">No articles found</h3>
               <p className="text-gray-400 mb-4">Try adjusting your filter criteria.</p>
               <button
                 onClick={() => {
@@ -621,7 +621,7 @@ export default function BlogPage() {
       {/* Newsletter Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-heading-large text-white mb-3">Stay Updated with Industry Insights</h2>
+          <h2 className="text-2xl font-bold text-white mb-3">Stay Updated with Industry Insights</h2>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -661,7 +661,7 @@ export default function BlogPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-display-medium text-white mb-4">Ready to Transform Your Digital Presence?</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Digital Presence?</h2>
             <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
               Let's create a digital solution that delivers <strong className="text-white">measurable results</strong> for your business.
             </p>
@@ -673,7 +673,7 @@ export default function BlogPage() {
             
             {/* Related Resources */}
             <div className="mt-12 pt-8 border-t border-white/10">
-              <h3 className="text-body-large font-semibold text-white mb-6">Helpful Resources</h3>
+              <h3 className="text-xl font-semibold text-white mb-6">Helpful Resources</h3>
               <div className="grid md:grid-cols-4 gap-4">
                 <Link 
                   to="/tools/website-analyzer" 

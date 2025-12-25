@@ -40,7 +40,7 @@ export default function WebsiteAnalyzerPage() {
 
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-display-large text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
             Free Website Analyzer
           </h1>
           <p className="text-xl text-gray-300 mb-8">
@@ -54,25 +54,25 @@ export default function WebsiteAnalyzerPage() {
           <AIWebsiteAnalyzer />
           
           <div className="mt-16 bg-[#1b1b1b] p-8 rounded-xl border border-white/10">
-            <h2 className="text-heading-large text-white mb-6">Why Analyze Your Website?</h2>
+            <h2 className="text-2xl font-bold text-white mb-6">Why Analyze Your Website?</h2>
             
             <div className="grid md:grid-cols-3 gap-8">
               <div>
-                <h3 className="text-body-large font-semibold text-white mb-3">Identify Issues</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Identify Issues</h3>
                 <p className="text-gray-400">
                   Discover hidden problems that could be costing you leads and customers every day.
                 </p>
               </div>
               
               <div>
-                <h3 className="text-body-large font-semibold text-white mb-3">Improve Conversions</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Improve Conversions</h3>
                 <p className="text-gray-400">
                   Learn how to optimize your site to turn more visitors into leads and customers.
                 </p>
               </div>
               
               <div>
-                <h3 className="text-body-large font-semibold text-white mb-3">Stay Competitive</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Stay Competitive</h3>
                 <p className="text-gray-400">
                   Ensure your website meets modern standards and outperforms your competitors.
                 </p>
@@ -86,7 +86,7 @@ export default function WebsiteAnalyzerPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-display-medium text-white mb-6">Get Expert Help</h2>
+              <h2 className="text-3xl font-bold text-white mb-6">Get Expert Help</h2>
               <p className="text-gray-400 mb-6">
                 While our free analyzer provides valuable insights, nothing beats a personalized review from an expert. Book a free strategy call to discuss:
               </p>
@@ -131,7 +131,7 @@ export default function WebsiteAnalyzerPage() {
 
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-display-medium text-white mb-4">Ready to Transform Your Website?</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Website?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's create a website that doesn't just look great, but actively converts visitors into leads and customers.
           </p>

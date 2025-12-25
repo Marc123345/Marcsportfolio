@@ -121,7 +121,7 @@ export default function ProjectTimelineVisualizer() {
           <div className="bg-[#A3D1FF]/10 p-3 rounded-lg">
             <Clock className="w-6 h-6 text-[#A3D1FF]" />
           </div>
-          <h3 className="text-heading-large text-white">Project Timeline</h3>
+          <h3 className="text-2xl font-bold text-white">Project Timeline</h3>
         </div>
         
         <p className="text-gray-400 mb-8">
@@ -163,7 +163,7 @@ export default function ProjectTimelineVisualizer() {
               <div className="flex items-center gap-3 mb-4">
                 {activePhaseData.icon}
                 <div>
-                  <h4 className="text-body-large font-semibold text-white">{activePhaseData.title}</h4>
+                  <h4 className="text-xl font-semibold text-white">{activePhaseData.title}</h4>
                   <p className="text-[#A3D1FF]">{activePhaseData.duration}</p>
                 </div>
               </div>
