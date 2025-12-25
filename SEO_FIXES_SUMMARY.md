@@ -94,10 +94,10 @@ This document summarizes all SEO-related fixes implemented to resolve issues rep
 
 ## Redirect Configuration
 
-### Total Redirects: 30
+### Total Redirects: 28
 
 1. **HTTPS/www Enforcement**: 3 redirects
-2. **Old Case Study URLs**: 9 redirects
+2. **Old Case Study URLs**: 7 redirects (optimized)
 3. **Old Service URLs**: 7 redirects
 4. **Legal Page Extensions**: 3 redirects
 5. **Main Page Redirects**: 3 redirects
@@ -178,7 +178,8 @@ curl -I https://www.marcfriedmanportfolio.com/casestudies/tesla-finder/
 
 1. **netlify.toml**:
    - Added 9 new redirect rules
-   - Total: 30 redirect rules
+   - Consolidated duplicate patterns
+   - Total: 28 redirect rules (optimized from 30)
    
 2. **robots.txt**:
    - Fixed sitemap URL (added www)
