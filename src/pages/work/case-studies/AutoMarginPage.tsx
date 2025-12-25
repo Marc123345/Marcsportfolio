@@ -239,7 +239,7 @@ export default function AutoMarginPage() {
             <p className="text-xl text-white font-bold mb-8">
               By turning data into decisions, AutoMarginX transforms every aspect of your business:
             </p>
-            <ul className="text-white text-heading-large mb-8 list-disc pl-6 space-y-2">
+            <ul className="text-white text-body-large mb-8 list-disc pl-6 space-y-2">
               <li>Boosting efficiency</li>
               <li>Increasing profits</li>
               <li>Keeping you ahead of the competition</li>
