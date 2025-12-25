@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             name="termly-embed"
-            data-id="96c72e5a-2aed-493a-9888-b6333e28b5c6"
+            data-id="140311b3-ac81-47d4-88fb-8349d7d37f51"
           />
         </div>
       </div>
