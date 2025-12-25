@@ -3,12 +3,16 @@ import { BrowserRouter } from 'react-router-dom';
 import { AppProviders } from '@/providers/AppProviders';
 import App from '@/App';
 import '@/index.css';
+import { initPlausible } from '@/lib/plausible';
 
 // Performance optimizations
 const initializeApp = () => {
+  // Initialize Plausible Analytics
+  initPlausible();
+
   // Define public path for dynamic imports
   window.__vite_public_path = window.location.origin + '/';
-  
+
   // Prefetch critical routes only on fast connections
   const prefetchRoutes = () => {
     // Check connection quality and data saver mode
