@@ -22,10 +22,10 @@ const routes = [
       }
     ]
   },
-  { 
-    url: '/work', 
-    changefreq: 'weekly', 
-    priority: 0.9, 
+  {
+    url: '/work',
+    changefreq: 'weekly',
+    priority: 0.9,
     lastmod: new Date().toISOString(),
     img: [
       {
@@ -35,10 +35,10 @@ const routes = [
       }
     ]
   },
-  { 
-    url: '/services', 
-    changefreq: 'weekly', 
-    priority: 0.9, 
+  {
+    url: '/services',
+    changefreq: 'weekly',
+    priority: 0.9,
     lastmod: new Date().toISOString()
   },
   {
@@ -54,19 +54,33 @@ const routes = [
       }
     ]
   },
-  { 
-    url: '/contact', 
-    changefreq: 'monthly', 
-    priority: 0.8, 
+  {
+    url: '/contact',
+    changefreq: 'monthly',
+    priority: 0.8,
     lastmod: new Date().toISOString()
   },
-  { 
-    url: '/blog', 
-    changefreq: 'weekly', 
-    priority: 0.8, 
+  {
+    url: '/blog',
+    changefreq: 'weekly',
+    priority: 0.8,
     lastmod: new Date().toISOString()
   },
-  
+  {
+    url: '/press',
+    changefreq: 'monthly',
+    priority: 0.7,
+    lastmod: new Date().toISOString()
+  },
+
+  // Legal pages
+  { url: '/privacy-policy', changefreq: 'yearly', priority: 0.3, lastmod: new Date().toISOString() },
+  { url: '/terms-and-conditions', changefreq: 'yearly', priority: 0.3, lastmod: new Date().toISOString() },
+  { url: '/cookies-policy', changefreq: 'yearly', priority: 0.3, lastmod: new Date().toISOString() },
+  { url: '/disclaimer', changefreq: 'yearly', priority: 0.3, lastmod: new Date().toISOString() },
+  { url: '/acceptable-use-policy', changefreq: 'yearly', priority: 0.3, lastmod: new Date().toISOString() },
+  { url: '/dmca', changefreq: 'yearly', priority: 0.3, lastmod: new Date().toISOString() },
+
   // Work case studies
   { url: '/work/case-studies/binns-media', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
   { url: '/work/case-studies/untapped-africa', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
@@ -81,7 +95,7 @@ const routes = [
   { url: '/work/case-studies/secure-annapolis', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/work/case-studies/ilight', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/work/case-studies/ask-africa', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
-  
+
   // Services
   { url: '/services/web-development', changefreq: 'monthly', priority: 0.9, lastmod: new Date().toISOString() },
   { url: '/services/design', changefreq: 'monthly', priority: 0.9, lastmod: new Date().toISOString() },
@@ -94,14 +108,9 @@ const routes = [
   { url: '/services/fractional-cmo', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
   { url: '/services/design-systems', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
   { url: '/services/brand-design', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
-  { url: '/services/headless-shopify', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
-  { url: '/services/website-growth', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
-  { url: '/services/revenue-machine', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
-  { url: '/services/media-empire', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
-  { url: '/services/luxury-jewelry', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
-  { url: '/services/landing-page', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
-  { url: '/services/complete-website', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
-  
+  { url: '/services/premium-web-package', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
+  { url: '/services/monthly-retainer', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
+
   // Tools
   { url: '/tools/website-analyzer', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/tools/roi-calculator', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
@@ -109,6 +118,7 @@ const routes = [
   { url: '/tools/ai-crawler-optimization', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
 
   // Blog posts
+  { url: '/blog/ecommerce-ux-flaws-killing-conversions', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/blog/contrast-balance-ui-design', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/blog/ui-polish-visual-realism', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/blog/building-data-driven-design-systems', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
@@ -118,7 +128,12 @@ const routes = [
   { url: '/blog/future-of-saas-web-design', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/blog/mobile-first-design-principles', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/blog/optimizing-websites-for-ai-crawlers', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
-  { url: '/blog/progressive-web-apps', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() }
+  { url: '/blog/progressive-web-apps', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
+  { url: '/blog/ai-personalization-ecommerce', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
+  { url: '/blog/gdpr-compliance-with-termly', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
+  { url: '/blog/paving-contractor-website-design-guide', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
+  { url: '/blog/local-seo-for-paving-contractors', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
+  { url: '/blog/digital-marketing-asphalt-contractors', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() }
 ];
 
 async function generateSitemap() {
