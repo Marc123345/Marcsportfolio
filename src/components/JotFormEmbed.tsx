@@ -1,27 +1,35 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 export default function JotFormEmbed() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const scriptRef = useRef<HTMLScriptElement | null>(null);
+
   useEffect(() => {
-    // Load JotForm script dynamically
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'https://form.jotform.com/jsform/253586719410462';
-    script.async = true;
+    // Generate a unique ID for this instance to avoid conflicts
+    const uniqueId = `jotform-container-${Math.random().toString(36).substr(2, 9)}`;
     
-    const container = document.getElementById('jotform-container');
-    if (container) {
-      container.appendChild(script);
+    if (containerRef.current) {
+      containerRef.current.id = uniqueId;
+      
+      // Load JotForm script dynamically
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'https://form.jotform.com/jsform/253586719410462';
+      script.async = true;
+      
+      containerRef.current.appendChild(script);
+      scriptRef.current = script;
     }
 
     // Cleanup function to remove script when component unmounts
     return () => {
-      if (container && container.contains(script)) {
-        container.removeChild(script);
+      if (scriptRef.current && containerRef.current && containerRef.current.contains(scriptRef.current)) {
+        containerRef.current.removeChild(scriptRef.current);
       }
     };
   }, []);
 
   return (
-    <div id="jotform-container" className="w-full" />
+    <div ref={containerRef} className="w-full" />
   );
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import JotFormEmbed from '@/components/JotFormEmbed';
 
 interface Props {
-  service: string;
   benefits: string[];
   testimonial?: {
     quote: string;
