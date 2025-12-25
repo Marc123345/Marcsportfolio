@@ -12,7 +12,6 @@ import {
   SecureAnnapolisPage,
   UntappedAfricaPage,
   ILightPage,
-  AskAfricaPage,
   UzaEntertainmentPage,
 } from './case-studies';
 
@@ -30,7 +29,6 @@ export default function CaseStudiesPage() {
       <Route path="secure-annapolis" element={<SecureAnnapolisPage />} />
       <Route path="untapped-africa" element={<UntappedAfricaPage />} />
       <Route path="ilight" element={<ILightPage />} />
-      <Route path="ask-africa" element={<AskAfricaPage />} />
       <Route path="uza-entertainment" element={<UzaEntertainmentPage />} />
       <Route path="*" element={<Navigate to="/work" replace />} />
     </Routes>

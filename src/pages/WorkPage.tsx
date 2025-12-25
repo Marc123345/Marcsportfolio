@@ -87,20 +87,6 @@ const projects: Project[] = [
     technologies: ["React", "Node.js", "PostgreSQL"],
     category: "website"
   },
-  {
-    title: "Ask Africa",
-    description: "Corporate website rebrand for South Africa's leading market research firm.",
-    image: "https://ik.imagekit.io/qcvroy8xpd/mockuuups-kzccsqfybhcjamey4qqdwh.jpeg?updatedAt=1754029601130",
-    liveUrl: "https://askafrika.co.za",
-    caseStudyUrl: "/work/case-studies/ask-africa",
-    impact: [
-      "1-week development timeline",
-      "Multiple stakeholder coordination",
-      "30+ years industry leadership"
-    ],
-    technologies: ["React", "Tailwind CSS", "Local SEO"],
-    category: "website"
-  },
 
   // Landing Pages
   {
@@ -327,7 +313,7 @@ export default function WorkPage() {
           case 'automotive':
             return ['AutoMarginX', 'Fleet Management System'].includes(project.title);
           case 'professional':
-            return ['A Secure Annapolis Locksmith', 'Friedman & Cohen', 'Ask Africa', 'Irreplicable'].includes(project.title);
+            return ['A Secure Annapolis Locksmith', 'Friedman & Cohen', 'Irreplicable'].includes(project.title);
           case 'social-impact':
             return ['Untapped Africa', 'Give 2 Grow'].includes(project.title);
           case 'sports':

@@ -731,14 +731,6 @@ export default function Layout() {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/work/case-studies/ask-africa"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Ask Africa
-                  </Link>
-                </li>
-                <li>
                   <a 
                     href="https://dribbble.com/marcf9199/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22marcf9199%22&utm_content=%22About%20marcf9199%22&utm_medium=Social_Share"
                     target="_blank"

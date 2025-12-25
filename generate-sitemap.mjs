@@ -94,7 +94,6 @@ const routes = [
   { url: '/work/case-studies/friedman-cohen', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/work/case-studies/secure-annapolis', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/work/case-studies/ilight', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
-  { url: '/work/case-studies/ask-africa', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
 
   // Services
   { url: '/services/web-development', changefreq: 'monthly', priority: 0.9, lastmod: new Date().toISOString() },

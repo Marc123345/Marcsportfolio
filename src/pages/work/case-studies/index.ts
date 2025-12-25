@@ -9,5 +9,4 @@ export { default as BinnsMediaPage } from './BinnsMediaPage';
 export { default as SecureAnnapolisPage } from './SecureAnnapolisPage';
 export { default as UntappedAfricaPage } from './UntappedAfricaPage';
 export { default as ILightPage } from './ILightPage';
-export { default as AskAfricaPage } from './AskAfricaPage';
 export { default as UzaEntertainmentPage } from './UzaEntertainmentPage';

@@ -414,12 +414,12 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {[
               {
-                title: "Ask Africa",
-                image: "https://ik.imagekit.io/qcvroy8xpd/mockuuups-kzccsqfybhcjamey4qqdwh.jpeg?updatedAt=1754029601130",
-                description: "Corporate website rebrand",
-                tech: ["React", "Tailwind CSS", "Local SEO"],
-                liveUrl: "https://askafrika.co.za",
-                caseStudy: "/work/case-studies/ask-africa"
+                title: "Untapped Africa",
+                image: "https://ik.imagekit.io/qcvroy8xpd/Screenshot.png?updatedAt=1754018965491",
+                description: "Water infrastructure solutions across Africa",
+                tech: ["Next.js", "TypeScript", "Supabase", "Mapbox GL"],
+                liveUrl: "https://untappedafrica.co.za",
+                caseStudy: "/work/case-studies/untapped-africa"
               },
               {
                 title: "Binns Media Group Platform",
