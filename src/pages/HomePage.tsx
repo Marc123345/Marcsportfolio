@@ -167,14 +167,20 @@ export default function HomePage() {
       <AccessibilityPanel />
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20" style={{ backgroundColor: '#0a0f1a' }}>
-        {/* Background Image - Portfolio Websites */}
+      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20" style={{ backgroundColor: '#1a2332' }}>
+        {/* Animated Background Image - Portfolio Websites */}
         <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
           <motion.div
-            className="absolute inset-0 w-full h-full"
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 0.15, scale: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="absolute inset-0 w-[120%] h-full"
+            initial={{ opacity: 0, x: 0 }}
+            animate={{
+              opacity: 0.4,
+              x: ['0%', '-20%']
+            }}
+            transition={{
+              opacity: { duration: 1.5, ease: "easeOut" },
+              x: { duration: 40, repeat: Infinity, ease: "linear", repeatType: "reverse" }
+            }}
           >
             <img
               src="https://ik.imagekit.io/qcvroy8xpd/Container.png"
@@ -183,41 +189,15 @@ export default function HomePage() {
             />
           </motion.div>
 
-          {/* Gradient Overlays for depth */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f1a] via-transparent to-[#0a0f1a]"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f1a]/90 via-[#0a0f1a]/50 to-transparent"></div>
-
-          {/* Subtle animated gradient orbs */}
-          <motion.div
-            className="absolute top-1/3 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
-            animate={{
-              x: [0, 30, 0],
-              y: [0, -30, 0],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          ></motion.div>
-          <motion.div
-            className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-[#A3D1FF]/10 rounded-full blur-3xl"
-            animate={{
-              x: [0, -30, 0],
-              y: [0, 30, 0],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          ></motion.div>
+          {/* Subtle Gradient Overlays */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1a2332]/60 via-transparent to-[#1a2332]/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1a2332]/80 via-transparent to-[#1a2332]/40"></div>
         </div>
 
         <div className="container mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
 
-            {/* Left Side - Content */}
+            {/* Left Side - Content + Reviews */}
             <motion.div
               className="text-left space-y-8"
               initial={{ opacity: 0, y: 30 }}
@@ -257,77 +237,12 @@ export default function HomePage() {
                 </Link>
               </motion.div>
 
-              {/* Trust Badges */}
+              {/* Verified Reviews Badge */}
               <motion.div
-                className="flex flex-wrap items-center gap-6 pt-4"
+                className="max-w-md bg-black/60 backdrop-blur-sm px-6 py-5 rounded-lg border border-white/10 shadow-2xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-              >
-                <div className="flex items-center gap-2">
-                  <div className="flex -space-x-2">
-                    <div className="w-10 h-10 rounded-full border-2 border-[#0a0f1a] overflow-hidden">
-                      <img src="https://ik.imagekit.io/qcvroy8xpd/1682479506906.jpeg?updatedAt=1754019693073" alt="Client" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="w-10 h-10 rounded-full border-2 border-[#0a0f1a] overflow-hidden">
-                      <img src="https://ik.imagekit.io/qcvroy8xpd/4c91361b-27ee-453b-88e0-af3026cac747_1_ro3hez_e_background_removal_f_png_vkfbub.png?updatedAt=1754023286922" alt="Client" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="w-10 h-10 rounded-full border-2 border-[#0a0f1a] overflow-hidden bg-[#A3D1FF]/20 flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">+20</span>
-                    </div>
-                  </div>
-                  <div className="flex flex-col">
-                    <div className="flex items-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-[#FFD700] text-[#FFD700]" />
-                      ))}
-                    </div>
-                    <span className="text-xs text-gray-400">Trusted by 20+ businesses</span>
-                  </div>
-                </div>
-              </motion.div>
-
-            </motion.div>
-
-            {/* Right Side - Marc's Image + Reviews */}
-            <motion.div
-              className="relative flex flex-col items-center lg:items-end gap-8"
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-
-              {/* Marc's Professional Image */}
-              <motion.div
-                className="relative"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-              >
-                <div className="relative w-80 h-80 lg:w-96 lg:h-96">
-                  {/* Glow effect behind image */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#A3D1FF]/30 to-blue-500/30 rounded-full blur-2xl"></div>
-
-                  {/* Main image container */}
-                  <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/10 shadow-2xl">
-                    <img
-                      src="https://ik.imagekit.io/qcvroy8xpd/1682479506906.jpeg?updatedAt=1754019693073"
-                      alt="Marc Friedman - Full Stack Designer & Developer"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-
-                  {/* Decorative ring */}
-                  <div className="absolute inset-0 rounded-full border-2 border-[#A3D1FF]/20 animate-pulse"></div>
-                </div>
-              </motion.div>
-
-              {/* Verified Reviews Badge */}
-              <motion.div
-                className="w-full max-w-md bg-black/80 backdrop-blur-sm px-6 py-5 rounded-lg border border-white/10 shadow-2xl"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
               >
                 <div className="flex items-center gap-3 mb-4">
                   <Shield className="w-5 h-5 text-[#A3D1FF]" />
@@ -396,16 +311,16 @@ export default function HomePage() {
                 <div className="flex items-center gap-2 mt-4 pt-4 border-t border-white/10">
                   <span className="text-gray-400 text-xs">Trusted by:</span>
                   <div className="flex items-center -space-x-2">
-                    <div className="w-7 h-7 rounded-full border-2 border-[#0a0f1a] overflow-hidden">
+                    <div className="w-7 h-7 rounded-full border-2 border-[#1a2332] overflow-hidden">
                       <img src="https://ik.imagekit.io/qcvroy8xpd/1682479506906.jpeg?updatedAt=1754019693073" alt="Client" className="w-full h-full object-cover" />
                     </div>
-                    <div className="w-7 h-7 rounded-full border-2 border-[#0a0f1a] overflow-hidden">
+                    <div className="w-7 h-7 rounded-full border-2 border-[#1a2332] overflow-hidden">
                       <img src="https://ik.imagekit.io/qcvroy8xpd/4c91361b-27ee-453b-88e0-af3026cac747_1_ro3hez_e_background_removal_f_png_vkfbub.png?updatedAt=1754023286922" alt="Client" className="w-full h-full object-cover" />
                     </div>
-                    <div className="w-7 h-7 rounded-full border-2 border-[#0a0f1a] overflow-hidden">
+                    <div className="w-7 h-7 rounded-full border-2 border-[#1a2332] overflow-hidden">
                       <img src="https://ik.imagekit.io/qcvroy8xpd/1732338426448%20(1).jpeg?updatedAt=1749337717019" alt="Client" className="w-full h-full object-cover" />
                     </div>
-                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#A3D1FF] to-blue-500 border-2 border-[#0a0f1a] flex items-center justify-center">
+                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#A3D1FF] to-blue-500 border-2 border-[#1a2332] flex items-center justify-center">
                       <span className="text-[9px] font-bold text-white">20+</span>
                     </div>
                   </div>
@@ -413,6 +328,9 @@ export default function HomePage() {
               </motion.div>
 
             </motion.div>
+
+            {/* Right Side - Empty Space */}
+            <div className="hidden lg:block"></div>
           </div>
 
           {/* Trusted by Industry Leaders - Company Logos */}
