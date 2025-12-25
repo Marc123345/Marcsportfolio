@@ -1,9 +1,18 @@
+/* Marc Friedman Design Agency - Typography System */
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
+    /* Font Families */
+    --font-primary: 'Inter', 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    --font-display: 'SF Pro Display', 'Inter', 'Helvetica Neue', sans-serif;
+
+    /* Font Sizes (Fluid Typography) */
     --text-size-80: clamp(0.694rem, 0.5vw + 0.5rem, 0.833rem);
     --text-size-90: clamp(0.833rem, 0.7vw + 0.6rem, 1rem);
     --text-size-100: clamp(1rem, 1vw + 0.75rem, 1.2rem);
@@ -13,15 +22,10 @@
     --text-size-500: clamp(2.074rem, 3vw + 1.5rem, 2.488rem);
     --text-size-600: clamp(2.488rem, 4vw + 1.8rem, 2.986rem);
     --text-size-700: clamp(2.986rem, 5vw + 2rem, 3.583rem);
-    
-    /* Typography spacing variables */
-    --letter-spacing-tight: -0.025em;
-    --letter-spacing-normal: 0;
-    --letter-spacing-wide: 0.025em;
-    --letter-spacing-wider: 0.05em;
-    --letter-spacing-widest: 0.1em;
-    
-    /* Line height variables */
+
+    /* Line Heights */
+    --line-height-tight: 1.0;
+    --line-height-snug: 1.1;
     --line-height-none: 1.0;
     --line-height-h1: 1.0;
     --line-height-h2: 1.1;
@@ -29,6 +33,22 @@
     --line-height-normal: 1.5;
     --line-height-relaxed: 1.625;
     --line-height-loose: 2;
+
+    /* Letter Spacing */
+    --letter-spacing-tight: -0.025em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.025em;
+    --letter-spacing-wider: 0.05em;
+    --letter-spacing-widest: 0.1em;
+
+    /* Color Palette */
+    --color-primary: #A3D1FF;
+    --color-primary-hover: #92bce6;
+    --color-black: #000000;
+    --color-dark: #1b1b1b;
+    --color-medium: #2d3035;
+    --color-light-gray: #9CA3AF;
+    --color-white: #FCFCFB;
   }
 
   html {
@@ -38,7 +58,8 @@
   }
   
   body {
-    @apply antialiased font-roboto font-normal leading-relaxed bg-black text-white;
+    @apply antialiased font-normal leading-relaxed bg-black text-white;
+    font-family: var(--font-primary);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -50,7 +71,8 @@
   .h1, .h2, .h3, .h4, .h5, .h6 {
     margin-top: 2.25rem;
     margin-bottom: 1rem;
-    @apply font-roboto font-bold tracking-tight text-[#FCFCFB];
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight text-[#FCFCFB];
     letter-spacing: var(--letter-spacing-tight);
   }
 
@@ -118,6 +140,73 @@
   .leading-normal { line-height: var(--line-height-normal); }
   .leading-relaxed { line-height: var(--line-height-relaxed); }
   .leading-loose { line-height: var(--line-height-loose); }
+
+  /* Design System Typography Classes */
+  .text-display-large {
+    font-family: var(--font-display);
+    font-size: var(--text-size-700);
+    font-weight: 700;
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
+  }
+
+  .text-display-medium {
+    font-family: var(--font-display);
+    font-size: var(--text-size-600);
+    font-weight: 700;
+    line-height: var(--line-height-snug);
+    letter-spacing: var(--letter-spacing-tight);
+  }
+
+  .text-heading-large {
+    font-family: var(--font-display);
+    font-size: var(--text-size-500);
+    font-weight: 600;
+    line-height: var(--line-height-snug);
+    letter-spacing: var(--letter-spacing-tight);
+  }
+
+  .text-body-large {
+    font-family: var(--font-primary);
+    font-size: var(--text-size-200);
+    font-weight: 400;
+    line-height: var(--line-height-normal);
+  }
+
+  .text-body-regular {
+    font-family: var(--font-primary);
+    font-size: var(--text-size-100);
+    font-weight: 400;
+    line-height: var(--line-height-normal);
+  }
+
+  .text-body-small {
+    font-family: var(--font-primary);
+    font-size: var(--text-size-90);
+    font-weight: 400;
+    line-height: var(--line-height-normal);
+  }
+
+  /* Color Utility Classes */
+  .text-primary { color: var(--color-primary); }
+  .text-primary-hover { color: var(--color-primary-hover); }
+  .bg-primary { background-color: var(--color-primary); }
+  .bg-primary-hover { background-color: var(--color-primary-hover); }
+  .bg-dark { background-color: var(--color-dark); }
+  .bg-medium { background-color: var(--color-medium); }
+  .border-primary { border-color: var(--color-primary); }
+
+  /* Gradient Classes */
+  .gradient-primary {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
   @keyframes fade-in-up {
     from {
