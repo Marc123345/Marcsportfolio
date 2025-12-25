@@ -1,35 +1,67 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 
 export default function JotFormEmbed() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const scriptRef = useRef<HTMLScriptElement | null>(null);
-
   useEffect(() => {
-    // Generate a unique ID for this instance to avoid conflicts
-    const uniqueId = `jotform-container-${Math.random().toString(36).substr(2, 9)}`;
-    
-    if (containerRef.current) {
-      containerRef.current.id = uniqueId;
-      
-      // Load JotForm script dynamically
-      const script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = 'https://form.jotform.com/jsform/253586719410462';
-      script.async = true;
-      
-      containerRef.current.appendChild(script);
-      scriptRef.current = script;
-    }
+    // Load JotForm iframe resize script
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js';
+    script.async = true;
 
-    // Cleanup function to remove script when component unmounts
+    document.body.appendChild(script);
+
+    // Listen for JotForm iframe messages
+    const handleMessage = (e: MessageEvent) => {
+      if (typeof e.data === 'object') return;
+      const args = e.data.split(':');
+      if (args.length > 2) {
+        const iframe = document.getElementById('JotFormIFrame-' + args[args.length - 1]) as HTMLIFrameElement;
+        if (iframe) {
+          switch (args[0]) {
+            case 'scrollIntoView':
+              iframe.scrollIntoView();
+              break;
+            case 'setHeight':
+              iframe.style.height = args[1] + 'px';
+              break;
+            case 'reloadPage':
+              window.location.reload();
+              break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+
     return () => {
-      if (scriptRef.current && containerRef.current && containerRef.current.contains(scriptRef.current)) {
-        containerRef.current.removeChild(scriptRef.current);
+      window.removeEventListener('message', handleMessage);
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
       }
     };
   }, []);
 
   return (
-    <div ref={containerRef} className="w-full" />
+    <iframe
+      id="JotFormIFrame-253586719410462"
+      title="Contact Form"
+      onLoad={() => {
+        const iframe = document.getElementById('JotFormIFrame-253586719410462') as HTMLIFrameElement;
+        if (iframe && iframe.contentWindow) {
+          iframe.contentWindow.postMessage(JSON.stringify({ action: 'ready' }), '*');
+        }
+      }}
+      allow="geolocation; microphone; camera; fullscreen"
+      src="https://form.jotform.com/253586719410462"
+      frameBorder="0"
+      style={{
+        minWidth: '100%',
+        maxWidth: '100%',
+        height: '539px',
+        border: 'none',
+      }}
+      scrolling="no"
+    />
   );
 }
