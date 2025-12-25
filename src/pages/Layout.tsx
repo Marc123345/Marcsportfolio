@@ -353,7 +353,9 @@ export default function Layout() {
       <motion.header
         ref={headerRef}
         className={`fixed w-full z-50 transition-all duration-300 ${
-          location.pathname === '/' ? 'bg-transparent' : (isScrolled ? 'bg-[#1b1b1b]/95 backdrop-blur-md shadow-md' : 'bg-transparent')
+          location.pathname === '/'
+            ? (isScrolled ? 'bg-[#1b1b1b]/80 backdrop-blur-sm' : 'bg-transparent')
+            : (isScrolled ? 'bg-[#1b1b1b]/95 backdrop-blur-md shadow-md' : 'bg-transparent')
         }`}
         initial={{ y: 0 }}
         animate={{
@@ -389,37 +391,54 @@ export default function Layout() {
               </MagneticButton>
             </div>
 
-            {/* Menu Button */}
+            {/* Right Side - CTA and Menu */}
             <div className="flex items-center gap-4">
-              <button 
+              <Link
+                to="/contact"
+                className="hidden md:inline-flex items-center gap-2 px-6 py-2.5 bg-white/10 border border-white/20 text-white font-medium text-sm uppercase tracking-wider rounded hover:bg-white/20 hover:shadow-[0_0_5px_1px_rgba(163,209,255,0.3),inset_0_0_2px_0_rgba(163,209,255,0.3)] transition-all duration-300 backdrop-blur-sm"
+              >
+                <span>Request a Quote</span>
+              </Link>
+
+              <button
                 onClick={() => setMenuOpen(!isMenuOpen)}
-                className="p-2 text-white hover:text-[#A3D1FF] transition-colors"
+                className="relative p-2 text-white hover:text-[#A3D1FF] transition-colors group"
                 aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={isMenuOpen}
               >
-                <AnimatePresence mode="wait">
-                  {isMenuOpen ? (
-                    <motion.div
-                      key="close"
-                      initial={{ rotate: -90, opacity: 0 }}
-                      animate={{ rotate: 0, opacity: 1 }}
-                      exit={{ rotate: 90, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <X className="w-6 h-6" />
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key="menu"
-                      initial={{ rotate: 90, opacity: 0 }}
-                      animate={{ rotate: 0, opacity: 1 }}
-                      exit={{ rotate: -90, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <MenuIcon className="w-6 h-6" />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <div className="relative w-6 h-5 flex flex-col justify-between">
+                  <AnimatePresence mode="wait">
+                    {isMenuOpen ? (
+                      <motion.div
+                        key="close"
+                        className="absolute inset-0"
+                        initial={{ rotate: -45, opacity: 0 }}
+                        animate={{ rotate: 0, opacity: 1 }}
+                        exit={{ rotate: 45, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <span className="absolute top-1/2 left-0 w-full h-0.5 bg-white transform -translate-y-1/2 rotate-45"></span>
+                        <span className="absolute top-1/2 left-0 w-full h-0.5 bg-white transform -translate-y-1/2 -rotate-45"></span>
+                      </motion.div>
+                    ) : (
+                      <motion.div
+                        key="menu"
+                        className="w-full"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <span className="block w-full h-0.5 bg-white transition-all duration-300"></span>
+                        <span className="block w-4/5 h-0.5 bg-white ml-auto transition-all duration-300 mt-1.5"></span>
+                        <span className="block w-full h-0.5 bg-white transition-all duration-300 mt-1.5"></span>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+                <span className="hidden lg:inline-block ml-2 text-xs font-bold uppercase tracking-wider">
+                  {isMenuOpen ? 'Close' : 'Menu'}
+                </span>
               </button>
             </div>
           </div>

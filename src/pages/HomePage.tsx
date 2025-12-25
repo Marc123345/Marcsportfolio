@@ -210,15 +210,9 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <h1 className="text-[clamp(2.5rem,5.5vw,4.5rem)] font-bold tracking-tight text-white leading-[1.15] mb-6">
-                  Websites that Convert for{' '}
-                  <span className="bg-gradient-to-r from-[#A3D1FF] to-blue-400 bg-clip-text text-transparent">
-                    Agencies, Ecommerce & B2B
-                  </span>
-                </h1>
-                <p className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-xl">
-                  High-performance React/Node sites built to attract more visitors, convert more leads, and close more clients.
-                </p>
+                <div className="text-[clamp(2.5rem,5.5vw,4.5rem)] font-bold tracking-tight text-white leading-[1.15] mb-6">
+                  Award Winning Websites That Turn Attention Into Revenue
+                </div>
               </motion.div>
 
               {/* CTA Button */}
