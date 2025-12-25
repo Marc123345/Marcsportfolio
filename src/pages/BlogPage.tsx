@@ -475,13 +475,13 @@ export default function BlogPage() {
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
           <TextReveal>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+            <h1 className="font-heading text-[clamp(2.2rem,4vw,3rem)] font-semibold tracking-[-0.01em] text-white leading-[1.15] mb-4">
               Blog
             </h1>
-            <h2 className="text-xl sm:text-2xl text-[#A3D1FF] mb-6">
+            <h2 className="font-body text-xl sm:text-2xl text-[#A3D1FF] mb-6">
               Design & Development Insights
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl">
+            <p className="font-body text-xl leading-[1.7] text-gray-400 max-w-3xl">
               Insights and perspectives on design, development, and digital innovation to help you <strong className="text-white">stay ahead in the digital landscape</strong>.
             </p>
           </TextReveal>

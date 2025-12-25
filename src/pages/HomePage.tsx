@@ -210,9 +210,9 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <div className="text-[clamp(2.5rem,5.5vw,4.5rem)] font-bold tracking-tight text-white leading-[1.15] mb-6">
+                <h1 className="font-heading text-[clamp(3rem,6vw,4.5rem)] font-semibold tracking-[-0.01em] text-white leading-[1.15] mb-6">
                   Award Winning Websites That Turn Attention Into Revenue
-                </div>
+                </h1>
               </motion.div>
 
               {/* CTA Buttons */}

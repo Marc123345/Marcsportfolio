@@ -127,14 +127,14 @@ export default function ContactPage() {
           }}
         >
           <motion.h1
-            className="text-4xl sm:text-5xl font-bold text-white mb-6"
+            className="font-heading text-[clamp(2.2rem,4vw,3rem)] font-semibold tracking-[-0.01em] text-white leading-[1.15] mb-6"
             variants={fadeInUp}
             custom={0}
           >
             Let's Build Your High-Converting Website
           </motion.h1>
           <motion.h2
-            className="text-xl sm:text-2xl text-[#A3D1FF] mb-6"
+            className="font-body text-xl sm:text-2xl text-[#A3D1FF] mb-6"
             variants={fadeInUp}
             custom={1}
           >

@@ -188,20 +188,20 @@ export default function AboutPage() {
               }
             }}
           >
-            <motion.h1 
-              className="text-4xl sm:text-5xl font-bold text-white mb-6"
+            <motion.h1
+              className="font-heading text-[clamp(2.2rem,4vw,3rem)] font-semibold tracking-[-0.01em] text-white leading-[1.15] mb-6"
               variants={fadeInUp}
             >
               About Marc Friedman
             </motion.h1>
-            <motion.h2 
-              className="text-xl sm:text-2xl text-[#A3D1FF] mb-6"
+            <motion.h2
+              className="font-body text-xl sm:text-2xl text-[#A3D1FF] mb-6"
               variants={fadeInUp}
             >
               Full Stack Designer & Developer
             </motion.h2>
-            <motion.p 
-              className="text-2xl sm:text-3xl font-semibold text-[#A3D1FF] mb-6"
+            <motion.p
+              className="font-heading text-2xl sm:text-3xl font-semibold tracking-[-0.01em] leading-[1.15] text-[#A3D1FF] mb-6"
               variants={fadeInUp}
             >
               Solving Digital Challenges Through Design & Development Excellence

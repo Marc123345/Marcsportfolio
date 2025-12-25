@@ -400,10 +400,10 @@ export default function WorkPage() {
 
         <div className="container-custom relative z-10 py-16 md:py-0">
           <TextReveal className="max-w-3xl">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
+            <h1 className="font-heading text-[clamp(2.2rem,4vw,3rem)] font-semibold tracking-[-0.01em] text-white leading-[1.15] mb-4 md:mb-6">
               Featured Work
             </h1>
-            <p className="text-base md:text-xl text-gray-300 mb-6 md:mb-8">
+            <p className="font-body text-base md:text-xl leading-[1.7] text-gray-300 mb-6 md:mb-8">
               Explore our portfolio of results-driven digital solutions that combine thoughtful design with robust development.
             </p>
           </TextReveal>
@@ -575,8 +575,8 @@ export default function WorkPage() {
         
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <TextReveal>
-            <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 md:mb-6">Ready to Create Your Success Story?</h2>
-            <p className="text-base md:text-xl text-gray-400 mb-6 md:mb-10 max-w-2xl mx-auto">
+            <h2 className="font-heading text-[clamp(1.75rem,3.5vw,2.5rem)] font-semibold tracking-[-0.01em] text-white leading-[1.15] mb-4 md:mb-6">Ready to Create Your Success Story?</h2>
+            <p className="font-body text-base md:text-xl leading-[1.7] text-gray-400 mb-6 md:mb-10 max-w-2xl mx-auto">
               Let's build something extraordinary together that drives real results for your business.
             </p>
             <Link to="/contact" className="mr_btn mr_btn_primary">
