@@ -1,13 +1,12 @@
 import { useNavigate, Link } from 'react-router-dom';
-import { useEffect, useState, useRef } from 'react';
-import { ArrowRight, CircleCheck as CheckCircle, Target, TrendingUp, Zap, Shield, Users, Award, Clock, Star, Sparkles, Send, MessageSquare, Rocket, ChartBar as BarChart3, Code as Code2 } from 'lucide-react';
+import { useEffect, useRef } from 'react';
+import { ArrowRight, CircleCheck as CheckCircle, Target, TrendingUp, Zap, Shield, Users, Award, Clock, Star, Sparkles, MessageSquare, Rocket, ChartBar as BarChart3, Code as Code2 } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import TrustedBy from '@/components/TrustedBy';
 import SEO from '@/components/SEO';
 import MagneticButton from '@/components/MagneticButton';
 import AccessibilityPanel from '@/components/AccessibilityPanel';
-import { supabase } from '@/lib/supabase';
-import { toast } from 'sonner';
+import JotFormEmbed from '@/components/JotFormEmbed';
 
 const homeSchema = {
   "@context": "https://schema.org",
@@ -87,56 +86,6 @@ export default function HomePage() {
   const heroRef = useRef<HTMLElement>(null);
 
   const calendlyLink = "https://calendly.com/marc-friedman-web-design--meeting-link/30min";
-
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    service: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!formData.name || !formData.email || !formData.message) {
-      toast.error('Please fill in all required fields');
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    try {
-      const { error } = await supabase
-        .from('contact_submissions')
-        .insert([{
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone || null,
-          company: formData.company || null,
-          service: formData.service || null,
-          message: formData.message,
-          status: 'new'
-        }]);
-
-      if (error) throw error;
-
-      toast.success('Message sent successfully! We\'ll get back to you within 24 hours.');
-      setFormData({ name: '', email: '', phone: '', company: '', service: '', message: '' });
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      toast.error('Failed to send message. Please try again.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -844,108 +793,19 @@ export default function HomePage() {
             </p>
 
             <div className="bg-[#1b1b1b] border border-white/10 p-10 rounded-3xl text-left max-w-2xl mx-auto">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-bold text-white mb-2">
-                      Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="form-input w-full px-4 py-3 bg-white/80 border-2 border-[#A3D1FF]/30 rounded-xl text-black focus:outline-none focus:ring-2 focus:ring-[#A3D1FF] focus:border-transparent transition-all"
-                      placeholder="Your name"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-bold text-white mb-2">
-                      Email *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="form-input w-full px-4 py-3 bg-white/80 border-2 border-[#A3D1FF]/30 rounded-xl text-black focus:outline-none focus:ring-2 focus:ring-[#A3D1FF] focus:border-transparent transition-all"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="service" className="block text-sm font-bold text-white mb-2">
-                    Business Type
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-xl text-black focus:outline-none focus:ring-2 focus:ring-[#0066FF] focus:border-transparent transition-all"
-                  >
-                    <option value="">Select one</option>
-                    <option value="Agency">Agency</option>
-                    <option value="Local Business">Local Business</option>
-                    <option value="Jewellery Brand">Jewellery Brand</option>
-                    <option value="E-commerce">E-commerce</option>
-                    <option value="SaaS">SaaS</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-bold text-white mb-2">
-                    What do you need? *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={4}
-                    className="form-input w-full px-4 py-3 bg-white/80 border-2 border-[#A3D1FF]/30 rounded-xl text-black focus:outline-none focus:ring-2 focus:ring-[#A3D1FF] focus:border-transparent transition-all resize-none"
-                    placeholder="Tell me about your project..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="mr_btn mr_btn_primary w-full disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-xl"
+              <JotFormEmbed />
+              
+              <p className="text-center text-sm text-gray-400 mt-6">
+                Or{' '}
+                <a
+                  href={calendlyLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#A3D1FF] font-bold hover:underline"
                 >
-                  {isSubmitting ? (
-                    <>
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      <span>Sending...</span>
-                    </>
-                  ) : (
-                    <>
-                      <span>Send Message</span>
-                      <Send className="w-6 h-6" />
-                    </>
-                  )}
-                </button>
-
-                <p className="text-center text-sm text-gray-400">
-                  Or{' '}
-                  <a
-                    href={calendlyLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#A3D1FF] font-bold hover:underline"
-                  >
-                    book directly on my calendar
-                  </a>
-                </p>
-              </form>
+                  book directly on my calendar
+                </a>
+              </p>
             </div>
           </motion.div>
         </div>
