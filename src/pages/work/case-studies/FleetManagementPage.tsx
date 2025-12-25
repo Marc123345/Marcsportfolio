@@ -24,7 +24,7 @@ function Feature({ icon: Icon, title, description }: {
           <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
         </div>
       </div>
-      <h3 className="text-xl font-semibold mb-3 text-white">{title}</h3>
+      <h3 className="text-body-large font-semibold mb-3 text-white">{title}</h3>
       <p className="text-gray-400 leading-relaxed">{description}</p>
     </motion.div>
   );
@@ -126,21 +126,21 @@ export default function FleetManagementPage() {
                 className="bg-white/5 backdrop-blur-sm px-6 py-3 rounded-lg border border-white/10"
                 whileHover={{ scale: 1.05, borderColor: 'rgba(163, 209, 255, 0.5)' }}
               >
-                <div className="text-[#A3D1FF] text-2xl font-bold">500+</div>
+                <div className="text-[#A3D1FF] text-heading-large">500+</div>
                 <div className="text-gray-400 text-sm">Vehicles Tracked</div>
               </motion.div>
               <motion.div
                 className="bg-white/5 backdrop-blur-sm px-6 py-3 rounded-lg border border-white/10"
                 whileHover={{ scale: 1.05, borderColor: 'rgba(163, 209, 255, 0.5)' }}
               >
-                <div className="text-[#A3D1FF] text-2xl font-bold">95%</div>
+                <div className="text-[#A3D1FF] text-heading-large">95%</div>
                 <div className="text-gray-400 text-sm">User Satisfaction</div>
               </motion.div>
               <motion.div
                 className="bg-white/5 backdrop-blur-sm px-6 py-3 rounded-lg border border-white/10"
                 whileHover={{ scale: 1.05, borderColor: 'rgba(163, 209, 255, 0.5)' }}
               >
-                <div className="text-[#A3D1FF] text-2xl font-bold">35%</div>
+                <div className="text-[#A3D1FF] text-heading-large">35%</div>
                 <div className="text-gray-400 text-sm">Cost Reduction</div>
               </motion.div>
             </div>
@@ -169,7 +169,7 @@ export default function FleetManagementPage() {
               <div className="w-12 h-12 bg-[#A3D1FF]/10 rounded-lg flex items-center justify-center mb-4">
                 <Target className="w-6 h-6 text-[#A3D1FF]" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">The Problem</h3>
+              <h3 className="text-heading-large text-white mb-3">The Problem</h3>
               <p className="text-gray-400 leading-relaxed">
                 Fleet managers struggled with fragmented systems, manual processes, and lack of real-time visibility, leading to inefficiencies and increased operational costs.
               </p>
@@ -185,7 +185,7 @@ export default function FleetManagementPage() {
               <div className="w-12 h-12 bg-[#A3D1FF]/10 rounded-lg flex items-center justify-center mb-4">
                 <Zap className="w-6 h-6 text-[#A3D1FF]" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">The Solution</h3>
+              <h3 className="text-heading-large text-white mb-3">The Solution</h3>
               <p className="text-gray-400 leading-relaxed">
                 An integrated platform combining GPS tracking, maintenance scheduling, driver management, and advanced analytics in a unified, mobile-first interface.
               </p>
@@ -201,7 +201,7 @@ export default function FleetManagementPage() {
               <div className="w-12 h-12 bg-[#A3D1FF]/10 rounded-lg flex items-center justify-center mb-4">
                 <TrendingUp className="w-6 h-6 text-[#A3D1FF]" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">The Impact</h3>
+              <h3 className="text-heading-large text-white mb-3">The Impact</h3>
               <p className="text-gray-400 leading-relaxed">
                 35% reduction in operational costs, 40% faster response times, and 95% user satisfaction, transforming fleet operations industry-wide.
               </p>
@@ -213,13 +213,13 @@ export default function FleetManagementPage() {
       {/* Industry Overview */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-8">The Changing Landscape</h2>
+          <h2 className="text-display-medium text-white mb-8">The Changing Landscape</h2>
           <p className="text-xl text-gray-400 mb-8">
             The automotive industry faces unprecedented challenges that demand innovative solutions. Rising customer expectations, fluctuating market dynamics, and complex inventory management require dealerships to embrace digital transformation.
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
-              <h3 className="text-xl font-semibold text-white mb-4">Market Challenges</h3>
+              <h3 className="text-body-large font-semibold text-white mb-4">Market Challenges</h3>
               <ul className="space-y-3">
                 {[
                   "Rising customer expectations",
@@ -235,7 +235,7 @@ export default function FleetManagementPage() {
               </ul>
             </div>
             <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
-              <h3 className="text-xl font-semibold text-white mb-4">Digital Solutions</h3>
+              <h3 className="text-body-large font-semibold text-white mb-4">Digital Solutions</h3>
               <ul className="space-y-3">
                 {[
                   "Real-time market analysis",
@@ -251,7 +251,7 @@ export default function FleetManagementPage() {
               </ul>
             </div>
             <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
-              <h3 className="text-xl font-semibold text-white mb-4">Key Benefits</h3>
+              <h3 className="text-body-large font-semibold text-white mb-4">Key Benefits</h3>
               <ul className="space-y-3">
                 {[
                   "Increased profit margins",
@@ -313,7 +313,7 @@ export default function FleetManagementPage() {
       {/* Platform Features */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-8">Platform Features</h2>
+          <h2 className="text-display-medium text-white mb-8">Platform Features</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-2xl font-semibold text-white mb-6">Real-Time Market Analysis</h3>
@@ -378,7 +378,7 @@ export default function FleetManagementPage() {
       {/* Mobile Experience */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Mobile Experience</h2>
+          <h2 className="text-display-medium text-white mb-12">Mobile Experience</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <img 
@@ -472,7 +472,7 @@ export default function FleetManagementPage() {
       {/* Future Development */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-8">Future Development</h2>
+          <h2 className="text-display-medium text-white mb-8">Future Development</h2>
           <p className="text-xl text-gray-400 mb-8">
             As technology continues to advance, we're committed to evolving our platform to meet tomorrow's challenges:
           </p>
@@ -499,7 +499,7 @@ export default function FleetManagementPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Transform Your Dealership Operations</h2>
+          <h2 className="text-display-medium text-white mb-4">Transform Your Dealership Operations</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Ready to revolutionize your automotive business with data-driven solutions?
           </p>

@@ -18,7 +18,7 @@ function FeatureCard({ icon: Icon, title, description }: {
           <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
         </div>
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+      <h3 className="text-body-large font-semibold mb-2 text-white">{title}</h3>
       <p className="text-gray-400">{description}</p>
     </div>
   );
@@ -56,7 +56,7 @@ function ServicePackage({ title, features, recommended = false }: {
           Most Popular
         </div>
       )}
-      <h3 className="text-2xl font-bold text-white mb-6">{title}</h3>
+      <h3 className="text-heading-large text-white mb-6">{title}</h3>
       <ul className="space-y-3 mb-8">
         {features.map((feature, index) => (
           <li key={index} className="flex items-center text-gray-300">
@@ -152,7 +152,7 @@ export default function WebDevelopmentPage() {
         {/* Content */}
         <div className="container-custom relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+            <h1 className="text-display-large text-white mb-4">
               Web Development Services
             </h1>
             <h2 className="text-xl sm:text-2xl text-[#A3D1FF] mb-6">
@@ -185,7 +185,7 @@ export default function WebDevelopmentPage() {
       {/* Features Grid */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">Why Choose Our Web Development Services</h2>
+          <h2 className="text-display-medium text-white mb-12 text-center">Why Choose Our Web Development Services</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <div className="grid gap-8">
@@ -249,7 +249,7 @@ export default function WebDevelopmentPage() {
       {/* Technology Stack */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Technology Stack</h2>
+          <h2 className="text-display-medium text-white mb-12">Technology Stack</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <TechnologyStack
               icon={Code}
@@ -278,7 +278,7 @@ export default function WebDevelopmentPage() {
       {/* Service Packages */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">Development Packages</h2>
+          <h2 className="text-display-medium text-white mb-12 text-center">Development Packages</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <ServicePackage
               title="Landing Page"
@@ -326,14 +326,14 @@ export default function WebDevelopmentPage() {
       {/* Process Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Development Process</h2>
+          <h2 className="text-display-medium text-white mb-12">Development Process</h2>
           <div className="space-y-12">
             <div className="flex items-start">
               <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
                 1
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Discovery & Planning</h3>
+                <h3 className="text-body-large font-semibold text-white mb-2">Discovery & Planning</h3>
                 <p className="text-gray-400"><strong className="text-white">More effective</strong> project outcomes through comprehensive research and planning.</p>
               </div>
             </div>
@@ -342,7 +342,7 @@ export default function WebDevelopmentPage() {
                 2
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Design & Prototyping</h3>
+                <h3 className="text-body-large font-semibold text-white mb-2">Design & Prototyping</h3>
                 <p className="text-gray-400"><strong className="text-white">Higher engagement</strong> with user-tested interfaces and interactive prototypes.</p>
               </div>
             </div>
@@ -351,7 +351,7 @@ export default function WebDevelopmentPage() {
                 3
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Development</h3>
+                <h3 className="text-body-large font-semibold text-white mb-2">Development</h3>
                 <p className="text-gray-400"><strong className="text-white">High PageSpeed scores</strong> through optimized code and best practices.</p>
               </div>
             </div>
@@ -360,7 +360,7 @@ export default function WebDevelopmentPage() {
                 4
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Testing & Launch</h3>
+                <h3 className="text-body-large font-semibold text-white mb-2">Testing & Launch</h3>
                 <p className="text-gray-400"><strong className="text-white">High uptime</strong> with rigorous testing and optimized deployment.</p>
               </div>
             </div>
@@ -392,7 +392,7 @@ export default function WebDevelopmentPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Start Your Web Project?</h2>
+          <h2 className="text-display-medium text-white mb-4">Ready to Start Your Web Project?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's create a high-performing website that drives <strong className="text-white">real, measurable results</strong> for your business.
           </p>
@@ -407,7 +407,7 @@ export default function WebDevelopmentPage() {
           
           {/* Related Services */}
           <div className="mt-12 pt-8 border-t border-white/10">
-            <h3 className="text-xl font-semibold text-white mb-6">Related Services</h3>
+            <h3 className="text-body-large font-semibold text-white mb-6">Related Services</h3>
             <div className="grid md:grid-cols-4 gap-4">
               <Link 
                 to="/services/design" 

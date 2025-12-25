@@ -119,7 +119,7 @@ export default function AIWebsiteAnalyzer() {
           <div className="bg-[#A3D1FF]/10 p-3 rounded-lg">
             <Search className="w-6 h-6 text-[#A3D1FF]" />
           </div>
-          <h3 className="text-2xl font-bold text-white">AI Website Analyzer</h3>
+          <h3 className="text-heading-large text-white">AI Website Analyzer</h3>
         </div>
         
         <p className="text-gray-400 mb-6">
@@ -182,7 +182,7 @@ export default function AIWebsiteAnalyzer() {
         ) : (
           <div className="space-y-6">
             <div className="flex items-center justify-between">
-              <h4 className="text-xl font-semibold text-white">Analysis Results</h4>
+              <h4 className="text-body-large font-semibold text-white">Analysis Results</h4>
               <div className="flex items-center gap-2">
                 <span className="text-gray-400">Overall Score:</span>
                 <span className="text-lg font-bold text-[#A3D1FF]">{result.score}/100</span>

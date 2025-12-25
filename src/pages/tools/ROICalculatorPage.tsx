@@ -40,7 +40,7 @@ export default function ROICalculatorPage() {
 
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+          <h1 className="text-display-large text-white mb-6">
             Website ROI Calculator
           </h1>
           <p className="text-xl text-gray-300 mb-8">
@@ -54,7 +54,7 @@ export default function ROICalculatorPage() {
           <ROICalculator />
           
           <div className="mt-16 bg-[#1b1b1b] p-8 rounded-xl border border-white/10">
-            <h2 className="text-2xl font-bold text-white mb-6">How Our Clients See Real ROI</h2>
+            <h2 className="text-heading-large text-white mb-6">How Our Clients See Real ROI</h2>
             
             <div className="space-y-6">
               <div className="flex items-start">
@@ -62,7 +62,7 @@ export default function ROICalculatorPage() {
                   <CheckCircle2 className="w-6 h-6 text-[#A3D1FF]" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Binns Media Group</h3>
+                  <h3 className="text-body-large font-semibold text-white mb-2">Binns Media Group</h3>
                   <p className="text-gray-400">Achieved a 40% increase in engagement and 60% faster load times, resulting in significantly improved user retention and content consumption.</p>
                 </div>
               </div>
@@ -72,7 +72,7 @@ export default function ROICalculatorPage() {
                   <CheckCircle2 className="w-6 h-6 text-[#A3D1FF]" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Wellness TCYS</h3>
+                  <h3 className="text-body-large font-semibold text-white mb-2">Wellness TCYS</h3>
                   <p className="text-gray-400">Saw a 200% increase in online bookings and 150% growth in organic traffic after implementing our conversion-focused design strategy.</p>
                 </div>
               </div>
@@ -82,7 +82,7 @@ export default function ROICalculatorPage() {
                   <CheckCircle2 className="w-6 h-6 text-[#A3D1FF]" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-2">A Secure Annapolis Locksmith</h3>
+                  <h3 className="text-body-large font-semibold text-white mb-2">A Secure Annapolis Locksmith</h3>
                   <p className="text-gray-400">Experienced a 150% increase in qualified leads and achieved top 3 rankings in local search results, dramatically growing their business.</p>
                 </div>
               </div>
@@ -103,7 +103,7 @@ export default function ROICalculatorPage() {
             </div>
             
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">Beyond the Numbers</h2>
+              <h2 className="text-display-medium text-white mb-6">Beyond the Numbers</h2>
               <p className="text-gray-400 mb-6">
                 While ROI is important, a strategic website redesign delivers benefits that go beyond immediate financial returns:
               </p>
@@ -140,7 +140,7 @@ export default function ROICalculatorPage() {
 
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Maximize Your Website ROI?</h2>
+          <h2 className="text-display-medium text-white mb-4">Ready to Maximize Your Website ROI?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's create a strategic website that delivers measurable returns and helps you achieve your business goals.
           </p>

@@ -255,7 +255,7 @@ font-size: clamp(1rem, 0.5rem + 2vw, 1.5rem);`}
                 className="w-16 h-16 rounded-full object-cover"
               />
               <div>
-                <h3 className="text-xl font-semibold text-white">Marc Friedman</h3>
+                <h3 className="text-body-large font-semibold text-white">Marc Friedman</h3>
                 <p className="text-gray-400">Full Stack Designer & Developer</p>
               </div>
             </div>
@@ -263,7 +263,7 @@ font-size: clamp(1rem, 0.5rem + 2vw, 1.5rem);`}
           
           {/* Share Section */}
           <div className="mt-8 pt-8 border-t border-white/10">
-            <h3 className="text-xl font-semibold text-white mb-4">Share this article</h3>
+            <h3 className="text-body-large font-semibold text-white mb-4">Share this article</h3>
             <div className="flex gap-3">
               <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#1877F2]/20 text-[#1877F2] transition-colors">
                 <Facebook className="w-5 h-5" />
@@ -333,7 +333,7 @@ font-size: clamp(1rem, 0.5rem + 2vw, 1.5rem);`}
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Need a Mobile-First Website?</h2>
+          <h2 className="text-display-medium text-white mb-4">Need a Mobile-First Website?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's create a responsive, user-friendly website that delivers an exceptional experience on all devices and drives real business results.
           </p>

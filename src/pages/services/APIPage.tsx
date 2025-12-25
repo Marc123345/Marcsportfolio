@@ -16,7 +16,7 @@ function FeatureCard({ icon: Icon, title, description }: {
           <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
         </div>
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+      <h3 className="text-body-large font-semibold mb-2 text-white">{title}</h3>
       <p className="text-gray-400">{description}</p>
     </div>
   );
@@ -33,7 +33,7 @@ function ProcessStep({ number, title, description }: {
         {number}
       </div>
       <div>
-        <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+        <h3 className="text-body-large font-semibold mb-2 text-white">{title}</h3>
         <p className="text-gray-400">{description}</p>
       </div>
     </div>
@@ -55,7 +55,7 @@ function ServicePackage({ title, description, features, recommended = false }: {
           Most Popular
         </div>
       )}
-      <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
+      <h3 className="text-heading-large text-white mb-2">{title}</h3>
       <p className="text-gray-400 mb-6">{description}</p>
       <ul className="space-y-3 mb-8">
         {features.map((feature, index) => (
@@ -88,7 +88,7 @@ export default function APIPage() {
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            <h1 className="text-display-large text-white mb-6">
               API Development
             </h1>
             <p className="text-xl text-gray-400 mb-8">
@@ -147,7 +147,7 @@ export default function APIPage() {
       {/* Process Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Development Process</h2>
+          <h2 className="text-display-medium text-white mb-12">Development Process</h2>
           <div className="space-y-12">
             <ProcessStep
               number="01"
@@ -176,7 +176,7 @@ export default function APIPage() {
       {/* Pricing Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">API Development Packages</h2>
+          <h2 className="text-display-medium text-white mb-12 text-center">API Development Packages</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <ServicePackage
               title="Basic API"
@@ -248,7 +248,7 @@ export default function APIPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Build Your API?</h2>
+          <h2 className="text-display-medium text-white mb-4">Ready to Build Your API?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's create a <strong className="text-white">robust API</strong> that powers your application and <strong className="text-white">scales with your business</strong>.
           </p>

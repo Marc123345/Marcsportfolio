@@ -16,7 +16,7 @@ function FeatureCard({ icon: Icon, title, description }: {
           <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
         </div>
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+      <h3 className="text-body-large font-semibold mb-2 text-white">{title}</h3>
       <p className="text-gray-400">{description}</p>
     </div>
   );
@@ -33,7 +33,7 @@ function ProcessStep({ number, title, description }: {
         {number}
       </div>
       <div>
-        <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+        <h3 className="text-body-large font-semibold mb-2 text-white">{title}</h3>
         <p className="text-gray-400">{description}</p>
       </div>
     </div>
@@ -49,7 +49,7 @@ export default function AIIntegrationPage() {
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            <h1 className="text-display-large text-white mb-6">
               AI Integration Services
             </h1>
             <p className="text-xl text-gray-400 mb-8">
@@ -108,7 +108,7 @@ export default function AIIntegrationPage() {
       {/* Process Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Our AI Integration Process</h2>
+          <h2 className="text-display-medium text-white mb-12">Our AI Integration Process</h2>
           <div className="space-y-12">
             <ProcessStep
               number="01"
@@ -147,10 +147,10 @@ export default function AIIntegrationPage() {
       {/* Service Categories */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">Our AI Services</h2>
+          <h2 className="text-display-medium text-white mb-12 text-center">Our AI Services</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all">
-              <h3 className="text-2xl font-bold text-white mb-4">AI Integration Services</h3>
+              <h3 className="text-heading-large text-white mb-4">AI Integration Services</h3>
               <p className="text-gray-400 mb-6"><strong className="text-white">Faster development</strong> by connecting AI capabilities with your existing systems.</p>
               <ul className="space-y-3">
                 {[
@@ -167,7 +167,7 @@ export default function AIIntegrationPage() {
               </ul>
             </div>
             <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all">
-              <h3 className="text-2xl font-bold text-white mb-4">Machine Learning & Data Services</h3>
+              <h3 className="text-heading-large text-white mb-4">Machine Learning & Data Services</h3>
               <p className="text-gray-400 mb-6"><strong className="text-white">Extract more value</strong> from your data with comprehensive ML solutions.</p>
               <ul className="space-y-3">
                 {[
@@ -184,7 +184,7 @@ export default function AIIntegrationPage() {
               </ul>
             </div>
             <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all">
-              <h3 className="text-2xl font-bold text-white mb-4">Process Automation</h3>
+              <h3 className="text-heading-large text-white mb-4">Process Automation</h3>
               <p className="text-gray-400 mb-6"><strong className="text-white">Reduction in operational costs</strong> through intelligent automation.</p>
               <ul className="space-y-3">
                 {[
@@ -201,7 +201,7 @@ export default function AIIntegrationPage() {
               </ul>
             </div>
             <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all">
-              <h3 className="text-2xl font-bold text-white mb-4">AI-Powered Chat & Support</h3>
+              <h3 className="text-heading-large text-white mb-4">AI-Powered Chat & Support</h3>
               <p className="text-gray-400 mb-6"><strong className="text-white">Resolve inquiries automatically</strong> with conversational AI.</p>
               <ul className="space-y-3">
                 {[
@@ -224,10 +224,10 @@ export default function AIIntegrationPage() {
       {/* Case Studies Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">AI Success Stories</h2>
+          <h2 className="text-display-medium text-white mb-12">AI Success Stories</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="bg-[#2d3035] p-8 rounded-xl border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-4">E-commerce Recommendation Engine</h3>
+              <h3 className="text-heading-large text-white mb-4">E-commerce Recommendation Engine</h3>
               <p className="text-gray-400 mb-6">
                 Implemented a personalized product recommendation system that <strong className="text-white">increased average order value</strong> and improved customer engagement.
               </p>
@@ -240,7 +240,7 @@ export default function AIIntegrationPage() {
               </div>
             </div>
             <div className="bg-[#2d3035] p-8 rounded-xl border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-4">Customer Support Chatbot</h3>
+              <h3 className="text-heading-large text-white mb-4">Customer Support Chatbot</h3>
               <p className="text-gray-400 mb-6">
                 Developed an AI-powered chatbot that <strong className="text-white">handles customer inquiries automatically</strong>, reducing support costs and improving response times.
               </p>
@@ -280,7 +280,7 @@ export default function AIIntegrationPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Harness the Power of AI?</h2>
+          <h2 className="text-display-medium text-white mb-4">Ready to Harness the Power of AI?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's create <strong className="text-white">intelligent solutions</strong> that automate <strong className="text-white">manual tasks</strong> and drive innovation and growth for your business.
           </p>

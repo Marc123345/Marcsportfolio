@@ -210,7 +210,7 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <div className="text-[clamp(2.5rem,5.5vw,4.5rem)] font-bold tracking-tight text-white leading-[1.15] mb-6">
+                <div className="text-display-large text-white mb-6">
                   Award Winning Websites That Turn Attention Into Revenue
                 </div>
               </motion.div>
@@ -349,10 +349,10 @@ export default function HomePage() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-black mb-6 leading-tight text-white">
+            <h2 className="text-display-medium text-white mb-6">
               Featured <span className="text-[#A3D1FF]">Work</span>
             </h2>
-            <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-body-large text-gray-300 max-w-3xl mx-auto">
               Explore my portfolio of results-driven digital solutions that combine thoughtful design with robust development.
             </p>
           </motion.div>
@@ -375,7 +375,7 @@ export default function HomePage() {
               </div>
               <div className="p-8 flex flex-col justify-center">
                 <span className="text-[#A3D1FF] text-sm bg-[#A3D1FF]/10 px-4 py-2 rounded-full inline-block w-fit mb-4">Featured Project</span>
-                <h3 className="text-3xl font-bold text-white mb-4">Untapped Africa</h3>
+                <h3 className="text-heading-large text-white mb-4">Untapped Africa</h3>
                 <p className="text-gray-400 mb-6">Revolutionizing water infrastructure solutions across Africa with innovative technology and sustainable practices. A comprehensive platform for project management, data visualization, and community engagement.</p>
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center">
@@ -454,7 +454,7 @@ export default function HomePage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                  <h3 className="text-heading-large text-white mb-2">{project.title}</h3>
                   <p className="text-gray-400 text-sm mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.slice(0, 3).map((tech, i) => (
@@ -508,10 +508,10 @@ export default function HomePage() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-black mb-6 leading-tight text-white">
+            <h2 className="text-display-medium text-white mb-6">
               Press & <span className="text-[#A3D1FF]">Recognition</span>
             </h2>
-            <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-body-large text-gray-300 max-w-3xl mx-auto">
               Featured in leading design publications and recognized for excellence in web development.
             </p>
           </motion.div>
@@ -543,7 +543,7 @@ export default function HomePage() {
                   <Star className="w-4 h-4 text-[#FFD700]" />
                   <span className="text-xs text-[#FFD700] font-semibold uppercase">Feature</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">
+                <h3 className="text-heading-large text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">
                   Untapped Africa Website Design Featured
                 </h3>
                 <p className="text-gray-400 text-sm mb-4">
@@ -578,7 +578,7 @@ export default function HomePage() {
                   <Star className="w-4 h-4 text-[#FFD700]" />
                   <span className="text-xs text-[#FFD700] font-semibold uppercase">Profile</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">
+                <h3 className="text-heading-large text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">
                   Marc Friedman Design Agency
                 </h3>
                 <p className="text-gray-400 text-sm mb-4">
@@ -613,7 +613,7 @@ export default function HomePage() {
                   <Award className="w-4 h-4 text-[#FFB800]" />
                   <span className="text-xs text-[#FFB800] font-semibold uppercase">Award</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">
+                <h3 className="text-heading-large text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">
                   Award Recognition
                 </h3>
                 <p className="text-gray-400 text-sm mb-4">
@@ -656,10 +656,10 @@ export default function HomePage() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-black mb-6 leading-tight text-white">
+            <h2 className="text-display-medium text-white mb-6">
               How It <span className="text-[#A3D1FF]">Works</span>
             </h2>
-            <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-body-large text-gray-300 max-w-3xl mx-auto">
               Simple. No surprises. Just results.
             </p>
           </motion.div>
@@ -692,8 +692,8 @@ export default function HomePage() {
               >
                 <div className="text-6xl font-black text-[#A3D1FF] opacity-20">{step.number}</div>
                 <div className="flex-1">
-                  <h3 className="text-3xl font-bold mb-3 text-white">{step.title}</h3>
-                  <p className="text-xl text-gray-400">{step.description}</p>
+                  <h3 className="text-heading-large text-white mb-3">{step.title}</h3>
+                  <p className="text-body-large text-gray-400">{step.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -725,10 +725,10 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-5xl font-black mb-6 text-white">
+              <h2 className="text-display-medium text-white mb-6">
                 Work With Me,<br />Not a <span className="text-[#A3D1FF]">Team of Interns</span>
               </h2>
-              <div className="space-y-6 text-xl text-gray-300 mb-8">
+              <div className="space-y-6 text-body-large text-gray-300 mb-8">
                 <p>
                   Hey, I'm Marc. I've spent 5+ years building websites for agencies, local businesses, and jewellery brands across three continents.
                 </p>
@@ -764,7 +764,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-black mb-6 leading-tight text-white">
+            <h2 className="text-display-medium text-white mb-6">
               Got <span className="text-[#A3D1FF]">Questions?</span>
             </h2>
           </motion.div>
@@ -802,7 +802,7 @@ export default function HomePage() {
               >
                 <details className="group">
                   <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-white/5 transition-colors">
-                    <h3 className="text-xl font-bold pr-4 text-white">{item.q}</h3>
+                    <h3 className="text-heading-large pr-4 text-white">{item.q}</h3>
                     <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-[#A3D1FF]/30 flex-shrink-0">
                       <div className="w-4 h-0.5 bg-[#A3D1FF] group-open:rotate-90 transition-transform"></div>
                       <div className="w-0.5 h-4 bg-[#A3D1FF] absolute group-open:opacity-0 transition-opacity"></div>
@@ -828,10 +828,10 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-black mb-8 leading-tight text-white">
+            <h2 className="text-display-medium text-white mb-8">
               Ready to Stop<br />Losing Customers?
             </h2>
-            <p className="text-2xl mb-12 max-w-2xl mx-auto text-gray-300">
+            <p className="text-body-large mb-12 max-w-2xl mx-auto text-gray-300">
               Book a free strategy call. We'll talk about your goals, and I'll show you exactly how I can help you grow.
             </p>
 

@@ -15,7 +15,7 @@ function FeatureCard({ icon: Icon, title, description }: {
           <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
         </div>
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+      <h3 className="text-body-large font-semibold mb-2 text-white">{title}</h3>
       <p className="text-gray-400">{description}</p>
     </div>
   );
@@ -55,7 +55,7 @@ function ILightPage() {
         {/* Content */}
         <div className="container-custom relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            <h1 className="text-display-large text-white mb-6">
               iLight Care
             </h1>
             <p className="text-xl text-gray-300 mb-8">
@@ -80,7 +80,7 @@ function ILightPage() {
       {/* Video Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">iLight Care in Action</h2>
+          <h2 className="text-display-medium text-white mb-8 text-center">iLight Care in Action</h2>
           <div className="aspect-video overflow-hidden rounded-xl">
             <video
               controls
@@ -99,7 +99,7 @@ function ILightPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">Project Overview</h2>
+              <h2 className="text-display-medium text-white mb-6">Project Overview</h2>
               <p className="text-gray-400 mb-6">
                 iLight Care is a revolutionary healthcare technology platform that bridges the gap between patients and healthcare providers. The platform focuses on making healthcare more accessible, efficient, and patient-centered through innovative digital solutions.
               </p>
@@ -120,7 +120,7 @@ function ILightPage() {
             </div>
             <div className="space-y-6">
               <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10">
-                <h3 className="text-xl font-semibold text-white mb-4">Healthcare Innovation</h3>
+                <h3 className="text-body-large font-semibold text-white mb-4">Healthcare Innovation</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center text-gray-300">
                     <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
@@ -150,7 +150,7 @@ function ILightPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">The Challenge</h2>
+              <h2 className="text-display-medium text-white mb-6">The Challenge</h2>
               <p className="text-gray-400 mb-6">
                 Healthcare systems face numerous challenges:
               </p>
@@ -174,7 +174,7 @@ function ILightPage() {
               </ul>
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">The Solution</h2>
+              <h2 className="text-display-medium text-white mb-6">The Solution</h2>
               <div className="grid gap-6">
                 <FeatureCard
                   icon={Heart}
@@ -200,7 +200,7 @@ function ILightPage() {
       {/* Key Features */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Platform Features</h2>
+          <h2 className="text-display-medium text-white mb-12">Platform Features</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <FeatureCard
               icon={Target}
@@ -224,7 +224,7 @@ function ILightPage() {
       {/* Results */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Results & Impact</h2>
+          <h2 className="text-display-medium text-white mb-12">Results & Impact</h2>
           <div className="grid md:grid-cols-4 gap-8">
             <StatCard
               value="85%"
@@ -249,7 +249,7 @@ function ILightPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Healthcare?</h2>
+          <h2 className="text-display-medium text-white mb-4">Ready to Transform Healthcare?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's create a healthcare platform that improves patient outcomes and streamlines healthcare delivery.
           </p>

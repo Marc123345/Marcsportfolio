@@ -120,7 +120,7 @@ function PressCard({ item }: { item: PressItem }) {
           </span>
         </div>
         
-        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">
+        <h3 className="text-heading-large text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">
           {item.title}
         </h3>
         
@@ -172,7 +172,7 @@ export default function PressPage() {
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
           <TextReveal>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            <h1 className="text-display-large text-white mb-6">
               Press & Media Coverage
             </h1>
             <h2 className="text-xl sm:text-2xl text-[#A3D1FF] mb-6">
@@ -189,7 +189,7 @@ export default function PressPage() {
       {featuredItems.length > 0 && (
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-[#1b1b1b]">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold text-white mb-8">Featured Coverage</h2>
+            <h2 className="text-display-medium text-white mb-8">Featured Coverage</h2>
             <div className="grid lg:grid-cols-2 gap-8">
               {featuredItems.map((item, index) => (
                 <motion.div
@@ -210,7 +210,7 @@ export default function PressPage() {
       {/* All Press Coverage */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-8">All Coverage</h2>
+          <h2 className="text-display-medium text-white mb-8">All Coverage</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {regularItems.map((item, index) => (
               <motion.div
@@ -231,7 +231,7 @@ export default function PressPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
           <TextReveal>
-            <h2 className="text-3xl font-bold text-white mb-8 text-center">Industry Recognition</h2>
+            <h2 className="text-display-medium text-white mb-8 text-center">Industry Recognition</h2>
           </TextReveal>
           
           <div className="grid md:grid-cols-4 gap-6">
@@ -291,7 +291,7 @@ export default function PressPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">Media Kit & Resources</h2>
+              <h2 className="text-display-medium text-white mb-6">Media Kit & Resources</h2>
               <p className="text-gray-400 mb-6">
                 Looking to feature our work or interview Marc? Download our media kit with high-resolution images, 
                 project details, and background information.
@@ -348,7 +348,7 @@ export default function PressPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-white mb-4">Ready to Create Award-Winning Work?</h2>
+            <h2 className="text-display-medium text-white mb-4">Ready to Create Award-Winning Work?</h2>
             <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
               Let's create a digital solution that not only delivers results but earns recognition for its excellence.
             </p>

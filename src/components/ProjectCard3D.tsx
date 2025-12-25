@@ -153,7 +153,7 @@ export default function ProjectCard3D({
           zIndex: 1
         } : undefined}
       >
-        <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{title}</h3>
+        <h3 className="text-lg sm:text-heading-large text-white mb-2">{title}</h3>
         <p className="text-xs sm:text-sm text-gray-400 mb-3 sm:mb-4">{description}</p>
         
         <div className="space-y-2 mb-3 sm:mb-4">

@@ -15,7 +15,7 @@ function FeatureCard({ icon: Icon, title, description }: {
           <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
         </div>
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+      <h3 className="text-body-large font-semibold mb-2 text-white">{title}</h3>
       <p className="text-gray-400">{description}</p>
     </div>
   );
@@ -50,7 +50,7 @@ export default function AskAfricaPage() {
         {/* Content */}
         <div className="container-custom relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            <h1 className="text-display-large text-white mb-6">
               Ask Africa
             </h1>
             <p className="text-xl text-gray-300 mb-8">
@@ -77,7 +77,7 @@ export default function AskAfricaPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">Project Overview</h2>
+              <h2 className="text-display-medium text-white mb-6">Project Overview</h2>
               <p className="text-gray-400 mb-6">
                 Ask Africa is South Africa's leading market research firm with over 30 years of industry expertise. This corporate rebrand project required rapid development and close coordination with multiple stakeholders to deliver a professional website on a tight timeline.
               </p>
@@ -98,7 +98,7 @@ export default function AskAfricaPage() {
             </div>
             <div className="space-y-6">
               <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10">
-                <h3 className="text-xl font-semibold text-white mb-4">Project Highlights</h3>
+                <h3 className="text-body-large font-semibold text-white mb-4">Project Highlights</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center text-gray-300">
                     <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
@@ -150,7 +150,7 @@ export default function AskAfricaPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">The Challenge</h2>
+              <h2 className="text-display-medium text-white mb-6">The Challenge</h2>
               <p className="text-gray-400 mb-6">
                 Ask Africa needed a complete corporate rebrand with:
               </p>
@@ -174,7 +174,7 @@ export default function AskAfricaPage() {
               </ul>
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">The Solution</h2>
+              <h2 className="text-display-medium text-white mb-6">The Solution</h2>
               <div className="grid gap-6">
                 <FeatureCard
                   icon={Timer}
@@ -200,14 +200,14 @@ export default function AskAfricaPage() {
       {/* Development Process */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Development Process</h2>
+          <h2 className="text-display-medium text-white mb-12">Development Process</h2>
           <div className="space-y-12">
             <div className="flex items-start">
               <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
                 1
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Stakeholder Alignment</h3>
+                <h3 className="text-body-large font-semibold text-white mb-2">Stakeholder Alignment</h3>
                 <p className="text-gray-400">Coordinated with multiple stakeholders to understand requirements and brand vision within the tight timeline.</p>
               </div>
             </div>
@@ -216,7 +216,7 @@ export default function AskAfricaPage() {
                 2
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Rapid Development</h3>
+                <h3 className="text-body-large font-semibold text-white mb-2">Rapid Development</h3>
                 <p className="text-gray-400">Implemented efficient development workflows to deliver a professional corporate website on an accelerated timeline.</p>
               </div>
             </div>
@@ -225,7 +225,7 @@ export default function AskAfricaPage() {
                 3
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Quality Assurance</h3>
+                <h3 className="text-body-large font-semibold text-white mb-2">Quality Assurance</h3>
                 <p className="text-gray-400">Thorough testing and review process despite the compressed timeline to ensure professional standards.</p>
               </div>
             </div>
@@ -234,7 +234,7 @@ export default function AskAfricaPage() {
                 4
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Successful Launch</h3>
+                <h3 className="text-body-large font-semibold text-white mb-2">Successful Launch</h3>
                 <p className="text-gray-400">On-time delivery with successful rebrand launch and positive stakeholder feedback.</p>
               </div>
             </div>
@@ -245,7 +245,7 @@ export default function AskAfricaPage() {
       {/* Results */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Results & Impact</h2>
+          <h2 className="text-display-medium text-white mb-12">Results & Impact</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <StatCard
               value="Multiple"
@@ -287,7 +287,7 @@ export default function AskAfricaPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Need a Corporate Rebrand?</h2>
+          <h2 className="text-display-medium text-white mb-4">Need a Corporate Rebrand?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's create a professional corporate website that reflects your industry leadership and expertise.
           </p>
