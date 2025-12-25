@@ -44,12 +44,7 @@ to = "/work/case-studies/automarginx"
 status = 301
 
 [[redirects]]
-from = "/automargin"
-to = "/work/case-studies/automarginx"
-status = 301
-
-[[redirects]]
-from = "/automargin/*"
+from = "/automargin*"
 to = "/work/case-studies/automarginx"
 status = 301
 
@@ -59,12 +54,7 @@ to = "/services/web-development"
 status = 301
 
 [[redirects]]
-from = "/casestudies/tesla-finder"
-to = "/work/case-studies/fleet-management"
-status = 301
-
-[[redirects]]
-from = "/casestudies/tesla-finder/*"
+from = "/casestudies/tesla-finder*"
 to = "/work/case-studies/fleet-management"
 status = 301
 
