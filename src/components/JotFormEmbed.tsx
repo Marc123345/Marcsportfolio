@@ -1,39 +1,24 @@
 import React, { useEffect, useRef } from 'react';
 
 export default function JotFormEmbed() {
-  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleIFrameMessage = (e: MessageEvent) => {
-      if (typeof e.data === 'string' && e.data.indexOf('setHeight') > -1) {
-        const args = e.data.split(':');
-        const iframe = iframeRef.current;
-        if (iframe && args.length > 1) {
-          iframe.style.height = args[1] + 'px';
-        }
-      }
-    };
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://form.jotform.com/jsform/253586719410462';
+    script.async = true;
 
-    window.addEventListener('message', handleIFrameMessage);
+    if (containerRef.current) {
+      containerRef.current.appendChild(script);
+    }
 
     return () => {
-      window.removeEventListener('message', handleIFrameMessage);
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
     };
   }, []);
 
-  return (
-    <iframe
-      ref={iframeRef}
-      title="Contact Form"
-      allow="geolocation; microphone; camera"
-      src="https://form.jotform.com/253586719410462"
-      frameBorder="0"
-      style={{
-        width: '100%',
-        minHeight: '800px',
-        border: 'none',
-      }}
-      scrolling="no"
-    />
-  );
+  return <div ref={containerRef} className="w-full min-h-[800px]" />;
 }
