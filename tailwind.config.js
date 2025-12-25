@@ -12,9 +12,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        asen: ['Asen Pro', 'sans-serif'],
-        inter: ['Roboto', 'sans-serif'],
-        roboto: ['Roboto', 'sans-serif'],
+        body: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        heading: ['Playfair Display', 'Georgia', 'serif'],
+        inter: ['Inter', 'sans-serif'],
+        playfair: ['Playfair Display', 'serif'],
       },
       colors: {
         primary: '#A3D1FF',
@@ -38,29 +39,38 @@ export default {
         DEFAULT: {
           css: {
             color: theme('colors.gray.300'),
+            fontFamily: theme('fontFamily.body'),
             h1: {
               color: theme('colors.white'),
-              fontFamily: theme('fontFamily.roboto'),
-              letterSpacing: '-0.025em',
-              lineHeight: '1.0',
+              fontFamily: theme('fontFamily.heading'),
+              letterSpacing: '-0.01em',
+              lineHeight: '1.15',
+              fontWeight: '600',
             },
             h2: {
               color: theme('colors.white'),
-              fontFamily: theme('fontFamily.roboto'),
-              letterSpacing: '-0.025em',
-              lineHeight: '1.1',
+              fontFamily: theme('fontFamily.heading'),
+              letterSpacing: '-0.01em',
+              lineHeight: '1.15',
+              fontWeight: '600',
             },
             h3: {
               color: theme('colors.white'),
-              fontFamily: theme('fontFamily.roboto'),
-              letterSpacing: '-0.025em',
-              lineHeight: '1.1',
+              fontFamily: theme('fontFamily.heading'),
+              letterSpacing: '-0.01em',
+              lineHeight: '1.15',
+              fontWeight: '600',
             },
             h4: {
               color: theme('colors.white'),
-              fontFamily: theme('fontFamily.roboto'),
-              letterSpacing: '-0.025em',
-              lineHeight: '1.3',
+              fontFamily: theme('fontFamily.heading'),
+              letterSpacing: '-0.01em',
+              lineHeight: '1.2',
+              fontWeight: '600',
+            },
+            p: {
+              fontFamily: theme('fontFamily.body'),
+              lineHeight: '1.7',
             },
             strong: {
               color: theme('colors.white'),
@@ -83,8 +93,8 @@ export default {
             blockquote: {
               color: theme('colors.gray.400'),
               borderLeftColor: theme('colors.gray.800'),
-              fontFamily: theme('fontFamily.roboto'),
-              fontStyle: 'normal',
+              fontFamily: theme('fontFamily.heading'),
+              fontStyle: 'italic',
               fontWeight: '500',
             },
             'blockquote p:first-of-type::before': {
