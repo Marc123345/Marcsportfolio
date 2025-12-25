@@ -128,6 +128,103 @@ export default function TrustedBy() {
 
   return (
     <section ref={sectionRef} className="py-16 sm:py-20 md:py-24 bg-black overflow-hidden">
+      {/* Trusted by Industry Leaders - Company Logos */}
+      <div className="w-full bg-[#0a0f1e] py-8 mb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
+            {/* Binns Media Group */}
+            <div className="transition-all duration-300 hover:scale-110">
+              <img
+                src="https://i.imgur.com/uliFOja.png"
+                alt="Binns Media Group"
+                className="h-10 md:h-12 w-auto object-contain filter brightness-0 invert opacity-60 hover:opacity-100 transition-opacity"
+              />
+            </div>
+
+            {/* Untapped Africa */}
+            <div className="transition-all duration-300 hover:scale-110">
+              <img
+                src="https://ik.imagekit.io/qcvroy8xpd/GOLD%20TEXT%20LOGO%20NO%20GLOW%20EFFECT%20ADDED%201.png?updatedAt=1748753342858"
+                alt="Untapped Africa"
+                className="h-10 md:h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity"
+              />
+            </div>
+
+            {/* Diamonds by CS */}
+            <div className="transition-all duration-300 hover:scale-110">
+              <img
+                src="https://ik.imagekit.io/qcvroy8xpd/downloads/diqalz8giyxk0bjucqwv.png?updatedAt=1754396322363"
+                alt="Diamonds by CS"
+                className="h-10 md:h-12 w-auto object-contain filter brightness-0 invert opacity-60 hover:opacity-100 transition-opacity"
+              />
+            </div>
+
+            {/* Partner Company */}
+            <div className="transition-all duration-300 hover:scale-110">
+              <img
+                src="https://ik.imagekit.io/qcvroy8xpd/image%201%20(5).png?updatedAt=1763319654171"
+                alt="Partner Company"
+                className="h-10 md:h-12 w-auto object-contain filter brightness-0 invert opacity-60 hover:opacity-100 transition-opacity"
+              />
+            </div>
+
+            {/* Chad LeClos */}
+            <div className="transition-all duration-300 hover:scale-110">
+              <img
+                src="https://ik.imagekit.io/qcvroy8xpd/logo%20(1).svg?updatedAt=1763381682176"
+                alt="Chad LeClos"
+                className="h-10 md:h-12 w-auto object-contain filter brightness-0 invert opacity-60 hover:opacity-100 transition-opacity"
+              />
+            </div>
+
+            {/* Secure Annapolis */}
+            <div className="transition-all duration-300 hover:scale-110">
+              <img
+                src="https://ik.imagekit.io/qcvroy8xpd/image%201%20(7).png"
+                alt="Secure Annapolis"
+                className="h-10 md:h-12 w-auto object-contain filter brightness-0 invert opacity-60 hover:opacity-100 transition-opacity"
+              />
+            </div>
+
+            {/* Auto Margin */}
+            <div className="transition-all duration-300 hover:scale-110">
+              <img
+                src="https://ik.imagekit.io/qcvroy8xpd/9uafCUp%201%20(1).png?updatedAt=1755247790037"
+                alt="Auto Margin"
+                className="h-10 md:h-12 w-auto object-contain filter brightness-0 invert opacity-60 hover:opacity-100 transition-opacity"
+              />
+            </div>
+
+            {/* Partner Company */}
+            <div className="transition-all duration-300 hover:scale-110">
+              <img
+                src="https://ik.imagekit.io/qcvroy8xpd/f9f3cab4-1ac2-4216-9590-33ea4b61faea.jpeg?updatedAt=1751550631056"
+                alt="Partner Company"
+                className="h-10 md:h-12 w-auto object-contain filter brightness-0 invert opacity-60 hover:opacity-100 transition-opacity"
+              />
+            </div>
+
+            {/* iLight */}
+            <div className="transition-all duration-300 hover:scale-110">
+              <img
+                src="https://ik.imagekit.io/qcvroy8xpd/White%20logo%20-%20no%20background.svg?updatedAt=1749030562412"
+                alt="iLight"
+                className="h-10 md:h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity"
+              />
+            </div>
+
+            {/* Uza Entertainment */}
+            <div className="transition-all duration-300 hover:scale-110">
+              <img
+                src="https://ik.imagekit.io/qcvroy8xpd/downloads/logo-uzan-1-mv02DeERKlcy9DzM%20(1).avif?updatedAt=1755253233172"
+                alt="Uza Entertainment"
+                className="h-10 md:h-12 w-auto object-contain filter brightness-0 invert opacity-60 hover:opacity-100 transition-opacity"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Client Success Stories"
