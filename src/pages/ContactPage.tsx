@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import TextReveal from '@/components/TextReveal';
 import HoverCard3D from '@/components/HoverCard3D';
-import JotFormEmbed from '@/components/JotFormEmbed';
 
 const contactSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   "name": "Contact Marc Friedman - High-Converting Websites for Agencies & Businesses",
-  "description": "Get your free quote for high-performance React/Node websites built to attract, convert, and close clients. Specializing in agencies, local businesses, and jewellery brands.",
+  "description": "Get your free quote for high-performance React/Node websites built to attract, convert, and close clients.",
   "url": "https://www.marcfriedmanportfolio.com/contact",
   "provider": {
     "@type": "Person",
@@ -30,10 +29,22 @@ const contactSchema = {
 };
 
 export default function ContactPage() {
-  // Calendly link for UX Audit
   const calendlyUXAuditLink = "https://calendly.com/marc-friedman-web-design--meeting-link/30min";
 
-  // Animation variants
+  // Trigger JotForm handler after mount
+  useEffect(() => {
+    const handleJotForm = () => {
+      // Check if the global handler from the script is available
+      if (window.jotformEmbedHandler) {
+        window.jotformEmbedHandler("iframe[id='JotFormIFrame-253586719410462']", "https://form.jotform.com/");
+      }
+    };
+
+    // Small delay to ensure script from Helmet is processed
+    const timer = setTimeout(handleJotForm, 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: (custom: number) => ({
@@ -50,13 +61,16 @@ export default function ContactPage() {
   return (
     <>
       <Helmet>
-        <title>Contact Marc Friedman - Get Your Free Quote for High-Converting Websites</title>
-        <meta name="description" content="Get your free quote for high-performance React/Node websites built to attract, convert, and close clients. Specializing in agencies, local businesses, and jewellery brands." />
+        <title>Contact Marc Friedman - Get Your Free Quote</title>
+        <meta name="description" content="Get your free quote for high-performance React/Node websites." />
         <script type="application/ld+json">
           {JSON.stringify(contactSchema)}
         </script>
+        {/* Load JotForm Script via Helmet */}
+        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
       </Helmet>
 
+      {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-black">
         <motion.div 
           className="max-w-3xl mx-auto"
@@ -64,12 +78,7 @@ export default function ContactPage() {
           animate="visible"
           variants={{
             hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.1
-              }
-            }
+            visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
           }}
         >
           <motion.h1
@@ -101,6 +110,7 @@ export default function ContactPage() {
         </motion.div>
       </section>
 
+      {/* Form Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
           <HoverCard3D className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10">
@@ -108,44 +118,61 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-white mb-6">Get Your Free Project Quote</h2>
             </TextReveal>
 
-            <JotFormEmbed />
+            {/* JotForm React Implementation */}
+            <div className="w-full">
+              <iframe
+                id="JotFormIFrame-253586719410462"
+                title="Marc Friedman Contact Form"
+                onLoad={() => window.parent.scrollTo(0,0)}
+                allowTransparency={true}
+                allow="geolocation; microphone; camera; fullscreen; payment"
+                src="https://form.jotform.com/253586719410462"
+                frameBorder="0"
+                style={{
+                  minWidth: '100%',
+                  maxWidth: '100%',
+                  height: '539px',
+                  border: 'none',
+                }}
+                scrolling="no"
+              />
+            </div>
           </HoverCard3D>
         </div>
       </section>
 
+      {/* Process Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
           <TextReveal>
             <h2 className="text-3xl font-bold text-white mb-8 text-center">What to Expect</h2>
           </TextReveal>
           <div className="grid md:grid-cols-3 gap-8">
-            <HoverCard3D className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
-              <div className="bg-[#A3D1FF]/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                <span className="text-[#A3D1FF] text-xl font-bold">1</span>
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Initial Consultation</h3>
-              <p className="text-gray-400">
-                <strong className="text-white">24-hour response time</strong> guaranteed. We'll discuss your business goals, target audience, and project requirements to ensure we're aligned.
-              </p>
-            </HoverCard3D>
-            <HoverCard3D className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
-              <div className="bg-[#A3D1FF]/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                <span className="text-[#A3D1FF] text-xl font-bold">2</span>
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Proposal & Strategy</h3>
-              <p className="text-gray-400">
-                You'll receive a <strong className="text-white">detailed proposal</strong> outlining the project scope, timeline, and investment with <strong className="text-white">clear deliverables</strong>.
-              </p>
-            </HoverCard3D>
-            <HoverCard3D className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
-              <div className="bg-[#A3D1FF]/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                <span className="text-[#A3D1FF] text-xl font-bold">3</span>
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Execution & Launch</h3>
-              <p className="text-gray-400">
-                We'll work collaboratively through design, development, and launch with <strong className="text-white">weekly updates</strong> and a <strong className="text-white">transparent process</strong>.
-              </p>
-            </HoverCard3D>
+            {[
+              { 
+                step: "1", 
+                title: "Initial Consultation", 
+                desc: "24-hour response time guaranteed. We'll discuss your business goals and project requirements." 
+              },
+              { 
+                step: "2", 
+                title: "Proposal & Strategy", 
+                desc: "You'll receive a detailed proposal outlining project scope, timeline, and investment." 
+              },
+              { 
+                step: "3", 
+                title: "Execution & Launch", 
+                desc: "We'll work collaboratively through design and development with weekly updates." 
+              }
+            ].map((item, idx) => (
+              <HoverCard3D key={idx} className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
+                <div className="bg-[#A3D1FF]/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                  <span className="text-[#A3D1FF] text-xl font-bold">{item.step}</span>
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
+                <p className="text-gray-400">{item.desc}</p>
+              </HoverCard3D>
+            ))}
           </div>
         </div>
       </section>
