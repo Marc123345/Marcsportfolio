@@ -1,64 +1,36 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 export default function JotFormEmbed() {
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
   useEffect(() => {
-    // Load JotForm iframe resize script
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js';
-    script.async = true;
-
-    document.body.appendChild(script);
-
-    // Listen for JotForm iframe messages
-    const handleMessage = (e: MessageEvent) => {
-      if (typeof e.data === 'object') return;
-      const args = e.data.split(':');
-      if (args.length > 2) {
-        const iframe = document.getElementById('JotFormIFrame-' + args[args.length - 1]) as HTMLIFrameElement;
-        if (iframe) {
-          switch (args[0]) {
-            case 'scrollIntoView':
-              iframe.scrollIntoView();
-              break;
-            case 'setHeight':
-              iframe.style.height = args[1] + 'px';
-              break;
-            case 'reloadPage':
-              window.location.reload();
-              break;
-          }
+    const handleIFrameMessage = (e: MessageEvent) => {
+      if (typeof e.data === 'string' && e.data.indexOf('setHeight') > -1) {
+        const args = e.data.split(':');
+        const iframe = iframeRef.current;
+        if (iframe && args.length > 1) {
+          iframe.style.height = args[1] + 'px';
         }
       }
     };
 
-    window.addEventListener('message', handleMessage);
+    window.addEventListener('message', handleIFrameMessage);
 
     return () => {
-      window.removeEventListener('message', handleMessage);
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
+      window.removeEventListener('message', handleIFrameMessage);
     };
   }, []);
 
   return (
     <iframe
-      id="JotFormIFrame-253586719410462"
+      ref={iframeRef}
       title="Contact Form"
-      onLoad={() => {
-        const iframe = document.getElementById('JotFormIFrame-253586719410462') as HTMLIFrameElement;
-        if (iframe && iframe.contentWindow) {
-          iframe.contentWindow.postMessage(JSON.stringify({ action: 'ready' }), '*');
-        }
-      }}
-      allow="geolocation; microphone; camera; fullscreen"
+      allow="geolocation; microphone; camera"
       src="https://form.jotform.com/253586719410462"
       frameBorder="0"
       style={{
-        minWidth: '100%',
-        maxWidth: '100%',
-        height: '539px',
+        width: '100%',
+        minHeight: '800px',
         border: 'none',
       }}
       scrolling="no"
