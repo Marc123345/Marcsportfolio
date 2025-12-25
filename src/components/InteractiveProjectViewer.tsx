@@ -232,7 +232,7 @@ export default function InteractiveProjectViewer() {
             </div>
             
             <div className="p-4 sm:p-6 md:p-8 relative z-20">
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3">{currentProject.title}</h3>
+              <h3 className="text-xl sm:text-heading-large text-white mb-2 sm:mb-3">{currentProject.title}</h3>
               <p className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6">{currentProject.description}</p>
               
               <div className="flex flex-wrap gap-3 sm:gap-4">

@@ -242,7 +242,7 @@ function FeaturedProjectCard({ project }: { project: Project }) {
           <div className="flex items-center justify-between mb-4">
             <span className="text-[#A3D1FF] text-sm bg-[#A3D1FF]/10 px-4 py-2 rounded-full">Featured Project</span>
           </div>
-          <h3 className="text-xl md:text-3xl font-bold text-white mb-3 md:mb-4">{project.title}</h3>
+          <h3 className="text-xl md:text-display-medium text-white mb-3 md:mb-4">{project.title}</h3>
           <p className="text-sm md:text-base text-gray-400 mb-4 md:mb-6">{project.description}</p>
           <div className="space-y-3 md:space-y-4 mb-4 md:mb-6">
             {project.impact.map((impact, index) => (
@@ -452,7 +452,7 @@ export default function WorkPage() {
       <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
-            <h2 className="text-2xl font-bold text-white">Filter by Industry</h2>
+            <h2 className="text-heading-large text-white">Filter by Industry</h2>
             <div className="flex flex-wrap gap-2">
               {filterOptions.map((option) => (
                 <CategoryButton
@@ -471,7 +471,7 @@ export default function WorkPage() {
       {/* Projects Grid */}
       <section className="py-8 md:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">Portfolio Projects</h2>
+          <h2 className="text-2xl md:text-display-medium text-white mb-8">Portfolio Projects</h2>
           <motion.div 
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
             initial={{ opacity: 0 }}
@@ -499,7 +499,7 @@ export default function WorkPage() {
           
           {/* Related Content Links */}
           <div className="mt-16 bg-[#1b1b1b] p-8 rounded-xl border border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-6">Explore More</h3>
+            <h3 className="text-heading-large text-white mb-6">Explore More</h3>
             <div className="grid md:grid-cols-3 gap-6">
               <div>
                 <h4 className="text-lg font-semibold text-white mb-4">Our Services</h4>

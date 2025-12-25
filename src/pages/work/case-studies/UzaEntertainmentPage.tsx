@@ -15,7 +15,7 @@ function FeatureCard({ icon: Icon, title, description }: {
           <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
         </div>
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+      <h3 className="text-body-large font-semibold mb-2 text-white">{title}</h3>
       <p className="text-gray-400">{description}</p>
     </div>
   );
@@ -50,7 +50,7 @@ export default function UzaEntertainmentPage() {
         {/* Content */}
         <div className="container-custom relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            <h1 className="text-display-large text-white mb-6">
               UZA Entertainment
             </h1>
             <p className="text-xl text-gray-300 mb-8">
@@ -86,7 +86,7 @@ export default function UzaEntertainmentPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">Project Overview</h2>
+              <h2 className="text-display-medium text-white mb-6">Project Overview</h2>
               <p className="text-gray-400 mb-6">
                 UZA Entertainment needed a modern website that would showcase their premium event entertainment services while improving their local visibility and booking conversions. The project focused on creating an engaging online presence and implementing a comprehensive SEO strategy.
               </p>
@@ -107,7 +107,7 @@ export default function UzaEntertainmentPage() {
             </div>
             <div className="space-y-6">
               <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10">
-                <h3 className="text-xl font-semibold text-white mb-4">Key Achievements</h3>
+                <h3 className="text-body-large font-semibold text-white mb-4">Key Achievements</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center text-gray-300">
                     <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
@@ -135,7 +135,7 @@ export default function UzaEntertainmentPage() {
       {/* Project Gallery */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Project Gallery</h2>
+          <h2 className="text-display-medium text-white mb-12">Project Gallery</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="aspect-video overflow-hidden rounded-xl">
               <img 
@@ -160,7 +160,7 @@ export default function UzaEntertainmentPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">The Challenge</h2>
+              <h2 className="text-display-medium text-white mb-6">The Challenge</h2>
               <p className="text-gray-400 mb-6">
                 UZA Entertainment faced several challenges in their digital presence:
               </p>
@@ -184,7 +184,7 @@ export default function UzaEntertainmentPage() {
               </ul>
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">The Solution</h2>
+              <h2 className="text-display-medium text-white mb-6">The Solution</h2>
               <div className="grid gap-6">
                 <FeatureCard
                   icon={Target}
@@ -210,7 +210,7 @@ export default function UzaEntertainmentPage() {
       {/* Implementation Details */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Implementation</h2>
+          <h2 className="text-display-medium text-white mb-12">Implementation</h2>
           <div className="space-y-12">
             <div>
               <h3 className="text-2xl font-semibold text-white mb-6">1. Website Development</h3>
@@ -322,7 +322,7 @@ export default function UzaEntertainmentPage() {
       {/* Results */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Results & Impact</h2>
+          <h2 className="text-display-medium text-white mb-12">Results & Impact</h2>
           <div className="grid md:grid-cols-4 gap-8">
             <StatCard
               value="85%"
@@ -347,7 +347,7 @@ export default function UzaEntertainmentPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Digital Presence?</h2>
+          <h2 className="text-display-medium text-white mb-4">Ready to Transform Your Digital Presence?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's create a stunning website that drives real results for your business.
           </p>

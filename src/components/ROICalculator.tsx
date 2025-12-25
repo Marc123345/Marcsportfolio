@@ -117,7 +117,7 @@ export default function ROICalculator() {
           <div className="bg-[#A3D1FF]/10 p-3 rounded-lg">
             <Calculator className="w-6 h-6 text-[#A3D1FF]" />
           </div>
-          <h3 className="text-2xl font-bold text-white">Website ROI Calculator</h3>
+          <h3 className="text-heading-large text-white">Website ROI Calculator</h3>
         </div>
         
         <p className="text-gray-400 mb-6">
@@ -323,12 +323,12 @@ export default function ROICalculator() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-[#2d3035] p-4 rounded-lg">
                     <p className="text-sm text-gray-400 mb-1">Current Monthly Revenue</p>
-                    <p className="text-xl font-bold text-white">{formatCurrency(results.currentMonthlyRevenue)}</p>
+                    <p className="text-heading-large text-white">{formatCurrency(results.currentMonthlyRevenue)}</p>
                   </div>
                   
                   <div className="bg-[#2d3035] p-4 rounded-lg">
                     <p className="text-sm text-gray-400 mb-1">Projected Monthly Revenue</p>
-                    <p className="text-xl font-bold text-[#A3D1FF]">{formatCurrency(results.projectedMonthlyRevenue)}</p>
+                    <p className="text-heading-large text-[#A3D1FF]">{formatCurrency(results.projectedMonthlyRevenue)}</p>
                   </div>
                 </div>
                 

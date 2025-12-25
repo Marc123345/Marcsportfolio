@@ -20,7 +20,7 @@ function FeatureCard({ icon: Icon, title, description }: {
           <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
         </div>
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+      <h3 className="text-body-large font-semibold mb-2 text-white">{title}</h3>
       <p className="text-gray-400">{description}</p>
     </div>
   );
@@ -72,7 +72,7 @@ function ProcessStep({ number, title, description, delay = 0 }: { number: string
           </div>
         </div>
         <div className="flex-1 pb-8">
-          <h4 className="text-xl font-bold text-white mb-2">{title}</h4>
+          <h4 className="text-heading-large text-white mb-2">{title}</h4>
           <p className="text-gray-400 leading-relaxed">{description}</p>
         </div>
       </div>
@@ -232,14 +232,14 @@ export default function AutoMarginPage() {
             <p className="text-xl text-gray-300 mb-8">
               Designed to empower dealerships, AutoMarginX delivers actionable insights that:
             </p>
-            <ul className="text-gray-300 text-xl mb-8 list-disc pl-6 space-y-2">
+            <ul className="text-gray-300 text-body-large mb-8 list-disc pl-6 space-y-2">
               <li>Maximize pricing strategies for enhanced profit margins</li>
               <li>Optimize inventory management to streamline operations</li>
             </ul>
             <p className="text-xl text-white font-bold mb-8">
               By turning data into decisions, AutoMarginX transforms every aspect of your business:
             </p>
-            <ul className="text-white text-xl font-bold mb-8 list-disc pl-6 space-y-2">
+            <ul className="text-white text-heading-large mb-8 list-disc pl-6 space-y-2">
               <li>Boosting efficiency</li>
               <li>Increasing profits</li>
               <li>Keeping you ahead of the competition</li>
@@ -291,7 +291,7 @@ export default function AutoMarginPage() {
               <div className="w-12 h-12 bg-[#A3D1FF]/10 rounded-lg flex items-center justify-center mb-4">
                 <Target className="w-6 h-6 text-[#A3D1FF]" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">The Challenge</h3>
+              <h3 className="text-heading-large text-white mb-3">The Challenge</h3>
               <p className="text-gray-400">Dealerships struggled with outdated, fragmented data systems that made real-time decision-making impossible and hindered competitive positioning.</p>
             </motion.div>
 
@@ -305,7 +305,7 @@ export default function AutoMarginPage() {
               <div className="w-12 h-12 bg-[#A3D1FF]/10 rounded-lg flex items-center justify-center mb-4">
                 <Zap className="w-6 h-6 text-[#A3D1FF]" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">The Solution</h3>
+              <h3 className="text-heading-large text-white mb-3">The Solution</h3>
               <p className="text-gray-400">A comprehensive SaaS platform providing real-time market analytics, dynamic pricing tools, and inventory optimization powered by AI-driven insights.</p>
             </motion.div>
 
@@ -319,7 +319,7 @@ export default function AutoMarginPage() {
               <div className="w-12 h-12 bg-[#A3D1FF]/10 rounded-lg flex items-center justify-center mb-4">
                 <TrendingUp className="w-6 h-6 text-[#A3D1FF]" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">The Impact</h3>
+              <h3 className="text-heading-large text-white mb-3">The Impact</h3>
               <p className="text-gray-400">35% faster decision-making, 20% profit increase, and 40% time savings across operations, transforming dealership performance metrics industry-wide.</p>
             </motion.div>
           </div>
@@ -340,7 +340,7 @@ export default function AutoMarginPage() {
             viewport={{ once: true }}
           >
             <div>
-              <h3 className="text-2xl font-bold text-white mb-6">The Market Opportunity</h3>
+              <h3 className="text-heading-large text-white mb-6">The Market Opportunity</h3>
               <p className="text-gray-300 mb-4 leading-relaxed">
                 The automotive dealership industry was facing a critical challenge: existing tools were fragmented, outdated, and unable to provide the real-time insights needed to compete in an increasingly dynamic market.
               </p>
@@ -349,13 +349,13 @@ export default function AutoMarginPage() {
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-white mb-6">My Role & Approach</h3>
+              <h3 className="text-heading-large text-white mb-6">My Role & Approach</h3>
               <p className="text-gray-300 mb-4 leading-relaxed">
                 As the lead designer and developer, I was responsible for the entire product lifecycle—from initial market research and user interviews to final implementation and deployment. This comprehensive involvement ensured a cohesive vision throughout.
               </p>
               <div className="bg-[#0a0a0a] p-6 rounded-xl border border-white/10">
                 <p className="text-[#A3D1FF] font-semibold mb-2">Project Duration</p>
-                <p className="text-white text-2xl font-bold mb-4">6 Months</p>
+                <p className="text-white text-heading-large mb-4">6 Months</p>
                 <p className="text-gray-400 text-sm">From concept to production launch with continuous iteration based on user feedback</p>
               </div>
             </div>
@@ -376,7 +376,7 @@ export default function AutoMarginPage() {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold text-white mb-4">Core Competencies</h3>
+              <h3 className="text-heading-large text-white mb-4">Core Competencies</h3>
               <ul className="space-y-4">
                 <li className="flex items-center text-gray-300">
                   <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
@@ -402,7 +402,7 @@ export default function AutoMarginPage() {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold text-white mb-4">Industry Focus</h3>
+              <h3 className="text-heading-large text-white mb-4">Industry Focus</h3>
               <ul className="space-y-4">
                 <li className="flex items-center text-gray-300">
                   <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
@@ -453,7 +453,7 @@ export default function AutoMarginPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold text-white mb-6 tracking-tight">Challenges</h2>
+              <h2 className="text-display-medium text-white mb-6 tracking-tight">Challenges</h2>
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <Star className="w-5 h-5 text-[#FFD700] mt-1 mr-3" />
@@ -484,7 +484,7 @@ export default function AutoMarginPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold text-white mb-6 tracking-tight">Solutions</h2>
+              <h2 className="text-display-medium text-white mb-6 tracking-tight">Solutions</h2>
               <div className="grid gap-6">
                 <FeatureCard
                   icon={Target}
@@ -584,7 +584,7 @@ export default function AutoMarginPage() {
                   <Activity className="w-8 h-8 text-[#A3D1FF]" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Real-Time Market Analytics</h3>
+                  <h3 className="text-heading-large text-white mb-2">Real-Time Market Analytics</h3>
                   <p className="text-gray-400">Live data aggregation from multiple sources providing instant market insights</p>
                 </div>
               </div>
@@ -617,7 +617,7 @@ export default function AutoMarginPage() {
                   <DollarSign className="w-8 h-8 text-[#A3D1FF]" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Dynamic Pricing Engine</h3>
+                  <h3 className="text-heading-large text-white mb-2">Dynamic Pricing Engine</h3>
                   <p className="text-gray-400">Intelligent pricing recommendations based on comprehensive market analysis</p>
                 </div>
               </div>
@@ -650,7 +650,7 @@ export default function AutoMarginPage() {
                   <Layers className="w-8 h-8 text-[#A3D1FF]" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Inventory Optimization</h3>
+                  <h3 className="text-heading-large text-white mb-2">Inventory Optimization</h3>
                   <p className="text-gray-400">Smart inventory management with predictive analytics</p>
                 </div>
               </div>
@@ -683,7 +683,7 @@ export default function AutoMarginPage() {
                   <BarChart3 className="w-8 h-8 text-[#A3D1FF]" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Advanced Reporting Suite</h3>
+                  <h3 className="text-heading-large text-white mb-2">Advanced Reporting Suite</h3>
                   <p className="text-gray-400">Comprehensive analytics dashboard with customizable reports</p>
                 </div>
               </div>
@@ -802,7 +802,7 @@ export default function AutoMarginPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
           <TextReveal>
-            <h2 className="text-3xl font-bold text-white mb-8 tracking-tight">Future Development & Vision</h2>
+            <h2 className="text-display-medium text-white mb-8 tracking-tight">Future Development & Vision</h2>
           </TextReveal>
           <motion.p 
             className="text-xl text-gray-300 mb-8"
@@ -815,19 +815,19 @@ export default function AutoMarginPage() {
           </motion.p>
           <div className="grid md:grid-cols-3 gap-8">
             <HoverCard3D className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10">
-              <h3 className="text-xl font-bold text-white mb-4 tracking-tight">Predictive Analytics</h3>
+              <h3 className="text-heading-large text-white mb-4 tracking-tight">Predictive Analytics</h3>
               <p className="text-gray-300">
                 AI-powered tools to forecast market trends and customer demand, enabling proactive decision-making.
               </p>
             </HoverCard3D>
             <HoverCard3D className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10">
-              <h3 className="text-xl font-bold text-white mb-4 tracking-tight">Automated Reporting</h3>
+              <h3 className="text-heading-large text-white mb-4 tracking-tight">Automated Reporting</h3>
               <p className="text-gray-300">
                 Streamlined reporting features for managers, reducing manual work and improving data accessibility.
               </p>
             </HoverCard3D>
             <HoverCard3D className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10">
-              <h3 className="text-xl font-bold text-white mb-4 tracking-tight">AR/VR Integration</h3>
+              <h3 className="text-heading-large text-white mb-4 tracking-tight">AR/VR Integration</h3>
               <p className="text-gray-300">
                 Exploring how AR/VR can be used to visualize vehicle inventories and enhance customer engagement.
               </p>
@@ -845,7 +845,7 @@ export default function AutoMarginPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-white mb-4 tracking-tight">Ready to Transform Your Dealership?</h2>
+            <h2 className="text-display-medium text-white mb-4 tracking-tight">Ready to Transform Your Dealership?</h2>
             <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
               Let's create a data-driven solution that drives real results for your business.
             </p>

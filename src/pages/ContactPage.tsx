@@ -127,7 +127,7 @@ export default function ContactPage() {
           }}
         >
           <motion.h1
-            className="text-4xl sm:text-5xl font-bold text-white mb-6"
+            className="text-display-large text-white mb-6"
             variants={fadeInUp}
             custom={0}
           >
@@ -159,7 +159,7 @@ export default function ContactPage() {
         <div className="max-w-3xl mx-auto">
           <HoverCard3D className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10">
             <TextReveal>
-              <h2 className="text-2xl font-bold text-white mb-6">Get Your Free Project Quote</h2>
+              <h2 className="text-heading-large text-white mb-6">Get Your Free Project Quote</h2>
             </TextReveal>
 
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -297,32 +297,32 @@ export default function ContactPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
           <TextReveal>
-            <h2 className="text-3xl font-bold text-white mb-8 text-center">What to Expect</h2>
+            <h2 className="text-display-medium text-white mb-8 text-center">What to Expect</h2>
           </TextReveal>
           <div className="grid md:grid-cols-3 gap-8">
             <HoverCard3D className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
               <div className="bg-[#A3D1FF]/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                <span className="text-[#A3D1FF] text-xl font-bold">1</span>
+                <span className="text-[#A3D1FF] text-heading-large">1</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Initial Consultation</h3>
+              <h3 className="text-body-large font-semibold text-white mb-2">Initial Consultation</h3>
               <p className="text-gray-400">
                 <strong className="text-white">24-hour response time</strong> guaranteed. We'll discuss your business goals, target audience, and project requirements to ensure we're aligned.
               </p>
             </HoverCard3D>
             <HoverCard3D className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
               <div className="bg-[#A3D1FF]/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                <span className="text-[#A3D1FF] text-xl font-bold">2</span>
+                <span className="text-[#A3D1FF] text-heading-large">2</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Proposal & Strategy</h3>
+              <h3 className="text-body-large font-semibold text-white mb-2">Proposal & Strategy</h3>
               <p className="text-gray-400">
                 You'll receive a <strong className="text-white">detailed proposal</strong> outlining the project scope, timeline, and investment with <strong className="text-white">clear deliverables</strong>.
               </p>
             </HoverCard3D>
             <HoverCard3D className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
               <div className="bg-[#A3D1FF]/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                <span className="text-[#A3D1FF] text-xl font-bold">3</span>
+                <span className="text-[#A3D1FF] text-heading-large">3</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Execution & Launch</h3>
+              <h3 className="text-body-large font-semibold text-white mb-2">Execution & Launch</h3>
               <p className="text-gray-400">
                 We'll work collaboratively through design, development, and launch with <strong className="text-white">weekly updates</strong> and a <strong className="text-white">transparent process</strong>.
               </p>

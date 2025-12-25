@@ -12,9 +12,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        asen: ['Asen Pro', 'sans-serif'],
-        inter: ['Roboto', 'sans-serif'],
-        roboto: ['Roboto', 'sans-serif'],
+        primary: ['Inter', 'SF Pro Display', 'Helvetica Neue', 'sans-serif'],
+        display: ['SF Pro Display', 'Inter', 'Helvetica Neue', 'sans-serif'],
+        inter: ['Inter', 'SF Pro Display', 'Helvetica Neue', 'sans-serif'],
+        roboto: ['Inter', 'SF Pro Display', 'Helvetica Neue', 'sans-serif'],
       },
       colors: {
         primary: '#A3D1FF',

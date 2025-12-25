@@ -16,7 +16,7 @@ function FeatureCard({ icon: Icon, title, description }: {
           <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
         </div>
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+      <h3 className="text-body-large font-semibold mb-2 text-white">{title}</h3>
       <p className="text-gray-400">{description}</p>
     </div>
   );
@@ -29,7 +29,7 @@ function ServiceCard({ title, description, features }: {
 }) {
   return (
     <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all">
-      <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
+      <h3 className="text-heading-large text-white mb-4">{title}</h3>
       <p className="text-gray-400 mb-6">{description}</p>
       <ul className="space-y-3">
         {features.map((feature, index) => (
@@ -52,7 +52,7 @@ export default function CybersecurityPage() {
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            <h1 className="text-display-large text-white mb-6">
               Cybersecurity Services
             </h1>
             <p className="text-xl text-gray-400 mb-8">
@@ -111,7 +111,7 @@ export default function CybersecurityPage() {
       {/* Detailed Services */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">Comprehensive Security Solutions</h2>
+          <h2 className="text-display-medium text-white mb-12 text-center">Comprehensive Security Solutions</h2>
           <div className="space-y-12">
             <ServiceCard
               title="1. Discovery & Security Assessment"
@@ -185,26 +185,26 @@ export default function CybersecurityPage() {
       {/* Benefits Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">The Benefits of Our Approach</h2>
+          <h2 className="text-display-medium text-white mb-12 text-center">The Benefits of Our Approach</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10 text-center">
               <ShieldCheck className="w-12 h-12 text-[#A3D1FF] mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Rock-Solid Security</h3>
+              <h3 className="text-body-large font-semibold text-white mb-2">Rock-Solid Security</h3>
               <p className="text-gray-400"><strong className="text-white">Strong breach prevention</strong> with a technology stack that safeguards your data and protects against threats.</p>
             </div>
             <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10 text-center">
               <Users className="w-12 h-12 text-[#A3D1FF] mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Seamless Experience</h3>
+              <h3 className="text-body-large font-semibold text-white mb-2">Seamless Experience</h3>
               <p className="text-gray-400"><strong className="text-white">Reduction</strong> in security-related friction with interfaces that make security intuitive, not a burden.</p>
             </div>
             <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10 text-center">
               <Lock className="w-12 h-12 text-[#A3D1FF] mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Compliance Built-In</h3>
+              <h3 className="text-body-large font-semibold text-white mb-2">Compliance Built-In</h3>
               <p className="text-gray-400"><strong className="text-white">Regulatory compliance</strong> at every layer, reducing legal and business risk.</p>
             </div>
             <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10 text-center">
               <Eye className="w-12 h-12 text-[#A3D1FF] mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Proactive Protection</h3>
+              <h3 className="text-body-large font-semibold text-white mb-2">Proactive Protection</h3>
               <p className="text-gray-400"><strong className="text-white">Threats detected</strong> before they cause damage through ongoing monitoring and threat intelligence.</p>
             </div>
           </div>
@@ -235,7 +235,7 @@ export default function CybersecurityPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Secure Your Digital Assets?</h2>
+          <h2 className="text-display-medium text-white mb-4">Ready to Secure Your Digital Assets?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's build a comprehensive security strategy that <strong className="text-white">protects your business</strong> and <strong className="text-white">builds trust with your customers</strong>.
           </p>

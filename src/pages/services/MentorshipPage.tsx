@@ -16,7 +16,7 @@ function MentorshipProgram({ icon: Icon, title, description }: {
           <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
         </div>
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+      <h3 className="text-body-large font-semibold mb-2 text-white">{title}</h3>
       <p className="text-gray-400">{description}</p>
     </div>
   );
@@ -53,7 +53,7 @@ function MentorshipPackage({ title, price, duration, description, features }: {
   
   return (
     <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all">
-      <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
+      <h3 className="text-heading-large text-white mb-2">{title}</h3>
       <div className="text-4xl font-bold text-[#A3D1FF] mb-4">{price}</div>
       <p className="text-gray-400 mb-6">{description}</p>
       <ul className="space-y-3 mb-8">
@@ -95,7 +95,7 @@ export default function MentorshipPage() {
         {/* Content */}
         <div className="container-custom relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            <h1 className="text-display-large text-white mb-6">
               UX/UI Tutoring & Mentorship
             </h1>
             <p className="text-xl text-gray-300 mb-8">
@@ -154,7 +154,7 @@ export default function MentorshipPage() {
       {/* Mentorship Packages */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">Mentorship Packages</h2>
+          <h2 className="text-display-medium text-white mb-12 text-center">Mentorship Packages</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <MentorshipPackage
               title="Figma Mastery"
@@ -205,14 +205,14 @@ export default function MentorshipPage() {
       {/* Process Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">How It Works</h2>
+          <h2 className="text-display-medium text-white mb-12">How It Works</h2>
           <div className="space-y-12">
             <div className="flex items-start">
               <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
                 1
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Initial Assessment</h3>
+                <h3 className="text-body-large font-semibold text-white mb-2">Initial Assessment</h3>
                 <p className="text-gray-400"><strong className="text-white">Personalized approach</strong> based on evaluating your current skills, goals, and choosing the right mentorship package.</p>
               </div>
             </div>
@@ -221,7 +221,7 @@ export default function MentorshipPage() {
                 2
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Learning Path</h3>
+                <h3 className="text-body-large font-semibold text-white mb-2">Learning Path</h3>
                 <p className="text-gray-400"><strong className="text-white">Faster skill acquisition</strong> through a customized curriculum focused on your specific career goals.</p>
               </div>
             </div>
@@ -230,7 +230,7 @@ export default function MentorshipPage() {
                 3
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Hands-on Practice</h3>
+                <h3 className="text-body-large font-semibold text-white mb-2">Hands-on Practice</h3>
                 <p className="text-gray-400"><strong className="text-white">Better skill retention</strong> through real-world projects with detailed feedback and guidance.</p>
               </div>
             </div>
@@ -239,7 +239,7 @@ export default function MentorshipPage() {
                 4
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Career Support</h3>
+                <h3 className="text-body-large font-semibold text-white mb-2">Career Support</h3>
                 <p className="text-gray-400"><strong className="text-white">Faster job placement</strong> with ongoing support for job applications, interviews, and career advancement.</p>
               </div>
             </div>
@@ -271,7 +271,7 @@ export default function MentorshipPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Level Up Your Design Career?</h2>
+          <h2 className="text-display-medium text-white mb-4">Ready to Level Up Your Design Career?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Take the first step towards <strong className="text-white">faster career growth</strong> with personalized UX/UI mentorship.
           </p>

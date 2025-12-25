@@ -18,7 +18,7 @@ function FeatureCard({ icon: Icon, title, description }: {
           <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
         </div>
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+      <h3 className="text-body-large font-semibold mb-2 text-white">{title}</h3>
       <p className="text-gray-400">{description}</p>
     </div>
   );
@@ -140,7 +140,7 @@ export default function IrreplicablePage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">Project Overview</h2>
+              <h2 className="text-display-medium text-white mb-6">Project Overview</h2>
               <p className="text-gray-400 mb-6">
                 Irreplicable needed a premium sales page that would effectively communicate their unique value proposition in personal branding and ghostwriting services. The project focused on creating a sophisticated, conversion-optimized page that would attract high-value clients.
               </p>
@@ -161,7 +161,7 @@ export default function IrreplicablePage() {
             </div>
             <div className="space-y-6">
               <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10">
-                <h3 className="text-xl font-semibold text-white mb-4">Key Achievements</h3>
+                <h3 className="text-body-large font-semibold text-white mb-4">Key Achievements</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center text-gray-300">
                     <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
@@ -191,7 +191,7 @@ export default function IrreplicablePage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">The Challenge</h2>
+              <h2 className="text-display-medium text-white mb-6">The Challenge</h2>
               <p className="text-gray-400 mb-6">
                 The project faced several key challenges:
               </p>
@@ -215,7 +215,7 @@ export default function IrreplicablePage() {
               </ul>
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">The Solution</h2>
+              <h2 className="text-display-medium text-white mb-6">The Solution</h2>
               <div className="grid gap-6">
                 <FeatureCard
                   icon={Timer}
@@ -241,7 +241,7 @@ export default function IrreplicablePage() {
       {/* Implementation Details */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Implementation</h2>
+          <h2 className="text-display-medium text-white mb-12">Implementation</h2>
           <div className="space-y-12">
             <div>
               <h3 className="text-2xl font-semibold text-white mb-6">1. Design & Development</h3>
@@ -410,7 +410,7 @@ export default function IrreplicablePage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Digital Presence?</h2>
+          <h2 className="text-display-medium text-white mb-4">Ready to Transform Your Digital Presence?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's create a high-converting sales page that drives real results for your business.
           </p>

@@ -121,7 +121,7 @@ export default function AIWebsiteCrawlerPage() {
 
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+          <h1 className="text-display-large text-white mb-6">
             AI Website Crawler Optimization
           </h1>
           <p className="text-xl text-gray-300 mb-8">
@@ -137,7 +137,7 @@ export default function AIWebsiteCrawlerPage() {
               <div className="bg-[#A3D1FF]/10 p-3 rounded-lg">
                 <Bot className="w-6 h-6 text-[#A3D1FF]" />
               </div>
-              <h3 className="text-2xl font-bold text-white">AI Crawler Analyzer</h3>
+              <h3 className="text-heading-large text-white">AI Crawler Analyzer</h3>
             </div>
             
             <p className="text-gray-400 mb-6">
@@ -172,7 +172,7 @@ export default function AIWebsiteCrawlerPage() {
             ) : (
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
-                  <h4 className="text-xl font-semibold text-white">Analysis Results</h4>
+                  <h4 className="text-body-large font-semibold text-white">Analysis Results</h4>
                   <div className="flex items-center gap-2">
                     <span className="text-gray-400">AI Readiness Score:</span>
                     <span className="text-lg font-bold text-[#A3D1FF]">{result.score}/100</span>
@@ -238,7 +238,7 @@ export default function AIWebsiteCrawlerPage() {
 
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">Key AI Crawler Optimization Techniques</h2>
+          <h2 className="text-display-medium text-white mb-12 text-center">Key AI Crawler Optimization Techniques</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <FeatureCard
               icon={Code}
@@ -276,7 +276,7 @@ export default function AIWebsiteCrawlerPage() {
 
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Need Expert Help with AI Optimization?</h2>
+          <h2 className="text-display-medium text-white mb-4">Need Expert Help with AI Optimization?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's optimize your website for AI crawlers and ensure your content is properly indexed and understood.
           </p>

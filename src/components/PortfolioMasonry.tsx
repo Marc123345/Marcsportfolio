@@ -115,7 +115,7 @@ export default function PortfolioMasonry({ className = '', filter = 'all' }: Por
                     transform: hoveredId === project.id ? 'translateY(0)' : 'translateY(20px)'
                   }}
                 >
-                  <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                  <h3 className="text-heading-large text-white mb-2">{project.title}</h3>
                   <p className="text-gray-300 mb-4">{project.description}</p>
                   
                   <div className="flex gap-3">

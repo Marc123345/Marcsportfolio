@@ -15,7 +15,7 @@ function FeatureCard({ icon: Icon, title, description }: {
           <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
         </div>
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+      <h3 className="text-body-large font-semibold mb-2 text-white">{title}</h3>
       <p className="text-gray-400">{description}</p>
     </div>
   );
@@ -53,7 +53,7 @@ export default function VideoleapPage() {
             <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm rounded-full px-4 py-2 border border-white/10 hover:border-[#A3D1FF] transition-all duration-300 mb-6">
               <span className="text-[#A3D1FF] text-sm font-medium">Featured Project</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            <h1 className="text-display-large text-white mb-6">
               Videoleap
             </h1>
             <p className="text-xl text-gray-300 mb-8">
@@ -66,7 +66,7 @@ export default function VideoleapPage() {
       {/* Project Overview */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-6">Project Overview</h2>
+          <h2 className="text-display-medium text-white mb-6">Project Overview</h2>
           <p className="text-gray-400 mb-8">
             Videoleap aims to enhance user engagement by improving the app's discoverability and utilization of templates. This project was initiated based on user feedback indicating difficulty in finding relevant templates and low incentive to upload content.
           </p>
@@ -94,7 +94,7 @@ export default function VideoleapPage() {
             </div>
             <div className="space-y-6">
               <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10">
-                <h3 className="text-xl font-semibold text-white mb-4">Key Findings</h3>
+                <h3 className="text-body-large font-semibold text-white mb-4">Key Findings</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center text-gray-300">
                     <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
@@ -127,7 +127,7 @@ export default function VideoleapPage() {
       {/* Stakeholder Interviews & Design Thinking Workshop */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-6">Stakeholder Interviews & Design Thinking Workshop</h2>
+          <h2 className="text-display-medium text-white mb-6">Stakeholder Interviews & Design Thinking Workshop</h2>
           
           <div className="grid md:grid-cols-2 gap-12">
             <div>
@@ -173,7 +173,7 @@ export default function VideoleapPage() {
       {/* Team Presentation */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-6">Team Presentation</h2>
+          <h2 className="text-display-medium text-white mb-6">Team Presentation</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <p className="text-gray-400 mb-6">
@@ -210,7 +210,7 @@ export default function VideoleapPage() {
       {/* Team Photo */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-6">Our Team</h2>
+          <h2 className="text-display-medium text-white mb-6">Our Team</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <p className="text-gray-400 mb-6">
@@ -247,7 +247,7 @@ export default function VideoleapPage() {
       {/* Press Coverage */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-6">Press Coverage</h2>
+          <h2 className="text-display-medium text-white mb-6">Press Coverage</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-2xl font-semibold text-white mb-4">TikTok Star Charli D'Amelio Partners with Videoleap</h3>
@@ -299,7 +299,7 @@ export default function VideoleapPage() {
       {/* Wireframes */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-6">Wireframes – Onboarding Flow</h2>
+          <h2 className="text-display-medium text-white mb-6">Wireframes – Onboarding Flow</h2>
           <p className="text-gray-400 mb-8">
             We developed comprehensive wireframes for the onboarding flow to ensure a smooth and intuitive user experience. The designs focus on progressive disclosure and clear user guidance.
           </p>
@@ -343,7 +343,7 @@ export default function VideoleapPage() {
       {/* Final Designs & Prototypes */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-6">Final Designs & Prototypes</h2>
+          <h2 className="text-display-medium text-white mb-6">Final Designs & Prototypes</h2>
           <p className="text-gray-400 mb-12">
             After multiple iterations and user testing, we finalized three key flows that address the main user pain points and improve overall engagement.
           </p>
@@ -455,7 +455,7 @@ export default function VideoleapPage() {
       {/* Target Users */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-6">Target Users</h2>
+          <h2 className="text-display-medium text-white mb-6">Target Users</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <FeatureCard
               icon={Users}
@@ -479,7 +479,7 @@ export default function VideoleapPage() {
       {/* Solution */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Solution</h2>
+          <h2 className="text-display-medium text-white mb-12">Solution</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-2xl font-semibold text-white mb-6">Advanced vs Simple Editor</h3>
@@ -520,7 +520,7 @@ export default function VideoleapPage() {
       {/* Features */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Key Features</h2>
+          <h2 className="text-display-medium text-white mb-12">Key Features</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <FeatureCard
               icon={Shield}
@@ -544,7 +544,7 @@ export default function VideoleapPage() {
       {/* Results */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Results & Impact</h2>
+          <h2 className="text-display-medium text-white mb-12">Results & Impact</h2>
           <div className="grid md:grid-cols-4 gap-8">
             <StatCard
               value="45%"
@@ -569,7 +569,7 @@ export default function VideoleapPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Digital Experience?</h2>
+          <h2 className="text-display-medium text-white mb-4">Ready to Transform Your Digital Experience?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's create an engaging solution that drives real results for your business.
           </p>

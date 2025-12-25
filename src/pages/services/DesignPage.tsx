@@ -19,7 +19,7 @@ function DesignService({ icon: Icon, title, description }: {
           <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
         </div>
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+      <h3 className="text-body-large font-semibold mb-2 text-white">{title}</h3>
       <p className="text-gray-400">{description}</p>
     </div>
   );
@@ -36,7 +36,7 @@ function ProcessStep({ number, title, description }: {
         {number}
       </div>
       <div>
-        <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
+        <h3 className="text-body-large font-semibold text-white mb-2">{title}</h3>
         <p className="text-gray-400">{description}</p>
       </div>
     </div>
@@ -58,7 +58,7 @@ function ServicePackage({ title, description, features, recommended = false }: {
           Most Popular
         </div>
       )}
-      <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
+      <h3 className="text-heading-large text-white mb-2">{title}</h3>
       <p className="text-gray-400 mb-6">{description}</p>
       <ul className="space-y-3 mb-8">
         {features.map((feature, index) => (
@@ -122,13 +122,13 @@ export default function DesignPage() {
         {/* Content */}
         <div className="container-custom relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+            <h1 className="text-display-large text-white mb-4">
               UI/UX Design Services
             </h1>
-            <h2 className="text-xl sm:text-2xl text-[#A3D1FF] mb-6">
+            <h2 className="text-heading-large text-[#A3D1FF] mb-6">
               User-Centered Design That Drives Business Results
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-body-large text-gray-300 mb-8">
               <strong className="text-white">Increase conversions</strong> and <strong className="text-white">reduce bounce rates</strong> through user-centered design that delights users and drives business growth.
             </p>
             <div className="flex gap-4">
@@ -158,7 +158,7 @@ export default function DesignPage() {
       {/* Services Grid */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">Our Design Services</h2>
+          <h2 className="text-display-medium text-white mb-12 text-center">Our Design Services</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <DesignService
               icon={Layout}
@@ -197,7 +197,7 @@ export default function DesignPage() {
       {/* Process Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Design Process</h2>
+          <h2 className="text-display-medium text-white mb-12">Design Process</h2>
           <div className="space-y-12">
             <ProcessStep
               number="01"
@@ -226,7 +226,7 @@ export default function DesignPage() {
       {/* Pricing Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">Design Packages</h2>
+          <h2 className="text-display-medium text-white mb-12 text-center">Design Packages</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <ServicePackage
               title="Brand Design"
@@ -298,8 +298,8 @@ export default function DesignPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Digital Experience?</h2>
-          <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+          <h2 className="text-display-medium text-white mb-4">Ready to Transform Your Digital Experience?</h2>
+          <p className="text-body-large text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's create <strong className="text-white">user-centered designs</strong> that increase conversions and delight your users.
           </p>
           <button 

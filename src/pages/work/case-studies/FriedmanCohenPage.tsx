@@ -15,7 +15,7 @@ function FeatureCard({ icon: Icon, title, description }: {
           <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
         </div>
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+      <h3 className="text-body-large font-semibold mb-2 text-white">{title}</h3>
       <p className="text-gray-400">{description}</p>
     </div>
   );
@@ -73,7 +73,7 @@ export default function FriedmanCohenPage() {
             <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm rounded-full px-4 py-2 border border-white/10 hover:border-[#A3D1FF] transition-all duration-300 mb-6">
               <span className="text-[#A3D1FF] text-sm font-medium">100+ Years of Excellence</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            <h1 className="text-display-large text-white mb-6">
               Friedman & Cohen
             </h1>
             <p className="text-xl text-gray-300 mb-8">
@@ -122,7 +122,7 @@ export default function FriedmanCohenPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">Project Overview</h2>
+              <h2 className="text-display-medium text-white mb-6">Project Overview</h2>
               <p className="text-gray-400 mb-6">
                 Friedman & Cohen, a cornerstone of the Western Cape community for over 100 years, has evolved from a traditional department store into a digital-first procurement powerhouse. Our latest venture, F&C Procurement, specializes in providing comprehensive furnishing solutions for property developers, student accommodations, and the hospitality sector.
               </p>
@@ -152,7 +152,7 @@ export default function FriedmanCohenPage() {
             </div>
             <div className="space-y-6">
               <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10">
-                <h3 className="text-xl font-semibold text-white mb-4">Key Achievements</h3>
+                <h3 className="text-body-large font-semibold text-white mb-4">Key Achievements</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center text-gray-300">
                     <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
@@ -180,7 +180,7 @@ export default function FriedmanCohenPage() {
       {/* Services Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Our Services</h2>
+          <h2 className="text-display-medium text-white mb-12">Our Services</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <FeatureCard
               icon={Timer}
@@ -204,14 +204,14 @@ export default function FriedmanCohenPage() {
       {/* Process Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Our Process</h2>
+          <h2 className="text-display-medium text-white mb-12">Our Process</h2>
           <div className="space-y-12">
             <div className="flex items-start">
               <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
                 1
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Quotation & Planning</h3>
+                <h3 className="text-body-large font-semibold text-white mb-2">Quotation & Planning</h3>
                 <p className="text-gray-400">Detailed quotations and project planning tailored to your needs.</p>
               </div>
             </div>
@@ -220,7 +220,7 @@ export default function FriedmanCohenPage() {
                 2
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Sample Presentation</h3>
+                <h3 className="text-body-large font-semibold text-white mb-2">Sample Presentation</h3>
                 <p className="text-gray-400">Curated selection of furniture and fixtures for your approval.</p>
               </div>
             </div>
@@ -229,7 +229,7 @@ export default function FriedmanCohenPage() {
                 3
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Procurement & Logistics</h3>
+                <h3 className="text-body-large font-semibold text-white mb-2">Procurement & Logistics</h3>
                 <p className="text-gray-400">Efficient sourcing and delivery coordination.</p>
               </div>
             </div>
@@ -238,7 +238,7 @@ export default function FriedmanCohenPage() {
                 4
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Installation & Support</h3>
+                <h3 className="text-body-large font-semibold text-white mb-2">Installation & Support</h3>
                 <p className="text-gray-400">Professional installation and ongoing customer support.</p>
               </div>
             </div>
@@ -249,7 +249,7 @@ export default function FriedmanCohenPage() {
       {/* Results */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Impact & Recognition</h2>
+          <h2 className="text-display-medium text-white mb-12">Impact & Recognition</h2>
           <div className="grid md:grid-cols-4 gap-8">
             <StatCard
               value="100+"
@@ -274,7 +274,7 @@ export default function FriedmanCohenPage() {
       {/* Testimonials */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Client Testimonials</h2>
+          <h2 className="text-display-medium text-white mb-12">Client Testimonials</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <TestimonialCard
               name="Marita Sabatier"
@@ -300,7 +300,7 @@ export default function FriedmanCohenPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">Get in Touch</h2>
+              <h2 className="text-display-medium text-white mb-6">Get in Touch</h2>
               <p className="text-gray-400 mb-8">
                 Ready to discuss your procurement needs? Our team is here to help you create exceptional spaces.
               </p>

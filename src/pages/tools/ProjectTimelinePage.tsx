@@ -40,7 +40,7 @@ export default function ProjectTimelinePage() {
 
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+          <h1 className="text-display-large text-white mb-6">
             Website Project Timeline
           </h1>
           <p className="text-xl text-gray-300 mb-8">
@@ -54,25 +54,25 @@ export default function ProjectTimelinePage() {
           <ProjectTimelineVisualizer />
           
           <div className="mt-16 bg-[#1b1b1b] p-8 rounded-xl border border-white/10">
-            <h2 className="text-2xl font-bold text-white mb-6">Why Our Process Works</h2>
+            <h2 className="text-heading-large text-white mb-6">Why Our Process Works</h2>
             
             <div className="grid md:grid-cols-3 gap-8">
               <div>
-                <h3 className="text-xl font-semibold text-white mb-3">Transparency</h3>
+                <h3 className="text-body-large font-semibold text-white mb-3">Transparency</h3>
                 <p className="text-gray-400">
                   No surprises or hidden steps. You'll know exactly what to expect at every stage of the project.
                 </p>
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold text-white mb-3">Collaboration</h3>
+                <h3 className="text-body-large font-semibold text-white mb-3">Collaboration</h3>
                 <p className="text-gray-400">
                   We work closely with you throughout the process, ensuring your vision is realized.
                 </p>
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold text-white mb-3">Efficiency</h3>
+                <h3 className="text-body-large font-semibold text-white mb-3">Efficiency</h3>
                 <p className="text-gray-400">
                   Our streamlined process eliminates delays and keeps your project on track for timely delivery.
                 </p>
@@ -86,7 +86,7 @@ export default function ProjectTimelinePage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">Client Success Stories</h2>
+              <h2 className="text-display-medium text-white mb-6">Client Success Stories</h2>
               <p className="text-gray-400 mb-6">
                 Our proven process has helped numerous clients achieve their goals on time and within budget:
               </p>
@@ -97,7 +97,7 @@ export default function ProjectTimelinePage() {
                     <CheckCircle2 className="w-6 h-6 text-[#A3D1FF]" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Binns Media Group</h3>
+                    <h3 className="text-body-large font-semibold text-white mb-2">Binns Media Group</h3>
                     <p className="text-gray-400">"The timeline was clear from day one, and Marc delivered exactly as promised. No surprises, just excellent results."</p>
                   </div>
                 </div>
@@ -107,7 +107,7 @@ export default function ProjectTimelinePage() {
                     <CheckCircle2 className="w-6 h-6 text-[#A3D1FF]" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Wellness TCYS</h3>
+                    <h3 className="text-body-large font-semibold text-white mb-2">Wellness TCYS</h3>
                     <p className="text-gray-400">"The project timeline made it easy to plan our marketing around the launch. Everything was delivered on schedule."</p>
                   </div>
                 </div>
@@ -134,7 +134,7 @@ export default function ProjectTimelinePage() {
 
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Start Your Project?</h2>
+          <h2 className="text-display-medium text-white mb-4">Ready to Start Your Project?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's create a website that delivers real results for your business, with a clear timeline and process you can trust.
           </p>
