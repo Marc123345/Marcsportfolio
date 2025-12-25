@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
@@ -68,14 +69,12 @@ export default function CookieBanner() {
         >
           <span>Decline Optional</span>
         </button>
-        <a
-          href="/cookies-policy.html"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to="/cookies-policy"
           className="text-[#A3D1FF] px-4 py-2 text-sm hover:underline"
         >
           Cookie Settings & Policy
-        </a>
+        </Link>
       </div>
     </div>
   );
