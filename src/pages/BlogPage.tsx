@@ -42,7 +42,7 @@ const blogPosts = [
     readTime: '16 min read',
     author: {
       name: 'Marc Friedman',
-      image: '/generated-1766594483929-xmayh.png'
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
     },
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2000&q=80',
     categories: ['AI', 'Ecommerce', 'Personalization'],
@@ -57,7 +57,7 @@ const blogPosts = [
     readTime: '8 min read',
     author: {
       name: 'Marc Friedman',
-      image: '/generated-1766594483929-xmayh.png'
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
     },
     image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=2000&q=80',
     categories: ['Design', 'UI/UX', 'Polish'],
@@ -72,7 +72,7 @@ const blogPosts = [
     readTime: '8 min read',
     author: {
       name: 'Marc Friedman',
-      image: '/generated-1766594483929-xmayh.png'
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
     },
     image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=2000&q=80',
     categories: ['eCommerce', 'UX', 'Conversion'],
@@ -87,7 +87,7 @@ const blogPosts = [
     readTime: '12 min read',
     author: {
       name: 'Marc Friedman',
-      image: '/generated-1766594483929-xmayh.png'
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
     },
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=80',
     categories: ['Performance', 'CDN', 'Security'],
@@ -102,7 +102,7 @@ const blogPosts = [
     readTime: '6 min read',
     author: {
       name: 'Marc Friedman',
-      image: '/generated-1766594483929-xmayh.png'
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
     },
     image: 'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=2000&q=80',
     categories: ['PWA', 'Mobile', 'Development'],
@@ -117,7 +117,7 @@ const blogPosts = [
     readTime: '9 min read',
     author: {
       name: 'Marc Friedman',
-      image: '/generated-1766594483929-xmayh.png'
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
     },
     image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=2000&q=80',
     categories: ['SEO', 'AI', 'Technical'],
@@ -132,7 +132,7 @@ const blogPosts = [
     readTime: '6 min read',
     author: {
       name: 'Marc Friedman',
-      image: '/generated-1766594483929-xmayh.png'
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
     },
     image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=2000&q=80',
     categories: ['Design', 'SaaS', 'UX'],
@@ -147,7 +147,7 @@ const blogPosts = [
     readTime: '10 min read',
     author: {
       name: 'Marc Friedman',
-      image: '/generated-1766594483929-xmayh.png'
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
     },
     image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=2000&q=80',
     categories: ['Legal', 'Compliance', 'Privacy'],
@@ -162,7 +162,7 @@ const blogPosts = [
     readTime: '12 min read',
     author: {
       name: 'Marc Friedman',
-      image: '/generated-1766594483929-xmayh.png'
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
     },
     image: 'https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?auto=format&fit=crop&w=2000&q=80',
     categories: ['Web Design', 'Contractors', 'Conversion'],
@@ -177,7 +177,7 @@ const blogPosts = [
     readTime: '7 min read',
     author: {
       name: 'Marc Friedman',
-      image: '/generated-1766594483929-xmayh.png'
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
     },
     image: 'https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?auto=format&fit=crop&w=2000&q=80',
     categories: ['Design Systems', 'UX', 'Development'],
@@ -192,7 +192,7 @@ const blogPosts = [
     readTime: '15 min read',
     author: {
       name: 'Marc Friedman',
-      image: '/generated-1766594483929-xmayh.png'
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
     },
     image: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&w=2000&q=80',
     categories: ['SEO', 'Contractors', 'Local Marketing'],
@@ -207,7 +207,7 @@ const blogPosts = [
     readTime: '8 min read',
     author: {
       name: 'Marc Friedman',
-      image: '/generated-1766594483929-xmayh.png'
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
     },
     image: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=2000&q=80',
     categories: ['Case Study', 'Automotive', 'UX'],
@@ -222,7 +222,7 @@ const blogPosts = [
     readTime: '14 min read',
     author: {
       name: 'Marc Friedman',
-      image: '/generated-1766594483929-xmayh.png'
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
     },
     image: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=2000&q=80',
     categories: ['Marketing', 'Contractors', 'Lead Generation'],
@@ -237,7 +237,7 @@ const blogPosts = [
     readTime: '5 min read',
     author: {
       name: 'Marc Friedman',
-      image: '/generated-1766594483929-xmayh.png'
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
     },
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2000&q=80',
     categories: ['Conversion', 'Marketing', 'UX'],
@@ -252,7 +252,7 @@ const blogPosts = [
     readTime: '6 min read',
     author: {
       name: 'Marc Friedman',
-      image: '/generated-1766594483929-xmayh.png'
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
     },
     image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=2000&q=80',
     categories: ['Mobile', 'Design', 'Development'],
@@ -267,7 +267,7 @@ const blogPosts = [
     readTime: '10 min read',
     author: {
       name: 'Marc Friedman',
-      image: '/generated-1766594483929-xmayh.png'
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
     },
     image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=2000&q=80',
     categories: ['Design', 'Accessibility', 'UI/UX'],

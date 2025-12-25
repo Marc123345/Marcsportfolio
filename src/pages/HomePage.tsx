@@ -628,7 +628,7 @@ export default function HomePage() {
           >
             <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-6 border-4 border-[#A3D1FF] shadow-lg">
               <img
-                src="/generated-1766594483929-xmayh.png"
+                src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
                 alt="Marc Friedman"
                 className="w-full h-full object-cover"
               />
@@ -787,7 +787,7 @@ export default function HomePage() {
           >
             <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-6 border-4 border-[#A3D1FF] shadow-lg">
               <img
-                src="/generated-1766594483929-xmayh.png"
+                src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
                 alt="Marc Friedman"
                 className="w-full h-full object-cover"
               />
@@ -935,7 +935,7 @@ export default function HomePage() {
           >
             <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-6 border-4 border-[#A3D1FF] shadow-lg">
               <img
-                src="/generated-1766594483929-xmayh.png"
+                src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
                 alt="Marc Friedman"
                 className="w-full h-full object-cover"
               />
@@ -997,7 +997,7 @@ export default function HomePage() {
               viewport={{ once: true }}
             >
               <img
-                src="/generated-1766594483929-xmayh.png"
+                src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
                 alt="Marc Friedman"
                 className="w-full h-auto rounded-3xl shadow-2xl"
               />
