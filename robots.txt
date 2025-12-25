@@ -11,28 +11,11 @@ Allow: /about/
 Allow: /contact/
 
 # Sitemaps
-Sitemap: https://marcfriedmanportfolio.com/sitemap.xml
-Allow: /*.jpg$
-Allow: /*.gif$
-Allow: /*.svg$
-Allow: /*.webp$
+Sitemap: https://www.marcfriedmanportfolio.com/sitemap.xml
 
-# Document Files
-Allow: /*.pdf$
-Allow: /*.doc$
-Allow: /*.docx$
-
-# Disallow crawling of admin/private areas
+# Disallow crawling of admin/private areas and source maps
 Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
-Disallow: /*.json$
-Disallow: /*.xml$
 Disallow: /tmp/
 Disallow: /assets/*.map$
-
-# Crawl-delay
-Crawl-delay: 1
-
-# Additional Directives
-Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content
