@@ -21,7 +21,7 @@ to = "https://www.marcfriedmanportfolio.com/:splat"
 status = 301
 force = true
 
-# Old URL redirects
+# Old URL redirects - Main pages
 [[redirects]]
 from = "/home"
 to = "/"
@@ -37,14 +37,15 @@ from = "/projects"
 to = "/work"
 status = 301
 
+# Old case study URL redirects
 [[redirects]]
-from = "/service"
-to = "/services"
+from = "/work/case-studies/automargin"
+to = "/work/case-studies/automarginx"
 status = 301
 
 [[redirects]]
-from = "/service/*"
-to = "/services/:splat"
+from = "/work/case-studies/paving-lead"
+to = "/services/web-development"
 status = 301
 
 [[redirects]]
@@ -55,6 +56,47 @@ status = 301
 [[redirects]]
 from = "/case-studies/*"
 to = "/work/case-studies/:splat"
+status = 301
+
+# Old service URL redirects
+[[redirects]]
+from = "/services/website-growth"
+to = "/services/web-development"
+status = 301
+
+[[redirects]]
+from = "/services/complete-website"
+to = "/services/premium-web-package"
+status = 301
+
+[[redirects]]
+from = "/services/luxury-jewelry"
+to = "/services/web-development"
+status = 301
+
+[[redirects]]
+from = "/services/headless-shopify"
+to = "/services/web-development"
+status = 301
+
+[[redirects]]
+from = "/services/revenue-machine"
+to = "/services/monthly-retainer"
+status = 301
+
+[[redirects]]
+from = "/services/media-empire"
+to = "/services/monthly-retainer"
+status = 301
+
+[[redirects]]
+from = "/service"
+to = "/services"
+status = 301
+
+[[redirects]]
+from = "/service/*"
+to = "/services/:splat"
 status = 301
 
 # SPA fallback (must be last)

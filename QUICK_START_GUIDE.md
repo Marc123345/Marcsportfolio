@@ -5,17 +5,22 @@
 Your Google Search Console shows 59 pages with indexing issues:
 - 🔴 **26 pages**: Crawled but not indexed (biggest issue)
 - 🔴 **7 pages**: Server errors (5xx)
-- ⚠️ **21 pages**: Redirecting (expected, will resolve)
+- ✅ **21 pages**: Redirecting (FIXED - old URLs now redirect properly)
 - ⚠️ **2 pages**: Soft 404
 - ⚠️ **2 pages**: Canonical/duplicate issues
-- ⚠️ **1 page**: Excluded by noindex (correct)
+- ✅ **1 page**: Excluded by noindex (correct)
 
 ## What I Fixed ✅
 
 1. **Sitemap**: Updated from 38 to 59 URLs - added all missing pages
-2. **Redirects**: Fixed duplicate rules that could cause issues
+2. **Redirects**: Added proper 301 redirects for all old URLs Google is crawling:
+   - `/work/case-studies/automargin` → `automarginx` (typo fix)
+   - 8 old service URLs → correct modern equivalents
+   - Old URL patterns → current structure
 3. **Technical**: Verified all meta tags, canonicals, and robots.txt
 4. **Tools**: Added diagnostic script to check for issues
+
+See `REDIRECT_FIXES.md` for complete redirect details.
 
 ## What You MUST Do Now
 
