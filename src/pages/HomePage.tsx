@@ -1,89 +1,31 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
 import { 
-  ArrowRight, CircleCheck as CheckCircle, Target, MousePointerClick, 
-  Award, Cpu, Shield, Star, Sparkles, Send, MessageSquare, 
-  Layers, ChevronDown, ExternalLink, Quote, Plus, Minus,
-  TrendingUp, Zap, Globe, Rocket
+  ArrowRight, CircleCheck as CheckCircle, Target, TrendingUp, 
+  Zap, Shield, Star, Sparkles, Send, MessageSquare, 
+  Rocket, Globe, Cpu, ChevronRight, MousePointer2 
 } from 'lucide-react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 
-// Technical & UI Imports
+// Component Imports
 import TrustedBy from '@/components/TrustedBy';
 import SEO from '@/components/SEO';
 import AccessibilityPanel from '@/components/AccessibilityPanel';
 import { supabase } from '@/lib/supabase';
 import { toast } from 'sonner';
 
-// --- DATA STRUCTURES (Separated for maintainability) ---
-
-const SALES_LAYERS = [
-  { 
-    title: "Demand Capture", 
-    icon: Target, 
-    desc: "ICP-specific positioning and trust-stacking above the fold. We ensure the right visitors keep scrolling.", 
-    outcome: "Eliminates immediate bounce rate" 
-  },
-  { 
-    title: "Conversion Arch", 
-    icon: MousePointerClick, 
-    desc: "Scroll-based persuasion architecture. Not long-copy, but intent-based flows that guide users to CTAs.", 
-    outcome: "63% reduction in lead drop-off" 
-  },
-  { 
-    title: "Proof Engine", 
-    icon: Award, 
-    desc: "Social proof placed at critical decision points. We frame your thinking, methodology, and results.", 
-    outcome: "Trust built before the sales call" 
-  },
-  { 
-    title: "Infrastructure", 
-    icon: Cpu, 
-    desc: "CRM-ready lead flow (HubSpot/Notion) + GEO/AEO optimization to future-proof your visibility.", 
-    outcome: "Same traffic, more revenue" 
-  }
-];
-
-const PROJECTS = [
-  {
-    title: "Untapped Africa",
-    metric: "63% Drop-off Reduction",
-    desc: "A comprehensive conversion infrastructure for high-ticket water solutions across 8 countries.",
-    image: "https://ik.imagekit.io/qcvroy8xpd/Screenshot.png",
-    tags: ["Next.js", "CRM Integration", "AEO Optimization"],
-    link: "/work/untapped"
-  },
-  {
-    title: "Ask Afrika",
-    metric: "250% Engagement Lift",
-    desc: "Corporate rebrand focused on AEO (Answer Engine Optimization) to dominate organic search intent.",
-    image: "https://ik.imagekit.io/qcvroy8xpd/mockuuups-kzccsqfybhcjamey4qqdwh.jpeg",
-    tags: ["React", "Technical SEO", "GEO Strategy"],
-    link: "/work/ask-afrika"
-  }
-];
-
-const FAQS = [
-  { q: "How does a 'Sales Channel' differ from a website?", a: "A website is a brochure; a Sales Channel is a system. We don't just design pages; we build the technical architecture that turns traffic into revenue through demand capture and CRM integration." },
-  { q: "How long is the implementation?", a: "Core systems launch in 4-6 weeks. Pro systems with full automation and multi-page funnels typically take 8-12 weeks." },
-  { q: "Do you offer Rev-Share models?", a: "Yes, for established agencies and media partners, we offer a Partner Tier where we act as your backend conversion partner on a revenue-share basis." }
-];
-
-// --- MAIN COMPONENT ---
-
 export default function HomePage() {
   const navigate = useNavigate();
   const heroRef = useRef<HTMLElement>(null);
   const calendlyLink = "https://calendly.com/marc-friedman-web-design--meeting-link/30min";
 
-  const [formData, setFormData] = useState({ name: '', email: '', business: '', goal: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', service: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  // Scroll Parallax
+  // Design System Scroll Effects
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const heroScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -91,222 +33,222 @@ export default function HomePage() {
     try {
       const { error } = await supabase.from('contact_submissions').insert([formData]);
       if (error) throw error;
-      toast.success('Strategy audit requested. I will reach out within 24 hours.');
-      setFormData({ name: '', email: '', business: '', goal: '' });
+      toast.success('Message sent! I will be in touch shortly.');
+      setFormData({ name: '', email: '', service: '', message: '' });
     } catch (err) {
-      toast.error('Connection error. Please try again.');
+      toast.error('Submission failed. Please try again.');
     } finally { setIsSubmitting(false); }
   };
 
   return (
-    <div className="bg-black text-white selection:bg-primary selection:text-black antialiased">
+    <div className="bg-black text-white selection:bg-primary selection:text-black">
       <SEO 
-        title="The Sales Channel™ | High-Ticket Website Architecture"
-        description="We rebuild how demand turns into revenue. Expert Landing Pages, SEO, AEO, and GEO development for service businesses and agencies."
+        title="Marc Friedman | Expert Website Design, SEO, AEO & GEO"
+        description="Award-winning website design and full-stack development. Specializing in high-converting landing pages and modern SEO/AEO strategies."
       />
       <AccessibilityPanel />
 
-      {/* 1. HERO SECTION: THE OUTCOME */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20 bg-[#1a2332]">
-        <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
-          <motion.div className="absolute inset-0 w-[120%] h-full opacity-30" animate={{ x: ['0%', '-20%'] }} transition={{ duration: 40, repeat: Infinity, ease: "linear", repeatType: "reverse" }}>
-            <img src="https://ik.imagekit.io/qcvroy8xpd/Container.png" alt="Sales Architecture" className="w-full h-full object-cover" />
+      {/* 1. REFINED HERO SECTION */}
+      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        {/* Visual Background */}
+        <div className="absolute inset-0 z-0">
+          <motion.div style={{ y, opacity }} className="h-full w-full">
+            <img 
+              src="https://ik.imagekit.io/qcvroy8xpd/Container.png" 
+              className="w-full h-full object-cover opacity-30 grayscale" 
+              alt="Design Background" 
+            />
           </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/20 to-black"></div>
         </div>
 
         <div className="container mx-auto max-w-7xl px-6 relative z-10">
-          <motion.div style={{ opacity: heroOpacity, scale: heroScale }} className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-black uppercase tracking-[0.2em] mb-8">
-              <Sparkles className="w-4 h-4" /> Award-Winning Conversion Systems
-            </div>
-            <h1 className="text-display-large leading-[1.1] mb-8">
-              We Build <span className="text-primary italic">Sales Channels™</span> — Not Just Websites.
+          <div className="max-w-4xl">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }} 
+              animate={{ opacity: 1, x: 0 }}
+              className="flex items-center gap-2 mb-6 text-primary font-bold tracking-[0.2em] text-xs uppercase"
+            >
+              <div className="w-10 h-[1px] bg-primary" /> 
+              Full Stack Designer & Developer
+            </motion.div>
+            
+            <h1 className="text-display-large mb-8 leading-[1.05]">
+              Building Digital <span className="gradient-text">Experiences</span> That Outperform.
             </h1>
+            
             <p className="text-body-large text-light-gray max-w-2xl mb-12">
-              A conversion-focused system that turns traffic into booked calls — without changing your offer or ads. We rebuild how demand turns into revenue.
+              Specializing in Landing Pages, SEO, AEO, and GEO. I bridge the gap between high-end design and technical supremacy using React and Next.js.
             </p>
-            <div className="flex flex-wrap gap-6">
-              <Link to="/tools/website-analyzer" className="mr_btn bg-primary text-black rounded-xl group px-10 py-5">
-                <span>Free System Audit</span>
-                <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+
+            <div className="flex flex-wrap gap-4">
+              <Link to="/work" className="mr_btn bg-primary text-black rounded-full px-8 py-4 group">
+                View My Projects
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <a href={calendlyLink} className="mr_btn mr_btn_outline rounded-xl px-10 py-5">
+              <a href={calendlyLink} className="mr_btn mr_btn_outline rounded-full px-8 py-4">
                 Book Strategy Call
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* 2. TRUST LAYER: LOGOS & TESTIMONIALS (Below Hero) */}
+      {/* 2. SOCIAL PROOF LOGO STRIP */}
       <TrustedBy />
 
-      {/* 3. CORE IP: THE 4-LAYER ARCHITECTURE */}
-      <section className="py-40 px-6 bg-[#0a0a0a]">
+      {/* 3. CORE SERVICES (Redesigned with your Card system) */}
+      <section className="py-32 px-6 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-20 items-end mb-24">
+          <div className="grid lg:grid-cols-2 gap-16 mb-20 items-end">
             <div>
-              <h2 className="text-display-medium mb-6">The <span className="text-primary italic">Architecture</span> of Profit</h2>
-              <p className="text-body-large text-light-gray">"Same offer. Same traffic. Less friction." We don't just redesign your site; we rebuild your entire conversion engine across four critical layers.</p>
-            </div>
-            <div className="flex gap-12 text-center lg:justify-end">
-              <div><p className="text-4xl font-bold text-white">40+</p><p className="text-xs uppercase tracking-widest text-primary">Systems Built</p></div>
-              <div><p className="text-4xl font-bold text-white">98/100</p><p className="text-xs uppercase tracking-widest text-primary">PageSpeed</p></div>
+              <h2 className="text-display-medium mb-6 italic">Specialized <span className="text-primary">Capabilities</span></h2>
+              <p className="text-body-large text-light-gray">Technical solutions built for the future of search and user experience.</p>
             </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {SALES_LAYERS.map((layer, i) => (
-              <motion.div key={i} whileHover={{ y: -10 }} className="card group bg-dark/30 border-white/5 p-10 flex flex-col h-full">
-                <div className="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center mb-10 group-hover:bg-primary/10 transition-colors">
-                  <layer.icon className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-heading-large mb-4">{layer.title}</h3>
-                <p className="text-light-gray text-sm mb-10 flex-grow leading-relaxed">{layer.desc}</p>
-                <div className="pt-6 border-t border-white/5">
-                  <span className="text-[10px] uppercase tracking-widest text-primary font-black block mb-2">Primary Outcome</span>
-                  <p className="text-white font-bold">{layer.outcome}</p>
-                </div>
+            {[
+              { title: "Landing Pages", icon: MousePointer2, desc: "Conversion-optimized pages built with high-performance React code." },
+              { title: "Technical SEO", icon: TrendingUp, desc: "Maximizing crawlability and search rankings through clean architecture." },
+              { title: "AEO & GEO", icon: Cpu, desc: "Answer & Generative Engine Optimization for the era of AI search." },
+              { title: "Website Design", icon: Sparkles, desc: "Award-winning UI/UX design that captures and holds user attention." }
+            ].map((service, i) => (
+              <motion.div 
+                key={i} 
+                whileHover={{ y: -10 }} 
+                className="card group hover:border-primary/50 transition-all p-10 flex flex-col h-full"
+              >
+                <service.icon className="w-10 h-10 text-primary mb-8" />
+                <h3 className="text-heading-large mb-4">{service.title}</h3>
+                <p className="text-light-gray text-sm leading-relaxed">{service.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4. FEATURED SYSTEMS: OUTCOME-BASED WORK */}
-      <section className="py-40 px-6 bg-black">
+      {/* 4. FEATURED PROJECT (Untapped Africa) */}
+      <section className="py-32 px-6 bg-black border-y border-white/5">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between items-end mb-24">
-            <h2 className="text-display-medium leading-none">Proven <span className="text-primary italic">Mechanics</span></h2>
-            <Link to="/work" className="text-primary font-bold flex items-center gap-2 group">
-              Explore All <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-
-          <div className="space-y-32">
-            {PROJECTS.map((project, i) => (
-              <div key={i} className={`flex flex-col lg:flex-row gap-16 items-center ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                <div className="lg:w-1/2 overflow-hidden rounded-3xl border border-white/10 group">
-                  <img src={project.image} alt={project.title} className="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-700" />
-                </div>
-                <div className="lg:w-1/2 space-y-8">
-                  <div className="badge badge-primary">{project.metric}</div>
-                  <h3 className="text-display-medium">{project.title}</h3>
-                  <p className="text-body-large text-light-gray leading-relaxed">{project.desc}</p>
-                  <div className="flex flex-wrap gap-3">
-                    {project.tags.map(tag => <span key={tag} className="px-4 py-1 rounded-full bg-white/5 text-xs text-primary border border-white/5">{tag}</span>)}
-                  </div>
-                  <Link to={project.link} className="mr_btn mr_btn_outline w-fit">Study the Architecture</Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. ABOUT: THE PARTNER MODEL */}
-      <section className="py-40 px-6 bg-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center">
-          <div className="relative">
-            <div className="absolute -inset-10 bg-primary/10 blur-[120px] rounded-full" />
-            <img src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png" className="relative rounded-[40px] grayscale hover:grayscale-0 transition-all duration-1000 border border-white/10 shadow-2xl" alt="Marc Friedman" />
-          </div>
-          <div className="space-y-10">
-            <h2 className="text-display-medium leading-tight">Work With Me,<br />Not a <span className="text-primary italic">Team of Interns.</span></h2>
-            <p className="text-body-large text-light-gray">I've spent 5+ years building high-ticket revenue systems for agencies, service businesses, and jewellery brands across three continents. Unlike big agencies, you get the founder. Faster turnaround. Zero friction.</p>
-            <div className="grid sm:grid-cols-2 gap-8">
-              {[
-                { t: "Direct Founder Access", d: "No middle managers or interns." },
-                { t: "Weekly Technical Updates", d: "You're never in the dark." },
-                { t: "30-Day Launch Support", d: "We ensure the system scales." },
-                { t: "Technical Supremacy", d: "React/Node + AEO/GEO ready." }
-              ].map((item, i) => (
-                <div key={i}>
-                  <p className="text-white font-black mb-1 flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-primary" /> {item.t}
-                  </p>
-                  <p className="text-xs text-light-gray">{item.d}</p>
-                </div>
-              ))}
+          <div className="card p-0 overflow-hidden flex flex-col lg:flex-row border-white/10 group">
+            <div className="lg:w-1/2 aspect-video overflow-hidden">
+              <img 
+                src="https://ik.imagekit.io/qcvroy8xpd/Screenshot.png" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                alt="Untapped Africa" 
+              />
             </div>
-            <a href={calendlyLink} className="mr_btn bg-primary text-black rounded-xl inline-flex px-10">
-              Let's Talk Revenue <MessageSquare className="ml-2 w-6 h-6" />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. FAQ: REDUCING FRICTION */}
-      <section className="py-40 px-6 bg-black">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-display-medium text-center mb-20 italic">Got <span className="text-primary">Questions?</span></h2>
-          <div className="space-y-4">
-            {FAQS.map((faq, i) => (
-              <div key={i} className="card bg-dark/20 border-white/5 overflow-hidden">
-                <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full flex items-center justify-between p-8 text-left transition-colors hover:bg-white/5">
-                  <span className="text-heading-large">{faq.q}</span>
-                  {openFaq === i ? <Minus className="text-primary" /> : <Plus className="text-primary" />}
-                </button>
-                <AnimatePresence>
-                  {openFaq === i && (
-                    <motion.div initial={{ height: 0 }} animate={{ height: 'auto' }} exit={{ height: 0 }} className="overflow-hidden">
-                      <div className="px-8 pb-8 text-light-gray text-body-regular leading-relaxed">
-                        {faq.a}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+            <div className="p-10 lg:w-1/2 flex flex-col justify-center">
+              <div className="badge badge-primary mb-6">Featured Case Study</div>
+              <h3 className="text-display-medium mb-4">Untapped Africa</h3>
+              <p className="text-light-gray text-body-regular mb-8">Revolutionizing water infrastructure solutions across Africa with innovative technology and sustainable practices.</p>
+              
+              <div className="flex gap-4 mb-8">
+                {['Next.js', 'Supabase', 'AEO'].map(tech => (
+                  <span key={tech} className="text-[10px] font-black uppercase tracking-widest text-primary bg-primary/5 px-3 py-1 rounded border border-primary/20">
+                    {tech}
+                  </span>
+                ))}
               </div>
-            ))}
+              
+              <Link to="/work/untapped-africa" className="text-white font-bold flex items-center gap-2 group hover:text-primary transition-colors">
+                Read Case Study <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 7. FINAL AUDIT: HIGH-INTENT CONVERSION */}
-      <section className="py-40 px-6 bg-[#0a0a0a] border-t border-white/5">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-display-medium mb-8 italic">Ready to build your <span className="text-primary italic">Sales Channel?</span></h2>
-          <p className="text-body-large text-light-gray mb-16 max-w-2xl mx-auto">
-            Book a free strategy call. We'll audit your current traffic drop-off and I'll show you exactly how to rebuild it for revenue.
-          </p>
+      {/* 5. ABOUT (Minimalist Focus) */}
+      <section className="py-32 px-6 bg-[#0a0a0a]">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }} 
+            whileInView={{ opacity: 1, scale: 1 }}
+            className="relative"
+          >
+            <div className="absolute -inset-4 bg-primary/10 blur-[100px] rounded-full" />
+            <img 
+              src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png" 
+              className="relative rounded-[2rem] grayscale hover:grayscale-0 transition-all duration-700 border border-white/10" 
+              alt="Marc" 
+            />
+          </motion.div>
           
-          <form onSubmit={handleSubmit} className="text-left bg-dark p-12 rounded-[40px] border border-white/10 shadow-2xl space-y-8">
+          <div className="space-y-8">
+            <h2 className="text-display-medium leading-tight">Expert Execution,<br /><span className="text-primary italic">Personal Commitment.</span></h2>
+            <div className="space-y-6 text-body-large text-light-gray">
+              <p>Hey, I'm Marc. I bridge the gap between aesthetics and performance. I work directly with clients to build digital assets that actually move the needle.</p>
+              <p>With 5+ years of experience across three continents, I focus on building high-speed React applications that are optimized for the next generation of search engines.</p>
+            </div>
+            <div className="flex gap-10 py-6 border-y border-white/5">
+              <div><p className="text-3xl font-bold text-white">40+</p><p className="text-xs uppercase text-primary font-black">Clients</p></div>
+              <div><p className="text-3xl font-bold text-white">98/100</p><p className="text-xs uppercase text-primary font-black">Speed</p></div>
+              <div><p className="text-3xl font-bold text-white">5.0</p><p className="text-xs uppercase text-primary font-black">Rating</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. REFINED CONTACT FORM */}
+      <section className="py-32 px-6 bg-black">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-display-medium mb-16 italic">Let's Build Something <span className="text-primary">Iconic</span></h2>
+          
+          <form onSubmit={handleSubmit} className="text-left space-y-8 card bg-dark/40 p-10 md:p-12 border-white/5">
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-3">
-                <label className="text-xs font-black uppercase tracking-widest text-primary">Full Name</label>
-                <input type="text" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} className="form-input bg-black/50 py-4" placeholder="Marc Friedman" />
+              <div className="space-y-2">
+                <label className="text-xs font-black uppercase tracking-widest text-light-gray">Name</label>
+                <input 
+                  type="text" 
+                  name="name" 
+                  required 
+                  className="form-input bg-transparent border-b-2 border-white/10 rounded-none focus:border-primary transition-all px-0" 
+                  placeholder="John Doe" 
+                />
               </div>
-              <div className="space-y-3">
-                <label className="text-xs font-black uppercase tracking-widest text-primary">Business Email</label>
-                <input type="email" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="form-input bg-black/50 py-4" placeholder="marc@agency.com" />
+              <div className="space-y-2">
+                <label className="text-xs font-black uppercase tracking-widest text-light-gray">Email</label>
+                <input 
+                  type="email" 
+                  name="email" 
+                  required 
+                  className="form-input bg-transparent border-b-2 border-white/10 rounded-none focus:border-primary transition-all px-0" 
+                  placeholder="john@example.com" 
+                />
               </div>
             </div>
-            <div className="space-y-3">
-              <label className="text-xs font-black uppercase tracking-widest text-primary">Conversion Bottleneck</label>
-              <textarea required rows={4} value={formData.goal} onChange={(e) => setFormData({...formData, goal: e.target.value})} className="form-input bg-black/50 resize-none py-4" placeholder="Tell us about where you're losing customers..."></textarea>
+            <div className="space-y-2">
+              <label className="text-xs font-black uppercase tracking-widest text-light-gray">Project Details</label>
+              <textarea 
+                name="message" 
+                rows={4} 
+                required 
+                className="form-input bg-transparent border-b-2 border-white/10 rounded-none focus:border-primary transition-all px-0 resize-none" 
+                placeholder="Tell me about your vision..." 
+              />
             </div>
-            <button type="submit" disabled={isSubmitting} className="mr_btn bg-primary text-black w-full justify-center py-6 rounded-2xl font-black text-xl hover:scale-[1.02] active:scale-[0.98]">
-              {isSubmitting ? 'Syncing System...' : 'Request System Audit'}
-              <Send className="ml-2 w-6 h-6" />
+            <button 
+              type="submit" 
+              disabled={isSubmitting} 
+              className="mr_btn bg-primary text-black w-full justify-center py-6 rounded-full font-black text-xl hover:scale-[1.02] active:scale-[0.98] transition-transform"
+            >
+              {isSubmitting ? 'Sending...' : 'Send Message'}
+              <Send className="ml-2 w-5 h-5" />
             </button>
-            <p className="text-center text-xs text-light-gray pt-4">
-              Average response time: &lt; 24 hours. No-pitch strategy call.
-            </p>
           </form>
         </div>
       </section>
-
-      {/* FOOTER: AEO/GEO REVENUE SUMMARY */}
-      <footer className="py-20 bg-black border-t border-white/5">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-light-gray text-xs mb-8">
-            © 2025 Marc Friedman Sales Systems. Specialist in Website Design, SEO, AEO, and GEO.
-          </p>
-          <div className="flex justify-center gap-8 opacity-40 hover:opacity-100 transition-opacity">
-            <Link to="/privacy" className="text-xs hover:text-primary">Privacy</Link>
-            <Link to="/terms" className="text-xs hover:text-primary">Terms</Link>
-            <Link to="/sitemap" className="text-xs hover:text-primary">Sitemap</Link>
+      
+      {/* 7. FOOTER */}
+      <footer className="py-20 bg-[#0a0a0a] border-t border-white/5 text-center">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-light-gray text-xs uppercase tracking-widest mb-4">© 2025 Marc Friedman Design Agency</p>
+          <div className="flex justify-center gap-6 text-primary text-xs font-bold">
+            <a href="#" className="hover:text-white">LinkedIn</a>
+            <a href="#" className="hover:text-white">GitHub</a>
+            <a href="#" className="hover:text-white">Awwwards</a>
           </div>
         </div>
       </footer>
