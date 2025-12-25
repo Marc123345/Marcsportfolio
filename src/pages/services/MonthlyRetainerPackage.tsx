@@ -110,10 +110,10 @@ export default function MonthlyRetainerPackage() {
               const form = document.getElementById('contact-form');
               form?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="inline-flex items-center px-8 py-4 bg-[#A3D1FF] text-black rounded-lg hover:bg-[#92bce6] transition-colors text-lg font-semibold"
+            className="mr_btn mr_btn_primary inline-flex items-center gap-2 text-lg font-semibold"
           >
-            Start Your Retainer
-            <ArrowRight className="ml-2 w-5 h-5" />
+            <span>Start Your Retainer</span>
+            <ArrowRight className="w-5 h-5" />
           </button>
         </div>
       </section>

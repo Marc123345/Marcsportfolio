@@ -286,12 +286,12 @@ export default function FutureOfSaasWebDesignPage() {
             Let's create a SaaS experience that balances beautiful design with powerful functionality to drive user engagement and business growth.
           </p>
           <MagneticButton>
-            <button 
+            <button
               onClick={() => navigate('/contact')}
-              className="inline-flex items-center px-6 py-3 bg-[#A3D1FF] text-black rounded-lg hover:bg-[#92bce6] transition-colors"
+              className="mr_btn mr_btn_primary inline-flex items-center gap-2"
             >
-              Start Your Project
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <span>Start Your Project</span>
+              <ArrowRight className="w-5 h-5" />
             </button>
           </MagneticButton>
         </div>

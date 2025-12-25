@@ -157,14 +157,14 @@ export default function StartupMVPPage() {
                   <strong>2-week delivery</strong>
                 </li>
               </ul>
-              <button 
+              <button
                 onClick={() => {
                   const form = document.getElementById('contact-form');
                   form?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="w-full bg-[#A3D1FF] text-black px-6 py-3 rounded-lg hover:bg-[#92bce6] transition-colors"
+                className="mr_btn mr_btn_primary w-full"
               >
-                Get Started
+                <span>Get Started</span>
               </button>
             </div>
 
@@ -198,14 +198,14 @@ export default function StartupMVPPage() {
                   <strong>6-8 week delivery</strong>
                 </li>
               </ul>
-              <button 
+              <button
                 onClick={() => {
                   const form = document.getElementById('contact-form');
                   form?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="w-full bg-[#A3D1FF] text-black px-6 py-3 rounded-lg hover:bg-[#92bce6] transition-colors"
+                className="mr_btn mr_btn_primary w-full"
               >
-                Get Started
+                <span>Get Started</span>
               </button>
             </div>
 
@@ -239,14 +239,14 @@ export default function StartupMVPPage() {
                   <strong>Custom timeline & support</strong>
                 </li>
               </ul>
-              <button 
+              <button
                 onClick={() => {
                   const form = document.getElementById('contact-form');
                   form?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="w-full bg-[#A3D1FF] text-black px-6 py-3 rounded-lg hover:bg-[#92bce6] transition-colors"
+                className="mr_btn mr_btn_primary w-full"
               >
-                Get Started
+                <span>Get Started</span>
               </button>
             </div>
           </div>

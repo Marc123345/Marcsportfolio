@@ -588,12 +588,12 @@ example.com/account*
             Let's implement a comprehensive performance and security strategy using Cloudflare and other cutting-edge technologies to maximize your website's potential.
           </p>
           <MagneticButton>
-            <button 
+            <button
               onClick={() => navigate('/contact')}
-              className="inline-flex items-center px-6 py-3 bg-[#A3D1FF] text-black rounded-lg hover:bg-[#92bce6] transition-colors"
+              className="mr_btn mr_btn_primary inline-flex items-center gap-2"
             >
-              Get Your Free Website Analysis
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <span>Get Your Free Website Analysis</span>
+              <ArrowRight className="w-5 h-5" />
             </button>
           </MagneticButton>
         </div>

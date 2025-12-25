@@ -722,26 +722,26 @@ export default function AboutPage() {
             <div className="mt-12 pt-8 border-t border-white/10">
               <h3 className="text-xl font-semibold text-white mb-6">Explore My Work</h3>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link 
-                  to="/work" 
-                  className="px-4 py-2 bg-white/5 text-[#A3D1FF] rounded-lg hover:bg-white/10 transition-colors"
+                <Link
+                  to="/work"
+                  className="mr_btn mr_btn_outline"
                   title="View portfolio and case studies"
                 >
-                  Portfolio & Case Studies
+                  <span>Portfolio & Case Studies</span>
                 </Link>
-                <Link 
-                  to="/blog" 
-                  className="px-4 py-2 bg-white/5 text-[#A3D1FF] rounded-lg hover:bg-white/10 transition-colors"
+                <Link
+                  to="/blog"
+                  className="mr_btn mr_btn_outline"
                   title="Read design and development insights"
                 >
-                  Blog & Insights
+                  <span>Blog & Insights</span>
                 </Link>
-                <Link 
-                  to="/tools/website-analyzer" 
-                  className="px-4 py-2 bg-white/5 text-[#A3D1FF] rounded-lg hover:bg-white/10 transition-colors"
+                <Link
+                  to="/tools/website-analyzer"
+                  className="mr_btn mr_btn_outline"
                   title="Try our free website analyzer"
                 >
-                  Free Website Analysis
+                  <span>Free Website Analysis</span>
                 </Link>
               </div>
             </div>

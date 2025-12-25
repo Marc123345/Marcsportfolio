@@ -328,12 +328,12 @@ export default function BuildingDataDrivenDesignSystemsPage() {
             Let's create a data-driven design system that grows with your product and delivers measurable ROI through improved development efficiency and user experience.
           </p>
           <MagneticButton>
-            <button 
+            <button
               onClick={() => navigate('/contact')}
-              className="inline-flex items-center px-6 py-3 bg-[#A3D1FF] text-black rounded-lg hover:bg-[#92bce6] transition-colors"
+              className="mr_btn mr_btn_primary inline-flex items-center gap-2"
             >
-              Start Your Project
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <span>Start Your Project</span>
+              <ArrowRight className="w-5 h-5" />
             </button>
           </MagneticButton>
         </div>

@@ -58,15 +58,15 @@ export default function CookieBanner() {
       <div className="flex flex-col sm:flex-row gap-2">
         <button
           onClick={acceptCookies}
-          className="bg-[#A3D1FF] text-black px-4 py-2 rounded-md hover:bg-[#92bce6] transition-colors text-sm font-medium"
+          className="mr_btn mr_btn_primary text-sm"
         >
-          Accept All Cookies
+          <span>Accept All Cookies</span>
         </button>
         <button
           onClick={declineCookies}
-          className="bg-transparent border border-white/20 text-white px-4 py-2 rounded-md hover:bg-white/5 transition-colors text-sm"
+          className="mr_btn mr_btn_outline text-sm"
         >
-          Decline Optional
+          <span>Decline Optional</span>
         </button>
         <a
           href="/cookies-policy.html"

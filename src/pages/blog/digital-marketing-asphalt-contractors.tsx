@@ -672,10 +672,10 @@ export default function DigitalMarketingAsphaltContractorsPage() {
           <MagneticButton>
             <button
               onClick={() => navigate('/contact')}
-              className="inline-flex items-center px-6 py-3 bg-[#A3D1FF] text-black rounded-lg hover:bg-[#92bce6] transition-colors"
+              className="mr_btn mr_btn_primary inline-flex items-center gap-2"
             >
-              Get Marketing Help
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <span>Get Marketing Help</span>
+              <ArrowRight className="w-5 h-5" />
             </button>
           </MagneticButton>
         </div>

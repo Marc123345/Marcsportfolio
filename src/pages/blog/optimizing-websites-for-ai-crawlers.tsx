@@ -460,12 +460,12 @@ Disallow: /admin/`}
             Let's ensure your website is fully optimized for AI crawlers and ready to thrive in the new era of AI-powered search and discovery.
           </p>
           <MagneticButton>
-            <button 
+            <button
               onClick={() => navigate('/tools/ai-crawler-optimization')}
-              className="inline-flex items-center px-6 py-3 bg-[#A3D1FF] text-black rounded-lg hover:bg-[#92bce6] transition-colors"
+              className="mr_btn mr_btn_primary inline-flex items-center gap-2"
             >
-              Try Our AI Crawler Optimization Tool
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <span>Try Our AI Crawler Optimization Tool</span>
+              <ArrowRight className="w-5 h-5" />
             </button>
           </MagneticButton>
         </div>

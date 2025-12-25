@@ -113,11 +113,12 @@ export default function ProjectTimelinePage() {
                 </div>
               </div>
               
-              <button 
+              <button
                 onClick={() => navigate('/contact')}
-                className="mr_btn mr_btn_outline"
+                className="mr_btn mr_btn_outline group"
               >
                 <span>Start Your Project</span>
+                <ArrowRight className="ml-3 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </div>
             
@@ -138,11 +139,12 @@ export default function ProjectTimelinePage() {
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's create a website that delivers real results for your business, with a clear timeline and process you can trust.
           </p>
-          <button 
+          <button
             onClick={() => navigate('/contact')}
-            className="mr_btn mr_btn_outline"
+            className="mr_btn mr_btn_outline group"
           >
             <span>Book a Free Strategy Call</span>
+            <ArrowRight className="ml-3 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
         </div>
       </section>

@@ -209,17 +209,17 @@ export default function ServiceLeadForm({ service, benefits }: Props) {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-[#A3D1FF] text-black font-semibold px-6 py-3 rounded-lg hover:bg-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="mr_btn mr_btn_primary w-full disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {isSubmitting ? (
                 <>
-                  <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
-                  Sending...
+                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                  <span>Sending...</span>
                 </>
               ) : (
                 <>
                   <Send className="w-5 h-5" />
-                  Send Message
+                  <span>Send Message</span>
                 </>
               )}
             </button>

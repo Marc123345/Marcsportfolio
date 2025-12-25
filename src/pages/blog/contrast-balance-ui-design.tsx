@@ -694,12 +694,12 @@ export default function ContrastBalanceUIDesignPage() {
             Let's create interfaces with exceptional contrast and balance that work beautifully for all users while meeting the highest accessibility standards.
           </p>
           <MagneticButton>
-            <button 
+            <button
               onClick={() => navigate('/contact')}
-              className="inline-flex items-center px-6 py-3 bg-[#A3D1FF] text-black rounded-lg hover:bg-[#92bce6] transition-colors"
+              className="mr_btn mr_btn_primary inline-flex items-center gap-2"
             >
-              Start Your Design Project
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <span>Start Your Design Project</span>
+              <ArrowRight className="w-5 h-5" />
             </button>
           </MagneticButton>
         </div>

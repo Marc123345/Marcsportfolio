@@ -594,12 +594,12 @@ export default function UIPolishVisualRealismPage() {
             Let's create a beautifully polished interface that combines visual realism with exceptional usability to delight your users and drive business results.
           </p>
           <MagneticButton>
-            <button 
+            <button
               onClick={() => navigate('/contact')}
-              className="inline-flex items-center px-6 py-3 bg-[#A3D1FF] text-black rounded-lg hover:bg-[#92bce6] transition-colors"
+              className="mr_btn mr_btn_primary inline-flex items-center gap-2"
             >
-              Start Your Design Project
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <span>Start Your Design Project</span>
+              <ArrowRight className="w-5 h-5" />
             </button>
           </MagneticButton>
         </div>

@@ -73,9 +73,9 @@ function ServicePackage({ title, description, features, recommended = false }: {
           const form = document.getElementById('contact-form');
           form?.scrollIntoView({ behavior: 'smooth' });
         }}
-        className="w-full bg-[#A3D1FF] text-black px-6 py-3 rounded-lg hover:bg-[#92bce6] transition-colors"
+        className="mr_btn mr_btn_primary w-full"
       >
-        Request a Quote
+        <span>Request a Quote</span>
       </button>
     </div>
   );

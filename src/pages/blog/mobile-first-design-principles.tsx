@@ -338,12 +338,12 @@ font-size: clamp(1rem, 0.5rem + 2vw, 1.5rem);`}
             Let's create a responsive, user-friendly website that delivers an exceptional experience on all devices and drives real business results.
           </p>
           <MagneticButton>
-            <button 
+            <button
               onClick={() => navigate('/contact')}
-              className="inline-flex items-center px-6 py-3 bg-[#A3D1FF] text-black rounded-lg hover:bg-[#92bce6] transition-colors"
+              className="mr_btn mr_btn_primary inline-flex items-center gap-2"
             >
-              Start Your Project
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <span>Start Your Project</span>
+              <ArrowRight className="w-5 h-5" />
             </button>
           </MagneticButton>
         </div>

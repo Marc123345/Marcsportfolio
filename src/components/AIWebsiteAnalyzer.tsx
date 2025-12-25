@@ -199,17 +199,17 @@ export default function AIWebsiteAnalyzer() {
             <button
               type="submit"
               disabled={isAnalyzing}
-              className="w-full inline-flex items-center justify-center px-6 py-3 bg-[#A3D1FF] text-black rounded-lg hover:bg-[#92bce6] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="mr_btn mr_btn_primary w-full disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
             >
               {isAnalyzing ? (
                 <>
-                  <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-                  Analyzing your website (this takes about 30 seconds)...
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                  <span>Analyzing your website (this takes about 30 seconds)...</span>
                 </>
               ) : (
                 <>
-                  Get Free Website Analysis
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  <span>Get Free Website Analysis</span>
+                  <ArrowRight className="w-5 h-5" />
                 </>
               )}
             </button>
@@ -304,9 +304,9 @@ export default function AIWebsiteAnalyzer() {
                   />
                   <button
                     type="submit"
-                    className="px-4 py-2 bg-[#A3D1FF] text-black rounded-lg hover:bg-[#92bce6] transition-colors whitespace-nowrap"
+                    className="mr_btn mr_btn_primary whitespace-nowrap"
                   >
-                    Email My Report
+                    <span>Email My Report</span>
                   </button>
                 </div>
                 <p className="text-xs text-gray-500 mt-2">

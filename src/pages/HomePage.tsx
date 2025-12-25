@@ -405,13 +405,13 @@ export default function HomePage() {
                   ))}
                 </div>
                 <div className="flex gap-3">
-                  <a href="https://untappedafrica.co.za" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 bg-white/5 text-white rounded-full hover:bg-white/10 transition-all">
-                    View Live Website
-                    <ArrowRight className="ml-2 w-4 h-4" />
+                  <a href="https://untappedafrica.co.za" target="_blank" rel="noopener noreferrer" className="mr_btn mr_btn_outline inline-flex items-center gap-2">
+                    <span>View Live Website</span>
+                    <ArrowRight className="w-4 h-4" />
                   </a>
-                  <Link to="/work/case-studies/untapped-africa" className="inline-flex items-center px-6 py-3 bg-[#A3D1FF] text-black rounded-full hover:bg-[#92bce6] transition-all">
-                    Read Case Study
-                    <ArrowRight className="ml-2 w-4 h-4" />
+                  <Link to="/work/case-studies/untapped-africa" className="mr_btn mr_btn_primary inline-flex items-center gap-2">
+                    <span>Read Case Study</span>
+                    <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </div>
@@ -490,10 +490,10 @@ export default function HomePage() {
           <div className="text-center">
             <Link
               to="/work"
-              className="inline-flex items-center px-10 py-5 bg-[#A3D1FF] text-black font-bold rounded-full hover:bg-[#92bce6] transition-all duration-300 text-xl"
+              className="mr_btn mr_btn_primary inline-flex items-center gap-2 text-xl"
             >
-              View All Projects
-              <ArrowRight className="ml-2 w-6 h-6" />
+              <span>View All Projects</span>
+              <ArrowRight className="w-6 h-6" />
             </Link>
           </div>
         </div>
@@ -638,10 +638,10 @@ export default function HomePage() {
           <div className="text-center">
             <Link
               to="/press"
-              className="inline-flex items-center px-10 py-5 bg-white/5 text-white font-bold rounded-full hover:bg-white/10 transition-all duration-300 text-xl border border-white/10"
+              className="mr_btn mr_btn_outline inline-flex items-center gap-2 text-xl"
             >
-              View All Press Coverage
-              <ArrowRight className="ml-2 w-6 h-6" />
+              <span>View All Press Coverage</span>
+              <ArrowRight className="w-6 h-6" />
             </Link>
           </div>
         </div>
@@ -752,10 +752,10 @@ export default function HomePage() {
                 href={calendlyLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mr_btn inline-flex items-center px-10 py-5 bg-[#A3D1FF] text-black font-bold rounded-full hover:bg-[#7FB3D5] transition-all duration-300 text-xl"
+                className="mr_btn mr_btn_primary inline-flex items-center gap-2 text-xl"
               >
-                Let's Talk
-                <MessageSquare className="ml-2 w-6 h-6" />
+                <span>Let's Talk</span>
+                <MessageSquare className="w-6 h-6" />
               </a>
             </motion.div>
           </div>
@@ -919,16 +919,16 @@ export default function HomePage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="mr_btn w-full group bg-black text-white font-bold px-8 py-5 rounded-full hover:bg-gray-900 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-xl"
+                  className="mr_btn mr_btn_primary w-full disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-xl"
                 >
                   {isSubmitting ? (
                     <>
                       <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      Sending...
+                      <span>Sending...</span>
                     </>
                   ) : (
                     <>
-                      Send Message
+                      <span>Send Message</span>
                       <Send className="w-6 h-6" />
                     </>
                   )}

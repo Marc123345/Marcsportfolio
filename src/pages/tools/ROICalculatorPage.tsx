@@ -127,11 +127,12 @@ export default function ROICalculatorPage() {
                 </li>
               </ul>
               
-              <button 
+              <button
                 onClick={() => navigate('/contact')}
-                className="mr_btn mr_btn_outline"
+                className="mr_btn mr_btn_outline group"
               >
                 <span>Discuss Your Project</span>
+                <ArrowRight className="ml-3 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </div>
           </div>
@@ -144,11 +145,12 @@ export default function ROICalculatorPage() {
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's create a strategic website that delivers measurable returns and helps you achieve your business goals.
           </p>
-          <button 
+          <button
             onClick={() => navigate('/contact')}
-            className="mr_btn mr_btn_outline"
+            className="mr_btn mr_btn_outline group"
           >
             <span>Book a Free Strategy Call</span>
+            <ArrowRight className="ml-3 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
         </div>
       </section>

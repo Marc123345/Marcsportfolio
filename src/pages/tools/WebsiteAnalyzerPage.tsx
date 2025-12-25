@@ -110,11 +110,13 @@ export default function WebsiteAnalyzerPage() {
                 </li>
               </ul>
               
-              <button 
+              <button
                 onClick={() => navigate('/contact')}
-                className="mr_btn mr_btn_primary"
+                className="mr_btn mr_btn_primary group relative overflow-hidden"
               >
-                <span>Book a Free Strategy Call</span>
+                <span className="relative z-10">Book a Free Strategy Call</span>
+                <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+                <ArrowRight className="ml-2 w-5 h-5 relative z-10 group-hover:rotate-45 transition-transform duration-300" />
               </button>
             </div>
             
@@ -135,11 +137,12 @@ export default function WebsiteAnalyzerPage() {
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's create a website that doesn't just look great, but actively converts visitors into leads and customers.
           </p>
-          <button 
+          <button
             onClick={() => navigate('/contact')}
-            className="mr_btn mr_btn_outline"
+            className="mr_btn mr_btn_outline group"
           >
             <span>Book a Free Strategy Call</span>
+            <ArrowRight className="ml-3 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
         </div>
       </section>

@@ -905,9 +905,9 @@ export default function Layout() {
                 />
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-[#A3D1FF] text-black rounded-lg hover:bg-[#92bce6] transition-colors whitespace-nowrap text-sm font-medium"
+                  className="mr_btn mr_btn_primary whitespace-nowrap text-sm"
                 >
-                  Subscribe
+                  <span>Subscribe</span>
                 </button>
               </form>
             </div>

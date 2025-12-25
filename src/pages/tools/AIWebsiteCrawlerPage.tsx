@@ -223,7 +223,7 @@ export default function AIWebsiteCrawlerPage() {
                       setResult(null);
                       setUrl('');
                     }}
-                    className="mr_btn mr_btn_outline"
+                    className="mr_btn mr_btn_outline group"
                   >
                     <span>Analyze another website</span>
                   </button>
@@ -280,11 +280,12 @@ export default function AIWebsiteCrawlerPage() {
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Let's optimize your website for AI crawlers and ensure your content is properly indexed and understood.
           </p>
-          <button 
+          <button
             onClick={() => navigate('/contact')}
-            className="mr_btn mr_btn_outline"
+            className="mr_btn mr_btn_outline group"
           >
             <span>Get in Touch</span>
+            <ArrowRight className="ml-3 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
         </div>
       </section>

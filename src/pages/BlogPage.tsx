@@ -640,9 +640,9 @@ export default function BlogPage() {
               />
               <button
                 type="submit"
-                className="px-6 py-2 bg-[#A3D1FF] text-black rounded-lg hover:bg-[#92bce6] transition-colors whitespace-nowrap"
+                className="mr_btn mr_btn_primary whitespace-nowrap"
               >
-                Subscribe
+                <span>Subscribe</span>
               </button>
             </form>
             <p className="text-xs text-gray-500 mt-3">
