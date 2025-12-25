@@ -2,11 +2,26 @@
 publish = "dist"
 command = "npx vite build"
 
+# Force HTTPS and www
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+from = "http://marcfriedmanportfolio.com/*"
+to = "https://www.marcfriedmanportfolio.com/:splat"
+status = 301
+force = true
 
+[[redirects]]
+from = "http://www.marcfriedmanportfolio.com/*"
+to = "https://www.marcfriedmanportfolio.com/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://marcfriedmanportfolio.com/*"
+to = "https://www.marcfriedmanportfolio.com/:splat"
+status = 301
+force = true
+
+# Old URL redirects
 [[redirects]]
 from = "/home"
 to = "/"
@@ -20,16 +35,6 @@ status = 301
 [[redirects]]
 from = "/projects"
 to = "/work"
-status = 301
-
-[[redirects]]
-from = "/blog/old-post"
-to = "/blog/building-data-driven-design-systems"
-status = 301
-
-[[redirects]]
-from = "/services/old-service"
-to = "/services/web-development"
 status = 301
 
 [[redirects]]
@@ -52,22 +57,11 @@ from = "/case-studies/*"
 to = "/work/case-studies/:splat"
 status = 301
 
+# SPA fallback (must be last)
 [[redirects]]
 from = "/*"
 to = "/index.html"
 status = 200
-
-[[redirects]]
-from = "http://*"
-to = "https://:splat"
-status = 301
-force = true
-
-[[redirects]]
-from = "https://marcfriedmanportfolio.com/*"
-to = "https://www.marcfriedmanportfolio.com/:splat"
-status = 301
-force = true
 
 [[headers]]
 for = "/index.html"

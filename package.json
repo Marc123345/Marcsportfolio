@@ -12,6 +12,8 @@
     "test:coverage": "vitest run --coverage",
     "spellcheck": "eslint . --ext ts,tsx,js,jsx --rule 'spellcheck/spell-checker: 1'",
     "sitemap": "node generate-sitemap.mjs",
+    "check:indexing": "node scripts/check-indexing-issues.js",
+    "seo:check": "node scripts/check-indexing-issues.js && npm run sitemap",
     "cloudflare:get": "node scripts/cloudflare-transformations.js get",
     "cloudflare:enable-all": "node scripts/cloudflare-transformations.js enable-all"
   },
