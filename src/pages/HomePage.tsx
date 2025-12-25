@@ -215,19 +215,28 @@ export default function HomePage() {
                 </div>
               </motion.div>
 
-              {/* CTA Button */}
+              {/* CTA Buttons */}
               <motion.div
+                className="flex flex-col sm:flex-row gap-4"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
                 <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-[#A3D1FF] to-blue-500 text-black font-semibold rounded-lg shadow-lg hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 group"
+                >
+                  <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <span>Contact Me</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+
+                <Link
                   to="/tools/website-analyzer"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#A3D1FF] to-blue-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 group"
+                  className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/5 border-2 border-white/10 text-white font-semibold rounded-lg hover:bg-white/10 hover:border-white/20 transition-all duration-300 group"
                 >
                   <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                  <span>Get a Free Website AI Analysis</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <span>Free Website Analysis</span>
                 </Link>
               </motion.div>
 
