@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send, MessageCircle, Calendar, CheckCircle2, Loader2 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
+import { trackEvent } from '@/lib/plausible';
 
 interface Message {
   id: string;
@@ -159,6 +160,13 @@ export default function ChatBot() {
       }
 
       const result = await response.json();
+
+      trackEvent('ChatBot Lead Submitted', {
+        props: {
+          projectType: data.projectType,
+          budget: data.budget,
+        },
+      });
 
       setCurrentStep('complete');
       setTimeout(() => {

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect } from 'react';
+import { trackEvent } from '@/lib/plausible';
 
 export default function JotFormEmbed() {
   useEffect(() => {
@@ -9,7 +10,7 @@ export default function JotFormEmbed() {
       const win = window as any;
       if (win.jotformEmbedHandler) {
         win.jotformEmbedHandler(
-          "iframe[id='JotFormIFrame-253586719410462']", 
+          "iframe[id='JotFormIFrame-253586719410462']",
           "https://form.jotform.com/"
         );
       }
@@ -30,6 +31,33 @@ export default function JotFormEmbed() {
       // If already loaded, just re-run the handler
       initJotForm();
     }
+
+    // 3. Listen for JotForm submission events
+    const handleJotFormSubmission = (event: MessageEvent) => {
+      if (event.origin === 'https://form.jotform.com' || event.origin === 'https://www.jotform.com') {
+        if (typeof event.data === 'string') {
+          try {
+            const data = JSON.parse(event.data);
+            if (data.action === 'submission-completed' || data.type === 'form-submit') {
+              trackEvent('Contact Form Submitted', {
+                props: {
+                  formId: '253586719410462',
+                  source: 'JotForm',
+                },
+              });
+            }
+          } catch (e) {
+            // Not JSON or not relevant
+          }
+        }
+      }
+    };
+
+    window.addEventListener('message', handleJotFormSubmission);
+
+    return () => {
+      window.removeEventListener('message', handleJotFormSubmission);
+    };
   }, []);
 
   return (

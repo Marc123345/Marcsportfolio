@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Loader2, CheckCircle2, AlertCircle, Search } from 'lucide-react';
 import { toast } from 'sonner';
+import { trackEvent } from '@/lib/plausible';
 
 interface AnalysisResult {
   score: number;
@@ -92,6 +93,13 @@ export default function AIWebsiteAnalyzer() {
       if (data.success && data.analysis) {
         setResult(data.analysis);
         setShowEmailForm(true);
+
+        trackEvent('Website Analyzed', {
+          props: {
+            score: data.analysis.score.toString(),
+            url: sanitizedUrl,
+          },
+        });
       } else {
         throw new Error('Invalid response format');
       }
@@ -150,6 +158,12 @@ export default function AIWebsiteAnalyzer() {
       if (!response.ok) {
         throw new Error('Failed to save report');
       }
+
+      trackEvent('Website Analysis Report Requested', {
+        props: {
+          url: sanitizedUrl,
+        },
+      });
 
       toast.success('Detailed report sent to your email!');
       setShowEmailForm(false);
