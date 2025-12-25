@@ -224,17 +224,17 @@ export default function HomePage() {
               >
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#A3D1FF] text-black font-bold rounded-full hover:bg-[#7FB3D5] transition-all duration-300 text-xl group"
+                  className="mr_btn mr_btn_primary inline-flex items-center gap-2"
                 >
                   <span>Contact Me</span>
-                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
 
                 <Link
                   to="/tools/website-analyzer"
-                  className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-white/5 text-white font-bold rounded-full hover:bg-white/10 transition-all duration-300 text-xl border border-white/10 group"
+                  className="mr_btn mr_btn_outline inline-flex items-center gap-2"
                 >
-                  <Sparkles className="w-6 h-6 group-hover:rotate-12 transition-transform" />
+                  <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                   <span>Free Website Analysis</span>
                 </Link>
               </motion.div>
