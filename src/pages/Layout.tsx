@@ -354,7 +354,7 @@ export default function Layout() {
         ref={headerRef}
         className={`fixed w-full z-50 transition-all duration-300 ${
           location.pathname === '/'
-            ? (isScrolled ? 'bg-[#1b1b1b]/80 backdrop-blur-sm' : 'bg-transparent')
+            ? 'bg-transparent'
             : (isScrolled ? 'bg-[#1b1b1b]/95 backdrop-blur-md shadow-md' : 'bg-transparent')
         }`}
         initial={{ y: 0 }}
