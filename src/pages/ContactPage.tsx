@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Calendar, Linkedin, Send } from 'lucide-react';
 import { motion } from 'framer-motion';
 import TextReveal from '@/components/TextReveal';
 import HoverCard3D from '@/components/HoverCard3D';
-import { supabase } from '@/lib/supabase';
-import { toast } from 'sonner';
+import JotFormEmbed from '@/components/JotFormEmbed';
 
 const contactSchema = {
   "@context": "https://schema.org",
@@ -33,59 +30,8 @@ const contactSchema = {
 };
 
 export default function ContactPage() {
-  const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    service: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
   // Calendly link for UX Audit
   const calendlyUXAuditLink = "https://calendly.com/marc-friedman-web-design--meeting-link/30min";
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!formData.name || !formData.email || !formData.message) {
-      toast.error('Please fill in all required fields');
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    try {
-      const { error } = await supabase
-        .from('contact_submissions')
-        .insert([{
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone || null,
-          company: formData.company || null,
-          service: formData.service || null,
-          message: formData.message,
-          status: 'new'
-        }]);
-
-      if (error) throw error;
-
-      toast.success('Message sent successfully! We\'ll get back to you within 24 hours.');
-      setFormData({ name: '', email: '', phone: '', company: '', service: '', message: '' });
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      toast.error('Failed to send message. Please try again.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   // Animation variants
   const fadeInUp = {
@@ -162,134 +108,7 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-white mb-6">Get Your Free Project Quote</h2>
             </TextReveal>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                  Name <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-[#2d3035] border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#A3D1FF] focus:border-transparent transition-all"
-                  placeholder="Your full name"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                  Email <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-[#2d3035] border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#A3D1FF] focus:border-transparent transition-all"
-                  placeholder="your@email.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-[#2d3035] border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#A3D1FF] focus:border-transparent transition-all"
-                  placeholder="+1 (555) 000-0000"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
-                  Company
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-[#2d3035] border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#A3D1FF] focus:border-transparent transition-all"
-                  placeholder="Your company name"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-2">
-                  Service Interested In
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-[#2d3035] border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#A3D1FF] focus:border-transparent transition-all"
-                >
-                  <option value="">Select a service</option>
-                  <option value="Agency Website">Agency Website</option>
-                  <option value="Local Business Website">Local Business Website</option>
-                  <option value="Jewellery Brand Website">Jewellery Brand Website</option>
-                  <option value="E-commerce Development">E-commerce Development</option>
-                  <option value="Web Development">Web Development</option>
-                  <option value="UI/UX Design">UI/UX Design</option>
-                  <option value="SaaS Development">SaaS Development</option>
-                  <option value="API Development">API Development</option>
-                  <option value="Design Systems">Design Systems</option>
-                  <option value="Headless Shopify">Headless Shopify</option>
-                  <option value="Startup MVP">Startup MVP</option>
-                  <option value="AI Integration">AI Integration</option>
-                  <option value="Brand Design">Brand Design</option>
-                  <option value="Fractional CMO">Fractional CMO</option>
-                  <option value="Mentorship">Mentorship</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                  Message <span className="text-red-500">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 bg-[#2d3035] border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#A3D1FF] focus:border-transparent transition-all resize-none"
-                  placeholder="Tell us about your project..."
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="mr_btn mr_btn_primary w-full disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-              >
-                {isSubmitting ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                    <span>Sending...</span>
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-5 h-5" />
-                    <span>Send Message</span>
-                  </>
-                )}
-              </button>
-            </form>
+            <JotFormEmbed />
           </HoverCard3D>
         </div>
       </section>
