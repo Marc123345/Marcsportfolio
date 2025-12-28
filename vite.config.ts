@@ -48,16 +48,15 @@ export default defineConfig({
   ],
   optimizeDeps: {
     include: [
-      'react', 
-      'react-dom', 
-      'react-router-dom', 
-      'zustand', 
+      'react',
+      'react-dom',
+      'react-router-dom',
+      'zustand',
       'framer-motion',
       '@supabase/supabase-js',
       'lucide-react',
       'sonner',
       'react-helmet-async',
-      'react-hook-form',
       'react-error-boundary'
     ],
     esbuildOptions: {
