@@ -414,14 +414,6 @@ function App() {
               </Suspense>
             }
           />
-          <Route
-            path="services/media-empire-launchpad"
-            element={
-              <Suspense fallback={<PageLoader />}>
-                {lazyLoad(() => import('@/pages/services/MediaEmpireLaunchpad'))}
-              </Suspense>
-            }
-          />
           
           <Route path="thank-you" element={<ThankYouPage />} />
 
