@@ -740,7 +740,6 @@ export default function MediaEmpireLaunchpad() {
       <section id="contact-form" className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
           <ServiceLeadForm
-            service="Media Empire Launchpad"
             benefits={[
               'Custom Netflix-style creator hub',
               'Membership & monetization engine',
@@ -748,11 +747,6 @@ export default function MediaEmpireLaunchpad() {
               '4-5 week build timeline',
               'Ongoing support available'
             ]}
-            testimonial={{
-              quote: "Marc was able to execute the vision perfectly! He's big on communication and easy to speak with. Marc dedicates his time to the client, ensuring the client is completely satisfied at each step of the process.",
-              author: "Omar Turner",
-              role: "Chief Executive Officer, Binns Media Group"
-            }}
           />
         </div>
       </section>
