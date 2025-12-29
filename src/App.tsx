@@ -8,7 +8,6 @@ import { AnimatePresence } from 'framer-motion';
 import { NotFoundPage, RedirectPage } from '@/pages/StatusPages';
 import CursorRipple from '@/components/CursorRipple';
 import LoadingScreen from '@/components/LoadingScreen';
-import CookieBanner from '@/components/CookieBanner';
 
 // Lazy load with error handling
 const lazyLoad = (importFunc) => {
@@ -97,9 +96,6 @@ function App() {
 
       {/* Cursor Ripple Effect */}
       <CursorRipple color="#A3D1FF" opacity={0.4} size={60} duration={1} maxScale={3} />
-
-      {/* Cookie Banner */}
-      <CookieBanner />
 
       <Routes>
         <Route element={<Layout />}>
