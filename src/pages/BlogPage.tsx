@@ -34,6 +34,21 @@ const blogSchema = {
 // Blog post data
 const blogPosts = [
   {
+    id: 'brutalism-anti-design-web-trends',
+    title: 'Brutalism & Anti-Design: The Raw, Unpolished Web Design Revolution',
+    excerpt: 'Explore the rise of brutalist web design and anti-design movements. Learn how raw grids, minimal imagery, monochrome palettes, and imperfect layouts create authentic, human-centered digital experiences.',
+    content: 'Full content here...',
+    date: 'December 29, 2025',
+    readTime: '12 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=2000&q=80',
+    categories: ['Design', 'Trends', 'Brutalism'],
+    featured: true
+  },
+  {
     id: 'ai-personalization-ecommerce',
     title: 'The Rise of AI-Driven Personalization in Ecommerce: A Practical Guide for 2025',
     excerpt: 'Explore how AI-powered personalization is transforming ecommerce. Learn practical strategies for implementing personalization, real-world case studies, privacy considerations, and omnichannel best practices.',

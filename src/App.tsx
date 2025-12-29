@@ -213,7 +213,15 @@ function App() {
               </Suspense>
             }
           />
-          
+
+          <Route
+            path="blog/brutalism-anti-design-web-trends"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                {lazyLoad(() => import('@/pages/blog/brutalism-anti-design-web-trends'))}
+              </Suspense>
+            }
+          />
           <Route
             path="blog/ecommerce-ux-flaws-killing-conversions"
             element={
