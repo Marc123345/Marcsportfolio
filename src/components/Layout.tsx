@@ -542,7 +542,7 @@ export default function Layout() {
 
                   {/* Social Links */}
                   <div className="mt-[2.618rem] px-4 space-y-[1.618rem]">
-                    <a 
+                    <a
                       href="https://www.linkedin.com/in/portfolio2/"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -553,7 +553,18 @@ export default function Layout() {
                       <Linkedin className="w-5 h-5" aria-hidden="true" />
                       <span>LinkedIn</span>
                     </a>
-                    <a 
+                    <a
+                      href="https://www.behance.net/marcfriedmanweb"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 text-gray-300 hover:text-[#1769FF] transition-colors"
+                      aria-label="Marc Friedman's Behance profile"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      <Palette className="w-5 h-5" aria-hidden="true" />
+                      <span>Behance</span>
+                    </a>
+                    <a
                       href={calendlyUXAuditLink}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -564,7 +575,7 @@ export default function Layout() {
                       <Calendar className="w-5 h-5" aria-hidden="true" />
                       <span>Schedule a Call</span>
                     </a>
-                    <a 
+                    <a
                       href="https://www.awwwards.com/marc-friedman/"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -609,7 +620,7 @@ export default function Layout() {
               
               {/* Social Links */}
               <div className="flex gap-3">
-                <a 
+                <a
                   href="https://www.linkedin.com/in/portfolio2/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -618,7 +629,16 @@ export default function Layout() {
                 >
                   <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </a>
-                <a 
+                <a
+                  href="https://www.behance.net/marcfriedmanweb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-[#2d3035] rounded-lg flex items-center justify-center text-gray-400 hover:text-[#1769FF] hover:bg-[#1769FF]/10 transition-all group"
+                  aria-label="Behance"
+                >
+                  <Palette className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                </a>
+                <a
                   href={calendlyUXAuditLink}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -627,7 +647,7 @@ export default function Layout() {
                 >
                   <Calendar className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </a>
-                <a 
+                <a
                   href="https://www.awwwards.com/marc-friedman/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -731,7 +751,7 @@ export default function Layout() {
                   </Link>
                 </li>
                 <li>
-                  <a 
+                  <a
                     href="https://dribbble.com/marcf9199/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22marcf9199%22&utm_content=%22About%20marcf9199%22&utm_medium=Social_Share"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -743,7 +763,19 @@ export default function Layout() {
                   </a>
                 </li>
                 <li>
-                  <a 
+                  <a
+                    href="https://www.behance.net/marcfriedmanweb"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-gray-400 hover:text-[#1769FF] transition-colors group"
+                    aria-label="View Marc Friedman's Behance profile"
+                  >
+                    <Palette className="w-5 h-5 group-hover:scale-110 transition-transform" aria-hidden="true" />
+                    <span>Behance</span>
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="https://g.co/kgs/a8iqMhU"
                     target="_blank"
                     rel="noopener noreferrer"
