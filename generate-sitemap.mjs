@@ -105,7 +105,6 @@ const routes = [
   { url: '/services/cybersecurity', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
   { url: '/services/fractional-cmo', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
   { url: '/services/design-systems', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
-  { url: '/services/brand-design', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
   { url: '/services/premium-web-package', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
   { url: '/services/monthly-retainer', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
 

@@ -86,17 +86,17 @@ export default function SaaSPage() {
   return (
     <>
       <Helmet>
-        <title>SaaS Development Services | Marc Friedman</title>
-        <meta name="description" content="End-to-end SaaS development services that reduce operational costs by 25%. Scalable architecture, 99.9% uptime guarantee, and enterprise-grade security." />
-        <meta name="keywords" content="SaaS development, software as a service development, scalable web applications, cloud applications, enterprise software development" />
+        <title>Startup MVP Development Services | Marc Friedman</title>
+        <meta name="description" content="Rapid MVP development services to validate your startup idea in 8-12 weeks. Launch faster with lean, scalable architecture and user-tested designs." />
+        <meta name="keywords" content="MVP development, startup MVP, minimum viable product, rapid prototyping, startup development, lean startup, product validation" />
         <link rel="canonical" href="https://www.marcfriedmanportfolio.com/services/saas" />
-        
+
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            "name": "SaaS Development Services",
-            "description": "End-to-end SaaS development services that reduce operational costs by 25%.",
+            "name": "Startup MVP Development Services",
+            "description": "Rapid MVP development services to validate your startup idea in 8-12 weeks.",
             "provider": {
               "@type": "Person",
               "name": "Marc Friedman",
@@ -111,13 +111,13 @@ export default function SaaSPage() {
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-              SaaS Development
+              Startup MVP Development
             </h1>
             <h2 className="text-xl sm:text-2xl text-[#A3D1FF] mb-6">
-              Scalable Software Solutions That Grow With Your Business
+              Launch Your Product Fast and Validate Your Idea
             </h2>
             <p className="text-xl text-gray-400 mb-8">
-              <strong className="text-white">Reduce operational costs</strong> with scalable, secure SaaS applications that drive business growth and user satisfaction.
+              <strong className="text-white">Bring your startup vision to life</strong> with rapid MVP development that gets you to market in 8-12 weeks with a lean, scalable product.
             </p>
             <button 
               onClick={() => navigate('/contact')}
@@ -172,27 +172,27 @@ export default function SaaSPage() {
       {/* Development Process */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Development Process</h2>
+          <h2 className="text-3xl font-bold text-white mb-12">MVP Development Process</h2>
           <div className="space-y-12">
             <ProcessStep
               number="01"
-              title="Discovery & Planning"
-              description="More effective project outcomes through comprehensive research and strategic roadmapping."
+              title="Product Discovery"
+              description="Define core features and validate assumptions through market research and user interviews."
             />
             <ProcessStep
               number="02"
-              title="Design & Prototyping"
-              description="Higher user adoption rates with user-tested interfaces and interactive prototypes."
+              title="Rapid Prototyping"
+              description="Create interactive prototypes to test user flows and gather early feedback."
             />
             <ProcessStep
               number="03"
-              title="Development"
-              description="High quality scores through modern technologies, best practices, and continuous integration."
+              title="Lean Development"
+              description="Build only essential features with clean code and scalable architecture."
             />
             <ProcessStep
               number="04"
-              title="Testing & Launch"
-              description="High uptime guarantee with comprehensive testing, monitoring, and controlled deployment."
+              title="Launch & Iterate"
+              description="Deploy quickly, measure user behavior, and iterate based on real data."
             />
           </div>
         </div>
@@ -252,11 +252,35 @@ export default function SaaSPage() {
       {/* Case Studies Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-4">SaaS Development Projects</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Startup MVP Projects</h2>
           <p className="text-gray-400 mb-12 max-w-2xl">
-            Discover how we've built scalable SaaS platforms that drive business growth.
+            See how we've helped startups launch their MVPs and validate their ideas quickly.
           </p>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Link
+              to="/work/case-studies/ilight"
+              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="https://i.imgur.com/vXTIRo4.jpg"
+                  alt="iLight Platform"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
+                  iLight
+                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
+                </h3>
+                <p className="text-gray-400 mb-4">Modern lighting e-commerce MVP launched in 10 weeks.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Next.js</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Shopify</span>
+                </div>
+              </div>
+            </Link>
+
             <Link
               to="/work/case-studies/automarginx"
               className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
@@ -273,58 +297,10 @@ export default function SaaSPage() {
                   AutoMarginX
                   <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
                 </h3>
-                <p className="text-gray-400 mb-4">Dealership management platform with real-time analytics.</p>
+                <p className="text-gray-400 mb-4">Dealership management MVP with real-time analytics.</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">React</span>
                   <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">PostgreSQL</span>
-                </div>
-              </div>
-            </Link>
-
-            <Link
-              to="/work/case-studies/fleet-management"
-              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
-            >
-              <div className="aspect-video overflow-hidden">
-                <img
-                  src="https://i.imgur.com/EwgHAuK.png"
-                  alt="Fleet Management System"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
-                  Fleet Management
-                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
-                </h3>
-                <p className="text-gray-400 mb-4">Comprehensive fleet tracking and management solution.</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">React Native</span>
-                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">MongoDB</span>
-                </div>
-              </div>
-            </Link>
-
-            <Link
-              to="/work/case-studies/videoleap"
-              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
-            >
-              <div className="aspect-video overflow-hidden">
-                <img
-                  src="https://i.imgur.com/SubVB9A.jpeg"
-                  alt="Videoleap Platform"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
-                  Videoleap
-                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
-                </h3>
-                <p className="text-gray-400 mb-4">AI-powered video editing platform with template marketplace.</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">React</span>
-                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">AI/ML</span>
                 </div>
               </div>
             </Link>
@@ -335,17 +311,17 @@ export default function SaaSPage() {
       {/* Lead Form Section */}
       <section id="contact-form" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <ServiceLeadForm 
-            service="SaaS Development"
+          <ServiceLeadForm
+            service="Startup MVP Development"
             benefits={[
-              "Reduction in operational costs",
-              "High uptime guarantee",
-              "Enterprise-grade security implementation",
-              "Faster development cycles",
-              "Scalable architecture for future growth"
+              "Launch in 8-12 weeks",
+              "Lean, validated features only",
+              "User-tested design and flows",
+              "Scalable architecture from day one",
+              "Post-launch iteration support"
             ]}
             testimonial={{
-              quote: "Marc's expertise in SaaS development helped us create a robust platform that our customers love. His attention to detail and focus on scalability were invaluable.",
+              quote: "Marc helped us validate our startup idea quickly with an MVP that our early users loved. His lean approach saved us months of development time.",
               author: "Stallone Sweeney",
               role: "Attorney | Founder of LegalContent"
             }}
@@ -356,9 +332,9 @@ export default function SaaSPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Build Your SaaS?</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to Launch Your MVP?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-            Let's create a <strong className="text-white">scalable SaaS solution</strong> that reduces operational costs and drives your business forward.
+            Let's <strong className="text-white">validate your startup idea</strong> with a lean MVP that gets you to market fast.
           </p>
           <button 
             onClick={() => navigate('/contact')}

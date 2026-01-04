@@ -83,22 +83,22 @@ export default function WebDevelopmentPage() {
   return (
     <>
       <Helmet>
-        <title>Professional Web Development Services | Marc Friedman</title>
-        <meta name="description" content="Custom web development services that drive 40% more leads. SEO-ready websites with 98/100 PageSpeed scores, mobile-first design, and conversion optimization. Get your free quote today." />
-        <meta name="keywords" content="web development services, custom website development, SEO-ready websites, mobile-first design, conversion optimization, React development, Next.js development" />
+        <title>Professional Web Design Services | Marc Friedman</title>
+        <meta name="description" content="Custom web design services that drive 40% more leads. SEO-ready websites with 98/100 PageSpeed scores, mobile-first design, and conversion optimization. Get your free quote today." />
+        <meta name="keywords" content="web design services, custom website design, SEO-ready websites, mobile-first design, conversion optimization, React development, Next.js development" />
         <link rel="canonical" href="https://www.marcfriedmanportfolio.com/services/web-development" />
         
         <meta property="og:type" content="service" />
-        <meta property="og:title" content="Professional Web Development Services | Marc Friedman" />
-        <meta property="og:description" content="Custom web development services that drive 40% more leads. SEO-ready websites with 98/100 PageSpeed scores." />
+        <meta property="og:title" content="Professional Web Design Services | Marc Friedman" />
+        <meta property="og:description" content="Custom web design services that drive 40% more leads. SEO-ready websites with 98/100 PageSpeed scores." />
         <meta property="og:url" content="https://www.marcfriedmanportfolio.com/services/web-development" />
-        
+
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            "name": "Web Development Services",
-            "description": "Custom web development services that drive 40% more leads with SEO-ready websites.",
+            "name": "Web Design Services",
+            "description": "Custom web design services that drive 40% more leads with SEO-ready websites.",
             "provider": {
               "@type": "Person",
               "name": "Marc Friedman",
@@ -152,7 +152,7 @@ export default function WebDevelopmentPage() {
         <div className="container-custom relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-              Web Development Services
+              Web Design Services
             </h1>
             <h2 className="text-xl sm:text-2xl text-[#A3D1FF] mb-6">
               Custom Websites That Convert Visitors Into Customers
@@ -184,7 +184,7 @@ export default function WebDevelopmentPage() {
       {/* Features Grid */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">Why Choose Our Web Development Services</h2>
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Why Choose Our Web Design Services</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <div className="grid gap-8">
@@ -370,31 +370,31 @@ export default function WebDevelopmentPage() {
       {/* Case Studies Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-4">Web Development Projects</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Web Design Projects</h2>
           <p className="text-gray-400 mb-12 max-w-2xl">
             Explore our portfolio of high-performance websites that deliver exceptional results.
           </p>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Link
-              to="/work/case-studies/paving-leads"
+              to="/work/case-studies/binns-media"
               className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
             >
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016_9.png?updatedAt=1767539579010"
-                  alt="Paving Leads Platform"
+                  src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9.png?updatedAt=1767539579710"
+                  alt="Binns Media Group Platform"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
-                  Paving Leads
+                  Binns Media Group
                   <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
                 </h3>
-                <p className="text-gray-400 mb-4">#1 Google ranking with 300% increase in organic traffic.</p>
+                <p className="text-gray-400 mb-4">Digital media platform with high performance and engagement.</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">React</span>
-                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">SEO</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">React 18</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">GSAP</span>
                 </div>
               </div>
             </Link>
@@ -446,6 +446,54 @@ export default function WebDevelopmentPage() {
                 </div>
               </div>
             </Link>
+
+            <Link
+              to="/work/case-studies/paving-leads"
+              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016_9.png?updatedAt=1767539579010"
+                  alt="Paving Leads Platform"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
+                  Paving Leads
+                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
+                </h3>
+                <p className="text-gray-400 mb-4">#1 Google ranking with 300% increase in organic traffic.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">React</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">SEO</span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              to="/work/case-studies/tarchip"
+              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9(5).png?updatedAt=1767539578933"
+                  alt="Cumberland Tar & Chip"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
+                  Cumberland Tar & Chip
+                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
+                </h3>
+                <p className="text-gray-400 mb-4">Specialty paving website with professional showcase design.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">React</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Portfolio</span>
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -453,8 +501,8 @@ export default function WebDevelopmentPage() {
       {/* Service Lead Form Section */}
       <section id="contact-form" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <ServiceLeadForm 
-            service="Web Development"
+          <ServiceLeadForm
+            service="Web Design"
             benefits={[
               "Increase in conversion rates",
               "High PageSpeed scores standard",

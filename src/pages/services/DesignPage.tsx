@@ -229,75 +229,99 @@ export default function DesignPage() {
           <p className="text-gray-400 mb-12 max-w-2xl">
             See how our user-centered design approach has helped businesses increase engagement and conversions.
           </p>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Link
-              to="/work/case-studies/untapped-africa"
+              to="/work/case-studies/videoleap"
               className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
             >
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(1).png?updatedAt=1767539579782"
-                  alt="Untapped Africa Platform"
+                  src="https://i.imgur.com/SubVB9A.jpeg"
+                  alt="Videoleap Platform"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
-                  Untapped Africa
+                  Videoleap
                   <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
                 </h3>
-                <p className="text-gray-400 mb-4">Water infrastructure platform with 250% increase in user engagement.</p>
+                <p className="text-gray-400 mb-4">AI-powered video editing platform with intuitive interface.</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Next.js</span>
-                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Mapbox GL</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">React</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">AI/ML</span>
                 </div>
               </div>
             </Link>
 
             <Link
-              to="/work/case-studies/binns-media"
+              to="/work/case-studies/mytube"
               className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
             >
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9.png?updatedAt=1767539579710"
-                  alt="Binns Media Group Platform"
+                  src="https://i.imgur.com/ywKLdPM.jpeg"
+                  alt="MyTube Platform"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
-                  Binns Media Group
+                  MyTube
                   <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
                 </h3>
-                <p className="text-gray-400 mb-4">Digital media platform with high performance and engagement metrics.</p>
+                <p className="text-gray-400 mb-4">Video streaming platform with enhanced user experience.</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">React 18</span>
-                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">GSAP</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">React</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Video API</span>
                 </div>
               </div>
             </Link>
 
             <Link
-              to="/work/case-studies/chad-le-clos"
+              to="/work/case-studies/fleet-management"
               className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
             >
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="https://i.imgur.com/ApfYPlH.jpg"
-                  alt="Chad Le Clos Swimming Landing Page"
+                  src="https://i.imgur.com/EwgHAuK.png"
+                  alt="Fleet Management System"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
-                  Chad Le Clos Swimming
+                  Fleet Management
                   <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
                 </h3>
-                <p className="text-gray-400 mb-4">High-converting landing page with excellent mobile conversion rates.</p>
+                <p className="text-gray-400 mb-4">Comprehensive fleet tracking with clean interface design.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">React Native</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">MongoDB</span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              to="/work/case-studies/ilight"
+              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="https://i.imgur.com/vXTIRo4.jpg"
+                  alt="iLight Platform"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
+                  iLight
+                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
+                </h3>
+                <p className="text-gray-400 mb-4">Modern lighting e-commerce with seamless UX.</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Next.js</span>
-                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Framer Motion</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Shopify</span>
                 </div>
               </div>
             </Link>

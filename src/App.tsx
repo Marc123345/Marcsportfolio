@@ -395,14 +395,6 @@ function App() {
             }
           />
           <Route
-            path="services/brand-design"
-            element={
-              <Suspense fallback={<PageLoader />}>
-                {lazyLoad(() => import('@/pages/services/BrandDesignPage'))}
-              </Suspense>
-            }
-          />
-          <Route
             path="services/premium-web-package"
             element={
               <Suspense fallback={<PageLoader />}>

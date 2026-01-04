@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import WebDevelopmentPage from './services/WebDevelopmentPage';
 import DesignPage from './services/DesignPage';
-import { StartupMVPPage, SaaSPage, FractionalCMOPage, DesignSystemsPage, BrandDesignPage } from './services';
+import { StartupMVPPage, SaaSPage, FractionalCMOPage, DesignSystemsPage } from './services';
 import MentorshipPage from './services/MentorshipPage';
 import AIIntegrationPage from './services/AIIntegrationPage';
 import CybersecurityPage from './services/CybersecurityPage';
@@ -107,7 +107,6 @@ export default function ServicesPage() {
         <Route path="ai-integration" element={<AIIntegrationPage />} />
         <Route path="cybersecurity" element={<CybersecurityPage />} />
         <Route path="design-systems" element={<DesignSystemsPage />} />
-        <Route path="brand-design" element={<BrandDesignPage />} />
         <Route path="fractional-cmo" element={<FractionalCMOPage />} />
         <Route path="*" element={<Navigate to="/services" replace />} />
       </Routes>
