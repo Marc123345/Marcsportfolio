@@ -1,339 +1,343 @@
-import React from 'react';
-import { ArrowRight, Star, Timer, Users, Target, Zap, CheckCircle2, ArrowUpRight, Calendar, MapPin, Mail } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { 
+  ArrowRight, Star, Timer, Users, Target, Zap, 
+  CheckCircle2, ArrowUpRight, Calendar, MapPin, 
+  Mail, ShoppingBag, Package, Truck, Layout,
+  Smartphone, MonitorPlay, MousePointer2
+} from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-function FeatureCard({ icon: Icon, title, description }: {
-  icon: any;
-  title: string;
-  description: string;
-}) {
+// --- ASSET CONFIGURATION ---
+const ASSETS = {
+  // New High-Res Mockups
+  HERO_DESKTOP: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9(3).png?updatedAt=1767539578460",
+  DARK_MODE: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%203%20-%2016x9(3).png?updatedAt=1767539580203",
+  MOBILE_VIEW: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%202%20-%201x1(3).png?updatedAt=1767539578244",
+  DETAIL_VIEW: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(3).png?updatedAt=1767539579776",
+  
+  // Legacy Asset (Keep for context/history section)
+  STOREFRONT: "https://i.imgur.com/6kjURhx.jpeg" 
+};
+
+function FeatureCard({ icon: Icon, title, description }: { icon: any, title: string, description: string }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group">
-      <div className="relative mb-6">
-        <div className="absolute inset-0 bg-[#A3D1FF]/20 blur-xl rounded-full"></div>
-        <div className="bg-[#A3D1FF]/10 p-4 rounded-xl relative">
-          <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
-        </div>
+    <div className="bg-[#111] p-8 rounded-2xl border border-white/5 hover:border-[#A3D1FF]/50 transition-all group hover:-translate-y-1 duration-300">
+      <div className="w-12 h-12 rounded-lg bg-[#A3D1FF]/10 flex items-center justify-center mb-6 group-hover:bg-[#A3D1FF] transition-colors">
+        <Icon className="w-6 h-6 text-[#A3D1FF] group-hover:text-black transition-colors" />
       </div>
-      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
-      <p className="text-gray-400">{description}</p>
+      <h3 className="text-xl font-bold mb-3 text-white">{title}</h3>
+      <p className="text-gray-400 leading-relaxed text-sm">{description}</p>
     </div>
   );
 }
 
-function StatCard({ value, label }: { value: string; label: string }) {
+function StatCard({ value, label }: { value: string, label: string }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center">
-      <div className="text-4xl font-bold text-[#A3D1FF] mb-2">{value}</div>
-      <div className="text-gray-400">{label}</div>
-    </div>
-  );
-}
-
-function TestimonialCard({ name, role, quote }: { name: string; role: string; quote: string }) {
-  return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all">
-      <div className="flex items-center gap-1 mb-4">
-        {[...Array(5)].map((_, i) => (
-          <Star 
-            key={i}
-            className="w-4 h-4 fill-[#A3D1FF] text-[#A3D1FF]"
-          />
-        ))}
-      </div>
-      <p className="text-gray-300 italic mb-6">{quote}</p>
-      <div>
-        <p className="text-white font-semibold">{name}</p>
-        <p className="text-gray-400">{role}</p>
-      </div>
+    <div className="bg-[#111] p-6 rounded-2xl border border-white/5 hover:border-[#A3D1FF]/30 transition-all text-center group">
+      <div className="text-4xl font-bold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">{value}</div>
+      <div className="text-gray-500 text-sm uppercase tracking-wider font-bold">{label}</div>
     </div>
   );
 }
 
 export default function FriedmanCohenPage() {
   const navigate = useNavigate();
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalScroll = document.documentElement.scrollTop;
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scroll = `${totalScroll / windowHeight}`;
+      setScrollProgress(Number(scroll));
+    }
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <>
-      {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center justify-center bg-black overflow-hidden">
-        {/* Hero Image */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://i.imgur.com/6kjURhx.jpeg"
-            alt="Friedman & Cohen Store"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/70"></div>
-        </div>
+    <div className="bg-[#050505] text-white selection:bg-[#A3D1FF] selection:text-black min-h-screen font-sans overflow-x-hidden">
+      
+      {/* Scroll Progress */}
+      <div className="fixed top-0 left-0 h-1 bg-[#A3D1FF] z-50 transition-all duration-100 ease-out shadow-[0_0_10px_#A3D1FF]" style={{ width: `${scrollProgress * 100}%` }} />
 
-        {/* Content */}
-        <div className="container-custom relative z-10">
+      {/* --- 1. HERO SECTION --- */}
+      <section className="relative pt-32 pb-20 px-6 max-w-7xl mx-auto border-b border-white/5">
+        <div className="flex flex-col md:flex-row items-end justify-between gap-12 mb-16">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm rounded-full px-4 py-2 border border-white/10 hover:border-[#A3D1FF] transition-all duration-300 mb-6">
-              <span className="text-[#A3D1FF] text-sm font-medium">100+ Years of Excellence</span>
+            {/* Meta Badge */}
+            <div className="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-[#A3D1FF]/10 border border-[#A3D1FF]/20 text-[#A3D1FF] text-xs font-bold tracking-widest uppercase mb-8">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A3D1FF] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#A3D1FF]"></span>
+              </span>
+              Digital Transformation • 2025
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-              Friedman & Cohen
+            
+            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-6 leading-[0.9]">
+              Friedman <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 italic">& Cohen.</span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8">
-              A century-old legacy of retail excellence, now pioneering B2B procurement solutions for property developers and the hospitality industry.
+            
+            <p className="text-xl md:text-2xl text-gray-400 max-w-2xl leading-relaxed border-l-4 border-[#A3D1FF] pl-8">
+              A century-old legacy of retail excellence, <br/>
+              <span className="text-white">re-engineered for the digital procurement age.</span>
             </p>
-            <div className="flex gap-4">
+
+            <div className="flex gap-4 mt-10">
               <a 
-                href="https://fandc.co.za"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mr_btn mr_btn_primary group relative overflow-hidden"
+                href="https://fandc.co.za" 
+                target="_blank" 
+                rel="noreferrer"
+                className="group px-8 py-4 bg-white text-black font-bold rounded-full flex items-center gap-2 hover:bg-[#A3D1FF] transition-all"
               >
-                <span className="relative z-10">Visit Website</span>
-                <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-                <ArrowUpRight className="ml-2 w-5 h-5" />
+                Visit Live Site <ArrowUpRight size={18} className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Featured Image Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="aspect-[4/3] overflow-hidden rounded-xl">
-              <img 
-                src="https://i.imgur.com/te3NDvf.png"
-                alt="Friedman & Cohen Interior"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <div className="aspect-[4/3] overflow-hidden rounded-xl">
-              <img 
-                src="https://i.imgur.com/RQCRhM3.jpeg"
-                alt="Friedman & Cohen Products"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Project Overview */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
+          {/* Quick Stats */}
+          <div className="grid grid-cols-2 gap-x-12 gap-y-6 text-sm font-mono border-l border-white/10 pl-8">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">Project Overview</h2>
-              <p className="text-gray-400 mb-6">
-                Friedman & Cohen, a cornerstone of the Western Cape community for over 100 years, has evolved from a traditional department store into a digital-first procurement powerhouse. Our latest venture, F&C Procurement, specializes in providing comprehensive furnishing solutions for property developers, student accommodations, and the hospitality sector.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
-                  <div>
-                    <p className="text-white font-medium">Role</p>
-                    <p className="text-gray-400">Lead Product Designer</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
-                  <div>
-                    <p className="text-white font-medium">Timeline</p>
-                    <p className="text-gray-400">14 months</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
-                  <div>
-                    <p className="text-white font-medium">Team</p>
-                    <p className="text-gray-400">Cross-functional team of designers, developers, and stakeholders</p>
-                  </div>
-                </div>
-              </div>
+              <p className="text-gray-500 mb-1">Industry</p>
+              <p className="font-bold">Retail & Procurement</p>
             </div>
-            <div className="space-y-6">
-              <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10">
-                <h3 className="text-xl font-semibold text-white mb-4">Key Achievements</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
-                    100+ years of trusted service
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
-                    4.4/5 rating from 1,351+ Google reviews
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
-                    Successful digital transformation
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
-                    Nationwide B2B procurement service
-                  </li>
-                </ul>
-              </div>
+            <div>
+              <p className="text-gray-500 mb-1">Legacy</p>
+              <p className="font-bold">100+ Years</p>
+            </div>
+            <div>
+              <p className="text-gray-500 mb-1">Role</p>
+              <p className="font-bold">Lead Product Designer</p>
+            </div>
+            <div>
+              <p className="text-gray-500 mb-1">Outcome</p>
+              <p className="font-bold text-[#A3D1FF]">B2B Digital Scale</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Our Services</h2>
+      {/* --- 2. VISUAL SHOWCASE (BENTO GRID) --- */}
+      <section className="px-6 max-w-[1400px] mx-auto py-12">
+        <h2 className="text-sm font-bold text-[#A3D1FF] uppercase tracking-widest mb-8">Visual System & Interface</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-[minmax(300px,auto)]">
+          
+          {/* Main Hero Shot (Wide) */}
+          <div className="md:col-span-8 md:row-span-2 relative group overflow-hidden rounded-3xl border border-white/10 bg-[#111]">
+            <img 
+              src={ASSETS.HERO_DESKTOP} 
+              alt="Desktop Homepage View"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute top-6 left-6 bg-black/50 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+              <MonitorPlay size={14} className="text-[#A3D1FF]" /> Commerce Interface
+            </div>
+          </div>
+
+          {/* Mobile Shot (Tall) */}
+          <div className="md:col-span-4 md:row-span-2 relative group overflow-hidden rounded-3xl border border-white/10 bg-[#111]">
+            <img 
+              src={ASSETS.MOBILE_VIEW} 
+              alt="Mobile Detail View"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute top-6 left-6 bg-black/50 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+              <Smartphone size={14} className="text-[#A3D1FF]" /> Mobile Responsive
+            </div>
+          </div>
+
+          {/* Typography/Detail Shot (Square) */}
+          <div className="md:col-span-4 relative group overflow-hidden rounded-3xl border border-white/10 bg-[#111] min-h-[300px]">
+            <img 
+              src={ASSETS.DETAIL_VIEW} 
+              alt="Typography Detail"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute bottom-6 left-6">
+              <h3 className="text-xl font-bold mb-1">Clean Typography</h3>
+              <p className="text-gray-400 text-sm">Design System</p>
+            </div>
+          </div>
+
+          {/* Secondary Wide Shot */}
+          <div className="md:col-span-8 relative group overflow-hidden rounded-3xl border border-white/10 bg-[#111] min-h-[300px]">
+            <img 
+              src={ASSETS.DARK_MODE} 
+              alt="Procurement Dashboard"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+               <div className="bg-[#A3D1FF] text-black px-6 py-3 rounded-full font-bold flex items-center gap-2">
+                 View Catalogue <ArrowRight size={16} />
+               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- 3. CONTEXT & LEGACY --- */}
+      <section className="py-24 px-6 max-w-7xl mx-auto border-b border-white/5">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 text-white text-xs font-bold uppercase mb-6">
+              <Timer size={14} className="text-[#A3D1FF]" /> Since 1900s
+            </div>
+            <h2 className="text-4xl font-bold mb-6">From Strand Main Road to Nationwide Logistics.</h2>
+            <p className="text-gray-400 text-lg leading-relaxed mb-6">
+              Friedman & Cohen is a cornerstone of the Western Cape community. But as the retail landscape shifted, they needed to evolve from a traditional department store into a digital-first procurement powerhouse.
+            </p>
+            <p className="text-gray-400 text-lg leading-relaxed mb-8">
+              Our mission was to build <span className="text-white font-bold">F&C Procurement</span>: A digital platform specializing in furnishing solutions for property developers, student accommodations, and the hospitality sector.
+            </p>
+            
+            <div className="grid grid-cols-3 gap-4">
+              <div className="border-l border-[#A3D1FF] pl-4">
+                <div className="text-2xl font-bold text-white">100+</div>
+                <div className="text-xs text-gray-500 uppercase font-bold">Years Active</div>
+              </div>
+              <div className="border-l border-[#A3D1FF] pl-4">
+                <div className="text-2xl font-bold text-white">4.4<span className="text-sm text-[#A3D1FF]">/5</span></div>
+                <div className="text-xs text-gray-500 uppercase font-bold">Google Rating</div>
+              </div>
+              <div className="border-l border-[#A3D1FF] pl-4">
+                <div className="text-2xl font-bold text-white">1,350+</div>
+                <div className="text-xs text-gray-500 uppercase font-bold">Reviews</div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#A3D1FF] to-blue-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+            <img 
+              src={ASSETS.STOREFRONT} 
+              alt="Historic Storefront" 
+              className="relative rounded-2xl w-full h-[500px] object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700"
+            />
+            <div className="absolute bottom-4 right-4 bg-black/80 backdrop-blur px-4 py-2 rounded-lg text-xs font-mono text-gray-400">
+              The Original Storefront
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- 4. SERVICES & TECH --- */}
+      <section className="py-24 bg-[#111] border-y border-white/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Digital Procurement</h2>
+            <p className="text-gray-400 text-lg">
+              We abstracted the complexity of supply chain logistics into a clean, approachable user interface.
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-8">
             <FeatureCard
-              icon={Timer}
+              icon={Package}
               title="Student Housing"
-              description="Complete furnishing solutions for student accommodations, from beds to study spaces."
+              description="Dedicated catalog views for bulk furnishing. From beds to study spaces, optimized for quick BOQ creation."
             />
             <FeatureCard
-              icon={Users}
+              icon={Layout}
               title="Property Development"
-              description="Comprehensive procurement for residential and commercial developments."
+              description="Comprehensive procurement dashboards for residential and commercial developers to track large-scale orders."
             />
             <FeatureCard
-              icon={Target}
-              title="Logistics & Installation"
-              description="End-to-end delivery and installation services nationwide."
+              icon={Truck}
+              title="Logistics Integration"
+              description="End-to-end digital tracking of delivery and installation services nationwide."
             />
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Our Process</h2>
-          <div className="space-y-12">
-            <div className="flex items-start">
-              <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
-                1
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Quotation & Planning</h3>
-                <p className="text-gray-400">Detailed quotations and project planning tailored to your needs.</p>
-              </div>
+      {/* --- 5. PROCESS & IMPACT --- */}
+      <section className="py-32 px-6 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-20">
+          <div>
+            <h2 className="text-sm font-bold text-[#A3D1FF] uppercase tracking-widest mb-8">The Workflow</h2>
+            <div className="space-y-12">
+               {[
+                 { step: "01", title: "Quotation & Planning", desc: "Digital request forms trigger automated workflows for rapid quoting." },
+                 { step: "02", title: "Sample Presentation", desc: "High-fidelity digital catalog presentation for stakeholder approval." },
+                 { step: "03", title: "Procurement & Logistics", desc: "Real-time status updates on manufacturing and shipping." },
+                 { step: "04", title: "Installation Support", desc: "Post-delivery support tickets integrated directly into the user account." }
+               ].map((item, i) => (
+                 <div key={i} className="flex gap-6 group">
+                   <div className="text-4xl font-bold text-[#333] group-hover:text-[#A3D1FF] transition-colors">{item.step}</div>
+                   <div>
+                     <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                     <p className="text-gray-400">{item.desc}</p>
+                   </div>
+                 </div>
+               ))}
             </div>
-            <div className="flex items-start">
-              <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
-                2
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Sample Presentation</h3>
-                <p className="text-gray-400">Curated selection of furniture and fixtures for your approval.</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
-                3
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Procurement & Logistics</h3>
-                <p className="text-gray-400">Efficient sourcing and delivery coordination.</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
-                4
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-white mb-2">Installation & Support</h3>
-                <p className="text-gray-400">Professional installation and ongoing customer support.</p>
-              </div>
+          </div>
+
+          <div className="bg-[#1b1b1b] rounded-3xl p-10 border border-white/10 relative">
+             <div className="absolute top-0 right-0 w-64 h-64 bg-[#A3D1FF] opacity-5 blur-[100px] rounded-full pointer-events-none"></div>
+             
+             <h3 className="text-2xl font-bold mb-10 relative z-10">Client Impact</h3>
+             
+             <div className="space-y-8 relative z-10">
+               <div className="p-6 bg-black/40 rounded-xl border border-white/5">
+                 <div className="flex gap-1 mb-4">
+                   {[1,2,3,4,5].map(i => <Star key={i} size={16} className="fill-[#A3D1FF] text-[#A3D1FF]" />)}
+                 </div>
+                 <p className="text-gray-300 italic mb-4">
+                   "You can buy everything under one roof. Friendly service and helpful staff. Their procurement team is exceptional."
+                 </p>
+                 <div className="flex items-center gap-3">
+                   <div className="w-8 h-8 rounded-full bg-[#A3D1FF] flex items-center justify-center text-black font-bold">M</div>
+                   <div className="text-sm">
+                     <span className="block text-white font-bold">Marita Sabatier</span>
+                     <span className="block text-gray-500">Property Developer</span>
+                   </div>
+                 </div>
+               </div>
+
+               <div className="p-6 bg-black/40 rounded-xl border border-white/5">
+                 <div className="flex gap-1 mb-4">
+                   {[1,2,3,4,5].map(i => <Star key={i} size={16} className="fill-[#A3D1FF] text-[#A3D1FF]" />)}
+                 </div>
+                 <p className="text-gray-300 italic mb-4">
+                   "Everything under one roof, even specialized furniture for student accommodations. The quality and service are outstanding."
+                 </p>
+                 <div className="flex items-center gap-3">
+                   <div className="w-8 h-8 rounded-full bg-[#333] flex items-center justify-center text-white font-bold">A</div>
+                   <div className="text-sm">
+                     <span className="block text-white font-bold">Annmarie Kruger</span>
+                     <span className="block text-gray-500">Student Housing Manager</span>
+                   </div>
+                 </div>
+               </div>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- 6. CTA --- */}
+      <section className="py-20 border-t border-white/5">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Need a digital transformation?</h2>
+          <p className="text-gray-400 text-lg mb-10">
+            We help legacy brands build modern digital infrastructure.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <button 
+              onClick={() => navigate('/contact')}
+              className="px-8 py-4 bg-[#A3D1FF] text-black font-bold rounded-full hover:bg-white transition-colors flex items-center justify-center gap-2"
+            >
+              <Mail size={18} /> Request a Quote
+            </button>
+            <div className="flex items-center justify-center gap-2 px-8 py-4 text-gray-400">
+               <MapPin size={18} /> Strand, Cape Town
             </div>
           </div>
         </div>
       </section>
 
-      {/* Results */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Impact & Recognition</h2>
-          <div className="grid md:grid-cols-4 gap-8">
-            <StatCard
-              value="100+"
-              label="Years of Excellence"
-            />
-            <StatCard
-              value="1,351+"
-              label="Google Reviews"
-            />
-            <StatCard
-              value="4.4/5"
-              label="Customer Rating"
-            />
-            <StatCard
-              value="40+"
-              label="Property Partners"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Client Testimonials</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <TestimonialCard
-              name="Marita Sabatier"
-              role="Property Developer"
-              quote="You can buy everything under one roof. Friendly service and helpful staff. Their procurement team is exceptional."
-            />
-            <TestimonialCard
-              name="Annmarie Kruger"
-              role="Student Housing Manager"
-              quote="Everything under one roof, even specialized furniture for student accommodations. The quality and service are outstanding."
-            />
-            <TestimonialCard
-              name="Mona De Wet"
-              role="Interior Designer"
-              quote="What a lovely experience. The shop has everything from furniture to fixtures. Their B2B service is a game-changer."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6">Get in Touch</h2>
-              <p className="text-gray-400 mb-8">
-                Ready to discuss your procurement needs? Our team is here to help you create exceptional spaces.
-              </p>
-              <div className="space-y-4">
-                <a 
-                  href="mailto:marcf@marcfriedmanwebdesign.com"
-                  className="flex items-center gap-3 text-gray-300 hover:text-[#A3D1FF] transition-colors"
-                >
-                  <Mail className="w-5 h-5" />
-                  marcf@marcfriedmanwebdesign.com
-                </a>
-                <div className="flex items-center gap-3 text-gray-300">
-                  <MapPin className="w-5 h-5" />
-                  30 Main Rd, Strand, Cape Town, 7140
-                </div>
-                <div className="flex items-center gap-3 text-gray-300">
-                  <Calendar className="w-5 h-5" />
-                  Available Monday - Friday, 9am - 5pm
-                </div>
-              </div>
-            </div>
-            <div>
-              <button 
-                onClick={() => navigate('/contact')}
-                className="w-full bg-[#A3D1FF] text-black px-6 py-3 rounded-lg hover:bg-[#92bce6] transition-colors inline-flex items-center justify-center"
-              >
-                Request a Quote
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
+    </div>
   );
 }
