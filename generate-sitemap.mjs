@@ -99,7 +99,6 @@ const routes = [
   { url: '/services/web-development', changefreq: 'monthly', priority: 0.9, lastmod: new Date().toISOString() },
   { url: '/services/design', changefreq: 'monthly', priority: 0.9, lastmod: new Date().toISOString() },
   { url: '/services/saas', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
-  { url: '/services/api', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
   { url: '/services/startup-mvp', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
   { url: '/services/mentorship', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
   { url: '/services/ai-integration', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
