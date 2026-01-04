@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, Database, Code, Shield, Zap, Cloud, Users } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { ArrowRight, Database, Code, Shield, Zap, Cloud, Users, ExternalLink } from 'lucide-react';
+import { useNavigate, Link } from 'react-router-dom';
 import ServiceLeadForm from '@/components/ServiceLeadForm';
 
 function FeatureCard({ icon: Icon, title, description }: {
@@ -245,6 +245,89 @@ export default function SaaSPage() {
             <p className="text-gray-400">
               Each SaaS project is unique. Contact us for a detailed quote tailored to your specific requirements.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-4">SaaS Development Projects</h2>
+          <p className="text-gray-400 mb-12 max-w-2xl">
+            Discover how we've built scalable SaaS platforms that drive business growth.
+          </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Link
+              to="/work/case-studies/automarginx"
+              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="https://i.imgur.com/PiKh199.png"
+                  alt="AutoMarginX Platform"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
+                  AutoMarginX
+                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
+                </h3>
+                <p className="text-gray-400 mb-4">Dealership management platform with real-time analytics.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">React</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">PostgreSQL</span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              to="/work/case-studies/fleet-management"
+              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="https://i.imgur.com/EwgHAuK.png"
+                  alt="Fleet Management System"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
+                  Fleet Management
+                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
+                </h3>
+                <p className="text-gray-400 mb-4">Comprehensive fleet tracking and management solution.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">React Native</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">MongoDB</span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              to="/work/case-studies/videoleap"
+              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="https://i.imgur.com/SubVB9A.jpeg"
+                  alt="Videoleap Platform"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
+                  Videoleap
+                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
+                </h3>
+                <p className="text-gray-400 mb-4">AI-powered video editing platform with template marketplace.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">React</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">AI/ML</span>
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
       </section>

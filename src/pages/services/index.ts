@@ -1,4 +1,3 @@
-export { default as APIPage } from './APIPage';
 export { default as StartupMVPPage } from './StartupMVPPage';
 export { default as SaaSPage } from './SaaSPage';
 export { default as AIIntegrationPage } from './AIIntegrationPage';

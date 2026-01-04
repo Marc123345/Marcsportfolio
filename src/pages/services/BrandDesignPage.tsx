@@ -1,6 +1,6 @@
 import React from 'react';
-import { ArrowRight, Palette, Eye, Target, Zap, Users, CheckCircle2 } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { ArrowRight, Palette, Eye, Target, Zap, Users, CheckCircle2, ExternalLink } from 'lucide-react';
+import { useNavigate, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import ServiceLeadForm from '@/components/ServiceLeadForm';
 
@@ -135,6 +135,89 @@ export default function BrandDesignPage() {
                 <p className="text-gray-400">Develop comprehensive brand guidelines and assets for consistent application.</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-4">Brand Design Projects</h2>
+          <p className="text-gray-400 mb-12 max-w-2xl">
+            Explore our brand design work that has helped companies establish strong, memorable identities.
+          </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Link
+              to="/work/case-studies/binns-media"
+              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9.png?updatedAt=1767539579710"
+                  alt="Binns Media Group Platform"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
+                  Binns Media Group
+                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
+                </h3>
+                <p className="text-gray-400 mb-4">Complete brand identity for digital media platform.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Brand Identity</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Web Design</span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              to="/work/case-studies/untapped-africa"
+              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(1).png?updatedAt=1767539579782"
+                  alt="Untapped Africa"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
+                  Untapped Africa
+                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
+                </h3>
+                <p className="text-gray-400 mb-4">Social impact brand serving 8 countries across Africa.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Social Impact</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Platform</span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              to="/work/case-studies/friedman-cohen"
+              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(3).png?updatedAt=1767539579776"
+                  alt="Friedman & Cohen"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
+                  Friedman & Cohen
+                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
+                </h3>
+                <p className="text-gray-400 mb-4">Professional B2B platform with 100+ years of brand heritage.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">B2B</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Enterprise</span>
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
       </section>

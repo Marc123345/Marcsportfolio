@@ -1,6 +1,6 @@
 import React from 'react';
-import { ArrowRight, Star, Timer, Users, Target, Zap, CheckCircle2, ArrowUpRight } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { ArrowRight, Star, Timer, Users, Target, Zap, CheckCircle2, ArrowUpRight, ExternalLink } from 'lucide-react';
+import { useNavigate, Link } from 'react-router-dom';
 import ServiceLeadForm from '@/components/ServiceLeadForm';
 
 function FeatureCard({ icon: Icon, title, description }: {
@@ -97,6 +97,89 @@ export default function StartupMVPPage() {
               title="Future-Ready Tech"
               description="Lower technical debt with scalable architecture using React, Node.js, and cloud infrastructure that grows with you."
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-4">Startup MVP Success Stories</h2>
+          <p className="text-gray-400 mb-12 max-w-2xl">
+            See how we've helped startups launch successful MVPs and scale their platforms.
+          </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Link
+              to="/work/case-studies/automarginx"
+              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="https://i.imgur.com/PiKh199.png"
+                  alt="AutoMarginX MVP"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
+                  AutoMarginX
+                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
+                </h3>
+                <p className="text-gray-400 mb-4">Automotive dealership platform launched in 8 weeks.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Fast Launch</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Analytics</span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              to="/work/case-studies/mytube"
+              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="https://i.imgur.com/QNHXpzT.jpeg"
+                  alt="MyTube MVP"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
+                  MyTube
+                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
+                </h3>
+                <p className="text-gray-400 mb-4">Video metadata management MVP with AI integration.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">AI/ML</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Scalable</span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              to="/work/case-studies/fleet-management"
+              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="https://i.imgur.com/EwgHAuK.png"
+                  alt="Fleet Management MVP"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
+                  Fleet Management
+                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
+                </h3>
+                <p className="text-gray-400 mb-4">Complete fleet tracking solution with mobile app.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Mobile</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Real-time</span>
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
       </section>

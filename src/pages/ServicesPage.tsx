@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import WebDevelopmentPage from './services/WebDevelopmentPage';
 import DesignPage from './services/DesignPage';
-import { APIPage, StartupMVPPage, SaaSPage, FractionalCMOPage, DesignSystemsPage, BrandDesignPage } from './services';
+import { StartupMVPPage, SaaSPage, FractionalCMOPage, DesignSystemsPage, BrandDesignPage } from './services';
 import MentorshipPage from './services/MentorshipPage';
 import AIIntegrationPage from './services/AIIntegrationPage';
 import CybersecurityPage from './services/CybersecurityPage';
@@ -37,11 +37,6 @@ const servicesSchema = {
         "@type": "Offer",
         "name": "SaaS Development",
         "description": "End-to-end SaaS platform development"
-      },
-      {
-        "@type": "Offer",
-        "name": "API Development",
-        "description": "Custom API development and integration"
       },
       {
         "@type": "Offer",
@@ -106,7 +101,6 @@ export default function ServicesPage() {
       <Routes>
         <Route path="web-development" element={<WebDevelopmentPage />} />
         <Route path="design" element={<DesignPage />} />
-        <Route path="api" element={<APIPage />} />
         <Route path="startup-mvp" element={<StartupMVPPage />} />
         <Route path="saas" element={<SaaSPage />} />
         <Route path="mentorship" element={<MentorshipPage />} />
