@@ -57,6 +57,15 @@
     <!-- Google Site Verification -->
     <meta name="google-site-verification" content="google65e4eba86e82f0a1" />
 
+    <!-- Termly Resource Blocker - Must be first script -->
+    <script>
+      if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && window.location.protocol !== 'file:') {
+        var termlyScript = document.createElement('script');
+        termlyScript.src = 'https://app.termly.io/resource-blocker/b6b01006-f6cb-47b3-ab77-42603a0859f9?autoBlock=on';
+        document.head.appendChild(termlyScript);
+      }
+    </script>
+
     <!-- Structured Data -->
     <script type="application/ld+json">
       {
@@ -73,9 +82,6 @@
       }
     </script>
 
-    <!-- Termly Resource Blocker -->
-    <script src="https://app.termly.io/resource-blocker/b6b01006-f6cb-47b3-ab77-42603a0859f9?autoBlock=on"></script>
-
     <!-- Service Worker for caching -->
     <script>
       if ('serviceWorker' in navigator) {
@@ -87,25 +93,27 @@
       }
     </script>
 
-    <!-- Defer Analytics - Load after page is interactive -->
+    <!-- Defer Analytics - Load after page is interactive (Production only) -->
     <script>
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          // Google Analytics
-          var gaScript = document.createElement('script');
-          gaScript.async = true;
-          gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-X9V20XWRG8';
-          document.head.appendChild(gaScript);
+      if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && window.location.protocol !== 'file:') {
+        window.addEventListener('load', function() {
+          setTimeout(function() {
+            // Google Analytics
+            var gaScript = document.createElement('script');
+            gaScript.async = true;
+            gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-X9V20XWRG8';
+            document.head.appendChild(gaScript);
 
-          gaScript.onload = function() {
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-X9V20XWRG8', { 'send_page_view': false });
-            gtag('config', 'AW-17688433013');
-          };
-        }, 2000);
-      });
+            gaScript.onload = function() {
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-X9V20XWRG8', { 'send_page_view': false });
+              gtag('config', 'AW-17688433013');
+            };
+          }, 2000);
+        });
+      }
     </script>
 </head>
   <body>
