@@ -125,15 +125,15 @@ export default function SaaSPage() {
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-              Startup MVP Development
+              SaaS Development Services
             </h1>
             <h2 className="text-xl sm:text-2xl text-[#A3D1FF] mb-6">
-              Launch Your Product Fast and Validate Your Idea
+              Build Scalable Cloud Applications That Grow With Your Business
             </h2>
             <p className="text-xl text-gray-400 mb-8">
-              <strong className="text-white">Bring your startup vision to life</strong> with rapid MVP development that gets you to market in 8-12 weeks with a lean, scalable product.
+              <strong className="text-white">Launch your SaaS platform</strong> with enterprise-grade security, multi-tenant architecture, and cloud-native infrastructure that scales to millions of users.
             </p>
-            <button 
+            <button
               onClick={() => navigate('/contact')}
              className="mr_btn mr_btn_primary group relative overflow-hidden"
             >
@@ -186,27 +186,27 @@ export default function SaaSPage() {
       {/* Development Process */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">MVP Development Process</h2>
+          <h2 className="text-3xl font-bold text-white mb-12">SaaS Development Process</h2>
           <div className="space-y-12">
             <ProcessStep
               number="01"
-              title="Product Discovery"
-              description="Define core features and validate assumptions through market research and user interviews."
+              title="Platform Architecture"
+              description="Design multi-tenant architecture with scalable database structures, API layers, and microservices that support thousands of concurrent users."
             />
             <ProcessStep
               number="02"
-              title="Rapid Prototyping"
-              description="Create interactive prototypes to test user flows and gather early feedback."
+              title="Core Development"
+              description="Build secure authentication, subscription management, role-based access control, and billing integration with modern tech stack."
             />
             <ProcessStep
               number="03"
-              title="Lean Development"
-              description="Build only essential features with clean code and scalable architecture."
+              title="Cloud Infrastructure"
+              description="Deploy on cloud platforms with auto-scaling, load balancing, CDN integration, and enterprise-grade security measures."
             />
             <ProcessStep
               number="04"
-              title="Launch & Iterate"
-              description="Deploy quickly, measure user behavior, and iterate based on real data."
+              title="Launch & Scale"
+              description="Monitor performance metrics, optimize infrastructure costs, and iterate features based on user feedback and analytics."
             />
           </div>
         </div>
@@ -266,9 +266,9 @@ export default function SaaSPage() {
       {/* Case Studies Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-4">Startup MVP Projects</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">SaaS Development Projects</h2>
           <p className="text-gray-400 mb-12 max-w-2xl">
-            See how we've helped startups launch their MVPs and validate their ideas quickly.
+            See how we've built scalable SaaS platforms that serve thousands of users with enterprise-grade reliability.
           </p>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <Link
@@ -287,7 +287,7 @@ export default function SaaSPage() {
                   iLight
                   <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
                 </h3>
-                <p className="text-gray-400 mb-4">Modern lighting e-commerce MVP launched in 10 weeks.</p>
+                <p className="text-gray-400 mb-4">Modern e-commerce SaaS platform with subscription management and multi-vendor support.</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Next.js</span>
                   <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Shopify</span>
@@ -311,7 +311,7 @@ export default function SaaSPage() {
                   AutoMarginX
                   <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
                 </h3>
-                <p className="text-gray-400 mb-4">Dealership management MVP with real-time analytics.</p>
+                <p className="text-gray-400 mb-4">Enterprise SaaS platform for dealership management with real-time analytics and multi-location support.</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">React</span>
                   <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">PostgreSQL</span>
@@ -326,18 +326,18 @@ export default function SaaSPage() {
       <section id="contact-form" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <ServiceLeadForm
-            service="Startup MVP Development"
+            service="SaaS Development"
             benefits={[
-              "Launch in 8-12 weeks",
-              "Lean, validated features only",
-              "User-tested design and flows",
-              "Scalable architecture from day one",
-              "Post-launch iteration support"
+              "Launch in 12-16 weeks",
+              "Multi-tenant architecture",
+              "Enterprise-grade security",
+              "Auto-scaling cloud infrastructure",
+              "Subscription & billing integration"
             ]}
             testimonial={{
-              quote: "Marc helped us validate our startup idea quickly with an MVP that our early users loved. His lean approach saved us months of development time.",
-              author: "Stallone Sweeney",
-              role: "Attorney | Founder of LegalContent"
+              quote: "Marc built our SaaS platform with scalable architecture that handles thousands of users effortlessly. His expertise in cloud-native development saved us from costly rewrites.",
+              author: "Lior Shimon",
+              role: "Algorithm Engineer | Data Scientist"
             }}
           />
         </div>
@@ -346,9 +346,9 @@ export default function SaaSPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Launch Your MVP?</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to Build Your SaaS Platform?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-            Let's <strong className="text-white">validate your startup idea</strong> with a lean MVP that gets you to market fast.
+            Let's <strong className="text-white">build a scalable SaaS application</strong> with enterprise-grade infrastructure that grows with your business.
           </p>
           <button 
             onClick={() => navigate('/contact')}
