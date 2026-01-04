@@ -212,11 +212,6 @@ export default function ConversionRateOptimizationTechniquesPage() {
             </ul>
             
             <p>The most effective CTAs don't just tell users what to do—they communicate why taking that action is valuable and make the next step feel like a natural progression in the user journey.</p>
-            
-            <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 my-8">
-              <h4 className="text-white font-semibold mb-2">Case Study: Irreplicable</h4>
-              <p className="text-gray-300">For the Irreplicable landing page, we tested various CTA approaches and found that changing from a generic "Get Started" to a more specific "Get Your Custom Quote" increased click-through rates. The more specific language set clear expectations about what would happen next, reducing uncertainty and increasing user confidence.</p>
-            </div>
 
             <h2>Implementing Your CRO Strategy</h2>
             <p>To implement these techniques effectively, follow these steps:</p>

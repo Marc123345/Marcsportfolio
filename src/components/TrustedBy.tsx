@@ -230,15 +230,6 @@ export default function TrustedBy() {
               />
             </div>
 
-            {/* Uza Entertainment */}
-            <div className="transition-all duration-300 hover:scale-110 flex-shrink-0">
-              <img
-                src="https://ik.imagekit.io/qcvroy8xpd/downloads/logo-uzan-1-mv02DeERKlcy9DzM%20(1).avif?updatedAt=1755253233172"
-                alt="Uza Entertainment"
-                className="h-12 md:h-14 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
-              />
-            </div>
-
             {/* Duplicate set for seamless loop */}
             {/* Binns Media Group */}
             <div className="transition-all duration-300 hover:scale-110 flex-shrink-0">
@@ -318,15 +309,6 @@ export default function TrustedBy() {
                 src="https://ik.imagekit.io/qcvroy8xpd/White%20logo%20-%20no%20background.svg?updatedAt=1749030562412"
                 alt="iLight"
                 className="h-12 md:h-14 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
-              />
-            </div>
-
-            {/* Uza Entertainment */}
-            <div className="transition-all duration-300 hover:scale-110 flex-shrink-0">
-              <img
-                src="https://ik.imagekit.io/qcvroy8xpd/downloads/logo-uzan-1-mv02DeERKlcy9DzM%20(1).avif?updatedAt=1755253233172"
-                alt="Uza Entertainment"
-                className="h-12 md:h-14 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
               />
             </div>
         </div>

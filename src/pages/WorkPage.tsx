@@ -103,20 +103,6 @@ const projects: Project[] = [
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     category: "landing"
   },
-  {
-    title: "Irreplicable",
-    description: "High-converting landing page for premium ghostwriting services.",
-    image: "https://i.imgur.com/y4U7SPl.jpeg",
-    liveUrl: "https://irreplicable.net",
-    caseStudyUrl: "/work/case-studies/irreplicable",
-    impact: [
-      "Increased conversions",
-      "Improved lead quality",
-      "High client satisfaction"
-    ],
-    technologies: ["React", "Tailwind CSS", "GSAP"],
-    category: "landing"
-  },
 
   // SaaS Projects
   {
@@ -313,7 +299,7 @@ export default function WorkPage() {
           case 'automotive':
             return ['AutoMarginX', 'Fleet Management System'].includes(project.title);
           case 'professional':
-            return ['A Secure Annapolis Locksmith', 'Friedman & Cohen', 'Irreplicable'].includes(project.title);
+            return ['A Secure Annapolis Locksmith', 'Friedman & Cohen'].includes(project.title);
           case 'social-impact':
             return ['Untapped Africa', 'Give 2 Grow'].includes(project.title);
           case 'sports':
