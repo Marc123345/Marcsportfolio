@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Brain, Code, Database, Zap, Bot, Sparkles, ExternalLink } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 import ServiceLeadForm from '@/components/ServiceLeadForm';
@@ -45,6 +46,41 @@ export default function AIIntegrationPage() {
 
   return (
     <>
+      <Helmet>
+        <title>AI Integration Services | Machine Learning & Automation Solutions | Marc Friedman</title>
+        <meta name="description" content="Professional AI integration services to automate manual tasks and gain data-driven insights. Expert implementation of OpenAI, Google Cloud AI, custom ML models, chatbots, and intelligent automation solutions." />
+        <meta name="keywords" content="AI integration, machine learning services, artificial intelligence consulting, AI automation, chatbot development, OpenAI integration, custom ML models, predictive analytics, AI-powered applications, process automation" />
+        <link rel="canonical" href="https://www.marcfriedmanportfolio.com/services/ai-integration" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="AI Integration Services | Machine Learning & Automation Solutions" />
+        <meta property="og:description" content="Professional AI integration services to automate manual tasks with OpenAI, custom ML models, and intelligent automation solutions." />
+        <meta property="og:url" content="https://www.marcfriedmanportfolio.com/services/ai-integration" />
+        <meta property="og:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Integration Services | Machine Learning & Automation Solutions" />
+        <meta name="twitter:description" content="Professional AI integration services to automate manual tasks with OpenAI and custom ML models." />
+        <meta name="twitter:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "AI Integration Services",
+            "description": "Professional AI integration services including OpenAI integration, custom ML model deployment, chatbot development, predictive analytics, and intelligent process automation to enhance decision-making and create exceptional user experiences.",
+            "provider": {
+              "@type": "Person",
+              "name": "Marc Friedman",
+              "url": "https://www.marcfriedmanportfolio.com",
+              "jobTitle": "Full Stack Designer & Developer"
+            },
+            "serviceType": "AI & Machine Learning Integration",
+            "areaServed": "Worldwide"
+          })}
+        </script>
+      </Helmet>
+
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="max-w-7xl mx-auto">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, ShieldCheck, Lock, Search, Database, Server, FileCode, Users, Eye, ExternalLink } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 import ServiceLeadForm from '@/components/ServiceLeadForm';
@@ -48,6 +49,41 @@ export default function CybersecurityPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Cybersecurity Consulting Services | Security Audits & Protection | Marc Friedman</title>
+        <meta name="description" content="Comprehensive cybersecurity consulting services to protect your digital assets. Expert security assessments, penetration testing, secure development, GDPR compliance, and 24/7 monitoring to prevent data breaches." />
+        <meta name="keywords" content="cybersecurity consulting, security assessment, penetration testing, security audit, GDPR compliance, data protection, secure development, vulnerability assessment, security monitoring, cloud security" />
+        <link rel="canonical" href="https://www.marcfriedmanportfolio.com/services/cybersecurity-consulting" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Cybersecurity Consulting Services | Security Audits & Protection" />
+        <meta property="og:description" content="Comprehensive cybersecurity consulting services to protect your digital assets with security assessments, penetration testing, and 24/7 monitoring." />
+        <meta property="og:url" content="https://www.marcfriedmanportfolio.com/services/cybersecurity-consulting" />
+        <meta property="og:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Cybersecurity Consulting Services | Security Audits & Protection" />
+        <meta name="twitter:description" content="Comprehensive cybersecurity consulting services to protect your digital assets with security assessments and penetration testing." />
+        <meta name="twitter:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Cybersecurity Consulting Services",
+            "description": "Comprehensive cybersecurity consulting services including security assessments, penetration testing, secure development, GDPR compliance, and 24/7 monitoring to prevent data breaches and protect digital assets.",
+            "provider": {
+              "@type": "Person",
+              "name": "Marc Friedman",
+              "url": "https://www.marcfriedmanportfolio.com",
+              "jobTitle": "Full Stack Designer & Developer"
+            },
+            "serviceType": "Cybersecurity Consulting",
+            "areaServed": "Worldwide"
+          })}
+        </script>
+      </Helmet>
+
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="max-w-7xl mx-auto">

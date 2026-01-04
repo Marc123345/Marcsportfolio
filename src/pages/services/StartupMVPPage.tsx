@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Star, Timer, Users, Target, Zap, CheckCircle2, ArrowUpRight, ExternalLink } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 import ServiceLeadForm from '@/components/ServiceLeadForm';
@@ -36,6 +37,41 @@ export default function StartupMVPPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Startup MVP Development | Launch in 30 Days | Marc Friedman</title>
+        <meta name="description" content="Launch your startup MVP in 30 days with investor-ready development. Built by a founder who pitched to VCs and got into AWS Accelerator. Get to market faster with scalable architecture and user-tested features." />
+        <meta name="keywords" content="startup MVP development, minimum viable product, rapid MVP development, startup development services, product validation, lean startup development, investor-ready MVP, startup prototype, fast MVP launch" />
+        <link rel="canonical" href="https://www.marcfriedmanportfolio.com/services/startup-mvp-development" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Startup MVP Development | Launch in 30 Days" />
+        <meta property="og:description" content="Launch your startup MVP in 30 days with investor-ready development. Built by a founder who pitched to VCs and got into AWS Accelerator." />
+        <meta property="og:url" content="https://www.marcfriedmanportfolio.com/services/startup-mvp-development" />
+        <meta property="og:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Startup MVP Development | Launch in 30 Days" />
+        <meta name="twitter:description" content="Launch your startup MVP in 30 days with investor-ready development. Get to market faster with scalable architecture." />
+        <meta name="twitter:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Startup MVP Development",
+            "description": "Launch your startup MVP in 30 days with investor-ready development. Built by a founder who pitched to VCs and got into AWS Accelerator. Get to market faster with scalable architecture and user-tested features that impress investors and acquire early users.",
+            "provider": {
+              "@type": "Person",
+              "name": "Marc Friedman",
+              "url": "https://www.marcfriedmanportfolio.com",
+              "jobTitle": "Full Stack Designer & Developer"
+            },
+            "serviceType": "MVP Development",
+            "areaServed": "Worldwide"
+          })}
+        </script>
+      </Helmet>
+
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center justify-center bg-black overflow-hidden">
         {/* Hero Image */}

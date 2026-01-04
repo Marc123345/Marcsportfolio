@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Palette, Layout, Users, Sparkles, BookOpen, Rocket, Figma, Briefcase } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import ServiceLeadForm from '@/components/ServiceLeadForm';
@@ -80,6 +81,41 @@ export default function MentorshipPage() {
 
   return (
     <>
+      <Helmet>
+        <title>UX/UI Mentorship & Tutoring Services | Career Acceleration | Marc Friedman</title>
+        <meta name="description" content="Accelerate your UX/UI design career with personalized mentorship and Figma mastery training. Expert guidance on portfolio development, job placement, and design skills that land dream jobs in 3-6 months." />
+        <meta name="keywords" content="UX UI mentorship, design mentorship, Figma training, UX tutoring, UI design coaching, portfolio development, design career coaching, Figma mastery, design systems training, UX career guidance" />
+        <link rel="canonical" href="https://www.marcfriedmanportfolio.com/services/ux-ui-mentorship" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="UX/UI Mentorship & Tutoring Services | Career Acceleration" />
+        <meta property="og:description" content="Accelerate your UX/UI design career with personalized mentorship and Figma mastery training. Expert guidance on portfolio development and job placement." />
+        <meta property="og:url" content="https://www.marcfriedmanportfolio.com/services/ux-ui-mentorship" />
+        <meta property="og:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="UX/UI Mentorship & Tutoring Services | Career Acceleration" />
+        <meta name="twitter:description" content="Accelerate your UX/UI design career with personalized mentorship and Figma mastery training." />
+        <meta name="twitter:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "UX/UI Mentorship & Tutoring Services",
+            "description": "Accelerate your UX/UI design career with personalized mentorship, Figma mastery training, and portfolio development that lands you dream jobs in UX/UI design.",
+            "provider": {
+              "@type": "Person",
+              "name": "Marc Friedman",
+              "url": "https://www.marcfriedmanportfolio.com",
+              "jobTitle": "Full Stack Designer & Developer"
+            },
+            "serviceType": "Mentorship & Training",
+            "areaServed": "Worldwide"
+          })}
+        </script>
+      </Helmet>
+
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center justify-center bg-black overflow-hidden">
         {/* Hero Image */}

@@ -86,22 +86,36 @@ export default function SaaSPage() {
   return (
     <>
       <Helmet>
-        <title>Startup MVP Development Services | Marc Friedman</title>
-        <meta name="description" content="Rapid MVP development services to validate your startup idea in 8-12 weeks. Launch faster with lean, scalable architecture and user-tested designs." />
-        <meta name="keywords" content="MVP development, startup MVP, minimum viable product, rapid prototyping, startup development, lean startup, product validation" />
-        <link rel="canonical" href="https://www.marcfriedmanportfolio.com/services/saas" />
+        <title>SaaS Development Services | Build Scalable Cloud Applications | Marc Friedman</title>
+        <meta name="description" content="Professional SaaS development services to build scalable, cloud-native applications. Launch your SaaS product in 12-16 weeks with enterprise-grade security, modern tech stack, and user-centric design." />
+        <meta name="keywords" content="SaaS development, cloud application development, scalable software development, multi-tenant architecture, SaaS platform development, subscription software, cloud-native development, enterprise SaaS" />
+        <link rel="canonical" href="https://www.marcfriedmanportfolio.com/services/saas-development" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="SaaS Development Services | Build Scalable Cloud Applications" />
+        <meta property="og:description" content="Professional SaaS development services to build scalable, cloud-native applications with enterprise-grade security and modern tech stack." />
+        <meta property="og:url" content="https://www.marcfriedmanportfolio.com/services/saas-development" />
+        <meta property="og:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="SaaS Development Services | Build Scalable Cloud Applications" />
+        <meta name="twitter:description" content="Professional SaaS development services to build scalable, cloud-native applications with enterprise-grade security." />
+        <meta name="twitter:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
 
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            "name": "Startup MVP Development Services",
-            "description": "Rapid MVP development services to validate your startup idea in 8-12 weeks.",
+            "name": "SaaS Development Services",
+            "description": "Professional SaaS development services to build scalable, cloud-native applications in 12-16 weeks with enterprise-grade security, modern tech stack, and user-centric design.",
             "provider": {
               "@type": "Person",
               "name": "Marc Friedman",
-              "url": "https://www.marcfriedmanportfolio.com"
-            }
+              "url": "https://www.marcfriedmanportfolio.com",
+              "jobTitle": "Full Stack Designer & Developer"
+            },
+            "serviceType": "SaaS Development",
+            "areaServed": "Worldwide"
           })}
         </script>
       </Helmet>

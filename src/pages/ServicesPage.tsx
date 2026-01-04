@@ -100,14 +100,14 @@ export default function ServicesPage() {
 
       <Routes>
         <Route path="web-development" element={<WebDevelopmentPage />} />
-        <Route path="design" element={<DesignPage />} />
-        <Route path="startup-mvp" element={<StartupMVPPage />} />
-        <Route path="saas" element={<SaaSPage />} />
-        <Route path="mentorship" element={<MentorshipPage />} />
+        <Route path="ui-ux-design" element={<DesignPage />} />
+        <Route path="startup-mvp-development" element={<StartupMVPPage />} />
+        <Route path="saas-development" element={<SaaSPage />} />
+        <Route path="ux-ui-mentorship" element={<MentorshipPage />} />
         <Route path="ai-integration" element={<AIIntegrationPage />} />
-        <Route path="cybersecurity" element={<CybersecurityPage />} />
+        <Route path="cybersecurity-consulting" element={<CybersecurityPage />} />
         <Route path="design-systems" element={<DesignSystemsPage />} />
-        <Route path="fractional-cmo" element={<FractionalCMOPage />} />
+        <Route path="fractional-cmo-partner" element={<FractionalCMOPage />} />
         <Route path="*" element={<Navigate to="/services" replace />} />
       </Routes>
     </>

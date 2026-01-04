@@ -55,8 +55,38 @@ export default function FractionalCMOPage() {
   return (
     <>
       <Helmet>
-        <title>Web Partner for Fractional CMOs | Marc Friedman</title>
-        <meta name="description" content="Design & Dev execution for go-to-market strategy, without the bottlenecks. You own the strategy. I bring it to life." />
+        <title>Fractional CMO Web Partner | Design & Development Execution | Marc Friedman</title>
+        <meta name="description" content="Design and development execution for fractional CMOs. Launch landing pages and websites that convert without bottlenecks. React-based development partner who brings your go-to-market strategy to life fast." />
+        <meta name="keywords" content="fractional CMO partner, marketing website development, landing page design, conversion optimization, React development for marketing, CMO web partner, marketing execution partner, growth marketing websites" />
+        <link rel="canonical" href="https://www.marcfriedmanportfolio.com/services/fractional-cmo-partner" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Fractional CMO Web Partner | Design & Development Execution" />
+        <meta property="og:description" content="Design and development execution for fractional CMOs. Launch landing pages and websites that convert without bottlenecks." />
+        <meta property="og:url" content="https://www.marcfriedmanportfolio.com/services/fractional-cmo-partner" />
+        <meta property="og:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Fractional CMO Web Partner | Design & Development Execution" />
+        <meta name="twitter:description" content="Design and development execution for fractional CMOs. Launch landing pages and websites that convert." />
+        <meta name="twitter:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Fractional CMO Web Partner Services",
+            "description": "Design and development execution partner for fractional CMOs. React-based development that brings go-to-market strategy to life with landing pages and websites that convert.",
+            "provider": {
+              "@type": "Person",
+              "name": "Marc Friedman",
+              "url": "https://www.marcfriedmanportfolio.com",
+              "jobTitle": "Full Stack Designer & Developer"
+            },
+            "serviceType": "Web Development Partnership",
+            "areaServed": "Worldwide"
+          })}
+        </script>
       </Helmet>
 
       {/* Hero Section */}

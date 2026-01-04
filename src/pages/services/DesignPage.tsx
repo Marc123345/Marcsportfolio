@@ -86,22 +86,36 @@ export default function DesignPage() {
   return (
     <>
       <Helmet>
-        <title>UI/UX Design Services | Marc Friedman</title>
-        <meta name="description" content="User-centered UI/UX design services that increase conversions by 35% and reduce bounce rates by 40%. Professional design solutions for web and mobile applications." />
-        <meta name="keywords" content="UI/UX design services, user experience design, user interface design, conversion optimization design, mobile app design, web design" />
-        <link rel="canonical" href="https://www.marcfriedmanportfolio.com/services/design" />
-        
+        <title>UI/UX Design Services | User-Centered Design that Converts | Marc Friedman</title>
+        <meta name="description" content="Expert UI/UX design services that increase conversions by 35% and reduce bounce rates by 40%. Get user-centered design solutions for web and mobile applications that delight users and drive business growth." />
+        <meta name="keywords" content="UI/UX design services, user experience design, user interface design, conversion optimization design, mobile app design, web design, user-centered design, product design, design systems, interaction design" />
+        <link rel="canonical" href="https://www.marcfriedmanportfolio.com/services/ui-ux-design" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="UI/UX Design Services | User-Centered Design that Converts" />
+        <meta property="og:description" content="Expert UI/UX design services that increase conversions by 35% and reduce bounce rates by 40%. User-centered design solutions for web and mobile applications." />
+        <meta property="og:url" content="https://www.marcfriedmanportfolio.com/services/ui-ux-design" />
+        <meta property="og:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="UI/UX Design Services | User-Centered Design that Converts" />
+        <meta name="twitter:description" content="Expert UI/UX design services that increase conversions by 35% and reduce bounce rates by 40%." />
+        <meta name="twitter:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
+
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
             "name": "UI/UX Design Services",
-            "description": "User-centered design services that increase conversions by 35% and reduce bounce rates by 40%.",
+            "description": "User-centered UI/UX design services that increase conversions by 35% and reduce bounce rates by 40%. Professional design solutions for web and mobile applications.",
             "provider": {
               "@type": "Person",
               "name": "Marc Friedman",
-              "url": "https://www.marcfriedmanportfolio.com"
-            }
+              "url": "https://www.marcfriedmanportfolio.com",
+              "jobTitle": "Full Stack Designer & Developer"
+            },
+            "serviceType": "UI/UX Design",
+            "areaServed": "Worldwide"
           })}
         </script>
       </Helmet>
