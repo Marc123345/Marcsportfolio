@@ -3,7 +3,8 @@ import {
   ArrowRight, Star, Layers, Zap, 
   CheckCircle2, Globe, Layout, 
   MonitorPlay, Smartphone, Palette, 
-  ExternalLink, Quote, Rocket 
+  ExternalLink, Quote, Rocket, Type, 
+  Droplet, Maximize2, Grid
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,26 +12,38 @@ const BinnsMediaCaseStudy = () => {
   const navigate = useNavigate();
   const LIVE_URL = "https://www.binnsmediagroup.com/";
 
-  // Image Constants for cleaner usage
-  const IMG_OMAR = "https://ik.imagekit.io/qcvroy8xpd/67eb0c3957638498868399.jpeg?updatedAt=1766490776332";
-  const IMG_PLATFORM_OVERVIEW = "https://ik.imagekit.io/qcvroy8xpd/67eb0d66be3ae182020253.png?updatedAt=1766490774693";
-  const IMG_MOCKUP_DESKTOP = "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9.png";
-  const IMG_MOCKUP_MOBILE = "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%202%20-%201x1.png"; // Using the clean 1x1 mockup for mobile slot
-  const IMG_MOCKUP_TYPOGRAPHY = "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1.png";
-  const IMG_GUNEET = "https://res.cloudinary.com/dadgglcaq/image/upload/v1749337731/1732338426448_1_veqlnh.jpg";
+  // --- ASSET MANAGEMENT ---
+  const IMAGES = {
+    // People
+    OMAR: "https://ik.imagekit.io/qcvroy8xpd/NKjkUC9%20(1).jpeg", // Updated
+    GUNEET: "https://res.cloudinary.com/dadgglcaq/image/upload/v1749337731/1732338426448_1_veqlnh.jpg",
+    
+    // Main Mockups
+    HERO_DESKTOP: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9.png",
+    HERO_MOBILE: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%202%20-%201x1.png",
+    DETAIL_TYPE: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1.png",
+    DETAIL_DARK: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%203%20-%2016x9.png",
+    PLATFORM_FULL: "https://ik.imagekit.io/qcvroy8xpd/67eb0d66be3ae182020253.png?updatedAt=1766490774693",
+    
+    // Extra Context Shots (Reusing key images for the gallery grid to ensure fullness)
+    GALLERY_1: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9.png",
+    GALLERY_2: "https://ik.imagekit.io/qcvroy8xpd/67eb0d66be3ae182020253.png?updatedAt=1766490774693",
+    GALLERY_3: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1.png",
+    GALLERY_4: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%203%20-%2016x9.png"
+  };
 
   return (
-    <div className="bg-[#0a0a0a] text-white selection:bg-[#A3D1FF] selection:text-black min-h-screen font-sans">
+    <div className="bg-[#0a0a0a] text-white selection:bg-[#cc000a] selection:text-white min-h-screen font-sans">
       
-      {/* 1. HERO SECTION — Outcome First */}
+      {/* 1. HERO SECTION */}
       <section className="relative pt-32 pb-16 px-6 max-w-7xl mx-auto border-b border-white/5">
         <div className="flex flex-col md:flex-row items-end justify-between gap-12 mb-16">
           <div className="max-w-3xl">
             <div className="flex flex-wrap items-center gap-3 mb-8">
-              <div className="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-[#A3D1FF]/10 border border-[#A3D1FF]/20 text-[#A3D1FF] text-xs font-bold tracking-widest uppercase">
+              <div className="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-[#cc000a]/10 border border-[#cc000a]/20 text-[#cc000a] text-xs font-bold tracking-widest uppercase">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A3D1FF] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#A3D1FF]"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#cc000a] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#cc000a]"></span>
                 </span>
                 Package: Media Empire Launchpad
               </div>
@@ -55,83 +68,69 @@ const BinnsMediaCaseStudy = () => {
             </p>
           </div>
 
-          {/* Project Quick Stats */}
           <div className="grid grid-cols-2 gap-x-12 gap-y-6 text-sm font-mono border-l border-white/10 pl-8">
             <div>
               <p className="text-gray-500 mb-1">Client</p>
               <p className="font-bold">Omar "Ace" Turner</p>
             </div>
             <div>
-              <p className="text-gray-500 mb-1">Industry</p>
-              <p className="font-bold">Media Production</p>
-            </div>
-            <div>
-              <p className="text-gray-500 mb-1">Services</p>
-              <p className="font-bold">Design & Development</p>
-            </div>
-            <div>
               <p className="text-gray-500 mb-1">Outcome</p>
-              <p className="font-bold text-[#A3D1FF]">5.0/5.0 Client Rating</p>
+              <p className="font-bold text-[#cc000a]">5.0/5.0 Client Rating</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5. & 6. DESIGN SYSTEM & VISUALS (The Bento Grid) */}
+      {/* 2. BENTO GRID SHOWCASE */}
       <section className="px-6 max-w-[1400px] mx-auto py-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-[minmax(300px,auto)]">
           
-          {/* Main Hero Shot (Wide) */}
           <a href={LIVE_URL} target="_blank" rel="noreferrer" className="md:col-span-8 md:row-span-2 relative group overflow-hidden rounded-3xl border border-white/10 bg-[#111] cursor-pointer">
             <img 
-              src={IMG_MOCKUP_DESKTOP}
+              src={IMAGES.HERO_DESKTOP}
               alt="Desktop Dashboard View"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute top-6 left-6 bg-black/50 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2 group-hover:bg-[#A3D1FF] group-hover:text-black transition-colors">
+            <div className="absolute top-6 left-6 bg-black/50 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2 group-hover:bg-[#cc000a] group-hover:text-white transition-colors">
               <MonitorPlay size={14} /> View Live Interface
             </div>
           </a>
 
-          {/* Mobile Shot (Tall) */}
           <div className="md:col-span-4 md:row-span-2 relative group overflow-hidden rounded-3xl border border-white/10 bg-[#111]">
             <img 
-              src={IMG_MOCKUP_MOBILE} 
+              src={IMAGES.HERO_MOBILE}
               alt="Mobile Detail View"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute top-6 left-6 bg-black/50 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2">
-              <Smartphone size={14} className="text-[#A3D1FF]" /> Mobile Optimized
+              <Smartphone size={14} className="text-[#cc000a]" /> Mobile Optimized
             </div>
           </div>
 
-          {/* Typography/Detail Shot (Square) */}
           <div className="md:col-span-4 relative group overflow-hidden rounded-3xl border border-white/10 bg-[#111] min-h-[300px]">
             <img 
-              src={IMG_MOCKUP_TYPOGRAPHY}
+              src={IMAGES.DETAIL_TYPE}
               alt="Typography Detail"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute bottom-6 left-6">
+             <div className="absolute bottom-6 left-6">
               <h3 className="text-xl font-bold mb-1">Editorial Typography</h3>
-              <p className="text-gray-400 text-sm">Design System</p>
+              <p className="text-gray-400 text-sm">Plus Jakarta Sans + Bebas Neue</p>
             </div>
           </div>
 
-          {/* Platform Overview Wide Shot (Replaces previous mock) */}
           <div className="md:col-span-8 relative group overflow-hidden rounded-3xl border border-white/10 bg-[#111] min-h-[300px]">
             <img 
-              src={IMG_PLATFORM_OVERVIEW} 
+              src={IMAGES.PLATFORM_FULL} 
               alt="Full Platform Overview"
               className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
             />
-            {/* CTA Overlay - No Prototype, Direct Link */}
             <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                <a 
                  href={LIVE_URL} 
                  target="_blank" 
                  rel="noreferrer"
-                 className="bg-[#A3D1FF] text-black px-8 py-4 rounded-full font-bold flex items-center gap-3 hover:scale-105 transition-transform shadow-xl"
+                 className="bg-[#cc000a] text-white px-8 py-4 rounded-full font-bold flex items-center gap-3 hover:scale-105 transition-transform shadow-[0_0_30px_rgba(204,0,10,0.5)]"
                >
                  Visit Live Platform <ExternalLink size={18} />
                </a>
@@ -140,29 +139,118 @@ const BinnsMediaCaseStudy = () => {
         </div>
       </section>
 
-      {/* 2. & 3. CONTEXT & PROBLEM */}
-      <section className="py-24 px-6 max-w-4xl mx-auto">
-        <h2 className="text-sm font-bold text-[#A3D1FF] uppercase tracking-widest mb-4">The Context</h2>
-        <h3 className="text-3xl md:text-5xl font-bold mb-8">
-          Culture-shaping content needed a cutting-edge home.
-        </h3>
-        <div className="grid md:grid-cols-2 gap-12 text-lg text-gray-400 leading-relaxed">
-          <p>
-            <strong className="text-white block mb-2">Who is Binns Media?</strong>
-            BMG turns authentic voices into scalable media brands. They produce comedy, audio albums, and podcasts that define culture. They aren't just a production house; they are a voice for the community.
-          </p>
-          <p>
-            <strong className="text-white block mb-2">The Business Problem</strong>
-            Their digital presence didn't match their output. They had high-fidelity content living on borrowed platforms or outdated interfaces. They needed a centralized hub that looked as premium as their production quality.
-          </p>
+      {/* 3. DESIGN SYSTEM SECTION (New) */}
+      <section className="py-24 bg-[#050505] border-y border-white/5 relative overflow-hidden">
+        {/* Ambient Red Glow */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#cc000a] opacity-5 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div>
+              <h2 className="text-[#cc000a] font-mono text-sm tracking-widest uppercase mb-2">tailwind.config.js</h2>
+              <h3 className="text-4xl font-bold">Visual Language</h3>
+            </div>
+            <p className="text-gray-400 max-w-md text-right">
+              A high-contrast identity system built for impact. 
+              <br/>Designed to feel like a premium streaming platform.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16">
+            
+            {/* Typography Stack */}
+            <div className="space-y-8">
+              <div className="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
+                <Type className="text-[#cc000a]" />
+                <span className="font-bold">Typography Stack</span>
+              </div>
+              
+              <div className="group">
+                <span className="block text-gray-500 text-xs font-mono mb-2">fontFamily: 'display'</span>
+                <div className="text-6xl md:text-8xl font-bold uppercase tracking-tight font-['Bebas_Neue'] leading-none">
+                  Bebas Neue
+                </div>
+              </div>
+
+              <div className="group">
+                <span className="block text-gray-500 text-xs font-mono mb-2">fontFamily: 'sans'</span>
+                <div className="text-4xl md:text-5xl font-bold text-gray-300 font-['Plus_Jakarta_Sans']">
+                  Plus Jakarta Sans
+                </div>
+                <p className="text-gray-500 mt-2 text-lg">
+                  The quick brown fox jumps over the lazy dog.
+                </p>
+              </div>
+            </div>
+
+            {/* Color & Shadow Palette */}
+            <div>
+               <div className="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
+                <Droplet className="text-[#cc000a]" />
+                <span className="font-bold">Color & Effects</span>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                {/* Primary Red */}
+                <div className="p-6 bg-[#cc000a] rounded-2xl flex flex-col justify-between h-40 shadow-[0_0_25px_rgba(204,0,10,0.3)] hover:scale-[1.02] transition-transform">
+                  <span className="text-white/50 text-xs font-mono">primary.DEFAULT</span>
+                  <span className="text-white font-bold text-xl">#cc000a</span>
+                </div>
+                
+                {/* Dark & Light Variants */}
+                <div className="space-y-4">
+                  <div className="p-4 bg-[#990007] rounded-xl flex items-center justify-between">
+                     <span className="text-white/50 text-xs font-mono">primary.dark</span>
+                     <span className="text-white font-mono">#990007</span>
+                  </div>
+                  <div className="p-4 bg-[#ff000d] rounded-xl flex items-center justify-between text-black">
+                     <span className="opacity-50 text-xs font-mono">primary.light</span>
+                     <span className="font-bold font-mono">#ff000d</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Shadow Token Visualization */}
+              <div className="bg-[#111] border border-white/10 p-6 rounded-2xl">
+                <span className="block text-gray-500 text-xs font-mono mb-6">boxShadow: 'red-glow'</span>
+                <button className="w-full py-4 bg-black border border-[#cc000a] text-[#cc000a] rounded-lg shadow-[0_0_30px_rgba(204,0,10,0.25)] hover:shadow-[0_0_50px_rgba(204,0,10,0.4)] transition-all font-bold uppercase tracking-widest text-sm">
+                  Interaction State
+                </button>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
-      {/* 4. STRATEGY (Media Empire Launchpad) */}
+      {/* 4. PLATFORM IMMERSION GALLERY (New) */}
+      <section className="py-24 px-6 max-w-[1600px] mx-auto">
+         <div className="flex items-center gap-3 mb-10 pl-4">
+            <Grid className="text-[#cc000a]" />
+            <h3 className="text-2xl font-bold">Platform Immersion</h3>
+         </div>
+         
+         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 h-[600px] md:h-[500px]">
+            <div className="col-span-2 row-span-2 relative group overflow-hidden rounded-2xl">
+               <img src={IMAGES.PLATFORM_FULL} alt="Main" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            </div>
+            <div className="col-span-1 row-span-1 relative group overflow-hidden rounded-2xl">
+               <img src={IMAGES.GALLERY_3} alt="Typography" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            </div>
+            <div className="col-span-1 row-span-1 relative group overflow-hidden rounded-2xl">
+               <img src={IMAGES.GALLERY_4} alt="Dark Mode" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            </div>
+            <div className="col-span-2 row-span-1 relative group overflow-hidden rounded-2xl">
+               <img src={IMAGES.HERO_DESKTOP} alt="Wide View" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            </div>
+         </div>
+      </section>
+
+      {/* 5. STRATEGY TEXT */}
       <section className="py-24 bg-[#111] border-y border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16 md:text-center max-w-3xl mx-auto">
-            <h2 className="text-4xl font-bold mb-6">The Solution: <span className="text-[#A3D1FF]">Media Empire Launchpad</span></h2>
+            <h2 className="text-4xl font-bold mb-6">The Solution: <span className="text-[#cc000a]">Media Empire Launchpad</span></h2>
             <p className="text-gray-400 text-lg">
               We didn't just build a website; we deployed a full media infrastructure. This is the exact package designed for content kings ready to monetize.
             </p>
@@ -186,8 +274,8 @@ const BinnsMediaCaseStudy = () => {
                 desc: "We launched the landing page first to capture immediate traffic while co-developing the full platform in parallel."
               }
             ].map((item, i) => (
-              <div key={i} className="p-8 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#A3D1FF]/30 transition-colors">
-                <item.icon className="w-10 h-10 text-[#A3D1FF] mb-6" />
+              <div key={i} className="p-8 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#cc000a]/30 transition-colors">
+                <item.icon className="w-10 h-10 text-[#cc000a] mb-6" />
                 <h4 className="text-xl font-bold mb-3">{item.title}</h4>
                 <p className="text-gray-400 leading-relaxed">{item.desc}</p>
               </div>
@@ -196,17 +284,17 @@ const BinnsMediaCaseStudy = () => {
         </div>
       </section>
 
-      {/* 7. & 8. RESULTS & TESTIMONIALS (Dual) */}
+      {/* 6. TESTIMONIALS */}
       <section className="py-32 px-6 max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold mb-12 text-center">Client Feedback</h2>
         
         <div className="grid md:grid-cols-2 gap-8">
           
-          {/* Card 1: Omar Turner */}
-          <div className="bg-[#161616] p-10 rounded-3xl border border-white/5 flex flex-col justify-between">
+          {/* Omar Turner - Updated Image */}
+          <div className="bg-[#161616] p-10 rounded-3xl border border-white/5 flex flex-col justify-between shadow-2xl">
             <div className="mb-8">
               <div className="flex gap-1 mb-6">
-                {[1,2,3,4,5].map(n => <Star key={n} size={20} className="fill-[#A3D1FF] text-[#A3D1FF]" />)}
+                {[1,2,3,4,5].map(n => <Star key={n} size={20} className="fill-[#cc000a] text-[#cc000a]" />)}
               </div>
               <blockquote className="text-xl font-medium leading-relaxed text-gray-200">
                 "Marc executed the vision perfectly. He’s big on communication and ensures the client is completely satisfied at each step. He didn't just build a site; he built our future platform."
@@ -215,22 +303,22 @@ const BinnsMediaCaseStudy = () => {
             
             <div className="flex items-center gap-4 pt-8 border-t border-white/10">
               <img 
-                src={IMG_OMAR} 
+                src={IMAGES.OMAR} 
                 alt="Omar Turner"
-                className="w-14 h-14 rounded-full border border-white/20 object-cover"
+                className="w-16 h-16 rounded-full border-2 border-[#cc000a] object-cover"
               />
               <div>
                 <div className="font-bold text-white">Omar "Ace" Turner</div>
-                <div className="text-[#A3D1FF] text-xs uppercase tracking-wider font-bold">CEO, Binns Media Group</div>
+                <div className="text-[#cc000a] text-xs uppercase tracking-wider font-bold">CEO, Binns Media Group</div>
               </div>
             </div>
           </div>
 
-          {/* Card 2: Guneet K. Singh */}
+          {/* Guneet K. Singh */}
           <div className="bg-[#161616] p-10 rounded-3xl border border-white/5 flex flex-col justify-between">
             <div className="mb-8">
               <div className="flex gap-1 mb-6">
-                {[1,2,3,4,5].map(n => <Star key={n} size={20} className="fill-[#A3D1FF] text-[#A3D1FF]" />)}
+                {[1,2,3,4,5].map(n => <Star key={n} size={20} className="fill-[#cc000a] text-[#cc000a]" />)}
               </div>
               <blockquote className="text-xl font-medium leading-relaxed text-gray-200">
                 "My team and I loved working with Marc!! His professionalism, patience and openness to our feedback made the entire process a seamless collaboration. We’ll be sure to bring future projects to him."
@@ -239,7 +327,7 @@ const BinnsMediaCaseStudy = () => {
             
             <div className="flex items-center gap-4 pt-8 border-t border-white/10">
               <img 
-                src={IMG_GUNEET}
+                src={IMAGES.GUNEET}
                 alt="Guneet K. Singh"
                 className="w-14 h-14 rounded-full border border-white/20 object-cover"
               />
@@ -249,40 +337,10 @@ const BinnsMediaCaseStudy = () => {
               </div>
             </div>
           </div>
-
         </div>
       </section>
 
-      {/* 9. ROLE & STACK */}
-      <section className="py-20 border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-12">
-          <div>
-            <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
-              <Palette size={18} className="text-[#A3D1FF]" /> My Role
-            </h3>
-            <ul className="space-y-2 text-gray-400">
-              <li>UX/UI Design Strategy</li>
-              <li>Design System Creation</li>
-              <li>Front-End Architecture</li>
-              <li>Project Management (Trello)</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
-              <Layers size={18} className="text-[#A3D1FF]" /> Tech Stack
-            </h3>
-            <div className="flex flex-wrap gap-2 max-w-sm">
-              {['React 18', 'Tailwind CSS', 'Supabase', 'Framer Motion', 'Vite', 'ImageKit'].map((tech) => (
-                <span key={tech} className="px-3 py-1 bg-white/5 rounded-md text-sm text-gray-300 border border-white/5">
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 10. CTA */}
+      {/* 7. CTA */}
       <section className="py-32 px-6 bg-gradient-to-b from-[#0a0a0a] to-[#111] text-center">
         <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter">
           Ready to scale <br/>
@@ -293,7 +351,7 @@ const BinnsMediaCaseStudy = () => {
         </p>
         <button 
           onClick={() => navigate('/contact')}
-          className="group relative inline-flex items-center gap-3 px-10 py-5 bg-white text-black font-bold rounded-full hover:bg-[#A3D1FF] transition-all hover:pr-14"
+          className="group relative inline-flex items-center gap-3 px-10 py-5 bg-white text-black font-bold rounded-full hover:bg-[#cc000a] hover:text-white transition-all hover:pr-14"
         >
           Book Your Strategy Call
           <ArrowRight className="absolute right-6 opacity-0 group-hover:opacity-100 transition-all" />
