@@ -423,6 +423,14 @@ export default function HomePage() {
                 tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
                 liveUrl: "https://chadleclosswimming.com",
                 caseStudy: "/work/case-studies/chad-le-clos"
+              },
+              {
+                title: "Tar & Chip Paving",
+                image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(6).png?updatedAt=1767539579420",
+                description: "Specialized surface solutions showcase",
+                tech: ["React", "Tailwind CSS", "Responsive Design"],
+                liveUrl: "https://pavingtarchip.com/",
+                caseStudy: "/work/case-studies/tar-chip-paving"
               }
             ].map((project, index) => (
               <motion.div

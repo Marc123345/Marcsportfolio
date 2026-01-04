@@ -11,7 +11,8 @@ import {
   SecureAnnapolisPage,
   UntappedAfricaPage,
   ILightPage,
-  PavingLeadsPage, // <-- Import the new page
+  PavingLeadsPage,
+  TarChipPage,
 } from './case-studies';
 
 export default function CaseStudiesPage() {
@@ -27,9 +28,8 @@ export default function CaseStudiesPage() {
       <Route path="secure-annapolis" element={<SecureAnnapolisPage />} />
       <Route path="untapped-africa" element={<UntappedAfricaPage />} />
       <Route path="ilight" element={<ILightPage />} />
-      
-      {/* New Case Study Route */}
       <Route path="paving-leads" element={<PavingLeadsPage />} />
+      <Route path="tar-chip-paving" element={<TarChipPage />} />
 
       <Route path="*" element={<Navigate to="/work" replace />} />
     </Routes>
