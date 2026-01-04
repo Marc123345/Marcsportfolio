@@ -11,6 +11,14 @@ const BinnsMediaCaseStudy = () => {
   const navigate = useNavigate();
   const LIVE_URL = "https://www.binnsmediagroup.com/";
 
+  // Image Constants for cleaner usage
+  const IMG_OMAR = "https://ik.imagekit.io/qcvroy8xpd/67eb0c3957638498868399.jpeg?updatedAt=1766490776332";
+  const IMG_PLATFORM_OVERVIEW = "https://ik.imagekit.io/qcvroy8xpd/67eb0d66be3ae182020253.png?updatedAt=1766490774693";
+  const IMG_MOCKUP_DESKTOP = "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9.png";
+  const IMG_MOCKUP_MOBILE = "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%202%20-%201x1.png"; // Using the clean 1x1 mockup for mobile slot
+  const IMG_MOCKUP_TYPOGRAPHY = "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1.png";
+  const IMG_GUNEET = "https://res.cloudinary.com/dadgglcaq/image/upload/v1749337731/1732338426448_1_veqlnh.jpg";
+
   return (
     <div className="bg-[#0a0a0a] text-white selection:bg-[#A3D1FF] selection:text-black min-h-screen font-sans">
       
@@ -73,10 +81,10 @@ const BinnsMediaCaseStudy = () => {
       <section className="px-6 max-w-[1400px] mx-auto py-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-[minmax(300px,auto)]">
           
-          {/* Main Hero Shot (Wide - Mockup 4) */}
+          {/* Main Hero Shot (Wide) */}
           <a href={LIVE_URL} target="_blank" rel="noreferrer" className="md:col-span-8 md:row-span-2 relative group overflow-hidden rounded-3xl border border-white/10 bg-[#111] cursor-pointer">
             <img 
-              src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9.png" 
+              src={IMG_MOCKUP_DESKTOP}
               alt="Desktop Dashboard View"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -85,10 +93,10 @@ const BinnsMediaCaseStudy = () => {
             </div>
           </a>
 
-          {/* Mobile Shot (Tall - Mockup 2) */}
+          {/* Mobile Shot (Tall) */}
           <div className="md:col-span-4 md:row-span-2 relative group overflow-hidden rounded-3xl border border-white/10 bg-[#111]">
             <img 
-              src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%202%20-%201x1.png" 
+              src={IMG_MOCKUP_MOBILE} 
               alt="Mobile Detail View"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -97,10 +105,10 @@ const BinnsMediaCaseStudy = () => {
             </div>
           </div>
 
-          {/* Typography/Detail Shot (Square - Mockup 1) */}
+          {/* Typography/Detail Shot (Square) */}
           <div className="md:col-span-4 relative group overflow-hidden rounded-3xl border border-white/10 bg-[#111] min-h-[300px]">
             <img 
-              src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1.png" 
+              src={IMG_MOCKUP_TYPOGRAPHY}
               alt="Typography Detail"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -110,21 +118,22 @@ const BinnsMediaCaseStudy = () => {
             </div>
           </div>
 
-          {/* Secondary Wide Shot (Mockup 3) */}
+          {/* Platform Overview Wide Shot (Replaces previous mock) */}
           <div className="md:col-span-8 relative group overflow-hidden rounded-3xl border border-white/10 bg-[#111] min-h-[300px]">
             <img 
-              src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%203%20-%2016x9.png" 
-              alt="Dark Mode Interface"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src={IMG_PLATFORM_OVERVIEW} 
+              alt="Full Platform Overview"
+              className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
             />
+            {/* CTA Overlay - No Prototype, Direct Link */}
             <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                <a 
                  href={LIVE_URL} 
                  target="_blank" 
                  rel="noreferrer"
-                 className="bg-[#A3D1FF] text-black px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:scale-105 transition-transform"
+                 className="bg-[#A3D1FF] text-black px-8 py-4 rounded-full font-bold flex items-center gap-3 hover:scale-105 transition-transform shadow-xl"
                >
-                 View Live Prototype <ExternalLink size={16} />
+                 Visit Live Platform <ExternalLink size={18} />
                </a>
             </div>
           </div>
@@ -206,7 +215,7 @@ const BinnsMediaCaseStudy = () => {
             
             <div className="flex items-center gap-4 pt-8 border-t border-white/10">
               <img 
-                src="https://ik.imagekit.io/qcvroy8xpd/67eb0c3957638498868399.jpeg" 
+                src={IMG_OMAR} 
                 alt="Omar Turner"
                 className="w-14 h-14 rounded-full border border-white/20 object-cover"
               />
@@ -230,7 +239,7 @@ const BinnsMediaCaseStudy = () => {
             
             <div className="flex items-center gap-4 pt-8 border-t border-white/10">
               <img 
-                src="https://res.cloudinary.com/dadgglcaq/image/upload/v1749337731/1732338426448_1_veqlnh.jpg" 
+                src={IMG_GUNEET}
                 alt="Guneet K. Singh"
                 className="w-14 h-14 rounded-full border border-white/20 object-cover"
               />
