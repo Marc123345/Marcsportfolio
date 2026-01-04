@@ -561,7 +561,7 @@ export default function Layout() {
       {/* Footer */}
       <footer className="bg-[#1b1b1b] border-t border-white/10">
         <div className="container-custom section-spacing-sm">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Brand Section */}
             <div>
               <div className="mb-6">
@@ -640,6 +640,14 @@ export default function Layout() {
                 </li>
                 <li>
                   <Link
+                    to="/services/design-systems"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Design Systems
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     to="/services/saas"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
@@ -648,10 +656,18 @@ export default function Layout() {
                 </li>
                 <li>
                   <Link
-                    to="/services/api"
+                    to="/services/ai-integration"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    API Development
+                    AI Integration
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/cybersecurity"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Cybersecurity
                   </Link>
                 </li>
                 <li>
@@ -670,12 +686,20 @@ export default function Layout() {
                     Mentorship
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    to="/services/fractional-cmo"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Marketing Partner
+                  </Link>
+                </li>
               </ul>
             </div>
             
-            {/* Portfolio */}
+            {/* Work */}
             <div>
-              <h3 className="text-white font-semibold mb-6 text-lg">Portfolio</h3>
+              <h3 className="text-white font-semibold mb-6 text-lg">Work</h3>
               <ul className="space-y-2">
                 <li>
                   <Link
@@ -709,104 +733,50 @@ export default function Layout() {
                     AutoMarginX
                   </Link>
                 </li>
+              </ul>
+            </div>
+            
+            {/* Resources */}
+            <div>
+              <h3 className="text-white font-semibold mb-6 text-lg">Resources</h3>
+              <ul className="space-y-2">
                 <li>
-                  <a
-                    href="https://dribbble.com/marcf9199/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22marcf9199%22&utm_content=%22About%20marcf9199%22&utm_medium=Social_Share"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-400 hover:text-[#EA4C89] transition-colors group"
-                    aria-label="View Marc Friedman's Dribbble profile"
+                  <Link
+                    to="/blog"
+                    className="text-gray-400 hover:text-white transition-colors"
                   >
-                    <Award className="w-5 h-5 group-hover:scale-110 transition-transform" aria-hidden="true" />
-                    <span>Dribbble</span>
-                  </a>
+                    Blog
+                  </Link>
                 </li>
                 <li>
                   <a
                     href="https://www.behance.net/marcfriedmanweb"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-400 hover:text-[#1769FF] transition-colors group"
-                    aria-label="View Marc Friedman's Behance profile"
+                    className="text-gray-400 hover:text-white transition-colors"
                   >
-                    <Palette className="w-5 h-5 group-hover:scale-110 transition-transform" aria-hidden="true" />
-                    <span>Behance</span>
+                    Behance
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://g.co/kgs/a8iqMhU"
+                    href="https://dribbble.com/marcf9199/about"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-400 hover:text-[#4285F4] transition-colors group"
-                    aria-label="Google Business Profile"
+                    className="text-gray-400 hover:text-white transition-colors"
                   >
-                    <Globe className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                    <span>5.0/5 Google Reviews</span>
+                    Dribbble
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href="https://www.designrush.com/agency/profile/marc-friedman-design-agency"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-400 hover:text-[#FF3D2E] transition-colors group"
-                    aria-label="Design Rush Profile"
-                  >
-                    <Palette className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                    <span>Design Rush</span>
-                  </a>
-                </li>
-                <li>
-                  <a 
+                  <a
                     href="https://clutch.co/profile/marc-friedman-design-agency"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-400 hover:text-[#FF6B35] transition-colors group"
-                    aria-label="Clutch Profile"
+                    className="text-gray-400 hover:text-white transition-colors"
                   >
-                    <Award className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                    <span>Clutch</span>
+                    Clutch Reviews
                   </a>
-                </li>
-              </ul>
-            </div>
-            
-            {/* Free Tools */}
-            <div>
-              <h3 className="text-white font-semibold mb-6 text-lg">Free Tools</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    to="/tools/website-analyzer"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Website Analyzer
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/tools/roi-calculator"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    ROI Calculator
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/tools/project-timeline"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Project Timeline
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/tools/ai-crawler-optimization"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    AI Optimization
-                  </Link>
                 </li>
               </ul>
             </div>
@@ -820,23 +790,7 @@ export default function Layout() {
                     to="/about"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    About Marc
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/blog"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Blog & Insights
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/press"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Press & Media
+                    About
                   </Link>
                 </li>
                 <li>
@@ -847,20 +801,15 @@ export default function Layout() {
                     Contact
                   </Link>
                 </li>
+                <li>
+                  <a
+                    href="mailto:marcf@marcfriedmanwebdesign.com"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Email Us
+                  </a>
+                </li>
               </ul>
-            </div>
-
-            {/* Get In Touch */}
-            <div>
-              <h3 className="text-white font-semibold mb-6 text-lg">Get In Touch</h3>
-              <div className="space-y-2">
-                <a 
-                  href="mailto:marcf@marcfriedmanwebdesign.com"
-                  className="text-gray-400 hover:text-white transition-colors block"
-                >
-                  marcf@marcfriedmanwebdesign.com
-                </a>
-              </div>
             </div>
           </div>
 

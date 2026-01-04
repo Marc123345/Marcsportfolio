@@ -547,29 +547,29 @@ export default function WebDevelopmentPage() {
                 <h4 className="text-white font-medium group-hover:text-[#A3D1FF] transition-colors">UI/UX Design</h4>
                 <p className="text-gray-400 text-sm mt-1">User-centered design</p>
               </Link>
-              <Link 
-                to="/services/saas" 
+              <Link
+                to="/services/saas"
                 className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A3D1FF] transition-colors group"
                 title="SaaS development services"
               >
                 <h4 className="text-white font-medium group-hover:text-[#A3D1FF] transition-colors">SaaS Development</h4>
                 <p className="text-gray-400 text-sm mt-1">Scalable solutions</p>
               </Link>
-              <Link 
-                to="/services/api" 
+              <Link
+                to="/services/ai-integration"
                 className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A3D1FF] transition-colors group"
-                title="API development services"
+                title="AI integration services"
               >
-                <h4 className="text-white font-medium group-hover:text-[#A3D1FF] transition-colors">API Development</h4>
-                <p className="text-gray-400 text-sm mt-1">Robust integrations</p>
+                <h4 className="text-white font-medium group-hover:text-[#A3D1FF] transition-colors">AI Integration</h4>
+                <p className="text-gray-400 text-sm mt-1">Smart automation</p>
               </Link>
-              <Link 
-                to="/tools/roi-calculator" 
+              <Link
+                to="/services/cybersecurity"
                 className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A3D1FF] transition-colors group"
-                title="Calculate website ROI"
+                title="Cybersecurity services"
               >
-                <h4 className="text-white font-medium group-hover:text-[#A3D1FF] transition-colors">ROI Calculator</h4>
-                <p className="text-gray-400 text-sm mt-1">Investment planning</p>
+                <h4 className="text-white font-medium group-hover:text-[#A3D1FF] transition-colors">Cybersecurity</h4>
+                <p className="text-gray-400 text-sm mt-1">Secure solutions</p>
               </Link>
             </div>
           </div>
