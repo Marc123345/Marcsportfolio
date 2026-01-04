@@ -134,9 +134,23 @@ const projects: Project[] = [
 
   // SaaS Projects
   {
+    title: "iLight",
+    description: "Modern lighting e-commerce platform with seamless user experience.",
+    image: "https://i.imgur.com/vXTIRo4.jpg",
+    liveUrl: "https://ilight.co.za",
+    caseStudyUrl: "/work/case-studies/ilight",
+    impact: [
+      "Modern shopping experience",
+      "Increased conversions",
+      "Excellent mobile performance"
+    ],
+    technologies: ["Next.js", "Shopify", "TypeScript"],
+    category: "saas"
+  },
+  {
     title: "MyTube Platform",
     description: "Video metadata management system for media and manufacturing.",
-    image: "https://i.imgur.com/QNHXpzT.jpeg",
+    image: "https://i.imgur.com/ywKLdPM.jpeg",
     caseStudyUrl: "/work/case-studies/mytube",
     impact: [
       "Faster metadata processing",
@@ -314,22 +328,22 @@ export default function WorkPage() {
     }
   }, []);
   
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
+  const filteredProjects = activeFilter === 'all'
+    ? projects
     : projects.filter(project => {
         switch (activeFilter) {
           case 'media':
             return ['Binns Media Group Platform', 'Videoleap', 'MyTube Platform'].includes(project.title);
           case 'saas':
             return project.category === 'saas';
-          case 'wellness':
-            return ['iLight Care'].includes(project.title);
+          case 'ecommerce':
+            return ['iLight'].includes(project.title);
           case 'automotive':
             return ['AutoMarginX', 'Fleet Management System'].includes(project.title);
           case 'professional':
-            return ['A Secure Annapolis Locksmith', 'Friedman & Cohen'].includes(project.title);
+            return ['A Secure Annapolis Locksmith', 'Friedman & Cohen', 'Tar & Chip Paving', 'Paving Leads'].includes(project.title);
           case 'social-impact':
-            return ['Untapped Africa', 'Give 2 Grow'].includes(project.title);
+            return ['Untapped Africa'].includes(project.title);
           case 'sports':
             return ['Chad Le Clos Swimming'].includes(project.title);
           default:
@@ -341,7 +355,7 @@ export default function WorkPage() {
     { id: 'all', label: 'All Projects' },
     { id: 'media', label: 'Media & Entertainment' },
     { id: 'saas', label: 'SaaS & Technology' },
-    { id: 'wellness', label: 'Health & Wellness' },
+    { id: 'ecommerce', label: 'E-commerce' },
     { id: 'automotive', label: 'Automotive' },
     { id: 'professional', label: 'Professional Services' },
     { id: 'social-impact', label: 'Social Impact' },
