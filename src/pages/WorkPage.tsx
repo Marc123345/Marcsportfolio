@@ -101,6 +101,20 @@ const projects: Project[] = [
     technologies: ["React", "Node.js", "PostgreSQL"],
     category: "website"
   },
+  {
+    title: "Tar & Chip Paving",
+    description: "Specialized surface solutions showcase for tar and chip paving applications.",
+    image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(6).png?updatedAt=1767539579420",
+    liveUrl: "https://pavingtarchip.com/",
+    caseStudyUrl: "/work/case-studies/tar-chip-paving",
+    impact: [
+      "Professional web presence",
+      "Mobile-optimized design",
+      "Industry-focused aesthetic"
+    ],
+    technologies: ["React", "Tailwind CSS", "Responsive Design"],
+    category: "website"
+  },
 
   // Landing Pages
   {
