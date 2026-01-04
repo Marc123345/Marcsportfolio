@@ -316,51 +316,57 @@ export default function HomePage() {
 
           {/* Featured Project - Untapped Africa */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group col-span-full mb-12"
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-[#1b1b1b] rounded-3xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group mb-12"
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             <div className="grid md:grid-cols-2 gap-8">
               <div className="aspect-[16/10] overflow-hidden relative">
                 <img
-                  src="https://ik.imagekit.io/qcvroy8xpd/Screenshot.png?updatedAt=1754018965491"
+                  src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(1).png?updatedAt=1767539579782"
                   alt="Untapped Africa"
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1b1b1b] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <div className="p-8 flex flex-col justify-center">
-                <span className="text-[#A3D1FF] text-sm bg-[#A3D1FF]/10 px-4 py-2 rounded-full inline-block w-fit mb-4">Featured Project</span>
-                <h3 className="text-3xl font-bold text-white mb-4">Untapped Africa</h3>
-                <p className="text-gray-400 mb-6">Revolutionizing water infrastructure solutions across Africa with innovative technology and sustainable practices. A comprehensive platform for project management, data visualization, and community engagement.</p>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-[#A3D1FF] mr-2" />
+              <div className="p-6 md:p-8">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[#A3D1FF] text-sm bg-[#A3D1FF]/10 px-4 py-2 rounded-full">Featured Project</span>
+                </div>
+                <h3 className="text-xl md:text-3xl font-bold text-white mb-3 md:mb-4">Untapped Africa</h3>
+                <p className="text-sm md:text-base text-gray-400 mb-4 md:mb-6">Revolutionizing water infrastructure solutions across Africa with innovative technology and sustainable practices. A comprehensive platform for project management, data visualization, and community engagement.</p>
+                <div className="space-y-3 md:space-y-4 mb-4 md:mb-6">
+                  <div className="flex items-center text-xs md:text-sm">
+                    <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 flex-shrink-0" />
                     <span className="text-gray-300">250% increase in engagement</span>
                   </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-[#A3D1FF] mr-2" />
+                  <div className="flex items-center text-xs md:text-sm">
+                    <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 flex-shrink-0" />
                     <span className="text-gray-300">8 countries impacted</span>
                   </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-[#A3D1FF] mr-2" />
+                  <div className="flex items-center text-xs md:text-sm">
+                    <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 flex-shrink-0" />
                     <span className="text-gray-300">500,000+ people served</span>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {["Next.js", "TypeScript", "Supabase", "Mapbox GL"].map((tech, i) => (
-                    <span key={i} className="px-3 py-1 bg-white/5 text-[#A3D1FF] rounded-full text-sm">{tech}</span>
+                <div className="flex flex-wrap gap-2 mb-4 md:mb-6">
+                  {["Next.js", "TypeScript", "Supabase", "Mapbox GL"].map((tech, index) => (
+                    <span
+                      key={index}
+                      className="px-2 md:px-3 py-1 bg-white/5 text-[#A3D1FF] rounded-full text-xs md:text-sm"
+                    >
+                      {tech}
+                    </span>
                   ))}
                 </div>
-                <div className="flex gap-3">
-                  <a href="https://untappedafrica.co.za" target="_blank" rel="noopener noreferrer" className="mr_btn mr_btn_outline inline-flex items-center gap-2">
+                <div className="flex flex-wrap gap-3">
+                  <a href="https://untappedafrica.co.za" target="_blank" rel="noopener noreferrer" className="mr_btn mr_btn_outline">
                     <span>View Live Website</span>
-                    <ArrowRight className="w-4 h-4" />
                   </a>
-                  <Link to="/work/case-studies/untapped-africa" className="mr_btn mr_btn_primary inline-flex items-center gap-2">
+                  <Link to="/work/case-studies/untapped-africa" className="mr_btn mr_btn_primary">
                     <span>Read Case Study</span>
-                    <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </div>
@@ -371,20 +377,44 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {[
               {
-                title: "Untapped Africa",
-                image: "https://ik.imagekit.io/qcvroy8xpd/Screenshot.png?updatedAt=1754018965491",
-                description: "Water infrastructure solutions across Africa",
-                tech: ["Next.js", "TypeScript", "Supabase", "Mapbox GL"],
-                liveUrl: "https://untappedafrica.co.za",
-                caseStudy: "/work/case-studies/untapped-africa"
-              },
-              {
                 title: "Binns Media Group Platform",
-                image: "https://i.imgur.com/IU0mmH7.jpeg",
+                image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9.png?updatedAt=1767539579710",
                 description: "A cutting-edge digital media platform",
                 tech: ["React 18", "TypeScript", "Supabase"],
                 liveUrl: "https://www.binnsmediagroup.com",
                 caseStudy: "/work/case-studies/binns-media"
+              },
+              {
+                title: "Paving Leads",
+                image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016_9.png?updatedAt=1767539579010",
+                description: "High-velocity SEO engine ranked #1 on Google",
+                tech: ["React", "Node.js", "SEO Optimization"],
+                liveUrl: "https://pavinglead.com/",
+                caseStudy: "/work/case-studies/paving-leads"
+              },
+              {
+                title: "A Secure Annapolis Locksmith",
+                image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(2).png?updatedAt=1767539579194",
+                description: "Professional locksmith website",
+                tech: ["React", "Node.js", "Tailwind CSS"],
+                liveUrl: "https://www.asecureannapolislocksmith.com",
+                caseStudy: "/work/case-studies/secure-annapolis"
+              },
+              {
+                title: "Friedman & Cohen",
+                image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(3).png?updatedAt=1767539579776",
+                description: "B2B procurement platform",
+                tech: ["React", "Node.js", "PostgreSQL"],
+                liveUrl: "https://b2b.fandc.co.za",
+                caseStudy: "/work/case-studies/friedman-cohen"
+              },
+              {
+                title: "iLight Care",
+                image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(5).png?updatedAt=1767539579818",
+                description: "AI-powered healthcare platform",
+                tech: ["React", "Node.js", "AI/ML"],
+                liveUrl: "https://www.ilight.care",
+                caseStudy: "/work/case-studies/ilight"
               },
               {
                 title: "Chad Le Clos Swimming",

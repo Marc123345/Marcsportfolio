@@ -57,6 +57,20 @@ const projects: Project[] = [
     technologies: ["React 18", "TypeScript", "Supabase", "GSAP"],
     category: "website"
   },
+  {
+    title: "Paving Leads",
+    description: "High-velocity SEO engine that dominated search results and ranked #1 on Google for competitive keywords.",
+    image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016_9.png?updatedAt=1767539579010",
+    liveUrl: "https://pavinglead.com/",
+    caseStudyUrl: "/work/case-studies/paving-leads",
+    impact: [
+      "#1 Google ranking",
+      "300% increase in organic traffic",
+      "Strong lead conversion"
+    ],
+    technologies: ["React", "Node.js", "SEO Optimization", "Analytics"],
+    category: "website"
+  },
 
   // Websites
   {
