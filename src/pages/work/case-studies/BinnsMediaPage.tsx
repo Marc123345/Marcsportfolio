@@ -3,7 +3,7 @@ import {
   ArrowRight, Star, Layers, Zap, 
   CheckCircle2, Globe, Layout, 
   MonitorPlay, Smartphone, Palette, 
-  ExternalLink, Quote 
+  ExternalLink, Quote, Rocket // <--- Added Rocket here
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
