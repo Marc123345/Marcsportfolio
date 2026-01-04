@@ -3,12 +3,13 @@ import {
   ArrowRight, Star, Layers, Zap, 
   CheckCircle2, Globe, Layout, 
   MonitorPlay, Smartphone, Palette, 
-  ExternalLink, Quote, Rocket // <--- Added Rocket here
+  ExternalLink, Quote, Rocket 
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const BinnsMediaCaseStudy = () => {
   const navigate = useNavigate();
+  const LIVE_URL = "https://www.binnsmediagroup.com/";
 
   return (
     <div className="bg-[#0a0a0a] text-white selection:bg-[#A3D1FF] selection:text-black min-h-screen font-sans">
@@ -17,12 +18,22 @@ const BinnsMediaCaseStudy = () => {
       <section className="relative pt-32 pb-16 px-6 max-w-7xl mx-auto border-b border-white/5">
         <div className="flex flex-col md:flex-row items-end justify-between gap-12 mb-16">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-[#A3D1FF]/10 border border-[#A3D1FF]/20 text-[#A3D1FF] text-xs font-bold tracking-widest uppercase mb-8">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A3D1FF] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#A3D1FF]"></span>
-              </span>
-              Package: Media Empire Launchpad
+            <div className="flex flex-wrap items-center gap-3 mb-8">
+              <div className="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-[#A3D1FF]/10 border border-[#A3D1FF]/20 text-[#A3D1FF] text-xs font-bold tracking-widest uppercase">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A3D1FF] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#A3D1FF]"></span>
+                </span>
+                Package: Media Empire Launchpad
+              </div>
+              <a 
+                href={LIVE_URL} 
+                target="_blank" 
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white text-xs font-bold tracking-widest uppercase transition-colors"
+              >
+                <Globe size={12} /> Visit Live Site
+              </a>
             </div>
             
             <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-6 leading-[0.9]">
@@ -63,16 +74,16 @@ const BinnsMediaCaseStudy = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-[minmax(300px,auto)]">
           
           {/* Main Hero Shot (Wide - Mockup 4) */}
-          <div className="md:col-span-8 md:row-span-2 relative group overflow-hidden rounded-3xl border border-white/10 bg-[#111]">
+          <a href={LIVE_URL} target="_blank" rel="noreferrer" className="md:col-span-8 md:row-span-2 relative group overflow-hidden rounded-3xl border border-white/10 bg-[#111] cursor-pointer">
             <img 
               src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9.png" 
               alt="Desktop Dashboard View"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute top-6 left-6 bg-black/50 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2">
-              <MonitorPlay size={14} className="text-[#A3D1FF]" /> Web Interface
+            <div className="absolute top-6 left-6 bg-black/50 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2 group-hover:bg-[#A3D1FF] group-hover:text-black transition-colors">
+              <MonitorPlay size={14} /> View Live Interface
             </div>
-          </div>
+          </a>
 
           {/* Mobile Shot (Tall - Mockup 2) */}
           <div className="md:col-span-4 md:row-span-2 relative group overflow-hidden rounded-3xl border border-white/10 bg-[#111]">
@@ -107,9 +118,14 @@ const BinnsMediaCaseStudy = () => {
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-               <div className="bg-[#A3D1FF] text-black px-6 py-3 rounded-full font-bold flex items-center gap-2">
+               <a 
+                 href={LIVE_URL} 
+                 target="_blank" 
+                 rel="noreferrer"
+                 className="bg-[#A3D1FF] text-black px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:scale-105 transition-transform"
+               >
                  View Live Prototype <ExternalLink size={16} />
-               </div>
+               </a>
             </div>
           </div>
         </div>
@@ -171,61 +187,57 @@ const BinnsMediaCaseStudy = () => {
         </div>
       </section>
 
-      {/* 7. & 8. RESULTS & TESTIMONIAL (Clutch Data) */}
-      <section className="py-32 px-6 max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      {/* 7. & 8. RESULTS & TESTIMONIALS (Dual) */}
+      <section className="py-32 px-6 max-w-7xl mx-auto">
+        <h2 className="text-3xl font-bold mb-12 text-center">Client Feedback</h2>
+        
+        <div className="grid md:grid-cols-2 gap-8">
           
-          {/* Testimonial Card */}
-          <div className="relative">
-            <div className="absolute -top-10 -left-10 text-white/5">
-              <Quote size={120} />
-            </div>
-            <div className="relative z-10">
-              <blockquote className="text-2xl md:text-3xl font-medium leading-tight mb-8">
-                "Marc Friedman Design Agency has the skills and talents to bring my ideas to life."
+          {/* Card 1: Omar Turner */}
+          <div className="bg-[#161616] p-10 rounded-3xl border border-white/5 flex flex-col justify-between">
+            <div className="mb-8">
+              <div className="flex gap-1 mb-6">
+                {[1,2,3,4,5].map(n => <Star key={n} size={20} className="fill-[#A3D1FF] text-[#A3D1FF]" />)}
+              </div>
+              <blockquote className="text-xl font-medium leading-relaxed text-gray-200">
+                "Marc executed the vision perfectly. He’s big on communication and ensures the client is completely satisfied at each step. He didn't just build a site; he built our future platform."
               </blockquote>
-              <div className="flex items-center gap-4">
-                <img 
-                  src="https://ik.imagekit.io/qcvroy8xpd/67eb0c3957638498868399.jpeg" 
-                  alt="Omar Turner"
-                  className="w-16 h-16 rounded-full border border-white/20 object-cover"
-                />
-                <div>
-                  <div className="font-bold text-white">Omar "Ace" Turner</div>
-                  <div className="text-[#A3D1FF] text-sm uppercase tracking-wider font-bold">CEO, Binns Media Group</div>
-                </div>
+            </div>
+            
+            <div className="flex items-center gap-4 pt-8 border-t border-white/10">
+              <img 
+                src="https://ik.imagekit.io/qcvroy8xpd/67eb0c3957638498868399.jpeg" 
+                alt="Omar Turner"
+                className="w-14 h-14 rounded-full border border-white/20 object-cover"
+              />
+              <div>
+                <div className="font-bold text-white">Omar "Ace" Turner</div>
+                <div className="text-[#A3D1FF] text-xs uppercase tracking-wider font-bold">CEO, Binns Media Group</div>
               </div>
             </div>
           </div>
 
-          {/* Clutch Ratings */}
-          <div className="bg-[#161616] p-10 rounded-3xl border border-white/5">
-            <div className="flex items-center justify-between mb-8 pb-8 border-b border-white/10">
-              <div>
-                <h3 className="text-xl font-bold">Project Scorecard</h3>
-                <p className="text-gray-500 text-sm">Verified Review • Feb 2025</p>
-              </div>
-              <div className="flex gap-1">
+          {/* Card 2: Guneet K. Singh */}
+          <div className="bg-[#161616] p-10 rounded-3xl border border-white/5 flex flex-col justify-between">
+            <div className="mb-8">
+              <div className="flex gap-1 mb-6">
                 {[1,2,3,4,5].map(n => <Star key={n} size={20} className="fill-[#A3D1FF] text-[#A3D1FF]" />)}
               </div>
+              <blockquote className="text-xl font-medium leading-relaxed text-gray-200">
+                "My team and I loved working with Marc!! His professionalism, patience and openness to our feedback made the entire process a seamless collaboration. We’ll be sure to bring future projects to him."
+              </blockquote>
             </div>
             
-            <div className="space-y-6">
-              {[
-                { label: "Quality of Deliverables", score: "5.0" },
-                { label: "Schedule & Deadlines", score: "5.0" },
-                { label: "Cost & Value", score: "5.0" },
-                { label: "Willing to Refer", score: "5.0" },
-              ].map((stat, i) => (
-                <div key={i} className="flex justify-between items-center group">
-                  <span className="text-gray-400 group-hover:text-white transition-colors">{stat.label}</span>
-                  <span className="font-mono font-bold text-[#A3D1FF]">{stat.score}</span>
-                </div>
-              ))}
-            </div>
-            
-            <div className="mt-8 pt-8 border-t border-white/10 text-sm text-gray-500 italic">
-              "They delivered on time and communicated effectively through virtual meetings. A great culture fit."
+            <div className="flex items-center gap-4 pt-8 border-t border-white/10">
+              <img 
+                src="https://res.cloudinary.com/dadgglcaq/image/upload/v1749337731/1732338426448_1_veqlnh.jpg" 
+                alt="Guneet K. Singh"
+                className="w-14 h-14 rounded-full border border-white/20 object-cover"
+              />
+              <div>
+                <div className="font-bold text-white">Guneet K. Singh</div>
+                <div className="text-gray-500 text-xs font-bold">TV Development & Production</div>
+              </div>
             </div>
           </div>
 
