@@ -1,261 +1,348 @@
-import React from 'react';
-import { ArrowRight, Star, Timer, Users, Target, Zap, CheckCircle2, ArrowUpRight, Droplets, Globe, Heart } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { 
+  ArrowRight, Star, Heart, Globe, Droplets, 
+  CheckCircle2, ArrowUpRight, Award, MapPin, 
+  Zap, Layout, Smartphone, MousePointer2, 
+  Feather, Quote, Activity
+} from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-function FeatureCard({ icon: Icon, title, description }: {
-  icon: any;
-  title: string;
-  description: string;
-}) {
-  return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group">
-      <div className="relative mb-6">
-        <div className="absolute inset-0 bg-[#A3D1FF]/20 blur-xl rounded-full"></div>
-        <div className="bg-[#A3D1FF]/10 p-4 rounded-xl relative">
-          <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
-        </div>
-      </div>
-      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
-      <p className="text-gray-400">{description}</p>
-    </div>
-  );
-}
+// --- ASSET CONFIGURATION ---
+const ASSETS = {
+  // Provided High-Res Mockups
+  HERO_DESKTOP: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9(1).png?updatedAt=1767539578544",
+  MOBILE_VIEW: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%202%20-%201x1(1).png?updatedAt=1767539578180",
+  DETAIL_VIEW: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(1).png?updatedAt=1767539579782",
+  DARK_MODE: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%203%20-%2016x9(1).png?updatedAt=1767539580388",
+  
+  // Context Images
+  AWARD_BADGE: "https://ik.imagekit.io/qcvroy8xpd/Screenshot.png?updatedAt=1754018965491", // Using previous screenshot as context bg
+  CLIENT_PHOTO: "https://ik.imagekit.io/qcvroy8xpd/1682479506906.jpeg?updatedAt=1754019693073"
+};
 
-function StatCard({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center">
-      <div className="text-4xl font-bold text-[#A3D1FF] mb-2">{value}</div>
-      <div className="text-gray-400">{label}</div>
-    </div>
-  );
-}
+const LIVE_URL = "https://untappedafrica.co.za";
 
-function UntappedAfricaPage() {
+export default function UntappedAfricaCaseStudy() {
   const navigate = useNavigate();
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalScroll = document.documentElement.scrollTop;
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scroll = `${totalScroll / windowHeight}`;
+      setScrollProgress(Number(scroll));
+    }
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <>
-      {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center justify-center bg-black overflow-hidden">
-        {/* Hero Image */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://ik.imagekit.io/qcvroy8xpd/Screenshot.png?updatedAt=1754018965491"
-            alt="Untapped Africa water infrastructure platform - comprehensive dashboard showing project management and data visualization for African water solutions"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/70"></div>
-        </div>
+    <div className="bg-[#050505] text-white selection:bg-[#FFD700] selection:text-black min-h-screen font-sans overflow-x-hidden">
+      
+      {/* Scroll Progress - Gold for this Client */}
+      <div className="fixed top-0 left-0 h-1 bg-[#FFD700] z-50 transition-all duration-100 ease-out shadow-[0_0_10px_#FFD700]" style={{ width: `${scrollProgress * 100}%` }} />
 
-        {/* Content */}
-        <div className="container-custom relative z-10">
+      {/* --- 1. HERO SECTION --- */}
+      <section className="relative pt-32 pb-20 px-6 max-w-7xl mx-auto border-b border-white/5">
+        
+        {/* Ambient Gold Glow */}
+        <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-[#FFD700] opacity-[0.05] blur-[150px] rounded-full pointer-events-none mix-blend-screen" />
+
+        <div className="flex flex-col md:flex-row items-end justify-between gap-12 mb-16 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-              Untapped Africa
+            {/* Meta Badge */}
+            <div className="flex flex-wrap items-center gap-3 mb-8">
+              <div className="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-[#FFD700]/10 border border-[#FFD700]/20 text-[#FFD700] text-xs font-bold tracking-widest uppercase">
+                <Award size={12} /> DesignRush Winner 2025
+              </div>
+              <div className="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-white/5 border border-white/10 text-gray-400 text-xs font-bold tracking-widest uppercase">
+                Package: The Impact Story Site
+              </div>
+            </div>
+            
+            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-6 leading-[0.9]">
+              Untapped <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-yellow-700 italic">Africa.</span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8">
-              Revolutionizing water infrastructure solutions across Africa with innovative technology and sustainable practices.
+            
+            <p className="text-xl md:text-2xl text-gray-400 max-w-2xl leading-relaxed border-l-4 border-[#FFD700] pl-8">
+              A digital experience that feels as grounded and powerful as the mission it represents. 
+              <br/><span className="text-white font-bold">Moving hearts to open wallets.</span>
             </p>
-            <div className="flex gap-4">
+
+            <div className="flex gap-4 mt-10">
               <a 
-                href="https://untappedafrica.co.za"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mr_btn mr_btn_primary group relative overflow-hidden"
+                href={LIVE_URL} 
+                target="_blank" 
+                rel="noreferrer"
+                className="group px-8 py-4 bg-white text-black font-bold rounded-full flex items-center gap-2 hover:bg-[#FFD700] transition-all"
               >
-                <span className="relative z-10">View Live Website</span>
-                <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-                <ArrowUpRight className="ml-2 w-5 h-5 relative z-10" />
+                Visit Live Site <ArrowUpRight size={18} className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
           </div>
+
+          {/* Quick Stats - DesignRush Data */}
+          <div className="grid grid-cols-2 gap-x-12 gap-y-6 text-sm font-mono border-l border-white/10 pl-8">
+            <div>
+              <p className="text-gray-500 mb-1">Impact</p>
+              <p className="font-bold">500,000+ Served</p>
+            </div>
+            <div>
+              <p className="text-gray-500 mb-1">Growth</p>
+              <p className="font-bold">12 New Partners</p>
+            </div>
+            <div>
+              <p className="text-gray-500 mb-1">Award</p>
+              <p className="font-bold">Best Web Design</p>
+            </div>
+            <div>
+              <p className="text-gray-500 mb-1">Package</p>
+              <p className="font-bold text-[#FFD700]">Impact Story Site</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Project Overview */}
-      <section id="case-study-content" className="py-16 px-4 sm:px-6 lg:px-8 bg-black">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
+      {/* --- 2. VISUAL SHOWCASE (BENTO GRID) --- */}
+      <section className="px-6 max-w-[1400px] mx-auto py-12">
+        <h2 className="text-sm font-bold text-[#FFD700] uppercase tracking-widest mb-8">Award-Winning Interface</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-[minmax(300px,auto)]">
+          
+          {/* Main Hero Shot (Wide) */}
+          <div className="md:col-span-8 md:row-span-2 relative group overflow-hidden rounded-3xl border border-white/10 bg-[#111]">
+            <img 
+              src={ASSETS.HERO_DESKTOP} 
+              alt="Untapped Africa Homepage"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute top-6 left-6 bg-black/60 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2 text-[#FFD700]">
+              <Globe size={14} /> Mission Control
+            </div>
+          </div>
+
+          {/* Mobile Shot (Tall) */}
+          <div className="md:col-span-4 md:row-span-2 relative group overflow-hidden rounded-3xl border border-white/10 bg-[#111]">
+            <img 
+              src={ASSETS.MOBILE_VIEW} 
+              alt="Mobile Donor Experience"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute top-6 left-6 bg-black/60 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2 text-[#FFD700]">
+              <Smartphone size={14} /> Mobile Impact
+            </div>
+          </div>
+
+          {/* Typography/Detail Shot (Square) */}
+          <div className="md:col-span-4 relative group overflow-hidden rounded-3xl border border-white/10 bg-[#111] min-h-[300px]">
+            <img 
+              src={ASSETS.DETAIL_VIEW} 
+              alt="Typography and Palette"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute bottom-6 left-6">
+              <h3 className="text-xl font-bold mb-1">Black & Gold</h3>
+              <p className="text-gray-400 text-sm">Rich Contrast Palette</p>
+            </div>
+          </div>
+
+          {/* Secondary Wide Shot */}
+          <div className="md:col-span-8 relative group overflow-hidden rounded-3xl border border-white/10 bg-[#111] min-h-[300px]">
+            <img 
+              src={ASSETS.DARK_MODE} 
+              alt="Impact Dashboard"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+               <div className="bg-[#FFD700] text-black px-6 py-3 rounded-full font-bold flex items-center gap-2">
+                 View Impact Map <ArrowRight size={16} />
+               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- 3. THE "IMPACT STORY" PACKAGE --- */}
+      <section className="py-24 bg-[#0a0a0a] border-y border-white/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">Project Overview</h2>
-              <p className="text-gray-400 mb-6">
-                Untapped Africa is revolutionizing water infrastructure solutions across Africa with innovative technology and sustainable practices. This comprehensive platform manages project development, data visualization, and community engagement to address one of Africa's most critical challenges.
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 text-white text-xs font-bold uppercase mb-6">
+                <Heart size={14} className="text-[#FFD700]" /> For NGOs & Non-Profits
+              </div>
+              <h2 className="text-4xl font-bold mb-6">The "Impact Story" Site</h2>
+              <p className="text-gray-400 text-lg leading-relaxed mb-6">
+                Untapped Africa had a powerful mission, but their website wasn't doing it justice. It was costing them donors and global attention.
               </p>
-              <div className="flex flex-wrap gap-3">
-                {[
-                  'Next.js',
-                  'TypeScript',
-                  'Supabase',
-                  'Mapbox GL',
-                  'Water Infrastructure',
-                  'Social Impact'
-                ].map((tag) => (
-                  <span key={tag} className="px-4 py-2 bg-white/5 rounded-full text-sm text-[#A3D1FF]">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="space-y-6">
-              <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10">
-                <h3 className="text-xl font-semibold text-white mb-4">Impact Metrics</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
-                    250% increase in engagement
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
-                    8 countries impacted
-                  </li>
-                  <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
-                    500,000+ people served
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Challenge & Solution */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6">The Challenge</h2>
-              <p className="text-gray-400 mb-6">
-                Africa faces a critical water crisis affecting millions of people:
+              <p className="text-gray-400 text-lg leading-relaxed mb-8">
+                We deployed the <span className="text-white font-bold">Impact Story Package</span>—a mission-first storytelling engine designed to build trust, inspire belief, and drive donation action.
               </p>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <Star className="w-5 h-5 text-[#FFD700] mt-1 mr-3" />
-                  <p className="text-gray-300">400 million people lack access to clean water</p>
-                </li>
-                <li className="flex items-start">
-                  <Star className="w-5 h-5 text-[#FFD700] mt-1 mr-3" />
-                  <p className="text-gray-300">Fragmented infrastructure development</p>
-                </li>
-                <li className="flex items-start">
-                  <Star className="w-5 h-5 text-[#FFD700] mt-1 mr-3" />
-                  <p className="text-gray-300">Limited data visibility and project tracking</p>
-                </li>
-                <li className="flex items-start">
-                  <Star className="w-5 h-5 text-[#FFD700] mt-1 mr-3" />
-                  <p className="text-gray-300">Need for sustainable, community-driven solutions</p>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6">The Solution</h2>
-              <div className="grid gap-6">
-                <FeatureCard
-                  icon={Droplets}
-                  title="Water Infrastructure Platform"
-                  description="Comprehensive platform for managing water projects from conception to completion."
-                />
-                <FeatureCard
-                  icon={Globe}
-                  title="Data Visualization"
-                  description="Interactive maps and dashboards showing project impact across Africa."
-                />
-                <FeatureCard
-                  icon={Heart}
-                  title="Community Engagement"
-                  description="Tools for community involvement and stakeholder communication."
-                />
+
+              <div className="space-y-4">
+                 {[
+                   "Emotional, story-driven layout w/ custom visuals",
+                   "Water-inspired GSAP animations",
+                   "Impact-focused hero section + mission content",
+                   "Donation integration (Stripe/PayPal)"
+                 ].map((feature, i) => (
+                   <div key={i} className="flex items-center gap-3">
+                     <CheckCircle2 className="text-[#FFD700] w-5 h-5" />
+                     <span className="text-gray-300">{feature}</span>
+                   </div>
+                 ))}
               </div>
             </div>
+
+            {/* DesignRush Review Card */}
+            <div className="bg-[#111] border border-white/10 rounded-3xl p-8 relative overflow-hidden group hover:border-[#FFD700]/30 transition-colors">
+               <div className="absolute top-0 right-0 bg-[#FFD700] text-black text-xs font-bold px-4 py-2 rounded-bl-xl">
+                 DESIGNRUSH REVIEW
+               </div>
+               
+               <div className="mb-6">
+                 <h3 className="text-2xl font-bold text-white mb-2">"Beautifully Human"</h3>
+                 <div className="flex gap-1">
+                   {[1,2,3,4,5].map(i => <Star key={i} size={16} className="fill-[#FFD700] text-[#FFD700]" />)}
+                 </div>
+               </div>
+
+               <blockquote className="text-gray-400 italic leading-relaxed mb-6 border-l-2 border-[#FFD700]/50 pl-4">
+                 "Marc Friedman Design Agency created more than a website... It built a digital experience that feels as grounded and powerful as the mission it represents. The deep black backdrop adds weight, while glowing gold typography delivers a message that hits home: Water is Life."
+               </blockquote>
+
+               <div className="flex items-center justify-between mt-8 pt-8 border-t border-white/5">
+                 <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">
+                   Lensey Etcubañas <br/> DesignRush Editor
+                 </div>
+                 <Award className="text-[#FFD700] w-8 h-8" />
+               </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* Key Features */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Platform Features</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <FeatureCard
-              icon={Target}
-              title="Project Management"
-              description="End-to-end project tracking from planning to implementation and maintenance."
-            />
-            <FeatureCard
-              icon={Users}
-              title="Stakeholder Portal"
-              description="Dedicated portals for communities, investors, and implementation partners."
-            />
-            <FeatureCard
-              icon={Zap}
-              title="Real-time Monitoring"
-              description="Live data feeds and monitoring systems for ongoing project assessment."
-            />
+      {/* --- 4. CHALLENGE & EXECUTION --- */}
+      <section className="py-24 px-6 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-3 gap-12">
+          
+          <div className="lg:col-span-1">
+            <h2 className="text-sm font-bold text-[#FFD700] uppercase tracking-widest mb-6">The Challenge</h2>
+            <h3 className="text-3xl font-bold mb-6">400 Million People.</h3>
+            <p className="text-gray-400 mb-8">
+              That's how many people lack access to clean water. Untapped Africa needed to communicate the scale of this crisis without overwhelming the user.
+            </p>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                 <div className="mt-1 w-1.5 h-1.5 rounded-full bg-[#FFD700]"></div>
+                 <p className="text-sm text-gray-300">Fragmented infrastructure data</p>
+              </li>
+              <li className="flex items-start gap-3">
+                 <div className="mt-1 w-1.5 h-1.5 rounded-full bg-[#FFD700]"></div>
+                 <p className="text-sm text-gray-300">40% drop-off rate on old site</p>
+              </li>
+              <li className="flex items-start gap-3">
+                 <div className="mt-1 w-1.5 h-1.5 rounded-full bg-[#FFD700]"></div>
+                 <p className="text-sm text-gray-300">Disconnect between donors & impact</p>
+              </li>
+            </ul>
           </div>
+
+          <div className="lg:col-span-2 grid sm:grid-cols-2 gap-6">
+             {[
+               {
+                 icon: Droplets,
+                 title: "Water-Inspired Motion",
+                 desc: "We implemented custom hover effects that resemble water rippling across the screen. It's a small touch, but it makes the site feel alive."
+               },
+               {
+                 icon: Layout,
+                 title: "Modular Layouts",
+                 desc: "Clear card layouts make it easy to move between sections, whether learning about the mission or exploring infrastructure solutions."
+               },
+               {
+                 icon: Feather,
+                 title: "Emotive Photography",
+                 desc: "We balanced the dark UI with warm, real-world photography to ensure the platform remained human-centric."
+               },
+               {
+                 icon: Activity,
+                 title: "Impact Data Viz",
+                 desc: "Interactive maps and live data counters show exactly where donations are going, building radical transparency."
+               }
+             ].map((card, i) => (
+               <div key={i} className="bg-[#111] p-8 rounded-2xl border border-white/5 hover:border-[#FFD700]/30 transition-colors">
+                 <card.icon className="text-[#FFD700] w-8 h-8 mb-6" />
+                 <h4 className="text-xl font-bold text-white mb-3">{card.title}</h4>
+                 <p className="text-gray-400 text-sm leading-relaxed">{card.desc}</p>
+               </div>
+             ))}
+          </div>
+
         </div>
       </section>
 
-      {/* Results */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12">Results & Impact</h2>
-          <div className="grid md:grid-cols-4 gap-8">
-            <StatCard
-              value="250%"
-              label="Engagement Increase"
-            />
-            <StatCard
-              value="8"
-              label="Countries Impacted"
-            />
-            <StatCard
-              value="500K+"
-              label="People Served"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Client Testimonial */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-[#2d3035] p-8 rounded-xl border-l-4 border-[#A3D1FF]">
-            <div className="flex items-center gap-8">
-              <img 
-                src="https://ik.imagekit.io/qcvroy8xpd/1682479506906.jpeg?updatedAt=1754019693073"
-                alt="Gabriel Sher, CEO of Untapped Africa - client testimonial photo"
-                className="w-24 h-24 rounded-full object-cover"
-              />
+      {/* --- 5. RESULTS & TESTIMONIAL --- */}
+      <section className="py-24 bg-[#111] border-y border-white/5">
+         <div className="max-w-7xl mx-auto px-6">
+            <h2 className="text-3xl font-bold text-center mb-16">Real World Impact</h2>
+            
+            <div className="grid md:grid-cols-3 gap-8 mb-20 text-center">
               <div>
-                <p className="text-xl text-gray-300 italic mb-4">
-                  "Working with Marc on the Untapped Africa website was a fantastic experience. He understood our vision and delivered a stunning, user-friendly site that exceeded our expectations. His professionalism, creativity, and attention to detail made the process smooth and enjoyable."
-                </p>
-                <p className="text-white font-bold">— Gabriel Sher, CEO, Untapped Africa</p>
+                <div className="text-5xl font-bold text-white mb-2">500k+</div>
+                <div className="text-[#FFD700] text-xs font-bold uppercase tracking-widest">People Served</div>
+              </div>
+              <div>
+                <div className="text-5xl font-bold text-white mb-2">12</div>
+                <div className="text-[#FFD700] text-xs font-bold uppercase tracking-widest">New Partnerships</div>
+              </div>
+              <div>
+                <div className="text-5xl font-bold text-white mb-2">8</div>
+                <div className="text-[#FFD700] text-xs font-bold uppercase tracking-widest">Countries Impacted</div>
               </div>
             </div>
-          </div>
-        </div>
+
+            <div className="bg-[#1b1b1b] rounded-3xl p-10 max-w-4xl mx-auto border border-white/10 relative">
+               <Quote className="absolute top-10 left-10 text-white/5 w-20 h-20" />
+               <div className="relative z-10 flex flex-col md:flex-row gap-10 items-center">
+                 <img 
+                   src={ASSETS.CLIENT_PHOTO} 
+                   alt="Gabriel Sher" 
+                   className="w-32 h-32 rounded-full border-4 border-[#FFD700]/20 object-cover"
+                 />
+                 <div>
+                   <blockquote className="text-xl md:text-2xl font-medium text-white mb-6 leading-relaxed">
+                     "Working with Marc was a fantastic experience. He delivered a stunning, user-friendly site that exceeded our expectations. His professionalism and creativity made the process smooth."
+                   </blockquote>
+                   <div>
+                     <div className="font-bold text-white text-lg">Gabriel Sher</div>
+                     <div className="text-[#FFD700] text-sm uppercase tracking-widest font-bold">CEO, Untapped Africa</div>
+                   </div>
+                 </div>
+               </div>
+            </div>
+         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Create Social Impact?</h2>
-          <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-            Let's build a platform that drives meaningful change and creates lasting impact for communities.
-          </p>
-          <button
-            onClick={() => navigate('/contact')}
-            className="mr_btn mr_btn_primary group relative overflow-hidden"
-          >
-            <span className="relative z-10">Start Your Project</span>
-            <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-            <ArrowRight className="ml-2 w-5 h-5 relative z-10 group-hover:rotate-45 transition-transform duration-300" />
-          </button>
-        </div>
+      {/* --- 6. CTA --- */}
+      <section className="py-20 px-6 text-center">
+        <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to create social impact?</h2>
+        <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
+          Let's build a platform that drives meaningful change. <br/>
+          The <span className="text-white font-bold">Impact Story Package</span> is ready for deployment.
+        </p>
+        <button 
+          onClick={() => navigate('/contact')}
+          className="group relative inline-flex items-center gap-3 px-10 py-5 bg-white text-black font-bold rounded-full hover:bg-[#FFD700] transition-all hover:pr-14"
+        >
+          Start Your Project
+          <ArrowRight className="absolute right-6 opacity-0 group-hover:opacity-100 transition-all" />
+        </button>
       </section>
-    </>
+
+    </div>
   );
 }
-
-export default UntappedAfricaPage;
