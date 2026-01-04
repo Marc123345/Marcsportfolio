@@ -99,7 +99,7 @@ const projects: Project[] = [
       "Multiple property partners"
     ],
     technologies: ["React", "Node.js", "PostgreSQL"],
-    category: "website"
+    category: "saas"
   },
   {
     title: "Tar & Chip Paving",
@@ -136,7 +136,7 @@ const projects: Project[] = [
   {
     title: "iLight",
     description: "Modern lighting e-commerce platform with seamless user experience.",
-    image: "https://i.imgur.com/vXTIRo4.jpg",
+    image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9(4).png?updatedAt=1767539579060",
     liveUrl: "https://ilight.co.za",
     caseStudyUrl: "/work/case-studies/ilight",
     impact: [
@@ -150,7 +150,7 @@ const projects: Project[] = [
   {
     title: "MyTube Platform",
     description: "Video metadata management system for media and manufacturing.",
-    image: "https://i.imgur.com/ywKLdPM.jpeg",
+    image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9(1).png?updatedAt=1767539579068",
     caseStudyUrl: "/work/case-studies/mytube",
     impact: [
       "Faster metadata processing",
@@ -337,11 +337,11 @@ export default function WorkPage() {
           case 'saas':
             return project.category === 'saas';
           case 'ecommerce':
-            return ['iLight'].includes(project.title);
+            return ['Friedman & Cohen'].includes(project.title);
           case 'automotive':
             return ['AutoMarginX', 'Fleet Management System'].includes(project.title);
           case 'professional':
-            return ['A Secure Annapolis Locksmith', 'Friedman & Cohen', 'Tar & Chip Paving', 'Paving Leads'].includes(project.title);
+            return ['A Secure Annapolis Locksmith', 'Tar & Chip Paving', 'Paving Leads'].includes(project.title);
           case 'social-impact':
             return ['Untapped Africa'].includes(project.title);
           case 'sports':
