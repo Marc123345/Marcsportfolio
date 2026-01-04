@@ -26,6 +26,16 @@ const projects: Project[] = [
     size: 'large'
   },
   {
+    id: 'paving-leads',
+    title: 'Paving Leads',
+    description: 'SEO-first lead generation site ranked #1 on Google.',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016_9.png?updatedAt=1767539579010',
+    caseStudyUrl: '/work/case-studies/paving-leads',
+    liveUrl: 'https://pavinglead.com/',
+    category: 'website',
+    size: 'large'
+  },
+  {
     id: 'marginx',
     title: 'MarginX Dashboard',
     description: 'Dealership management platform with market data analytics.',

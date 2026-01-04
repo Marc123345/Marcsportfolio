@@ -22,6 +22,14 @@ const projects: Project[] = [
     liveUrl: 'https://www.binnsmediagroup.com'
   },
   {
+    id: 'paving-leads',
+    title: 'Paving Leads',
+    description: 'High-velocity SEO engine that dominated search results and ranked #1 on Google.',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016_9.png?updatedAt=1767539579010',
+    caseStudyUrl: '/work/case-studies/paving-leads',
+    liveUrl: 'https://pavinglead.com/'
+  },
+  {
     id: 'untapped-africa',
     title: 'Untapped Africa',
     description: 'Revolutionizing water infrastructure solutions across Africa.',
