@@ -35,11 +35,6 @@ const navigationLinks: NavigationItem[] = [
             label: 'Design Systems',
             to: '/services/design-systems',
             description: 'Scalable design frameworks'
-          },
-          {
-            label: 'Brand Design',
-            to: '/services/brand-design',
-            description: 'Complete brand identity solutions'
           }
         ]
       },
@@ -55,11 +50,6 @@ const navigationLinks: NavigationItem[] = [
             label: 'SaaS Development',
             to: '/services/saas',
             description: 'End-to-end SaaS solutions'
-          },
-          {
-            label: 'API Development',
-            to: '/services/api',
-            description: 'Robust APIs and integrations'
           }
         ]
       },
@@ -95,118 +85,11 @@ const navigationLinks: NavigationItem[] = [
       }
     ]
   },
-  { 
-    label: 'Case Studies',
-    children: [
-      {
-        title: 'Featured Projects',
-        items: [
-          { 
-            label: 'Binns Media Group', 
-            to: '/work/case-studies/binns-media',
-            description: 'Digital media platform transformation'
-          },
-          { 
-            label: 'Untapped Africa', 
-            to: '/work/case-studies/untapped-africa',
-            description: 'Water infrastructure solutions platform'
-          },
-          { 
-            label: 'iLight Care', 
-            to: '/work/case-studies/ilight',
-            description: 'Healthcare technology platform'
-          }
-        ]
-      },
-      {
-        title: 'All Case Studies',
-        items: [
-          { 
-            label: 'View All Projects', 
-            to: '/work',
-            description: 'Complete portfolio and case studies'
-          }
-        ]
-      }
-    ]
-  },
-  { 
-    label: 'Work By Industry',
-    children: [
-      {
-        title: 'Industries',
-        items: [
-          { 
-            label: 'Media & Entertainment', 
-            to: '/work?filter=media',
-            description: 'Content platforms and media websites'
-          },
-          { 
-            label: 'SaaS & Technology', 
-            to: '/work?filter=saas',
-            description: 'Software platforms and tech solutions'
-          },
-          { 
-            label: 'Health & Wellness', 
-            to: '/work?filter=wellness',
-            description: 'Healthcare technology platforms'
-          },
-          { 
-            label: 'Automotive', 
-            to: '/work?filter=automotive',
-            description: 'Dealership and automotive solutions'
-          },
-          { 
-            label: 'Professional Services', 
-            to: '/work?filter=professional',
-            description: 'B2B, legal, and professional services'
-          },
-          { 
-            label: 'Social Impact', 
-            to: '/work?filter=social-impact',
-            description: 'Non-profit and social good platforms'
-          },
-          { 
-            label: 'Sports & Entertainment', 
-            to: '/work?filter=sports',
-            description: 'Sports coaching and entertainment'
-          }
-        ]
-      }
-    ]
+  {
+    label: 'Work',
+    to: '/work'
   },
   { label: 'Blog', to: '/blog' },
-  { label: 'Press', to: '/press' },
-  { 
-    label: 'Tools',
-    children: [
-      {
-        title: 'Free Tools',
-        items: [
-          { 
-            label: 'Website Analyzer', 
-            to: '/tools/website-analyzer',
-            description: 'Get an instant analysis of your website'
-          },
-          { 
-            label: 'ROI Calculator', 
-            to: '/tools/roi-calculator',
-            description: 'Calculate your website investment returns'
-          },
-          { 
-            label: 'Project Timeline', 
-            to: '/tools/project-timeline',
-            description: 'See our transparent development process'
-          },
-          { 
-            label: 'AI Optimization', 
-            to: '/tools/ai-crawler-optimization',
-            description: 'Optimize your site for AI crawlers'
-          }
-        ]
-      },
-    ]
-  },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact', badge: 'Free Consultation' }
 ];
@@ -391,9 +274,85 @@ export default function Layout() {
               </MagneticButton>
             </div>
 
-            {/* Menu Button */}
-            <div className="flex items-center gap-4">
-              <button 
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center gap-8" aria-label="Main Navigation">
+              {navigationLinks.map((item) => (
+                <div key={item.label} className="relative">
+                  {item.children ? (
+                    <div
+                      className="relative"
+                      onMouseEnter={() => setExpandedDesktopSection(item.label)}
+                      onMouseLeave={() => setExpandedDesktopSection(null)}
+                    >
+                      <button
+                        className="text-white hover:text-[#A3D1FF] transition-colors font-medium flex items-center gap-1"
+                        aria-expanded={expandedDesktopSection === item.label}
+                      >
+                        {item.label}
+                        <ChevronDown className="w-4 h-4" />
+                      </button>
+
+                      <AnimatePresence>
+                        {expandedDesktopSection === item.label && (
+                          <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 10 }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute top-full left-0 mt-2 w-[600px] bg-[#1b1b1b]/95 backdrop-blur-md rounded-lg shadow-2xl border border-white/10 p-6 z-50"
+                          >
+                            <div className="grid grid-cols-1 gap-6">
+                              {item.children.map((section, idx) => (
+                                <div key={idx}>
+                                  <h3 className="text-sm font-semibold text-[#A3D1FF] mb-3">
+                                    {section.title}
+                                  </h3>
+                                  <div className="grid grid-cols-2 gap-2">
+                                    {section.items.map((subItem, subIdx) => (
+                                      <Link
+                                        key={subIdx}
+                                        to={subItem.to}
+                                        className="block px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-colors group"
+                                        onClick={() => setExpandedDesktopSection(null)}
+                                      >
+                                        <span className="block font-medium group-hover:text-[#A3D1FF] transition-colors text-sm">
+                                          {subItem.label}
+                                        </span>
+                                        {subItem.description && (
+                                          <span className="block text-xs text-gray-400 mt-1">
+                                            {subItem.description}
+                                          </span>
+                                        )}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : (
+                    <Link
+                      to={item.to || '/'}
+                      className="text-white hover:text-[#A3D1FF] transition-colors font-medium flex items-center gap-2"
+                    >
+                      {item.label}
+                      {item.badge && (
+                        <span className="px-2 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-xs">
+                          {item.badge}
+                        </span>
+                      )}
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <div className="flex lg:hidden items-center gap-4">
+              <button
                 onClick={() => setMenuOpen(!isMenuOpen)}
                 className="p-2 text-white hover:text-[#A3D1FF] transition-colors"
                 aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
