@@ -28,7 +28,7 @@ const projects: Project[] = [
   {
     title: "Untapped Africa",
     description: "Revolutionizing water infrastructure solutions across Africa with innovative technology and sustainable practices. A comprehensive platform for project management, data visualization, and community engagement.",
-    image: "https://ik.imagekit.io/qcvroy8xpd/Screenshot.png?updatedAt=1754018965491",
+    image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(1).png?updatedAt=1767539579782",
     liveUrl: "https://untappedafrica.co.za",
     caseStudyUrl: "/work/case-studies/untapped-africa",
     impact: [
@@ -45,7 +45,7 @@ const projects: Project[] = [
   {
     title: "Binns Media Group Platform",
     description: "A cutting-edge digital media platform designed to showcase BMG's diverse content portfolio including podcasts, TV shows, and exclusive content. The platform serves as both a content hub and a representation of BMG's commitment to amplifying diverse voices in media.",
-    image: "https://i.imgur.com/IU0mmH7.jpeg",
+    image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9.png?updatedAt=1767539579710",
     liveUrl: "https://www.binnsmediagroup.com",
     caseStudyUrl: "/work/case-studies/binns-media",
     impact: [
@@ -62,7 +62,7 @@ const projects: Project[] = [
   {
     title: "A Secure Annapolis Locksmith",
     description: "Professional locksmith website showcasing residential, commercial, and automotive services.",
-    image: "https://images.unsplash.com/photo-1587613864521-9ef8dfe617cc?auto=format&fit=crop&w=2000&q=80",
+    image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(2).png?updatedAt=1767539579194",
     liveUrl: "https://www.asecureannapolislocksmith.com",
     caseStudyUrl: "/work/case-studies/secure-annapolis",
     impact: [
@@ -76,7 +76,7 @@ const projects: Project[] = [
   {
     title: "Friedman & Cohen",
     description: "Professional B2B procurement platform for property developers.",
-    image: "https://i.imgur.com/6kjURhx.jpeg",
+    image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(3).png?updatedAt=1767539579776",
     liveUrl: "https://b2b.fandc.co.za",
     caseStudyUrl: "/work/case-studies/friedman-cohen",
     impact: [

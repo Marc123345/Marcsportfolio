@@ -17,7 +17,7 @@ const projects: Project[] = [
     id: 'binns-media',
     title: 'Binns Media Group',
     description: 'A cutting-edge digital media platform showcasing diverse content portfolio.',
-    image: 'https://i.imgur.com/IU0mmH7.jpeg',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9.png?updatedAt=1767539579710',
     caseStudyUrl: '/work/case-studies/binns-media',
     liveUrl: 'https://www.binnsmediagroup.com'
   },
@@ -33,7 +33,7 @@ const projects: Project[] = [
     id: 'untapped-africa',
     title: 'Untapped Africa',
     description: 'Revolutionizing water infrastructure solutions across Africa.',
-    image: 'https://ik.imagekit.io/qcvroy8xpd/Screenshot.png?updatedAt=1754018965491',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(1).png?updatedAt=1767539579782',
     caseStudyUrl: '/work/case-studies/untapped-africa',
     liveUrl: 'https://untappedafrica.co.za'
   },
