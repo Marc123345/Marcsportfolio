@@ -105,7 +105,7 @@ const projects: Project[] = [
     title: "Tar & Chip Paving",
     description: "Specialized surface solutions showcase for tar and chip paving applications.",
     image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9(5).png?updatedAt=1767539578933",
-    liveUrl: "https://pavingtarchip.com/",
+    liveUrl: "https://cumberlandtarchip.org/",
     caseStudyUrl: "/work/case-studies/tar-chip-paving",
     impact: [
       "Professional web presence",
