@@ -3,7 +3,6 @@ import { useEffect, useRef } from 'react';
 import { ArrowRight, CircleCheck as CheckCircle, Target, TrendingUp, Zap, Shield, Users, Award, Clock, Star, Sparkles, MessageSquare, Rocket, ChartBar as BarChart3, Code as Code2 } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import TrustedBy from '@/components/TrustedBy';
-import SEO from '@/components/SEO';
 import MagneticButton from '@/components/MagneticButton';
 import AccessibilityPanel from '@/components/AccessibilityPanel';
 import JotFormEmbed from '@/components/JotFormEmbed';
