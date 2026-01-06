@@ -683,7 +683,7 @@ export default function Layout() {
                     to="/services/mentorship"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    Mentorship
+                    Design Mentorship
                   </Link>
                 </li>
                 <li>
@@ -691,7 +691,7 @@ export default function Layout() {
                     to="/services/fractional-cmo"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    Marketing Partner
+                    Fractional CMO
                   </Link>
                 </li>
               </ul>
