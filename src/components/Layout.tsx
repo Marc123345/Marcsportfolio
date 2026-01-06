@@ -30,16 +30,6 @@ const navigationLinks: NavigationItem[] = [
             label: 'Web Development',
             to: '/services/web-development',
             description: 'Custom websites and applications'
-          },
-          {
-            label: 'AI Integration',
-            to: '/services/ai-integration',
-            description: 'AI-powered solutions and automation'
-          },
-          {
-            label: 'API Development',
-            to: '/services/api',
-            description: 'Scalable API solutions'
           }
         ]
       }
@@ -588,22 +578,6 @@ export default function Layout() {
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     Web Development
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services/ai-integration"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    AI Integration
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services/api"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    API Development
                   </Link>
                 </li>
               </ul>

@@ -24,8 +24,6 @@ const searchData: SearchResult[] = [
   
   // Services
   { title: 'Web Development', description: 'Custom websites and applications', url: '/services/web-development', type: 'service', category: 'Development' },
-  { title: 'AI Integration', description: 'AI-powered solutions', url: '/services/ai-integration', type: 'service', category: 'Advanced' },
-  { title: 'API Development', description: 'Robust APIs and integrations', url: '/services/api', type: 'service', category: 'Development' },
   
   // Tools
   { title: 'Website Analyzer', description: 'Get an instant analysis of your website', url: '/tools/website-analyzer', type: 'tool' },
