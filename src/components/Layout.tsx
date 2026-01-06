@@ -24,22 +24,7 @@ const navigationLinks: NavigationItem[] = [
     popular: true,
     children: [
       {
-        title: 'Design Services',
-        items: [
-          {
-            label: 'UI/UX Design',
-            to: '/services/design',
-            description: 'Beautiful, intuitive interfaces that convert'
-          },
-          {
-            label: 'Design Systems',
-            to: '/services/design-systems',
-            description: 'Scalable design frameworks'
-          }
-        ]
-      },
-      {
-        title: 'Development Services',
+        title: 'Services',
         items: [
           {
             label: 'Web Development',
@@ -47,39 +32,14 @@ const navigationLinks: NavigationItem[] = [
             description: 'Custom websites and applications'
           },
           {
-            label: 'SaaS Development',
-            to: '/services/saas',
-            description: 'End-to-end SaaS solutions'
-          }
-        ]
-      },
-      {
-        title: 'Specialized Services',
-        items: [
-          {
             label: 'AI Integration',
             to: '/services/ai-integration',
             description: 'AI-powered solutions and automation'
           },
           {
-            label: 'Cybersecurity',
-            to: '/services/cybersecurity',
-            description: 'Comprehensive security solutions'
-          },
-          {
-            label: 'Startup MVP',
-            to: '/services/startup-mvp',
-            description: 'Validate and launch your idea'
-          },
-          {
-            label: 'Design Mentorship',
-            to: '/services/mentorship',
-            description: 'Design mentorship and guidance'
-          },
-          {
-            label: 'Fractional CMO',
-            to: '/services/fractional-cmo',
-            description: 'Design & dev execution for marketing strategy'
+            label: 'API Development',
+            to: '/services/api',
+            description: 'Scalable API solutions'
           }
         ]
       }
@@ -632,30 +592,6 @@ export default function Layout() {
                 </li>
                 <li>
                   <Link
-                    to="/services/design"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    UI/UX Design
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services/design-systems"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Design Systems
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services/saas"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    SaaS Development
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     to="/services/ai-integration"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
@@ -664,34 +600,10 @@ export default function Layout() {
                 </li>
                 <li>
                   <Link
-                    to="/services/cybersecurity"
+                    to="/services/api"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    Cybersecurity
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services/startup-mvp"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Startup MVP
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services/mentorship"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Design Mentorship
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services/fractional-cmo"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Fractional CMO
+                    API Development
                   </Link>
                 </li>
               </ul>
