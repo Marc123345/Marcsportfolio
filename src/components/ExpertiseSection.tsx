@@ -144,7 +144,7 @@ export default function ExpertiseSection() {
               "React/Next.js",
               "Node.js",
               "TypeScript",
-              "API Development"
+              "Supabase"
             ]}
             delay={300}
           />
