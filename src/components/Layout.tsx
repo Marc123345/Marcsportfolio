@@ -77,7 +77,7 @@ const navigationLinks: NavigationItem[] = [
             description: 'Design mentorship and guidance'
           },
           {
-            label: 'Marketing Partner',
+            label: 'Fractional CMO',
             to: '/services/fractional-cmo',
             description: 'Design & dev execution for marketing strategy'
           }
