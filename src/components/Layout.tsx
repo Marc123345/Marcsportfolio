@@ -761,7 +761,6 @@ export default function Layout() {
                 <a href="#" className="termly-display-preferences hover:text-white transition-colors">Consent Preferences</a>
                 <a href="https://app.termly.io/notify/03f555bd-c705-46c1-a042-acea6d9e1ddf" className="hover:text-white transition-colors">Do Not Sell My Info</a>
                 <a href="https://app.termly.io/notify/03f555bd-c705-46c1-a042-acea6d9e1ddf" className="hover:text-white transition-colors">Limit Use of Sensitive Info</a>
-                <a href="/sitemap.xml" className="hover:text-white transition-colors">Sitemap</a>
               </div>
             </div>
           </div>
