@@ -57,13 +57,24 @@
     <!-- Google Site Verification -->
     <meta name="google-site-verification" content="google65e4eba86e82f0a1" />
 
-    <!-- Termly Resource Blocker - Must be first script -->
+    <!-- Termly Resource Blocker - Production Only -->
     <script>
-      if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && window.location.protocol !== 'file:') {
-        var termlyScript = document.createElement('script');
-        termlyScript.src = 'https://app.termly.io/resource-blocker/b6b01006-f6cb-47b3-ab77-42603a0859f9?autoBlock=on';
-        document.head.appendChild(termlyScript);
-      }
+      (function() {
+        var isProduction = window.location.hostname !== 'localhost' &&
+                          window.location.hostname !== '127.0.0.1' &&
+                          !window.location.hostname.includes('.local') &&
+                          window.location.protocol !== 'file:' &&
+                          window.location.port !== '5173' &&
+                          window.location.port !== '3000';
+
+        if (isProduction) {
+          var termlyScript = document.createElement('script');
+          termlyScript.src = 'https://app.termly.io/resource-blocker/b6b01006-f6cb-47b3-ab77-42603a0859f9?autoBlock=on';
+          document.head.appendChild(termlyScript);
+        } else {
+          console.log('[DEV] Termly script disabled in development mode');
+        }
+      })();
     </script>
 
     <!-- Structured Data -->
@@ -93,27 +104,37 @@
       }
     </script>
 
-    <!-- Defer Analytics - Load after page is interactive (Production only) -->
+    <!-- Defer Analytics - Production Only -->
     <script>
-      if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && window.location.protocol !== 'file:') {
-        window.addEventListener('load', function() {
-          setTimeout(function() {
-            // Google Analytics
-            var gaScript = document.createElement('script');
-            gaScript.async = true;
-            gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-X9V20XWRG8';
-            document.head.appendChild(gaScript);
+      (function() {
+        var isProduction = window.location.hostname !== 'localhost' &&
+                          window.location.hostname !== '127.0.0.1' &&
+                          !window.location.hostname.includes('.local') &&
+                          window.location.protocol !== 'file:' &&
+                          window.location.port !== '5173' &&
+                          window.location.port !== '3000';
 
-            gaScript.onload = function() {
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-X9V20XWRG8', { 'send_page_view': false });
-              gtag('config', 'AW-17688433013');
-            };
-          }, 2000);
-        });
-      }
+        if (isProduction) {
+          window.addEventListener('load', function() {
+            setTimeout(function() {
+              var gaScript = document.createElement('script');
+              gaScript.async = true;
+              gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-X9V20XWRG8';
+              document.head.appendChild(gaScript);
+
+              gaScript.onload = function() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-X9V20XWRG8', { 'send_page_view': false });
+                gtag('config', 'AW-17688433013');
+              };
+            }, 2000);
+          });
+        } else {
+          console.log('[DEV] Google Analytics disabled in development mode');
+        }
+      })();
     </script>
 </head>
   <body>
