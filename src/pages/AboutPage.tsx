@@ -108,7 +108,7 @@ export default function AboutPage() {
       "Web Development",
       "UI/UX Design",
       "SaaS Development",
-      "Database Architecture",
+      "API Development",
       "Design Systems"
     ],
     "url": "https://www.marcfriedmanportfolio.com/about",
@@ -367,7 +367,7 @@ export default function AboutPage() {
                     "React/Next.js",
                     "Node.js",
                     "TypeScript",
-                    "Supabase"
+                    "API Development"
                   ]}
                 />
               </div>

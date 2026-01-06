@@ -186,7 +186,7 @@ export default function UntappedAfricaCaseStudy() {
                    "Emotional, story-driven layout w/ custom visuals",
                    "Water-inspired GSAP animations",
                    "Impact-focused hero section + mission content",
-                   "Donation integration (PayPal)"
+                   "Donation integration (Stripe/PayPal)"
                  ].map((feature, i) => (
                    <div key={i} className="flex items-center gap-3">
                      <CheckCircle2 className="text-[#FFD700] w-5 h-5" />

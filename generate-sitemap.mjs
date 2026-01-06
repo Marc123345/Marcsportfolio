@@ -97,6 +97,14 @@ const routes = [
 
   // Services
   { url: '/services/web-development', changefreq: 'monthly', priority: 0.9, lastmod: new Date().toISOString() },
+  { url: '/services/design', changefreq: 'monthly', priority: 0.9, lastmod: new Date().toISOString() },
+  { url: '/services/saas', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
+  { url: '/services/startup-mvp', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
+  { url: '/services/mentorship', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
+  { url: '/services/ai-integration', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
+  { url: '/services/cybersecurity', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
+  { url: '/services/fractional-cmo', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
+  { url: '/services/design-systems', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
   { url: '/services/premium-web-package', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
   { url: '/services/monthly-retainer', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
 

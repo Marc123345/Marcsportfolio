@@ -2,8 +2,8 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 import { ArrowRight, CircleCheck as CheckCircle, Target, TrendingUp, Zap, Shield, Users, Award, Clock, Star, Sparkles, MessageSquare, Rocket, ChartBar as BarChart3, Code as Code2 } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
 import TrustedBy from '@/components/TrustedBy';
+import SEO from '@/components/SEO';
 import MagneticButton from '@/components/MagneticButton';
 import AccessibilityPanel from '@/components/AccessibilityPanel';
 import JotFormEmbed from '@/components/JotFormEmbed';
@@ -97,30 +97,21 @@ export default function HomePage() {
 
   return (
     <>
-      <Helmet>
-        <title>Websites That Convert for Agencies, Ecommerce, B2B - Marc Friedman</title>
-        <meta name="description" content="High-performance React/Node websites built to attract, convert, and close clients. Increase leads by 40% with websites that load in under 2 seconds." />
-        <meta name="keywords" content="B2B web design, lead generation websites, agency websites, ecommerce website design, high-performance websites, React development, conversion optimization" />
-        <link rel="canonical" href="https://www.marcfriedmanportfolio.com/" />
-
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Websites That Convert for Agencies, Ecommerce, B2B" />
-        <meta property="og:description" content="High-performance React/Node websites built to attract, convert, and close clients. Increase leads by 40% with websites that load in under 2 seconds." />
-        <meta property="og:image" content="https://www.marcfriedmanportfolio.com/og-image.jpg" />
-        <meta property="og:url" content="https://www.marcfriedmanportfolio.com/" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Websites That Convert for Agencies, Ecommerce, B2B" />
-        <meta name="twitter:description" content="High-performance React/Node websites built to attract, convert, and close clients. Increase leads by 40% with websites that load in under 2 seconds." />
-        <meta name="twitter:image" content="https://www.marcfriedmanportfolio.com/og-image.jpg" />
-
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify(homeSchema)}
-        </script>
-      </Helmet>
+      <SEO
+        title="Websites That Convert for Agencies, Ecommerce, B2B"
+        description="High-performance React/Node websites built to attract, convert, and close clients. Increase leads by 40% with websites that load in under 2 seconds."
+        canonicalUrl="https://www.marcfriedmanportfolio.com/"
+        keywords={[
+          'B2B web design',
+          'lead generation websites',
+          'agency websites',
+          'ecommerce website design',
+          'high-performance websites',
+          'React development',
+          'conversion optimization'
+        ]}
+        structuredData={homeSchema}
+      />
 
       <AccessibilityPanel />
 

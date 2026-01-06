@@ -24,12 +24,62 @@ const navigationLinks: NavigationItem[] = [
     popular: true,
     children: [
       {
-        title: 'Services',
+        title: 'Design Services',
+        items: [
+          {
+            label: 'UI/UX Design',
+            to: '/services/design',
+            description: 'Beautiful, intuitive interfaces that convert'
+          },
+          {
+            label: 'Design Systems',
+            to: '/services/design-systems',
+            description: 'Scalable design frameworks'
+          }
+        ]
+      },
+      {
+        title: 'Development Services',
         items: [
           {
             label: 'Web Development',
             to: '/services/web-development',
             description: 'Custom websites and applications'
+          },
+          {
+            label: 'SaaS Development',
+            to: '/services/saas',
+            description: 'End-to-end SaaS solutions'
+          }
+        ]
+      },
+      {
+        title: 'Specialized Services',
+        items: [
+          {
+            label: 'AI Integration',
+            to: '/services/ai-integration',
+            description: 'AI-powered solutions and automation'
+          },
+          {
+            label: 'Cybersecurity',
+            to: '/services/cybersecurity',
+            description: 'Comprehensive security solutions'
+          },
+          {
+            label: 'Startup MVP',
+            to: '/services/startup-mvp',
+            description: 'Validate and launch your idea'
+          },
+          {
+            label: 'Design Mentorship',
+            to: '/services/mentorship',
+            description: 'Design mentorship and guidance'
+          },
+          {
+            label: 'Marketing Partner',
+            to: '/services/fractional-cmo',
+            description: 'Design & dev execution for marketing strategy'
           }
         ]
       }
@@ -41,36 +91,6 @@ const navigationLinks: NavigationItem[] = [
   },
   { label: 'Blog', to: '/blog' },
   { label: 'About', to: '/about' },
-  {
-    label: 'Tools',
-    children: [
-      {
-        title: 'Free Tools',
-        items: [
-          {
-            label: 'Website Analyzer',
-            to: '/tools/website-analyzer',
-            description: 'Analyze your website performance'
-          },
-          {
-            label: 'ROI Calculator',
-            to: '/tools/roi-calculator',
-            description: 'Calculate your ROI'
-          },
-          {
-            label: 'AI Website Crawler',
-            to: '/tools/ai-website-crawler',
-            description: 'Optimize for AI search'
-          },
-          {
-            label: 'Project Timeline',
-            to: '/tools/project-timeline',
-            description: 'Estimate project timeline'
-          }
-        ]
-      }
-    ]
-  },
   { label: 'Contact', to: '/contact', badge: 'Free Consultation' }
 ];
 
@@ -610,6 +630,70 @@ export default function Layout() {
                     Web Development
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    to="/services/design"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    UI/UX Design
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/design-systems"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Design Systems
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/saas"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    SaaS Development
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/ai-integration"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    AI Integration
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/cybersecurity"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Cybersecurity
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/startup-mvp"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Startup MVP
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/mentorship"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Mentorship
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/fractional-cmo"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Marketing Partner
+                  </Link>
+                </li>
               </ul>
             </div>
             
@@ -761,6 +845,7 @@ export default function Layout() {
                 <a href="#" className="termly-display-preferences hover:text-white transition-colors">Consent Preferences</a>
                 <a href="https://app.termly.io/notify/03f555bd-c705-46c1-a042-acea6d9e1ddf" className="hover:text-white transition-colors">Do Not Sell My Info</a>
                 <a href="https://app.termly.io/notify/03f555bd-c705-46c1-a042-acea6d9e1ddf" className="hover:text-white transition-colors">Limit Use of Sensitive Info</a>
+                <a href="/sitemap.xml" className="hover:text-white transition-colors">Sitemap</a>
               </div>
             </div>
           </div>

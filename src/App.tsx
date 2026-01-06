@@ -387,6 +387,14 @@ function App() {
           
           {/* Additional Service Routes */}
           <Route
+            path="services/design-systems"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                {lazyLoad(() => import('@/pages/services/DesignSystemsPage'))}
+              </Suspense>
+            }
+          />
+          <Route
             path="services/premium-web-package"
             element={
               <Suspense fallback={<PageLoader />}>
