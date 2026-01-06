@@ -41,6 +41,36 @@ const navigationLinks: NavigationItem[] = [
   },
   { label: 'Blog', to: '/blog' },
   { label: 'About', to: '/about' },
+  {
+    label: 'Tools',
+    children: [
+      {
+        title: 'Free Tools',
+        items: [
+          {
+            label: 'Website Analyzer',
+            to: '/tools/website-analyzer',
+            description: 'Analyze your website performance'
+          },
+          {
+            label: 'ROI Calculator',
+            to: '/tools/roi-calculator',
+            description: 'Calculate your ROI'
+          },
+          {
+            label: 'AI Website Crawler',
+            to: '/tools/ai-website-crawler',
+            description: 'Optimize for AI search'
+          },
+          {
+            label: 'Project Timeline',
+            to: '/tools/project-timeline',
+            description: 'Estimate project timeline'
+          }
+        ]
+      }
+    ]
+  },
   { label: 'Contact', to: '/contact', badge: 'Free Consultation' }
 ];
 

@@ -150,7 +150,7 @@ const projects: Project[] = [
   {
     title: "MyTube Platform",
     description: "Video metadata management system for media and manufacturing.",
-    image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9(1).png?updatedAt=1767539579068",
+    image: "https://ik.imagekit.io/qcvroy8xpd/QNHXpzT.jpeg",
     caseStudyUrl: "/work/case-studies/mytube",
     impact: [
       "Faster metadata processing",
