@@ -24,13 +24,8 @@ const searchData: SearchResult[] = [
   
   // Services
   { title: 'Web Development', description: 'Custom websites and applications', url: '/services/web-development', type: 'service', category: 'Development' },
-  { title: 'UI/UX Design', description: 'Beautiful, intuitive interfaces', url: '/services/design', type: 'service', category: 'Design' },
-  { title: 'SaaS Development', description: 'End-to-end SaaS solutions', url: '/services/saas', type: 'service', category: 'Development' },
-  { title: 'API Development', description: 'Robust APIs and integrations', url: '/services/api', type: 'service', category: 'Development' },
   { title: 'AI Integration', description: 'AI-powered solutions', url: '/services/ai-integration', type: 'service', category: 'Advanced' },
-  { title: 'Cybersecurity', description: 'Comprehensive security solutions', url: '/services/cybersecurity', type: 'service', category: 'Advanced' },
-  { title: 'Startup MVP', description: 'Validate and launch your idea', url: '/services/startup-mvp', type: 'service', category: 'Startup' },
-  { title: 'Design Mentorship', description: 'Design mentorship and guidance', url: '/services/mentorship', type: 'service', category: 'Education' },
+  { title: 'API Development', description: 'Robust APIs and integrations', url: '/services/api', type: 'service', category: 'Development' },
   
   // Tools
   { title: 'Website Analyzer', description: 'Get an instant analysis of your website', url: '/tools/website-analyzer', type: 'tool' },

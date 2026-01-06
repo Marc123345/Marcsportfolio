@@ -538,23 +538,7 @@ export default function WebDevelopmentPage() {
           {/* Related Services */}
           <div className="mt-12 pt-8 border-t border-white/10">
             <h3 className="text-xl font-semibold text-white mb-6">Related Services</h3>
-            <div className="grid md:grid-cols-4 gap-4">
-              <Link 
-                to="/services/design" 
-                className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A3D1FF] transition-colors group"
-                title="UI/UX design services"
-              >
-                <h4 className="text-white font-medium group-hover:text-[#A3D1FF] transition-colors">UI/UX Design</h4>
-                <p className="text-gray-400 text-sm mt-1">User-centered design</p>
-              </Link>
-              <Link
-                to="/services/saas"
-                className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A3D1FF] transition-colors group"
-                title="SaaS development services"
-              >
-                <h4 className="text-white font-medium group-hover:text-[#A3D1FF] transition-colors">SaaS Development</h4>
-                <p className="text-gray-400 text-sm mt-1">Scalable solutions</p>
-              </Link>
+            <div className="grid md:grid-cols-2 gap-4">
               <Link
                 to="/services/ai-integration"
                 className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A3D1FF] transition-colors group"
@@ -564,12 +548,12 @@ export default function WebDevelopmentPage() {
                 <p className="text-gray-400 text-sm mt-1">Smart automation</p>
               </Link>
               <Link
-                to="/services/cybersecurity"
+                to="/services/api"
                 className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A3D1FF] transition-colors group"
-                title="Cybersecurity services"
+                title="API development services"
               >
-                <h4 className="text-white font-medium group-hover:text-[#A3D1FF] transition-colors">Cybersecurity</h4>
-                <p className="text-gray-400 text-sm mt-1">Secure solutions</p>
+                <h4 className="text-white font-medium group-hover:text-[#A3D1FF] transition-colors">API Development</h4>
+                <p className="text-gray-400 text-sm mt-1">Scalable API solutions</p>
               </Link>
             </div>
           </div>
