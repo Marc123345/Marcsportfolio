@@ -40,8 +40,6 @@ export default function Breadcrumbs({ className = '', customItems }: Breadcrumbs
       // Special cases for better labels
       if (segment === 'case-studies') label = 'Case Studies';
       if (segment === 'web-development') label = 'Web Development';
-      if (segment === 'ai-integration') label = 'AI Integration';
-      if (segment === 'startup-mvp') label = 'Startup MVP';
       if (segment === 'roi-calculator') label = 'ROI Calculator';
       if (segment === 'website-analyzer') label = 'Website Analyzer';
       if (segment === 'project-timeline') label = 'Project Timeline';

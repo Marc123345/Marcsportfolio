@@ -20,7 +20,7 @@ export default function PremiumWebPackage() {
 
   const optionalAddons = [
     'Supabase Backend + Auth',
-    'Stripe or Calendly Integration',
+    'Calendly Integration',
     'Headless CMS',
     'Cloudinary for Media Delivery',
     'Ongoing Optimization & Retainers'
