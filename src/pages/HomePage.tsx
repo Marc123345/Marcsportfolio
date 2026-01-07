@@ -11,14 +11,14 @@ import JotFormEmbed from '@/components/JotFormEmbed';
 const homeSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Marc Friedman Design & Development",
-  "description": "High-performance React/Node websites built to attract, convert, and close clients for agencies, ecommerce, and B2B companies.",
+  "name": "Marc Friedman - Web Designer Tel Aviv",
+  "description": "Professional web designer in Tel Aviv creating high-performance React/Node websites for agencies, ecommerce, and B2B companies. Expert in web development and conversion optimization.",
   "image": "https://marcfriedmanportfolio.com/wp-content/uploads/2024/12/image-1.webp",
   "url": "https://marcfriedmanportfolio.com",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Tel Aviv",
-    "addressRegion": "TA",
+    "addressRegion": "Tel Aviv District",
     "addressCountry": "IL"
   },
   "geo": {
@@ -33,7 +33,7 @@ const homeSchema = {
   "founder": {
     "@type": "Person",
     "name": "Marc Friedman",
-    "jobTitle": "Full Stack Designer & Developer"
+    "jobTitle": "Web Designer Tel Aviv | Full Stack Designer & Developer"
   },
   "areaServed": {
     "@type": "GeoCircle",
@@ -98,17 +98,19 @@ export default function HomePage() {
   return (
     <>
       <SEO
-        title="Websites That Convert for Agencies, Ecommerce, B2B"
-        description="High-performance React/Node websites built to attract, convert, and close clients. Increase leads by 40% with websites that load in under 2 seconds."
+        title="Web Designer Tel Aviv | Award-Winning Websites That Convert"
+        description="Professional web designer in Tel Aviv specializing in high-performance websites for agencies, ecommerce, and B2B. Expert in React development and conversion optimization."
         canonicalUrl="https://www.marcfriedmanportfolio.com/"
         keywords={[
+          'Web Designer Tel Aviv',
+          'Tel Aviv web design',
+          'website designer Tel Aviv',
+          'web development Tel Aviv',
+          'Tel Aviv developer',
+          'Israel web designer',
           'B2B web design',
           'lead generation websites',
-          'agency websites',
-          'ecommerce website design',
-          'high-performance websites',
-          'React development',
-          'conversion optimization'
+          'React development'
         ]}
         structuredData={homeSchema}
       />
@@ -160,7 +162,7 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <h1 className="font-heading text-[clamp(3rem,6vw,4.5rem)] font-semibold tracking-[-0.01em] text-white leading-[1.15] mb-6">
-                  Award Winning Websites That Turn Attention Into Revenue
+                  Tel Aviv Web Designer Building Award-Winning Websites That Convert
                 </h1>
               </motion.div>
 
@@ -725,10 +727,10 @@ export default function HomePage() {
               </h2>
               <div className="space-y-6 text-xl text-gray-300 mb-8">
                 <p>
-                  Hey, I'm Marc. I've spent 5+ years building websites for agencies, local businesses, and jewellery brands across three continents.
+                  Hey, I'm Marc. Based in Tel Aviv, I've spent 5+ years building websites for agencies, local businesses, and jewellery brands across three continents.
                 </p>
                 <p>
-                  Unlike big agencies that hand your project off to junior devs, you work directly with me from start to finish. That means faster turnaround, better communication, and no surprises.
+                  Unlike big agencies that hand your project off to junior devs, you work directly with me from start to finish. As a dedicated web designer in Tel Aviv, that means faster turnaround, better communication, and no surprises.
                 </p>
                 <p>
                   I care about your success because your results are my reputation. When your website brings in leads and grows your business, we both win.

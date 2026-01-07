@@ -102,14 +102,16 @@ export default function AboutPage() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Marc Friedman",
-    "jobTitle": "Full Stack Designer & Developer",
-    "description": "A passionate full-stack designer and developer creating exceptional digital experiences.",
+    "jobTitle": "Web Designer Tel Aviv | Full Stack Designer & Developer",
+    "description": "Professional web designer based in Tel Aviv creating exceptional digital experiences for clients worldwide. Expert in web development, UI/UX design, and conversion optimization.",
     "knowsAbout": [
+      "Web Design",
       "Web Development",
       "UI/UX Design",
       "SaaS Development",
       "API Development",
-      "Design Systems"
+      "Design Systems",
+      "Conversion Optimization"
     ],
     "url": "https://www.marcfriedmanportfolio.com/about",
     "sameAs": [
@@ -119,6 +121,7 @@ export default function AboutPage() {
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Tel Aviv",
+      "addressRegion": "Tel Aviv District",
       "addressCountry": "IL"
     }
   };
@@ -139,21 +142,21 @@ export default function AboutPage() {
   return (
     <>
       <Helmet>
-        <title>About Marc Friedman - Full Stack Designer & Developer</title>
-        <meta name="description" content="Meet Marc Friedman, a passionate full-stack designer and developer creating exceptional digital experiences. Specializing in web development, UI/UX design, and SaaS solutions for clients across three continents." />
+        <title>About Marc Friedman - Web Designer Tel Aviv</title>
+        <meta name="description" content="Meet Marc Friedman, a professional web designer based in Tel Aviv creating exceptional digital experiences. Specializing in web development, UI/UX design, and SaaS solutions for clients across three continents." />
         
         <meta property="og:type" content="profile" />
-        <meta property="og:title" content="About Marc Friedman - Full Stack Designer & Developer" />
-        <meta property="og:description" content="Meet Marc Friedman, a passionate full-stack designer and developer creating exceptional digital experiences." />
+        <meta property="og:title" content="About Marc Friedman - Web Designer Tel Aviv" />
+        <meta property="og:description" content="Meet Marc Friedman, a professional web designer based in Tel Aviv creating exceptional digital experiences for clients worldwide." />
         <meta property="og:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
         <meta property="og:url" content="https://marcfriedmanportfolio.com/about" />
-        
+
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Marc Friedman - Full Stack Designer & Developer" />
-        <meta name="twitter:description" content="Meet Marc Friedman, a passionate full-stack designer and developer creating exceptional digital experiences." />
+        <meta name="twitter:title" content="About Marc Friedman - Web Designer Tel Aviv" />
+        <meta name="twitter:description" content="Meet Marc Friedman, a professional web designer based in Tel Aviv creating exceptional digital experiences for clients worldwide." />
         <meta name="twitter:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
-        
-        <meta name="keywords" content="Marc Friedman, Full Stack Developer, UI/UX Designer, Web Development, SaaS Development, Design Systems, Portfolio" />
+
+        <meta name="keywords" content="Web Designer Tel Aviv, Marc Friedman, Tel Aviv web design, website designer, Full Stack Developer, UI/UX Designer, Web Development Tel Aviv, SaaS Development, Design Systems" />
         <meta name="author" content="Marc Friedman" />
         <link rel="canonical" href="https://www.marcfriedmanportfolio.com/about" />
         
@@ -192,13 +195,13 @@ export default function AboutPage() {
               className="font-heading text-[clamp(2.2rem,4vw,3rem)] font-semibold tracking-[-0.01em] text-white leading-[1.15] mb-6"
               variants={fadeInUp}
             >
-              About Marc Friedman
+              About Marc Friedman - Web Designer Tel Aviv
             </motion.h1>
             <motion.h2
               className="font-body text-xl sm:text-2xl text-[#A3D1FF] mb-6"
               variants={fadeInUp}
             >
-              Full Stack Designer & Developer
+              Full Stack Designer & Developer Based in Tel Aviv
             </motion.h2>
             <motion.p
               className="font-heading text-2xl sm:text-3xl font-semibold tracking-[-0.01em] leading-[1.15] text-[#A3D1FF] mb-6"
@@ -206,13 +209,13 @@ export default function AboutPage() {
             >
               Solving Digital Challenges Through Design & Development Excellence
             </motion.p>
-            <motion.p 
+            <motion.p
               className="text-xl text-gray-300 mb-8"
               variants={fadeInUp}
-            > 
-              I'm a full-stack designer and developer who bridges the gap between stunning visuals and robust functionality. Transforming ideas into digital realities for clients across three continents, I've built a reputation for creating <strong className="text-white">conversion-focused experiences that solve real business problems</strong>.
+            >
+              I'm a professional web designer based in Tel Aviv who bridges the gap between stunning visuals and robust functionality. Transforming ideas into digital realities for clients across three continents, I've built a reputation for creating <strong className="text-white">conversion-focused experiences that solve real business problems</strong>.
             </motion.p>
-            <motion.p className="text-xl text-gray-300 mb-8" variants={fadeInUp}>As a freelance website designer, I bring a unique blend of creative vision and technical expertise to every project, ensuring your digital presence is not only beautiful but also highly functional and effective.</motion.p>
+            <motion.p className="text-xl text-gray-300 mb-8" variants={fadeInUp}>As a freelance web designer in Tel Aviv, I bring a unique blend of creative vision and technical expertise to every project, ensuring your digital presence is not only beautiful but also highly functional and effective.</motion.p>
             <motion.div 
               variants={fadeInUp}
               className="flex flex-wrap gap-4"

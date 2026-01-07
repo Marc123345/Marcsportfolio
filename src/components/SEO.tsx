@@ -22,22 +22,25 @@ export default function SEO({
   structuredData,
 }: SEOProps) {
   const defaultKeywords = [
-    'web development',
-    'UI/UX design',
-    'SaaS development',
-    'full stack developer',
+    'Web Designer Tel Aviv',
+    'Tel Aviv web designer',
+    'web development Tel Aviv',
+    'website designer Tel Aviv',
+    'Tel Aviv web design',
+    'Israel web designer',
     'Tel Aviv developer',
-    'Israel web development',
+    'UI/UX design',
+    'full stack developer',
+    'SaaS development',
     'digital design',
     'Marc Friedman',
-    'portfolio',
     'React developer',
     'Next.js',
     'TypeScript'
   ];
 
   const allKeywords = [...new Set([...defaultKeywords, ...keywords])].join(', ');
-  const fullTitle = `${title} | Marc Friedman - Full Stack Designer & Developer`;
+  const fullTitle = `${title} | Marc Friedman - Web Designer Tel Aviv`;
   
   // Ensure canonicalUrl is absolute
   const fullCanonicalUrl = canonicalUrl.startsWith('http') 
