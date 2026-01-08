@@ -195,13 +195,13 @@ export default function AboutPage() {
               className="font-heading text-[clamp(2.2rem,4vw,3rem)] font-semibold tracking-[-0.01em] text-white leading-[1.15] mb-6"
               variants={fadeInUp}
             >
-              About Marc Friedman - Web Designer Tel Aviv
+              About Marc Friedman
             </motion.h1>
             <motion.h2
               className="font-body text-xl sm:text-2xl text-[#A3D1FF] mb-6"
               variants={fadeInUp}
             >
-              Full Stack Designer & Developer Based in Tel Aviv
+              Full Stack Designer & Developer
             </motion.h2>
             <motion.p
               className="font-heading text-2xl sm:text-3xl font-semibold tracking-[-0.01em] leading-[1.15] text-[#A3D1FF] mb-6"
@@ -213,9 +213,9 @@ export default function AboutPage() {
               className="text-xl text-gray-300 mb-8"
               variants={fadeInUp}
             >
-              I'm a professional web designer based in Tel Aviv who bridges the gap between stunning visuals and robust functionality. Transforming ideas into digital realities for clients across three continents, I've built a reputation for creating <strong className="text-white">conversion-focused experiences that solve real business problems</strong>.
+              I'm a full-stack designer and developer who bridges the gap between stunning visuals and robust functionality. Transforming ideas into digital realities for clients across three continents, I've built a reputation for creating <strong className="text-white">conversion-focused experiences that solve real business problems</strong>.
             </motion.p>
-            <motion.p className="text-xl text-gray-300 mb-8" variants={fadeInUp}>As a freelance web designer in Tel Aviv, I bring a unique blend of creative vision and technical expertise to every project, ensuring your digital presence is not only beautiful but also highly functional and effective.</motion.p>
+            <motion.p className="text-xl text-gray-300 mb-8" variants={fadeInUp}>As a freelance website designer, I bring a unique blend of creative vision and technical expertise to every project, ensuring your digital presence is not only beautiful but also highly functional and effective.</motion.p>
             <motion.div 
               variants={fadeInUp}
               className="flex flex-wrap gap-4"

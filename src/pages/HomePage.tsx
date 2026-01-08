@@ -162,7 +162,7 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <h1 className="font-heading text-[clamp(3rem,6vw,4.5rem)] font-semibold tracking-[-0.01em] text-white leading-[1.15] mb-6">
-                  Tel Aviv Web Designer Building Award-Winning Websites That Convert
+                  Award Winning Websites That Turn Attention Into Revenue
                 </h1>
               </motion.div>
 
@@ -727,10 +727,10 @@ export default function HomePage() {
               </h2>
               <div className="space-y-6 text-xl text-gray-300 mb-8">
                 <p>
-                  Hey, I'm Marc. Based in Tel Aviv, I've spent 5+ years building websites for agencies, local businesses, and jewellery brands across three continents.
+                  Hey, I'm Marc. I've spent 5+ years building websites for agencies, local businesses, and jewellery brands across three continents.
                 </p>
                 <p>
-                  Unlike big agencies that hand your project off to junior devs, you work directly with me from start to finish. As a dedicated web designer in Tel Aviv, that means faster turnaround, better communication, and no surprises.
+                  Unlike big agencies that hand your project off to junior devs, you work directly with me from start to finish. That means faster turnaround, better communication, and no surprises.
                 </p>
                 <p>
                   I care about your success because your results are my reputation. When your website brings in leads and grows your business, we both win.
