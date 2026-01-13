@@ -88,13 +88,6 @@ export default function ContactPage() {
           >
             Let's Build Your High-Converting Website
           </motion.h1>
-          <motion.h2
-            className="font-body text-xl sm:text-2xl text-[#A3D1FF] mb-6"
-            variants={fadeInUp}
-            custom={1}
-          >
-            Websites that attract, convert, and close clients for agencies, local businesses & jewellery brands
-          </motion.h2>
           <motion.div 
             className="flex flex-wrap gap-4"
             variants={fadeInUp}
