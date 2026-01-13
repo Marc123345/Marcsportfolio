@@ -58,8 +58,8 @@ export default function MyTubePage() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-8">
               <div className="aspect-[4/3] overflow-hidden rounded-xl">
-                <img 
-                  src="https://i.imgur.com/QNHXpzT.jpeg"
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/QNHXpzT%20(1).jpeg"
                   alt="MyTube Dashboard Interface"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
@@ -105,8 +105,8 @@ export default function MyTubePage() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-semibold text-white mb-4">Interface Design</h3>
-                  <img 
-                    src="https://i.imgur.com/QNHXpzT.jpeg"
+                  <img
+                    src="https://ik.imagekit.io/qcvroy8xpd/QNHXpzT%20(1).jpeg"
                     alt="Interface Design"
                     className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 mb-4"
                   />
