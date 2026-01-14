@@ -5,6 +5,7 @@ import { useAppStore } from '@/stores/useAppStore';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import MagneticButton from '@/components/MagneticButton';
+import FloatingChatbot from '@/components/FloatingChatbot';
 
 interface NavigationItem {
   label: string;
@@ -557,6 +558,9 @@ export default function Layout() {
       <main className="relative pt-[4.236rem]">
         <Outlet />
       </main>
+
+      {/* Floating Chatbot */}
+      <FloatingChatbot />
 
       {/* Footer */}
       <footer className="bg-[#1b1b1b] border-t border-white/10">
