@@ -77,7 +77,7 @@ const homeSchema = {
   },
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "4.9",
+    "ratingValue": "4.8",
     "reviewCount": "40"
   }
 };
@@ -226,6 +226,20 @@ export default function HomePage() {
                     </div>
                   </div>
 
+                  {/* Clutch Widget */}
+                  <div className="flex items-center justify-center py-2">
+                    <div
+                      className="clutch-widget"
+                      data-url="https://widget.clutch.co"
+                      data-widget-type="13"
+                      data-height="50"
+                      data-nofollow="false"
+                      data-expandifr="true"
+                      data-scale="100"
+                      data-clutchcompany-id="2527093"
+                    ></div>
+                  </div>
+
                   {/* DesignRush */}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
@@ -236,9 +250,9 @@ export default function HomePage() {
                     </div>
                     <div className="flex items-center gap-1">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className={`w-4 h-4 ${i < 4 ? 'fill-[#FFD700] text-[#FFD700]' : 'fill-[#FFD700]/50 text-[#FFD700]/50'}`} />
+                        <Star key={i} className={`w-4 h-4 ${i < 4 || (i === 4) ? 'fill-[#FFD700] text-[#FFD700]' : 'fill-[#FFD700]/50 text-[#FFD700]/50'}`} />
                       ))}
-                      <span className="text-white font-bold text-sm ml-2">4.9</span>
+                      <span className="text-white font-bold text-sm ml-2">4.5</span>
                     </div>
                   </div>
 
