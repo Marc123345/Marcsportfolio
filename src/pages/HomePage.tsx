@@ -288,7 +288,7 @@ export default function HomePage() {
 
                   {/* LinkedIn */}
                   <a
-                    href="https://www.linkedin.com/in/marcfriedman/"
+                    href="https://www.linkedin.com/in/portfolio2/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-between hover:bg-white/5 p-2 -m-2 rounded-lg transition-colors"
