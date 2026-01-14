@@ -7,19 +7,6 @@ export default function FloatingChatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<'contact' | 'calendar'>('contact');
 
-  useEffect(() => {
-    if (isOpen) {
-      const script = document.createElement('script');
-      script.src = 'https://widget.clutch.co/static/js/widget.js';
-      script.async = true;
-      document.body.appendChild(script);
-
-      return () => {
-        document.body.removeChild(script);
-      };
-    }
-  }, [isOpen]);
-
   return (
     <>
       <motion.div
@@ -149,7 +136,7 @@ export default function FloatingChatbot() {
                         20+ Verified 5 Star Reviews
                       </h4>
 
-                      <div className="grid grid-cols-3 gap-4 mb-6">
+                      <div className="grid grid-cols-2 gap-4 mb-6">
                         <div className="text-center">
                           <div className="text-2xl font-bold text-white mb-1">5.0</div>
                           <div className="flex items-center justify-center gap-0.5 mb-1">
@@ -157,7 +144,17 @@ export default function FloatingChatbot() {
                               <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
                             ))}
                           </div>
-                          <div className="text-xs text-gray-400">Google Business</div>
+                          <div className="text-xs text-gray-400">Google</div>
+                        </div>
+
+                        <div className="text-center">
+                          <div className="text-2xl font-bold text-white mb-1">5.0</div>
+                          <div className="flex items-center justify-center gap-0.5 mb-1">
+                            {[...Array(5)].map((_, i) => (
+                              <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                            ))}
+                          </div>
+                          <div className="text-xs text-gray-400">Clutch</div>
                         </div>
 
                         <div className="text-center">
@@ -182,19 +179,6 @@ export default function FloatingChatbot() {
                           </div>
                           <div className="text-xs text-gray-400">LinkedIn</div>
                         </div>
-                      </div>
-
-                      <div className="flex justify-center mb-4">
-                        <div
-                          className="clutch-widget"
-                          data-url="https://widget.clutch.co"
-                          data-widget-type="2"
-                          data-height="45"
-                          data-nofollow="false"
-                          data-expandifr="true"
-                          data-scale="100"
-                          data-clutchcompany-id="2527093"
-                        ></div>
                       </div>
 
                       <div className="border-t border-white/10 pt-4">

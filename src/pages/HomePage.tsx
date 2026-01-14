@@ -226,18 +226,23 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  {/* Clutch Widget */}
-                  <div className="flex items-center justify-center py-2">
-                    <div
-                      className="clutch-widget"
-                      data-url="https://widget.clutch.co"
-                      data-widget-type="13"
-                      data-height="50"
-                      data-nofollow="false"
-                      data-expandifr="true"
-                      data-scale="100"
-                      data-clutchcompany-id="2527093"
-                    ></div>
+                  {/* Clutch */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-white rounded flex items-center justify-center overflow-hidden">
+                        <svg viewBox="0 0 24 24" className="w-6 h-6" fill="#FF3D2E">
+                          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 21.6c-5.303 0-9.6-4.297-9.6-9.6S6.697 2.4 12 2.4s9.6 4.297 9.6 9.6-4.297 9.6-9.6 9.6z"/>
+                          <path d="M16.8 12c0 2.651-2.149 4.8-4.8 4.8S7.2 14.651 7.2 12s2.149-4.8 4.8-4.8 4.8 2.149 4.8 4.8z"/>
+                        </svg>
+                      </div>
+                      <span className="text-white font-semibold text-sm">Clutch</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-[#FFD700] text-[#FFD700]" />
+                      ))}
+                      <span className="text-white font-bold text-sm ml-2">5.0</span>
+                    </div>
                   </div>
 
                   {/* DesignRush */}
