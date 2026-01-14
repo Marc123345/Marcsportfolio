@@ -207,7 +207,7 @@ export default function HomePage() {
                 <div className="space-y-3">
                   {/* Google Business */}
                   <a
-                    href="https://g.page/r/CZXx4tLQc5OTEAI/review"
+                    href="https://share.google/eF48yRJKqiZppBvfN"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-between hover:bg-white/5 p-2 -m-2 rounded-lg transition-colors"
