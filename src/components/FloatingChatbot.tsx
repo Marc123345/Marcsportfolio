@@ -1,11 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, MessageCircle } from 'lucide-react';
+import { X, MessageCircle, Star } from 'lucide-react';
 import ContactForm from './ContactForm';
 
 export default function FloatingChatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [showCTA, setShowCTA] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      const script = document.createElement('script');
+      script.src = 'https://widget.clutch.co/static/js/widget.js';
+      script.async = true;
+      document.body.appendChild(script);
+
+      return () => {
+        document.body.removeChild(script);
+      };
+    }
+  }, [isOpen]);
 
   return (
     <>
@@ -107,6 +120,72 @@ export default function FloatingChatbot() {
                   <p className="text-gray-400">
                     Fill out the form below and I'll get back to you within 24 hours to discuss your project.
                   </p>
+                </div>
+
+                <div className="mb-8 bg-[#2d3035] rounded-xl p-6 border border-white/10">
+                  <h4 className="text-lg font-bold text-white mb-4 text-center">
+                    20+ Verified 5 Star Reviews
+                  </h4>
+
+                  <div className="grid grid-cols-3 gap-4 mb-6">
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-white mb-1">5.0</div>
+                      <div className="flex items-center justify-center gap-0.5 mb-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                        ))}
+                      </div>
+                      <div className="text-xs text-gray-400">Google Business</div>
+                    </div>
+
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-white mb-1">4.9</div>
+                      <div className="flex items-center justify-center gap-0.5 mb-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                        ))}
+                      </div>
+                      <div className="text-xs text-gray-400">DesignRush</div>
+                    </div>
+
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-white mb-1">4.9</div>
+                      <div className="flex items-center justify-center gap-0.5 mb-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                        ))}
+                      </div>
+                      <div className="text-xs text-gray-400">LinkedIn</div>
+                    </div>
+                  </div>
+
+                  <div className="flex justify-center mb-4">
+                    <div
+                      className="clutch-widget"
+                      data-url="https://widget.clutch.co"
+                      data-widget-type="2"
+                      data-height="45"
+                      data-nofollow="false"
+                      data-expandifr="true"
+                      data-scale="100"
+                      data-clutchcompany-id="2527093"
+                    ></div>
+                  </div>
+
+                  <div className="border-t border-white/10 pt-4">
+                    <p className="text-sm text-gray-400 text-center mb-3">Trusted by:</p>
+                    <div className="flex items-center justify-center gap-6 flex-wrap">
+                      <div className="w-20 h-8 bg-white/5 rounded flex items-center justify-center">
+                        <span className="text-xs text-gray-400">Client</span>
+                      </div>
+                      <div className="w-20 h-8 bg-white/5 rounded flex items-center justify-center">
+                        <span className="text-xs text-gray-400">Client</span>
+                      </div>
+                      <div className="w-20 h-8 bg-white/5 rounded flex items-center justify-center">
+                        <span className="text-xs text-gray-400">Client</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <ContactForm />
