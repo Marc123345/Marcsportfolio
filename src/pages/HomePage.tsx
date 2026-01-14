@@ -28,6 +28,7 @@ const homeSchema = {
   },
   "sameAs": [
     "https://www.linkedin.com/in/portfolio2/",
+    "https://www.behance.net/marcfriedmanweb",
     "https://g.co/kgs/78fRZ6r"
   ],
   "founder": {
