@@ -148,7 +148,7 @@ export default function FloatingChatbot() {
                         </div>
 
                         <div className="text-center">
-                          <div className="text-2xl font-bold text-white mb-1">5.0</div>
+                          <div className="text-2xl font-bold text-white mb-1">4.9</div>
                           <div className="flex items-center justify-center gap-0.5 mb-1">
                             {[...Array(5)].map((_, i) => (
                               <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
