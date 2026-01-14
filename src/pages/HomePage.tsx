@@ -6,7 +6,7 @@ import TrustedBy from '@/components/TrustedBy';
 import SEO from '@/components/SEO';
 import MagneticButton from '@/components/MagneticButton';
 import AccessibilityPanel from '@/components/AccessibilityPanel';
-import JotFormEmbed from '@/components/JotFormEmbed';
+import ContactForm from '@/components/ContactForm';
 
 const homeSchema = {
   "@context": "https://schema.org",
@@ -833,8 +833,8 @@ export default function HomePage() {
             </p>
 
             <div className="bg-[#1b1b1b] border border-white/10 p-10 rounded-3xl text-left max-w-2xl mx-auto">
-              <JotFormEmbed />
-              
+              <ContactForm />
+
               <p className="text-center text-sm text-gray-400 mt-6">
                 Or{' '}
                 <a
