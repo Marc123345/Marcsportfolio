@@ -479,7 +479,7 @@ export default function BlogPage() {
     <>
       <Helmet>
         <title>Design & Development Blog - Expert Insights by Marc Friedman</title>
-        <meta name="description" content="Expert insights on web development, UI/UX design, and digital innovation. Learn from 5+ years of experience creating exceptional digital solutions for clients worldwide." />
+        <meta name="description" content="Expert insights on web development, UI/UX design, and digital innovation. Learn from experience creating exceptional digital solutions for clients worldwide." />
         <meta name="keywords" content="web development blog, UI/UX design insights, digital innovation, design systems, SaaS development, mobile-first design, conversion optimization" />
         <script type="application/ld+json">
           {JSON.stringify(blogSchema)}

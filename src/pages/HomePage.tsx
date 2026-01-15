@@ -780,7 +780,7 @@ export default function HomePage() {
               </h2>
               <div className="space-y-6 text-xl text-gray-300 mb-8">
                 <p>
-                  Hey, I'm Marc. I've spent 5+ years building websites for agencies, local businesses, and jewellery brands across three continents.
+                  Hey, I'm Marc. I've been building websites for agencies, local businesses, and jewellery brands across three continents.
                 </p>
                 <p>
                   Unlike big agencies that hand your project off to junior devs, you work directly with me from start to finish. That means faster turnaround, better communication, and no surprises.
