@@ -301,6 +301,7 @@ export default function HomePage() {
                       </div>
                       <div>
                         <div className="text-white font-semibold text-sm">LinkedIn</div>
+                        <div className="text-gray-400 text-xs">8 reviews</div>
                       </div>
                     </div>
                     <div className="flex items-center gap-1">
