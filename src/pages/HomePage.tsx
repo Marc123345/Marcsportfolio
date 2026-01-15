@@ -200,7 +200,7 @@ export default function HomePage() {
               >
                 <div className="flex items-center gap-3 mb-4">
                   <Shield className="w-5 h-5 text-[#A3D1FF]" />
-                  <span className="text-white font-bold text-sm uppercase tracking-wider">17 Total Verified Reviews</span>
+                  <span className="text-white font-bold text-sm uppercase tracking-wider">25 Total Verified Reviews</span>
                 </div>
 
                 {/* Review Platforms */}
