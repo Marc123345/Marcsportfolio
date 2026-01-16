@@ -677,6 +677,24 @@ export default function HomePage() {
             </motion.a>
           </div>
 
+          <motion.div
+            className="flex justify-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <div className="bg-[#1b1b1b] border border-white/10 rounded-2xl p-8 hover:border-[#A3D1FF] transition-all">
+              <iframe
+                width="360"
+                height="360"
+                src="https://clutch.co/share/badges/2527093/99988?utm_source=clutch_top_company_badge&utm_medium=image_embed"
+                title="Top Clutch Web Design Company Freelance Israel"
+                className="rounded-lg"
+              />
+            </div>
+          </motion.div>
+
           <div className="text-center">
             <Link
               to="/press"
