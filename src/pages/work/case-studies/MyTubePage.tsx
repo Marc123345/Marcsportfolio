@@ -436,10 +436,10 @@ export default function MyTubePage() {
           </p>
           <button
             onClick={() => navigate('/contact')}
-            className="mr_btn mr_btn_primary"
+            className="mr_btn mr_btn_primary inline-flex items-center gap-2"
           >
             <span>Start Your Project</span>
-            <ArrowRight className="ml-2 w-5 h-5" />
+            <ArrowRight className="w-5 h-5" />
           </button>
         </div>
       </section>

@@ -68,13 +68,14 @@ export default function PavingLeadsPage() {
             </p>
 
             <div className="flex gap-4 mt-10">
-              <a 
-                href={LIVE_URL} 
-                target="_blank" 
+              <a
+                href={LIVE_URL}
+                target="_blank"
                 rel="noreferrer"
-                className="group px-8 py-4 bg-white text-black font-bold rounded-full flex items-center gap-2 hover:bg-[#F97316] transition-all"
+                className="mr_btn mr_btn_primary inline-flex items-center gap-2"
               >
-                Visit Live Site <ArrowUpRight size={18} className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
+                <span>Visit Live Site</span>
+                <ArrowUpRight className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -337,9 +338,10 @@ export default function PavingLeadsPage() {
         </p>
         <button
           onClick={() => navigate('/contact')}
-          className="mr_btn mr_btn_primary"
+          className="mr_btn mr_btn_primary inline-flex items-center gap-2"
         >
           <span>Start Your Project</span>
+          <ArrowRight className="w-5 h-5" />
         </button>
       </section>
 

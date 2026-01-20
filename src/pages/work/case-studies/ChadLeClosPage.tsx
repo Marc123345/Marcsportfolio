@@ -127,10 +127,10 @@ export default function ChadLeClosPage() {
                 href="https://chadleclosswimming.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mr_btn mr_btn_primary"
+                className="mr_btn mr_btn_primary inline-flex items-center gap-2"
               >
                 <span>Visit Website</span>
-                <ArrowUpRight className="ml-2 w-5 h-5" />
+                <ArrowUpRight className="w-5 h-5" />
               </a>
             </div>
           </motion.div>
@@ -418,10 +418,10 @@ export default function ChadLeClosPage() {
           </p>
           <button
             onClick={() => navigate('/contact')}
-            className="mr_btn mr_btn_primary"
+            className="mr_btn mr_btn_primary inline-flex items-center gap-2"
           >
             <span>Start Your Project</span>
-            <ArrowRight className="ml-2 w-5 h-5" />
+            <ArrowRight className="w-5 h-5" />
           </button>
         </div>
       </section>

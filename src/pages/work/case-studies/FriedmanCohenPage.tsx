@@ -327,7 +327,7 @@ export default function FriedmanCohenPage() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button
               onClick={() => navigate('/contact')}
-              className="mr_btn mr_btn_primary"
+              className="mr_btn mr_btn_primary inline-flex items-center gap-2"
             >
               <Mail className="w-5 h-5" />
               <span>Request a Quote</span>

@@ -445,9 +445,10 @@ const BinnsMediaMasterStudy = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <button
               onClick={() => navigate('/contact')}
-              className="mr_btn mr_btn_primary"
+              className="mr_btn mr_btn_primary inline-flex items-center gap-2"
             >
               <span>Book A Strategy Call</span>
+              <ArrowRight className="w-5 h-5" />
             </button>
             <a 
               href={LIVE_URL}

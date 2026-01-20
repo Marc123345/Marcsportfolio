@@ -298,14 +298,14 @@ export default function TarChipPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <button
               onClick={() => navigate('/contact')}
-              className="mr_btn mr_btn_primary"
+              className="mr_btn mr_btn_primary inline-flex items-center gap-2"
             >
               <span>Start Your Project</span>
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <ArrowRight className="w-5 h-5" />
             </button>
             <button
               onClick={() => navigate('/work')}
-              className="mr_btn mr_btn_outline"
+              className="mr_btn mr_btn_outline inline-flex items-center gap-2"
             >
               <span>View More Work</span>
             </button>
