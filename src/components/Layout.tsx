@@ -231,6 +231,7 @@ export default function Layout() {
         <title>{`${getPageTitle()} | Marc Friedman`}</title>
         <meta name="description" content="Full-stack design and development solutions that transform your vision into exceptional digital experiences." />
         <link rel="canonical" href={`https://www.marcfriedmanportfolio.com${location.pathname}`} />
+        <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
       </Helmet>
 
       {/* Navigation */}
@@ -771,9 +772,19 @@ export default function Layout() {
                     Dribbble
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="https://clutch.co/profile/marc-friedman-design-agency"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Clutch Reviews
+                  </a>
+                </li>
               </ul>
             </div>
-            
+
             {/* Company */}
             <div>
               <h3 className="text-white font-semibold mb-6 text-lg">Company</h3>
