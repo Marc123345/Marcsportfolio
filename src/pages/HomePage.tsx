@@ -235,34 +235,6 @@ export default function HomePage() {
                     </div>
                   </a>
 
-                  {/* Clutch */}
-                  <a
-                    href="https://clutch.co/profile/marc-friedman-design-agency"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between hover:bg-white/5 p-2 -m-2 rounded-lg transition-colors"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-white rounded flex items-center justify-center overflow-hidden p-1">
-                        <svg viewBox="0 0 200 200" className="w-full h-full">
-                          <circle cx="100" cy="100" r="90" fill="#FF3D2E"/>
-                          <circle cx="100" cy="100" r="60" fill="white"/>
-                          <circle cx="100" cy="100" r="35" fill="#FF3D2E"/>
-                        </svg>
-                      </div>
-                      <div>
-                        <div className="text-white font-semibold text-sm">Clutch</div>
-                        <div className="text-gray-400 text-xs">4 reviews</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-[#FFD700] text-[#FFD700]" />
-                      ))}
-                      <span className="text-white font-bold text-sm ml-2">4.9</span>
-                    </div>
-                  </a>
-
                   {/* DesignRush */}
                   <a
                     href="https://www.designrush.com/agency/profile/marc-friedman"
@@ -677,24 +649,6 @@ export default function HomePage() {
               </div>
             </motion.a>
           </div>
-
-          <motion.div
-            className="flex justify-center mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <div className="bg-[#1b1b1b] border border-white/10 rounded-2xl p-8 hover:border-[#A3D1FF] transition-all">
-              <iframe
-                width="360"
-                height="360"
-                src="https://clutch.co/share/badges/2527093/99988?utm_source=clutch_top_company_badge&utm_medium=image_embed"
-                title="Top Clutch Web Design Company Freelance Israel"
-                className="rounded-lg"
-              />
-            </div>
-          </motion.div>
 
           <div className="text-center">
             <Link
