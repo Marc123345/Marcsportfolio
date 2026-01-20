@@ -447,11 +447,7 @@ export default function WorkPage() {
               <div className="text-xs md:text-base text-gray-400">Projects Completed</div>
             </div>
             <div className="bg-[#1b1b1b]/80 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center">
-              <div className="text-2xl md:text-4xl font-bold text-[#A3D1FF] mb-1 md:mb-2 counter">40+</div>
-              <div className="text-xs md:text-base text-gray-400">Happy Clients</div>
-            </div>
-            <div className="bg-[#1b1b1b]/80 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center">
-              <div className="text-2xl md:text-4xl font-bold text-[#A3D1FF] mb-1 md:mb-2 counter">5+</div>
+              <div className="text-2xl md:text-4xl font-bold text-[#A3D1FF] mb-1 md:mb-2 counter">6+</div>
               <div className="text-xs md:text-base text-gray-400">Years Experience</div>
             </div>
             <div className="bg-[#1b1b1b]/80 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center">
