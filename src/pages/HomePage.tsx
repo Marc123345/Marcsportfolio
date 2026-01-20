@@ -120,26 +120,27 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20" style={{ backgroundColor: '#1a2332' }}>
-        {/* Animated Background Image - Portfolio Websites */}
+        {/* Video Background */}
         <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
-          <motion.div
-            className="absolute inset-0 w-[120%] h-full"
-            initial={{ opacity: 0, x: 0 }}
-            animate={{
-              opacity: 0.4,
-              x: ['0%', '-20%']
-            }}
-            transition={{
-              opacity: { duration: 1.5, ease: "easeOut" },
-              x: { duration: 40, repeat: Infinity, ease: "linear", repeatType: "reverse" }
-            }}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-40"
+            poster="https://ik.imagekit.io/qcvroy8xpd/Container.png"
           >
+            <source
+              src="https://cdn.pixabay.com/video/2023/12/15/192827-895963123_large.mp4"
+              type="video/mp4"
+            />
+            {/* Fallback image if video doesn't load */}
             <img
               src="https://ik.imagekit.io/qcvroy8xpd/Container.png"
               alt="Marc Friedman Portfolio Websites"
               className="w-full h-full object-cover"
             />
-          </motion.div>
+          </video>
 
           {/* Subtle Gradient Overlays */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#1a2332]/60 via-transparent to-[#1a2332]/60"></div>
