@@ -298,15 +298,16 @@ export default function TarChipPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <button
               onClick={() => navigate('/contact')}
-              className="px-8 py-4 bg-[#EA580C] text-white font-bold rounded-full hover:bg-[#DC2626] transition-colors flex items-center gap-2"
+              className="mr_btn mr_btn_primary"
             >
-              Start Your Project <ArrowRight size={18} />
+              <span>Start Your Project</span>
+              <ArrowRight className="ml-2 w-5 h-5" />
             </button>
             <button
               onClick={() => navigate('/work')}
-              className="px-8 py-4 bg-white/5 border border-white/10 text-white font-bold rounded-full hover:bg-white/10 transition-colors"
+              className="mr_btn mr_btn_outline"
             >
-              View More Work
+              <span>View More Work</span>
             </button>
           </div>
         </div>

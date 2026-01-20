@@ -443,11 +443,11 @@ const BinnsMediaMasterStudy = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <button 
+            <button
               onClick={() => navigate('/contact')}
-              className="px-10 py-5 bg-white text-black font-bold text-lg rounded-full hover:bg-[#cc000a] hover:text-white transition-all transform hover:scale-105 shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+              className="mr_btn mr_btn_primary"
             >
-              Book A Strategy Call
+              <span>Book A Strategy Call</span>
             </button>
             <a 
               href={LIVE_URL}

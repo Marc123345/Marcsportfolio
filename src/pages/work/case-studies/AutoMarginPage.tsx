@@ -246,14 +246,13 @@ export default function AutoMarginPage() {
             </ul>
             <div className="flex gap-4">
               <MagneticButton>
-                <a 
+                <a
                   href="https://marc123345.github.io/Automargin/"
                   target="_blank"
                   rel="noopener noreferrer"
-                 className="mr_btn mr_btn_primary group relative overflow-hidden"
+                  className="mr_btn mr_btn_primary"
                 >
-                 <span className="relative z-10">Explore AutoMargin</span>
-                 <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+                  <span>Explore AutoMargin</span>
                   <ArrowUpRight className="ml-2 w-5 h-5" />
                 </a>
               </MagneticButton>
@@ -850,13 +849,12 @@ export default function AutoMarginPage() {
               Let's create a data-driven solution that drives real results for your business.
             </p>
             <MagneticButton>
-              <button 
+              <button
                 onClick={() => navigate('/contact')}
-                className="bg-[#A3D1FF] text-black px-6 py-3 rounded-lg hover:bg-[#92bce6] transition-colors inline-flex items-center group relative overflow-hidden"
+                className="mr_btn mr_btn_primary"
               >
-                <span className="relative z-10">Start Your Project</span>
-                <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-                <ArrowRight className="ml-2 w-5 h-5 relative z-10 group-hover:rotate-45 transition-transform duration-300" />
+                <span>Start Your Project</span>
+                <ArrowRight className="ml-2 w-5 h-5" />
               </button>
             </MagneticButton>
           </motion.div>

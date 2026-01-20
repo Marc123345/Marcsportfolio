@@ -325,11 +325,12 @@ export default function FriedmanCohenPage() {
             We help legacy brands build modern digital infrastructure.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button 
+            <button
               onClick={() => navigate('/contact')}
-              className="px-8 py-4 bg-[#A3D1FF] text-black font-bold rounded-full hover:bg-white transition-colors flex items-center justify-center gap-2"
+              className="mr_btn mr_btn_primary"
             >
-              <Mail size={18} /> Request a Quote
+              <Mail className="w-5 h-5" />
+              <span>Request a Quote</span>
             </button>
             <div className="flex items-center justify-center gap-2 px-8 py-4 text-gray-400">
                <MapPin size={18} /> Strand, Cape Town

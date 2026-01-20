@@ -334,12 +334,11 @@ export default function UntappedAfricaCaseStudy() {
           Let's build a platform that drives meaningful change. <br/>
           The <span className="text-white font-bold">Impact Story Package</span> is ready for deployment.
         </p>
-        <button 
+        <button
           onClick={() => navigate('/contact')}
-          className="group relative inline-flex items-center gap-3 px-10 py-5 bg-white text-black font-bold rounded-full hover:bg-[#FFD700] transition-all hover:pr-14"
+          className="mr_btn mr_btn_primary"
         >
-          Start Your Project
-          <ArrowRight className="absolute right-6 opacity-0 group-hover:opacity-100 transition-all" />
+          <span>Start Your Project</span>
         </button>
       </section>
 
