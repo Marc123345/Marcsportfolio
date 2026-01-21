@@ -121,7 +121,10 @@ export default function HomePage() {
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20" style={{ backgroundColor: '#1a2332' }}>
         {/* Video Background */}
-        <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
+        <motion.div
+          className="absolute inset-0 w-full h-full overflow-hidden z-0"
+          style={{ y }}
+        >
           <video
             autoPlay
             loop
@@ -145,7 +148,7 @@ export default function HomePage() {
           {/* Subtle Gradient Overlays */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#1a2332]/60 via-transparent to-[#1a2332]/60"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-[#1a2332]/80 via-transparent to-[#1a2332]/40"></div>
-        </div>
+        </motion.div>
 
         <div className="container mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
