@@ -215,6 +215,14 @@ function App() {
           />
 
           <Route
+            path="blog/google-algorithm-update-2026"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                {lazyLoad(() => import('@/pages/blog/google-algorithm-update-2026'))}
+              </Suspense>
+            }
+          />
+          <Route
             path="blog/ai-imperfect-aesthetics"
             element={
               <Suspense fallback={<PageLoader />}>

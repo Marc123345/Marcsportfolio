@@ -34,6 +34,21 @@ const blogSchema = {
 // Blog post data
 const blogPosts = [
   {
+    id: 'google-algorithm-update-2026',
+    title: 'Google\'s 2026 Algorithm Update: Essential Strategies to Rank in the AI-First Era',
+    excerpt: 'Comprehensive guide to Google\'s latest algorithm update focusing on AI-generated content detection, E-E-A-T signals, user experience metrics, and practical strategies to maintain and improve your search rankings.',
+    content: 'Full content here...',
+    date: 'January 22, 2026',
+    readTime: '18 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: 'https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?auto=format&fit=crop&w=2000&q=80',
+    categories: ['SEO', 'Google', 'Algorithm', 'Marketing'],
+    featured: true
+  },
+  {
     id: 'ai-imperfect-aesthetics',
     title: 'AI + Human Imperfection: The New Aesthetic Revolution',
     excerpt: 'Discover how designers are layering hand-made, tactile, and deliberately messy aesthetics on AI-generated content to create authentic, emotionally resonant experiences that reject generic perfection.',
