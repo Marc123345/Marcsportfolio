@@ -14,8 +14,8 @@ export default function AIImperfectAestheticsPage() {
     "headline": "AI + Human Imperfection: The New Aesthetic Revolution",
     "description": "Discover how designers are layering hand-made, tactile, and deliberately messy aesthetics on AI-generated content to create authentic, emotionally resonant experiences that reject generic perfection.",
     "image": "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=2000&q=80",
-    "datePublished": "2025-01-21T08:00:00+00:00",
-    "dateModified": "2025-01-21T08:00:00+00:00",
+    "datePublished": "2026-01-21T08:00:00+00:00",
+    "dateModified": "2026-01-21T08:00:00+00:00",
     "author": {
       "@type": "Person",
       "name": "Marc Friedman",
@@ -77,7 +77,7 @@ export default function AIImperfectAestheticsPage() {
           <div className="flex items-center gap-4 mb-8">
             <div className="flex items-center gap-2 text-gray-400">
               <Calendar className="w-4 h-4" />
-              <span>January 21, 2025</span>
+              <span>January 21, 2026</span>
             </div>
             <div className="flex items-center gap-2 text-gray-400">
               <Clock className="w-4 h-4" />

@@ -38,7 +38,7 @@ const blogPosts = [
     title: 'AI + Human Imperfection: The New Aesthetic Revolution',
     excerpt: 'Discover how designers are layering hand-made, tactile, and deliberately messy aesthetics on AI-generated content to create authentic, emotionally resonant experiences that reject generic perfection.',
     content: 'Full content here...',
-    date: 'January 21, 2025',
+    date: 'January 21, 2026',
     readTime: '14 min read',
     author: {
       name: 'Marc Friedman',
