@@ -252,14 +252,14 @@ export default function HomePage() {
                       </div>
                       <div>
                         <div className="text-white font-semibold text-sm">Clutch</div>
-                        <div className="text-gray-400 text-xs">4 reviews</div>
+                        <div className="text-gray-400 text-xs">5 reviews</div>
                       </div>
                     </div>
                     <div className="flex items-center gap-1">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-[#FFD700] text-[#FFD700]" />
+                        <Star key={i} className={`w-4 h-4 ${i < 4 || (i === 4) ? 'fill-[#FFD700] text-[#FFD700]' : 'fill-[#FFD700]/50 text-[#FFD700]/50'}`} />
                       ))}
-                      <span className="text-white font-bold text-sm ml-2">4.9</span>
+                      <span className="text-white font-bold text-sm ml-2">4.8</span>
                     </div>
                   </a>
 
@@ -485,7 +485,7 @@ export default function HomePage() {
                 image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(6).png?updatedAt=1767539579420",
                 description: "Specialized surface solutions showcase",
                 tech: ["React", "Tailwind CSS", "Responsive Design"],
-                liveUrl: "https://pavingtarchip.com/",
+                liveUrl: "https://cumberlandtarchip.org/",
                 caseStudy: "/work/case-studies/tar-chip-paving"
               }
             ].map((project, index) => (
