@@ -85,6 +85,7 @@ const homeSchema = {
 export default function HomePage() {
   const navigate = useNavigate();
   const heroRef = useRef<HTMLElement>(null);
+  const [scrollY, setScrollY] = React.useState(0);
 
   const calendlyLink = "https://calendly.com/marc-friedman-web-design--meeting-link/30min";
 
@@ -95,6 +96,16 @@ export default function HomePage() {
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 300]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
+  // Handle scroll for parallax effect
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
@@ -121,10 +132,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20" style={{ backgroundColor: '#1a2332' }}>
         {/* Video Background */}
-        <motion.div
-          className="absolute inset-0 w-full h-full overflow-hidden z-0"
-          style={{ y }}
-        >
+        <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
           <video
             autoPlay
             loop
@@ -132,6 +140,10 @@ export default function HomePage() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover opacity-40"
             poster="https://ik.imagekit.io/qcvroy8xpd/Container.png"
+            style={{
+              transform: `translateY(${scrollY * 0.5}px)`,
+              transition: 'transform 0.1s ease-out'
+            }}
           >
             <source
               src="https://cdn.pixabay.com/video/2023/12/15/192827-895963123_large.mp4"
@@ -148,7 +160,7 @@ export default function HomePage() {
           {/* Subtle Gradient Overlays */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#1a2332]/60 via-transparent to-[#1a2332]/60"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-[#1a2332]/80 via-transparent to-[#1a2332]/40"></div>
-        </motion.div>
+        </div>
 
         <div className="container mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
