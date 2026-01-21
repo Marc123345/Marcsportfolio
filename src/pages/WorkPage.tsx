@@ -120,7 +120,7 @@ const projects: Project[] = [
   {
     title: "Chad Le Clos Swimming",
     description: "Professional landing page for Olympic champion's swimming clinics.",
-    image: "https://images.unsplash.com/photo-1600965962361-9035dbfd1c50?auto=format&fit=crop&w=1200&q=80",
+    image: "https://i.imgur.com/ApfYPlH.jpg",
     liveUrl: "https://chadleclosswimming.com",
     caseStudyUrl: "/work/case-studies/chad-le-clos",
     impact: [
@@ -163,7 +163,7 @@ const projects: Project[] = [
   {
     title: "Fleet Management System",
     description: "Comprehensive fleet tracking and management solution.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+    image: "https://i.imgur.com/EwgHAuK.png",
     caseStudyUrl: "/work/case-studies/fleet-management",
     impact: [
       "Improved fleet efficiency",
@@ -176,7 +176,7 @@ const projects: Project[] = [
   {
     title: "AutoMarginX",
     description: "Dealership management platform with real-time analytics.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    image: "https://i.imgur.com/PiKh199.png",
     caseStudyUrl: "/work/case-studies/automarginx",
     impact: [
       "Faster decisions",
@@ -189,7 +189,7 @@ const projects: Project[] = [
   {
     title: "Videoleap",
     description: "AI-powered video editing platform with template marketplace.",
-    image: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=1200&q=80",
+    image: "https://i.imgur.com/SubVB9A.jpeg",
     caseStudyUrl: "/work/case-studies/videoleap",
     impact: [
       "Increased template usage",
@@ -411,8 +411,8 @@ export default function WorkPage() {
         <DynamicBackground streakCount={15} particleCount={40} color="#A3D1FF" />
         
         <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=2000&q=80"
+          <img 
+            src="https://i.imgur.com/IU0mmH7.jpeg"
             alt="Featured portfolio projects by Marc Friedman - web development and design showcase"
             className="w-full h-full object-cover"
             style={{ 

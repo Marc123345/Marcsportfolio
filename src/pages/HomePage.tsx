@@ -474,7 +474,7 @@ export default function HomePage() {
               },
               {
                 title: "Chad Le Clos Swimming",
-                image: "https://images.unsplash.com/photo-1600965962361-9035dbfd1c50?auto=format&fit=crop&w=1200&q=80",
+                image: "https://i.imgur.com/ApfYPlH.jpg",
                 description: "Olympic champion's swimming clinics",
                 tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
                 liveUrl: "https://chadleclosswimming.com",

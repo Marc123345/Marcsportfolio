@@ -39,7 +39,7 @@ const projects: Project[] = [
     id: 'marginx',
     title: 'MarginX Dashboard',
     description: 'Dealership management platform with market data analytics.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://i.imgur.com/PiKh199.png',
     caseStudyUrl: '/work/case-studies/automarginx',
     category: 'saas',
     size: 'medium'
@@ -48,7 +48,7 @@ const projects: Project[] = [
     id: 'chad-le-clos',
     title: 'Chad Le Clos Swimming',
     description: 'Landing page for Olympic champion\'s swimming clinics.',
-    image: 'https://images.unsplash.com/photo-1600965962361-9035dbfd1c50?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://i.imgur.com/ApfYPlH.jpg',
     caseStudyUrl: '/work/case-studies/chad-le-clos',
     liveUrl: 'https://chadleclosswimming.com',
     category: 'landing',
@@ -58,7 +58,7 @@ const projects: Project[] = [
     id: 'videoleap',
     title: 'Videoleap',
     description: 'Video editing platform with template marketplace.',
-    image: 'https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://i.imgur.com/SubVB9A.jpeg',
     caseStudyUrl: '/work/case-studies/videoleap',
     category: 'saas',
     size: 'medium'

@@ -171,7 +171,7 @@ export default function AutoMarginPage() {
         <motion.div className="absolute inset-0 z-0" style={{ y, opacity }}>
           <div className="absolute inset-0 bg-gradient-to-br from-[#0051a3]/20 via-transparent to-[#A3D1FF]/20 mix-blend-overlay"></div>
           <img
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=80"
+            src="https://i.imgur.com/PiKh199.png"
             alt="AutoMarginX dealership management platform - real-time analytics dashboard showing market data and profit optimization tools for automotive dealers"
             className="w-full h-full object-cover"
           />
@@ -426,8 +426,8 @@ export default function AutoMarginPage() {
         <div className="max-w-7xl mx-auto">
           <HoverCard3D className="bg-[#1b1b1b] p-8 rounded-xl border-l-4 border-[#0051a3]">
             <div className="flex items-center gap-8">
-              <img
-                src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=200&q=80"
+              <img 
+                src="https://i.imgur.com/3DtZKd7.jpeg"
                 alt="Peng Zhang, VP Product at AutoMarginX - client testimonial photo"
                 className="w-24 h-24 rounded-full object-cover"
               />

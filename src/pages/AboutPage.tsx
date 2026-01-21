@@ -250,8 +250,8 @@ export default function AboutPage() {
                 />
               </div>
               <div className="aspect-[4/3] overflow-hidden rounded-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&q=80"
+                <img 
+                  src="https://i.imgur.com/IU0mmH7.jpeg"
                   alt="Marc's Project"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
@@ -401,8 +401,8 @@ export default function AboutPage() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <img
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+              <img 
+                src="https://i.imgur.com/PiKh199.png"
                 alt="Technical Skills"
                 className="rounded-xl shadow-2xl hover:scale-105 transition-transform duration-500"
               />

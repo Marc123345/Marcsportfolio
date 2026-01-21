@@ -263,7 +263,7 @@ export default function SaaSPage() {
             >
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=1200&q=80"
+                  src="https://i.imgur.com/vXTIRo4.jpg"
                   alt="iLight Platform"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -287,7 +287,7 @@ export default function SaaSPage() {
             >
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+                  src="https://i.imgur.com/PiKh199.png"
                   alt="AutoMarginX Platform"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />

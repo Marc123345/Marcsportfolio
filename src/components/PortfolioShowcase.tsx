@@ -41,7 +41,7 @@ const projects: Project[] = [
     id: 'automargin',
     title: 'AutoMargin Dashboard',
     description: 'Revolutionary dealership management platform with market data analytics.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://i.imgur.com/PiKh199.png',
     caseStudyUrl: '/work/case-studies/automarginx',
   }
 ];

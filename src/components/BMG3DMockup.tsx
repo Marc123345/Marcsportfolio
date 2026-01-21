@@ -39,9 +39,9 @@ const BMG3DMockup = () => {
           className="col-span-2 row-span-2 bg-[#1b1b1b] rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
           style={{ transform: 'translateZ(40px)' }}
         >
-          <img
-            src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&q=80"
-            alt="BMG Portfolio"
+          <img 
+            src="https://i.imgur.com/IU0mmH7.jpeg" 
+            alt="BMG Portfolio" 
             className="w-full h-full object-cover"
           />
         </div>

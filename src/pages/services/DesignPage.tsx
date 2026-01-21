@@ -236,7 +236,7 @@ export default function DesignPage() {
             >
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=1200&q=80"
+                  src="https://i.imgur.com/SubVB9A.jpeg"
                   alt="Videoleap Platform"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -260,7 +260,7 @@ export default function DesignPage() {
             >
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1200&q=80"
+                  src="https://i.imgur.com/ywKLdPM.jpeg"
                   alt="MyTube Platform"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -284,7 +284,7 @@ export default function DesignPage() {
             >
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80"
+                  src="https://i.imgur.com/EwgHAuK.png"
                   alt="Fleet Management System"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -308,7 +308,7 @@ export default function DesignPage() {
             >
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=1200&q=80"
+                  src="https://i.imgur.com/vXTIRo4.jpg"
                   alt="iLight Platform"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
