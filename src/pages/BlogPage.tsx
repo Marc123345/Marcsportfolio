@@ -34,6 +34,21 @@ const blogSchema = {
 // Blog post data
 const blogPosts = [
   {
+    id: 'ai-as-codesigner',
+    title: 'AI as Co-Designer: Moving Beyond Tools to True Creative Partnership',
+    excerpt: 'Explore how AI is evolving from a simple design tool into a true creative partner. Learn how to collaborate with AI as a co-designer, the key differences from traditional tools, and best practices for human-AI creative partnerships.',
+    content: 'Full content here...',
+    date: 'January 22, 2026',
+    readTime: '15 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2000&q=80',
+    categories: ['AI', 'Design', 'Collaboration', 'Innovation'],
+    featured: true
+  },
+  {
     id: 'google-algorithm-update-2026',
     title: 'Google\'s 2026 Algorithm Update: Essential Strategies to Rank in the AI-First Era',
     excerpt: 'Comprehensive guide to Google\'s latest algorithm update focusing on AI-generated content detection, E-E-A-T signals, user experience metrics, and practical strategies to maintain and improve your search rankings.',
