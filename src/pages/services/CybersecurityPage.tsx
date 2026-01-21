@@ -225,7 +225,7 @@ export default function CybersecurityPage() {
             >
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="https://i.imgur.com/EwgHAuK.png"
+                  src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80"
                   alt="Fleet Management Security"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -273,7 +273,7 @@ export default function CybersecurityPage() {
             >
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="https://i.imgur.com/PiKh199.png"
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
                   alt="AutoMarginX Security"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />

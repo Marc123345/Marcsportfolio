@@ -79,7 +79,7 @@ export default function ChadLeClosPage() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#0051a3]/20 via-transparent to-[#A3D1FF]/20 mix-blend-overlay"></div>
           <img
-            src="https://i.imgur.com/ApfYPlH.jpg"
+            src="https://images.unsplash.com/photo-1600965962361-9035dbfd1c50?auto=format&fit=crop&w=2000&q=80"
             alt="Chad Le Clos Swimming"
             className="w-full h-full object-cover"
           />

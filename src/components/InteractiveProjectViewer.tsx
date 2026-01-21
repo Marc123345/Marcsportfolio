@@ -18,7 +18,7 @@ const projects: Project[] = [
     id: 'binns-media',
     title: 'Binns Media Group Platform',
     description: 'A cutting-edge digital media platform showcasing BMG\'s diverse content portfolio including podcasts, TV shows, and exclusive content.',
-    image: 'https://i.imgur.com/IU0mmH7.jpeg',
+    image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&q=80',
     caseStudyUrl: '/work/case-studies/binns-media',
     liveUrl: 'https://www.binnsmediagroup.com',
     category: 'Media'
@@ -36,7 +36,7 @@ const projects: Project[] = [
     id: 'automargin',
     title: 'AutoMargin Dashboard',
     description: 'A revolutionary dealership management platform that transforms how automotive dealers access and utilize market data.',
-    image: 'https://i.imgur.com/PiKh199.png',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
     caseStudyUrl: '/work/case-studies/automarginx',
     category: 'Automotive'
   },
@@ -44,7 +44,7 @@ const projects: Project[] = [
     id: 'videoleap',
     title: 'Videoleap',
     description: 'Enhancing user engagement and template utilization for a leading video editing platform.',
-    image: 'https://i.imgur.com/SubVB9A.jpeg',
+    image: 'https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=1200&q=80',
     caseStudyUrl: '/work/case-studies/videoleap',
     category: 'Media & Entertainment'
   }

@@ -152,7 +152,7 @@ export default function TrustedBy() {
             {/* Binns Media Group */}
             <div className="transition-all duration-300 hover:scale-110 flex-shrink-0">
               <img
-                src="https://i.imgur.com/uliFOja.png"
+                src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?auto=format&fit=crop&w=200&q=80"
                 alt="Binns Media Group"
                 className="h-12 md:h-14 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
               />
@@ -234,7 +234,7 @@ export default function TrustedBy() {
             {/* Binns Media Group */}
             <div className="transition-all duration-300 hover:scale-110 flex-shrink-0">
               <img
-                src="https://i.imgur.com/uliFOja.png"
+                src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?auto=format&fit=crop&w=200&q=80"
                 alt="Binns Media Group"
                 className="h-12 md:h-14 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
               />

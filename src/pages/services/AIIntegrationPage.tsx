@@ -270,7 +270,7 @@ export default function AIIntegrationPage() {
             >
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="https://i.imgur.com/SubVB9A.jpeg"
+                  src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=1200&q=80"
                   alt="Videoleap AI Platform"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -294,7 +294,7 @@ export default function AIIntegrationPage() {
             >
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="https://i.imgur.com/QNHXpzT.jpeg"
+                  src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1200&q=80"
                   alt="MyTube AI Platform"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -318,7 +318,7 @@ export default function AIIntegrationPage() {
             >
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="https://i.imgur.com/PiKh199.png"
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
                   alt="AutoMarginX Analytics"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />

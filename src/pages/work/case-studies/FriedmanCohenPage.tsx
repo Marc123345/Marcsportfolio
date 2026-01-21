@@ -16,7 +16,7 @@ const ASSETS = {
   DETAIL_VIEW: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(3).png?updatedAt=1767539579776",
   
   // Legacy Asset (Keep for context/history section)
-  STOREFRONT: "https://i.imgur.com/6kjURhx.jpeg" 
+  STOREFRONT: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=2000&q=80" 
 };
 
 function FeatureCard({ icon: Icon, title, description }: { icon: any, title: string, description: string }) {

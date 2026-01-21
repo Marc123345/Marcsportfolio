@@ -11,7 +11,7 @@ interface ReviewCardProps {
 const clientInfo = {
    "Omar Turner": {
     role: "Chief Executive Officer, Binns Media Group, New York",
-    image: "https://i.imgur.com/NKjkUC9.jpeg",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
     linkedin: "https://www.linkedin.com/in/omar-turner-92b188130"
   },
   "Gabriel Sher": {
@@ -36,17 +36,17 @@ const clientInfo = {
   },
   "Bar Levy": {
     role: "Co-Founder & PM at Sumit-AI",
-    image: "https://i.imgur.com/ja6oGvJ.jpg",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80",
     linkedin: "https://www.linkedin.com/in/bar-levy"
   },
   "Ezra Rubinson": {
     role: "Digital Marketing Agency Owner, Boston",
-    image: "https://i.imgur.com/rkHCwAv.jpeg",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
     linkedin: "https://www.linkedin.com/in/ezra-rubinson/"
   },
   "Yaron Peretz": {
     role: "CEO, Tech Startup",
-    image: "https://i.imgur.com/cP2GDPD.jpg",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80",
     linkedin: "https://www.linkedin.com/in/yaron-peretz-ghostwriter"
   },
   "Stallone Sweeney": {
@@ -56,7 +56,7 @@ const clientInfo = {
   },
   "Lior Shimon": {
     role: "Algorithm Engineer | Data Scientist | AI Engineer",
-    image: "https://i.imgur.com/vYZWYcu.jpeg",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80",
     linkedin: "https://www.linkedin.com/in/liorshimon"
   },
   "Yosi Lugassy": {
@@ -65,22 +65,22 @@ const clientInfo = {
   },
   "Elior Daniely": {
     role: "Real Estate Entrepreneur",
-    image: "https://i.imgur.com/EDJ9b8P.jpeg",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80",
     linkedin: "https://www.linkedin.com/in/elior-daniely-59b554237"
   },
   "Shalom Landman": {
     role: "Real Estate Developer, Florida",
-    image: "https://i.imgur.com/N6MTFbh.jpeg",
+    image: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=200&q=80",
     linkedin: "https://www.linkedin.com/in/shalom-landman-74a492220"
   },
   "Julia Friedman": {
     role: "Holistic Wellness Coach",
-    image: "https://i.imgur.com/wCpW4uW.jpg",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80",
     linkedin: "https://www.linkedin.com/in/julia-friedman-9b374b53"
   },
     "VP Product": {
     role: "WebAI | VP Product at MarginX.ai",
-    image: "https://i.imgur.com/3DtZKd7.jpeg",
+    image: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=200&q=80",
     linkedin: "https://www.linkedin.com/in/vp-product"
   },
   "Hilla Dayan": {
@@ -89,7 +89,7 @@ const clientInfo = {
   },
   "Benny Even Ari": {
     role: "Investment Banker & Real Estate Developer",
-    image: "https://i.imgur.com/s3S0EXG.jpg",
+    image: "https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&fit=crop&w=200&q=80",
     linkedin: "https://www.linkedin.com/in/benny-even-ari"
   },
   "Jayden Youngleson": {
