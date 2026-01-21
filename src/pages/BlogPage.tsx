@@ -34,6 +34,21 @@ const blogSchema = {
 // Blog post data
 const blogPosts = [
   {
+    id: 'ai-imperfect-aesthetics',
+    title: 'AI + Human Imperfection: The New Aesthetic Revolution',
+    excerpt: 'Discover how designers are layering hand-made, tactile, and deliberately messy aesthetics on AI-generated content to create authentic, emotionally resonant experiences that reject generic perfection.',
+    content: 'Full content here...',
+    date: 'January 21, 2025',
+    readTime: '14 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: 'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=2000&q=80',
+    categories: ['AI', 'Design', 'Trends'],
+    featured: true
+  },
+  {
     id: 'brutalism-anti-design-web-trends',
     title: 'Brutalism & Anti-Design: The Raw, Unpolished Web Design Revolution',
     excerpt: 'Explore the rise of brutalist web design and anti-design movements. Learn how raw grids, minimal imagery, monochrome palettes, and imperfect layouts create authentic, human-centered digital experiences.',
