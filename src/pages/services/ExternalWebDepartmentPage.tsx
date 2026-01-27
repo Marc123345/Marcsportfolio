@@ -454,7 +454,7 @@ export default function ExternalWebDepartmentPage() {
 
       {/* Lead Form Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#0a0a0a]">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
               Or send me your details
@@ -463,7 +463,15 @@ export default function ExternalWebDepartmentPage() {
               Share your project details and I'll get back to you within 24 hours
             </p>
           </div>
-          <ServiceLeadForm service="External Web Department" />
+          <ServiceLeadForm
+            benefits={[
+              'Single expert partner for all your web production',
+              'Consistent branding across all locations and brands',
+              'Faster launches with reusable design systems',
+              'Free landing page to test the approach',
+              'Direct access without managing a team'
+            ]}
+          />
         </div>
       </section>
     </>
