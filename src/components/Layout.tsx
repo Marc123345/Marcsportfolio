@@ -51,11 +51,6 @@ const navigationLinks: NavigationItem[] = [
             label: 'SaaS Development',
             to: '/services/saas',
             description: 'End-to-end SaaS solutions'
-          },
-          {
-            label: 'API Development',
-            to: '/services/api',
-            description: 'Custom API solutions and integrations'
           }
         ]
       },
@@ -88,51 +83,6 @@ const navigationLinks: NavigationItem[] = [
             description: 'Design & dev execution for marketing strategy'
           }
         ]
-      },
-      {
-        title: 'Service Packages',
-        items: [
-          {
-            label: 'Premium Web Package',
-            to: '/services/premium-web-package',
-            description: 'Complete website solution'
-          },
-          {
-            label: 'Monthly Retainer',
-            to: '/services/monthly-retainer',
-            description: 'Ongoing design and development support'
-          }
-        ]
-      }
-    ]
-  },
-  {
-    label: 'Tools',
-    children: [
-      {
-        title: 'Free Tools & Resources',
-        items: [
-          {
-            label: 'Website Analyzer',
-            to: '/tools/website-analyzer',
-            description: 'Analyze your website performance'
-          },
-          {
-            label: 'ROI Calculator',
-            to: '/tools/roi-calculator',
-            description: 'Calculate your project ROI'
-          },
-          {
-            label: 'Project Timeline',
-            to: '/tools/project-timeline',
-            description: 'Estimate project duration'
-          },
-          {
-            label: 'AI Crawler Optimization',
-            to: '/tools/ai-crawler-optimization',
-            description: 'Optimize for AI search engines'
-          }
-        ]
       }
     ]
   },
@@ -141,32 +91,8 @@ const navigationLinks: NavigationItem[] = [
     to: '/work'
   },
   { label: 'Blog', to: '/blog' },
-  {
-    label: 'About',
-    children: [
-      {
-        title: 'About Marc Friedman',
-        items: [
-          {
-            label: 'About',
-            to: '/about',
-            description: 'Learn about Marc and his work'
-          },
-          {
-            label: 'Press',
-            to: '/press',
-            description: 'Media coverage and recognition'
-          },
-          {
-            label: 'Client Reviews',
-            to: '/client-reviews',
-            description: 'What clients say about us'
-          }
-        ]
-      }
-    ]
-  },
-  { label: 'Contact', to: '/contact' }
+  { label: 'About', to: '/about' },
+  { label: 'Contact', to: '/contact', badge: 'Free Consultation' }
 ];
 
 export default function Layout() {
@@ -639,7 +565,7 @@ export default function Layout() {
       {/* Footer */}
       <footer className="bg-[#1b1b1b] border-t border-white/10">
         <div className="container-custom section-spacing-sm">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Brand Section */}
             <div>
               <div className="mb-6">
@@ -859,45 +785,6 @@ export default function Layout() {
               </ul>
             </div>
 
-            {/* Tools */}
-            <div>
-              <h3 className="text-white font-semibold mb-6 text-lg">Tools</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    to="/tools/website-analyzer"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Website Analyzer
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/tools/roi-calculator"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    ROI Calculator
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/tools/project-timeline"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Project Timeline
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/tools/ai-crawler-optimization"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    AI Crawler Optimization
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
             {/* Company */}
             <div>
               <h3 className="text-white font-semibold mb-6 text-lg">Company</h3>
@@ -908,22 +795,6 @@ export default function Layout() {
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     About
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/press"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Press
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/client-reviews"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Client Reviews
                   </Link>
                 </li>
                 <li>
