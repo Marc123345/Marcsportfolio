@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import WebDevelopmentPage from './services/WebDevelopmentPage';
 import DesignPage from './services/DesignPage';
-import { StartupMVPPage, SaaSPage, FractionalCMOPage, DesignSystemsPage } from './services';
+import { StartupMVPPage, SaaSPage, FractionalCMOPage, DesignSystemsPage, ExternalWebDepartmentPage } from './services';
 import MentorshipPage from './services/MentorshipPage';
 import AIIntegrationPage from './services/AIIntegrationPage';
 import CybersecurityPage from './services/CybersecurityPage';
@@ -68,6 +68,11 @@ const servicesSchema = {
         "@type": "Offer",
         "name": "Fractional CMO Partner",
         "description": "Design & dev execution for go-to-market strategy"
+      },
+      {
+        "@type": "Offer",
+        "name": "External Web Department",
+        "description": "Award-winning websites for multi-location and multi-brand companies"
       }
     ]
   }
@@ -114,6 +119,7 @@ export default function ServicesPage() {
         <Route path="cybersecurity" element={<CybersecurityPage />} />
         <Route path="design-systems" element={<DesignSystemsPage />} />
         <Route path="fractional-cmo" element={<FractionalCMOPage />} />
+        <Route path="external-web-department" element={<ExternalWebDepartmentPage />} />
         <Route path="*" element={<Navigate to="/services" replace />} />
       </Routes>
     </>

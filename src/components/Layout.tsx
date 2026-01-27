@@ -81,6 +81,11 @@ const navigationLinks: NavigationItem[] = [
             label: 'Marketing Partner',
             to: '/services/fractional-cmo',
             description: 'Design & dev execution for marketing strategy'
+          },
+          {
+            label: 'External Web Department',
+            to: '/services/external-web-department',
+            description: 'For multi-location & multi-brand companies'
           }
         ]
       }
@@ -696,6 +701,14 @@ export default function Layout() {
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     Marketing Partner
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/external-web-department"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    External Web Department
                   </Link>
                 </li>
               </ul>
