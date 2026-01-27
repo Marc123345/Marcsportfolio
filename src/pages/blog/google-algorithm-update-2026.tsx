@@ -46,23 +46,16 @@ export default function GoogleAlgorithmUpdate2026() {
         </script>
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
-        <article className="max-w-4xl mx-auto px-6 py-20">
+      {/* Hero Section */}
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-black">
+        <div className="max-w-4xl mx-auto">
           <Link
             to="/blog"
-            className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-[#A3D1FF] hover:underline mb-6"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Blog
           </Link>
-
-          <div className="mb-8">
-            <img
-              src="https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?auto=format&fit=crop&w=2000&q=80"
-              alt="Google Search Algorithm Update 2026"
-              className="w-full h-[400px] object-cover rounded-2xl"
-            />
-          </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
             Google's 2026 Algorithm Update: Essential Strategies to Rank in the AI-First Era
@@ -79,19 +72,20 @@ export default function GoogleAlgorithmUpdate2026() {
             </div>
           </div>
 
-          <div className="flex items-center gap-4 mb-12 pb-8 border-b border-gray-800">
+          <div className="aspect-[21/9] overflow-hidden rounded-xl mb-8">
             <img
-              src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
-              alt="Marc Friedman"
-              className="w-12 h-12 rounded-full"
+              src="https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?auto=format&fit=crop&w=2000&q=80"
+              alt="Google Search Algorithm Update 2026"
+              className="w-full h-full object-cover"
             />
-            <div>
-              <div className="text-white font-medium">Marc Friedman</div>
-              <div className="text-gray-400 text-sm">Full Stack Designer & Developer</div>
-            </div>
           </div>
+        </div>
+      </section>
 
-          <div className="prose prose-invert prose-lg max-w-none">
+      {/* Article Content */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="prose prose-lg prose-invert max-w-none">
             <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-xl p-6 mb-8">
               <p className="text-white font-medium mb-2 flex items-center gap-2">
                 <AlertTriangle className="w-5 h-5 text-yellow-400" />
@@ -406,18 +400,8 @@ export default function GoogleAlgorithmUpdate2026() {
               </Link>
             </div>
           </div>
-
-          <div className="mt-12 pt-8 border-t border-gray-800">
-            <Link
-              to="/blog"
-              className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Back to Blog
-            </Link>
-          </div>
-        </article>
-      </div>
+        </div>
+      </section>
     </>
   );
 }
