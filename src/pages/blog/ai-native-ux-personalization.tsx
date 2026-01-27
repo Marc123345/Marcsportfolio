@@ -8,7 +8,7 @@ const blogPostSchema = {
   "@type": "BlogPosting",
   "headline": "AI-Native UX and Personalization: Designing Experiences That Adapt",
   "description": "Explore the paradigm shift from traditional UX with AI features to AI-native experiences designed from the ground up around adaptive, personalized intelligence. Learn how to design interfaces that predict, adapt, and evolve with users.",
-  "image": "/generated-1769485754877-2nwfj.png",
+  "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=2000&q=80",
   "datePublished": "2026-01-27T09:00:00+00:00",
   "dateModified": "2026-01-27T09:00:00+00:00",
   "author": {
@@ -34,12 +34,12 @@ export default function AINativeUXPersonalizationPage() {
         <meta name="description" content="Explore the paradigm shift from traditional UX with AI features to AI-native experiences designed from the ground up around adaptive, personalized intelligence." />
         <meta property="og:title" content="AI-Native UX and Personalization: Designing Experiences That Adapt" />
         <meta property="og:description" content="Learn how to design interfaces that predict, adapt, and evolve with users through AI-native UX principles." />
-        <meta property="og:image" content="/generated-1769485754877-2nwfj.png" />
+        <meta property="og:image" content="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=2000&q=80" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="AI-Native UX and Personalization: Designing Experiences That Adapt" />
         <meta name="twitter:description" content="Learn how to design interfaces that predict, adapt, and evolve with users through AI-native UX principles." />
-        <meta name="twitter:image" content="/generated-1769485754877-2nwfj.png" />
+        <meta name="twitter:image" content="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=2000&q=80" />
         <link rel="canonical" href="https://marcfriedmanportfolio.com/blog/ai-native-ux-personalization" />
         <script type="application/ld+json">
           {JSON.stringify(blogPostSchema)}
@@ -58,7 +58,7 @@ export default function AINativeUXPersonalizationPage() {
 
           <div className="mb-8">
             <img
-              src="/generated-1769485754877-2nwfj.png"
+              src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=2000&q=80"
               alt="AI-Native UX and Personalization"
               className="w-full h-[400px] object-cover rounded-2xl"
             />

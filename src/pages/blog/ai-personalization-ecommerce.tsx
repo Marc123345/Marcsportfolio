@@ -12,7 +12,7 @@ export default function AIPersonalizationEcommercePage() {
     "@type": "BlogPosting",
     "headline": "The Rise of AI-Driven Personalization in Ecommerce: A Practical Guide for 2025",
     "description": "Explore how AI-powered personalization is transforming ecommerce. Learn practical strategies for implementing personalization, real-world case studies, privacy considerations, and omnichannel best practices.",
-    "image": "/generated-1769485754877-2nwfj.png",
+    "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=2000&q=80",
     "datePublished": "2025-11-05T08:00:00+00:00",
     "dateModified": "2025-11-05T08:00:00+00:00",
     "author": {
@@ -46,13 +46,13 @@ export default function AIPersonalizationEcommercePage() {
         <meta property="og:type" content="article" />
         <meta property="og:title" content="The Rise of AI-Driven Personalization in Ecommerce: A Practical Guide for 2025" />
         <meta property="og:description" content="Explore how AI-powered personalization is transforming ecommerce with practical strategies and real-world insights." />
-        <meta property="og:image" content="/generated-1769485754877-2nwfj.png" />
+        <meta property="og:image" content="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=2000&q=80" />
         <meta property="og:url" content="https://marcfriedmanportfolio.com/blog/ai-personalization-ecommerce" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="The Rise of AI-Driven Personalization in Ecommerce: A Practical Guide for 2025" />
         <meta name="twitter:description" content="Explore how AI-powered personalization is transforming ecommerce with practical strategies and real-world insights." />
-        <meta name="twitter:image" content="/generated-1769485754877-2nwfj.png" />
+        <meta name="twitter:image" content="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=2000&q=80" />
 
         <script type="application/ld+json">
           {JSON.stringify(blogPostSchema)}
@@ -86,7 +86,7 @@ export default function AIPersonalizationEcommercePage() {
 
           <div className="aspect-[21/9] overflow-hidden rounded-xl mb-8">
             <img
-              src="/generated-1769485754877-2nwfj.png"
+              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=2000&q=80"
               alt="AI-Driven Ecommerce Personalization"
               className="w-full h-full object-cover"
             />

@@ -8,7 +8,7 @@ const blogPostSchema = {
   "@type": "BlogPosting",
   "headline": "AI as Co-Designer: Moving Beyond Tools to True Creative Partnership",
   "description": "Explore how AI is evolving from a simple design tool into a true creative partner. Learn how to collaborate with AI as a co-designer, the key differences from traditional tools, and best practices for human-AI creative partnerships.",
-  "image": "/generated-1769485754877-2nwfj.png",
+  "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=80",
   "datePublished": "2026-01-22T10:00:00+00:00",
   "dateModified": "2026-01-22T10:00:00+00:00",
   "author": {
@@ -34,12 +34,12 @@ export default function AIAsCoDesigner() {
         <meta name="description" content="Explore how AI is evolving from a simple design tool into a true creative partner. Learn how to collaborate with AI as a co-designer, the key differences from traditional tools, and best practices for human-AI creative partnerships." />
         <meta property="og:title" content="AI as Co-Designer: Moving Beyond Tools to True Creative Partnership" />
         <meta property="og:description" content="Explore how AI is evolving from a simple design tool into a true creative partner. Learn how to collaborate with AI as a co-designer, the key differences from traditional tools, and best practices for human-AI creative partnerships." />
-        <meta property="og:image" content="/generated-1769485754877-2nwfj.png" />
+        <meta property="og:image" content="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=80" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="AI as Co-Designer: Moving Beyond Tools to True Creative Partnership" />
         <meta name="twitter:description" content="Explore how AI is evolving from a simple design tool into a true creative partner. Learn how to collaborate with AI as a co-designer, the key differences from traditional tools, and best practices for human-AI creative partnerships." />
-        <meta name="twitter:image" content="/generated-1769485754877-2nwfj.png" />
+        <meta name="twitter:image" content="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=80" />
         <link rel="canonical" href="https://marcfriedmanportfolio.com/blog/ai-as-codesigner" />
         <script type="application/ld+json">
           {JSON.stringify(blogPostSchema)}
@@ -58,7 +58,7 @@ export default function AIAsCoDesigner() {
 
           <div className="mb-8">
             <img
-              src="/generated-1769485754877-2nwfj.png"
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=80"
               alt="AI as Co-Designer concept visualization"
               className="w-full h-[400px] object-cover rounded-2xl"
             />

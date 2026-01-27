@@ -44,7 +44,7 @@ const blogPosts = [
       name: 'Marc Friedman',
       image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
     },
-    image: '/generated-1769485754877-2nwfj.png',
+    image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=2000&q=80',
     categories: ['AI', 'UX', 'Personalization', 'Innovation'],
     featured: true
   },
@@ -59,7 +59,7 @@ const blogPosts = [
       name: 'Marc Friedman',
       image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
     },
-    image: '/generated-1769485754877-2nwfj.png',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=80',
     categories: ['AI', 'Design', 'Collaboration', 'Innovation'],
     featured: true
   },
@@ -119,7 +119,7 @@ const blogPosts = [
       name: 'Marc Friedman',
       image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
     },
-    image: '/generated-1769485754877-2nwfj.png',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=2000&q=80',
     categories: ['AI', 'Ecommerce', 'Personalization'],
     featured: true
   },
