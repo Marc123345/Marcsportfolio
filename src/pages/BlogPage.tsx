@@ -34,6 +34,21 @@ const blogSchema = {
 // Blog post data
 const blogPosts = [
   {
+    id: 'ai-native-ux-personalization',
+    title: 'AI-Native UX and Personalization: Designing Experiences That Adapt',
+    excerpt: 'Explore the paradigm shift from traditional UX with AI features to AI-native experiences designed from the ground up around adaptive, personalized intelligence. Learn how to design interfaces that predict, adapt, and evolve with users.',
+    content: 'Full content here...',
+    date: 'January 27, 2026',
+    readTime: '18 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2000&q=80',
+    categories: ['AI', 'UX', 'Personalization', 'Innovation'],
+    featured: true
+  },
+  {
     id: 'ai-as-codesigner',
     title: 'AI as Co-Designer: Moving Beyond Tools to True Creative Partnership',
     excerpt: 'Explore how AI is evolving from a simple design tool into a true creative partner. Learn how to collaborate with AI as a co-designer, the key differences from traditional tools, and best practices for human-AI creative partnerships.',
