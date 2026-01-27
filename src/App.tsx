@@ -156,6 +156,14 @@ function App() {
             }
           />
           <Route
+            path="client-reviews"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                {lazyLoad(() => import('@/pages/ClientReviewsPage'))}
+              </Suspense>
+            }
+          />
+          <Route
             path="privacy-policy"
             element={
               <Suspense fallback={<PageLoader />}>
