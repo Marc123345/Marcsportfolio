@@ -183,14 +183,14 @@ export default function ProjectCard3D({
         
         <div className="flex flex-wrap gap-2">
           {liveUrl && (
-            <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="mr_btn mr_btn_outline">
-              <span>View Live Website</span>
+            <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="mr_btn mr_btn_outline inline-flex items-center gap-2">
+              <span>View Live</span>
             </a>
           )}
-          
+
           {caseStudyUrl && (
-            <button onClick={() => navigate(caseStudyUrl)} className="mr_btn mr_btn_primary">
-              <span>Read Case Study</span>
+            <button onClick={() => navigate(caseStudyUrl)} className="mr_btn mr_btn_primary inline-flex items-center gap-2">
+              <span>Case Study</span>
             </button>
           )}
         </div>

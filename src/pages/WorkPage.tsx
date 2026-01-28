@@ -268,13 +268,13 @@ function FeaturedProjectCard({ project }: { project: Project }) {
           </div>
           <div className="flex flex-wrap gap-3">
             {project.liveUrl && (
-              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="mr_btn mr_btn_outline">
-                <span>View Live Website</span>
+              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="mr_btn mr_btn_outline inline-flex items-center gap-2">
+                <span>View Live</span>
               </a>
             )}
             {project.caseStudyUrl && (
-              <button onClick={() => navigate(project.caseStudyUrl)} className="mr_btn mr_btn_primary">
-                <span>Read Case Study</span>
+              <button onClick={() => navigate(project.caseStudyUrl)} className="mr_btn mr_btn_primary inline-flex items-center gap-2">
+                <span>Case Study</span>
               </button>
             )}
           </div>
