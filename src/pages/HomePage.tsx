@@ -12,6 +12,7 @@ import SplitTextReveal from '@/components/SplitTextReveal';
 import Spotlight from '@/components/Spotlight';
 import AnimatedFAQ from '@/components/AnimatedFAQ';
 import ConnectedSteps from '@/components/ConnectedSteps';
+import FeaturedWorkCarousel from '@/components/FeaturedWorkCarousel';
 
 const homeSchema = {
   "@context": "https://schema.org",
@@ -441,145 +442,70 @@ export default function HomePage() {
             </div>
           </motion.div>
 
-          {/* Portfolio Grid */}
-          <motion.div
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={{
-              hidden: { opacity: 1 },
-              visible: {
-                opacity: 1,
-                transition: {
-                  staggerChildren: 0.15,
+          {/* Portfolio Carousel */}
+          <Reveal direction="up" delay={0.2}>
+            <FeaturedWorkCarousel
+              projects={[
+                {
+                  title: "Binns Media Group Platform",
+                  image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9.png?updatedAt=1767539579710",
+                  description: "A cutting-edge digital media platform transforming the way content creators connect with audiences",
+                  tech: ["React 18", "TypeScript", "Supabase", "Framer Motion"],
+                  liveUrl: "https://www.binnsmediagroup.com",
+                  caseStudy: "/work/case-studies/binns-media"
                 },
-              },
-            }}
-          >
-            {[
-              {
-                title: "Binns Media Group Platform",
-                image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9.png?updatedAt=1767539579710",
-                description: "A cutting-edge digital media platform",
-                tech: ["React 18", "TypeScript", "Supabase"],
-                liveUrl: "https://www.binnsmediagroup.com",
-                caseStudy: "/work/case-studies/binns-media"
-              },
-              {
-                title: "Paving Leads",
-                image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016_9.png?updatedAt=1767539579010",
-                description: "High-velocity SEO engine ranked #1 on Google",
-                tech: ["React", "Node.js", "SEO Optimization"],
-                liveUrl: "https://pavinglead.com/",
-                caseStudy: "/work/case-studies/paving-leads"
-              },
-              {
-                title: "A Secure Annapolis Locksmith",
-                image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(2).png?updatedAt=1767539579194",
-                description: "Professional locksmith website",
-                tech: ["React", "Node.js", "Tailwind CSS"],
-                liveUrl: "https://www.asecureannapolislocksmith.com",
-                caseStudy: "/work/case-studies/secure-annapolis"
-              },
-              {
-                title: "Friedman & Cohen",
-                image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(3).png?updatedAt=1767539579776",
-                description: "B2B procurement platform",
-                tech: ["React", "Node.js", "PostgreSQL"],
-                liveUrl: "https://b2b.fandc.co.za",
-                caseStudy: "/work/case-studies/friedman-cohen"
-              },
-              {
-                title: "iLight Care",
-                image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(5).png?updatedAt=1767539579818",
-                description: "AI-powered healthcare platform",
-                tech: ["React", "Node.js", "AI/ML"],
-                liveUrl: "https://www.ilight.care",
-                caseStudy: "/work/case-studies/ilight"
-              },
-              {
-                title: "Chad Le Clos Swimming",
-                image: "https://i.imgur.com/ApfYPlH.jpg",
-                description: "Olympic champion's swimming clinics",
-                tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-                liveUrl: "https://chadleclosswimming.com",
-                caseStudy: "/work/case-studies/chad-le-clos"
-              },
-              {
-                title: "Tar & Chip Paving",
-                image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(6).png?updatedAt=1767539579420",
-                description: "Specialized surface solutions showcase",
-                tech: ["React", "Tailwind CSS", "Responsive Design"],
-                liveUrl: "https://cumberlandtarchip.org/",
-                caseStudy: "/work/case-studies/tar-chip-paving"
-              }
-            ].map((project, index) => (
-              <motion.div
-                key={index}
-                variants={{
-                  hidden: {
-                    opacity: 0,
-                    scale: 0.95,
-                    filter: 'blur(10px)',
-                  },
-                  visible: {
-                    opacity: 1,
-                    scale: 1,
-                    filter: 'blur(0px)',
-                    transition: {
-                      type: 'spring',
-                      stiffness: 400,
-                      damping: 30,
-                    },
-                  },
-                }}
-                whileHover={{
-                  y: -10,
-                  transition: {
-                    type: 'spring',
-                    stiffness: 400,
-                    damping: 20,
-                  },
-                }}
-                className="bg-[#1b1b1b] border border-white/10 rounded-2xl overflow-hidden hover:border-[#A3D1FF] transition-all group"
-              >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <motion.img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                    whileHover={{
-                      scale: 1.05,
-                      transition: { duration: 0.4 },
-                    }}
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                  <p className="text-gray-400 text-sm mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.slice(0, 3).map((tech, i) => (
-                      <span key={i} className="px-2 py-1 bg-white/5 text-[#A3D1FF] rounded-full text-xs">{tech}</span>
-                    ))}
-                    {project.tech.length > 3 && (
-                      <span className="px-2 py-1 bg-white/5 text-[#A3D1FF] rounded-full text-xs">+{project.tech.length - 3}</span>
-                    )}
-                  </div>
-                  <div className="flex gap-2">
-                    {project.liveUrl && (
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex-1 inline-flex items-center justify-center px-4 py-2 bg-white/5 text-white text-sm rounded-lg hover:bg-white/10 transition-all">
-                        View Live
-                      </a>
-                    )}
-                    <Link to={project.caseStudy} className="flex-1 inline-flex items-center justify-center px-4 py-2 bg-[#A3D1FF]/10 text-[#A3D1FF] text-sm rounded-lg hover:bg-[#A3D1FF]/20 transition-all">
-                      Case Study
-                    </Link>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+                {
+                  title: "Paving Leads",
+                  image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016_9.png?updatedAt=1767539579010",
+                  description: "High-velocity SEO engine ranked #1 on Google, generating qualified leads for paving contractors",
+                  tech: ["React", "Node.js", "SEO Optimization", "Lead Generation"],
+                  liveUrl: "https://pavinglead.com/",
+                  caseStudy: "/work/case-studies/paving-leads"
+                },
+                {
+                  title: "A Secure Annapolis Locksmith",
+                  image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(2).png?updatedAt=1767539579194",
+                  description: "Professional locksmith website with emergency service booking and local SEO dominance",
+                  tech: ["React", "Node.js", "Tailwind CSS", "Local SEO"],
+                  liveUrl: "https://www.asecureannapolislocksmith.com",
+                  caseStudy: "/work/case-studies/secure-annapolis"
+                },
+                {
+                  title: "Friedman & Cohen",
+                  image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(3).png?updatedAt=1767539579776",
+                  description: "B2B procurement platform streamlining wholesale operations for retail businesses",
+                  tech: ["React", "Node.js", "PostgreSQL", "Real-time Data"],
+                  liveUrl: "https://b2b.fandc.co.za",
+                  caseStudy: "/work/case-studies/friedman-cohen"
+                },
+                {
+                  title: "iLight Care",
+                  image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(5).png?updatedAt=1767539579818",
+                  description: "AI-powered healthcare platform revolutionizing patient care and medical diagnostics",
+                  tech: ["React", "Node.js", "AI/ML", "Healthcare Tech"],
+                  liveUrl: "https://www.ilight.care",
+                  caseStudy: "/work/case-studies/ilight"
+                },
+                {
+                  title: "Chad Le Clos Swimming",
+                  image: "https://i.imgur.com/ApfYPlH.jpg",
+                  description: "Olympic champion's swimming clinics platform with booking and athlete management",
+                  tech: ["Next.js", "Tailwind CSS", "Framer Motion", "Booking System"],
+                  liveUrl: "https://chadleclosswimming.com",
+                  caseStudy: "/work/case-studies/chad-le-clos"
+                },
+                {
+                  title: "Tar & Chip Paving",
+                  image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(6).png?updatedAt=1767539579420",
+                  description: "Specialized surface solutions showcase with project portfolio and instant quote generation",
+                  tech: ["React", "Tailwind CSS", "Responsive Design", "Quote System"],
+                  liveUrl: "https://cumberlandtarchip.org/",
+                  caseStudy: "/work/case-studies/tar-chip-paving"
+                }
+              ]}
+              autoplayInterval={6000}
+            />
+          </Reveal>
 
           <Reveal direction="up" delay={0.3}>
             <div className="text-center">
