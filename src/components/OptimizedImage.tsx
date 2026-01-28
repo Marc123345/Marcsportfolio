@@ -34,6 +34,8 @@ export default function OptimizedImage({
         height={height}
         className={className}
         loading={loading}
+        referrerPolicy="no-referrer-when-downgrade"
+        crossOrigin="anonymous"
       />
     );
   }
@@ -72,6 +74,8 @@ export default function OptimizedImage({
       className={className}
       loading={loading}
       decoding="async"
+      referrerPolicy="no-referrer-when-downgrade"
+      crossOrigin="anonymous"
     />
   );
 }

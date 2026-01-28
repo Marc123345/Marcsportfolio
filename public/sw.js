@@ -41,13 +41,13 @@ self.addEventListener('activate', event => {
 
 // Fetch event - network-first strategy for JS chunks, cache-first for static assets
 self.addEventListener('fetch', event => {
-  // Skip cross-origin requests
-  if (!event.request.url.startsWith(self.location.origin)) {
+  // Skip non-GET requests
+  if (event.request.method !== 'GET') {
     return;
   }
 
-  // Skip non-GET requests
-  if (event.request.method !== 'GET') {
+  // Skip cross-origin requests (let browser handle them directly)
+  if (!event.request.url.startsWith(self.location.origin)) {
     return;
   }
 

@@ -8,6 +8,7 @@ import { AnimatePresence } from 'framer-motion';
 import { NotFoundPage, RedirectPage } from '@/pages/StatusPages';
 import CursorRipple from '@/components/CursorRipple';
 import LoadingScreen from '@/components/LoadingScreen';
+import { detectImageBlocking, setupImageErrorHandling } from '@/utils/imageBlockDetector';
 
 // Lazy load with error handling
 const lazyLoad = (importFunc) => {
@@ -57,13 +58,19 @@ function App() {
   useEffect(() => {
     // Set loaded to true immediately
     setLoaded(true);
-    
+
     // Dispatch app-loaded event for any listeners
     document.dispatchEvent(new Event('app-loaded'));
-    
+
     // Add a class to the body to prevent FOUC (Flash of Unstyled Content)
     document.body.classList.add('app-loaded');
-    
+
+    // Detect image blocking by extensions
+    detectImageBlocking();
+
+    // Setup error handling for images
+    setupImageErrorHandling();
+
     // Remove the class when component is unmounted
     return () => {
       document.body.classList.remove('app-loaded');
