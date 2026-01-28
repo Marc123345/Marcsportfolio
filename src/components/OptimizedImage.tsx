@@ -1,5 +1,3 @@
-import { Image } from '@imagekit/react';
-
 interface OptimizedImageProps {
   src: string;
   alt: string;
@@ -10,7 +8,6 @@ interface OptimizedImageProps {
   quality?: number;
   format?: 'auto' | 'webp' | 'avif';
   transformations?: string;
-  lqip?: { active?: boolean; quality?: number };
 }
 
 export default function OptimizedImage({
@@ -23,9 +20,23 @@ export default function OptimizedImage({
   quality = 80,
   format = 'auto',
   transformations,
-  lqip = { active: true, quality: 20 }
 }: OptimizedImageProps) {
   const urlEndpoint = import.meta.env.VITE_IMAGEKIT_URL_ENDPOINT || 'https://ik.imagekit.io/qcvroy8xpd';
+
+  const isExternalUrl = src.startsWith('http://') || src.startsWith('https://');
+
+  if (isExternalUrl) {
+    return (
+      <img
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className={className}
+        loading={loading}
+      />
+    );
+  }
 
   const defaultTransformations = [];
 
@@ -49,17 +60,18 @@ export default function OptimizedImage({
 
   const finalTransformations = transformations || defaultTransformations.join(',');
 
+  const imagePath = src.startsWith('/') ? src : `/${src}`;
+  const imageUrl = `${urlEndpoint}${imagePath}?tr=${finalTransformations}`;
+
   return (
-    <Image
-      urlEndpoint={urlEndpoint}
-      path={src}
-      transformation={[{ raw: finalTransformations }]}
+    <img
+      src={imageUrl}
+      alt={alt}
       width={width}
       height={height}
-      alt={alt}
       className={className}
       loading={loading}
-      lqip={lqip}
+      decoding="async"
     />
   );
 }
