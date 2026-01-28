@@ -1,14 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, ArrowUpRight, Star, CheckCircle2, Globe, Palette, Award } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
 import TextReveal from '@/components/TextReveal';
-import HoverCard3D from '@/components/HoverCard3D';
 import ProjectCard3D from '@/components/ProjectCard3D';
-import ParticleBackground from '@/components/ParticleBackground';
-import DynamicBackground from '@/components/DynamicBackground';
-import PortfolioFilter from '@/components/PortfolioFilter';
 
 interface Project {
   title: string;
@@ -236,21 +231,16 @@ function FeaturedProjectCard({ project }: { project: Project }) {
   const navigate = useNavigate();
   
   return (
-    <motion.div 
+    <div
       className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group col-span-full mb-12"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      viewport={{ once: true, amount: 0.3 }}
     >
       <div className="grid md:grid-cols-2 gap-8">
         <div className="aspect-[16/10] overflow-hidden relative">
-          <img 
-            src={project.image} 
-            alt={project.title} 
-            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1b1b1b] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </div>
         <div className="p-6 md:p-8">
           <div className="flex items-center justify-between mb-4">
@@ -290,7 +280,7 @@ function FeaturedProjectCard({ project }: { project: Project }) {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -316,7 +306,6 @@ function CategoryButton({ children, isActive = false, onClick }: {
 export default function WorkPage() {
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState('all');
-  const [scrollY, setScrollY] = useState(0);
   const heroRef = useRef<HTMLElement>(null);
   
   // Get filter from URL params
@@ -361,16 +350,6 @@ export default function WorkPage() {
     { id: 'social-impact', label: 'Social Impact' },
     { id: 'sports', label: 'Sports & Entertainment' }
   ];
-  
-  // Handle scroll effects
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <>
@@ -403,22 +382,15 @@ export default function WorkPage() {
         </script>
       </Helmet>
 
-      <section 
+      <section
         ref={heroRef}
         className="relative min-h-[60vh] md:min-h-[80vh] flex items-center justify-center bg-black overflow-hidden"
       >
-        {/* Dynamic Background with Depth */}
-        <DynamicBackground streakCount={15} particleCount={40} color="#A3D1FF" />
-        
         <div className="absolute inset-0 z-0">
-          <img 
+          <img
             src="https://i.imgur.com/IU0mmH7.jpeg"
             alt="Featured portfolio projects by Marc Friedman - web development and design showcase"
             className="w-full h-full object-cover"
-            style={{ 
-              transform: `translateY(${scrollY * 0.2}px)`,
-              transition: 'transform 0.2s ease-out'
-            }}
           />
           <div 
             className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black/90"
@@ -436,11 +408,8 @@ export default function WorkPage() {
             </p>
           </TextReveal>
 
-          <motion.div 
+          <div
             className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-8 mt-8 md:mt-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
           >
             <div className="bg-[#1b1b1b]/80 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center">
               <div className="text-2xl md:text-4xl font-bold text-[#A3D1FF] mb-1 md:mb-2 counter">50+</div>
@@ -454,7 +423,7 @@ export default function WorkPage() {
               <div className="text-2xl md:text-4xl font-bold text-[#A3D1FF] mb-1 md:mb-2 counter">99%</div>
               <div className="text-xs md:text-base text-gray-400">Client Satisfaction</div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -482,11 +451,8 @@ export default function WorkPage() {
       <section className="py-8 md:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">Portfolio Projects</h2>
-          <motion.div 
+          <div
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.9 }}
           >
             {filteredProjects.map((project, index) => (
               project.featured ? (
@@ -505,7 +471,7 @@ export default function WorkPage() {
                 />
               )
             ))}
-          </motion.div>
+          </div>
           
           {/* Related Content Links */}
           <div className="mt-16 bg-[#1b1b1b] p-8 rounded-xl border border-white/10">
@@ -595,8 +561,6 @@ export default function WorkPage() {
       </section>
 
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#1b1b1b] to-black relative overflow-hidden">
-        <DynamicBackground streakCount={8} particleCount={20} color="#A3D1FF" />
-        
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <TextReveal>
             <h2 className="font-heading text-[clamp(1.75rem,3.5vw,2.5rem)] font-semibold tracking-[-0.01em] text-white leading-[1.15] mb-4 md:mb-6">Ready to Create Your Success Story?</h2>
