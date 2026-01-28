@@ -1,12 +1,17 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 import { ArrowRight, CircleCheck as CheckCircle, Target, TrendingUp, Zap, Shield, Users, Award, Clock, Star, Sparkles, MessageSquare, Rocket, ChartBar as BarChart3, Code as Code2 } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import TrustedBy from '@/components/TrustedBy';
 import SEO from '@/components/SEO';
 import MagneticButton from '@/components/MagneticButton';
 import AccessibilityPanel from '@/components/AccessibilityPanel';
 import ContactForm from '@/components/ContactForm';
+import Reveal from '@/components/Reveal';
+import SplitTextReveal from '@/components/SplitTextReveal';
+import Spotlight from '@/components/Spotlight';
+import AnimatedFAQ from '@/components/AnimatedFAQ';
+import ConnectedSteps from '@/components/ConnectedSteps';
 
 const homeSchema = {
   "@context": "https://schema.org",
@@ -161,15 +166,15 @@ export default function HomePage() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
               {/* Main Headline */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                <h1 className="font-heading text-[clamp(3rem,6vw,4.5rem)] font-semibold tracking-[-0.01em] text-white leading-[1.15] mb-6">
-                  Award Winning Websites That Turn Attention Into Revenue
+              <div className="overflow-hidden mb-6">
+                <h1 className="font-heading text-[clamp(3rem,6vw,4.5rem)] font-semibold tracking-[-0.01em] text-white leading-[1.15]">
+                  <SplitTextReveal
+                    text="Award Winning Websites That Turn Attention Into Revenue"
+                    delay={0.2}
+                    staggerDelay={0.05}
+                  />
                 </h1>
-              </motion.div>
+              </div>
 
               {/* CTA Buttons */}
               <motion.div
@@ -178,21 +183,25 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                <Link
-                  to="/contact"
-                  className="mr_btn mr_btn_primary inline-flex items-center gap-2"
-                >
-                  <span>Contact Me</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                <MagneticButton strength={20}>
+                  <Link
+                    to="/contact"
+                    className="mr_btn mr_btn_primary inline-flex items-center gap-2"
+                  >
+                    <span>Contact Me</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </MagneticButton>
 
-                <Link
-                  to="/tools/website-analyzer"
-                  className="mr_btn mr_btn_outline inline-flex items-center gap-2"
-                >
-                  <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                  <span>Free Website Analysis</span>
-                </Link>
+                <MagneticButton strength={20}>
+                  <Link
+                    to="/tools/website-analyzer"
+                    className="mr_btn mr_btn_outline inline-flex items-center gap-2"
+                  >
+                    <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                    <span>Free Website Analysis</span>
+                  </Link>
+                </MagneticButton>
               </motion.div>
 
               {/* Verified Reviews Badge */}
@@ -433,7 +442,21 @@ export default function HomePage() {
           </motion.div>
 
           {/* Portfolio Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              hidden: { opacity: 1 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.15,
+                },
+              },
+            }}
+          >
             {[
               {
                 title: "Binns Media Group Platform",
@@ -494,17 +517,42 @@ export default function HomePage() {
             ].map((project, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
-                viewport={{ once: true }}
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    scale: 0.95,
+                    filter: 'blur(10px)',
+                  },
+                  visible: {
+                    opacity: 1,
+                    scale: 1,
+                    filter: 'blur(0px)',
+                    transition: {
+                      type: 'spring',
+                      stiffness: 400,
+                      damping: 30,
+                    },
+                  },
+                }}
+                whileHover={{
+                  y: -10,
+                  transition: {
+                    type: 'spring',
+                    stiffness: 400,
+                    damping: 20,
+                  },
+                }}
                 className="bg-[#1b1b1b] border border-white/10 rounded-2xl overflow-hidden hover:border-[#A3D1FF] transition-all group"
               >
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img
+                  <motion.img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover"
+                    whileHover={{
+                      scale: 1.05,
+                      transition: { duration: 0.4 },
+                    }}
                   />
                 </div>
                 <div className="p-6">
@@ -531,17 +579,21 @@ export default function HomePage() {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="text-center">
-            <Link
-              to="/work"
-              className="mr_btn mr_btn_primary inline-flex items-center gap-2 text-xl"
-            >
-              <span>View All Projects</span>
-              <ArrowRight className="w-6 h-6" />
-            </Link>
-          </div>
+          <Reveal direction="up" delay={0.3}>
+            <div className="text-center">
+              <MagneticButton>
+                <Link
+                  to="/work"
+                  className="mr_btn mr_btn_primary inline-flex items-center gap-2 text-xl"
+                >
+                  <span>View All Projects</span>
+                  <ArrowRight className="w-6 h-6" />
+                </Link>
+              </MagneticButton>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -570,15 +622,31 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-3 gap-8 mb-12" style={{ perspective: '1000px' }}>
             {/* DesignRush Feature */}
             <motion.a
               href="https://www.designrush.com/best-designs/websites/untapped-africa-website-design"
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              initial={{ opacity: 0, rotateX: 15 }}
+              whileInView={{ opacity: 1, rotateX: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.1,
+                type: 'spring',
+                stiffness: 400,
+                damping: 30,
+              }}
+              whileHover={{
+                y: -10,
+                scale: 1.02,
+                rotateX: -2,
+                transition: {
+                  type: 'spring',
+                  stiffness: 400,
+                  damping: 20,
+                },
+              }}
               viewport={{ once: true }}
               className="bg-[#1b1b1b] border border-white/10 rounded-2xl overflow-hidden hover:border-[#A3D1FF] transition-all group relative"
             >
@@ -615,9 +683,25 @@ export default function HomePage() {
               href="https://www.designrush.com/agency/profile/marc-friedman-design-agency"
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              initial={{ opacity: 0, rotateX: 15 }}
+              whileInView={{ opacity: 1, rotateX: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.2,
+                type: 'spring',
+                stiffness: 400,
+                damping: 30,
+              }}
+              whileHover={{
+                y: -10,
+                scale: 1.02,
+                rotateX: -2,
+                transition: {
+                  type: 'spring',
+                  stiffness: 400,
+                  damping: 20,
+                },
+              }}
               viewport={{ once: true }}
               className="bg-[#1b1b1b] border border-white/10 rounded-2xl overflow-hidden hover:border-[#A3D1FF] transition-all group"
             >
@@ -650,9 +734,25 @@ export default function HomePage() {
               href="https://www.awwwards.com/marc-friedman/"
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              initial={{ opacity: 0, rotateX: 15 }}
+              whileInView={{ opacity: 1, rotateX: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.3,
+                type: 'spring',
+                stiffness: 400,
+                damping: 30,
+              }}
+              whileHover={{
+                y: -10,
+                scale: 1.02,
+                rotateX: -2,
+                transition: {
+                  type: 'spring',
+                  stiffness: 400,
+                  damping: 20,
+                },
+              }}
               viewport={{ once: true }}
               className="bg-[#1b1b1b] border border-white/10 rounded-2xl overflow-hidden hover:border-[#A3D1FF] transition-all group"
             >
@@ -718,8 +818,8 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="space-y-8">
-            {[
+          <ConnectedSteps
+            steps={[
               {
                 number: "01",
                 title: "Book a Call",
@@ -735,23 +835,8 @@ export default function HomePage() {
                 title: "You Launch & Grow",
                 description: "I deploy, test, and hand over a website that actually brings you customers. Plus 30 days of support to make sure everything runs smooth."
               }
-            ].map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="card flex items-start gap-8 bg-[#1b1b1b] border border-white/10 p-10 rounded-3xl hover:border-[#A3D1FF] transition-all duration-300"
-              >
-                <div className="text-6xl font-black text-[#A3D1FF] opacity-20">{step.number}</div>
-                <div className="flex-1">
-                  <h3 className="text-3xl font-bold mb-3 text-white">{step.title}</h3>
-                  <p className="text-xl text-gray-400">{step.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+            ]}
+          />
 
         </div>
       </section>
@@ -760,50 +845,61 @@ export default function HomePage() {
       <section className="py-32 px-6 sm:px-8 lg:px-12 bg-[#0a0a0a]">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <img
-                src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
-                alt="Marc Friedman"
-                className="w-full h-auto rounded-3xl shadow-2xl"
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-5xl font-black mb-6 text-white">
-                Work With Me,<br />Not a <span className="text-[#A3D1FF]">Team of Interns</span>
-              </h2>
-              <div className="space-y-6 text-xl text-gray-300 mb-8">
-                <p>
-                  Hey, I'm Marc. I've been building websites for agencies, local businesses, and jewellery brands across three continents.
-                </p>
-                <p>
-                  Unlike big agencies that hand your project off to junior devs, you work directly with me from start to finish. That means faster turnaround, better communication, and no surprises.
-                </p>
-                <p>
-                  I care about your success because your results are my reputation. When your website brings in leads and grows your business, we both win.
-                </p>
-              </div>
-
-              <a
-                href={calendlyLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mr_btn mr_btn_primary inline-flex items-center gap-2 text-xl"
+            <div className="overflow-hidden rounded-3xl">
+              <motion.div
+                initial={{ opacity: 0, scale: 1.4 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 1.2,
+                  type: 'spring',
+                  stiffness: 400,
+                  damping: 30,
+                }}
+                viewport={{ once: true }}
               >
-                <span>Let's Talk</span>
-                <MessageSquare className="w-6 h-6" />
-              </a>
-            </motion.div>
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
+                  alt="Marc Friedman"
+                  className="w-full h-auto shadow-2xl"
+                />
+              </motion.div>
+            </div>
+
+            <div>
+              <Reveal direction="right" delay={0.2}>
+                <h2 className="text-5xl font-black mb-6 text-white">
+                  Work With Me,<br />Not a <span className="text-[#A3D1FF]">Team of Interns</span>
+                </h2>
+              </Reveal>
+
+              <Reveal direction="right" delay={0.3}>
+                <div className="space-y-6 text-xl text-gray-300 mb-8">
+                  <p>
+                    Hey, I'm Marc. I've been building websites for agencies, local businesses, and jewellery brands across three continents.
+                  </p>
+                  <p>
+                    Unlike big agencies that hand your project off to junior devs, you work directly with me from start to finish. That means faster turnaround, better communication, and no surprises.
+                  </p>
+                  <p>
+                    I care about your success because your results are my reputation. When your website brings in leads and grows your business, we both win.
+                  </p>
+                </div>
+              </Reveal>
+
+              <Reveal direction="right" delay={0.4}>
+                <MagneticButton>
+                  <a
+                    href={calendlyLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mr_btn mr_btn_primary inline-flex items-center gap-2 text-xl"
+                  >
+                    <span>Let's Talk</span>
+                    <MessageSquare className="w-6 h-6" />
+                  </a>
+                </MagneticButton>
+              </Reveal>
+            </div>
           </div>
         </div>
       </section>
@@ -823,8 +919,8 @@ export default function HomePage() {
             </h2>
           </motion.div>
 
-          <div className="space-y-4">
-            {[
+          <AnimatedFAQ
+            items={[
               {
                 q: "How long does it take?",
                 a: "Most projects: 4-8 weeks. Complex apps: 12-16 weeks. I'll give you a clear timeline on our first call."
@@ -845,50 +941,28 @@ export default function HomePage() {
                 q: "How do I pay?",
                 a: "50% to start, 25% at design approval, 25% at launch. Payment plans available—just ask."
               }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                viewport={{ once: true }}
-                className="bg-[#1b1b1b] border border-white/10 rounded-2xl overflow-hidden"
-              >
-                <details className="group">
-                  <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-white/5 transition-colors">
-                    <h3 className="text-xl font-bold pr-4 text-white">{item.q}</h3>
-                    <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-[#A3D1FF]/30 flex-shrink-0">
-                      <div className="w-4 h-0.5 bg-[#A3D1FF] group-open:rotate-90 transition-transform"></div>
-                      <div className="w-0.5 h-4 bg-[#A3D1FF] absolute group-open:opacity-0 transition-opacity"></div>
-                    </div>
-                  </summary>
-                  <div className="px-6 pb-6">
-                    <p className="text-lg text-gray-300">{item.a}</p>
-                  </div>
-                </details>
-              </motion.div>
-            ))}
-          </div>
+            ]}
+          />
 
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="py-32 px-6 sm:px-8 lg:px-12 bg-[#0a0a0a]">
+      <Spotlight className="py-32 px-6 sm:px-8 lg:px-12 bg-[#0a0a0a]" spotlightColor="rgba(163, 209, 255, 0.2)">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <Reveal direction="up" delay={0.1}>
             <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-black mb-8 leading-tight text-white">
               Ready to Stop<br />Losing Customers?
             </h2>
+          </Reveal>
+
+          <Reveal direction="up" delay={0.2}>
             <p className="text-2xl mb-12 max-w-2xl mx-auto text-gray-300">
               Book a free strategy call. We'll talk about your goals, and I'll show you exactly how I can help you grow.
             </p>
+          </Reveal>
 
+          <Reveal direction="blur-in" delay={0.3}>
             <div className="bg-[#1b1b1b] border border-white/10 p-10 rounded-3xl text-left max-w-2xl mx-auto">
               <ContactForm />
 
@@ -904,9 +978,9 @@ export default function HomePage() {
                 </a>
               </p>
             </div>
-          </motion.div>
+          </Reveal>
         </div>
-      </section>
+      </Spotlight>
     </>
   );
 }

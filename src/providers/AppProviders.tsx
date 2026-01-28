@@ -4,6 +4,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from 'sonner';
 import { SupabaseProvider } from './SupabaseProvider';
+import { MotionConfig } from 'framer-motion';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -41,8 +42,10 @@ export function AppProviders({ children }: Props) {
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
           <SupabaseProvider>
-            {children}
-            <Toaster position="top-right" expand={true} richColors />
+            <MotionConfig reducedMotion="user">
+              {children}
+              <Toaster position="top-right" expand={true} richColors />
+            </MotionConfig>
           </SupabaseProvider>
         </QueryClientProvider>
       </HelmetProvider>
