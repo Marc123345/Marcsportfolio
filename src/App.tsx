@@ -358,14 +358,6 @@ function App() {
             }
           />
           <Route
-            path="blog/gdpr-compliance-with-termly"
-            element={
-              <Suspense fallback={<PageLoader />}>
-                {lazyLoad(() => import('@/pages/blog/gdpr-compliance-with-termly'))}
-              </Suspense>
-            }
-          />
-          <Route
             path="blog/paving-contractor-website-design-guide"
             element={
               <Suspense fallback={<PageLoader />}>

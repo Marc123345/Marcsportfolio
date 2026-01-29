@@ -214,21 +214,6 @@ const blogPosts = [
     featured: true
   },
   {
-    id: 'gdpr-compliance-with-termly',
-    title: 'GDPR Compliance Made Simple: How Termly Protects Your Business',
-    excerpt: 'Learn how to achieve GDPR compliance efficiently using Termly\'s automated policy generation and consent management tools. Protect your business from costly fines while building user trust.',
-    content: 'Full content here...',
-    date: 'May 1, 2025',
-    readTime: '10 min read',
-    author: {
-      name: 'Marc Friedman',
-      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
-    },
-    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=2000&q=80',
-    categories: ['Legal', 'Compliance', 'Privacy'],
-    featured: true
-  },
-  {
     id: 'paving-contractor-website-design-guide',
     title: 'Website Design Guide for Paving Contractors: Converting Visitors to Customers',
     excerpt: 'Learn essential website design strategies specifically for paving contractors. Discover how to showcase your work, build trust, and convert website visitors into paying customers.',

@@ -127,7 +127,6 @@ const routes = [
   { url: '/blog/optimizing-websites-for-ai-crawlers', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/blog/progressive-web-apps', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/blog/ai-personalization-ecommerce', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
-  { url: '/blog/gdpr-compliance-with-termly', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/blog/paving-contractor-website-design-guide', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/blog/local-seo-for-paving-contractors', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/blog/digital-marketing-asphalt-contractors', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() }
