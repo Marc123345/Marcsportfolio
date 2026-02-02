@@ -107,33 +107,10 @@ export default defineConfig({
             if (id.includes('framer-motion')) return 'vendor-framer';
             if (id.includes('lucide-react')) return 'vendor-icons';
             if (id.includes('@supabase')) return 'vendor-supabase';
-            
+            if (id.includes('gsap')) return 'vendor-gsap';
+
             // Group smaller vendor packages
             return 'vendor';
-          }
-          
-          // Core React packages
-          if (id.includes('node_modules/react/') || 
-              id.includes('node_modules/react-dom/') || 
-              id.includes('node_modules/react-router-dom/')) {
-            return 'vendor-react';
-          }
-          
-          // Group page components by section
-          if (id.includes('/pages/blog/')) {
-            return 'page-blog';
-          }
-          
-          if (id.includes('/pages/work/')) {
-            return 'page-work';
-          }
-          
-          if (id.includes('/pages/tools/')) {
-            return 'page-tools';
-          }
-          
-          if (id.includes('/pages/services/')) {
-            return 'page-services';
           }
         }
       },
