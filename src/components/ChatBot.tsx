@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send, MessageCircle, Calendar, CheckCircle2, Loader2 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { trackEvent } from '@/lib/plausible';
+import { CALENDLY_LINK, API_TIMEOUT_MS } from '@/lib/constants';
 
 interface Message {
   id: string;
@@ -32,8 +33,8 @@ export default function ChatBot() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Calendly link - using the one from ContactPage
-  const calendlyLink = "https://calendly.com/marc-friedman-web-design--meeting-link/30min";
+  // Calendly link
+  const calendlyLink = CALENDLY_LINK;
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -144,16 +145,31 @@ export default function ChatBot() {
     setIsSubmitting(true);
 
     try {
-      // Submit to Edge Function
+      // Submit to Edge Function with timeout
       const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/submit-lead`;
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
-      });
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), API_TIMEOUT_MS);
+
+      let response;
+      try {
+        response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+          signal: controller.signal
+        });
+      } catch (fetchError) {
+        clearTimeout(timeoutId);
+        if (fetchError instanceof Error && fetchError.name === 'AbortError') {
+          throw new Error('Request timeout - please try again');
+        }
+        throw fetchError;
+      }
+
+      clearTimeout(timeoutId);
 
       if (!response.ok) {
         throw new Error('Failed to submit lead');

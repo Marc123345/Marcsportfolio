@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
+import { toast } from 'sonner';
+import { FORM_SUBMIT_COOLDOWN_MS } from '@/lib/constants';
 
 interface FormData {
   name: string;
@@ -15,11 +17,13 @@ interface FormData {
 interface FormErrors {
   name?: string;
   email?: string;
+  phone?: string;
   message?: string;
 }
 
 export default function ContactForm() {
   const isMountedRef = useRef(true);
+  const lastSubmitTimeRef = useRef<number>(0);
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -53,6 +57,16 @@ export default function ContactForm() {
       newErrors.email = 'Please enter a valid email';
     }
 
+    // Phone validation - optional but if provided must be valid
+    if (formData.phone.trim()) {
+      // Remove common formatting characters for validation
+      const cleanPhone = formData.phone.replace(/[\s\-\(\)\+\.]/g, '');
+      // Check if it contains only digits and is a reasonable length (7-15 digits)
+      if (!/^\d{7,15}$/.test(cleanPhone)) {
+        newErrors.phone = 'Please enter a valid phone number (7-15 digits)';
+      }
+    }
+
     if (!formData.message.trim()) {
       newErrors.message = 'Message is required';
     }
@@ -73,6 +87,17 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Rate limiting: prevent submissions within cooldown period
+    const now = Date.now();
+    const timeSinceLastSubmit = now - lastSubmitTimeRef.current;
+    const cooldownPeriod = FORM_SUBMIT_COOLDOWN_MS;
+
+    if (timeSinceLastSubmit < cooldownPeriod) {
+      const remainingSeconds = Math.ceil((cooldownPeriod - timeSinceLastSubmit) / 1000);
+      toast.error(`Please wait ${remainingSeconds} seconds before submitting again.`);
+      return;
+    }
 
     if (!validateForm()) {
       return;
@@ -97,6 +122,9 @@ export default function ContactForm() {
 
       if (!isMountedRef.current) return;
 
+      // Update last submit time for rate limiting
+      lastSubmitTimeRef.current = now;
+
       setIsSuccess(true);
       setFormData({
         name: '',
@@ -115,7 +143,7 @@ export default function ContactForm() {
     } catch (error) {
       console.error('Error submitting form:', error);
       if (isMountedRef.current) {
-        alert('There was an error submitting your form. Please try again.');
+        toast.error('There was an error submitting your form. Please try again.');
       }
     } finally {
       if (isMountedRef.current) {

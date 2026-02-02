@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import MagneticButton from '@/components/MagneticButton';
 import FloatingChatbot from '@/components/FloatingChatbot';
+import { CALENDLY_LINK } from '@/lib/constants';
 
 interface NavigationItem {
   label: string;
@@ -113,7 +114,7 @@ export default function Layout() {
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
 
   // UX Audit Calendly link
-  const calendlyUXAuditLink = "https://calendly.com/marc-friedman-web-design--meeting-link/30min";
+  const calendlyUXAuditLink = CALENDLY_LINK;
 
   // Handle scroll events for sticky header
   useEffect(() => {

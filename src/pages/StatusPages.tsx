@@ -87,7 +87,9 @@ export function RedirectPage({ permanent = false }) {
       }
 
       // External URL - redirect to home instead
-      console.warn('Blocked redirect to external URL:', urlParam);
+      if (import.meta.env.DEV) {
+        console.warn('Blocked redirect to external URL:', urlParam);
+      }
       return '/';
     } catch {
       // Invalid URL - redirect to home

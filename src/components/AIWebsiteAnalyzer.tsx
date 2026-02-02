@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowRight, Loader2, CheckCircle2, AlertCircle, Search } from 'lucide-react';
 import { toast } from 'sonner';
 import { trackEvent } from '@/lib/plausible';
+import { ANALYSIS_TIMEOUT_MS } from '@/lib/constants';
 
 interface AnalysisResult {
   score: number;
@@ -71,18 +72,33 @@ export default function AIWebsiteAnalyzer() {
     setError(null);
 
     try {
-      // Call the edge function for real analysis
+      // Call the edge function for real analysis with timeout
       const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
       const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-      const response = await fetch(`${supabaseUrl}/functions/v1/analyze-website`, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${supabaseAnonKey}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ url: sanitizedUrl }),
-      });
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), ANALYSIS_TIMEOUT_MS); // 30 second timeout for analysis
+
+      let response;
+      try {
+        response = await fetch(`${supabaseUrl}/functions/v1/analyze-website`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${supabaseAnonKey}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ url: sanitizedUrl }),
+          signal: controller.signal
+        });
+      } catch (fetchError) {
+        clearTimeout(timeoutId);
+        if (fetchError instanceof Error && fetchError.name === 'AbortError') {
+          throw new Error('Analysis timeout - the request took too long. Please try again.');
+        }
+        throw fetchError;
+      }
+
+      clearTimeout(timeoutId);
 
       if (!response.ok) {
         throw new Error('Analysis failed');
@@ -123,7 +139,7 @@ export default function AIWebsiteAnalyzer() {
       return;
     }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(sanitizedEmail)) {
+    if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(sanitizedEmail)) {
       toast.error('Please enter a valid email address');
       return;
     }
@@ -143,17 +159,32 @@ export default function AIWebsiteAnalyzer() {
         sanitizedUrl = 'https://' + sanitizedUrl;
       }
 
-      const response = await fetch(`${supabaseUrl}/functions/v1/analyze-website`, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${supabaseAnonKey}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          url: sanitizedUrl,
-          email: sanitizedEmail,
-        }),
-      });
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), ANALYSIS_TIMEOUT_MS); // 30 second timeout
+
+      let response;
+      try {
+        response = await fetch(`${supabaseUrl}/functions/v1/analyze-website`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${supabaseAnonKey}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            url: sanitizedUrl,
+            email: sanitizedEmail,
+          }),
+          signal: controller.signal
+        });
+      } catch (fetchError) {
+        clearTimeout(timeoutId);
+        if (fetchError instanceof Error && fetchError.name === 'AbortError') {
+          throw new Error('Request timeout - please try again.');
+        }
+        throw fetchError;
+      }
+
+      clearTimeout(timeoutId);
 
       if (!response.ok) {
         throw new Error('Failed to save report');
