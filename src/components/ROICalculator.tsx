@@ -134,9 +134,9 @@ export default function ROICalculator() {
                   <label className="flex items-center text-gray-300 text-sm">
                     <Users className="w-4 h-4 mr-2" />
                     Monthly Visitors
-                    <button 
-                      type="button" 
-                      className="ml-2 text-gray-400 hover:text-[#A3D1FF]"
+                    <button
+                      type="button"
+                      className="ml-2 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-400 hover:text-[#A3D1FF]"
                       onMouseEnter={() => setActiveTooltip('visitors')}
                       onMouseLeave={() => setActiveTooltip(null)}
                       aria-label="More information about monthly visitors metric"
@@ -182,7 +182,7 @@ export default function ROICalculator() {
                     Current Conversion Rate (%)
                     <button 
                       type="button" 
-                      className="ml-2 text-gray-400 hover:text-[#A3D1FF]"
+                      className="ml-2 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-400 hover:text-[#A3D1FF]"
                       onMouseEnter={() => setActiveTooltip('conversion')}
                       onMouseLeave={() => setActiveTooltip(null)}
                       aria-label="More information about conversion rate metric"
@@ -228,7 +228,7 @@ export default function ROICalculator() {
                     Average Order/Lead Value
                     <button 
                       type="button" 
-                      className="ml-2 text-gray-400 hover:text-[#A3D1FF]"
+                      className="ml-2 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-400 hover:text-[#A3D1FF]"
                       onMouseEnter={() => setActiveTooltip('value')}
                       onMouseLeave={() => setActiveTooltip(null)}
                       aria-label="More information about average order value metric"
@@ -274,7 +274,7 @@ export default function ROICalculator() {
                     Website Project Investment
                     <button 
                       type="button" 
-                      className="ml-2 text-gray-400 hover:text-[#A3D1FF]"
+                      className="ml-2 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-400 hover:text-[#A3D1FF]"
                       onMouseEnter={() => setActiveTooltip('cost')}
                       onMouseLeave={() => setActiveTooltip(null)}
                       aria-label="More information about project investment metric"

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
@@ -19,6 +19,7 @@ interface FormErrors {
 }
 
 export default function ContactForm() {
+  const isMountedRef = useRef(true);
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -27,6 +28,13 @@ export default function ContactForm() {
     service: '',
     message: '',
   });
+
+  useEffect(() => {
+    isMountedRef.current = true;
+    return () => {
+      isMountedRef.current = false;
+    };
+  }, []);
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -87,6 +95,8 @@ export default function ContactForm() {
 
       if (error) throw error;
 
+      if (!isMountedRef.current) return;
+
       setIsSuccess(true);
       setFormData({
         name: '',
@@ -97,12 +107,20 @@ export default function ContactForm() {
         message: '',
       });
 
-      setTimeout(() => setIsSuccess(false), 5000);
+      setTimeout(() => {
+        if (isMountedRef.current) {
+          setIsSuccess(false);
+        }
+      }, 5000);
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('There was an error submitting your form. Please try again.');
+      if (isMountedRef.current) {
+        alert('There was an error submitting your form. Please try again.');
+      }
     } finally {
-      setIsSubmitting(false);
+      if (isMountedRef.current) {
+        setIsSubmitting(false);
+      }
     }
   };
 

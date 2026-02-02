@@ -26,8 +26,17 @@ const TextScramble: React.FC<TextScrambleProps> = ({
   const frameRef = useRef<number | null>(null);
   const startTimeRef = useRef<number | null>(null);
   const charsRef = useRef<{ from: string; to: string; start: number; end: number }[]>([]);
-  
+  const prefersReducedMotion = useRef(typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
   useEffect(() => {
+    // If reduced motion is preferred, show final text immediately
+    if (prefersReducedMotion.current) {
+      setDisplayText(text);
+      setIsComplete(true);
+      if (onComplete) onComplete();
+      return;
+    }
+
     // Initialize character transitions
     charsRef.current = Array.from(text).map((to, i) => ({
       from: getRandomChar(characters),
@@ -89,15 +98,17 @@ export const WaveTextScramble: React.FC<TextScrambleProps & { waveDelay?: number
   waveDelay = 0.08,
   ...props
 }) => {
+  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   return (
     <span className={className}>
       {Array.from(text).map((char, i) => (
         <motion.span
           key={`${char}-${i}`}
-          initial={{ y: 20, opacity: 0 }}
+          initial={prefersReducedMotion ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{
-            delay: i * waveDelay + (props.delay || 0),
+            delay: prefersReducedMotion ? 0 : i * waveDelay + (props.delay || 0),
             type: "spring",
             stiffness: 800,
             damping: 20
@@ -125,19 +136,20 @@ export const AnimatedHeading: React.FC<{
 }) => {
   const Element = element;
   const words = text.split(' ');
-  
+  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   return (
     <Element className={`${className} ${color} overflow-hidden`}>
       {words.map((word, i) => (
         <span key={i} className="inline-block overflow-hidden mr-[0.25em]">
           <motion.span
             className="inline-block"
-            initial={{ y: '100%' }}
+            initial={prefersReducedMotion ? { y: 0 } : { y: '100%' }}
             animate={{ y: 0 }}
             transition={{
-              delay: i * 0.1,
-              duration: 0.8,
-              ease: [0.16, 1, 0.3, 1] // Custom ease curve for elegant motion
+              delay: prefersReducedMotion ? 0 : i * 0.1,
+              duration: prefersReducedMotion ? 0 : 0.8,
+              ease: [0.16, 1, 0.3, 1]
             }}
           >
             {word}

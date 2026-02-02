@@ -23,7 +23,7 @@ export default function AnimatedFAQ({ items, className = '' }: AnimatedFAQProps)
     <div className={`space-y-4 ${className}`}>
       {items.map((item, index) => (
         <motion.div
-          key={index}
+          key={item.q}
           layout
           className="bg-[#1b1b1b] border border-white/10 rounded-2xl overflow-hidden"
           initial={{ opacity: 0, y: 20 }}

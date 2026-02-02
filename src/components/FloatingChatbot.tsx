@@ -36,6 +36,7 @@ export default function FloatingChatbot() {
             src="https://ik.imagekit.io/qcvroy8xpd/1747758113853.jpeg"
             alt="Marc Friedman"
             className="relative w-full h-full object-cover"
+            loading="lazy"
           />
 
           <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 rounded-full border-2 border-white" />
@@ -75,6 +76,7 @@ export default function FloatingChatbot() {
                         src="https://ik.imagekit.io/qcvroy8xpd/1747758113853.jpeg"
                         alt="Marc Friedman"
                         className="w-12 h-12 rounded-full object-cover border-2 border-[#A3D1FF]"
+                        loading="lazy"
                       />
                       <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-[#1b1b1b]" />
                     </div>
