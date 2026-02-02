@@ -58,14 +58,15 @@ export default function SectionHeading({
       )}
       
       {description && (
-        <motion.p 
+        <motion.p
           className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
           viewport={{ once: true, amount: 0.3 }}
-          dangerouslySetInnerHTML={{ __html: description }}
-        />
+        >
+          {description}
+        </motion.p>
       )}
     </div>
   );

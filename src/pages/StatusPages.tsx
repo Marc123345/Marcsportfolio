@@ -69,14 +69,40 @@ export function RedirectPage({ permanent = false }) {
   const location = useLocation();
   const navigate = useNavigate();
   const statusCode = permanent ? 301 : 302;
-  const redirectUrl = new URLSearchParams(location.search).get('to') || '/';
-  
+
+  // Validate redirect URL to prevent open redirect vulnerability
+  const getValidatedRedirectUrl = () => {
+    const urlParam = new URLSearchParams(location.search).get('to') || '/';
+
+    try {
+      // If URL starts with /, it's a relative path - safe to use
+      if (urlParam.startsWith('/')) {
+        return urlParam;
+      }
+
+      // Parse absolute URLs and check if they're same origin
+      const url = new URL(urlParam, window.location.origin);
+      if (url.origin === window.location.origin) {
+        return url.pathname + url.search + url.hash;
+      }
+
+      // External URL - redirect to home instead
+      console.warn('Blocked redirect to external URL:', urlParam);
+      return '/';
+    } catch {
+      // Invalid URL - redirect to home
+      return '/';
+    }
+  };
+
+  const redirectUrl = getValidatedRedirectUrl();
+
   // Auto-redirect after 5 seconds
   React.useEffect(() => {
     const timer = setTimeout(() => {
       window.location.href = redirectUrl;
     }, 5000);
-    
+
     return () => clearTimeout(timer);
   }, [redirectUrl]);
   

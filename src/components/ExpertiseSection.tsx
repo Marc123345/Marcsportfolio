@@ -102,7 +102,8 @@ export default function ExpertiseSection() {
         <SectionHeading
           badge="Our Expertise"
           title="Full-Stack Design Expertise"
-          description="<strong class='text-white'>Delivering measurable results</strong> through strategic thinking and technical excellence"
+          subtitle="Delivering Measurable Results"
+          description="Through strategic thinking and technical excellence"
         />
 
         <div className="max-w-2xl mx-auto mb-8 sm:mb-12 md:mb-16">

@@ -57,9 +57,22 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
 
   // Load recent searches from localStorage
   useEffect(() => {
-    const saved = localStorage.getItem('recent-searches');
-    if (saved) {
-      setRecentSearches(JSON.parse(saved));
+    try {
+      const saved = localStorage.getItem('recent-searches');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) {
+          setRecentSearches(parsed);
+        }
+      }
+    } catch (error) {
+      console.error('Failed to load recent searches from localStorage:', error);
+      // Clear corrupted data
+      try {
+        localStorage.removeItem('recent-searches');
+      } catch {
+        // Silently fail if localStorage is not available
+      }
     }
   }, []);
 
@@ -119,8 +132,14 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
     // Save to recent searches
     const newRecent = [result.title, ...recentSearches.filter(s => s !== result.title)].slice(0, 5);
     setRecentSearches(newRecent);
-    localStorage.setItem('recent-searches', JSON.stringify(newRecent));
-    
+
+    try {
+      localStorage.setItem('recent-searches', JSON.stringify(newRecent));
+    } catch (error) {
+      console.error('Failed to save recent searches to localStorage:', error);
+      // Continue anyway - this is not critical
+    }
+
     // Navigate and close
     navigate(result.url);
     onClose();

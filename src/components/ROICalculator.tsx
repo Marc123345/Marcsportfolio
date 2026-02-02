@@ -74,16 +74,23 @@ export default function ROICalculator() {
     
     // Projected monthly revenue
     const projectedMonthlyRevenue = (inputs.monthlyVisitors * (projectedConversionRate / 100) * inputs.averageValue);
-    
+
+    // Additional revenue per month
+    const additionalMonthlyRevenue = projectedMonthlyRevenue - currentMonthlyRevenue;
+
     // Additional annual revenue
-    const additionalAnnualRevenue = (projectedMonthlyRevenue - currentMonthlyRevenue) * 12;
-    
+    const additionalAnnualRevenue = additionalMonthlyRevenue * 12;
+
     // ROI calculation (additional annual revenue / project cost)
-    const roi = (additionalAnnualRevenue / inputs.projectCost) * 100;
-    
+    // Protect against division by zero
+    const roi = inputs.projectCost > 0 ? (additionalAnnualRevenue / inputs.projectCost) * 100 : 0;
+
     // Payback period in months
-    const paybackPeriod = inputs.projectCost / (projectedMonthlyRevenue - currentMonthlyRevenue);
-    
+    // If there's no additional revenue, payback is infinite (will never pay back)
+    const paybackPeriod = additionalMonthlyRevenue > 0
+      ? inputs.projectCost / additionalMonthlyRevenue
+      : Infinity;
+
     setResults({
       currentMonthlyRevenue,
       projectedConversionRate,
@@ -107,6 +114,12 @@ export default function ROICalculator() {
   };
   
   const formatMonths = (value: number) => {
+    if (!isFinite(value)) {
+      return 'Never (no additional revenue)';
+    }
+    if (value < 0) {
+      return 'Immediate (generating revenue from day 1)';
+    }
     return `${value.toFixed(1)} months`;
   };
   
