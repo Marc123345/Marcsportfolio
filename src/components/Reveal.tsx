@@ -37,47 +37,42 @@ export default function Reveal({
     switch (direction) {
       case 'up':
         return {
-          hidden: { opacity: 0, y: 40, filter: 'blur(4px)' },
+          hidden: { opacity: 0, y: 40 },
           visible: {
             opacity: 1,
             y: 0,
-            filter: 'blur(0px)',
           },
         };
       case 'down':
         return {
-          hidden: { opacity: 0, y: -40, filter: 'blur(4px)' },
+          hidden: { opacity: 0, y: -40 },
           visible: {
             opacity: 1,
             y: 0,
-            filter: 'blur(0px)',
           },
         };
       case 'left':
         return {
-          hidden: { opacity: 0, x: 40, filter: 'blur(4px)' },
+          hidden: { opacity: 0, x: 40 },
           visible: {
             opacity: 1,
             x: 0,
-            filter: 'blur(0px)',
           },
         };
       case 'right':
         return {
-          hidden: { opacity: 0, x: -40, filter: 'blur(4px)' },
+          hidden: { opacity: 0, x: -40 },
           visible: {
             opacity: 1,
             x: 0,
-            filter: 'blur(0px)',
           },
         };
       case 'blur-in':
         return {
-          hidden: { opacity: 0, scale: 0.95, filter: 'blur(10px)' },
+          hidden: { opacity: 0, scale: 0.95 },
           visible: {
             opacity: 1,
             scale: 1,
-            filter: 'blur(0px)',
           },
         };
       default:
