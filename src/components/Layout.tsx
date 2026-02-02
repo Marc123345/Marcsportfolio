@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { Menu as MenuIcon, X, ChevronDown, Linkedin, Calendar, Trophy, ArrowRight, Globe, Palette, Award, ShoppingCart } from 'lucide-react';
+import { Menu as MenuIcon, X, ChevronDown, Linkedin, Calendar, Trophy, ArrowRight, Globe, Palette, Award, ShoppingCart, Wrench } from 'lucide-react';
 import { useAppStore } from '@/stores/useAppStore';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -95,6 +95,36 @@ const navigationLinks: NavigationItem[] = [
   {
     label: 'Work',
     to: '/work'
+  },
+  {
+    label: 'Tools',
+    children: [
+      {
+        title: 'Free Tools & Resources',
+        items: [
+          {
+            label: 'Website Analyzer',
+            to: '/tools/website-analyzer',
+            description: 'Comprehensive website performance analysis'
+          },
+          {
+            label: 'AI Website Crawler',
+            to: '/tools/ai-website-crawler',
+            description: 'AI-powered website content analysis'
+          },
+          {
+            label: 'ROI Calculator',
+            to: '/tools/roi-calculator',
+            description: 'Calculate your website investment returns'
+          },
+          {
+            label: 'Project Timeline',
+            to: '/tools/project-timeline',
+            description: 'Visualize project timelines and milestones'
+          }
+        ]
+      }
+    ]
   },
   { label: 'Blog', to: '/blog' },
   { label: 'About', to: '/about' },
@@ -571,7 +601,7 @@ export default function Layout() {
       {/* Footer */}
       <footer className="bg-[#1b1b1b] border-t border-white/10">
         <div className="container-custom section-spacing-sm">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 lg:gap-12">
             {/* Brand Section */}
             <div>
               <div className="mb-6">
@@ -754,6 +784,45 @@ export default function Layout() {
               </ul>
             </div>
             
+            {/* Tools */}
+            <div>
+              <h3 className="text-white font-semibold mb-6 text-lg">Tools</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link
+                    to="/tools/website-analyzer"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Website Analyzer
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/tools/ai-website-crawler"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    AI Website Crawler
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/tools/roi-calculator"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    ROI Calculator
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/tools/project-timeline"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Project Timeline
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
             {/* Resources */}
             <div>
               <h3 className="text-white font-semibold mb-6 text-lg">Resources</h3>
