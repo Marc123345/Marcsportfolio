@@ -87,13 +87,13 @@ const routes = [
   { url: '/work/case-studies/automarginx', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
   { url: '/work/case-studies/videoleap', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/work/case-studies/chad-le-clos', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
-  { url: '/work/case-studies/irreplicable', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/work/case-studies/mytube', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/work/case-studies/fleet-management', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
-  { url: '/work/case-studies/uza-entertainment', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/work/case-studies/friedman-cohen', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/work/case-studies/secure-annapolis', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/work/case-studies/ilight', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
+  { url: '/work/case-studies/paving-leads', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
+  { url: '/work/case-studies/tar-chip-paving', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
 
   // Services
   { url: '/services/web-development', changefreq: 'monthly', priority: 0.9, lastmod: new Date().toISOString() },
@@ -105,6 +105,7 @@ const routes = [
   { url: '/services/cybersecurity', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
   { url: '/services/fractional-cmo', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
   { url: '/services/design-systems', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
+  { url: '/services/external-web-department', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
   { url: '/services/premium-web-package', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
   { url: '/services/monthly-retainer', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
 
@@ -113,8 +114,14 @@ const routes = [
   { url: '/tools/roi-calculator', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/tools/project-timeline', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/tools/ai-crawler-optimization', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
+  { url: '/tools/ai-website-crawler', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
 
   // Blog posts
+  { url: '/blog/ai-native-ux-personalization', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
+  { url: '/blog/ai-as-codesigner', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
+  { url: '/blog/google-algorithm-update-2026', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
+  { url: '/blog/ai-imperfect-aesthetics', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
+  { url: '/blog/brutalism-anti-design-web-trends', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/blog/ecommerce-ux-flaws-killing-conversions', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/blog/contrast-balance-ui-design', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/blog/ui-polish-visual-realism', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
