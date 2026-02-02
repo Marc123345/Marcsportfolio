@@ -44,9 +44,9 @@ export default function SplitTextReveal({
           y: 0,
           filter: 'blur(0px)',
           transition: {
-            type: 'spring',
-            stiffness: 400,
-            damping: 30,
+            type: 'tween',
+            duration: 0.5,
+            ease: [0.25, 0.46, 0.45, 0.94],
           },
         },
       };

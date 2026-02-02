@@ -219,6 +219,8 @@ export default function FloatingChatbot() {
                         height="100%"
                         frameBorder="0"
                         title="Schedule a meeting with Marc Friedman"
+                        allow="payment"
+                        loading="lazy"
                       ></iframe>
                     </div>
                   </>

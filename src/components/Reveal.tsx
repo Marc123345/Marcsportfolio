@@ -92,9 +92,9 @@ export default function Reveal({
       viewport={{ once: triggerOnce, amount: threshold }}
       variants={getVariants()}
       transition={{
-        type: 'spring',
-        stiffness: 400,
-        damping: 30,
+        type: 'tween',
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94],
         delay,
       }}
       className={className}
