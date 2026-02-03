@@ -100,6 +100,9 @@ export default function HomePage() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 300]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
@@ -126,35 +129,116 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20" style={{ backgroundColor: '#1a2332' }}>
-        {/* Video Background */}
-        <motion.div
-          className="absolute inset-0 w-full h-full overflow-hidden z-0"
-          style={{ y }}
-        >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-40"
-            poster="https://ik.imagekit.io/qcvroy8xpd/Container.png"
+        {/* Animated Background Layers */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
+          {/* Video Background with parallax and scale */}
+          <motion.div
+            className="absolute inset-0 w-full h-full"
+            style={{ y, scale }}
           >
-            <source
-              src="https://cdn.pixabay.com/video/2023/12/15/192827-895963123_large.mp4"
-              type="video/mp4"
-            />
-            {/* Fallback image if video doesn't load */}
-            <img
-              src="https://ik.imagekit.io/qcvroy8xpd/Container.png"
-              alt="Marc Friedman Portfolio Websites"
-              className="w-full h-full object-cover"
-            />
-          </video>
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover opacity-40"
+              poster="https://ik.imagekit.io/qcvroy8xpd/Container.png"
+            >
+              <source
+                src="https://cdn.pixabay.com/video/2023/12/15/192827-895963123_large.mp4"
+                type="video/mp4"
+              />
+              <img
+                src="https://ik.imagekit.io/qcvroy8xpd/Container.png"
+                alt="Marc Friedman Portfolio Websites"
+                className="w-full h-full object-cover"
+              />
+            </video>
+          </motion.div>
 
-          {/* Subtle Gradient Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1a2332]/60 via-transparent to-[#1a2332]/60"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1a2332]/80 via-transparent to-[#1a2332]/40"></div>
-        </motion.div>
+          {/* Animated Gradient Layer 1 */}
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-br from-[#A3D1FF]/20 via-transparent to-transparent"
+            style={{ y: y2 }}
+            animate={{
+              opacity: [0.3, 0.5, 0.3],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+
+          {/* Animated Gradient Layer 2 */}
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-tl from-[#1a2332]/60 via-transparent to-[#A3D1FF]/10"
+            style={{ y: y3 }}
+            animate={{
+              opacity: [0.4, 0.6, 0.4],
+              scale: [1.1, 1, 1.1],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+          />
+
+          {/* Floating Orbs */}
+          <motion.div
+            className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#A3D1FF]/10 rounded-full blur-3xl"
+            animate={{
+              x: [0, 100, 0],
+              y: [0, -50, 0],
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.5, 0.3],
+            }}
+            transition={{
+              duration: 12,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+
+          <motion.div
+            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#A3D1FF]/10 rounded-full blur-3xl"
+            animate={{
+              x: [0, -80, 0],
+              y: [0, 60, 0],
+              scale: [1, 1.3, 1],
+              opacity: [0.2, 0.4, 0.2],
+            }}
+            transition={{
+              duration: 15,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 2,
+            }}
+          />
+
+          <motion.div
+            className="absolute top-1/2 right-1/3 w-48 h-48 bg-blue-400/10 rounded-full blur-3xl"
+            animate={{
+              x: [0, -60, 0],
+              y: [0, -80, 0],
+              scale: [1.2, 1, 1.2],
+              opacity: [0.25, 0.45, 0.25],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 3,
+            }}
+          />
+
+          {/* Static Gradient Overlays */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1a2332]/60 via-transparent to-[#1a2332]/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1a2332]/80 via-transparent to-[#1a2332]/40" />
+        </div>
 
         <div className="container mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
