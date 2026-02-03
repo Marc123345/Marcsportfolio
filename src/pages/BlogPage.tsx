@@ -34,6 +34,21 @@ const blogSchema = {
 // Blog post data
 const blogPosts = [
   {
+    id: 'ai-ready-design-systems',
+    title: 'AI-Ready Design Systems: Building for Human-AI Collaboration',
+    excerpt: 'Learn how to structure design tokens, components, and content so AI tools can generate on-brand layouts, copy, and variants reliably. Discover common pitfalls when AI fights your system and how to avoid them.',
+    content: 'Full content here...',
+    date: 'February 3, 2026',
+    readTime: '18 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=2000&q=80',
+    categories: ['AI', 'Design Systems', 'Development', 'Best Practices'],
+    featured: true
+  },
+  {
     id: 'ai-native-ux-personalization',
     title: 'AI-Native UX and Personalization: Designing Experiences That Adapt',
     excerpt: 'Explore the paradigm shift from traditional UX with AI features to AI-native experiences designed from the ground up around adaptive, personalized intelligence. Learn how to design interfaces that predict, adapt, and evolve with users.',
