@@ -13,9 +13,14 @@ export default function ContextDrivenDesignDecisionsPage() {
     "@type": "BlogPosting",
     "headline": "Why Context Matters: A Junior Designer's Guide to Making Better Design Decisions",
     "description": "Learn why understanding context is the most critical skill for junior UX/UI designers and how to develop contextual thinking for better design decisions.",
-    "image": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=2000&q=80",
-    "datePublished": "2025-02-04T08:00:00+00:00",
-    "dateModified": "2025-02-04T08:00:00+00:00",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=2000&q=80",
+      "width": 2000,
+      "height": 1333
+    },
+    "datePublished": "2026-02-04T08:00:00+00:00",
+    "dateModified": "2026-02-04T08:00:00+00:00",
     "author": {
       "@type": "Person",
       "name": "Marc Friedman",
