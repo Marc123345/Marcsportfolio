@@ -222,6 +222,14 @@ function App() {
           />
 
           <Route
+            path="blog/context-driven-design-decisions"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                {lazyLoad(() => import('@/pages/blog/context-driven-design-decisions'))}
+              </Suspense>
+            }
+          />
+          <Route
             path="blog/ai-ready-design-systems"
             element={
               <Suspense fallback={<PageLoader />}>
