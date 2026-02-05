@@ -1,9 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Calendar, Clock, Share2, Linkedin, Twitter, Facebook, Link as LinkIcon, ArrowRight, ShoppingCart, TriangleAlert as AlertTriangle, TrendingUp, CircleCheck as CheckCircle2, Circle as XCircle, Search, CreditCard, Package } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, Share2, Linkedin, Facebook, Link as LinkIcon, ArrowRight, ShoppingCart, TriangleAlert as AlertTriangle, TrendingUp, CircleCheck as CheckCircle2, Circle as XCircle, Search, CreditCard, Package } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 import MagneticButton from '@/components/MagneticButton';
+import TwitterIcon from '@/components/TwitterIcon';
 
 export default function EcommerceUXFlawsKillingConversionsPage() {
   const navigate = useNavigate();
@@ -117,7 +118,7 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
                 className="p-2 hover:bg-white/10 rounded-lg transition-colors"
                 aria-label="Share on Twitter"
               >
-                <Twitter className="w-5 h-5 text-gray-400 hover:text-[#1DA1F2]" />
+                <TwitterIcon className="w-5 h-5 text-gray-400 hover:text-[#1DA1F2]" />
               </button>
               <button
                 onClick={() => handleShare('linkedin')}

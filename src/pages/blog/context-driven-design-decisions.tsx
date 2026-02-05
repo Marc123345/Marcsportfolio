@@ -1,9 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Calendar, Clock, Target, Lightbulb, Users, Map, AlertCircle, CheckCircle, BookOpen, Code, TrendingUp } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, Target, Lightbulb, Users, Map, AlertCircle, CheckCircle, BookOpen, Code, TrendingUp, Linkedin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import MagneticButton from '@/components/MagneticButton';
+import TwitterIcon from '@/components/TwitterIcon';
 
 export default function ContextDrivenDesignDecisionsPage() {
   const navigate = useNavigate();
@@ -783,7 +784,7 @@ export default function ContextDrivenDesignDecisionsPage() {
                   className="text-gray-400 hover:text-[#A3D1FF] transition-colors"
                   aria-label="Share on Twitter"
                 >
-                  <Twitter className="w-5 h-5" />
+                  <TwitterIcon className="w-5 h-5" />
                 </a>
                 <a
                   href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://marcfriedmanportfolio.com/blog/context-driven-design-decisions')}`}

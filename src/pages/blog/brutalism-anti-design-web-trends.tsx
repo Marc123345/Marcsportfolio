@@ -1,9 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Calendar, Clock, Share2, Linkedin, Twitter, Facebook, Link, ArrowRight, Grid, Square, Minimize2, Bold, Layout, Contrast } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, Share2, Linkedin, Facebook, Link, ArrowRight, Grid, Square, Minimize2, Bold, Layout, Contrast } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import MagneticButton from '@/components/MagneticButton';
+import TwitterIcon from '@/components/TwitterIcon';
 
 export default function BrutalismAntiDesignPage() {
   const navigate = useNavigate();
@@ -592,7 +593,7 @@ export default function BrutalismAntiDesignPage() {
                 <Facebook className="w-5 h-5" />
               </button>
               <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#1DA1F2]/20 text-[#1DA1F2] transition-colors">
-                <Twitter className="w-5 h-5" />
+                <TwitterIcon className="w-5 h-5" />
               </button>
               <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#0077B5]/20 text-[#0077B5] transition-colors">
                 <Linkedin className="w-5 h-5" />
