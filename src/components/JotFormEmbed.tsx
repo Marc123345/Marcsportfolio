@@ -34,6 +34,12 @@ export default function JotFormEmbed() {
 
     // 3. Listen for JotForm submission events
     const handleJotFormSubmission = (event: MessageEvent) => {
+      // Ignore messages from null origin (development/iframe loading)
+      if (!event.origin || event.origin === 'null') {
+        return;
+      }
+
+      // Only process messages from trusted JotForm origins
       if (event.origin === 'https://form.jotform.com' || event.origin === 'https://www.jotform.com') {
         if (typeof event.data === 'string') {
           try {
@@ -64,7 +70,6 @@ export default function JotFormEmbed() {
     <iframe
       id="JotFormIFrame-253586719410462"
       title="Marc Friedman Contact Form"
-      onLoad={() => window.parent.scrollTo(0, 0)}
       allowTransparency={true}
       allow="geolocation; microphone; camera; fullscreen; payment"
       src="https://form.jotform.com/253586719410462"

@@ -5,6 +5,28 @@ import App from '@/App';
 import '@/index.css';
 import { initPlausible } from '@/lib/plausible';
 
+// Global postMessage error handler to prevent console spam
+window.addEventListener('message', (event) => {
+  if (!event.origin || event.origin === 'null') {
+    return;
+  }
+}, true);
+
+// Suppress postMessage errors in development
+const originalPostMessage = window.postMessage;
+window.postMessage = function(message: any, targetOrigin: string, transfer?: any[]) {
+  try {
+    if (targetOrigin && targetOrigin !== 'null') {
+      originalPostMessage.call(window, message, targetOrigin, transfer);
+    }
+  } catch (error) {
+    if (import.meta.env.DEV) {
+      // Suppress in development only
+      return;
+    }
+  }
+};
+
 // Performance optimizations
 const initializeApp = () => {
   // Initialize Plausible Analytics
