@@ -87,21 +87,25 @@
     <!-- Defer Analytics - Load after page is interactive -->
     <script>
       window.addEventListener('load', function() {
-        setTimeout(function() {
-          // Google Analytics
-          var gaScript = document.createElement('script');
-          gaScript.async = true;
-          gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-X9V20XWRG8';
-          document.head.appendChild(gaScript);
+        // Only load Google Analytics in production environment
+        if (window.location.hostname === 'marcfriedmanportfolio.com' ||
+            window.location.hostname === 'www.marcfriedmanportfolio.com') {
+          setTimeout(function() {
+            // Google Analytics
+            var gaScript = document.createElement('script');
+            gaScript.async = true;
+            gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-X9V20XWRG8';
+            document.head.appendChild(gaScript);
 
-          gaScript.onload = function() {
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-X9V20XWRG8', { 'send_page_view': false });
-            gtag('config', 'AW-17688433013');
-          };
-        }, 2000);
+            gaScript.onload = function() {
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-X9V20XWRG8', { 'send_page_view': false });
+              gtag('config', 'AW-17688433013');
+            };
+          }, 2000);
+        }
       });
     </script>
 </head>
