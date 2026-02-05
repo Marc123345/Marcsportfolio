@@ -8,7 +8,7 @@ const blogPostSchema = {
   "@type": "BlogPosting",
   "headline": "AI-Ready Design Systems: Building for Human-AI Collaboration",
   "description": "Learn how to structure design tokens, components, and content so AI tools can generate on-brand layouts, copy, and variants reliably. Discover common pitfalls when AI fights your system and how to avoid them.",
-  "image": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=2000&q=80",
+  "image": "/generated-1770282657147-xuhu1.png",
   "datePublished": "2026-02-03T10:00:00+00:00",
   "dateModified": "2026-02-03T10:00:00+00:00",
   "author": {
@@ -34,12 +34,12 @@ export default function AIReadyDesignSystems() {
         <meta name="description" content="Learn how to structure design tokens, components, and content so AI tools can generate on-brand layouts, copy, and variants reliably. Discover common pitfalls when AI fights your system and how to avoid them." />
         <meta property="og:title" content="AI-Ready Design Systems: Building for Human-AI Collaboration" />
         <meta property="og:description" content="Learn how to structure design tokens, components, and content so AI tools can generate on-brand layouts, copy, and variants reliably. Discover common pitfalls when AI fights your system and how to avoid them." />
-        <meta property="og:image" content="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=2000&q=80" />
+        <meta property="og:image" content="/generated-1770282657147-xuhu1.png" />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="AI-Ready Design Systems: Building for Human-AI Collaboration" />
         <meta name="twitter:description" content="Learn how to structure design tokens, components, and content so AI tools can generate on-brand layouts, copy, and variants reliably. Discover common pitfalls when AI fights your system and how to avoid them." />
-        <meta name="twitter:image" content="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=2000&q=80" />
+        <meta name="twitter:image" content="/generated-1770282657147-xuhu1.png" />
         <link rel="canonical" href="https://marcfriedmanportfolio.com/blog/ai-ready-design-systems" />
         <script type="application/ld+json">
           {JSON.stringify(blogPostSchema)}
@@ -74,7 +74,7 @@ export default function AIReadyDesignSystems() {
 
           <div className="aspect-[21/9] overflow-hidden rounded-xl mb-8">
             <img
-              src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=2000&q=80"
+              src="/generated-1770282657147-xuhu1.png"
               alt="AI-ready design systems visualization"
               className="w-full h-full object-cover"
             />

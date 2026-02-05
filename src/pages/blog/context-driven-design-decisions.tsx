@@ -16,7 +16,7 @@ export default function ContextDrivenDesignDecisionsPage() {
     "description": "Learn why understanding context is the most critical skill for junior UX/UI designers and how to develop contextual thinking for better design decisions.",
     "image": {
       "@type": "ImageObject",
-      "url": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=2000&q=80",
+      "url": "/generated-1770282657147-xuhu1.png",
       "width": 2000,
       "height": 1333
     },
@@ -52,13 +52,13 @@ export default function ContextDrivenDesignDecisionsPage() {
         <meta property="og:type" content="article" />
         <meta property="og:title" content="Why Context Matters: A Junior Designer's Guide to Making Better Design Decisions" />
         <meta property="og:description" content="Learn why understanding context is the most critical skill for junior UX/UI designers and how to develop contextual thinking." />
-        <meta property="og:image" content="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=2000&q=80" />
+        <meta property="og:image" content="/generated-1770282657147-xuhu1.png" />
         <meta property="og:url" content="https://marcfriedmanportfolio.com/blog/context-driven-design-decisions" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Why Context Matters: A Junior Designer's Guide" />
         <meta name="twitter:description" content="Learn why understanding context is the most critical skill for junior UX/UI designers." />
-        <meta name="twitter:image" content="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=2000&q=80" />
+        <meta name="twitter:image" content="/generated-1770282657147-xuhu1.png" />
 
         <script type="application/ld+json">
           {JSON.stringify(blogPostSchema)}
@@ -92,7 +92,7 @@ export default function ContextDrivenDesignDecisionsPage() {
 
           <div className="aspect-[21/9] overflow-hidden rounded-xl mb-8">
             <img
-              src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=2000&q=80"
+              src="/generated-1770282657147-xuhu1.png"
               alt="Context in UX/UI Design"
               className="w-full h-full object-cover"
             />
