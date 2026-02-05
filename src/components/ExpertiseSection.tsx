@@ -13,13 +13,14 @@ interface ExpertiseCardProps {
 
 function ExpertiseCard({ icon: Icon, title, description, features, delay = 0 }: ExpertiseCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
-  
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setTimeout(() => {
+            timeoutRef.current = setTimeout(() => {
               entry.target.classList.add('opacity-100', 'translate-y-0');
             }, delay);
             observer.unobserve(entry.target);
@@ -28,14 +29,17 @@ function ExpertiseCard({ icon: Icon, title, description, features, delay = 0 }: 
       },
       { threshold: 0.1 }
     );
-    
+
     if (cardRef.current) {
       observer.observe(cardRef.current);
     }
-    
+
     return () => {
       if (cardRef.current) {
         observer.unobserve(cardRef.current);
+      }
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
       }
     };
   }, [delay]);

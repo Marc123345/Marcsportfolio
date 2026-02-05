@@ -4,6 +4,7 @@ export default function CompaniesSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const companiesRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const sectionObserver = new IntersectionObserver(
@@ -11,7 +12,7 @@ export default function CompaniesSection() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             titleRef.current?.classList.add('opacity-100', 'translate-y-0');
-            setTimeout(() => {
+            timeoutRef.current = setTimeout(() => {
               companiesRef.current?.classList.add('opacity-100', 'translate-y-0');
             }, 300);
             sectionObserver.unobserve(entry.target);
@@ -20,14 +21,17 @@ export default function CompaniesSection() {
       },
       { threshold: 0.1 }
     );
-    
+
     if (sectionRef.current) {
       sectionObserver.observe(sectionRef.current);
     }
-    
+
     return () => {
       if (sectionRef.current) {
         sectionObserver.unobserve(sectionRef.current);
+      }
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
       }
     };
   }, []);

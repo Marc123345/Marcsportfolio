@@ -53,7 +53,12 @@ export default function PortfolioShowcase() {
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
   const isVisibleRef = useRef(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  
+  const currentIndexRef = useRef(0);
+
+  useEffect(() => {
+    currentIndexRef.current = currentIndex;
+  }, [currentIndex]);
+
   const currentProject = projects[currentIndex];
   
   // Set up visibility observer
@@ -88,12 +93,13 @@ export default function PortfolioShowcase() {
     if (autoplayRef.current) {
       clearInterval(autoplayRef.current);
     }
-    
+
     autoplayRef.current = setInterval(() => {
       if (isVisibleRef.current) {
-        if (currentIndex < projects.length - 1) {
+        const currentIdx = currentIndexRef.current;
+        if (currentIdx < projects.length - 1) {
           setDirection(1);
-          setCurrentIndex(currentIndex + 1);
+          setCurrentIndex(currentIdx + 1);
         } else {
           setDirection(-1);
           setCurrentIndex(0);

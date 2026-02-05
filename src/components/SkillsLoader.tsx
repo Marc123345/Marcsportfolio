@@ -6,7 +6,8 @@ export default function SkillsLoader() {
   const [isComplete, setIsComplete] = useState(false);
   const [currentPhase, setCurrentPhase] = useState<'design' | 'code'>('design');
   const loaderRef = useRef<HTMLDivElement>(null);
-  
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -19,37 +20,40 @@ export default function SkillsLoader() {
       },
       { threshold: 0.1 }
     );
-    
+
     if (loaderRef.current) {
       observer.observe(loaderRef.current);
     }
-    
+
     return () => {
       if (loaderRef.current) {
         observer.unobserve(loaderRef.current);
       }
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
     };
   }, []);
-  
+
   const startAnimation = () => {
-    const interval = setInterval(() => {
+    intervalRef.current = setInterval(() => {
       setProgress(prev => {
         if (prev >= 100) {
-          clearInterval(interval);
+          if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+          }
           setIsComplete(true);
           return 100;
         }
-        
+
         // Switch between design and code phases
         if (prev === 50) {
           setCurrentPhase('code');
         }
-        
+
         return prev + 1;
       });
     }, 50);
-
-    return () => clearInterval(interval);
   };
 
   return (

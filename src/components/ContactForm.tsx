@@ -24,6 +24,7 @@ interface FormErrors {
 export default function ContactForm() {
   const isMountedRef = useRef(true);
   const lastSubmitTimeRef = useRef<number>(0);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -37,6 +38,9 @@ export default function ContactForm() {
     isMountedRef.current = true;
     return () => {
       isMountedRef.current = false;
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
     };
   }, []);
 
@@ -135,7 +139,7 @@ export default function ContactForm() {
         message: '',
       });
 
-      setTimeout(() => {
+      timeoutRef.current = setTimeout(() => {
         if (isMountedRef.current) {
           setIsSuccess(false);
         }
