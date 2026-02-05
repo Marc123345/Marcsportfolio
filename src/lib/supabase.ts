@@ -29,7 +29,6 @@ export async function checkSupabaseConnection(): Promise<boolean> {
   try {
     // Skip connection check in development to avoid CORS issues
     if (import.meta.env.DEV) {
-      console.log('Development mode: Skipping Supabase connection check');
       return true;
     }
 

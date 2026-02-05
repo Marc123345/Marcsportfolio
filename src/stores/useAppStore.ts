@@ -16,10 +16,7 @@ export const useAppStore = create<AppState>()(
       toggleMenu: () => set((state) => ({ isMenuOpen: !state.isMenuOpen })),
       setMenuOpen: (open) => set({ isMenuOpen: open }),
       isLoaded: false,
-      setLoaded: (loaded) => {
-        console.log('Setting isLoaded to:', loaded);
-        set({ isLoaded: loaded });
-      },
+      setLoaded: (loaded) => set({ isLoaded: loaded }),
     }),
     {
       name: 'app-store',

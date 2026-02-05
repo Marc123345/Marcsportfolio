@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import gsap from 'gsap';
 
 interface CursorRippleProps {
@@ -22,14 +22,15 @@ export default function CursorRipple({
   const lastRippleTime = useRef<number>(0);
   const animationFrameRef = useRef<number | null>(null);
   const isUnmountedRef = useRef(false);
-  const isMobile = useRef(false);
+  const [isMobile, setIsMobile] = React.useState(false);
 
   useEffect(() => {
-    isMobile.current = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    const mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
     );
+    setIsMobile(mobile);
 
-    if (isMobile.current) {
+    if (mobile) {
       return;
     }
 
@@ -42,7 +43,7 @@ export default function CursorRipple({
 
   const createRipple = useCallback(
     (clientX: number, clientY: number) => {
-      if (isUnmountedRef.current || !containerRef.current || isMobile.current) return;
+      if (isUnmountedRef.current || !containerRef.current || isMobile) return;
 
       const now = Date.now();
       if (now - lastRippleTime.current < throttleMs) return;
@@ -75,12 +76,12 @@ export default function CursorRipple({
         }
       });
     },
-    [color, size, duration, maxScale, opacity, throttleMs]
+    [color, size, duration, maxScale, opacity, throttleMs, isMobile]
   );
 
   const handleMouseMove = useCallback(
     (e: MouseEvent) => {
-      if (isMobile.current || isUnmountedRef.current) return;
+      if (isMobile || isUnmountedRef.current) return;
 
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
@@ -95,7 +96,7 @@ export default function CursorRipple({
 
   const handleClick = useCallback(
     (e: MouseEvent) => {
-      if (isMobile.current || isUnmountedRef.current || !containerRef.current) return;
+      if (isMobile || isUnmountedRef.current || !containerRef.current) return;
 
       const ripple = document.createElement('div');
       ripple.className = 'absolute rounded-full pointer-events-none';
@@ -124,11 +125,11 @@ export default function CursorRipple({
         }
       });
     },
-    [color, size, duration, maxScale, opacity]
+    [color, size, duration, maxScale, opacity, isMobile]
   );
 
   useEffect(() => {
-    if (isMobile.current) return;
+    if (isMobile) return;
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
@@ -145,12 +146,14 @@ export default function CursorRipple({
       }
 
       if (containerRef.current) {
-        containerRef.current.innerHTML = '';
+        while (containerRef.current.firstChild) {
+          containerRef.current.removeChild(containerRef.current.firstChild);
+        }
       }
     };
-  }, [handleMouseMove, handleClick]);
+  }, [handleMouseMove, handleClick, isMobile]);
 
-  if (isMobile.current) return null;
+  if (isMobile) return null;
 
   return (
     <div

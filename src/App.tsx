@@ -1,10 +1,9 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense, useEffect } from 'react';
 import Layout from '@/components/Layout';
 import { Helmet } from 'react-helmet-async';
 import ScrollProgress from '@/components/ScrollProgress';
 import { useAppStore } from '@/stores/useAppStore';
-import { AnimatePresence } from 'framer-motion';
 import { NotFoundPage, RedirectPage } from '@/pages/StatusPages';
 import CursorRipple from '@/components/CursorRipple';
 import LoadingScreen from '@/components/LoadingScreen';

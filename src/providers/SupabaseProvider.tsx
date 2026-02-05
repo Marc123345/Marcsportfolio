@@ -82,9 +82,7 @@ export function SupabaseProvider({ children }: Props) {
   // Listen for online/offline events
   useEffect(() => {
     const handleOnline = () => {
-      console.log('Network connection restored');
       setIsNetworkAvailable(true);
-      // Re-check connection when coming back online
       setTimeout(() => {
         checkConnection();
       }, 1000);

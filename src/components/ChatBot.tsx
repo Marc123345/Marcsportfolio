@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Send, MessageCircle, Calendar, CheckCircle2, Loader2 } from 'lucide-react';
-import { supabase } from '@/lib/supabase';
+import { X, Send, MessageCircle, Calendar, Loader2 } from 'lucide-react';
 import { trackEvent } from '@/lib/plausible';
 import { CALENDLY_LINK, API_TIMEOUT_MS } from '@/lib/constants';
 

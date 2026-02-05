@@ -60,7 +60,7 @@ export default function ContactForm() {
     // Phone validation - optional but if provided must be valid
     if (formData.phone.trim()) {
       // Remove common formatting characters for validation
-      const cleanPhone = formData.phone.replace(/[\s\-\(\)\+\.]/g, '');
+      const cleanPhone = formData.phone.replace(/[\s\-()	+.]/g, '');
       // Check if it contains only digits and is a reasonable length (7-15 digits)
       if (!/^\d{7,15}$/.test(cleanPhone)) {
         newErrors.phone = 'Please enter a valid phone number (7-15 digits)';
