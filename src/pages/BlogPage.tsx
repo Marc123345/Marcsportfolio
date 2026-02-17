@@ -34,6 +34,21 @@ const blogSchema = {
 // Blog post data
 const blogPosts = [
   {
+    id: 'ngo-website-attract-donors-volunteers',
+    title: 'How to Build an NGO Website That Attracts Donors, Volunteers, and Long-Term Supporters',
+    excerpt: 'A practical, section-by-section guide to designing and building a nonprofit website that converts visitors into donors, recruits volunteers, and cultivates lasting supporter relationships.',
+    content: 'Full content here...',
+    date: 'February 17, 2026',
+    readTime: '18 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=2000&q=80',
+    categories: ['Web Design', 'Nonprofit', 'Conversion', 'Strategy'],
+    featured: true
+  },
+  {
     id: 'context-driven-design-decisions',
     title: 'Why Context Matters: A Junior Designer\'s Guide to Making Better Design Decisions',
     excerpt: 'Learn why understanding context is the most critical skill for junior UX/UI designers and how to develop contextual thinking for better design decisions.',

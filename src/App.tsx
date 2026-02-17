@@ -396,6 +396,14 @@ function App() {
               </Suspense>
             }
           />
+          <Route
+            path="blog/ngo-website-attract-donors-volunteers"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                {lazyLoad(() => import('@/pages/blog/ngo-website-attract-donors-volunteers'))}
+              </Suspense>
+            }
+          />
 
           {/* Tools Routes */}
           <Route
