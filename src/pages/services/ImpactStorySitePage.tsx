@@ -251,7 +251,7 @@ export default function ImpactStorySitePage() {
 
       {/* ===== IMAGE STRIP ===== */}
       <section className="relative py-2 bg-black overflow-hidden">
-        <div className="flex gap-2 animate-marquee-slow">
+        <div className="flex gap-2 animate-marquee-slow justify-center">
           {[
             'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=400&q=70',
             'https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=400&q=70',
