@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { Menu as MenuIcon, X, ChevronDown, Linkedin, Calendar, Trophy, ArrowRight, Globe, Palette, Award, ShoppingCart, Wrench } from 'lucide-react';
+import { Menu as MenuIcon, X, ChevronDown, Linkedin, Calendar, Trophy, ArrowRight, Globe, Palette, Award } from 'lucide-react';
 import { useAppStore } from '@/stores/useAppStore';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -89,42 +89,32 @@ const navigationLinks: NavigationItem[] = [
             description: 'For multi-location & multi-brand companies'
           }
         ]
+      },
+      {
+        title: 'Specialized Packages',
+        items: [
+          {
+            label: 'The Impact Story Site',
+            to: '/services/impact-story-site',
+            description: 'For NGOs & social enterprises'
+          },
+          {
+            label: 'Premium Web Package',
+            to: '/services/premium-web-package',
+            description: 'Complete high-end website solution'
+          },
+          {
+            label: 'Monthly Retainer',
+            to: '/services/monthly-retainer',
+            description: 'Ongoing design & development support'
+          }
+        ]
       }
     ]
   },
   {
     label: 'Work',
     to: '/work'
-  },
-  {
-    label: 'Tools',
-    children: [
-      {
-        title: 'Free Tools & Resources',
-        items: [
-          {
-            label: 'Website Analyzer',
-            to: '/tools/website-analyzer',
-            description: 'Comprehensive website performance analysis'
-          },
-          {
-            label: 'AI Website Crawler',
-            to: '/tools/ai-website-crawler',
-            description: 'AI-powered website content analysis'
-          },
-          {
-            label: 'ROI Calculator',
-            to: '/tools/roi-calculator',
-            description: 'Calculate your website investment returns'
-          },
-          {
-            label: 'Project Timeline',
-            to: '/tools/project-timeline',
-            description: 'Visualize project timelines and milestones'
-          }
-        ]
-      }
-    ]
   },
   { label: 'Blog', to: '/blog' },
   { label: 'About', to: '/about' },
@@ -740,6 +730,14 @@ export default function Layout() {
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     External Web Department
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/impact-story-site"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Impact Story Site
                   </Link>
                 </li>
               </ul>

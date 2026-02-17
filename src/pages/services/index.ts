@@ -7,3 +7,4 @@ export { default as DesignSystemsPage } from './DesignSystemsPage';
 export { default as PremiumWebPackage } from './PremiumWebPackage';
 export { default as MonthlyRetainerPackage } from './MonthlyRetainerPackage';
 export { default as ExternalWebDepartmentPage } from './ExternalWebDepartmentPage';
+export { default as ImpactStorySitePage } from './ImpactStorySitePage';
