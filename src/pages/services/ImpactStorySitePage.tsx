@@ -43,25 +43,29 @@ const processSteps = [
     number: '01',
     title: 'Discovery & Empathy',
     description: 'We dive deep into your cause, your community, and the change you want to create. We listen before we design.',
-    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp',
+    imageAlt: 'Marc Friedman, web designer, during project discovery',
   },
   {
     number: '02',
     title: 'Creative Direction',
     description: 'We define the visual language of your impact. Typography, color, motion -- every detail chosen to amplify your mission.',
-    image: 'https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&q=80',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/uoq5Ztg.jpeg',
+    imageAlt: 'Marc Friedman designing creative direction for a project',
   },
   {
     number: '03',
     title: 'The Build',
     description: 'High-performance CMS development with donation integration, multilingual support, and SEO infrastructure for global reach.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/TTV8Liw.jpg',
+    imageAlt: 'Marc Friedman building a web project',
   },
   {
     number: '04',
     title: 'Launch & Scale',
     description: 'We equip your team to manage campaigns independently. Training, documentation, and ongoing support included.',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80',
+    image: 'https://i.imgur.com/PiKh199.png',
+    imageAlt: 'Marc Friedman reviewing a launched website project',
   },
 ];
 
@@ -104,26 +108,34 @@ export default function ImpactStorySitePage() {
   return (
     <>
       <Helmet>
-        <title>The Impact Story Site - NGO & Non-Profit Web Design | Marc Friedman</title>
+        <title>Web Designer for NGOs & Non-Profits | Impact Story Sites | Marc Friedman</title>
         <meta
           name="description"
-          content="Mission-first storytelling platforms for NGOs and social enterprises. Emotional design, donation integration, and strategic messaging that turns spectators into supporters. Starting at $4,000."
+          content="Award-winning web designer specializing in NGO and non-profit websites. Marc Friedman builds mission-first storytelling platforms with donation integration, CMS, and SEO that turn spectators into supporters. Starting at $4,000."
         />
         <meta
           name="keywords"
-          content="NGO website design, non-profit web development, donation website, impact storytelling, social enterprise website, charity website design, fundraising platform"
+          content="web designer, web designer for NGOs, non-profit web designer, NGO website design, charity web designer, donation website designer, impact storytelling website, social enterprise web designer, fundraising platform design, non-profit website development"
         />
         <link rel="canonical" href="https://www.marcfriedmanportfolio.com/services/impact-story-site" />
         <meta property="og:type" content="product" />
-        <meta property="og:title" content="The Impact Story Site - NGO & Non-Profit Web Design" />
-        <meta property="og:description" content="Mission-first storytelling platforms that turn spectators into supporters. Starting at $4,000." />
+        <meta property="og:title" content="Web Designer for NGOs & Non-Profits | Impact Story Sites" />
+        <meta property="og:description" content="Award-winning web designer for mission-driven organizations. Storytelling platforms that turn spectators into supporters. Starting at $4,000." />
         <meta property="og:url" content="https://www.marcfriedmanportfolio.com/services/impact-story-site" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Product",
-            "name": "The Impact Story Site",
-            "description": "Mission-first storytelling platform for NGOs and social enterprises.",
+            "@type": "Service",
+            "name": "The Impact Story Site - Web Design for NGOs",
+            "description": "Award-winning web designer specializing in mission-first storytelling platforms for NGOs and social enterprises. Includes emotional design, donation integration, CMS, and SEO infrastructure.",
+            "provider": {
+              "@type": "Person",
+              "name": "Marc Friedman",
+              "jobTitle": "Web Designer",
+              "url": "https://www.marcfriedmanportfolio.com"
+            },
+            "serviceType": "Web Design",
+            "areaServed": "Worldwide",
             "offers": {
               "@type": "AggregateOffer",
               "lowPrice": "4000",
@@ -131,8 +143,7 @@ export default function ImpactStorySitePage() {
               "priceCurrency": "USD",
               "availability": "https://schema.org/LimitedAvailability",
               "url": "https://www.marcfriedmanportfolio.com/services/impact-story-site"
-            },
-            "provider": { "@type": "Person", "name": "Marc Friedman" }
+            }
           })}
         </script>
       </Helmet>
@@ -160,7 +171,7 @@ export default function ImpactStorySitePage() {
               <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/50">
                 <img
                   src="https://ik.imagekit.io/qcvroy8xpd/unnamed%20(36)%201.png"
-                  alt="Impact Story Site showcase - Untapped Africa website"
+                  alt="Web designer portfolio - Impact Story Site for Untapped Africa NGO"
                   className="w-full h-auto object-cover"
                   loading="eager"
                 />
@@ -214,7 +225,7 @@ export default function ImpactStorySitePage() {
               </h1>
 
               <p className="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed mb-10" style={{ fontFamily: 'Inter, sans-serif' }}>
-                We build high-impact storytelling platforms for NGOs and social enterprises that need more than a website -- they need a movement.
+                As a web designer for mission-driven organizations, I build high-impact storytelling platforms for NGOs and social enterprises that need more than a website -- they need a movement.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -271,7 +282,7 @@ export default function ImpactStorySitePage() {
                 Your mission is world-changing, but an outdated digital presence is holding your funding back.
               </h2>
               <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                If your website doesn't reflect your impact, donors won't feel the urgency to act. You're not just losing traffic -- you're losing the partnerships and funding that fuel your cause.
+                Without a web designer who understands your cause, donors won't feel the urgency to act. You're not just losing traffic -- you're losing the partnerships and funding that fuel your mission.
               </p>
             </div>
           </AnimatedSection>
@@ -345,7 +356,7 @@ export default function ImpactStorySitePage() {
                 Three Pillars of Impact
               </h2>
               <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                Every element of your platform is designed around the outcomes that matter most to mission-driven organizations.
+                As your dedicated web designer, every element of your platform is crafted around the outcomes that matter most to mission-driven organizations.
               </p>
             </div>
           </AnimatedSection>
@@ -469,7 +480,7 @@ export default function ImpactStorySitePage() {
                     ))}
                   </div>
                   <p className="text-gray-400 leading-relaxed mb-6">
-                    Untapped Africa had a world-changing mission but their digital presence wasn't doing it justice. We deployed the Impact Story framework to build a platform that moves hearts and opens wallets.
+                    Untapped Africa had a world-changing mission but their digital presence wasn't doing it justice. As their web designer, we deployed the Impact Story framework to build a platform that moves hearts and opens wallets.
                   </p>
                   <Link
                     to="/work/case-studies/untapped-africa"
@@ -594,7 +605,7 @@ export default function ImpactStorySitePage() {
                 We're a Partner, Not a Vendor
               </h2>
               <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                NGOs deserve collaborators who care about the cause as much as the craft. Here's how we work together.
+                NGOs deserve a web designer who cares about the cause as much as the craft. Here's how we work together.
               </p>
             </div>
           </AnimatedSection>
@@ -621,8 +632,8 @@ export default function ImpactStorySitePage() {
                     <div className="rounded-2xl overflow-hidden border border-white/10 aspect-[4/3]">
                       <img
                         src={step.image}
-                        alt=""
-                        className="w-full h-full object-cover opacity-70 hover:opacity-90 transition-opacity duration-500"
+                        alt={step.imageAlt}
+                        className="w-full h-full object-cover object-top hover:scale-[1.03] transition-transform duration-500"
                         loading="lazy"
                       />
                     </div>
