@@ -139,28 +139,50 @@ export default function ImpactStorySitePage() {
 
       {/* ===== HERO ===== */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-black">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1920&q=80"
-            alt=""
-            className="w-full h-full object-cover opacity-25 scale-105"
-            loading="eager"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/60" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" />
-        </div>
-
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0a0a0a] to-black" />
         <div
           className="absolute top-[-20%] right-[-10%] w-[700px] h-[700px] rounded-full pointer-events-none mix-blend-screen blur-[200px]"
-          style={{ backgroundColor: ACCENT, opacity: 0.07 }}
+          style={{ backgroundColor: ACCENT, opacity: 0.06 }}
+        />
+        <div
+          className="absolute bottom-[-15%] left-[-5%] w-[500px] h-[500px] rounded-full pointer-events-none mix-blend-screen blur-[180px]"
+          style={{ backgroundColor: ACCENT, opacity: 0.04 }}
         />
 
-        <div className="container-custom relative z-10 py-32 md:py-40">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="container-custom relative z-10 py-28 md:py-36 lg:py-40">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="order-2 lg:order-1"
+            >
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/50">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/unnamed%20(36)%201.png"
+                  alt="Impact Story Site showcase - Untapped Africa website"
+                  className="w-full h-auto object-cover"
+                  loading="eager"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+              </div>
+              <div className="flex items-center gap-3 mt-5">
+                <div className="flex items-center gap-1.5">
+                  <Star size={14} className="fill-[#FFD700] text-[#FFD700]" />
+                  <Star size={14} className="fill-[#FFD700] text-[#FFD700]" />
+                  <Star size={14} className="fill-[#FFD700] text-[#FFD700]" />
+                  <Star size={14} className="fill-[#FFD700] text-[#FFD700]" />
+                  <Star size={14} className="fill-[#FFD700] text-[#FFD700]" />
+                </div>
+                <span className="text-sm text-gray-400">DesignRush Best Web Design 2025</span>
+              </div>
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="order-1 lg:order-2"
             >
               <div
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase mb-8 border"
@@ -171,7 +193,7 @@ export default function ImpactStorySitePage() {
               </div>
 
               <h1
-                className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-8 leading-[0.95]"
+                className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight mb-8 leading-[0.95]"
                 style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
               >
                 Digital Experiences
@@ -210,52 +232,6 @@ export default function ImpactStorySitePage() {
                 >
                   <span>See It in Action</span>
                 </Link>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="hidden lg:block"
-            >
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-4">
-                  <div className="rounded-2xl overflow-hidden border border-white/10 aspect-[3/4]">
-                    <img
-                      src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=500&q=80"
-                      alt="Community members gathered together"
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                      loading="eager"
-                    />
-                  </div>
-                  <div className="rounded-2xl overflow-hidden border border-white/10 aspect-square">
-                    <img
-                      src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=500&q=80"
-                      alt="Volunteers working together on community project"
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                      loading="eager"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-4 pt-8">
-                  <div className="rounded-2xl overflow-hidden border border-white/10 aspect-square">
-                    <img
-                      src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=500&q=80"
-                      alt="Hands joined together in unity"
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                      loading="eager"
-                    />
-                  </div>
-                  <div className="rounded-2xl overflow-hidden border border-white/10 aspect-[3/4]">
-                    <img
-                      src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=500&q=80"
-                      alt="Helping hands reaching out"
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                      loading="eager"
-                    />
-                  </div>
-                </div>
               </div>
             </motion.div>
           </div>
