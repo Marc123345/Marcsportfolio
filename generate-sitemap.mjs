@@ -108,6 +108,7 @@ const routes = [
   { url: '/services/external-web-department', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
   { url: '/services/premium-web-package', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
   { url: '/services/monthly-retainer', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
+  { url: '/services/impact-story-site', changefreq: 'monthly', priority: 0.9, lastmod: new Date().toISOString() },
 
   // Tools
   { url: '/tools/website-analyzer', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
