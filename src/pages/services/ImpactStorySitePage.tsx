@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, Heart, TrendingUp, MessageSquare, Eye, HandHeart, Palette, Rocket, Users, Star, CheckCircle2, Quote, Shield } from 'lucide-react';
-import { useNavigate, Link } from 'react-router-dom';
+import { ArrowRight, Heart, TrendingUp, MessageSquare, Eye, HandHeart, Rocket, Users, Star, CheckCircle2, Quote, Shield } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import ServiceLeadForm from '@/components/ServiceLeadForm';
@@ -8,24 +8,33 @@ import ServiceLeadForm from '@/components/ServiceLeadForm';
 const ACCENT = '#C8913C';
 const ACCENT_LIGHT = '#D4A853';
 
+const pillarImages = [
+  'https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=800&q=80',
+  'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=800&q=80',
+  'https://images.unsplash.com/photo-1504159506876-f8338247a14a?w=800&q=80',
+];
+
 const pillars = [
   {
     icon: Eye,
     title: 'Immersive Storytelling',
     focus: 'Custom-animated visuals and cinematic layouts.',
     outcome: 'Deep emotional connection with partners and donors.',
+    image: pillarImages[0],
   },
   {
     icon: HandHeart,
     title: 'Frictionless Giving',
     focus: 'Integrated, secure donation flows and campaign tools.',
     outcome: 'Increased conversion and recurring funding.',
+    image: pillarImages[1],
   },
   {
     icon: MessageSquare,
     title: 'Narrative Clarity',
     focus: 'Strategic messaging that simplifies complex missions.',
     outcome: 'A clear, professional global presence.',
+    image: pillarImages[2],
   },
 ];
 
@@ -34,21 +43,25 @@ const processSteps = [
     number: '01',
     title: 'Discovery & Empathy',
     description: 'We dive deep into your cause, your community, and the change you want to create. We listen before we design.',
+    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80',
   },
   {
     number: '02',
     title: 'Creative Direction',
     description: 'We define the visual language of your impact. Typography, color, motion -- every detail chosen to amplify your mission.',
+    image: 'https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&q=80',
   },
   {
     number: '03',
     title: 'The Build',
     description: 'High-performance CMS development with donation integration, multilingual support, and SEO infrastructure for global reach.',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
   },
   {
     number: '04',
     title: 'Launch & Scale',
     description: 'We equip your team to manage campaigns independently. Training, documentation, and ongoing support included.',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80',
   },
 ];
 
@@ -65,16 +78,16 @@ const includedFeatures = [
   'Analytics & conversion tracking',
 ];
 
-function AnimatedSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+function AnimatedSection({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-80px' });
+  const isInView = useInView(ref, { once: true, margin: '-60px' });
 
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay }}
       className={className}
     >
       {children}
@@ -83,7 +96,10 @@ function AnimatedSection({ children, className = '' }: { children: React.ReactNo
 }
 
 export default function ImpactStorySitePage() {
-  const navigate = useNavigate();
+  const scrollToForm = () => {
+    const form = document.getElementById('contact-form');
+    form?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <>
@@ -98,18 +114,16 @@ export default function ImpactStorySitePage() {
           content="NGO website design, non-profit web development, donation website, impact storytelling, social enterprise website, charity website design, fundraising platform"
         />
         <link rel="canonical" href="https://www.marcfriedmanportfolio.com/services/impact-story-site" />
-
         <meta property="og:type" content="product" />
         <meta property="og:title" content="The Impact Story Site - NGO & Non-Profit Web Design" />
         <meta property="og:description" content="Mission-first storytelling platforms that turn spectators into supporters. Starting at $4,000." />
         <meta property="og:url" content="https://www.marcfriedmanportfolio.com/services/impact-story-site" />
-
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Product",
             "name": "The Impact Story Site",
-            "description": "Mission-first storytelling platform for NGOs and social enterprises. Includes emotional design, donation integration, CMS, and SEO infrastructure.",
+            "description": "Mission-first storytelling platform for NGOs and social enterprises.",
             "offers": {
               "@type": "AggregateOffer",
               "lowPrice": "4000",
@@ -118,96 +132,155 @@ export default function ImpactStorySitePage() {
               "availability": "https://schema.org/LimitedAvailability",
               "url": "https://www.marcfriedmanportfolio.com/services/impact-story-site"
             },
-            "provider": {
-              "@type": "Person",
-              "name": "Marc Friedman"
-            }
+            "provider": { "@type": "Person", "name": "Marc Friedman" }
           })}
         </script>
       </Helmet>
 
-      {/* ===== HERO SECTION ===== */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-black">
+      {/* ===== HERO ===== */}
+      <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-black">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1920&q=80"
             alt=""
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover opacity-25 scale-105"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/70" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" />
         </div>
 
         <div
-          className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full pointer-events-none mix-blend-screen blur-[180px]"
-          style={{ backgroundColor: ACCENT, opacity: 0.06 }}
+          className="absolute top-[-20%] right-[-10%] w-[700px] h-[700px] rounded-full pointer-events-none mix-blend-screen blur-[200px]"
+          style={{ backgroundColor: ACCENT, opacity: 0.07 }}
         />
 
         <div className="container-custom relative z-10 py-32 md:py-40">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-4xl"
-          >
-            <div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase mb-8 border"
-              style={{ backgroundColor: `${ACCENT}15`, borderColor: `${ACCENT}30`, color: ACCENT }}
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
-              <Heart size={14} />
-              Specialized Package for NGOs & Social Enterprises
-            </div>
+              <div
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase mb-8 border"
+                style={{ backgroundColor: `${ACCENT}15`, borderColor: `${ACCENT}30`, color: ACCENT }}
+              >
+                <Heart size={14} />
+                For NGOs & Social Enterprises
+              </div>
 
-            <h1
-              className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-8 leading-[0.95]"
-              style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
+              <h1
+                className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-8 leading-[0.95]"
+                style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
+              >
+                Digital Experiences
+                <br />
+                That Turn{' '}
+                <span
+                  className="italic"
+                  style={{
+                    background: `linear-gradient(135deg, ${ACCENT}, ${ACCENT_LIGHT})`,
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                  }}
+                >
+                  Spectators
+                </span>
+                <br />
+                into Supporters.
+              </h1>
+
+              <p className="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed mb-10" style={{ fontFamily: 'Inter, sans-serif' }}>
+                We build high-impact storytelling platforms for NGOs and social enterprises that need more than a website -- they need a movement.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <button
+                  onClick={scrollToForm}
+                  className="group px-8 py-4 font-bold rounded-full flex items-center gap-3 transition-all text-black hover:scale-[1.02] hover:shadow-lg hover:shadow-[#C8913C]/20"
+                  style={{ backgroundColor: ACCENT }}
+                >
+                  <span>Start Your Impact Journey</span>
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </button>
+                <Link
+                  to="/work/case-studies/untapped-africa"
+                  className="px-8 py-4 font-bold rounded-full flex items-center gap-3 border border-white/20 text-white hover:border-white/40 transition-all"
+                >
+                  <span>See It in Action</span>
+                </Link>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="hidden lg:block"
             >
-              Digital Experiences
-              <br />
-              That Turn{' '}
-              <span
-                className="italic"
-                style={{
-                  background: `linear-gradient(135deg, ${ACCENT}, ${ACCENT_LIGHT})`,
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                }}
-              >
-                Spectators
-              </span>
-              <br />
-              into Supporters.
-            </h1>
-
-            <p className="text-xl md:text-2xl text-gray-400 max-w-2xl leading-relaxed mb-10" style={{ fontFamily: 'Inter, sans-serif' }}>
-              We build high-impact storytelling platforms for NGOs and social enterprises that need more than a website -- they need a movement.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <button
-                onClick={() => {
-                  const form = document.getElementById('contact-form');
-                  form?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="group px-8 py-4 font-bold rounded-full flex items-center gap-3 transition-all text-black hover:scale-[1.02]"
-                style={{ backgroundColor: ACCENT }}
-              >
-                <span>Start Your Impact Journey</span>
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-              <Link
-                to="/work/case-studies/untapped-africa"
-                className="px-8 py-4 font-bold rounded-full flex items-center gap-3 border border-white/20 text-white hover:border-white/40 transition-all"
-              >
-                <span>See It in Action</span>
-              </Link>
-            </div>
-          </motion.div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-4">
+                  <div className="rounded-2xl overflow-hidden border border-white/10 aspect-[3/4]">
+                    <img
+                      src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=500&q=80"
+                      alt="Community members gathered together"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                      loading="eager"
+                    />
+                  </div>
+                  <div className="rounded-2xl overflow-hidden border border-white/10 aspect-square">
+                    <img
+                      src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=500&q=80"
+                      alt="Volunteers working together on community project"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                      loading="eager"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-4 pt-8">
+                  <div className="rounded-2xl overflow-hidden border border-white/10 aspect-square">
+                    <img
+                      src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=500&q=80"
+                      alt="Hands joined together in unity"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                      loading="eager"
+                    />
+                  </div>
+                  <div className="rounded-2xl overflow-hidden border border-white/10 aspect-[3/4]">
+                    <img
+                      src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=500&q=80"
+                      alt="Helping hands reaching out"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                      loading="eager"
+                    />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* ===== STAKES SECTION ===== */}
+      {/* ===== IMAGE STRIP ===== */}
+      <section className="relative py-2 bg-black overflow-hidden">
+        <div className="flex gap-2 animate-marquee-slow">
+          {[
+            'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=400&q=70',
+            'https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=400&q=70',
+            'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&q=70',
+            'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=400&q=70',
+            'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&q=70',
+            'https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=400&q=70',
+          ].map((src, i) => (
+            <div key={i} className="flex-shrink-0 w-48 h-28 rounded-lg overflow-hidden opacity-40">
+              <img src={src} alt="" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ===== STAKES ===== */}
       <section className="py-20 md:py-28 bg-[#0a0a0a] border-y border-white/5">
         <div className="container-custom">
           <AnimatedSection>
@@ -227,47 +300,57 @@ export default function ImpactStorySitePage() {
             </div>
           </AnimatedSection>
 
-          <AnimatedSection>
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {[
-                {
-                  label: 'The Problem',
-                  title: 'Fragmented Narratives',
-                  description: 'Disconnected pages, clunky donation flows, and outdated designs that fail to communicate the urgency of your mission.',
-                  icon: Shield,
-                },
-                {
-                  label: 'The Cost',
-                  title: 'Lost Opportunities',
-                  description: 'Every day with a subpar digital presence means missed funding rounds, overlooked partnerships, and supporters who never convert.',
-                  icon: TrendingUp,
-                },
-                {
-                  label: 'The Shift',
-                  title: 'Global Impact Brand',
-                  description: 'Transform from "just an NGO with a website" to a recognized global impact brand that commands attention and trust.',
-                  icon: Rocket,
-                },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="bg-[#111] border border-white/5 rounded-2xl p-8 hover:border-white/10 transition-all group"
-                >
-                  <div
-                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
-                    style={{ backgroundColor: `${ACCENT}15`, color: ACCENT }}
-                  >
-                    {item.label}
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              {
+                label: 'The Problem',
+                title: 'Fragmented Narratives',
+                description: 'Disconnected pages, clunky donation flows, and outdated designs that fail to communicate the urgency of your mission.',
+                icon: Shield,
+                image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80',
+              },
+              {
+                label: 'The Cost',
+                title: 'Lost Opportunities',
+                description: 'Every day with a subpar digital presence means missed funding rounds, overlooked partnerships, and supporters who never convert.',
+                icon: TrendingUp,
+                image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80',
+              },
+              {
+                label: 'The Shift',
+                title: 'Global Impact Brand',
+                description: 'Transform from "just an NGO with a website" to a recognized global impact brand that commands attention and trust.',
+                icon: Rocket,
+                image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&q=80',
+              },
+            ].map((item, i) => (
+              <AnimatedSection key={i} delay={i * 0.1}>
+                <div className="bg-[#111] border border-white/5 rounded-2xl overflow-hidden hover:border-white/10 transition-all group h-full">
+                  <div className="h-40 overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt=""
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60 group-hover:opacity-80"
+                      loading="lazy"
+                    />
                   </div>
-                  <item.icon className="w-8 h-8 mb-4 text-gray-500 group-hover:text-white transition-colors" />
-                  <h3 className="text-xl font-bold text-white mb-3" style={{ fontFamily: 'Georgia, "Times New Roman", serif', textTransform: 'none' }}>
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-400 leading-relaxed text-sm">{item.description}</p>
+                  <div className="p-8">
+                    <div
+                      className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4"
+                      style={{ backgroundColor: `${ACCENT}15`, color: ACCENT }}
+                    >
+                      {item.label}
+                    </div>
+                    <item.icon className="w-7 h-7 mb-3 text-gray-500 group-hover:text-white transition-colors" />
+                    <h3 className="text-xl font-bold text-white mb-3" style={{ fontFamily: 'Georgia, "Times New Roman", serif', textTransform: 'none' }}>
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-400 leading-relaxed text-sm">{item.description}</p>
+                  </div>
                 </div>
-              ))}
-            </div>
-          </AnimatedSection>
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -293,29 +376,40 @@ export default function ImpactStorySitePage() {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {pillars.map((pillar, i) => (
-              <AnimatedSection key={i}>
-                <div className="relative bg-[#0a0a0a] border border-white/5 rounded-2xl p-8 h-full hover:border-white/15 transition-all group">
+              <AnimatedSection key={i} delay={i * 0.12}>
+                <div className="relative bg-[#0a0a0a] border border-white/5 rounded-2xl overflow-hidden h-full hover:border-white/15 transition-all group">
                   <div
                     className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl transition-all group-hover:h-1.5"
                     style={{ backgroundColor: ACCENT }}
                   />
-                  <div
-                    className="w-14 h-14 rounded-xl flex items-center justify-center mb-6"
-                    style={{ backgroundColor: `${ACCENT}15` }}
-                  >
-                    <pillar.icon className="w-7 h-7" style={{ color: ACCENT }} />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'Georgia, "Times New Roman", serif', textTransform: 'none' }}>
-                    {pillar.title}
-                  </h3>
-                  <div className="space-y-4">
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-1">Focus</p>
-                      <p className="text-gray-300 leading-relaxed">{pillar.focus}</p>
+                  <div className="h-48 overflow-hidden relative">
+                    <img
+                      src={pillar.image}
+                      alt=""
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent" />
+                    <div
+                      className="absolute bottom-4 left-6 w-12 h-12 rounded-xl flex items-center justify-center backdrop-blur-sm"
+                      style={{ backgroundColor: `${ACCENT}25` }}
+                    >
+                      <pillar.icon className="w-6 h-6" style={{ color: ACCENT }} />
                     </div>
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-1">Outcome</p>
-                      <p className="text-white font-medium leading-relaxed">{pillar.outcome}</p>
+                  </div>
+                  <div className="p-6 pt-4">
+                    <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'Georgia, "Times New Roman", serif', textTransform: 'none' }}>
+                      {pillar.title}
+                    </h3>
+                    <div className="space-y-4">
+                      <div>
+                        <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-1">Focus</p>
+                        <p className="text-gray-300 leading-relaxed">{pillar.focus}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-1">Outcome</p>
+                        <p className="text-white font-medium leading-relaxed">{pillar.outcome}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -325,8 +419,30 @@ export default function ImpactStorySitePage() {
         </div>
       </section>
 
+      {/* ===== FULL-WIDTH IMAGE BREAK ===== */}
+      <section className="relative h-[40vh] md:h-[50vh] overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1920&q=80"
+          alt="Helping hands reaching out"
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <AnimatedSection className="text-center px-4">
+            <p
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white max-w-3xl leading-tight"
+              style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
+            >
+              "The best non-profit websites don't just inform.{' '}
+              <span style={{ color: ACCENT }}>They ignite.</span>"
+            </p>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* ===== CASE STUDY SHOWCASE ===== */}
-      <section className="py-20 md:py-28 bg-[#0a0a0a] border-y border-white/5">
+      <section className="py-20 md:py-28 bg-[#0a0a0a]">
         <div className="container-custom">
           <AnimatedSection>
             <div className="mb-12">
@@ -344,7 +460,7 @@ export default function ImpactStorySitePage() {
 
           <AnimatedSection>
             <div className="grid lg:grid-cols-2 gap-8 items-stretch">
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 group">
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 group min-h-[400px]">
                 <img
                   src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9(1).png?updatedAt=1767539578544"
                   alt="Untapped Africa website showcase"
@@ -365,25 +481,23 @@ export default function ImpactStorySitePage() {
               <div className="flex flex-col gap-6">
                 <div className="bg-[#111] border border-white/5 rounded-2xl p-8 flex-1">
                   <div className="grid grid-cols-3 gap-6 mb-8">
-                    <div>
-                      <div className="text-3xl font-bold text-white">500k+</div>
-                      <p className="text-xs font-bold uppercase tracking-widest mt-1" style={{ color: ACCENT }}>People Served</p>
-                    </div>
-                    <div>
-                      <div className="text-3xl font-bold text-white">12</div>
-                      <p className="text-xs font-bold uppercase tracking-widest mt-1" style={{ color: ACCENT }}>New Partners</p>
-                    </div>
-                    <div>
-                      <div className="text-3xl font-bold text-white">40%</div>
-                      <p className="text-xs font-bold uppercase tracking-widest mt-1" style={{ color: ACCENT }}>More Engagement</p>
-                    </div>
+                    {[
+                      { value: '500k+', label: 'People Served' },
+                      { value: '12', label: 'New Partners' },
+                      { value: '40%', label: 'More Engagement' },
+                    ].map((stat, i) => (
+                      <div key={i}>
+                        <div className="text-3xl font-bold text-white">{stat.value}</div>
+                        <p className="text-xs font-bold uppercase tracking-widest mt-1" style={{ color: ACCENT }}>{stat.label}</p>
+                      </div>
+                    ))}
                   </div>
                   <p className="text-gray-400 leading-relaxed mb-6">
                     Untapped Africa had a world-changing mission but their digital presence wasn't doing it justice. We deployed the Impact Story framework to build a platform that moves hearts and opens wallets.
                   </p>
                   <Link
                     to="/work/case-studies/untapped-africa"
-                    className="inline-flex items-center gap-2 font-bold transition-colors hover:gap-3"
+                    className="inline-flex items-center gap-2 font-bold transition-all hover:gap-3"
                     style={{ color: ACCENT }}
                   >
                     <span>Read the Full Case Study</span>
@@ -391,7 +505,7 @@ export default function ImpactStorySitePage() {
                   </Link>
                 </div>
 
-                <div className="bg-[#111] border border-white/5 rounded-2xl p-8 relative">
+                <div className="bg-[#111] border border-white/5 rounded-2xl p-8 relative overflow-hidden">
                   <Quote className="absolute top-6 right-6 w-10 h-10 text-white/5" />
                   <blockquote className="text-lg text-gray-300 italic leading-relaxed mb-4" style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>
                     "Working with Marc was a fantastic experience. He delivered a stunning, user-friendly site that exceeded our expectations. He captured the heart of our mission."
@@ -417,7 +531,7 @@ export default function ImpactStorySitePage() {
       </section>
 
       {/* ===== WHAT'S INCLUDED ===== */}
-      <section className="py-20 md:py-28">
+      <section className="py-20 md:py-28 border-t border-white/5">
         <div className="container-custom">
           <AnimatedSection>
             <div className="grid lg:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
@@ -431,13 +545,22 @@ export default function ImpactStorySitePage() {
                 >
                   Everything Your Mission Needs
                 </h2>
-                <div className="space-y-4">
+                <div className="space-y-4 mb-10">
                   {includedFeatures.map((feature, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: ACCENT }} />
                       <span className="text-gray-300">{feature}</span>
                     </div>
                   ))}
+                </div>
+
+                <div className="rounded-2xl overflow-hidden border border-white/10 aspect-video">
+                  <img
+                    src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=80"
+                    alt="Fundraising and donation concept"
+                    className="w-full h-full object-cover opacity-70"
+                    loading="lazy"
+                  />
                 </div>
               </div>
 
@@ -467,11 +590,8 @@ export default function ImpactStorySitePage() {
                 </div>
 
                 <button
-                  onClick={() => {
-                    const form = document.getElementById('contact-form');
-                    form?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="w-full py-4 font-bold rounded-lg flex items-center justify-center gap-2 transition-all text-black hover:opacity-90"
+                  onClick={scrollToForm}
+                  className="w-full py-4 font-bold rounded-lg flex items-center justify-center gap-2 transition-all text-black hover:opacity-90 hover:shadow-lg"
                   style={{ backgroundColor: ACCENT }}
                 >
                   <span>Start Your Impact Journey</span>
@@ -503,26 +623,33 @@ export default function ImpactStorySitePage() {
             </div>
           </AnimatedSection>
 
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto space-y-16">
             {processSteps.map((step, i) => (
               <AnimatedSection key={i}>
-                <div className="flex gap-8 mb-12 last:mb-0 group">
-                  <div className="flex-shrink-0 relative">
-                    <div
-                      className="w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold border-2 transition-colors"
-                      style={{ borderColor: `${ACCENT}40`, color: ACCENT }}
-                    >
-                      {step.number}
+                <div className={`grid md:grid-cols-2 gap-10 items-center ${i % 2 === 1 ? 'md:direction-rtl' : ''}`}>
+                  <div className={`${i % 2 === 1 ? 'md:order-2' : ''}`}>
+                    <div className="flex items-center gap-4 mb-4">
+                      <div
+                        className="w-14 h-14 rounded-full flex items-center justify-center text-lg font-bold border-2 flex-shrink-0"
+                        style={{ borderColor: `${ACCENT}40`, color: ACCENT }}
+                      >
+                        {step.number}
+                      </div>
+                      <h3 className="text-2xl font-bold text-white" style={{ fontFamily: 'Georgia, "Times New Roman", serif', textTransform: 'none' }}>
+                        {step.title}
+                      </h3>
                     </div>
-                    {i < processSteps.length - 1 && (
-                      <div className="absolute top-16 left-1/2 -translate-x-1/2 w-px h-12" style={{ backgroundColor: `${ACCENT}20` }} />
-                    )}
+                    <p className="text-gray-400 leading-relaxed ml-[4.5rem]">{step.description}</p>
                   </div>
-                  <div className="pt-3">
-                    <h3 className="text-2xl font-bold text-white mb-3" style={{ fontFamily: 'Georgia, "Times New Roman", serif', textTransform: 'none' }}>
-                      {step.title}
-                    </h3>
-                    <p className="text-gray-400 leading-relaxed max-w-xl">{step.description}</p>
+                  <div className={`${i % 2 === 1 ? 'md:order-1' : ''}`}>
+                    <div className="rounded-2xl overflow-hidden border border-white/10 aspect-[4/3]">
+                      <img
+                        src={step.image}
+                        alt=""
+                        className="w-full h-full object-cover opacity-70 hover:opacity-90 transition-opacity duration-500"
+                        loading="lazy"
+                      />
+                    </div>
                   </div>
                 </div>
               </AnimatedSection>
@@ -533,6 +660,15 @@ export default function ImpactStorySitePage() {
 
       {/* ===== CLOSING CTA ===== */}
       <section className="py-20 md:py-28 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=1920&q=80"
+            alt=""
+            className="w-full h-full object-cover opacity-10"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-black" />
+        </div>
         <div
           className="absolute bottom-[-30%] left-[-10%] w-[600px] h-[600px] rounded-full pointer-events-none mix-blend-screen blur-[180px]"
           style={{ backgroundColor: ACCENT, opacity: 0.05 }}
@@ -554,11 +690,8 @@ export default function ImpactStorySitePage() {
               Partnerships starting at $4,000.
             </p>
             <button
-              onClick={() => {
-                const form = document.getElementById('contact-form');
-                form?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="group px-10 py-5 font-bold rounded-full inline-flex items-center gap-3 transition-all text-black hover:scale-[1.02] text-lg"
+              onClick={scrollToForm}
+              className="group px-10 py-5 font-bold rounded-full inline-flex items-center gap-3 transition-all text-black hover:scale-[1.02] text-lg hover:shadow-lg hover:shadow-[#C8913C]/20"
               style={{ backgroundColor: ACCENT }}
             >
               <span>Let's Make Yours One of Them</span>

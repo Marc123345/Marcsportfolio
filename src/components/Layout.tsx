@@ -94,11 +94,6 @@ const navigationLinks: NavigationItem[] = [
         title: 'Specialized Packages',
         items: [
           {
-            label: 'The Impact Story Site',
-            to: '/services/impact-story-site',
-            description: 'For NGOs & social enterprises'
-          },
-          {
             label: 'Premium Web Package',
             to: '/services/premium-web-package',
             description: 'Complete high-end website solution'
@@ -107,6 +102,21 @@ const navigationLinks: NavigationItem[] = [
             label: 'Monthly Retainer',
             to: '/services/monthly-retainer',
             description: 'Ongoing design & development support'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    label: 'Industries',
+    children: [
+      {
+        title: 'Industry Solutions',
+        items: [
+          {
+            label: 'NGO & Non-Profits',
+            to: '/services/impact-story-site',
+            description: 'Mission-first storytelling platforms'
           }
         ]
       }
