@@ -137,7 +137,9 @@ const routes = [
   { url: '/blog/ai-personalization-ecommerce', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/blog/paving-contractor-website-design-guide', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
   { url: '/blog/local-seo-for-paving-contractors', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
-  { url: '/blog/digital-marketing-asphalt-contractors', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() }
+  { url: '/blog/digital-marketing-asphalt-contractors', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
+  { url: '/blog/ngo-website-attract-donors-volunteers', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
+  { url: '/blog/google-search-console-ai-reports', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() }
 ];
 
 async function generateSitemap() {
