@@ -34,6 +34,21 @@ const blogSchema = {
 // Blog post data
 const blogPosts = [
   {
+    id: 'google-search-console-ai-reports',
+    title: 'Stop Guessing in GSC: A Practical Guide to AI-Powered Configuration for SEOs',
+    excerpt: 'Google just added AI-powered configuration to Search Console. Learn how to use prompts to build reports, diagnose traffic drops faster, and spot AI search opportunities.',
+    content: 'Full content here...',
+    date: 'February 19, 2026',
+    readTime: '14 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=80',
+    categories: ['SEO', 'Google', 'AI', 'Marketing'],
+    featured: true
+  },
+  {
     id: 'ngo-website-attract-donors-volunteers',
     title: 'How to Build an NGO Website That Attracts Donors, Volunteers, and Long-Term Supporters',
     excerpt: 'A practical, section-by-section guide to designing and building a nonprofit website that converts visitors into donors, recruits volunteers, and cultivates lasting supporter relationships.',

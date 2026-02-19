@@ -404,6 +404,14 @@ function App() {
               </Suspense>
             }
           />
+          <Route
+            path="blog/google-search-console-ai-reports"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                {lazyLoad(() => import('@/pages/blog/google-search-console-ai-reports'))}
+              </Suspense>
+            }
+          />
 
           {/* Tools Routes */}
           <Route
