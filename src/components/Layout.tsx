@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import MagneticButton from '@/components/MagneticButton';
 import FloatingChatbot from '@/components/FloatingChatbot';
+import EbookOverlay from '@/components/EbookOverlay';
 import { CALENDLY_LINK } from '@/lib/constants';
 
 interface NavigationItem {
@@ -597,6 +598,9 @@ export default function Layout() {
 
       {/* Floating Chatbot */}
       <FloatingChatbot />
+
+      {/* Ebook Lead Capture Overlay */}
+      <EbookOverlay />
 
       {/* Footer */}
       <footer className="bg-[#1b1b1b] border-t border-white/10">
