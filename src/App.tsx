@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import ScrollProgress from '@/components/ScrollProgress';
 import { useAppStore } from '@/stores/useAppStore';
 import { NotFoundPage, RedirectPage } from '@/pages/StatusPages';
-import CursorRipple from '@/components/CursorRipple';
+
 import LoadingScreen from '@/components/LoadingScreen';
 import { detectImageBlocking, setupImageErrorHandling } from '@/utils/imageBlockDetector';
 
@@ -100,8 +100,6 @@ function App() {
       {/* Scroll progress indicator */}
       <ScrollProgress />
 
-      {/* Cursor Ripple Effect */}
-      <CursorRipple color="#A3D1FF" opacity={0.4} size={60} duration={1} maxScale={3} />
 
       <Routes>
         <Route element={<Layout />}>
