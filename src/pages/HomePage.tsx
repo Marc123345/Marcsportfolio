@@ -133,16 +133,18 @@ export default function HomePage() {
         <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
           {/* Video Background with parallax and scale */}
           <motion.div
-            className="absolute inset-0 w-full h-full"
+            className="absolute inset-[-30px] w-[calc(100%+60px)] h-[calc(100%+60px)]"
             style={{ y, scale }}
             animate={{
-              x: [0, -15, 0, 15, 0],
-              y: [0, -10, 0, 10, 0],
+              x: [0, -8, 4, -12, 6, 0],
+              y: [0, 6, -8, 3, -10, 0],
+              scale: [1.02, 1.04, 1.02, 1.05, 1.03, 1.02],
             }}
             transition={{
-              duration: 20,
+              duration: 30,
               repeat: Infinity,
-              ease: "easeInOut",
+              ease: [0.45, 0.05, 0.55, 0.95],
+              times: [0, 0.2, 0.4, 0.6, 0.8, 1],
             }}
           >
             <video
@@ -150,7 +152,7 @@ export default function HomePage() {
               loop
               muted
               playsInline
-              className="absolute inset-[-20px] w-[calc(100%+40px)] h-[calc(100%+40px)] object-cover opacity-40"
+              className="absolute inset-0 w-full h-full object-cover opacity-40"
               poster="https://ik.imagekit.io/qcvroy8xpd/Container.png"
             >
               <source
