@@ -128,7 +128,7 @@ const navigationLinks: NavigationItem[] = [
   },
   { label: 'Blog', to: '/blog' },
   { label: 'About', to: '/about' },
-  { label: 'Contact', to: '/contact', badge: 'Free Consultation' }
+  { label: 'Contact', to: '/contact' }
 ];
 
 export default function Layout() {
