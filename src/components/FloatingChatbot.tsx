@@ -15,14 +15,6 @@ export default function FloatingChatbot() {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1, duration: 0.5, type: 'spring' }}
       >
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white text-black px-4 py-3 rounded-lg shadow-xl whitespace-nowrap font-semibold"
-        >
-          Start Your Project
-        </motion.div>
-
         <motion.button
           onClick={() => setIsOpen(true)}
           className="relative w-16 h-16 rounded-full overflow-hidden shadow-2xl border-2 border-[#A3D1FF] hover:border-white transition-colors"
