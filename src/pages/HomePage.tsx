@@ -135,13 +135,22 @@ export default function HomePage() {
           <motion.div
             className="absolute inset-0 w-full h-full"
             style={{ y, scale }}
+            animate={{
+              x: [0, -15, 0, 15, 0],
+              y: [0, -10, 0, 10, 0],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
           >
             <video
               autoPlay
               loop
               muted
               playsInline
-              className="absolute inset-0 w-full h-full object-cover opacity-40"
+              className="absolute inset-[-20px] w-[calc(100%+40px)] h-[calc(100%+40px)] object-cover opacity-40"
               poster="https://ik.imagekit.io/qcvroy8xpd/Container.png"
             >
               <source
