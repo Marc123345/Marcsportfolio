@@ -34,6 +34,21 @@ const blogSchema = {
 // Blog post data
 const blogPosts = [
   {
+    id: 'minimal-fast-sustainable-ux',
+    title: 'Minimal, Fast, and Sustainable UX: Designing for Performance, Calm, and the Planet',
+    excerpt: 'Explore how leaner layouts, fewer heavy scripts, image optimization, and green UX considerations are shaping modern design. Learn to build calmer, faster, more sustainable digital experiences.',
+    content: 'Full content here...',
+    date: 'February 26, 2026',
+    readTime: '16 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80',
+    categories: ['UX', 'Performance', 'Sustainability', 'Design'],
+    featured: true
+  },
+  {
     id: 'google-search-console-ai-reports',
     title: 'Stop Guessing in GSC: A Practical Guide to AI-Powered Configuration for SEOs',
     excerpt: 'Google just added AI-powered configuration to Search Console. Learn how to use prompts to build reports, diagnose traffic drops faster, and spot AI search opportunities.',

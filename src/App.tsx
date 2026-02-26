@@ -403,6 +403,14 @@ function App() {
             }
           />
           <Route
+            path="blog/minimal-fast-sustainable-ux"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                {lazyLoad(() => import('@/pages/blog/minimal-fast-sustainable-ux'))}
+              </Suspense>
+            }
+          />
+          <Route
             path="blog/google-search-console-ai-reports"
             element={
               <Suspense fallback={<PageLoader />}>
