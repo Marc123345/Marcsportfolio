@@ -403,6 +403,14 @@ function App() {
             }
           />
           <Route
+            path="blog/what-is-geo"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                {lazyLoad(() => import('@/pages/blog/what-is-geo'))}
+              </Suspense>
+            }
+          />
+          <Route
             path="blog/what-is-aeo"
             element={
               <Suspense fallback={<PageLoader />}>

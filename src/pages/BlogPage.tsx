@@ -34,6 +34,21 @@ const blogSchema = {
 // Blog post data
 const blogPosts = [
   {
+    id: 'what-is-geo',
+    title: 'What Is GEO? Generative Engine Optimization Explained for Modern Search',
+    excerpt: 'Learn what Generative Engine Optimization (GEO) is, how it differs from SEO and AEO, and how to optimize your content to appear in AI-generated search results from Google AI Overviews, ChatGPT, Perplexity, and more.',
+    content: 'Full content here...',
+    date: 'March 3, 2026',
+    readTime: '20 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=2000&q=80',
+    categories: ['SEO', 'AI', 'GEO', 'Marketing'],
+    featured: true
+  },
+  {
     id: 'what-is-aeo',
     title: 'What Is AEO? Answer Engine Optimization Explained for 2026 and Beyond',
     excerpt: 'Learn what Answer Engine Optimization (AEO) is, how it differs from traditional SEO, and why optimizing for AI-powered answer engines like ChatGPT, Perplexity, and Google AI Overviews is essential for modern visibility.',
