@@ -403,6 +403,14 @@ function App() {
             }
           />
           <Route
+            path="blog/what-is-aeo"
+            element={
+              <Suspense fallback={<PageLoader />}>
+                {lazyLoad(() => import('@/pages/blog/what-is-aeo'))}
+              </Suspense>
+            }
+          />
+          <Route
             path="blog/minimal-fast-sustainable-ux"
             element={
               <Suspense fallback={<PageLoader />}>

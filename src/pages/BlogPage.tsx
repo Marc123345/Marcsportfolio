@@ -34,6 +34,21 @@ const blogSchema = {
 // Blog post data
 const blogPosts = [
   {
+    id: 'what-is-aeo',
+    title: 'What Is AEO? Answer Engine Optimization Explained for 2026 and Beyond',
+    excerpt: 'Learn what Answer Engine Optimization (AEO) is, how it differs from traditional SEO, and why optimizing for AI-powered answer engines like ChatGPT, Perplexity, and Google AI Overviews is essential for modern visibility.',
+    content: 'Full content here...',
+    date: 'March 3, 2026',
+    readTime: '18 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2000&q=80',
+    categories: ['SEO', 'AI', 'AEO', 'Marketing'],
+    featured: true
+  },
+  {
     id: 'minimal-fast-sustainable-ux',
     title: 'Minimal, Fast, and Sustainable UX: Designing for Performance, Calm, and the Planet',
     excerpt: 'Explore how leaner layouts, fewer heavy scripts, image optimization, and green UX considerations are shaping modern design. Learn to build calmer, faster, more sustainable digital experiences.',
