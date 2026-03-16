@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, MessageCircle, Star, Calendar } from 'lucide-react';
-import ContactForm from './ContactForm';
+import JotFormEmbed from './JotFormEmbed';
 
 export default function FloatingChatbot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -191,7 +191,7 @@ export default function FloatingChatbot() {
                       </div>
                     </div>
 
-                    <ContactForm />
+                    <JotFormEmbed />
                   </>
                 ) : (
                   <>
