@@ -840,7 +840,7 @@ export default function HomePage() {
               Ready to Stop<br />Losing Customers?
             </h2>
             <p className="text-2xl mb-12 max-w-2xl mx-auto text-gray-300">
-              Book a free strategy call. We'll talk about your goals, and I'll show you exactly how I can help you grow.
+              Book a free strategy call. I'll learn about your goals and show you exactly how I can help you grow.
             </p>
 
             <div className="bg-[#1b1b1b] border border-white/10 p-10 rounded-3xl text-left max-w-2xl mx-auto">
