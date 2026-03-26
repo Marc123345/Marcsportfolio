@@ -87,14 +87,14 @@ export default function ContactPage() {
             variants={fadeInUp}
             custom={0}
           >
-            Let's Build Your High-Converting Website
+            Tell Me What's Not Working. I'll Tell You How to Fix It — Free.
           </motion.h1>
           <motion.h2
             className="font-body text-xl sm:text-2xl text-[#A78BFA] mb-6"
             variants={fadeInUp}
             custom={1}
           >
-            Websites that attract, convert, and close clients for agencies, local businesses & jewellery brands
+            Every project starts with a conversation. No pressure, no commitment — just honest advice about your website.
           </motion.h2>
           <motion.div 
             className="flex flex-wrap gap-4"
@@ -196,7 +196,7 @@ export default function ContactPage() {
               { 
                 step: "1", 
                 title: "Initial Consultation", 
-                desc: "24-hour response time guaranteed. We'll discuss your business goals and project requirements." 
+                desc: "24-hour response time guaranteed. I'll learn about your business goals and project requirements." 
               },
               { 
                 step: "2", 

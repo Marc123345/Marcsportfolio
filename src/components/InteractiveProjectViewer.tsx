@@ -17,7 +17,7 @@ const projects: Project[] = [
   {
     id: 'binns-media',
     title: 'Binns Media Group Platform',
-    description: 'A cutting-edge digital media platform showcasing BMG\'s diverse content portfolio including podcasts, TV shows, and exclusive content.',
+    description: 'NYC media company\'s content hub for podcasts, TV shows, and exclusive content — built to compete for listener attention.',
     image: 'https://i.imgur.com/IU0mmH7.jpeg',
     caseStudyUrl: '/work/case-studies/binns-media',
     liveUrl: 'https://www.binnsmediagroup.com',

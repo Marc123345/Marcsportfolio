@@ -53,7 +53,7 @@ export default function AIIntegrationPage() {
               AI Integration Services
             </h1>
             <p className="text-xl text-gray-400 mb-8">
-              <strong className="text-white">Automate manual tasks</strong> and gain <strong className="text-white">data-driven insights</strong> with cutting-edge AI solutions that enhance decision-making and create exceptional user experiences.
+              <strong className="text-white">Automate manual tasks</strong> and gain <strong className="text-white">data-driven insights</strong> with AI solutions that sharpen decision-making and create better user experiences.
             </p>
             <button 
               onClick={() => navigate('/contact')}

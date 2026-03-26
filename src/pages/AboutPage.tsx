@@ -103,7 +103,7 @@ export default function AboutPage() {
     "@type": "Person",
     "name": "Marc Friedman",
     "jobTitle": "Full Stack Designer & Developer",
-    "description": "A passionate full-stack designer and developer creating exceptional digital experiences.",
+    "description": "A passionate full-stack designer and developer creating websites that bring businesses customers.",
     "knowsAbout": [
       "Web Development",
       "UI/UX Design",
@@ -140,17 +140,17 @@ export default function AboutPage() {
     <>
       <Helmet>
         <title>About Marc Friedman - Full Stack Designer & Developer</title>
-        <meta name="description" content="Meet Marc Friedman, a passionate full-stack designer and developer creating exceptional digital experiences. Specializing in web development, UI/UX design, and SaaS solutions for clients across three continents." />
+        <meta name="description" content="Meet Marc Friedman, a passionate full-stack designer and developer creating websites that bring businesses customers. Specializing in web development, UI/UX design, and SaaS solutions for clients across three continents." />
         
         <meta property="og:type" content="profile" />
         <meta property="og:title" content="About Marc Friedman - Full Stack Designer & Developer" />
-        <meta property="og:description" content="Meet Marc Friedman, a passionate full-stack designer and developer creating exceptional digital experiences." />
+        <meta property="og:description" content="Meet Marc Friedman, a passionate full-stack designer and developer creating websites that bring businesses customers." />
         <meta property="og:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
         <meta property="og:url" content="https://marcfriedmanportfolio.com/about" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About Marc Friedman - Full Stack Designer & Developer" />
-        <meta name="twitter:description" content="Meet Marc Friedman, a passionate full-stack designer and developer creating exceptional digital experiences." />
+        <meta name="twitter:description" content="Meet Marc Friedman, a passionate full-stack designer and developer creating websites that bring businesses customers." />
         <meta name="twitter:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
         
         <meta name="keywords" content="Marc Friedman, Full Stack Developer, UI/UX Designer, Web Development, SaaS Development, Design Systems, Portfolio" />
@@ -204,15 +204,15 @@ export default function AboutPage() {
               className="font-heading text-2xl sm:text-3xl font-semibold tracking-[-0.01em] leading-[1.15] text-[#A78BFA] mb-6"
               variants={fadeInUp}
             >
-              Solving Digital Challenges Through Design & Development Excellence
+              The websites I build pay for themselves.
             </motion.p>
             <motion.p 
               className="text-xl text-gray-300 mb-8"
               variants={fadeInUp}
             > 
-              I'm a full-stack designer and developer who bridges the gap between stunning visuals and robust functionality. Transforming ideas into digital realities for clients across three continents, I've built a reputation for creating <strong className="text-white">conversion-focused experiences that solve real business problems</strong>.
+              I design and build websites that bring businesses customers. Not traffic. Not impressions. <strong className="text-white">Actual paying customers.</strong> Over the last 6 years, I've done this for 50+ businesses across the US, Israel, and Africa — from locksmith shops to fintech startups to Olympic athletes.
             </motion.p>
-            <motion.p className="text-xl text-gray-300 mb-8" variants={fadeInUp}>As a freelance website designer, I bring a unique blend of creative vision and technical expertise to every project, ensuring your digital presence is not only beautiful but also highly functional and effective.</motion.p>
+            <motion.p className="text-xl text-gray-300 mb-8" variants={fadeInUp}>As a freelance designer and developer, I build custom websites from scratch — React, Next.js, TypeScript. No templates, no page builders, no junior devs. Just me and your project.</motion.p>
             <motion.div 
               variants={fadeInUp}
               className="flex flex-wrap gap-4"
@@ -323,7 +323,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <p className="text-xl text-gray-300 mt-6">
-                My approach combines strategic thinking with technical excellence to solve these challenges. I don't just build websites or apps—I create <strong className="text-white">digital experiences that solve real business problems and drive measurable results</strong>.
+                My approach combines strategic thinking with technical skill to solve these challenges. I don't just build websites or apps—I create <strong className="text-white">digital experiences that solve real business problems and drive real revenue</strong>.
               </p>
             </div>
           </motion.div>
@@ -362,7 +362,7 @@ export default function AboutPage() {
                 <ExpertiseCard
                   icon={Code}
                   title="Development"
-                  description="Modern technologies and performance optimization for exceptional results."
+                  description="Modern technologies and performance optimization for strong results."
                   features={[
                     "React/Next.js",
                     "Node.js",
@@ -454,7 +454,7 @@ export default function AboutPage() {
                 description="Understanding your business goals, challenges, and market position."
                 items={[
                   "In-depth stakeholder interviews",
-                  "Comprehensive market analysis",
+                  "Market analysis",
                   "User research with real customers",
                   "Competitive audit with actionable insights"
                 ]}
@@ -490,7 +490,7 @@ export default function AboutPage() {
                   "Data-driven wireframing process",
                   "Conversion-focused UI design",
                   "Interactive prototyping for user testing",
-                  "Comprehensive design systems for consistency"
+                  "Design systems for consistency"
                 ]}
               />
             </motion.div>
@@ -502,12 +502,12 @@ export default function AboutPage() {
             >
               <ProcessCard
                 title="Develop"
-                description="Building robust and scalable solutions with modern technologies."
+                description="Building scalable solutions with modern technologies."
                 items={[
                   "SEO-optimized frontend development",
                   "Secure backend integration",
                   "High quality scores through best practices",
-                  "Comprehensive testing & QA process"
+                  "Thorough testing & QA process"
                 ]}
               />
             </motion.div>
@@ -558,7 +558,7 @@ export default function AboutPage() {
                   <strong className="text-white">Challenge:</strong> Manual booking processes consuming hours weekly and limiting business growth.
                 </p>
                 <p className="text-gray-400 mb-4">
-                  <strong className="text-white">Solution:</strong> Comprehensive digital platform with automated booking and client management.
+                  <strong className="text-white">Solution:</strong> Full digital platform with automated booking and client management.
                 </p>
                 <p className="text-gray-400">
                   <strong className="text-white">Result:</strong> Dramatic increase in bookings, reduced administrative work, and improved client retention.
@@ -656,13 +656,13 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-2 gap-12">
               <div>
                 <p className="text-xl text-gray-300 mb-6">
-                  When I'm not designing or coding, you'll find me exploring new technologies, contributing to open-source projects, or mentoring aspiring developers. I believe in continuous learning and giving back to the community that has supported my growth.
+                  I live in Tel Aviv, where I split my time between Figma and the Mediterranean. I mentor design students, contribute to open-source React tooling, and have an unreasonable opinion about which café in Florentin has the best espresso.
                 </p>
                 <p className="text-xl text-gray-300 mb-6">
-                  I'm also passionate about photography, hiking, and discovering new coffee shops in Tel Aviv. These activities help me maintain a fresh perspective and bring creative energy to my work.
+                  When I'm not building websites, I'm probably hiking somewhere with a camera. The photography helps me see composition differently — which shows up in every layout I design.
                 </p>
                 <p className="text-xl text-gray-300">
-                  My background in both design and development gives me a unique perspective on digital projects. I understand the challenges and opportunities from multiple angles, which helps me create solutions that are both beautiful and functional.
+                  Having worked on both the design and engineering side of 50+ projects, I see problems from angles that specialists miss. That's the real advantage of hiring someone who does both.
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-4">
@@ -739,7 +739,7 @@ export default function AboutPage() {
                 <Link
                   to="/tools/website-analyzer"
                   className="mr_btn mr_btn_outline"
-                  title="Try our free website analyzer"
+                  title="Try my free website analyzer"
                 >
                   <span>Free Website Analysis</span>
                 </Link>

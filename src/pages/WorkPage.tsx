@@ -44,7 +44,7 @@ const projects: Project[] = [
   // Original Featured Project now as regular
   {
     title: "Binns Media Group Platform",
-    description: "A cutting-edge digital media platform designed to showcase BMG's diverse content portfolio including podcasts, TV shows, and exclusive content. The platform serves as both a content hub and a representation of BMG's commitment to amplifying diverse voices in media.",
+    description: "NYC media company needed a platform to compete for listener attention. I built a content hub for their podcasts, TV shows, and exclusive content that changed how their audience discovers media.",
     image: "https://i.imgur.com/IU0mmH7.jpeg",
     liveUrl: "https://www.binnsmediagroup.com",
     caseStudyUrl: "/work/case-studies/binns-media",
@@ -61,7 +61,7 @@ const projects: Project[] = [
   // Websites
   {
     title: "A Secure Annapolis Locksmith",
-    description: "Professional locksmith website showcasing residential, commercial, and automotive services.",
+    description: "Local locksmith was invisible on Google and losing every lead to HomeAdvisor. Now they rank #1 locally and the phone doesn't stop ringing.",
     image: "https://images.unsplash.com/photo-1587613864521-9ef8dfe617cc?auto=format&fit=crop&w=2000&q=80",
     liveUrl: "https://www.asecureannapolislocksmith.com",
     caseStudyUrl: "/work/case-studies/secure-annapolis",
@@ -177,7 +177,7 @@ const portfolioSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Portfolio - Marc Friedman's Digital Design & Development Work",
-  "description": "Explore our portfolio of results-driven digital solutions that combine thoughtful design with robust development. Featured projects include websites, landing pages, and SaaS applications.",
+  "description": "Here's what happened when real businesses let me redesign their websites. Featured projects include websites, landing pages, and SaaS applications.",
   "creator": {
     "@type": "Person",
     "name": "Marc Friedman",
@@ -348,20 +348,20 @@ export default function WorkPage() {
     <>
       <Helmet>
         <title>Portfolio - Marc Friedman's Award-Winning Digital Design & Development Work</title>
-        <meta name="description" content="Explore our award-winning portfolio of 50+ digital solutions that drive real business results. Featured projects include high-converting websites, SaaS platforms, and mobile applications for clients across three continents." />
+        <meta name="description" content="50+ projects across three continents. Here's what I've built and the results they delivered. Featured projects include high-converting websites, SaaS platforms, and mobile applications for clients across three continents." />
         <meta name="keywords" content="web development portfolio, UI/UX design portfolio, SaaS development case studies, website design examples, digital solutions portfolio, Marc Friedman projects" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Portfolio - Marc Friedman's Award-Winning Digital Design & Development Work" />
-        <meta property="og:description" content="Explore our award-winning portfolio of 50+ digital solutions that drive real business results." />
+        <meta property="og:description" content="50+ projects across three continents. Here's what I've built and the results they delivered." />
         <meta property="og:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
         <meta property="og:url" content="https://marcfriedmanportfolio.com/work" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Portfolio - Marc Friedman's Award-Winning Digital Design & Development Work" />
-        <meta name="twitter:description" content="Explore our award-winning portfolio of 50+ digital solutions that drive real business results." />
+        <meta name="twitter:description" content="50+ projects across three continents. Here's what I've built and the results they delivered." />
         <meta name="twitter:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
         
         {/* Additional SEO meta tags */}
@@ -404,7 +404,7 @@ export default function WorkPage() {
               Featured Work
             </h1>
             <p className="font-body text-base md:text-xl leading-[1.7] text-gray-300 mb-6 md:mb-8">
-              Explore our portfolio of results-driven digital solutions that combine thoughtful design with robust development.
+              Here's what happened when real businesses let me redesign their websites.
             </p>
           </TextReveal>
 

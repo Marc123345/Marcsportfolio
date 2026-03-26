@@ -96,7 +96,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "What's included in your web design services?",
+      "name": "What's included in my web design packages?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Every project includes UI/UX design, responsive development, SEO optimization, performance tuning, and 30 days of post-launch support. I build with React, Next.js, and TypeScript for maximum performance and scalability."
@@ -112,7 +112,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "What if I already have a website that needs improvement?",
+      "name": "Can you redesign my existing website instead of starting from scratch?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "I offer comprehensive website audits and redesign services. I'll analyze your current site's performance, UX, and conversion rates, then provide a clear roadmap for improvement. Many clients see a 40%+ increase in leads after a redesign."
@@ -120,7 +120,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "How much does a custom website cost?",
+      "name": "How much does a custom website cost in 2026?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Pricing depends on scope and complexity. A professional business website typically starts around $3,000, while complex web applications and SaaS platforms range from $8,000–$20,000+. I offer flexible payment plans and always provide a detailed quote before starting."
@@ -208,10 +208,10 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <h1 className="font-heading text-[clamp(3rem,6vw,4.5rem)] font-semibold tracking-[-0.01em] text-white leading-[1.15] mb-6">
-                  Award Winning Websites That Turn Attention Into Revenue
+                  Your Website Should Be Your Best Salesperson. I'll Make It One.
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-300/80 max-w-lg leading-relaxed">
-                  I design and develop high-converting websites for B2B companies, agencies, and ecommerce brands — so you get more leads, more sales, and a brand people remember.
+                  I build custom React websites for B2B companies, agencies, and ecommerce brands that actually bring in customers — not just traffic.
                 </p>
               </motion.div>
 
@@ -361,7 +361,7 @@ export default function HomePage() {
               Featured <span className="text-[#A78BFA]">Work</span>
             </h2>
             <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
-              Explore my portfolio of results-driven digital solutions that combine thoughtful design with robust development.
+              Here's what happened when real businesses let me redesign their websites.
             </p>
           </motion.div>
 
@@ -882,7 +882,7 @@ const FAQ_ITEMS = [
     a: "Most projects take 4–8 weeks from kickoff to launch, depending on complexity. Simple landing pages can be ready in 2 weeks, while complex web apps or SaaS platforms may take 8–12 weeks. I'll give you a clear timeline during our first call."
   },
   {
-    q: "What's included in your web design services?",
+    q: "What's included in my web design packages?",
     a: "Every project includes UI/UX design, responsive development, SEO optimization, performance tuning, and 30 days of post-launch support. I build with React, Next.js, and TypeScript for maximum performance and scalability."
   },
   {
@@ -890,11 +890,11 @@ const FAQ_ITEMS = [
     a: "Absolutely. While I'm based in Tel Aviv, over 60% of my clients are international — from the US, UK, South Africa, and across Europe. I work async-first with clear communication via Slack, email, and scheduled video calls."
   },
   {
-    q: "What if I already have a website that needs improvement?",
+    q: "Can you redesign my existing website instead of starting from scratch?",
     a: "I offer comprehensive website audits and redesign services. I'll analyze your current site's performance, UX, and conversion rates, then provide a clear roadmap for improvement. Many clients see a 40%+ increase in leads after a redesign."
   },
   {
-    q: "How much does a custom website cost?",
+    q: "How much does a custom website cost in 2026?",
     a: "Pricing depends on scope and complexity. A professional business website typically starts around $3,000, while complex web applications and SaaS platforms range from $8,000–$20,000+. I offer flexible payment plans and always provide a detailed quote before starting."
   },
 ];

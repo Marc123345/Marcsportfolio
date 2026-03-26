@@ -16,7 +16,7 @@ const projects: Project[] = [
   {
     id: 'binns-media',
     title: 'Binns Media Group',
-    description: 'A cutting-edge digital media platform showcasing diverse content portfolio.',
+    description: 'NYC media company's content hub for podcasts, TV shows, and exclusive content.',
     image: 'https://i.imgur.com/IU0mmH7.jpeg',
     caseStudyUrl: '/work/case-studies/binns-media',
     liveUrl: 'https://www.binnsmediagroup.com'
