@@ -80,20 +80,20 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
         <div className="max-w-4xl mx-auto">
           <button
             onClick={() => navigate('/blog')}
-            className="flex items-center gap-2 text-[#A3D1FF] hover:underline mb-6"
+            className="flex items-center gap-2 text-[#A78BFA] hover:underline mb-6"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Blog
           </button>
 
           <div className="flex flex-wrap gap-2 mb-4">
-            <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">
+            <span className="px-3 py-1 bg-[#A78BFA]/10 text-[#A78BFA] rounded-full text-sm">
               eCommerce
             </span>
-            <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">
+            <span className="px-3 py-1 bg-[#A78BFA]/10 text-[#A78BFA] rounded-full text-sm">
               UX Design
             </span>
-            <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">
+            <span className="px-3 py-1 bg-[#A78BFA]/10 text-[#A78BFA] rounded-full text-sm">
               Conversion Optimization
             </span>
           </div>
@@ -138,7 +138,7 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
                 className="p-2 hover:bg-white/10 rounded-lg transition-colors"
                 aria-label="Copy link"
               >
-                <LinkIcon className="w-5 h-5 text-gray-400 hover:text-[#A3D1FF]" />
+                <LinkIcon className="w-5 h-5 text-gray-400 hover:text-[#A78BFA]" />
               </button>
             </div>
           </div>
@@ -157,9 +157,9 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
         <div className="max-w-4xl mx-auto">
           <div className="prose prose-lg prose-invert max-w-none">
 
-            <div className="bg-[#A3D1FF]/10 border border-[#A3D1FF]/30 p-6 rounded-xl mb-8">
+            <div className="bg-[#A78BFA]/10 border border-[#A78BFA]/30 p-6 rounded-xl mb-8">
               <h3 className="text-white mt-0 mb-4 flex items-center gap-2">
-                <AlertTriangle className="w-6 h-6 text-[#A3D1FF]" />
+                <AlertTriangle className="w-6 h-6 text-[#A78BFA]" />
                 The Cost of Poor eCommerce UX
               </h3>
               <p className="text-gray-300 mb-0">
@@ -176,7 +176,7 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
               Complicated Navigation That Buries Products
             </h2>
 
-            <h3 className="text-[#A3D1FF]">The Problem: Users Can't Find What They're Looking For</h3>
+            <h3 className="text-[#A78BFA]">The Problem: Users Can't Find What They're Looking For</h3>
 
             <p>
               The average eCommerce site loses <strong className="text-white">30-40% of potential customers</strong> simply because they can't find the products they want. This isn't just about having a search bar — it's about information architecture that matches how customers actually think and shop.
@@ -203,13 +203,13 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
               </ul>
             </div>
 
-            <h3 className="text-[#A3D1FF]">The Data-Backed Solution</h3>
+            <h3 className="text-[#A78BFA]">The Data-Backed Solution</h3>
 
             <p>
               When we redesigned the navigation for an automotive parts retailer, we implemented these changes based on user research and analytics:
             </p>
 
-            <div className="bg-[#1b1b1b] p-6 rounded-xl border border-[#A3D1FF]/30 my-8">
+            <div className="bg-[#1b1b1b] p-6 rounded-xl border border-[#A78BFA]/30 my-8">
               <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-green-400" />
                 Implementation Strategy
@@ -254,7 +254,7 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
               </div>
             </div>
 
-            <h3 className="text-[#A3D1FF]">Action Items for Your Store</h3>
+            <h3 className="text-[#A78BFA]">Action Items for Your Store</h3>
 
             <ol className="space-y-3">
               <li className="text-gray-300">
@@ -276,7 +276,7 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
               Mobile Checkout Friction That Drives Abandonment
             </h2>
 
-            <h3 className="text-[#A3D1FF]">The Problem: Mobile Users Are Abandoning at Checkout</h3>
+            <h3 className="text-[#A78BFA]">The Problem: Mobile Users Are Abandoning at Checkout</h3>
 
             <p>
               Here's a shocking statistic: <strong className="text-white">Mobile commerce accounts for 73% of all eCommerce sales</strong> (Statista, 2024), yet mobile checkout abandonment rates are <strong className="text-white">85.65% — nearly 16 percentage points higher than desktop</strong> (Baymard Institute, 2024).
@@ -310,13 +310,13 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
               </ul>
             </div>
 
-            <h3 className="text-[#A3D1FF]">The Data-Backed Solution</h3>
+            <h3 className="text-[#A78BFA]">The Data-Backed Solution</h3>
 
             <p>
               For a fashion eCommerce client processing $2M+ monthly, we implemented a mobile-first checkout redesign that became our template for all future projects:
             </p>
 
-            <div className="bg-[#1b1b1b] p-6 rounded-xl border border-[#A3D1FF]/30 my-8">
+            <div className="bg-[#1b1b1b] p-6 rounded-xl border border-[#A78BFA]/30 my-8">
               <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-green-400" />
                 Mobile Checkout Optimization
@@ -370,7 +370,7 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
               </p>
             </div>
 
-            <h3 className="text-[#A3D1FF]">Action Items for Your Store</h3>
+            <h3 className="text-[#A78BFA]">Action Items for Your Store</h3>
 
             <ol className="space-y-3">
               <li className="text-gray-300">
@@ -395,7 +395,7 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
               Inadequate Product Information That Destroys Trust
             </h2>
 
-            <h3 className="text-[#A3D1FF]">The Problem: Customers Don't Have Enough Information to Buy Confidently</h3>
+            <h3 className="text-[#A78BFA]">The Problem: Customers Don't Have Enough Information to Buy Confidently</h3>
 
             <p>
               When shopping online, customers can't touch, feel, or try products. Your product pages must compensate for this by providing comprehensive information that builds confidence. Yet <strong className="text-white">78% of product returns are due to "not as described"</strong> issues — a clear indicator that product pages aren't setting accurate expectations.
@@ -429,13 +429,13 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
               </ul>
             </div>
 
-            <h3 className="text-[#A3D1FF]">The Data-Backed Solution</h3>
+            <h3 className="text-[#A78BFA]">The Data-Backed Solution</h3>
 
             <p>
               For a home furnishings client struggling with high return rates, we completely reimagined their product pages using a comprehensive information architecture:
             </p>
 
-            <div className="bg-[#1b1b1b] p-6 rounded-xl border border-[#A3D1FF]/30 my-8">
+            <div className="bg-[#1b1b1b] p-6 rounded-xl border border-[#A78BFA]/30 my-8">
               <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-green-400" />
                 Comprehensive Product Page Framework
@@ -499,7 +499,7 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
               </p>
             </div>
 
-            <h3 className="text-[#A3D1FF]">Action Items for Your Store</h3>
+            <h3 className="text-[#A78BFA]">Action Items for Your Store</h3>
 
             <ol className="space-y-3">
               <li className="text-gray-300">
@@ -528,34 +528,34 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
               While each of these UX improvements drives significant results independently, the real magic happens when you implement them together. Here's what we've observed across multiple eCommerce projects:
             </p>
 
-            <div className="bg-[#1b1b1b] p-8 rounded-xl border border-[#A3D1FF]/30 my-8">
+            <div className="bg-[#1b1b1b] p-8 rounded-xl border border-[#A78BFA]/30 my-8">
               <h3 className="text-white mb-6">Cumulative Impact: 12-Month Case Study</h3>
               <div className="space-y-6">
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-gray-300">Improved Navigation</span>
-                    <span className="text-[#A3D1FF] font-semibold">+82% Conversion</span>
+                    <span className="text-[#A78BFA] font-semibold">+82% Conversion</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
-                    <div className="bg-[#A3D1FF] h-2 rounded-full" style={{ width: '82%' }}></div>
+                    <div className="bg-[#A78BFA] h-2 rounded-full" style={{ width: '82%' }}></div>
                   </div>
                 </div>
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-gray-300">Mobile Checkout Optimization</span>
-                    <span className="text-[#A3D1FF] font-semibold">+218% Conversion</span>
+                    <span className="text-[#A78BFA] font-semibold">+218% Conversion</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
-                    <div className="bg-[#A3D1FF] h-2 rounded-full" style={{ width: '100%' }}></div>
+                    <div className="bg-[#A78BFA] h-2 rounded-full" style={{ width: '100%' }}></div>
                   </div>
                 </div>
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-gray-300">Enhanced Product Pages</span>
-                    <span className="text-[#A3D1FF] font-semibold">+127% Conversion</span>
+                    <span className="text-[#A78BFA] font-semibold">+127% Conversion</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
-                    <div className="bg-[#A3D1FF] h-2 rounded-full" style={{ width: '95%' }}></div>
+                    <div className="bg-[#A78BFA] h-2 rounded-full" style={{ width: '95%' }}></div>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-white/10">
@@ -602,19 +602,19 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
               <h3 className="text-white mb-4">Medium-Term Improvements (Month 1-2)</h3>
               <ul className="space-y-2 mb-0">
                 <li className="flex items-start gap-3 text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-0.5 flex-shrink-0" />
                   Simplify navigation with flat category structure
                 </li>
                 <li className="flex items-start gap-3 text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-0.5 flex-shrink-0" />
                   Add Apple Pay and Google Pay express checkout options
                 </li>
                 <li className="flex items-start gap-3 text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-0.5 flex-shrink-0" />
                   Enhance product pages with minimum 6-8 images per product
                 </li>
                 <li className="flex items-start gap-3 text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-0.5 flex-shrink-0" />
                   Implement mobile-optimized checkout with larger touch targets
                 </li>
               </ul>
@@ -651,7 +651,7 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
             <div className="grid md:grid-cols-2 gap-4 my-8">
               <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10">
                 <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
-                  <Search className="w-5 h-5 text-[#A3D1FF]" />
+                  <Search className="w-5 h-5 text-[#A78BFA]" />
                   Navigation Metrics
                 </h4>
                 <ul className="space-y-2 text-sm mb-0">
@@ -664,7 +664,7 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
 
               <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10">
                 <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
-                  <CreditCard className="w-5 h-5 text-[#A3D1FF]" />
+                  <CreditCard className="w-5 h-5 text-[#A78BFA]" />
                   Checkout Metrics
                 </h4>
                 <ul className="space-y-2 text-sm mb-0">
@@ -677,7 +677,7 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
 
               <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10">
                 <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
-                  <ShoppingCart className="w-5 h-5 text-[#A3D1FF]" />
+                  <ShoppingCart className="w-5 h-5 text-[#A78BFA]" />
                   Product Page Metrics
                 </h4>
                 <ul className="space-y-2 text-sm mb-0">
@@ -690,7 +690,7 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
 
               <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10">
                 <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
-                  <Package className="w-5 h-5 text-[#A3D1FF]" />
+                  <Package className="w-5 h-5 text-[#A78BFA]" />
                   Business Metrics
                 </h4>
                 <ul className="space-y-2 text-sm mb-0">
@@ -731,7 +731,7 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
               Start with the quick wins, measure your progress, and gradually implement the more complex improvements. Within 3-6 months, you should see significant improvements in conversion rates, reduced cart abandonment, and lower return rates.
             </p>
 
-            <div className="bg-gradient-to-r from-[#A3D1FF]/10 to-blue-500/10 border border-[#A3D1FF]/30 p-8 rounded-xl my-8">
+            <div className="bg-gradient-to-r from-[#A78BFA]/10 to-blue-500/10 border border-[#A78BFA]/30 p-8 rounded-xl my-8">
               <h3 className="text-white mb-4">Need Help Optimizing Your eCommerce Store?</h3>
               <p className="text-gray-300 mb-6">
                 I specialize in data-driven eCommerce UX optimization that delivers measurable results. From comprehensive UX audits to full redesigns, I'll help you identify and fix the issues that are costing you conversions.
@@ -756,24 +756,24 @@ export default function EcommerceUXFlawsKillingConversionsPage() {
             <h3 className="text-xl font-semibold text-white mb-4">Related Articles</h3>
             <div className="grid md:grid-cols-3 gap-6">
               <Link to="/blog/conversion-rate-optimization-techniques" className="block group">
-                <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all h-full">
-                  <h4 className="text-white font-semibold mb-2 group-hover:text-[#A3D1FF] transition-colors">
+                <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all h-full">
+                  <h4 className="text-white font-semibold mb-2 group-hover:text-[#A78BFA] transition-colors">
                     7 Proven Conversion Rate Optimization Techniques
                   </h4>
                   <p className="text-gray-400 text-sm">Discover actionable strategies to boost your conversion rates.</p>
                 </div>
               </Link>
               <Link to="/blog/mobile-first-design-principles" className="block group">
-                <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all h-full">
-                  <h4 className="text-white font-semibold mb-2 group-hover:text-[#A3D1FF] transition-colors">
+                <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all h-full">
+                  <h4 className="text-white font-semibold mb-2 group-hover:text-[#A78BFA] transition-colors">
                     Mobile-First Design Principles
                   </h4>
                   <p className="text-gray-400 text-sm">Essential principles for creating mobile-optimized experiences.</p>
                 </div>
               </Link>
               <Link to="/blog/contrast-balance-ui-design" className="block group">
-                <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all h-full">
-                  <h4 className="text-white font-semibold mb-2 group-hover:text-[#A3D1FF] transition-colors">
+                <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all h-full">
+                  <h4 className="text-white font-semibold mb-2 group-hover:text-[#A78BFA] transition-colors">
                     Contrast & Balance in UI Design
                   </h4>
                   <p className="text-gray-400 text-sm">Master accessible and visually appealing interface design.</p>

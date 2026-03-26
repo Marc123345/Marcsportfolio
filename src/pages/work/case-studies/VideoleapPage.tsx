@@ -8,11 +8,11 @@ function FeatureCard({ icon: Icon, title, description }: {
   description: string;
 }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group">
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all group">
       <div className="relative mb-6">
-        <div className="absolute inset-0 bg-[#A3D1FF]/20 blur-xl rounded-full"></div>
-        <div className="bg-[#A3D1FF]/10 p-4 rounded-xl relative">
-          <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
+        <div className="absolute inset-0 bg-[#A78BFA]/20 blur-xl rounded-full"></div>
+        <div className="bg-[#A78BFA]/10 p-4 rounded-xl relative">
+          <Icon className="w-8 h-8 text-[#A78BFA] group-hover:scale-110 transition-transform" />
         </div>
       </div>
       <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
@@ -23,8 +23,8 @@ function FeatureCard({ icon: Icon, title, description }: {
 
 function StatCard({ value, label }: { value: string; label: string }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center">
-      <div className="text-4xl font-bold text-[#A3D1FF] mb-2">{value}</div>
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all text-center">
+      <div className="text-4xl font-bold text-[#A78BFA] mb-2">{value}</div>
       <div className="text-gray-400">{label}</div>
     </div>
   );
@@ -50,8 +50,8 @@ export default function VideoleapPage() {
         {/* Content */}
         <div className="container-custom relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm rounded-full px-4 py-2 border border-white/10 hover:border-[#A3D1FF] transition-all duration-300 mb-6">
-              <span className="text-[#A3D1FF] text-sm font-medium">Featured Project</span>
+            <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm rounded-full px-4 py-2 border border-white/10 hover:border-[#A78BFA] transition-all duration-300 mb-6">
+              <span className="text-[#A78BFA] text-sm font-medium">Featured Project</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               Videoleap
@@ -79,7 +79,7 @@ export default function VideoleapPage() {
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <div>
                     <p className="text-white font-medium">Problem Statement</p>
                     <p className="text-gray-400">How might we incentivize users to upload content and help them quickly find relevant templates to increase engagement and retention?</p>
@@ -97,19 +97,19 @@ export default function VideoleapPage() {
                 <h3 className="text-xl font-semibold text-white mb-4">Key Findings</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     Lack of relevant and personalized templates
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     Editing features too complex for average users
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     High volume content production needs
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     Low incentive for template sharing
                   </li>
                 </ul>
@@ -137,21 +137,21 @@ export default function VideoleapPage() {
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <div>
                     <p className="text-white font-medium">User Interviews</p>
                     <p className="text-gray-400">Conducted in-depth interviews with content creators and professional editors</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <div>
                     <p className="text-white font-medium">Workshop Sessions</p>
                     <p className="text-gray-400">Organized collaborative design thinking workshops with stakeholders</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <div>
                     <p className="text-white font-medium">Data Analysis</p>
                     <p className="text-gray-400">Analyzed user feedback and behavior patterns</p>
@@ -181,14 +181,14 @@ export default function VideoleapPage() {
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <div>
                     <p className="text-white font-medium">Research Insights</p>
                     <p className="text-gray-400">Presented key findings from user interviews and data analysis</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <div>
                     <p className="text-white font-medium">Solution Strategy</p>
                     <p className="text-gray-400">Outlined proposed features and implementation approach</p>
@@ -218,14 +218,14 @@ export default function VideoleapPage() {
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <div>
                     <p className="text-white font-medium">Cross-functional Collaboration</p>
                     <p className="text-gray-400">UX designers, developers, and product managers working in sync</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <div>
                     <p className="text-white font-medium">Agile Methodology</p>
                     <p className="text-gray-400">Iterative development with regular feedback cycles</p>
@@ -256,14 +256,14 @@ export default function VideoleapPage() {
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <div>
                     <p className="text-white font-medium">Strategic Partnership</p>
                     <p className="text-gray-400">Collaboration with one of TikTok's biggest stars</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <div>
                     <p className="text-white font-medium">Media Coverage</p>
                     <p className="text-gray-400">Featured in leading tech publications</p>
@@ -274,7 +274,7 @@ export default function VideoleapPage() {
                 href="https://nocamels.com/2022/02/tiktok-star-charli-damelio/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 mt-6 text-[#A3D1FF] hover:underline"
+                className="inline-flex items-center gap-2 mt-6 text-[#A78BFA] hover:underline"
               >
                 Read Full Article
                 <ArrowUpRight className="w-4 h-4" />
@@ -323,14 +323,14 @@ export default function VideoleapPage() {
 
           <div className="mt-8 space-y-4">
             <div className="flex items-start">
-              <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+              <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
               <div>
                 <p className="text-white font-medium">User-Centric Design</p>
                 <p className="text-gray-400">Focused on creating an intuitive and engaging onboarding experience</p>
               </div>
             </div>
             <div className="flex items-start">
-              <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+              <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
               <div>
                 <p className="text-white font-medium">Clear Navigation</p>
                 <p className="text-gray-400">Step-by-step guidance to help users understand and utilize key features</p>
@@ -366,14 +366,14 @@ export default function VideoleapPage() {
             </div>
             <div className="mt-8 space-y-4">
               <div className="flex items-start">
-                <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                 <div>
                   <p className="text-white font-medium">Personalized Experience</p>
                   <p className="text-gray-400">Tailored content recommendations based on user preferences</p>
                 </div>
               </div>
               <div className="flex items-start">
-                <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                 <div>
                   <p className="text-white font-medium">Progressive Disclosure</p>
                   <p className="text-gray-400">Step-by-step introduction to key features</p>
@@ -400,14 +400,14 @@ export default function VideoleapPage() {
             </div>
             <div className="mt-8 space-y-4">
               <div className="flex items-start">
-                <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                 <div>
                   <p className="text-white font-medium">Simplified Interface</p>
                   <p className="text-gray-400">Easy-to-use controls for quick edits</p>
                 </div>
               </div>
               <div className="flex items-start">
-                <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                 <div>
                   <p className="text-white font-medium">Advanced Features</p>
                   <p className="text-gray-400">Professional tools for experienced users</p>
@@ -434,14 +434,14 @@ export default function VideoleapPage() {
             </div>
             <div className="mt-8 space-y-4">
               <div className="flex items-start">
-                <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                 <div>
                   <p className="text-white font-medium">Points System</p>
                   <p className="text-gray-400">Earn points through active participation and content creation</p>
                 </div>
               </div>
               <div className="flex items-start">
-                <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                 <div>
                   <p className="text-white font-medium">Rewards & Recognition</p>
                   <p className="text-gray-400">Exclusive perks and features for active contributors</p>
@@ -488,11 +488,11 @@ export default function VideoleapPage() {
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">Simplified interface for quick edits</p>
                 </div>
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">Advanced mode for professional features</p>
                 </div>
               </div>
@@ -504,11 +504,11 @@ export default function VideoleapPage() {
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">Points for daily logins and submissions</p>
                 </div>
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">Exclusive perks for active contributors</p>
                 </div>
               </div>

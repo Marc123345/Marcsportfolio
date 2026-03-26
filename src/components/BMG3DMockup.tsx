@@ -48,7 +48,7 @@ const BMG3DMockup = () => {
 
         {/* High Performance Stat Card */}
         <div 
-          className="bg-[#A3D1FF] p-6 rounded-2xl flex flex-col justify-center items-center text-black"
+          className="bg-[#A78BFA] p-6 rounded-2xl flex flex-col justify-center items-center text-black"
           style={{ transform: 'translateZ(90px)' }}
         >
           <span className="text-4xl font-black italic">98%</span>
@@ -60,7 +60,7 @@ const BMG3DMockup = () => {
           className="bg-white/5 backdrop-blur-md p-4 rounded-xl border border-white/10"
           style={{ transform: 'translateZ(120px)' }}
         >
-          <div className="w-10 h-1 h-1 bg-[#A3D1FF] rounded-full mb-2" />
+          <div className="w-10 h-1 h-1 bg-[#A78BFA] rounded-full mb-2" />
           <div className="h-2 w-full bg-white/10 rounded mb-1" />
           <div className="h-2 w-2/3 bg-white/10 rounded" />
         </div>

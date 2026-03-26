@@ -32,7 +32,7 @@ export default function ProjectTimelineVisualizer() {
         'Technical specifications',
         'Strategic recommendations'
       ],
-      icon: <Calendar className="w-6 h-6 text-[#A3D1FF]" />
+      icon: <Calendar className="w-6 h-6 text-[#A78BFA]" />
     },
     {
       id: 'design',
@@ -51,7 +51,7 @@ export default function ProjectTimelineVisualizer() {
         'Interactive prototype',
         'Design system'
       ],
-      icon: <FileText className="w-6 h-6 text-[#A3D1FF]" />
+      icon: <FileText className="w-6 h-6 text-[#A78BFA]" />
     },
     {
       id: 'development',
@@ -70,7 +70,7 @@ export default function ProjectTimelineVisualizer() {
         'Form integrations',
         'Analytics setup'
       ],
-      icon: <Code className="w-6 h-6 text-[#A3D1FF]" />
+      icon: <Code className="w-6 h-6 text-[#A78BFA]" />
     },
     {
       id: 'testing',
@@ -89,7 +89,7 @@ export default function ProjectTimelineVisualizer() {
         'SEO implementation',
         'Conversion tracking setup'
       ],
-      icon: <Zap className="w-6 h-6 text-[#A3D1FF]" />
+      icon: <Zap className="w-6 h-6 text-[#A78BFA]" />
     },
     {
       id: 'launch',
@@ -108,7 +108,7 @@ export default function ProjectTimelineVisualizer() {
         'Maintenance plan',
         '30 days of post-launch support'
       ],
-      icon: <Rocket className="w-6 h-6 text-[#A3D1FF]" />
+      icon: <Rocket className="w-6 h-6 text-[#A78BFA]" />
     }
   ];
   
@@ -118,8 +118,8 @@ export default function ProjectTimelineVisualizer() {
     <div className="bg-[#1b1b1b] rounded-xl border border-white/10 overflow-hidden">
       <div className="p-8">
         <div className="flex items-center gap-3 mb-6">
-          <div className="bg-[#A3D1FF]/10 p-3 rounded-lg">
-            <Clock className="w-6 h-6 text-[#A3D1FF]" />
+          <div className="bg-[#A78BFA]/10 p-3 rounded-lg">
+            <Clock className="w-6 h-6 text-[#A78BFA]" />
           </div>
           <h3 className="text-2xl font-bold text-white">Project Timeline</h3>
         </div>
@@ -142,12 +142,12 @@ export default function ProjectTimelineVisualizer() {
                 }`}
               >
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 transition-colors ${
-                  activePhase === phase.id ? 'bg-[#A3D1FF] text-black' : 'bg-[#2d3035] text-gray-400'
+                  activePhase === phase.id ? 'bg-[#A78BFA] text-black' : 'bg-[#2d3035] text-gray-400'
                 }`}>
                   {index + 1}
                 </div>
                 <span className={`text-xs font-medium ${
-                  activePhase === phase.id ? 'text-[#A3D1FF]' : 'text-gray-400'
+                  activePhase === phase.id ? 'text-[#A78BFA]' : 'text-gray-400'
                 }`}>
                   {phase.title.split(' ')[0]}
                 </span>
@@ -164,7 +164,7 @@ export default function ProjectTimelineVisualizer() {
                 {activePhaseData.icon}
                 <div>
                   <h4 className="text-xl font-semibold text-white">{activePhaseData.title}</h4>
-                  <p className="text-[#A3D1FF]">{activePhaseData.duration}</p>
+                  <p className="text-[#A78BFA]">{activePhaseData.duration}</p>
                 </div>
               </div>
               
@@ -177,7 +177,7 @@ export default function ProjectTimelineVisualizer() {
                 <ul className="space-y-2">
                   {activePhaseData.clientResponsibilities.map((item, index) => (
                     <li key={index} className="flex items-start gap-2 text-gray-300">
-                      <CheckSquare className="w-5 h-5 text-[#A3D1FF] mt-0.5" />
+                      <CheckSquare className="w-5 h-5 text-[#A78BFA] mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -191,8 +191,8 @@ export default function ProjectTimelineVisualizer() {
                 <ul className="space-y-4">
                   {activePhaseData.deliverables.map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <div className="w-8 h-8 bg-[#A3D1FF]/10 rounded-full flex items-center justify-center flex-shrink-0">
-                        <span className="text-[#A3D1FF] text-sm font-medium">{index + 1}</span>
+                      <div className="w-8 h-8 bg-[#A78BFA]/10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span className="text-[#A78BFA] text-sm font-medium">{index + 1}</span>
                       </div>
                       <div>
                         <p className="text-white font-medium">{item}</p>
@@ -238,7 +238,7 @@ export default function ProjectTimelineVisualizer() {
               }
             }}
             disabled={activePhase === phases[phases.length - 1].id}
-            className="text-[#A3D1FF] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+            className="text-[#A78BFA] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
           >
             Next Step →
             <ArrowRight className="w-4 h-4" />

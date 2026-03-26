@@ -16,11 +16,11 @@ interface ExpertiseCardProps {
 
 function ExpertiseCard({ icon: Icon, title, description, features }: ExpertiseCardProps) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group h-full">
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all group h-full">
       <div className="relative mb-6">
-        <div className="absolute inset-0 bg-[#A3D1FF]/20 blur-xl rounded-full"></div>
-        <div className="bg-[#A3D1FF]/10 p-4 rounded-xl relative">
-          <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
+        <div className="absolute inset-0 bg-[#A78BFA]/20 blur-xl rounded-full"></div>
+        <div className="bg-[#A78BFA]/10 p-4 rounded-xl relative">
+          <Icon className="w-8 h-8 text-[#A78BFA] group-hover:scale-110 transition-transform" />
         </div>
       </div>
       <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
@@ -30,7 +30,7 @@ function ExpertiseCard({ icon: Icon, title, description, features }: ExpertiseCa
           {features.map((feature, index) => (
             <span 
               key={index} 
-              className="px-3 py-1 bg-white/5 rounded-full text-sm text-[#A3D1FF]"
+              className="px-3 py-1 bg-white/5 rounded-full text-sm text-[#A78BFA]"
             >
               {feature}
             </span>
@@ -59,13 +59,13 @@ function ProcessCard({ title, description, items }: {
   items: string[];
 }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all h-full">
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all h-full">
       <h3 className="text-xl font-semibold text-white mb-4">{title}</h3>
       <p className="text-gray-400 mb-6">{description}</p>
       <ul className="space-y-2">
         {items.map((item, index) => (
           <li key={index} className="flex items-center text-gray-300">
-            <ArrowRight className="w-4 h-4 text-[#A3D1FF] mr-2 flex-shrink-0" />
+            <ArrowRight className="w-4 h-4 text-[#A78BFA] mr-2 flex-shrink-0" />
             <span>{item}</span>
           </li>
         ))}
@@ -83,7 +83,7 @@ function SkillBar({ name, percentage }: { name: string; percentage: string }) {
       </div>
       <div className="h-2 bg-[#1b1b1b] rounded-full overflow-hidden">
         <motion.div
-          className="h-full bg-[#A3D1FF] rounded-full transition-all duration-1000"
+          className="h-full bg-[#A78BFA] rounded-full transition-all duration-1000"
           initial={{ width: 0 }}
           whileInView={{ width: percentage }}
           viewport={{ once: true }}
@@ -195,13 +195,13 @@ export default function AboutPage() {
               About Marc Friedman
             </motion.h1>
             <motion.h2
-              className="font-body text-xl sm:text-2xl text-[#A3D1FF] mb-6"
+              className="font-body text-xl sm:text-2xl text-[#A78BFA] mb-6"
               variants={fadeInUp}
             >
               Full Stack Designer & Developer
             </motion.h2>
             <motion.p
-              className="font-heading text-2xl sm:text-3xl font-semibold tracking-[-0.01em] leading-[1.15] text-[#A3D1FF] mb-6"
+              className="font-heading text-2xl sm:text-3xl font-semibold tracking-[-0.01em] leading-[1.15] text-[#A78BFA] mb-6"
               variants={fadeInUp}
             >
               Solving Digital Challenges Through Design & Development Excellence
@@ -295,29 +295,29 @@ export default function AboutPage() {
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3 flex-shrink-0" />
+                    <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3 flex-shrink-0" />
                     <p className="text-white"><strong>Outdated digital presence</strong> that fails to reflect their brand quality and vision</p>
                   </div>
                   <div className="flex items-start">
-                    <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3 flex-shrink-0" />
+                    <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3 flex-shrink-0" />
                     <p className="text-white"><strong>Low conversion rates</strong> despite decent traffic, with users dropping off before taking action</p>
                   </div>
                   <div className="flex items-start">
-                    <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3 flex-shrink-0" />
+                    <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3 flex-shrink-0" />
                     <p className="text-white"><strong>Slow, poorly performing websites</strong> that frustrate users and hurt search rankings</p>
                   </div>
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3 flex-shrink-0" />
+                    <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3 flex-shrink-0" />
                     <p className="text-white"><strong>Disconnected systems</strong> requiring manual work that could be automated</p>
                   </div>
                   <div className="flex items-start">
-                    <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3 flex-shrink-0" />
+                    <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3 flex-shrink-0" />
                     <p className="text-white"><strong>Difficulty translating business ideas</strong> into technical requirements</p>
                   </div>
                   <div className="flex items-start">
-                    <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3 flex-shrink-0" />
+                    <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3 flex-shrink-0" />
                     <p className="text-white"><strong>Lack of strategic direction</strong> for digital initiatives and technology investments</p>
                   </div>
                 </div>

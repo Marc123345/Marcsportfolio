@@ -22,7 +22,7 @@ interface ParticleBackgroundProps {
 export default function ParticleBackground({
   className = '',
   particleCount = 50,
-  particleColor = '#A3D1FF',
+  particleColor = '#A78BFA',
   particleSize = 2,
   particleSpeed = 0.5,
   interactive = true

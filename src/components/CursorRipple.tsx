@@ -11,7 +11,7 @@ interface CursorRippleProps {
 }
 
 export default function CursorRipple({
-  color = '#A3D1FF',
+  color = '#A78BFA',
   size = 80,
   duration = 1.2,
   maxScale = 2.5,

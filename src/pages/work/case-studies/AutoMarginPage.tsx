@@ -13,11 +13,11 @@ function FeatureCard({ icon: Icon, title, description }: {
   description: string;
 }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group">
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all group">
       <div className="relative mb-6">
-        <div className="absolute inset-0 bg-[#A3D1FF]/20 blur-xl rounded-full"></div>
-        <div className="bg-[#A3D1FF]/10 p-4 rounded-xl relative">
-          <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
+        <div className="absolute inset-0 bg-[#A78BFA]/20 blur-xl rounded-full"></div>
+        <div className="bg-[#A78BFA]/10 p-4 rounded-xl relative">
+          <Icon className="w-8 h-8 text-[#A78BFA] group-hover:scale-110 transition-transform" />
         </div>
       </div>
       <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
@@ -33,21 +33,21 @@ function StatCard({ value, label, icon: Icon, delay = 0 }: { value: string; labe
   return (
     <motion.div
       ref={ref}
-      className="bg-gradient-to-br from-[#1b1b1b] to-[#0a0a0a] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center group relative overflow-hidden"
+      className="bg-gradient-to-br from-[#1b1b1b] to-[#0a0a0a] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all text-center group relative overflow-hidden"
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay }}
       whileHover={{ scale: 1.05, y: -5 }}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-[#A3D1FF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#A78BFA]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       {Icon && (
         <div className="mb-4 flex justify-center">
-          <div className="p-3 bg-[#A3D1FF]/10 rounded-lg">
-            <Icon className="w-6 h-6 text-[#A3D1FF]" />
+          <div className="p-3 bg-[#A78BFA]/10 rounded-lg">
+            <Icon className="w-6 h-6 text-[#A78BFA]" />
           </div>
         </div>
       )}
-      <div className="text-5xl font-bold text-[#A3D1FF] mb-3 relative z-10">
+      <div className="text-5xl font-bold text-[#A78BFA] mb-3 relative z-10">
         <AnimatedCounter end={parseInt(value)} duration={2000} />
         {value.includes('%') && <span>%</span>}
       </div>
@@ -67,7 +67,7 @@ function ProcessStep({ number, title, description, delay = 0 }: { number: string
     >
       <div className="flex gap-6">
         <div className="flex-shrink-0">
-          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#A3D1FF] to-[#0051a3] flex items-center justify-center text-white font-bold text-lg">
+          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#A78BFA] to-[#0051a3] flex items-center justify-center text-white font-bold text-lg">
             {number}
           </div>
         </div>
@@ -76,7 +76,7 @@ function ProcessStep({ number, title, description, delay = 0 }: { number: string
           <p className="text-gray-400 leading-relaxed">{description}</p>
         </div>
       </div>
-      <div className="absolute left-6 top-12 bottom-0 w-0.5 bg-gradient-to-b from-[#A3D1FF]/50 to-transparent"></div>
+      <div className="absolute left-6 top-12 bottom-0 w-0.5 bg-gradient-to-b from-[#A78BFA]/50 to-transparent"></div>
     </motion.div>
   );
 }
@@ -106,7 +106,7 @@ function MetricVisualization({ label, before, after, unit = '%' }: { label: stri
     >
       <div className="flex justify-between items-center mb-4">
         <span className="text-white font-semibold">{label}</span>
-        <span className="text-[#A3D1FF] text-sm font-bold">+{improvement}%</span>
+        <span className="text-[#A78BFA] text-sm font-bold">+{improvement}%</span>
       </div>
       <div className="space-y-3">
         <div>
@@ -126,11 +126,11 @@ function MetricVisualization({ label, before, after, unit = '%' }: { label: stri
         <div>
           <div className="flex justify-between text-sm mb-2">
             <span className="text-gray-300">After</span>
-            <span className="text-[#A3D1FF] font-bold">{after}{unit}</span>
+            <span className="text-[#A78BFA] font-bold">{after}{unit}</span>
           </div>
           <div className="h-2 bg-white/5 rounded-full overflow-hidden">
             <motion.div
-              className="h-full bg-gradient-to-r from-[#A3D1FF] to-[#0051a3]"
+              className="h-full bg-gradient-to-r from-[#A78BFA] to-[#0051a3]"
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
               transition={{ duration: 1, delay: 0.4 }}
@@ -169,7 +169,7 @@ export default function AutoMarginPage() {
 
         {/* Hero Image with Enhanced Parallax */}
         <motion.div className="absolute inset-0 z-0" style={{ y, opacity }}>
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0051a3]/20 via-transparent to-[#A3D1FF]/20 mix-blend-overlay"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0051a3]/20 via-transparent to-[#A78BFA]/20 mix-blend-overlay"></div>
           <img
             src="https://i.imgur.com/PiKh199.png"
             alt="AutoMarginX dealership management platform - real-time analytics dashboard showing market data and profit optimization tools for automotive dealers"
@@ -180,7 +180,7 @@ export default function AutoMarginPage() {
 
         {/* Floating Elements */}
         <motion.div
-          className="absolute top-20 left-10 w-20 h-20 rounded-full bg-[#A3D1FF]/10 blur-3xl"
+          className="absolute top-20 left-10 w-20 h-20 rounded-full bg-[#A78BFA]/10 blur-3xl"
           animate={{
             y: [0, 30, 0],
             scale: [1, 1.2, 1],
@@ -213,16 +213,16 @@ export default function AutoMarginPage() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
             <motion.div
-              className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm rounded-full px-4 py-2 border border-white/10 hover:border-[#A3D1FF] transition-all duration-300 mb-6"
+              className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm rounded-full px-4 py-2 border border-white/10 hover:border-[#A78BFA] transition-all duration-300 mb-6"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="w-2 h-2 bg-[#A3D1FF] rounded-full animate-pulse"></div>
-              <span className="text-[#A3D1FF] text-sm font-medium">Award-Winning SaaS Platform</span>
+              <div className="w-2 h-2 bg-[#A78BFA] rounded-full animate-pulse"></div>
+              <span className="text-[#A78BFA] text-sm font-medium">Award-Winning SaaS Platform</span>
             </motion.div>
             <h1 className="text-5xl sm:text-7xl font-bold text-white mb-6 tracking-tight">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-[#A3D1FF] to-white">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-[#A78BFA] to-white">
                 AutoMarginX
               </span>
             </h1>
@@ -273,7 +273,7 @@ export default function AutoMarginPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <span className="text-[#A3D1FF] text-sm font-semibold tracking-wider uppercase mb-4 block">Executive Summary</span>
+            <span className="text-[#A78BFA] text-sm font-semibold tracking-wider uppercase mb-4 block">Executive Summary</span>
             <h2 className="text-4xl font-bold text-white mb-6">Transforming Automotive Dealerships Through Data Intelligence</h2>
             <p className="text-xl text-gray-300 leading-relaxed">
               AutoMarginX revolutionizes how automotive dealerships operate by consolidating fragmented market data into a unified, real-time intelligence platform. This comprehensive SaaS solution empowers dealers to make data-driven decisions that directly impact profitability and operational efficiency.
@@ -288,8 +288,8 @@ export default function AutoMarginPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="w-12 h-12 bg-[#A3D1FF]/10 rounded-lg flex items-center justify-center mb-4">
-                <Target className="w-6 h-6 text-[#A3D1FF]" />
+              <div className="w-12 h-12 bg-[#A78BFA]/10 rounded-lg flex items-center justify-center mb-4">
+                <Target className="w-6 h-6 text-[#A78BFA]" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">The Challenge</h3>
               <p className="text-gray-400">Dealerships struggled with outdated, fragmented data systems that made real-time decision-making impossible and hindered competitive positioning.</p>
@@ -302,8 +302,8 @@ export default function AutoMarginPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="w-12 h-12 bg-[#A3D1FF]/10 rounded-lg flex items-center justify-center mb-4">
-                <Zap className="w-6 h-6 text-[#A3D1FF]" />
+              <div className="w-12 h-12 bg-[#A78BFA]/10 rounded-lg flex items-center justify-center mb-4">
+                <Zap className="w-6 h-6 text-[#A78BFA]" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">The Solution</h3>
               <p className="text-gray-400">A comprehensive SaaS platform providing real-time market analytics, dynamic pricing tools, and inventory optimization powered by AI-driven insights.</p>
@@ -316,8 +316,8 @@ export default function AutoMarginPage() {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <div className="w-12 h-12 bg-[#A3D1FF]/10 rounded-lg flex items-center justify-center mb-4">
-                <TrendingUp className="w-6 h-6 text-[#A3D1FF]" />
+              <div className="w-12 h-12 bg-[#A78BFA]/10 rounded-lg flex items-center justify-center mb-4">
+                <TrendingUp className="w-6 h-6 text-[#A78BFA]" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">The Impact</h3>
               <p className="text-gray-400">35% faster decision-making, 20% profit increase, and 40% time savings across operations, transforming dealership performance metrics industry-wide.</p>
@@ -354,7 +354,7 @@ export default function AutoMarginPage() {
                 As the lead designer and developer, I was responsible for the entire product lifecycle—from initial market research and user interviews to final implementation and deployment. This comprehensive involvement ensured a cohesive vision throughout.
               </p>
               <div className="bg-[#0a0a0a] p-6 rounded-xl border border-white/10">
-                <p className="text-[#A3D1FF] font-semibold mb-2">Project Duration</p>
+                <p className="text-[#A78BFA] font-semibold mb-2">Project Duration</p>
                 <p className="text-white text-2xl font-bold mb-4">6 Months</p>
                 <p className="text-gray-400 text-sm">From concept to production launch with continuous iteration based on user feedback</p>
               </div>
@@ -379,19 +379,19 @@ export default function AutoMarginPage() {
               <h3 className="text-xl font-bold text-white mb-4">Core Competencies</h3>
               <ul className="space-y-4">
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   Product Design
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   Research
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   Complex Systems
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   Design Systems
                 </li>
               </ul>
@@ -405,15 +405,15 @@ export default function AutoMarginPage() {
               <h3 className="text-xl font-bold text-white mb-4">Industry Focus</h3>
               <ul className="space-y-4">
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   SaaS Development
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   B2B Solutions
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   Automotive Market
                 </li>
               </ul>
@@ -463,14 +463,14 @@ export default function AutoMarginPage() {
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <div>
                     <p className="text-white font-semibold mb-2">Poor User Experience</p>
                     <p className="text-gray-300">Inconsistent tools leading to reduced operational performance</p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <div>
                     <p className="text-white font-semibold mb-2">Manual Processes</p>
                     <p className="text-gray-300">Time-consuming manual data entry preventing quick market responses</p>
@@ -572,7 +572,7 @@ export default function AutoMarginPage() {
 
           <div className="grid md:grid-cols-2 gap-8">
             <motion.div
-              className="bg-gradient-to-br from-[#0a0a0a] to-[#1b1b1b] p-8 rounded-2xl border border-white/10 hover:border-[#A3D1FF]/50 transition-all group"
+              className="bg-gradient-to-br from-[#0a0a0a] to-[#1b1b1b] p-8 rounded-2xl border border-white/10 hover:border-[#A78BFA]/50 transition-all group"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -580,8 +580,8 @@ export default function AutoMarginPage() {
               whileHover={{ scale: 1.02 }}
             >
               <div className="flex items-start gap-4 mb-6">
-                <div className="p-3 bg-[#A3D1FF]/10 rounded-xl group-hover:bg-[#A3D1FF]/20 transition-colors">
-                  <Activity className="w-8 h-8 text-[#A3D1FF]" />
+                <div className="p-3 bg-[#A78BFA]/10 rounded-xl group-hover:bg-[#A78BFA]/20 transition-colors">
+                  <Activity className="w-8 h-8 text-[#A78BFA]" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-2">Real-Time Market Analytics</h3>
@@ -590,22 +590,22 @@ export default function AutoMarginPage() {
               </div>
               <ul className="space-y-3">
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3 flex-shrink-0" />
                   <span>Automated data collection from 50+ market sources</span>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3 flex-shrink-0" />
                   <span>Real-time competitive pricing analysis</span>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3 flex-shrink-0" />
                   <span>Trend forecasting with AI-powered predictions</span>
                 </li>
               </ul>
             </motion.div>
 
             <motion.div
-              className="bg-gradient-to-br from-[#0a0a0a] to-[#1b1b1b] p-8 rounded-2xl border border-white/10 hover:border-[#A3D1FF]/50 transition-all group"
+              className="bg-gradient-to-br from-[#0a0a0a] to-[#1b1b1b] p-8 rounded-2xl border border-white/10 hover:border-[#A78BFA]/50 transition-all group"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -613,8 +613,8 @@ export default function AutoMarginPage() {
               whileHover={{ scale: 1.02 }}
             >
               <div className="flex items-start gap-4 mb-6">
-                <div className="p-3 bg-[#A3D1FF]/10 rounded-xl group-hover:bg-[#A3D1FF]/20 transition-colors">
-                  <DollarSign className="w-8 h-8 text-[#A3D1FF]" />
+                <div className="p-3 bg-[#A78BFA]/10 rounded-xl group-hover:bg-[#A78BFA]/20 transition-colors">
+                  <DollarSign className="w-8 h-8 text-[#A78BFA]" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-2">Dynamic Pricing Engine</h3>
@@ -623,22 +623,22 @@ export default function AutoMarginPage() {
               </div>
               <ul className="space-y-3">
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3 flex-shrink-0" />
                   <span>AI-driven price optimization algorithms</span>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3 flex-shrink-0" />
                   <span>Profit margin projection modeling</span>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3 flex-shrink-0" />
                   <span>Automated repricing based on market conditions</span>
                 </li>
               </ul>
             </motion.div>
 
             <motion.div
-              className="bg-gradient-to-br from-[#0a0a0a] to-[#1b1b1b] p-8 rounded-2xl border border-white/10 hover:border-[#A3D1FF]/50 transition-all group"
+              className="bg-gradient-to-br from-[#0a0a0a] to-[#1b1b1b] p-8 rounded-2xl border border-white/10 hover:border-[#A78BFA]/50 transition-all group"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -646,8 +646,8 @@ export default function AutoMarginPage() {
               whileHover={{ scale: 1.02 }}
             >
               <div className="flex items-start gap-4 mb-6">
-                <div className="p-3 bg-[#A3D1FF]/10 rounded-xl group-hover:bg-[#A3D1FF]/20 transition-colors">
-                  <Layers className="w-8 h-8 text-[#A3D1FF]" />
+                <div className="p-3 bg-[#A78BFA]/10 rounded-xl group-hover:bg-[#A78BFA]/20 transition-colors">
+                  <Layers className="w-8 h-8 text-[#A78BFA]" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-2">Inventory Optimization</h3>
@@ -656,22 +656,22 @@ export default function AutoMarginPage() {
               </div>
               <ul className="space-y-3">
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3 flex-shrink-0" />
                   <span>Demand forecasting and stock recommendations</span>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3 flex-shrink-0" />
                   <span>Aging inventory alerts and action suggestions</span>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3 flex-shrink-0" />
                   <span>Turnover optimization strategies</span>
                 </li>
               </ul>
             </motion.div>
 
             <motion.div
-              className="bg-gradient-to-br from-[#0a0a0a] to-[#1b1b1b] p-8 rounded-2xl border border-white/10 hover:border-[#A3D1FF]/50 transition-all group"
+              className="bg-gradient-to-br from-[#0a0a0a] to-[#1b1b1b] p-8 rounded-2xl border border-white/10 hover:border-[#A78BFA]/50 transition-all group"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -679,8 +679,8 @@ export default function AutoMarginPage() {
               whileHover={{ scale: 1.02 }}
             >
               <div className="flex items-start gap-4 mb-6">
-                <div className="p-3 bg-[#A3D1FF]/10 rounded-xl group-hover:bg-[#A3D1FF]/20 transition-colors">
-                  <BarChart3 className="w-8 h-8 text-[#A3D1FF]" />
+                <div className="p-3 bg-[#A78BFA]/10 rounded-xl group-hover:bg-[#A78BFA]/20 transition-colors">
+                  <BarChart3 className="w-8 h-8 text-[#A78BFA]" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-2">Advanced Reporting Suite</h3>
@@ -689,15 +689,15 @@ export default function AutoMarginPage() {
               </div>
               <ul className="space-y-3">
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3 flex-shrink-0" />
                   <span>Customizable KPI dashboards</span>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3 flex-shrink-0" />
                   <span>Automated report generation and distribution</span>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3 flex-shrink-0" />
                   <span>Performance tracking across all metrics</span>
                 </li>
               </ul>
@@ -766,7 +766,7 @@ export default function AutoMarginPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="text-[#A3D1FF] text-5xl font-bold mb-2">500+</div>
+              <div className="text-[#A78BFA] text-5xl font-bold mb-2">500+</div>
               <div className="text-white font-semibold mb-2">Active Dealerships</div>
               <div className="text-gray-400 text-sm">Using AutoMarginX daily across North America</div>
             </motion.div>
@@ -778,7 +778,7 @@ export default function AutoMarginPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="text-[#A3D1FF] text-5xl font-bold mb-2">$2M+</div>
+              <div className="text-[#A78BFA] text-5xl font-bold mb-2">$2M+</div>
               <div className="text-white font-semibold mb-2">Additional Revenue</div>
               <div className="text-gray-400 text-sm">Generated for clients in first year</div>
             </motion.div>
@@ -790,7 +790,7 @@ export default function AutoMarginPage() {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <div className="text-[#A3D1FF] text-5xl font-bold mb-2">99.9%</div>
+              <div className="text-[#A78BFA] text-5xl font-bold mb-2">99.9%</div>
               <div className="text-white font-semibold mb-2">Platform Uptime</div>
               <div className="text-gray-400 text-sm">Ensuring reliable access to critical data</div>
             </motion.div>
@@ -852,7 +852,7 @@ export default function AutoMarginPage() {
             <MagneticButton>
               <button 
                 onClick={() => navigate('/contact')}
-                className="bg-[#A3D1FF] text-black px-6 py-3 rounded-lg hover:bg-[#92bce6] transition-colors inline-flex items-center group relative overflow-hidden"
+                className="bg-[#A78BFA] text-black px-6 py-3 rounded-lg hover:bg-[#8B5CF6] transition-colors inline-flex items-center group relative overflow-hidden"
               >
                 <span className="relative z-10">Start Your Project</span>
                 <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>

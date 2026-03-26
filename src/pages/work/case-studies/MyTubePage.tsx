@@ -7,8 +7,8 @@ function Feature({ icon: Icon, title, description }: {
   description: string;
 }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group">
-      <Icon className="w-8 h-8 text-[#A3D1FF] mb-4" />
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all group">
+      <Icon className="w-8 h-8 text-[#A78BFA] mb-4" />
       <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
       <p className="text-gray-400">{description}</p>
     </div>
@@ -21,7 +21,7 @@ function WireframeCard({ image, title, description }: {
   description: string;
 }) {
   return (
-    <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all">
+    <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all">
       <div className="aspect-video overflow-hidden rounded-lg mb-6">
         <img 
           src={image}
@@ -251,15 +251,15 @@ export default function MyTubePage() {
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       User interviews and surveys
                     </li>
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Competitor analysis
                     </li>
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Market research
                     </li>
                   </ul>
@@ -268,15 +268,15 @@ export default function MyTubePage() {
                   <h4 className="text-lg font-semibold text-white mb-4">Key Findings</h4>
                   <ul className="space-y-3">
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Need for streamlined metadata management
                     </li>
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Demand for real-time analytics
                     </li>
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Integration requirements
                     </li>
                   </ul>
@@ -293,15 +293,15 @@ export default function MyTubePage() {
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Component library
                     </li>
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Design tokens
                     </li>
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Documentation
                     </li>
                   </ul>
@@ -310,15 +310,15 @@ export default function MyTubePage() {
                   <h4 className="text-lg font-semibold text-white mb-4">Implementation</h4>
                   <ul className="space-y-3">
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Figma component library
                     </li>
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Style guide
                     </li>
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Pattern library
                     </li>
                   </ul>
@@ -367,15 +367,15 @@ export default function MyTubePage() {
                 <h4 className="text-lg font-semibold text-white mb-4">User Interface</h4>
                 <ul className="space-y-3">
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     Intuitive navigation and clear hierarchy
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     Consistent layout patterns
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     Responsive design principles
                   </li>
                 </ul>
@@ -384,15 +384,15 @@ export default function MyTubePage() {
                 <h4 className="text-lg font-semibold text-white mb-4">User Experience</h4>
                 <ul className="space-y-3">
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     Streamlined workflows
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     Progressive disclosure
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     Error prevention
                   </li>
                 </ul>
@@ -408,19 +408,19 @@ export default function MyTubePage() {
           <h2 className="text-3xl font-bold text-white mb-12">Results & Impact</h2>
           <div className="grid md:grid-cols-4 gap-8">
             <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10">
-              <div className="text-4xl font-bold text-[#A3D1FF] mb-2">60%</div>
+              <div className="text-4xl font-bold text-[#A78BFA] mb-2">60%</div>
               <div className="text-gray-400">Faster Processing</div>
             </div>
             <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10">
-              <div className="text-4xl font-bold text-[#A3D1FF] mb-2">85%</div>
+              <div className="text-4xl font-bold text-[#A78BFA] mb-2">85%</div>
               <div className="text-gray-400">User Satisfaction</div>
             </div>
             <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10">
-              <div className="text-4xl font-bold text-[#A3D1FF] mb-2">40%</div>
+              <div className="text-4xl font-bold text-[#A78BFA] mb-2">40%</div>
               <div className="text-gray-400">Time Saved</div>
             </div>
             <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10">
-              <div className="text-4xl font-bold text-[#A3D1FF] mb-2">95%</div>
+              <div className="text-4xl font-bold text-[#A78BFA] mb-2">95%</div>
               <div className="text-gray-400">Data Accuracy</div>
             </div>
           </div>

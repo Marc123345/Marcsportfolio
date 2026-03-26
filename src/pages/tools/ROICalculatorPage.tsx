@@ -58,8 +58,8 @@ export default function ROICalculatorPage() {
             
             <div className="space-y-6">
               <div className="flex items-start">
-                <div className="bg-[#A3D1FF]/10 p-3 rounded-lg mr-4">
-                  <CheckCircle2 className="w-6 h-6 text-[#A3D1FF]" />
+                <div className="bg-[#A78BFA]/10 p-3 rounded-lg mr-4">
+                  <CheckCircle2 className="w-6 h-6 text-[#A78BFA]" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-2">Binns Media Group</h3>
@@ -68,8 +68,8 @@ export default function ROICalculatorPage() {
               </div>
               
               <div className="flex items-start">
-                <div className="bg-[#A3D1FF]/10 p-3 rounded-lg mr-4">
-                  <CheckCircle2 className="w-6 h-6 text-[#A3D1FF]" />
+                <div className="bg-[#A78BFA]/10 p-3 rounded-lg mr-4">
+                  <CheckCircle2 className="w-6 h-6 text-[#A78BFA]" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-2">Wellness TCYS</h3>
@@ -78,8 +78,8 @@ export default function ROICalculatorPage() {
               </div>
               
               <div className="flex items-start">
-                <div className="bg-[#A3D1FF]/10 p-3 rounded-lg mr-4">
-                  <CheckCircle2 className="w-6 h-6 text-[#A3D1FF]" />
+                <div className="bg-[#A78BFA]/10 p-3 rounded-lg mr-4">
+                  <CheckCircle2 className="w-6 h-6 text-[#A78BFA]" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-2">A Secure Annapolis Locksmith</h3>
@@ -110,19 +110,19 @@ export default function ROICalculatorPage() {
               
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">Enhanced brand perception and credibility</p>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">Improved customer experience and satisfaction</p>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">Better competitive positioning in your market</p>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">Long-term scalability for future growth</p>
                 </li>
               </ul>

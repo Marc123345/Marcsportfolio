@@ -63,7 +63,7 @@ export default function DigitalMarketingAsphaltContractorsPage() {
         <div className="max-w-4xl mx-auto">
           <button
             onClick={() => navigate('/blog')}
-            className="flex items-center gap-2 text-[#A3D1FF] hover:underline mb-6"
+            className="flex items-center gap-2 text-[#A78BFA] hover:underline mb-6"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Blog
@@ -104,7 +104,7 @@ export default function DigitalMarketingAsphaltContractorsPage() {
 
             <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 my-8">
               <h4 className="text-white font-semibold mb-2 flex items-center">
-                <TrendingUp className="w-5 h-5 text-[#A3D1FF] mr-2" />
+                <TrendingUp className="w-5 h-5 text-[#A78BFA] mr-2" />
                 The ROI of Digital Marketing for Contractors
               </h4>
               <ul className="text-gray-300 list-disc pl-5 space-y-2">
@@ -201,11 +201,11 @@ export default function DigitalMarketingAsphaltContractorsPage() {
             <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 my-8">
               <h4 className="text-white font-semibold mb-2">Winning Ad Template:</h4>
               <div className="bg-black/50 p-4 rounded mt-3">
-                <p className="text-[#A3D1FF] font-semibold text-sm mb-2">Headline 1: [Service] in [City] | Licensed & Insured</p>
-                <p className="text-[#A3D1FF] font-semibold text-sm mb-2">Headline 2: Free Estimates · 30+ Years Experience</p>
-                <p className="text-[#A3D1FF] font-semibold text-sm mb-3">Headline 3: Call Today · Next-Day Appointments</p>
+                <p className="text-[#A78BFA] font-semibold text-sm mb-2">Headline 1: [Service] in [City] | Licensed & Insured</p>
+                <p className="text-[#A78BFA] font-semibold text-sm mb-2">Headline 2: Free Estimates · 30+ Years Experience</p>
+                <p className="text-[#A78BFA] font-semibold text-sm mb-3">Headline 3: Call Today · Next-Day Appointments</p>
                 <p className="text-gray-300 text-sm mb-2">Professional asphalt paving & driveway installation. Family-owned, locally trusted. Quality workmanship guaranteed. Schedule your free estimate today!</p>
-                <p className="text-[#A3D1FF] text-xs">www.yourcompany.com/free-estimate</p>
+                <p className="text-[#A78BFA] text-xs">www.yourcompany.com/free-estimate</p>
               </div>
             </div>
 
@@ -240,23 +240,23 @@ export default function DigitalMarketingAsphaltContractorsPage() {
               <h4 className="text-white font-semibold mb-3">Content Strategy for Facebook:</h4>
               <ul className="text-gray-300 space-y-2">
                 <li className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span><strong className="text-white">Before/After Posts (3x per week):</strong> Your most engaging content type</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span><strong className="text-white">Customer Reviews (2x per week):</strong> Screenshot positive reviews and share</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span><strong className="text-white">Team Highlights (1x per week):</strong> Humanize your business</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span><strong className="text-white">Educational Tips (1x per week):</strong> "How to spot driveway damage early"</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span><strong className="text-white">Special Offers (1x per month):</strong> Seasonal promotions or limited-time discounts</span>
                 </li>
               </ul>
@@ -467,23 +467,23 @@ export default function DigitalMarketingAsphaltContractorsPage() {
               <h4 className="text-white font-semibold mb-3">Essential Marketing Metrics:</h4>
               <ul className="text-gray-300 space-y-2">
                 <li className="flex items-start">
-                  <DollarSign className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <DollarSign className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span><strong className="text-white">Cost Per Lead:</strong> Total marketing spend ÷ number of leads</span>
                 </li>
                 <li className="flex items-start">
-                  <DollarSign className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <DollarSign className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span><strong className="text-white">Cost Per Acquisition:</strong> Marketing spend ÷ new customers</span>
                 </li>
                 <li className="flex items-start">
-                  <Users className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <Users className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span><strong className="text-white">Conversion Rate:</strong> Leads that become customers (aim for 20-40%)</span>
                 </li>
                 <li className="flex items-start">
-                  <Target className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <Target className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span><strong className="text-white">Return on Ad Spend (ROAS):</strong> Revenue generated ÷ ad spend (aim for 5:1 or higher)</span>
                 </li>
                 <li className="flex items-start">
-                  <TrendingUp className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <TrendingUp className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span><strong className="text-white">Customer Lifetime Value:</strong> Average revenue per customer including repeat business</span>
                 </li>
               </ul>
@@ -608,7 +608,7 @@ export default function DigitalMarketingAsphaltContractorsPage() {
               <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#0077B5]/20 text-[#0077B5] transition-colors">
                 <Linkedin className="w-5 h-5" />
               </button>
-              <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#A3D1FF]/20 text-[#A3D1FF] transition-colors">
+              <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#A78BFA]/20 text-[#A78BFA] transition-colors">
                 <LinkIcon className="w-5 h-5" />
               </button>
             </div>
@@ -617,7 +617,7 @@ export default function DigitalMarketingAsphaltContractorsPage() {
           <div className="mt-12 pt-8 border-t border-white/10">
             <h3 className="text-2xl font-semibold text-white mb-6">Related Articles</h3>
             <div className="grid sm:grid-cols-2 gap-6">
-              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group">
+              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group">
                 <div className="aspect-[16/9] overflow-hidden">
                   <img
                     src="https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?auto=format&fit=crop&w=2000&q=80"
@@ -626,11 +626,11 @@ export default function DigitalMarketingAsphaltContractorsPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">Website Design Guide for Paving Contractors</h4>
+                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A78BFA] transition-colors">Website Design Guide for Paving Contractors</h4>
                   <p className="text-gray-400 text-sm mb-4">Essential website design strategies to showcase your work and convert visitors to customers.</p>
                   <button
                     onClick={() => navigate('/blog/paving-contractor-website-design-guide')}
-                    className="text-[#A3D1FF] text-sm flex items-center gap-1 hover:underline"
+                    className="text-[#A78BFA] text-sm flex items-center gap-1 hover:underline"
                   >
                     Read Article
                     <ArrowRight className="w-3 h-3" />
@@ -638,7 +638,7 @@ export default function DigitalMarketingAsphaltContractorsPage() {
                 </div>
               </div>
 
-              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group">
+              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group">
                 <div className="aspect-[16/9] overflow-hidden">
                   <img
                     src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&w=2000&q=80"
@@ -647,11 +647,11 @@ export default function DigitalMarketingAsphaltContractorsPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">Local SEO for Paving Contractors: Dominate Your Market</h4>
+                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A78BFA] transition-colors">Local SEO for Paving Contractors: Dominate Your Market</h4>
                   <p className="text-gray-400 text-sm mb-4">Master local search optimization to ensure your paving business appears first when customers search.</p>
                   <button
                     onClick={() => navigate('/blog/local-seo-for-paving-contractors')}
-                    className="text-[#A3D1FF] text-sm flex items-center gap-1 hover:underline"
+                    className="text-[#A78BFA] text-sm flex items-center gap-1 hover:underline"
                   >
                     Read Article
                     <ArrowRight className="w-3 h-3" />

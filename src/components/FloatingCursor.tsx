@@ -5,7 +5,7 @@ interface Props {
   color?: string;
 }
 
-export default function FloatingCursor({ color = '#A3D1FF' }: Props) {
+export default function FloatingCursor({ color = '#A78BFA' }: Props) {
   const [isVisible, setIsVisible] = useState(false);
   const [isPointer, setIsPointer] = useState(false);
   const isEnabledRef = useRef(true);

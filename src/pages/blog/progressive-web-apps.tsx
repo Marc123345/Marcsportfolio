@@ -68,7 +68,7 @@ export default function ProgressiveWebAppsPage() {
         <div className="max-w-4xl mx-auto">
           <button 
             onClick={() => navigate('/blog')}
-            className="flex items-center gap-2 text-[#A3D1FF] hover:underline mb-6"
+            className="flex items-center gap-2 text-[#A78BFA] hover:underline mb-6"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Blog
@@ -110,7 +110,7 @@ export default function ProgressiveWebAppsPage() {
             
             <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 my-8">
               <h4 className="text-white font-semibold mb-2 flex items-center">
-                <Globe className="w-5 h-5 text-[#A3D1FF] mr-2" />
+                <Globe className="w-5 h-5 text-[#A78BFA] mr-2" />
                 Instant Accessibility
               </h4>
               <p className="text-gray-300">Users can access your PWA immediately through a URL, without the need to visit an app store, wait for downloads, or go through installation processes. This significantly reduces the barrier to entry and increases the likelihood of user engagement.</p>
@@ -121,7 +121,7 @@ export default function ProgressiveWebAppsPage() {
             
             <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 my-8">
               <h4 className="text-white font-semibold mb-2 flex items-center">
-                <Zap className="w-5 h-5 text-[#A3D1FF] mr-2" />
+                <Zap className="w-5 h-5 text-[#A78BFA] mr-2" />
                 Case Study: Performance Impact
               </h4>
               <p className="text-gray-300">When Pinterest rebuilt their mobile web experience as a PWA, they saw significant improvements: 40% increase in time spent on site, 44% increase in user-generated ad revenue, and 60% increase in core engagements.</p>
@@ -132,7 +132,7 @@ export default function ProgressiveWebAppsPage() {
             
             <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 my-8">
               <h4 className="text-white font-semibold mb-2 flex items-center">
-                <Bell className="w-5 h-5 text-[#A3D1FF] mr-2" />
+                <Bell className="w-5 h-5 text-[#A78BFA] mr-2" />
                 Engagement Strategy
               </h4>
               <p className="text-gray-300">Push notifications can increase user engagement by up to 88% when implemented strategically. The key is to provide value with each notification rather than sending generic messages that might be perceived as spam.</p>
@@ -143,7 +143,7 @@ export default function ProgressiveWebAppsPage() {
             
             <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 my-8">
               <h4 className="text-white font-semibold mb-2 flex items-center">
-                <DollarSign className="w-5 h-5 text-[#A3D1FF] mr-2" />
+                <DollarSign className="w-5 h-5 text-[#A78BFA] mr-2" />
                 Cost Comparison
               </h4>
               <p className="text-gray-300">Building and maintaining separate native apps for iOS and Android can cost 2-3 times more than developing a single PWA that works across all platforms. This doesn't even account for the ongoing maintenance costs, which are also significantly reduced with PWAs.</p>
@@ -178,7 +178,7 @@ export default function ProgressiveWebAppsPage() {
             
             <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 my-8">
               <h4 className="text-white font-semibold mb-2 flex items-center">
-                <Smartphone className="w-5 h-5 text-[#A3D1FF] mr-2" />
+                <Smartphone className="w-5 h-5 text-[#A78BFA] mr-2" />
                 PWA Checklist
               </h4>
               <ul className="text-gray-300 space-y-2">
@@ -223,7 +223,7 @@ export default function ProgressiveWebAppsPage() {
               <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#0077B5]/20 text-[#0077B5] transition-colors">
                 <Linkedin className="w-5 h-5" />
               </button>
-              <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#A3D1FF]/20 text-[#A3D1FF] transition-colors">
+              <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#A78BFA]/20 text-[#A78BFA] transition-colors">
                 <Link className="w-5 h-5" />
               </button>
             </div>
@@ -233,7 +233,7 @@ export default function ProgressiveWebAppsPage() {
           <div className="mt-12 pt-8 border-t border-white/10">
             <h3 className="text-2xl font-semibold text-white mb-6">Related Articles</h3>
             <div className="grid sm:grid-cols-2 gap-6">
-              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group">
+              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group">
                 <div className="aspect-[16/9] overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=2000&q=80" 
@@ -242,11 +242,11 @@ export default function ProgressiveWebAppsPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">Optimizing Your Website for AI Crawlers: The Complete Guide</h4>
+                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A78BFA] transition-colors">Optimizing Your Website for AI Crawlers: The Complete Guide</h4>
                   <p className="text-gray-400 text-sm mb-4">As AI becomes more integrated into search, learn how to optimize your website for AI crawlers to improve visibility.</p>
                   <button 
                     onClick={() => navigate('/blog/optimizing-websites-for-ai-crawlers')}
-                    className="text-[#A3D1FF] text-sm flex items-center gap-1 hover:underline"
+                    className="text-[#A78BFA] text-sm flex items-center gap-1 hover:underline"
                   >
                     Read Article
                     <ArrowRight className="w-3 h-3" />
@@ -254,7 +254,7 @@ export default function ProgressiveWebAppsPage() {
                 </div>
               </div>
               
-              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group">
+              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group">
                 <div className="aspect-[16/9] overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=2000&q=80" 
@@ -263,11 +263,11 @@ export default function ProgressiveWebAppsPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">The Future of SaaS Web Design: Merging Aesthetics with Functionality</h4>
+                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A78BFA] transition-colors">The Future of SaaS Web Design: Merging Aesthetics with Functionality</h4>
                   <p className="text-gray-400 text-sm mb-4">Explore the evolving landscape of SaaS web design and how it's shaping the future of digital products.</p>
                   <button 
                     onClick={() => navigate('/blog/future-of-saas-web-design')}
-                    className="text-[#A3D1FF] text-sm flex items-center gap-1 hover:underline"
+                    className="text-[#A78BFA] text-sm flex items-center gap-1 hover:underline"
                   >
                     Read Article
                     <ArrowRight className="w-3 h-3" />

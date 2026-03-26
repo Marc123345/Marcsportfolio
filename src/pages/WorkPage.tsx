@@ -209,7 +209,7 @@ function FeaturedProjectCard({ project }: { project: Project }) {
   
   return (
     <motion.div 
-      className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group col-span-full mb-12"
+      className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group col-span-full mb-12"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -226,14 +226,14 @@ function FeaturedProjectCard({ project }: { project: Project }) {
         </div>
         <div className="p-6 md:p-8">
           <div className="flex items-center justify-between mb-4">
-            <span className="text-[#A3D1FF] text-sm bg-[#A3D1FF]/10 px-4 py-2 rounded-full">Featured Project</span>
+            <span className="text-[#A78BFA] text-sm bg-[#A78BFA]/10 px-4 py-2 rounded-full">Featured Project</span>
           </div>
           <h3 className="text-xl md:text-3xl font-bold text-white mb-3 md:mb-4">{project.title}</h3>
           <p className="text-sm md:text-base text-gray-400 mb-4 md:mb-6">{project.description}</p>
           <div className="space-y-3 md:space-y-4 mb-4 md:mb-6">
             {project.impact.map((impact, index) => (
               <div key={index} className="flex items-center text-xs md:text-sm">
-                <CheckCircle2 className="w-4 h-4 text-[#A3D1FF] mr-2 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#A78BFA] mr-2 flex-shrink-0" />
                 <span className="text-gray-300">{impact}</span>
               </div>
             ))}
@@ -242,7 +242,7 @@ function FeaturedProjectCard({ project }: { project: Project }) {
             {project.technologies.map((tech, index) => (
               <span 
                 key={index} 
-                className="px-2 md:px-3 py-1 bg-white/5 text-[#A3D1FF] rounded-full text-xs md:text-sm"
+                className="px-2 md:px-3 py-1 bg-white/5 text-[#A78BFA] rounded-full text-xs md:text-sm"
               >
                 {tech}
               </span>
@@ -276,7 +276,7 @@ function CategoryButton({ children, isActive = false, onClick }: {
       onClick={onClick}
       className={`px-4 md:px-6 py-2 rounded-full transition-all duration-300 text-sm ${
         isActive
-          ? 'bg-[#A3D1FF] text-black'
+          ? 'bg-[#A78BFA] text-black'
           : 'bg-white/5 text-gray-300 hover:bg-white/10'
       }`}
     >
@@ -380,7 +380,7 @@ export default function WorkPage() {
         className="relative min-h-[60vh] md:min-h-[80vh] flex items-center justify-center bg-black overflow-hidden"
       >
         {/* Dynamic Background with Depth */}
-        <DynamicBackground streakCount={15} particleCount={40} color="#A3D1FF" />
+        <DynamicBackground streakCount={15} particleCount={40} color="#A78BFA" />
         
         <div className="absolute inset-0 z-0">
           <img 
@@ -414,20 +414,20 @@ export default function WorkPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
           >
-            <div className="bg-[#1b1b1b]/80 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center">
-              <div className="text-2xl md:text-4xl font-bold text-[#A3D1FF] mb-1 md:mb-2 counter">50+</div>
+            <div className="bg-[#1b1b1b]/80 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all text-center">
+              <div className="text-2xl md:text-4xl font-bold text-[#A78BFA] mb-1 md:mb-2 counter">50+</div>
               <div className="text-xs md:text-base text-gray-400">Projects Completed</div>
             </div>
-            <div className="bg-[#1b1b1b]/80 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center">
-              <div className="text-2xl md:text-4xl font-bold text-[#A3D1FF] mb-1 md:mb-2 counter">40+</div>
+            <div className="bg-[#1b1b1b]/80 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all text-center">
+              <div className="text-2xl md:text-4xl font-bold text-[#A78BFA] mb-1 md:mb-2 counter">40+</div>
               <div className="text-xs md:text-base text-gray-400">Happy Clients</div>
             </div>
-            <div className="bg-[#1b1b1b]/80 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center">
-              <div className="text-2xl md:text-4xl font-bold text-[#A3D1FF] mb-1 md:mb-2 counter">5+</div>
+            <div className="bg-[#1b1b1b]/80 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all text-center">
+              <div className="text-2xl md:text-4xl font-bold text-[#A78BFA] mb-1 md:mb-2 counter">5+</div>
               <div className="text-xs md:text-base text-gray-400">Years Experience</div>
             </div>
-            <div className="bg-[#1b1b1b]/80 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center">
-              <div className="text-2xl md:text-4xl font-bold text-[#A3D1FF] mb-1 md:mb-2 counter">99%</div>
+            <div className="bg-[#1b1b1b]/80 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all text-center">
+              <div className="text-2xl md:text-4xl font-bold text-[#A78BFA] mb-1 md:mb-2 counter">99%</div>
               <div className="text-xs md:text-base text-gray-400">Client Satisfaction</div>
             </div>
           </motion.div>
@@ -492,21 +492,21 @@ export default function WorkPage() {
                 <div className="space-y-2">
                   <Link 
                     to="/services/web-development" 
-                    className="block text-[#A3D1FF] hover:text-white transition-colors"
+                    className="block text-[#A78BFA] hover:text-white transition-colors"
                     title="Professional web development services"
                   >
                     Web Development Services
                   </Link>
                   <Link 
                     to="/services/design" 
-                    className="block text-[#A3D1FF] hover:text-white transition-colors"
+                    className="block text-[#A78BFA] hover:text-white transition-colors"
                     title="UI/UX design solutions"
                   >
                     UI/UX Design Solutions
                   </Link>
                   <Link 
                     to="/services/saas" 
-                    className="block text-[#A3D1FF] hover:text-white transition-colors"
+                    className="block text-[#A78BFA] hover:text-white transition-colors"
                     title="SaaS development services"
                   >
                     SaaS Development
@@ -518,21 +518,21 @@ export default function WorkPage() {
                 <div className="space-y-2">
                   <Link 
                     to="/tools/website-analyzer" 
-                    className="block text-[#A3D1FF] hover:text-white transition-colors"
+                    className="block text-[#A78BFA] hover:text-white transition-colors"
                     title="Free website analysis tool"
                   >
                     Website Analyzer Tool
                   </Link>
                   <Link 
                     to="/tools/roi-calculator" 
-                    className="block text-[#A3D1FF] hover:text-white transition-colors"
+                    className="block text-[#A78BFA] hover:text-white transition-colors"
                     title="Calculate website ROI"
                   >
                     ROI Calculator
                   </Link>
                   <Link 
                     to="/tools/project-timeline" 
-                    className="block text-[#A3D1FF] hover:text-white transition-colors"
+                    className="block text-[#A78BFA] hover:text-white transition-colors"
                     title="Project timeline visualization"
                   >
                     Project Timeline
@@ -544,21 +544,21 @@ export default function WorkPage() {
                 <div className="space-y-2">
                   <Link 
                     to="/about" 
-                    className="block text-[#A3D1FF] hover:text-white transition-colors"
+                    className="block text-[#A78BFA] hover:text-white transition-colors"
                     title="About Marc Friedman"
                   >
                     About Marc Friedman
                   </Link>
                   <Link 
                     to="/blog" 
-                    className="block text-[#A3D1FF] hover:text-white transition-colors"
+                    className="block text-[#A78BFA] hover:text-white transition-colors"
                     title="Design and development insights"
                   >
                     Design & Development Blog
                   </Link>
                   <Link 
                     to="/contact" 
-                    className="block text-[#A3D1FF] hover:text-white transition-colors"
+                    className="block text-[#A78BFA] hover:text-white transition-colors"
                     title="Get in touch for your project"
                   >
                     Start Your Project
@@ -571,7 +571,7 @@ export default function WorkPage() {
       </section>
 
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#1b1b1b] to-black relative overflow-hidden">
-        <DynamicBackground streakCount={8} particleCount={20} color="#A3D1FF" />
+        <DynamicBackground streakCount={8} particleCount={20} color="#A78BFA" />
         
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <TextReveal>

@@ -240,7 +240,7 @@ export default function AccessibilityPanel({ className = '' }: AccessibilityPane
       {/* Accessibility Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-12 h-12 bg-[#A3D1FF] text-black rounded-full flex items-center justify-center shadow-lg hover:bg-[#92bce6] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#A3D1FF]"
+        className="w-12 h-12 bg-[#A78BFA] text-black rounded-full flex items-center justify-center shadow-lg hover:bg-[#8B5CF6] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#A78BFA]"
         aria-label={isOpen ? t.closePanel : t.openPanel}
         aria-expanded={isOpen}
         aria-controls="accessibility-panel"
@@ -268,7 +268,7 @@ export default function AccessibilityPanel({ className = '' }: AccessibilityPane
             aria-labelledby="accessibility-title"
           >
             <h2 id="accessibility-title" className="text-lg font-bold text-white mb-4 flex items-center">
-              <Accessibility className="w-5 h-5 mr-2 text-[#A3D1FF]" />
+              <Accessibility className="w-5 h-5 mr-2 text-[#A78BFA]" />
               {t.title}
             </h2>
 
@@ -276,7 +276,7 @@ export default function AccessibilityPanel({ className = '' }: AccessibilityPane
               {/* Font Size */}
               <div>
                 <h3 className="text-sm font-medium text-white mb-2 flex items-center">
-                  <Type className="w-4 h-4 mr-2 text-[#A3D1FF]" />
+                  <Type className="w-4 h-4 mr-2 text-[#A78BFA]" />
                   {t.textSize}
                 </h3>
                 <div className="flex gap-2">
@@ -287,7 +287,7 @@ export default function AccessibilityPanel({ className = '' }: AccessibilityPane
                     }}
                     className={`flex-1 px-3 py-2 rounded-lg text-sm ${
                       settings.fontSize === 0
-                        ? 'bg-[#A3D1FF] text-black'
+                        ? 'bg-[#A78BFA] text-black'
                         : 'bg-[#2d3035] text-white hover:bg-[#3d4045]'
                     } transition-colors`}
                     aria-pressed={settings.fontSize === 0}
@@ -302,7 +302,7 @@ export default function AccessibilityPanel({ className = '' }: AccessibilityPane
                     }}
                     className={`flex-1 px-3 py-2 rounded-lg text-sm ${
                       settings.fontSize === 1
-                        ? 'bg-[#A3D1FF] text-black'
+                        ? 'bg-[#A78BFA] text-black'
                         : 'bg-[#2d3035] text-white hover:bg-[#3d4045]'
                     } transition-colors`}
                     aria-pressed={settings.fontSize === 1}
@@ -317,7 +317,7 @@ export default function AccessibilityPanel({ className = '' }: AccessibilityPane
                     }}
                     className={`flex-1 px-3 py-2 rounded-lg text-sm ${
                       settings.fontSize === 2
-                        ? 'bg-[#A3D1FF] text-black'
+                        ? 'bg-[#A78BFA] text-black'
                         : 'bg-[#2d3035] text-white hover:bg-[#3d4045]'
                     } transition-colors`}
                     aria-pressed={settings.fontSize === 2}
@@ -337,7 +337,7 @@ export default function AccessibilityPanel({ className = '' }: AccessibilityPane
                   }}
                   className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm ${
                     settings.highContrast
-                      ? 'bg-[#A3D1FF] text-black'
+                      ? 'bg-[#A78BFA] text-black'
                       : 'bg-[#2d3035] text-white hover:bg-[#3d4045]'
                   } transition-colors`}
                   aria-pressed={settings.highContrast}
@@ -361,7 +361,7 @@ export default function AccessibilityPanel({ className = '' }: AccessibilityPane
                   }}
                   className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm ${
                     settings.reducedMotion
-                      ? 'bg-[#A3D1FF] text-black'
+                      ? 'bg-[#A78BFA] text-black'
                       : 'bg-[#2d3035] text-white hover:bg-[#3d4045]'
                   } transition-colors`}
                   aria-pressed={settings.reducedMotion}
@@ -379,7 +379,7 @@ export default function AccessibilityPanel({ className = '' }: AccessibilityPane
               {/* Cursor Size */}
               <div>
                 <h3 className="text-sm font-medium text-white mb-2 flex items-center">
-                  <MousePointer className="w-4 h-4 mr-2 text-[#A3D1FF]" />
+                  <MousePointer className="w-4 h-4 mr-2 text-[#A78BFA]" />
                   {t.cursorSize}
                 </h3>
                 <div className="flex gap-2">
@@ -390,7 +390,7 @@ export default function AccessibilityPanel({ className = '' }: AccessibilityPane
                     }}
                     className={`flex-1 px-3 py-2 rounded-lg text-sm ${
                       settings.cursorSize === 0
-                        ? 'bg-[#A3D1FF] text-black'
+                        ? 'bg-[#A78BFA] text-black'
                         : 'bg-[#2d3035] text-white hover:bg-[#3d4045]'
                     } transition-colors`}
                     aria-pressed={settings.cursorSize === 0}
@@ -404,7 +404,7 @@ export default function AccessibilityPanel({ className = '' }: AccessibilityPane
                     }}
                     className={`flex-1 px-3 py-2 rounded-lg text-sm ${
                       settings.cursorSize === 1
-                        ? 'bg-[#A3D1FF] text-black'
+                        ? 'bg-[#A78BFA] text-black'
                         : 'bg-[#2d3035] text-white hover:bg-[#3d4045]'
                     } transition-colors`}
                     aria-pressed={settings.cursorSize === 1}
@@ -418,7 +418,7 @@ export default function AccessibilityPanel({ className = '' }: AccessibilityPane
                     }}
                     className={`flex-1 px-3 py-2 rounded-lg text-sm ${
                       settings.cursorSize === 2
-                        ? 'bg-[#A3D1FF] text-black'
+                        ? 'bg-[#A78BFA] text-black'
                         : 'bg-[#2d3035] text-white hover:bg-[#3d4045]'
                     } transition-colors`}
                     aria-pressed={settings.cursorSize === 2}
@@ -437,7 +437,7 @@ export default function AccessibilityPanel({ className = '' }: AccessibilityPane
                   }}
                   className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm ${
                     settings.darkMode
-                      ? 'bg-[#A3D1FF] text-black'
+                      ? 'bg-[#A78BFA] text-black'
                       : 'bg-[#2d3035] text-white hover:bg-[#3d4045]'
                   } transition-colors`}
                   aria-pressed={settings.darkMode}
@@ -465,7 +465,7 @@ export default function AccessibilityPanel({ className = '' }: AccessibilityPane
                   }}
                   className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm ${
                     settings.screenReader
-                      ? 'bg-[#A3D1FF] text-black'
+                      ? 'bg-[#A78BFA] text-black'
                       : 'bg-[#2d3035] text-white hover:bg-[#3d4045]'
                   } transition-colors`}
                   aria-pressed={settings.screenReader}
@@ -483,7 +483,7 @@ export default function AccessibilityPanel({ className = '' }: AccessibilityPane
               {/* Language Selection */}
               <div>
                 <h3 className="text-sm font-medium text-white mb-2 flex items-center">
-                  <Languages className="w-4 h-4 mr-2 text-[#A3D1FF]" />
+                  <Languages className="w-4 h-4 mr-2 text-[#A78BFA]" />
                   {t.language}
                 </h3>
                 <div className="flex gap-2">
@@ -494,7 +494,7 @@ export default function AccessibilityPanel({ className = '' }: AccessibilityPane
                     }}
                     className={`flex-1 px-3 py-2 rounded-lg text-sm ${
                       settings.language === 'en'
-                        ? 'bg-[#A3D1FF] text-black'
+                        ? 'bg-[#A78BFA] text-black'
                         : 'bg-[#2d3035] text-white hover:bg-[#3d4045]'
                     } transition-colors`}
                     aria-pressed={settings.language === 'en'}
@@ -508,7 +508,7 @@ export default function AccessibilityPanel({ className = '' }: AccessibilityPane
                     }}
                     className={`flex-1 px-3 py-2 rounded-lg text-sm ${
                       settings.language === 'he'
-                        ? 'bg-[#A3D1FF] text-black'
+                        ? 'bg-[#A78BFA] text-black'
                         : 'bg-[#2d3035] text-white hover:bg-[#3d4045]'
                     } transition-colors`}
                     aria-pressed={settings.language === 'he'}

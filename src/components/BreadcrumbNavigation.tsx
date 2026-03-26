@@ -95,7 +95,7 @@ export default function BreadcrumbNavigation({ className = '', customItems }: Br
             ) : (
               <Link
                 to={item.href}
-                className="text-[#A3D1FF] hover:text-white transition-colors hover:underline flex items-center"
+                className="text-[#A78BFA] hover:text-white transition-colors hover:underline flex items-center"
                 title={`Navigate to ${item.label}`}
               >
                 {index === 0 && (

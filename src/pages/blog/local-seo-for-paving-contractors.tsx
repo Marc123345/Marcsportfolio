@@ -63,7 +63,7 @@ export default function LocalSEOForPavingContractorsPage() {
         <div className="max-w-4xl mx-auto">
           <button
             onClick={() => navigate('/blog')}
-            className="flex items-center gap-2 text-[#A3D1FF] hover:underline mb-6"
+            className="flex items-center gap-2 text-[#A78BFA] hover:underline mb-6"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Blog
@@ -104,7 +104,7 @@ export default function LocalSEOForPavingContractorsPage() {
 
             <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 my-8">
               <h4 className="text-white font-semibold mb-2 flex items-center">
-                <TrendingUp className="w-5 h-5 text-[#A3D1FF] mr-2" />
+                <TrendingUp className="w-5 h-5 text-[#A78BFA] mr-2" />
                 Local Search Statistics for Contractors
               </h4>
               <ul className="text-gray-300 list-disc pl-5 space-y-2">
@@ -209,7 +209,7 @@ export default function LocalSEOForPavingContractorsPage() {
 
               <div className="space-y-4">
                 <div>
-                  <p className="text-[#A3D1FF] font-semibold text-sm mb-1">Positive Review Response:</p>
+                  <p className="text-[#A78BFA] font-semibold text-sm mb-1">Positive Review Response:</p>
                   <p className="text-gray-300 text-sm italic bg-black/50 p-3 rounded">
                     "Thank you so much, [Name]! We're thrilled you're happy with your new driveway. It was a pleasure working with you, and we appreciate you choosing [Business Name] for your paving project. If you need anything in the future, we're always here to help!"
                   </p>
@@ -252,13 +252,13 @@ export default function LocalSEOForPavingContractorsPage() {
             <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 my-8">
               <h4 className="text-white font-semibold mb-3">Title Tag Formula:</h4>
               <p className="text-gray-300 text-sm mb-2">Homepage:</p>
-              <p className="text-[#A3D1FF] text-sm italic mb-4">"Asphalt Paving & Driveway Installation | [Business Name] | [City, State]"</p>
+              <p className="text-[#A78BFA] text-sm italic mb-4">"Asphalt Paving & Driveway Installation | [Business Name] | [City, State]"</p>
 
               <p className="text-gray-300 text-sm mb-2">Service Pages:</p>
-              <p className="text-[#A3D1FF] text-sm italic mb-4">"[Service Name] in [City] | Professional [Service] | [Business Name]"</p>
+              <p className="text-[#A78BFA] text-sm italic mb-4">"[Service Name] in [City] | Professional [Service] | [Business Name]"</p>
 
               <p className="text-gray-300 text-sm mb-2">Location Pages:</p>
-              <p className="text-[#A3D1FF] text-sm italic">"Paving Contractor in [City], [State] | [Business Name]"</p>
+              <p className="text-[#A78BFA] text-sm italic">"Paving Contractor in [City], [State] | [Business Name]"</p>
             </div>
 
             <h3>Local Keyword Strategy</h3>
@@ -425,31 +425,31 @@ export default function LocalSEOForPavingContractorsPage() {
               <h4 className="text-white font-semibold mb-3">Metrics to Monitor Monthly:</h4>
               <ul className="text-gray-300 space-y-2">
                 <li className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span><strong className="text-white">Google Business Profile Views:</strong> How many people see your profile</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span><strong className="text-white">Direction Requests:</strong> People clicking for directions to your business</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span><strong className="text-white">Phone Calls:</strong> Calls generated from your listing</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span><strong className="text-white">Website Clicks:</strong> Visitors coming from your Google profile</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span><strong className="text-white">Search Queries:</strong> What terms people use to find you</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span><strong className="text-white">Organic Rankings:</strong> Your position for target keywords</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span><strong className="text-white">Review Growth:</strong> New reviews per month and average rating</span>
                 </li>
               </ul>
@@ -593,7 +593,7 @@ export default function LocalSEOForPavingContractorsPage() {
               <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#0077B5]/20 text-[#0077B5] transition-colors">
                 <Linkedin className="w-5 h-5" />
               </button>
-              <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#A3D1FF]/20 text-[#A3D1FF] transition-colors">
+              <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#A78BFA]/20 text-[#A78BFA] transition-colors">
                 <Link className="w-5 h-5" />
               </button>
             </div>
@@ -602,7 +602,7 @@ export default function LocalSEOForPavingContractorsPage() {
           <div className="mt-12 pt-8 border-t border-white/10">
             <h3 className="text-2xl font-semibold text-white mb-6">Related Articles</h3>
             <div className="grid sm:grid-cols-2 gap-6">
-              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group">
+              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group">
                 <div className="aspect-[16/9] overflow-hidden">
                   <img
                     src="https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?auto=format&fit=crop&w=2000&q=80"
@@ -611,11 +611,11 @@ export default function LocalSEOForPavingContractorsPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">Website Design Guide for Paving Contractors</h4>
+                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A78BFA] transition-colors">Website Design Guide for Paving Contractors</h4>
                   <p className="text-gray-400 text-sm mb-4">Essential website design strategies to showcase your work and convert visitors to customers.</p>
                   <button
                     onClick={() => navigate('/blog/paving-contractor-website-design-guide')}
-                    className="text-[#A3D1FF] text-sm flex items-center gap-1 hover:underline"
+                    className="text-[#A78BFA] text-sm flex items-center gap-1 hover:underline"
                   >
                     Read Article
                     <ArrowRight className="w-3 h-3" />
@@ -623,7 +623,7 @@ export default function LocalSEOForPavingContractorsPage() {
                 </div>
               </div>
 
-              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group">
+              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group">
                 <div className="aspect-[16/9] overflow-hidden">
                   <img
                     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2000&q=80"
@@ -632,11 +632,11 @@ export default function LocalSEOForPavingContractorsPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">Digital Marketing Strategy for Asphalt Contractors</h4>
+                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A78BFA] transition-colors">Digital Marketing Strategy for Asphalt Contractors</h4>
                   <p className="text-gray-400 text-sm mb-4">Complete guide to attracting more customers through strategic online marketing.</p>
                   <button
                     onClick={() => navigate('/blog/digital-marketing-asphalt-contractors')}
-                    className="text-[#A3D1FF] text-sm flex items-center gap-1 hover:underline"
+                    className="text-[#A78BFA] text-sm flex items-center gap-1 hover:underline"
                   >
                     Read Article
                     <ArrowRight className="w-3 h-3" />

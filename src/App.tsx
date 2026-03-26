@@ -25,7 +25,7 @@ const lazyLoad = (importFunc) => {
 function PageLoader() {
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#A3D1FF]"></div>
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#A78BFA]"></div>
     </div>
   );
 }
@@ -34,8 +34,8 @@ function PageLoader() {
 const ThankYouPage = () => (
   <div className="min-h-screen flex items-center justify-center bg-black">
     <div className="max-w-md text-center p-8">
-      <div className="w-16 h-16 bg-[#A3D1FF]/20 rounded-full flex items-center justify-center mx-auto mb-6">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#A3D1FF]" viewBox="0 0 20 20" fill="currentColor">
+      <div className="w-16 h-16 bg-[#A78BFA]/20 rounded-full flex items-center justify-center mx-auto mb-6">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#A78BFA]" viewBox="0 0 20 20" fill="currentColor">
           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
         </svg>
       </div>
@@ -43,7 +43,7 @@ const ThankYouPage = () => (
       <p className="text-gray-400 mb-8">Your message has been received. I'll get back to you within 24 hours.</p>
       <a 
         href="/"
-        className="inline-flex items-center px-6 py-3 bg-[#A3D1FF] text-black rounded-lg hover:bg-[#92bce6] transition-colors"
+        className="inline-flex items-center px-6 py-3 bg-[#A78BFA] text-black rounded-lg hover:bg-[#8B5CF6] transition-colors"
       >
         Return Home
       </a>
@@ -96,7 +96,7 @@ function App() {
       <ScrollProgress />
 
       {/* Cursor Ripple Effect */}
-      <CursorRipple color="#A3D1FF" opacity={0.4} size={60} duration={1} maxScale={3} />
+      <CursorRipple color="#A78BFA" opacity={0.4} size={60} duration={1} maxScale={3} />
 
       {/* Cookie Banner */}
       <CookieBanner />

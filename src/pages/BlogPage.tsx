@@ -306,7 +306,7 @@ function BlogPostCard({ post }: { post: typeof blogPosts[0] }) {
   
   return (
     <motion.article 
-      className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+      className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -324,13 +324,13 @@ function BlogPostCard({ post }: { post: typeof blogPosts[0] }) {
           {post.categories.slice(0, 2).map((category, index) => (
             <span 
               key={index} 
-              className="px-2 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-xs"
+              className="px-2 py-1 bg-[#A78BFA]/10 text-[#A78BFA] rounded-full text-xs"
             >
               {category}
             </span>
           ))}
         </div>
-        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">
+        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#A78BFA] transition-colors">
           {post.title}
         </h3>
         <p className="text-gray-400 mb-4 text-sm line-clamp-2">
@@ -346,7 +346,7 @@ function BlogPostCard({ post }: { post: typeof blogPosts[0] }) {
           </div>
           <button 
             onClick={() => navigate(`/blog/${post.id}`)}
-            className="text-[#A3D1FF] text-sm flex items-center gap-1 hover:underline"
+            className="text-[#A78BFA] text-sm flex items-center gap-1 hover:underline"
           >
             Read More
             <ArrowRight className="w-3 h-3" />
@@ -363,7 +363,7 @@ function FeaturedBlogPost({ post }: { post: typeof blogPosts[0] }) {
   
   return (
     <motion.article 
-      className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+      className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
@@ -382,13 +382,13 @@ function FeaturedBlogPost({ post }: { post: typeof blogPosts[0] }) {
             {post.categories.map((category, index) => (
               <span 
                 key={index} 
-                className="px-2 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-xs"
+                className="px-2 py-1 bg-[#A78BFA]/10 text-[#A78BFA] rounded-full text-xs"
               >
                 {category}
               </span>
             ))}
           </div>
-          <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#A3D1FF] transition-colors">
+          <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#A78BFA] transition-colors">
             {post.title}
           </h3>
           <p className="text-gray-400 mb-4">
@@ -413,7 +413,7 @@ function FeaturedBlogPost({ post }: { post: typeof blogPosts[0] }) {
           </div>
           <button 
             onClick={() => navigate(`/blog/${post.id}`)}
-            className="mt-auto inline-flex items-center text-[#A3D1FF] hover:underline"
+            className="mt-auto inline-flex items-center text-[#A78BFA] hover:underline"
           >
             Read Full Article
             <ArrowRight className="ml-2 w-4 h-4" />
@@ -478,7 +478,7 @@ export default function BlogPage() {
             <h1 className="font-heading text-[clamp(2.2rem,4vw,3rem)] font-semibold tracking-[-0.01em] text-white leading-[1.15] mb-4">
               Blog
             </h1>
-            <h2 className="font-body text-xl sm:text-2xl text-[#A3D1FF] mb-6">
+            <h2 className="font-body text-xl sm:text-2xl text-[#A78BFA] mb-6">
               Design & Development Insights
             </h2>
             <p className="font-body text-xl leading-[1.7] text-gray-400 max-w-3xl">
@@ -498,7 +498,7 @@ export default function BlogPage() {
                 onClick={() => setActiveCategory('all')}
                 className={`px-3 py-1.5 rounded-full text-sm transition-colors ${
                   activeCategory === 'all'
-                    ? 'bg-[#A3D1FF] text-black'
+                    ? 'bg-[#A78BFA] text-black'
                     : 'bg-white/5 text-gray-300 hover:bg-white/10'
                 }`}
               >
@@ -510,7 +510,7 @@ export default function BlogPage() {
                   onClick={() => setActiveCategory(category.id)}
                   className={`px-3 py-1.5 rounded-full text-sm transition-colors ${
                     activeCategory === category.id
-                      ? 'bg-[#A3D1FF] text-black'
+                      ? 'bg-[#A78BFA] text-black'
                       : 'bg-white/5 text-gray-300 hover:bg-white/10'
                   }`}
                 >
@@ -538,7 +538,7 @@ export default function BlogPage() {
                     }}
                     className={`w-full text-left px-4 py-2 text-sm ${
                       activeCategory === 'all'
-                        ? 'bg-[#A3D1FF] text-black'
+                        ? 'bg-[#A78BFA] text-black'
                         : 'text-gray-300 hover:bg-white/5'
                     }`}
                   >
@@ -553,7 +553,7 @@ export default function BlogPage() {
                       }}
                       className={`w-full text-left px-4 py-2 text-sm ${
                         activeCategory === category.id
-                          ? 'bg-[#A3D1FF] text-black'
+                          ? 'bg-[#A78BFA] text-black'
                           : 'text-gray-300 hover:bg-white/5'
                       }`}
                     >
@@ -635,7 +635,7 @@ export default function BlogPage() {
               <input
                 type="email"
                 placeholder="Your email address"
-                className="flex-grow px-4 py-2 bg-[#2d3035] border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#A3D1FF] focus:border-transparent"
+                className="flex-grow px-4 py-2 bg-[#2d3035] border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:border-transparent"
                 required
               />
               <button
@@ -677,34 +677,34 @@ export default function BlogPage() {
               <div className="grid md:grid-cols-4 gap-4">
                 <Link 
                   to="/tools/website-analyzer" 
-                  className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A3D1FF] transition-colors group"
+                  className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A78BFA] transition-colors group"
                   title="Analyze your website for free"
                 >
-                  <h4 className="text-white font-medium group-hover:text-[#A3D1FF] transition-colors">Website Analyzer</h4>
+                  <h4 className="text-white font-medium group-hover:text-[#A78BFA] transition-colors">Website Analyzer</h4>
                   <p className="text-gray-400 text-sm mt-1">Free analysis tool</p>
                 </Link>
                 <Link 
                   to="/tools/roi-calculator" 
-                  className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A3D1FF] transition-colors group"
+                  className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A78BFA] transition-colors group"
                   title="Calculate your website ROI"
                 >
-                  <h4 className="text-white font-medium group-hover:text-[#A3D1FF] transition-colors">ROI Calculator</h4>
+                  <h4 className="text-white font-medium group-hover:text-[#A78BFA] transition-colors">ROI Calculator</h4>
                   <p className="text-gray-400 text-sm mt-1">Investment calculator</p>
                 </Link>
                 <Link 
                   to="/work" 
-                  className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A3D1FF] transition-colors group"
+                  className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A78BFA] transition-colors group"
                   title="View our portfolio"
                 >
-                  <h4 className="text-white font-medium group-hover:text-[#A3D1FF] transition-colors">Portfolio</h4>
+                  <h4 className="text-white font-medium group-hover:text-[#A78BFA] transition-colors">Portfolio</h4>
                   <p className="text-gray-400 text-sm mt-1">Case studies</p>
                 </Link>
                 <Link 
                   to="/services" 
-                  className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A3D1FF] transition-colors group"
+                  className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A78BFA] transition-colors group"
                   title="Explore our services"
                 >
-                  <h4 className="text-white font-medium group-hover:text-[#A3D1FF] transition-colors">Services</h4>
+                  <h4 className="text-white font-medium group-hover:text-[#A78BFA] transition-colors">Services</h4>
                   <p className="text-gray-400 text-sm mt-1">What we offer</p>
                 </Link>
               </div>

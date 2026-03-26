@@ -127,7 +127,7 @@ export default function ReviewCard({
 
   return (
     <motion.div 
-      className="bg-[#1f2428] p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group h-full"
+      className="bg-[#1f2428] p-6 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all group h-full"
       whileHover={{ 
         y: -5, 
         boxShadow: '0 10px 25px -5px rgba(163, 209, 255, 0.1)',
@@ -156,7 +156,7 @@ export default function ReviewCard({
           <div className="flex items-center justify-between">
             <div>
               <h3 className="font-semibold text-white text-base">{name}</h3>
-              <div className="text-xs text-[#A3D1FF]">{client.role}</div>
+              <div className="text-xs text-[#A78BFA]">{client.role}</div>
             </div>
             {client.linkedin && (
               <a 

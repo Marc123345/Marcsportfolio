@@ -68,7 +68,7 @@ export default function BuildingDataDrivenDesignSystemsPage() {
         <div className="max-w-4xl mx-auto">
           <button 
             onClick={() => navigate('/blog')}
-            className="flex items-center gap-2 text-[#A3D1FF] hover:underline mb-6"
+            className="flex items-center gap-2 text-[#A78BFA] hover:underline mb-6"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Blog
@@ -234,7 +234,7 @@ export default function BuildingDataDrivenDesignSystemsPage() {
               <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#0077B5]/20 text-[#0077B5] transition-colors">
                 <Linkedin className="w-5 h-5" />
               </button>
-              <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#A3D1FF]/20 text-[#A3D1FF] transition-colors">
+              <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#A78BFA]/20 text-[#A78BFA] transition-colors">
                 <Link className="w-5 h-5" />
               </button>
             </div>
@@ -244,7 +244,7 @@ export default function BuildingDataDrivenDesignSystemsPage() {
           <div className="mt-12 pt-8 border-t border-white/10">
             <h3 className="text-2xl font-semibold text-white mb-6">Related Articles</h3>
             <div className="grid sm:grid-cols-2 gap-6">
-              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group">
+              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group">
                 <div className="aspect-[16/9] overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=2000&q=80" 
@@ -253,11 +253,11 @@ export default function BuildingDataDrivenDesignSystemsPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">The Future of SaaS Web Design: Merging Aesthetics with Functionality</h4>
+                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A78BFA] transition-colors">The Future of SaaS Web Design: Merging Aesthetics with Functionality</h4>
                   <p className="text-gray-400 text-sm mb-4">Explore the evolving landscape of SaaS web design and how it's shaping the future of digital products.</p>
                   <button 
                     onClick={() => navigate('/blog/future-of-saas-web-design')}
-                    className="text-[#A3D1FF] text-sm flex items-center gap-1 hover:underline"
+                    className="text-[#A78BFA] text-sm flex items-center gap-1 hover:underline"
                     title="Read about the future of SaaS web design"
                   >
                     Read Article
@@ -266,7 +266,7 @@ export default function BuildingDataDrivenDesignSystemsPage() {
                 </div>
               </div>
               
-              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group">
+              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group">
                 <div className="aspect-[16/9] overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=2000&q=80" 
@@ -275,11 +275,11 @@ export default function BuildingDataDrivenDesignSystemsPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">From Concept to Profit: Designing Platforms That Empower Automotive Dealers</h4>
+                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A78BFA] transition-colors">From Concept to Profit: Designing Platforms That Empower Automotive Dealers</h4>
                   <p className="text-gray-400 text-sm mb-4">The automotive industry is no stranger to disruption, with rapid advancements in technology reshaping how dealers operate.</p>
                   <button 
                     onClick={() => navigate('/blog/designing-platforms-for-automotive-dealers')}
-                    className="text-[#A3D1FF] text-sm flex items-center gap-1 hover:underline"
+                    className="text-[#A78BFA] text-sm flex items-center gap-1 hover:underline"
                     title="Learn about automotive dealer platform design"
                   >
                     Read Article
@@ -295,21 +295,21 @@ export default function BuildingDataDrivenDesignSystemsPage() {
               <div className="grid md:grid-cols-3 gap-4">
                 <Link 
                   to="/services/design" 
-                  className="text-[#A3D1FF] hover:text-white transition-colors"
+                  className="text-[#A78BFA] hover:text-white transition-colors"
                   title="Professional UI/UX design services"
                 >
                   UI/UX Design Services →
                 </Link>
                 <Link 
                   to="/work" 
-                  className="text-[#A3D1FF] hover:text-white transition-colors"
+                  className="text-[#A78BFA] hover:text-white transition-colors"
                   title="View our design portfolio"
                 >
                   Design Portfolio →
                 </Link>
                 <Link 
                   to="/tools/website-analyzer" 
-                  className="text-[#A3D1FF] hover:text-white transition-colors"
+                  className="text-[#A78BFA] hover:text-white transition-colors"
                   title="Analyze your website design"
                 >
                   Free Website Analysis →

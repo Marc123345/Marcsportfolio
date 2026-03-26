@@ -12,7 +12,7 @@ function Feature({ icon: Icon, title, description }: {
 }) {
   return (
     <motion.div
-      className="bg-gradient-to-br from-[#1b1b1b] to-[#0a0a0a] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group"
+      className="bg-gradient-to-br from-[#1b1b1b] to-[#0a0a0a] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all group"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
@@ -20,8 +20,8 @@ function Feature({ icon: Icon, title, description }: {
       whileHover={{ scale: 1.03 }}
     >
       <div className="mb-6">
-        <div className="w-14 h-14 bg-[#A3D1FF]/10 rounded-xl flex items-center justify-center group-hover:bg-[#A3D1FF]/20 transition-colors">
-          <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
+        <div className="w-14 h-14 bg-[#A78BFA]/10 rounded-xl flex items-center justify-center group-hover:bg-[#A78BFA]/20 transition-colors">
+          <Icon className="w-8 h-8 text-[#A78BFA] group-hover:scale-110 transition-transform" />
         </div>
       </div>
       <h3 className="text-xl font-semibold mb-3 text-white">{title}</h3>
@@ -37,18 +37,18 @@ function StatCard({ value, label, icon: Icon }: { value: string; label: string; 
   return (
     <motion.div
       ref={ref}
-      className="bg-gradient-to-br from-[#1b1b1b] to-[#0a0a0a] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all"
+      className="bg-gradient-to-br from-[#1b1b1b] to-[#0a0a0a] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all"
       initial={{ opacity: 0, scale: 0.9 }}
       animate={isInView ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 0.5 }}
       whileHover={{ scale: 1.05 }}
     >
       <div className="flex items-center justify-center mb-4">
-        <div className="p-3 bg-[#A3D1FF]/10 rounded-lg">
-          <Icon className="w-6 h-6 text-[#A3D1FF]" />
+        <div className="p-3 bg-[#A78BFA]/10 rounded-lg">
+          <Icon className="w-6 h-6 text-[#A78BFA]" />
         </div>
       </div>
-      <div className="text-5xl font-bold text-[#A3D1FF] mb-2 text-center">
+      <div className="text-5xl font-bold text-[#A78BFA] mb-2 text-center">
         {value.includes('%') ? (
           <>
             <AnimatedCounter end={parseInt(value)} duration={2000} />
@@ -76,7 +76,7 @@ export default function FleetManagementPage() {
         </div>
 
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0051a3]/10 via-transparent to-[#A3D1FF]/10 mix-blend-overlay"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0051a3]/10 via-transparent to-[#A78BFA]/10 mix-blend-overlay"></div>
           <img
             src="https://i.imgur.com/ozcuJ2k.jpeg"
             alt="Fleet Management System"
@@ -87,7 +87,7 @@ export default function FleetManagementPage() {
 
         {/* Floating Elements */}
         <motion.div
-          className="absolute top-20 right-10 w-24 h-24 rounded-full bg-[#A3D1FF]/10 blur-3xl"
+          className="absolute top-20 right-10 w-24 h-24 rounded-full bg-[#A78BFA]/10 blur-3xl"
           animate={{ y: [0, 30, 0], scale: [1, 1.2, 1] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -105,12 +105,12 @@ export default function FleetManagementPage() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <div className="w-2 h-2 bg-[#A3D1FF] rounded-full animate-pulse"></div>
-              <span className="text-[#A3D1FF] text-sm font-medium">Enterprise Fleet Solution</span>
+              <div className="w-2 h-2 bg-[#A78BFA] rounded-full animate-pulse"></div>
+              <span className="text-[#A78BFA] text-sm font-medium">Enterprise Fleet Solution</span>
             </motion.div>
 
             <h1 className="text-5xl sm:text-7xl font-bold text-white mb-8 tracking-tight">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-[#A3D1FF] to-white">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-[#A78BFA] to-white">
                 Fleet Management Platform
               </span>
             </h1>
@@ -126,21 +126,21 @@ export default function FleetManagementPage() {
                 className="bg-white/5 backdrop-blur-sm px-6 py-3 rounded-lg border border-white/10"
                 whileHover={{ scale: 1.05, borderColor: 'rgba(163, 209, 255, 0.5)' }}
               >
-                <div className="text-[#A3D1FF] text-2xl font-bold">500+</div>
+                <div className="text-[#A78BFA] text-2xl font-bold">500+</div>
                 <div className="text-gray-400 text-sm">Vehicles Tracked</div>
               </motion.div>
               <motion.div
                 className="bg-white/5 backdrop-blur-sm px-6 py-3 rounded-lg border border-white/10"
                 whileHover={{ scale: 1.05, borderColor: 'rgba(163, 209, 255, 0.5)' }}
               >
-                <div className="text-[#A3D1FF] text-2xl font-bold">95%</div>
+                <div className="text-[#A78BFA] text-2xl font-bold">95%</div>
                 <div className="text-gray-400 text-sm">User Satisfaction</div>
               </motion.div>
               <motion.div
                 className="bg-white/5 backdrop-blur-sm px-6 py-3 rounded-lg border border-white/10"
                 whileHover={{ scale: 1.05, borderColor: 'rgba(163, 209, 255, 0.5)' }}
               >
-                <div className="text-[#A3D1FF] text-2xl font-bold">35%</div>
+                <div className="text-[#A78BFA] text-2xl font-bold">35%</div>
                 <div className="text-gray-400 text-sm">Cost Reduction</div>
               </motion.div>
             </div>
@@ -166,8 +166,8 @@ export default function FleetManagementPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="w-12 h-12 bg-[#A3D1FF]/10 rounded-lg flex items-center justify-center mb-4">
-                <Target className="w-6 h-6 text-[#A3D1FF]" />
+              <div className="w-12 h-12 bg-[#A78BFA]/10 rounded-lg flex items-center justify-center mb-4">
+                <Target className="w-6 h-6 text-[#A78BFA]" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">The Problem</h3>
               <p className="text-gray-400 leading-relaxed">
@@ -182,8 +182,8 @@ export default function FleetManagementPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="w-12 h-12 bg-[#A3D1FF]/10 rounded-lg flex items-center justify-center mb-4">
-                <Zap className="w-6 h-6 text-[#A3D1FF]" />
+              <div className="w-12 h-12 bg-[#A78BFA]/10 rounded-lg flex items-center justify-center mb-4">
+                <Zap className="w-6 h-6 text-[#A78BFA]" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">The Solution</h3>
               <p className="text-gray-400 leading-relaxed">
@@ -198,8 +198,8 @@ export default function FleetManagementPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="w-12 h-12 bg-[#A3D1FF]/10 rounded-lg flex items-center justify-center mb-4">
-                <TrendingUp className="w-6 h-6 text-[#A3D1FF]" />
+              <div className="w-12 h-12 bg-[#A78BFA]/10 rounded-lg flex items-center justify-center mb-4">
+                <TrendingUp className="w-6 h-6 text-[#A78BFA]" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">The Impact</h3>
               <p className="text-gray-400 leading-relaxed">
@@ -228,7 +228,7 @@ export default function FleetManagementPage() {
                   "Need for real-time insights"
                 ].map((item, index) => (
                   <li key={index} className="flex items-center text-gray-300">
-                    <ChevronRight className="w-5 h-5 text-[#A3D1FF] mr-2" />
+                    <ChevronRight className="w-5 h-5 text-[#A78BFA] mr-2" />
                     {item}
                   </li>
                 ))}
@@ -244,7 +244,7 @@ export default function FleetManagementPage() {
                   "Performance tracking"
                 ].map((item, index) => (
                   <li key={index} className="flex items-center text-gray-300">
-                    <ChevronRight className="w-5 h-5 text-[#A3D1FF] mr-2" />
+                    <ChevronRight className="w-5 h-5 text-[#A78BFA] mr-2" />
                     {item}
                   </li>
                 ))}
@@ -260,7 +260,7 @@ export default function FleetManagementPage() {
                   "Enhanced customer satisfaction"
                 ].map((item, index) => (
                   <li key={index} className="flex items-center text-gray-300">
-                    <ChevronRight className="w-5 h-5 text-[#A3D1FF] mr-2" />
+                    <ChevronRight className="w-5 h-5 text-[#A78BFA] mr-2" />
                     {item}
                   </li>
                 ))}
@@ -319,15 +319,15 @@ export default function FleetManagementPage() {
               <h3 className="text-2xl font-semibold text-white mb-6">Real-Time Market Analysis</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">Live market data integration for accurate pricing decisions</p>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">Competitive analysis tools for market positioning</p>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">Trend forecasting for inventory planning</p>
                 </li>
               </ul>
@@ -358,15 +358,15 @@ export default function FleetManagementPage() {
               <h3 className="text-2xl font-semibold text-white mb-6">Dynamic Pricing Tools</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">AI-driven price recommendations based on market conditions</p>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">Automated price adjustments for optimal margins</p>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">Historical pricing analysis for strategic planning</p>
                 </li>
               </ul>
@@ -391,19 +391,19 @@ export default function FleetManagementPage() {
               <h3 className="text-2xl font-semibold text-white mb-6">Driver-Focused Design</h3>
               <ul className="space-y-4">
                 <li className="flex items-center text-gray-300">
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] mr-3" />
                   Real-time route updates and navigation
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] mr-3" />
                   Instant communication with dispatch
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] mr-3" />
                   Digital documentation and signatures
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] mr-3" />
                   Offline functionality for remote areas
                 </li>
               </ul>
@@ -437,7 +437,7 @@ export default function FleetManagementPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="text-[#A3D1FF] text-5xl font-bold mb-2">500+</div>
+              <div className="text-[#A78BFA] text-5xl font-bold mb-2">500+</div>
               <div className="text-white font-semibold mb-2">Vehicles Managed</div>
               <div className="text-gray-400 text-sm">Across multiple fleet operations daily</div>
             </motion.div>
@@ -449,7 +449,7 @@ export default function FleetManagementPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="text-[#A3D1FF] text-5xl font-bold mb-2">$1.5M</div>
+              <div className="text-[#A78BFA] text-5xl font-bold mb-2">$1.5M</div>
               <div className="text-white font-semibold mb-2">Cost Savings</div>
               <div className="text-gray-400 text-sm">Annual operational cost reduction</div>
             </motion.div>
@@ -461,7 +461,7 @@ export default function FleetManagementPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="text-[#A3D1FF] text-5xl font-bold mb-2">99.8%</div>
+              <div className="text-[#A78BFA] text-5xl font-bold mb-2">99.8%</div>
               <div className="text-white font-semibold mb-2">Platform Uptime</div>
               <div className="text-gray-400 text-sm">Ensuring reliable fleet monitoring</div>
             </motion.div>

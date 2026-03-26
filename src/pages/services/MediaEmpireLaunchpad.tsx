@@ -256,7 +256,7 @@ export default function MediaEmpireLaunchpad() {
             </button>
             <a
               href="#how-it-works"
-              className="inline-flex items-center gap-2 text-lg font-semibold text-[#A3D1FF] hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-lg font-semibold text-[#A78BFA] hover:text-white transition-colors"
             >
               <span>See How the Launchpad Works</span>
               <ArrowRight className="w-5 h-5" />
@@ -272,12 +272,12 @@ export default function MediaEmpireLaunchpad() {
             <div className="relative rounded-lg overflow-hidden border border-white/10 bg-gradient-to-br from-[#1b1b1b] to-black p-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Desktop mockup placeholder */}
-                <div className="aspect-video bg-gradient-to-br from-[#A3D1FF]/20 to-transparent rounded-lg flex items-center justify-center border border-[#A3D1FF]/30">
-                  <Play className="w-16 h-16 text-[#A3D1FF]/50" />
+                <div className="aspect-video bg-gradient-to-br from-[#A78BFA]/20 to-transparent rounded-lg flex items-center justify-center border border-[#A78BFA]/30">
+                  <Play className="w-16 h-16 text-[#A78BFA]/50" />
                 </div>
                 {/* Mobile mockup placeholder */}
-                <div className="aspect-[9/16] max-h-96 mx-auto bg-gradient-to-br from-[#A3D1FF]/20 to-transparent rounded-lg flex items-center justify-center border border-[#A3D1FF]/30">
-                  <Play className="w-12 h-12 text-[#A3D1FF]/50" />
+                <div className="aspect-[9/16] max-h-96 mx-auto bg-gradient-to-br from-[#A78BFA]/20 to-transparent rounded-lg flex items-center justify-center border border-[#A78BFA]/30">
+                  <Play className="w-12 h-12 text-[#A78BFA]/50" />
                 </div>
               </div>
               <p className="text-center text-gray-500 text-sm mt-4">Netflix-style interface on desktop + mobile</p>
@@ -297,15 +297,15 @@ export default function MediaEmpireLaunchpad() {
             <div>
               <ul className="space-y-6">
                 <li className="flex items-start">
-                  <div className="w-2 h-2 bg-[#A3D1FF] rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-[#A78BFA] rounded-full mt-2 mr-4 flex-shrink-0"></div>
                   <p className="text-lg text-gray-300">Your audience lives on <span className="text-white font-semibold">rented land</span> (YouTube, TikTok, IG).</p>
                 </li>
                 <li className="flex items-start">
-                  <div className="w-2 h-2 bg-[#A3D1FF] rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-[#A78BFA] rounded-full mt-2 mr-4 flex-shrink-0"></div>
                   <p className="text-lg text-gray-300">You are <span className="text-white font-semibold">rich in content</span> but <span className="text-white font-semibold">poor in owned infrastructure</span>.</p>
                 </li>
                 <li className="flex items-start">
-                  <div className="w-2 h-2 bg-[#A3D1FF] rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-[#A78BFA] rounded-full mt-2 mr-4 flex-shrink-0"></div>
                   <p className="text-lg text-gray-300">Sponsors and platforms capture <span className="text-white font-semibold">more value than you do</span>.</p>
                 </li>
               </ul>
@@ -328,8 +328,8 @@ export default function MediaEmpireLaunchpad() {
                   <div className="text-4xl">vs</div>
                 </div>
                 <div className="mt-16 flex justify-center">
-                  <div className="w-32 h-32 bg-[#A3D1FF]/20 rounded-lg flex items-center justify-center border-2 border-[#A3D1FF]">
-                    <Shield className="w-16 h-16 text-[#A3D1FF]" />
+                  <div className="w-32 h-32 bg-[#A78BFA]/20 rounded-lg flex items-center justify-center border-2 border-[#A78BFA]">
+                    <Shield className="w-16 h-16 text-[#A78BFA]" />
                   </div>
                 </div>
                 <p className="text-center text-gray-400 text-sm mt-4">Your Owned Site</p>
@@ -348,14 +348,14 @@ export default function MediaEmpireLaunchpad() {
           
           <div className="mb-12 text-center">
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Imagine waking up to notification after notification of new memberships, course sales, and backend offers—all flowing through <span className="text-[#A3D1FF] font-semibold">one beautiful, owned platform</span> that you control. No more chasing algorithms. No more begging for sponsorships. Just a seamless hub where your best content lives, your community pays to access it, and you finally capture the full value of your influence.
+              Imagine waking up to notification after notification of new memberships, course sales, and backend offers—all flowing through <span className="text-[#A78BFA] font-semibold">one beautiful, owned platform</span> that you control. No more chasing algorithms. No more begging for sponsorships. Just a seamless hub where your best content lives, your community pays to access it, and you finally capture the full value of your influence.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {outcomes.map((outcome, index) => (
               <div key={index} className="bg-[#1b1b1b] border border-white/10 rounded-lg p-6">
-                <Check className="w-8 h-8 text-[#A3D1FF] mb-4" />
+                <Check className="w-8 h-8 text-[#A78BFA] mb-4" />
                 <p className="text-gray-300 text-lg">{outcome}</p>
               </div>
             ))}
@@ -384,8 +384,8 @@ export default function MediaEmpireLaunchpad() {
                 </li>
               </ul>
             </div>
-            <div className="bg-[#1b1b1b] border border-[#A3D1FF]/30 rounded-lg p-8">
-              <div className="text-[#A3D1FF] font-bold text-sm mb-4">AFTER</div>
+            <div className="bg-[#1b1b1b] border border-[#A78BFA]/30 rounded-lg p-8">
+              <div className="text-[#A78BFA] font-bold text-sm mb-4">AFTER</div>
               <ul className="space-y-3 text-gray-300">
                 <li className="flex items-start">
                   <span className="mr-2">✓</span>
@@ -421,8 +421,8 @@ export default function MediaEmpireLaunchpad() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {offerColumns.map((column, index) => (
-              <div key={index} className="bg-black border border-white/10 rounded-lg p-8 text-center hover:border-[#A3D1FF]/50 transition-all">
-                <div className="flex justify-center mb-6 text-[#A3D1FF]">
+              <div key={index} className="bg-black border border-white/10 rounded-lg p-8 text-center hover:border-[#A78BFA]/50 transition-all">
+                <div className="flex justify-center mb-6 text-[#A78BFA]">
                   {column.icon}
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4">{column.title}</h3>
@@ -443,7 +443,7 @@ export default function MediaEmpireLaunchpad() {
           <div className="space-y-12">
             {features.map((feature, index) => (
               <div key={index} className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center`}>
-                <div className="flex-shrink-0 w-24 h-24 bg-[#A3D1FF]/10 rounded-lg flex items-center justify-center text-[#A3D1FF] border border-[#A3D1FF]/30">
+                <div className="flex-shrink-0 w-24 h-24 bg-[#A78BFA]/10 rounded-lg flex items-center justify-center text-[#A78BFA] border border-[#A78BFA]/30">
                   {feature.icon}
                 </div>
                 <div className="flex-1">
@@ -465,8 +465,8 @@ export default function MediaEmpireLaunchpad() {
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {personas.map((persona, index) => (
-              <div key={index} className="bg-black border border-white/10 rounded-lg p-8 hover:border-[#A3D1FF]/50 transition-all">
-                <div className="flex justify-center mb-6 text-[#A3D1FF]">
+              <div key={index} className="bg-black border border-white/10 rounded-lg p-8 hover:border-[#A78BFA]/50 transition-all">
+                <div className="flex justify-center mb-6 text-[#A78BFA]">
                   {persona.icon}
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4 text-center">{persona.title}</h3>
@@ -509,14 +509,14 @@ export default function MediaEmpireLaunchpad() {
           <div className="grid md:grid-cols-4 gap-8">
             {timeline.map((step, index) => (
               <div key={index} className="relative">
-                <div className="bg-[#1b1b1b] border border-white/10 rounded-lg p-6 hover:border-[#A3D1FF]/50 transition-all h-full">
-                  <div className="text-[#A3D1FF] font-bold text-sm mb-3">{step.week}</div>
+                <div className="bg-[#1b1b1b] border border-white/10 rounded-lg p-6 hover:border-[#A78BFA]/50 transition-all h-full">
+                  <div className="text-[#A78BFA] font-bold text-sm mb-3">{step.week}</div>
                   <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
                   <p className="text-gray-300">{step.description}</p>
                 </div>
                 {index < timeline.length - 1 && (
                   <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                    <ArrowRight className="w-6 h-6 text-[#A3D1FF]/30" />
+                    <ArrowRight className="w-6 h-6 text-[#A78BFA]/30" />
                   </div>
                 )}
               </div>
@@ -535,13 +535,13 @@ export default function MediaEmpireLaunchpad() {
           <div className="grid md:grid-cols-2 gap-12">
             <div className="bg-black border border-white/10 rounded-lg p-8">
               <h3 className="text-2xl font-bold text-white mb-8 flex items-center">
-                <Play className="w-6 h-6 text-[#A3D1FF] mr-3" />
+                <Play className="w-6 h-6 text-[#A78BFA] mr-3" />
                 Platform & Experience
               </h3>
               <ul className="space-y-4">
                 {deliverablesPlatform.map((item, index) => (
                   <li key={index} className="flex items-start">
-                    <Check className="w-5 h-5 text-[#A3D1FF] mr-3 mt-0.5 flex-shrink-0" />
+                    <Check className="w-5 h-5 text-[#A78BFA] mr-3 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-300">{item}</span>
                   </li>
                 ))}
@@ -550,13 +550,13 @@ export default function MediaEmpireLaunchpad() {
 
             <div className="bg-black border border-white/10 rounded-lg p-8">
               <h3 className="text-2xl font-bold text-white mb-8 flex items-center">
-                <TrendingUp className="w-6 h-6 text-[#A3D1FF] mr-3" />
+                <TrendingUp className="w-6 h-6 text-[#A78BFA] mr-3" />
                 Monetization & Growth
               </h3>
               <ul className="space-y-4">
                 {deliverablesMonetization.map((item, index) => (
                   <li key={index} className="flex items-start">
-                    <Check className="w-5 h-5 text-[#A3D1FF] mr-3 mt-0.5 flex-shrink-0" />
+                    <Check className="w-5 h-5 text-[#A78BFA] mr-3 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-300">{item}</span>
                   </li>
                 ))}
@@ -578,10 +578,10 @@ export default function MediaEmpireLaunchpad() {
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {packages.map((pkg, index) => (
-              <div key={index} className="bg-[#1b1b1b] border border-white/10 rounded-lg p-8 hover:border-[#A3D1FF]/50 transition-all">
+              <div key={index} className="bg-[#1b1b1b] border border-white/10 rounded-lg p-8 hover:border-[#A78BFA]/50 transition-all">
                 <h3 className="text-2xl font-bold text-white mb-4">{pkg.name}</h3>
                 <p className="text-gray-300 mb-6">{pkg.description}</p>
-                <div className="text-3xl font-bold text-[#A3D1FF] mb-6">{pkg.price}</div>
+                <div className="text-3xl font-bold text-[#A78BFA] mb-6">{pkg.price}</div>
               </div>
             ))}
           </div>
@@ -611,8 +611,8 @@ export default function MediaEmpireLaunchpad() {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-black border border-white/10 rounded-lg p-8">
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-[#A3D1FF]/20 rounded-full flex items-center justify-center mr-4">
-                  <Users className="w-6 h-6 text-[#A3D1FF]" />
+                <div className="w-12 h-12 bg-[#A78BFA]/20 rounded-full flex items-center justify-center mr-4">
+                  <Users className="w-6 h-6 text-[#A78BFA]" />
                 </div>
                 <div>
                   <div className="text-white font-bold">Omar Turner</div>
@@ -626,8 +626,8 @@ export default function MediaEmpireLaunchpad() {
 
             <div className="bg-black border border-white/10 rounded-lg p-8">
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-[#A3D1FF]/20 rounded-full flex items-center justify-center mr-4">
-                  <Star className="w-6 h-6 text-[#A3D1FF]" />
+                <div className="w-12 h-12 bg-[#A78BFA]/20 rounded-full flex items-center justify-center mr-4">
+                  <Star className="w-6 h-6 text-[#A78BFA]" />
                 </div>
                 <div>
                   <div className="text-white font-bold">Content Creator Success</div>
@@ -656,28 +656,28 @@ export default function MediaEmpireLaunchpad() {
           <div className="bg-[#1b1b1b] border border-white/10 rounded-lg p-8 md:p-12">
             <div className="flex flex-col md:flex-row gap-8 items-center">
               <div className="flex-shrink-0">
-                <div className="w-48 h-48 bg-gradient-to-br from-[#A3D1FF]/20 to-transparent rounded-lg flex items-center justify-center border border-[#A3D1FF]/30">
-                  <Star className="w-24 h-24 text-[#A3D1FF]/50" />
+                <div className="w-48 h-48 bg-gradient-to-br from-[#A78BFA]/20 to-transparent rounded-lg flex items-center justify-center border border-[#A78BFA]/30">
+                  <Star className="w-24 h-24 text-[#A78BFA]/50" />
                 </div>
               </div>
               
               <div className="flex-1">
                 <p className="text-xl text-gray-300 mb-6">
-                  Omar "Ace" Turner is the <span className="text-[#A3D1FF] font-semibold">media mogul in the making</span> who embodies the vision behind the Launchpad. From podcasts to reels to brand partnerships, Ace represents the modern creator who's ready to stop renting and start owning.
+                  Omar "Ace" Turner is the <span className="text-[#A78BFA] font-semibold">media mogul in the making</span> who embodies the vision behind the Launchpad. From podcasts to reels to brand partnerships, Ace represents the modern creator who's ready to stop renting and start owning.
                 </p>
                 
                 <h3 className="text-lg font-bold text-white mb-4">Associated With:</h3>
                 <ul className="space-y-3 text-gray-300">
                   <li className="flex items-start">
-                    <Check className="w-5 h-5 text-[#A3D1FF] mr-3 mt-0.5 flex-shrink-0" />
+                    <Check className="w-5 h-5 text-[#A78BFA] mr-3 mt-0.5 flex-shrink-0" />
                     <span>Binns Media Group - Chief Executive Officer</span>
                   </li>
                   <li className="flex items-start">
-                    <Check className="w-5 h-5 text-[#A3D1FF] mr-3 mt-0.5 flex-shrink-0" />
+                    <Check className="w-5 h-5 text-[#A78BFA] mr-3 mt-0.5 flex-shrink-0" />
                     <span>Multi-platform content creation across podcasts and social media</span>
                   </li>
                   <li className="flex items-start">
-                    <Check className="w-5 h-5 text-[#A3D1FF] mr-3 mt-0.5 flex-shrink-0" />
+                    <Check className="w-5 h-5 text-[#A78BFA] mr-3 mt-0.5 flex-shrink-0" />
                     <span>Building owned infrastructure for long-term audience value</span>
                   </li>
                 </ul>
@@ -696,7 +696,7 @@ export default function MediaEmpireLaunchpad() {
 
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-black border border-white/10 rounded-lg p-6 hover:border-[#A3D1FF]/50 transition-all">
+              <div key={index} className="bg-black border border-white/10 rounded-lg p-6 hover:border-[#A78BFA]/50 transition-all">
                 <h3 className="text-xl font-bold text-white mb-3">{faq.question}</h3>
                 <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
               </div>
@@ -728,7 +728,7 @@ export default function MediaEmpireLaunchpad() {
             </button>
             <a
               href="#contact-form"
-              className="inline-flex items-center gap-2 text-lg font-semibold text-[#A3D1FF] hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-lg font-semibold text-[#A78BFA] hover:text-white transition-colors"
             >
               <span>Request a Scope & Investment Breakdown</span>
             </a>

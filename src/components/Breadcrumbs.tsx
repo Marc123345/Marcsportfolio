@@ -86,7 +86,7 @@ export default function Breadcrumbs({ className = '', customItems }: Breadcrumbs
             ) : (
               <Link
                 to={item.href}
-                className="text-[#A3D1FF] hover:text-white transition-colors hover:underline"
+                className="text-[#A78BFA] hover:text-white transition-colors hover:underline"
                 title={`Navigate to ${item.label}`}
               >
                 {index === 0 && (

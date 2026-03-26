@@ -43,13 +43,13 @@ function ExpertiseCard({ icon: Icon, title, description, features, delay = 0 }: 
   return (
     <div 
       ref={cardRef}
-      className="bg-[#1b1b1b] p-6 sm:p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group hover:transform hover:-translate-y-2 duration-300 opacity-0 translate-y-10"
+      className="bg-[#1b1b1b] p-6 sm:p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all group hover:transform hover:-translate-y-2 duration-300 opacity-0 translate-y-10"
       style={{ transitionDuration: '0.8s', transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
     >
       <div className="relative mb-4 sm:mb-6">
-        <div className="absolute inset-0 bg-[#A3D1FF]/20 blur-xl rounded-full"></div>
-        <div className="bg-[#A3D1FF]/10 p-3 sm:p-4 rounded-xl relative">
-          <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
+        <div className="absolute inset-0 bg-[#A78BFA]/20 blur-xl rounded-full"></div>
+        <div className="bg-[#A78BFA]/10 p-3 sm:p-4 rounded-xl relative">
+          <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-[#A78BFA] group-hover:scale-110 transition-transform" />
         </div>
       </div>
       <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-4">{title}</h3>
@@ -58,7 +58,7 @@ function ExpertiseCard({ icon: Icon, title, description, features, delay = 0 }: 
         {features.map((feature, index) => (
           <span 
             key={index} 
-            className="px-2 sm:px-3 py-1 bg-white/5 rounded-full text-xs sm:text-sm text-white hover:bg-[#A3D1FF]/20 transition-colors"
+            className="px-2 sm:px-3 py-1 bg-white/5 rounded-full text-xs sm:text-sm text-white hover:bg-[#A78BFA]/20 transition-colors"
           >
             {feature}
           </span>
@@ -189,13 +189,13 @@ export default function ExpertiseSection() {
           />
         </div>
 
-        <div className="mt-8 sm:mt-12 md:mt-20 bg-[#1b1b1b] p-6 sm:p-8 rounded-xl border border-white/10 transform transition-all duration-1000 hover:border-[#A3D1FF]">
+        <div className="mt-8 sm:mt-12 md:mt-20 bg-[#1b1b1b] p-6 sm:p-8 rounded-xl border border-white/10 transform transition-all duration-1000 hover:border-[#A78BFA]">
           <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
             <div>
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Our Development Process</h3>
               <div className="space-y-4 sm:space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-[#A3D1FF] text-black w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold mr-3 sm:mr-4 flex-shrink-0">
+                  <div className="bg-[#A78BFA] text-black w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold mr-3 sm:mr-4 flex-shrink-0">
                     1
                   </div>
                   <div>
@@ -204,7 +204,7 @@ export default function ExpertiseSection() {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-[#A3D1FF] text-black w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold mr-3 sm:mr-4 flex-shrink-0">
+                  <div className="bg-[#A78BFA] text-black w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold mr-3 sm:mr-4 flex-shrink-0">
                     2
                   </div>
                   <div>
@@ -213,7 +213,7 @@ export default function ExpertiseSection() {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-[#A3D1FF] text-black w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold mr-3 sm:mr-4 flex-shrink-0">
+                  <div className="bg-[#A78BFA] text-black w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold mr-3 sm:mr-4 flex-shrink-0">
                     3
                   </div>
                   <div>
@@ -222,7 +222,7 @@ export default function ExpertiseSection() {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-[#A3D1FF] text-black w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold mr-3 sm:mr-4 flex-shrink-0">
+                  <div className="bg-[#A78BFA] text-black w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold mr-3 sm:mr-4 flex-shrink-0">
                     4
                   </div>
                   <div>
@@ -239,19 +239,19 @@ export default function ExpertiseSection() {
                   <h4 className="text-base sm:text-lg font-semibold text-white mb-2">Frontend</h4>
                   <ul className="space-y-2 text-sm sm:text-base text-gray-400">
                     <li className="flex items-center">
-                      <span className="w-1.5 h-1.5 bg-[#A3D1FF] rounded-full mr-2"></span>
+                      <span className="w-1.5 h-1.5 bg-[#A78BFA] rounded-full mr-2"></span>
                       React & Next.js
                     </li>
                     <li className="flex items-center">
-                      <span className="w-1.5 h-1.5 bg-[#A3D1FF] rounded-full mr-2"></span>
+                      <span className="w-1.5 h-1.5 bg-[#A78BFA] rounded-full mr-2"></span>
                       TypeScript
                     </li>
                     <li className="flex items-center">
-                      <span className="w-1.5 h-1.5 bg-[#A3D1FF] rounded-full mr-2"></span>
+                      <span className="w-1.5 h-1.5 bg-[#A78BFA] rounded-full mr-2"></span>
                       Tailwind CSS
                     </li>
                     <li className="flex items-center">
-                      <span className="w-1.5 h-1.5 bg-[#A3D1FF] rounded-full mr-2"></span>
+                      <span className="w-1.5 h-1.5 bg-[#A78BFA] rounded-full mr-2"></span>
                       Framer Motion
                     </li>
                   </ul>
@@ -260,19 +260,19 @@ export default function ExpertiseSection() {
                   <h4 className="text-base sm:text-lg font-semibold text-white mb-2">Backend</h4>
                   <ul className="space-y-2 text-sm sm:text-base text-gray-400">
                     <li className="flex items-center">
-                      <span className="w-1.5 h-1.5 bg-[#A3D1FF] rounded-full mr-2"></span>
+                      <span className="w-1.5 h-1.5 bg-[#A78BFA] rounded-full mr-2"></span>
                       Node.js
                     </li>
                     <li className="flex items-center">
-                      <span className="w-1.5 h-1.5 bg-[#A3D1FF] rounded-full mr-2"></span>
+                      <span className="w-1.5 h-1.5 bg-[#A78BFA] rounded-full mr-2"></span>
                       PostgreSQL
                     </li>
                     <li className="flex items-center">
-                      <span className="w-1.5 h-1.5 bg-[#A3D1FF] rounded-full mr-2"></span>
+                      <span className="w-1.5 h-1.5 bg-[#A78BFA] rounded-full mr-2"></span>
                       GraphQL
                     </li>
                     <li className="flex items-center">
-                      <span className="w-1.5 h-1.5 bg-[#A3D1FF] rounded-full mr-2"></span>
+                      <span className="w-1.5 h-1.5 bg-[#A78BFA] rounded-full mr-2"></span>
                       Redis
                     </li>
                   </ul>

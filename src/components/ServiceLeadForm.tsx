@@ -27,7 +27,7 @@ export default function ServiceLeadForm({ benefits }: Props) {
               <ul className="space-y-3">
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-center text-gray-300">
-                    <span className="w-2 h-2 bg-[#A3D1FF] rounded-full mr-3" />
+                    <span className="w-2 h-2 bg-[#A78BFA] rounded-full mr-3" />
                     <strong className="text-sm sm:text-base">{benefit}</strong>
                   </li>
                 ))}

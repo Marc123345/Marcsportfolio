@@ -234,7 +234,7 @@ export default function PortfolioShowcase() {
                     }}
                     className={`h-1 rounded-full transition-all duration-300 ${
                       index === currentIndex
-                        ? 'w-8 bg-[#A3D1FF]'
+                        ? 'w-8 bg-[#A78BFA]'
                         : 'w-1 bg-white/30 hover:bg-white/50'
                     }`}
                     aria-label={`Go to project ${index + 1}`}
@@ -249,7 +249,7 @@ export default function PortfolioShowcase() {
       {/* Navigation Buttons - Adjusted for mobile */}
       <button
         onClick={prevProject}
-        className="absolute left-2 xs:left-3 sm:left-4 top-[125px] sm:top-[140px] md:top-1/2 transform -translate-y-1/2 z-10 w-9 h-9 xs:w-10 xs:h-10 sm:w-12 sm:h-12 bg-black/70 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-[#A3D1FF] hover:text-black transition-all hover:scale-110 active:scale-95 shadow-lg"
+        className="absolute left-2 xs:left-3 sm:left-4 top-[125px] sm:top-[140px] md:top-1/2 transform -translate-y-1/2 z-10 w-9 h-9 xs:w-10 xs:h-10 sm:w-12 sm:h-12 bg-black/70 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-[#A78BFA] hover:text-black transition-all hover:scale-110 active:scale-95 shadow-lg"
         aria-label="Previous project"
       >
         <ArrowLeft className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6" />
@@ -257,7 +257,7 @@ export default function PortfolioShowcase() {
 
       <button
         onClick={nextProject}
-        className="absolute right-2 xs:right-3 sm:right-4 top-[125px] sm:top-[140px] md:top-1/2 transform -translate-y-1/2 z-10 w-9 h-9 xs:w-10 xs:h-10 sm:w-12 sm:h-12 bg-black/70 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-[#A3D1FF] hover:text-black transition-all hover:scale-110 active:scale-95 shadow-lg"
+        className="absolute right-2 xs:right-3 sm:right-4 top-[125px] sm:top-[140px] md:top-1/2 transform -translate-y-1/2 z-10 w-9 h-9 xs:w-10 xs:h-10 sm:w-12 sm:h-12 bg-black/70 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-[#A78BFA] hover:text-black transition-all hover:scale-110 active:scale-95 shadow-lg"
         aria-label="Next project"
       >
         <ArrowRight className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6" />
@@ -265,7 +265,7 @@ export default function PortfolioShowcase() {
 
       {/* Project Counter - Desktop Only */}
       <div className="hidden md:flex absolute bottom-4 lg:bottom-6 right-4 lg:right-6 bg-black/70 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm">
-        <span className="text-[#A3D1FF] font-semibold">{currentIndex + 1}</span>
+        <span className="text-[#A78BFA] font-semibold">{currentIndex + 1}</span>
         <span className="mx-1">/</span>
         <span className="text-gray-400">{projects.length}</span>
       </div>

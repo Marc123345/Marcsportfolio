@@ -17,8 +17,8 @@ export function NotFoundPage() {
       
       <div className="min-h-screen flex items-center justify-center bg-black px-4">
         <div className="max-w-md text-center">
-          <div className="w-20 h-20 bg-[#A3D1FF]/20 rounded-full flex items-center justify-center mx-auto mb-6">
-            <AlertTriangle className="h-10 w-10 text-[#A3D1FF]" />
+          <div className="w-20 h-20 bg-[#A78BFA]/20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <AlertTriangle className="h-10 w-10 text-[#A78BFA]" />
           </div>
           <h1 className="text-4xl font-bold text-white mb-4">404</h1>
           <h2 className="text-2xl font-semibold text-white mb-6">Page Not Found</h2>
@@ -35,7 +35,7 @@ export function NotFoundPage() {
             </button>
             <Link 
               to="/"
-              className="inline-flex items-center px-6 py-3 bg-[#A3D1FF] text-black rounded-lg hover:bg-[#92bce6] transition-colors"
+              className="inline-flex items-center px-6 py-3 bg-[#A78BFA] text-black rounded-lg hover:bg-[#8B5CF6] transition-colors"
             >
               Go Home
             </Link>
@@ -51,12 +51,12 @@ export function NotFoundPage() {
           <div className="mt-8 pt-6 border-t border-white/10">
             <h3 className="text-lg font-semibold text-white mb-4">Popular Pages</h3>
             <div className="grid grid-cols-2 gap-3">
-              <Link to="/services" className="text-[#A3D1FF] hover:underline">Services</Link>
-              <Link to="/work" className="text-[#A3D1FF] hover:underline">Portfolio</Link>
-              <Link to="/about" className="text-[#A3D1FF] hover:underline">About</Link>
-              <Link to="/contact" className="text-[#A3D1FF] hover:underline">Contact</Link>
-              <Link to="/blog" className="text-[#A3D1FF] hover:underline">Blog</Link>
-              <Link to="/tools/website-analyzer" className="text-[#A3D1FF] hover:underline">Free Tools</Link>
+              <Link to="/services" className="text-[#A78BFA] hover:underline">Services</Link>
+              <Link to="/work" className="text-[#A78BFA] hover:underline">Portfolio</Link>
+              <Link to="/about" className="text-[#A78BFA] hover:underline">About</Link>
+              <Link to="/contact" className="text-[#A78BFA] hover:underline">Contact</Link>
+              <Link to="/blog" className="text-[#A78BFA] hover:underline">Blog</Link>
+              <Link to="/tools/website-analyzer" className="text-[#A78BFA] hover:underline">Free Tools</Link>
             </div>
           </div>
         </div>
@@ -91,8 +91,8 @@ export function RedirectPage({ permanent = false }) {
       
       <div className="min-h-screen flex items-center justify-center bg-black px-4">
         <div className="max-w-md text-center">
-          <div className="w-20 h-20 bg-[#A3D1FF]/20 rounded-full flex items-center justify-center mx-auto mb-6">
-            <MoveRight className="h-10 w-10 text-[#A3D1FF]" />
+          <div className="w-20 h-20 bg-[#A78BFA]/20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <MoveRight className="h-10 w-10 text-[#A78BFA]" />
           </div>
           <h1 className="text-4xl font-bold text-white mb-4">{statusCode}</h1>
           <h2 className="text-2xl font-semibold text-white mb-6">
@@ -101,7 +101,7 @@ export function RedirectPage({ permanent = false }) {
           <p className="text-gray-400 mb-2">
             You are being redirected to:
           </p>
-          <p className="text-[#A3D1FF] mb-8 break-all">
+          <p className="text-[#A78BFA] mb-8 break-all">
             {redirectUrl}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -114,7 +114,7 @@ export function RedirectPage({ permanent = false }) {
             </button>
             <a 
               href={redirectUrl}
-              className="inline-flex items-center px-6 py-3 bg-[#A3D1FF] text-black rounded-lg hover:bg-[#92bce6] transition-colors"
+              className="inline-flex items-center px-6 py-3 bg-[#A78BFA] text-black rounded-lg hover:bg-[#8B5CF6] transition-colors"
             >
               Continue
               <MoveRight className="ml-2 w-5 h-5" />

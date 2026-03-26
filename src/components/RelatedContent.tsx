@@ -48,17 +48,17 @@ export default function RelatedContent({
             <Link
               key={item.href}
               to={item.href}
-              className="block p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A3D1FF] transition-all group"
+              className="block p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A78BFA] transition-all group"
               title={`Read about ${item.title}`}
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-white font-medium group-hover:text-[#A3D1FF] transition-colors">
+                  <h3 className="text-white font-medium group-hover:text-[#A78BFA] transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-gray-400 text-sm mt-1">{item.description}</p>
                 </div>
-                <ArrowRight className="w-5 h-5 text-[#A3D1FF] group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-5 h-5 text-[#A78BFA] group-hover:translate-x-1 transition-transform" />
               </div>
             </Link>
           ))}

@@ -9,11 +9,11 @@ function FeatureCard({ icon: Icon, title, description }: {
   description: string;
 }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group">
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all group">
       <div className="relative mb-6">
-        <div className="absolute inset-0 bg-[#A3D1FF]/20 blur-xl rounded-full"></div>
-        <div className="bg-[#A3D1FF]/10 p-4 rounded-xl relative">
-          <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
+        <div className="absolute inset-0 bg-[#A78BFA]/20 blur-xl rounded-full"></div>
+        <div className="bg-[#A78BFA]/10 p-4 rounded-xl relative">
+          <Icon className="w-8 h-8 text-[#A78BFA] group-hover:scale-110 transition-transform" />
         </div>
       </div>
       <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
@@ -24,8 +24,8 @@ function FeatureCard({ icon: Icon, title, description }: {
 
 function StatCard({ value, label }: { value: string; label: string }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center">
-      <div className="text-4xl font-bold text-[#A3D1FF] mb-2">{value}</div>
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all text-center">
+      <div className="text-4xl font-bold text-[#A78BFA] mb-2">{value}</div>
       <div className="text-gray-400">{label}</div>
     </div>
   );
@@ -51,8 +51,8 @@ export default function StartupMVPPage() {
         {/* Content */}
         <div className="container-custom relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm rounded-full px-4 py-2 border border-white/10 hover:border-[#A3D1FF] transition-all duration-300 mb-6">
-              <span className="text-[#A3D1FF] text-sm font-medium">MVP Development Services</span>
+            <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm rounded-full px-4 py-2 border border-white/10 hover:border-[#A78BFA] transition-all duration-300 mb-6">
+              <span className="text-[#A78BFA] text-sm font-medium">MVP Development Services</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               Launch Your Startup MVP in 30 Days
@@ -129,31 +129,31 @@ export default function StartupMVPPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10">
               <h3 className="text-2xl font-bold text-white mb-2">Validation Sprint</h3>
-              <div className="text-4xl font-bold text-[#A3D1FF] mb-4">$4,999</div>
+              <div className="text-4xl font-bold text-[#A78BFA] mb-4">$4,999</div>
               <p className="text-gray-400 mb-6">Quick validation of your startup idea</p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <strong>Launch in just 14 days</strong>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <strong>Core feature development</strong>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <strong>User authentication system</strong>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <strong>Conversion-optimized landing page</strong>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <strong>Analytics for user insights</strong>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <strong>2-week delivery</strong>
                 </li>
               </ul>
@@ -170,31 +170,31 @@ export default function StartupMVPPage() {
 
             <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10">
               <h3 className="text-2xl font-bold text-white mb-2">MVP Launch</h3>
-              <div className="text-4xl font-bold text-[#A3D1FF] mb-4">$14,999</div>
+              <div className="text-4xl font-bold text-[#A78BFA] mb-4">$14,999</div>
               <p className="text-gray-400 mb-6">Complete MVP development and launch</p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <strong>Investor-ready completion</strong>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <strong>Full feature set implementation</strong>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <strong>Comprehensive user management</strong>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <strong>Admin dashboard with analytics</strong>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <strong>Payment integration system</strong>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <strong>6-8 week delivery</strong>
                 </li>
               </ul>
@@ -211,31 +211,31 @@ export default function StartupMVPPage() {
 
             <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10">
               <h3 className="text-2xl font-bold text-white mb-2">Startup Growth</h3>
-              <div className="text-4xl font-bold text-[#A3D1FF] mb-4">Custom</div>
+              <div className="text-4xl font-bold text-[#A78BFA] mb-4">Custom</div>
               <p className="text-gray-400 mb-6">Comprehensive development and coaching</p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <strong>Investor-ready solution</strong>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <strong>Custom development roadmap</strong>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <strong>Technical strategy & architecture</strong>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <strong>Weekly founder coaching sessions</strong>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <strong>Scalable infrastructure setup</strong>
                 </li>
                 <li className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <strong>Custom timeline & support</strong>
                 </li>
               </ul>

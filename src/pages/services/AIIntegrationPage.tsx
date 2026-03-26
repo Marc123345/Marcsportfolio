@@ -9,11 +9,11 @@ function FeatureCard({ icon: Icon, title, description }: {
   description: string;
 }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group">
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all group">
       <div className="relative mb-6">
-        <div className="absolute inset-0 bg-[#A3D1FF]/20 blur-xl rounded-full"></div>
-        <div className="bg-[#A3D1FF]/10 p-4 rounded-xl relative">
-          <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
+        <div className="absolute inset-0 bg-[#A78BFA]/20 blur-xl rounded-full"></div>
+        <div className="bg-[#A78BFA]/10 p-4 rounded-xl relative">
+          <Icon className="w-8 h-8 text-[#A78BFA] group-hover:scale-110 transition-transform" />
         </div>
       </div>
       <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
@@ -29,7 +29,7 @@ function ProcessStep({ number, title, description }: {
 }) {
   return (
     <div className="flex items-start">
-      <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
+      <div className="bg-[#A78BFA] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
         {number}
       </div>
       <div>
@@ -149,7 +149,7 @@ export default function AIIntegrationPage() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">Our AI Services</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all">
+            <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all">
               <h3 className="text-2xl font-bold text-white mb-4">AI Integration Services</h3>
               <p className="text-gray-400 mb-6"><strong className="text-white">Faster development</strong> by connecting AI capabilities with your existing systems.</p>
               <ul className="space-y-3">
@@ -160,13 +160,13 @@ export default function AIIntegrationPage() {
                   "Automated AI workflows reducing manual tasks"
                 ].map((feature, index) => (
                   <li key={index} className="flex items-center text-gray-300">
-                    <ArrowRight className="w-4 h-4 text-[#A3D1FF] mr-2" />
+                    <ArrowRight className="w-4 h-4 text-[#A78BFA] mr-2" />
                     <strong>{feature}</strong>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all">
+            <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all">
               <h3 className="text-2xl font-bold text-white mb-4">Machine Learning & Data Services</h3>
               <p className="text-gray-400 mb-6"><strong className="text-white">Extract more value</strong> from your data with comprehensive ML solutions.</p>
               <ul className="space-y-3">
@@ -177,13 +177,13 @@ export default function AIIntegrationPage() {
                   "Scalable data pipelines processing many records daily"
                 ].map((feature, index) => (
                   <li key={index} className="flex items-center text-gray-300">
-                    <ArrowRight className="w-4 h-4 text-[#A3D1FF] mr-2" />
+                    <ArrowRight className="w-4 h-4 text-[#A78BFA] mr-2" />
                     <strong>{feature}</strong>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all">
+            <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all">
               <h3 className="text-2xl font-bold text-white mb-4">Process Automation</h3>
               <p className="text-gray-400 mb-6"><strong className="text-white">Reduction in operational costs</strong> through intelligent automation.</p>
               <ul className="space-y-3">
@@ -194,13 +194,13 @@ export default function AIIntegrationPage() {
                   "RPA + AI integration for end-to-end automation"
                 ].map((feature, index) => (
                   <li key={index} className="flex items-center text-gray-300">
-                    <ArrowRight className="w-4 h-4 text-[#A3D1FF] mr-2" />
+                    <ArrowRight className="w-4 h-4 text-[#A78BFA] mr-2" />
                     <strong>{feature}</strong>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all">
+            <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all">
               <h3 className="text-2xl font-bold text-white mb-4">AI-Powered Chat & Support</h3>
               <p className="text-gray-400 mb-6"><strong className="text-white">Resolve inquiries automatically</strong> with conversational AI.</p>
               <ul className="space-y-3">
@@ -211,7 +211,7 @@ export default function AIIntegrationPage() {
                   "Knowledge base integration with high query resolution"
                 ].map((feature, index) => (
                   <li key={index} className="flex items-center text-gray-300">
-                    <ArrowRight className="w-4 h-4 text-[#A3D1FF] mr-2" />
+                    <ArrowRight className="w-4 h-4 text-[#A78BFA] mr-2" />
                     <strong>{feature}</strong>
                   </li>
                 ))}
@@ -233,7 +233,7 @@ export default function AIIntegrationPage() {
               </p>
               <div className="flex flex-wrap gap-2">
                 {['Machine Learning', 'API Integration', 'Data Processing'].map((tag) => (
-                  <span key={tag} className="px-3 py-1 bg-white/5 rounded-full text-sm text-[#A3D1FF]">
+                  <span key={tag} className="px-3 py-1 bg-white/5 rounded-full text-sm text-[#A78BFA]">
                     {tag}
                   </span>
                 ))}
@@ -246,7 +246,7 @@ export default function AIIntegrationPage() {
               </p>
               <div className="flex flex-wrap gap-2">
                 {['NLP', 'Conversational AI', 'Knowledge Base Integration'].map((tag) => (
-                  <span key={tag} className="px-3 py-1 bg-white/5 rounded-full text-sm text-[#A3D1FF]">
+                  <span key={tag} className="px-3 py-1 bg-white/5 rounded-full text-sm text-[#A78BFA]">
                     {tag}
                   </span>
                 ))}

@@ -67,7 +67,7 @@ export default function MobileFirstDesignPrinciplesPage() {
         <div className="max-w-4xl mx-auto">
           <button 
             onClick={() => navigate('/blog')}
-            className="flex items-center gap-2 text-[#A3D1FF] hover:underline mb-6"
+            className="flex items-center gap-2 text-[#A78BFA] hover:underline mb-6"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Blog
@@ -274,7 +274,7 @@ font-size: clamp(1rem, 0.5rem + 2vw, 1.5rem);`}
               <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#0077B5]/20 text-[#0077B5] transition-colors">
                 <Linkedin className="w-5 h-5" />
               </button>
-              <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#A3D1FF]/20 text-[#A3D1FF] transition-colors">
+              <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#A78BFA]/20 text-[#A78BFA] transition-colors">
                 <Link className="w-5 h-5" />
               </button>
             </div>
@@ -284,7 +284,7 @@ font-size: clamp(1rem, 0.5rem + 2vw, 1.5rem);`}
           <div className="mt-12 pt-8 border-t border-white/10">
             <h3 className="text-2xl font-semibold text-white mb-6">Related Articles</h3>
             <div className="grid sm:grid-cols-2 gap-6">
-              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group">
+              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group">
                 <div className="aspect-[16/9] overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2000&q=80" 
@@ -293,11 +293,11 @@ font-size: clamp(1rem, 0.5rem + 2vw, 1.5rem);`}
                   />
                 </div>
                 <div className="p-6">
-                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">7 Proven Conversion Rate Optimization Techniques for 2025</h4>
+                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A78BFA] transition-colors">7 Proven Conversion Rate Optimization Techniques for 2025</h4>
                   <p className="text-gray-400 text-sm mb-4">Discover actionable strategies to boost your website's conversion rates and drive more business growth.</p>
                   <button 
                     onClick={() => navigate('/blog/conversion-rate-optimization-techniques')}
-                    className="text-[#A3D1FF] text-sm flex items-center gap-1 hover:underline"
+                    className="text-[#A78BFA] text-sm flex items-center gap-1 hover:underline"
                   >
                     Read Article
                     <ArrowRight className="w-3 h-3" />
@@ -305,7 +305,7 @@ font-size: clamp(1rem, 0.5rem + 2vw, 1.5rem);`}
                 </div>
               </div>
               
-              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group">
+              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group">
                 <div className="aspect-[16/9] overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=2000&q=80" 
@@ -314,11 +314,11 @@ font-size: clamp(1rem, 0.5rem + 2vw, 1.5rem);`}
                   />
                 </div>
                 <div className="p-6">
-                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">Optimizing Your Website for AI Crawlers: The Complete Guide</h4>
+                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A78BFA] transition-colors">Optimizing Your Website for AI Crawlers: The Complete Guide</h4>
                   <p className="text-gray-400 text-sm mb-4">As AI becomes more integrated into search, learn how to optimize your website for AI crawlers to improve visibility.</p>
                   <button 
                     onClick={() => navigate('/blog/optimizing-websites-for-ai-crawlers')}
-                    className="text-[#A3D1FF] text-sm flex items-center gap-1 hover:underline"
+                    className="text-[#A78BFA] text-sm flex items-center gap-1 hover:underline"
                   >
                     Read Article
                     <ArrowRight className="w-3 h-3" />

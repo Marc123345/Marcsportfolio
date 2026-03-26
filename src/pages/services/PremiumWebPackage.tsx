@@ -82,7 +82,7 @@ export default function PremiumWebPackage() {
         <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0a0a0a] to-black"></div>
 
         <div className="container-custom relative z-10 text-center">
-          <div className="inline-block px-4 py-2 bg-[#A3D1FF]/10 border border-[#A3D1FF]/20 rounded-full text-[#A3D1FF] text-sm font-medium mb-6">
+          <div className="inline-block px-4 py-2 bg-[#A78BFA]/10 border border-[#A78BFA]/20 rounded-full text-[#A78BFA] text-sm font-medium mb-6">
             Premium Package
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -91,7 +91,7 @@ export default function PremiumWebPackage() {
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
             A complete, high-end website solution tailored for law firms, SaaS startups, and media teams
           </p>
-          <div className="text-5xl font-bold text-[#A3D1FF] mb-8">
+          <div className="text-5xl font-bold text-[#A78BFA] mb-8">
             $8,000
           </div>
           <button
@@ -128,7 +128,7 @@ export default function PremiumWebPackage() {
               <ul className="space-y-4">
                 {includedFeatures.map((feature, index) => (
                   <li key={index} className="flex items-start">
-                    <Check className="w-6 h-6 text-[#A3D1FF] mr-3 mt-0.5 flex-shrink-0" />
+                    <Check className="w-6 h-6 text-[#A78BFA] mr-3 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-300">{feature}</span>
                   </li>
                 ))}
@@ -140,7 +140,7 @@ export default function PremiumWebPackage() {
               <ul className="space-y-4">
                 {optionalAddons.map((addon, index) => (
                   <li key={index} className="flex items-start">
-                    <Check className="w-6 h-6 text-[#A3D1FF]/60 mr-3 mt-0.5 flex-shrink-0" />
+                    <Check className="w-6 h-6 text-[#A78BFA]/60 mr-3 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-400">{addon}</span>
                   </li>
                 ))}
@@ -161,7 +161,7 @@ export default function PremiumWebPackage() {
             {relatedServices.map((service, index) => (
               <span
                 key={index}
-                className="px-4 py-2 bg-[#1b1b1b] border border-white/10 rounded-lg text-gray-300 text-sm hover:border-[#A3D1FF] hover:text-[#A3D1FF] transition-colors cursor-pointer"
+                className="px-4 py-2 bg-[#1b1b1b] border border-white/10 rounded-lg text-gray-300 text-sm hover:border-[#A78BFA] hover:text-[#A78BFA] transition-colors cursor-pointer"
               >
                 {service.name}
               </span>

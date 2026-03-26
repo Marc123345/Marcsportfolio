@@ -114,8 +114,8 @@ export default function ROICalculator() {
     <div className="bg-[#1b1b1b] rounded-xl border border-white/10 overflow-hidden">
       <div className="p-8">
         <div className="flex items-center gap-3 mb-4">
-          <div className="bg-[#A3D1FF]/10 p-3 rounded-lg">
-            <Calculator className="w-6 h-6 text-[#A3D1FF]" />
+          <div className="bg-[#A78BFA]/10 p-3 rounded-lg">
+            <Calculator className="w-6 h-6 text-[#A78BFA]" />
           </div>
           <h3 className="text-2xl font-bold text-white">Website ROI Calculator</h3>
         </div>
@@ -136,7 +136,7 @@ export default function ROICalculator() {
                     Monthly Visitors
                     <button 
                       type="button" 
-                      className="ml-2 text-gray-400 hover:text-[#A3D1FF]"
+                      className="ml-2 text-gray-400 hover:text-[#A78BFA]"
                       onMouseEnter={() => setActiveTooltip('visitors')}
                       onMouseLeave={() => setActiveTooltip(null)}
                       aria-label="More information about monthly visitors metric"
@@ -145,7 +145,7 @@ export default function ROICalculator() {
                       <Info className="w-4 h-4" />
                     </button>
                   </label>
-                  <span className="text-sm text-[#A3D1FF]">{inputs.monthlyVisitors.toLocaleString()}</span>
+                  <span className="text-sm text-[#A78BFA]">{inputs.monthlyVisitors.toLocaleString()}</span>
                 </div>
                 {activeTooltip === 'visitors' && (
                   <div className="text-xs text-gray-400 mb-2 bg-[#2d3035] p-2 rounded">
@@ -182,7 +182,7 @@ export default function ROICalculator() {
                     Current Conversion Rate (%)
                     <button 
                       type="button" 
-                      className="ml-2 text-gray-400 hover:text-[#A3D1FF]"
+                      className="ml-2 text-gray-400 hover:text-[#A78BFA]"
                       onMouseEnter={() => setActiveTooltip('conversion')}
                       onMouseLeave={() => setActiveTooltip(null)}
                       aria-label="More information about conversion rate metric"
@@ -191,7 +191,7 @@ export default function ROICalculator() {
                       <Info className="w-4 h-4" />
                     </button>
                   </label>
-                  <span className="text-sm text-[#A3D1FF]">{inputs.conversionRate.toFixed(1)}%</span>
+                  <span className="text-sm text-[#A78BFA]">{inputs.conversionRate.toFixed(1)}%</span>
                 </div>
                 {activeTooltip === 'conversion' && (
                   <div className="text-xs text-gray-400 mb-2 bg-[#2d3035] p-2 rounded">
@@ -228,7 +228,7 @@ export default function ROICalculator() {
                     Average Order/Lead Value
                     <button 
                       type="button" 
-                      className="ml-2 text-gray-400 hover:text-[#A3D1FF]"
+                      className="ml-2 text-gray-400 hover:text-[#A78BFA]"
                       onMouseEnter={() => setActiveTooltip('value')}
                       onMouseLeave={() => setActiveTooltip(null)}
                       aria-label="More information about average order value metric"
@@ -237,7 +237,7 @@ export default function ROICalculator() {
                       <Info className="w-4 h-4" />
                     </button>
                   </label>
-                  <span className="text-sm text-[#A3D1FF]">{formatCurrency(inputs.averageValue)}</span>
+                  <span className="text-sm text-[#A78BFA]">{formatCurrency(inputs.averageValue)}</span>
                 </div>
                 {activeTooltip === 'value' && (
                   <div className="text-xs text-gray-400 mb-2 bg-[#2d3035] p-2 rounded">
@@ -274,7 +274,7 @@ export default function ROICalculator() {
                     Website Project Investment
                     <button 
                       type="button" 
-                      className="ml-2 text-gray-400 hover:text-[#A3D1FF]"
+                      className="ml-2 text-gray-400 hover:text-[#A78BFA]"
                       onMouseEnter={() => setActiveTooltip('cost')}
                       onMouseLeave={() => setActiveTooltip(null)}
                       aria-label="More information about project investment metric"
@@ -283,7 +283,7 @@ export default function ROICalculator() {
                       <Info className="w-4 h-4" />
                     </button>
                   </label>
-                  <span className="text-sm text-[#A3D1FF]">{formatCurrency(inputs.projectCost)}</span>
+                  <span className="text-sm text-[#A78BFA]">{formatCurrency(inputs.projectCost)}</span>
                 </div>
                 {activeTooltip === 'cost' && (
                   <div className="text-xs text-gray-400 mb-2 bg-[#2d3035] p-2 rounded">
@@ -328,7 +328,7 @@ export default function ROICalculator() {
                   
                   <div className="bg-[#2d3035] p-4 rounded-lg">
                     <p className="text-sm text-gray-400 mb-1">Projected Monthly Revenue</p>
-                    <p className="text-xl font-bold text-[#A3D1FF]">{formatCurrency(results.projectedMonthlyRevenue)}</p>
+                    <p className="text-xl font-bold text-[#A78BFA]">{formatCurrency(results.projectedMonthlyRevenue)}</p>
                   </div>
                 </div>
                 
@@ -339,27 +339,27 @@ export default function ROICalculator() {
                   </div>
                   <div className="flex items-center justify-between">
                     <p className="text-sm text-gray-400">Projected Conversion Rate</p>
-                    <p className="text-sm font-medium text-[#A3D1FF]">{formatPercent(results.projectedConversionRate)}</p>
+                    <p className="text-sm font-medium text-[#A78BFA]">{formatPercent(results.projectedConversionRate)}</p>
                   </div>
                 </div>
                 
-                <div className="bg-[#A3D1FF]/10 p-4 rounded-lg border border-[#A3D1FF]/30">
+                <div className="bg-[#A78BFA]/10 p-4 rounded-lg border border-[#A78BFA]/30">
                   <h5 className="font-semibold text-white mb-3">ROI Summary</h5>
                   
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <p className="text-gray-300">Additional Annual Revenue</p>
-                      <p className="font-bold text-[#A3D1FF]">{formatCurrency(results.additionalAnnualRevenue)}</p>
+                      <p className="font-bold text-[#A78BFA]">{formatCurrency(results.additionalAnnualRevenue)}</p>
                     </div>
                     
                     <div className="flex items-center justify-between">
                       <p className="text-gray-300">Return on Investment</p>
-                      <p className="font-bold text-[#A3D1FF]">{formatPercent(results.roi)}</p>
+                      <p className="font-bold text-[#A78BFA]">{formatPercent(results.roi)}</p>
                     </div>
                     
                     <div className="flex items-center justify-between">
                       <p className="text-gray-300">Payback Period</p>
-                      <p className="font-bold text-[#A3D1FF]">{formatMonths(results.paybackPeriod)}</p>
+                      <p className="font-bold text-[#A78BFA]">{formatMonths(results.paybackPeriod)}</p>
                     </div>
                   </div>
                 </div>

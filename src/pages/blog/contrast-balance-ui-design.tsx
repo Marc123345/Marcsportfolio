@@ -68,7 +68,7 @@ export default function ContrastBalanceUIDesignPage() {
         <div className="max-w-4xl mx-auto">
           <button 
             onClick={() => navigate('/blog')}
-            className="flex items-center gap-2 text-[#A3D1FF] hover:underline mb-6"
+            className="flex items-center gap-2 text-[#A78BFA] hover:underline mb-6"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Blog
@@ -127,7 +127,7 @@ export default function ContrastBalanceUIDesignPage() {
             
             <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 my-8">
               <h4 className="text-white font-semibold mb-2 flex items-center">
-                <Eye className="w-5 h-5 text-[#A3D1FF] mr-2" />
+                <Eye className="w-5 h-5 text-[#A78BFA] mr-2" />
                 Practical Contrast Testing
               </h4>
               <p className="text-gray-300 mb-4">Use tools like WebAIM's Contrast Checker or Stark (Figma plugin) to verify your contrast ratios. But don't stop at automated testing—view your interface in different lighting conditions and on various devices to ensure real-world usability.</p>
@@ -146,7 +146,7 @@ export default function ContrastBalanceUIDesignPage() {
 }
 
 .accent-text {
-  color: #A3D1FF; /* Brand blue */
+  color: #A78BFA; /* Brand blue */
   background-color: #1a1a1a; /* Dark background */
   /* Contrast ratio: 8.2:1 (Excellent) */
 }`}
@@ -206,7 +206,7 @@ export default function ContrastBalanceUIDesignPage() {
 }
 
 .input-field:focus {
-  border-color: #A3D1FF;
+  border-color: #A78BFA;
   outline: none;
 }`}
               </pre>
@@ -511,7 +511,7 @@ export default function ContrastBalanceUIDesignPage() {
               <pre className="text-xs text-gray-300 overflow-x-auto">
 {`.button {
   /* Default state */
-  background-color: #A3D1FF;
+  background-color: #A78BFA;
   color: #000000;
   border: 2px solid transparent;
   transition: all 0.2s ease;
@@ -519,14 +519,14 @@ export default function ContrastBalanceUIDesignPage() {
 
 .button:hover {
   /* Hover state - increased contrast */
-  background-color: #92bce6;
+  background-color: #8B5CF6;
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(163, 209, 255, 0.3);
 }
 
 .button:focus {
   /* Focus state - high contrast outline */
-  outline: 2px solid #A3D1FF;
+  outline: 2px solid #A78BFA;
   outline-offset: 2px;
 }
 
@@ -630,7 +630,7 @@ export default function ContrastBalanceUIDesignPage() {
               <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#0077B5]/20 text-[#0077B5] transition-colors">
                 <Linkedin className="w-5 h-5" />
               </button>
-              <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#A3D1FF]/20 text-[#A3D1FF] transition-colors">
+              <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#A78BFA]/20 text-[#A78BFA] transition-colors">
                 <Link className="w-5 h-5" />
               </button>
             </div>
@@ -640,7 +640,7 @@ export default function ContrastBalanceUIDesignPage() {
           <div className="mt-12 pt-8 border-t border-white/10">
             <h3 className="text-2xl font-semibold text-white mb-6">Related Articles</h3>
             <div className="grid sm:grid-cols-2 gap-6">
-              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group">
+              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group">
                 <div className="aspect-[16/9] overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=2000&q=80" 
@@ -649,11 +649,11 @@ export default function ContrastBalanceUIDesignPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">UI Polish: Mastering Visual Realism in Modern Interface Design</h4>
+                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A78BFA] transition-colors">UI Polish: Mastering Visual Realism in Modern Interface Design</h4>
                   <p className="text-gray-400 text-sm mb-4">Explore the art of UI polish through visual realism, lighting metaphors, and design choices inspired by physical materials.</p>
                   <button 
                     onClick={() => navigate('/blog/ui-polish-visual-realism')}
-                    className="text-[#A3D1FF] text-sm flex items-center gap-1 hover:underline"
+                    className="text-[#A78BFA] text-sm flex items-center gap-1 hover:underline"
                   >
                     Read Article
                     <ArrowRight className="w-3 h-3" />
@@ -661,7 +661,7 @@ export default function ContrastBalanceUIDesignPage() {
                 </div>
               </div>
               
-              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group">
+              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group">
                 <div className="aspect-[16/9] overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?auto=format&fit=crop&w=2000&q=80" 
@@ -670,11 +670,11 @@ export default function ContrastBalanceUIDesignPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">Building Data-Driven Design Systems for Scale</h4>
+                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A78BFA] transition-colors">Building Data-Driven Design Systems for Scale</h4>
                   <p className="text-gray-400 text-sm mb-4">Learn how to create and maintain scalable design systems that evolve with your product needs.</p>
                   <button 
                     onClick={() => navigate('/blog/building-data-driven-design-systems')}
-                    className="text-[#A3D1FF] text-sm flex items-center gap-1 hover:underline"
+                    className="text-[#A78BFA] text-sm flex items-center gap-1 hover:underline"
                   >
                     Read Article
                     <ArrowRight className="w-3 h-3" />

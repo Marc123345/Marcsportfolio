@@ -395,7 +395,7 @@ export default function Layout() {
             <div className="flex items-center gap-4">
               <button 
                 onClick={() => setMenuOpen(!isMenuOpen)}
-                className="p-2 text-white hover:text-[#A3D1FF] transition-colors"
+                className="p-2 text-white hover:text-[#A78BFA] transition-colors"
                 aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={isMenuOpen}
                 title={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
@@ -445,7 +445,7 @@ export default function Layout() {
                   <nav className="space-y-[1.618rem]" aria-label="Main Navigation">
                     <Link
                       to="/"
-                      className="block px-4 py-[0.618rem] text-lg font-semibold text-white hover:text-[#A3D1FF] transition-colors"
+                      className="block px-4 py-[0.618rem] text-lg font-semibold text-white hover:text-[#A78BFA] transition-colors"
                       onClick={() => setMenuOpen(false)}
                     >
                       Home
@@ -456,7 +456,7 @@ export default function Layout() {
                           <div className="space-y-[1.618rem]">
                             <button
                               onClick={() => toggleMobileSection(item.label)}
-                              className="w-full flex items-center justify-between px-4 py-[0.618rem] text-lg font-semibold text-white hover:text-[#A3D1FF] transition-colors"
+                              className="w-full flex items-center justify-between px-4 py-[0.618rem] text-lg font-semibold text-white hover:text-[#A78BFA] transition-colors"
                               aria-expanded={expandedMobileSection === item.label}
                               aria-controls={`menu-${item.label.toLowerCase()}`}
                             >
@@ -481,7 +481,7 @@ export default function Layout() {
                                   {item.children.map((section, idx) => (
                                     <div key={idx}>
                                       <div className="px-4 py-2">
-                                        <h3 className="text-sm font-semibold text-[#A3D1FF] mb-1">
+                                        <h3 className="text-sm font-semibold text-[#A78BFA] mb-1">
                                           {section.title}
                                         </h3>
                                         {section.description && (
@@ -497,7 +497,7 @@ export default function Layout() {
                                               onClick={() => setMenuOpen(false)}
                                             >
                                               <div className="flex items-center justify-between">
-                                                <span className="block font-medium group-hover:text-[#A3D1FF] transition-colors">{subItem.label}</span>
+                                                <span className="block font-medium group-hover:text-[#A78BFA] transition-colors">{subItem.label}</span>
                                                 <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                                               </div>
                                               {subItem.description && (
@@ -518,13 +518,13 @@ export default function Layout() {
                         ) : (
                           <Link
                             to={item.to || '/'}
-                            className="flex items-center justify-between px-4 py-[0.618rem] text-lg font-semibold text-white hover:text-[#A3D1FF] transition-colors"
+                            className="flex items-center justify-between px-4 py-[0.618rem] text-lg font-semibold text-white hover:text-[#A78BFA] transition-colors"
                             onClick={() => setMenuOpen(false)}
                           >
                             <span>{item.label}</span>
                             <div className="flex items-center gap-2">
                               {item.badge && (
-                                <span className="px-2 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-xs">
+                                <span className="px-2 py-1 bg-[#A78BFA]/10 text-[#A78BFA] rounded-full text-xs">
                                   {item.badge}
                                 </span>
                               )}

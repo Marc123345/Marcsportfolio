@@ -103,7 +103,7 @@ export default function ProjectCard3D({
   return (
     <motion.div
       ref={cardRef}
-      className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group h-full"
+      className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group h-full"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ 
@@ -159,7 +159,7 @@ export default function ProjectCard3D({
         <div className="space-y-2 mb-3 sm:mb-4">
           {impact.slice(0, 2).map((item, index) => (
             <div key={index} className="flex items-start text-xs">
-              <CheckCircle2 className="w-3 h-3 sm:w-4 sm:h-4 text-[#A3D1FF] mt-0.5 mr-1 sm:mr-2 flex-shrink-0" />
+              <CheckCircle2 className="w-3 h-3 sm:w-4 sm:h-4 text-[#A78BFA] mt-0.5 mr-1 sm:mr-2 flex-shrink-0" />
               <span className="text-gray-300">{item}</span>
             </div>
           ))}
@@ -169,13 +169,13 @@ export default function ProjectCard3D({
           {technologies.slice(0, 3).map((tech, index) => (
             <span 
               key={index} 
-              className="px-2 sm:px-3 py-0.5 bg-white/5 text-[#A3D1FF] rounded-full text-xs sm:text-sm"
+              className="px-2 sm:px-3 py-0.5 bg-white/5 text-[#A78BFA] rounded-full text-xs sm:text-sm"
             >
               {tech}
             </span>
           ))}
           {technologies.length > 3 && (
-            <span className="px-2 py-0.5 bg-white/5 text-[#A3D1FF] rounded-full text-xs">
+            <span className="px-2 py-0.5 bg-white/5 text-[#A78BFA] rounded-full text-xs">
               +{technologies.length - 3}
             </span>
           )}

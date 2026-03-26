@@ -29,7 +29,7 @@ export default function PortfolioFilter({
       {/* Mobile Filter Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden flex items-center gap-2 px-4 py-2 bg-[#1b1b1b] text-white rounded-lg border border-white/10 hover:border-[#A3D1FF] transition-colors"
+        className="md:hidden flex items-center gap-2 px-4 py-2 bg-[#1b1b1b] text-white rounded-lg border border-white/10 hover:border-[#A78BFA] transition-colors"
         aria-expanded={isOpen}
         aria-controls="filter-dropdown"
       >
@@ -58,7 +58,7 @@ export default function PortfolioFilter({
                   }}
                   className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
                     activeFilter === option.id
-                      ? 'bg-[#A3D1FF] text-black'
+                      ? 'bg-[#A78BFA] text-black'
                       : 'text-gray-300 hover:bg-white/5'
                   }`}
                 >
@@ -78,7 +78,7 @@ export default function PortfolioFilter({
             onClick={() => onChange(option.id)}
             className={`px-6 py-2 rounded-full transition-all duration-300 ${
               activeFilter === option.id
-                ? 'bg-[#A3D1FF] text-black'
+                ? 'bg-[#A78BFA] text-black'
                 : 'bg-white/5 text-gray-300 hover:bg-white/10'
             }`}
           >

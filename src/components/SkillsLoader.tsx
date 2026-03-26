@@ -55,64 +55,64 @@ export default function SkillsLoader() {
   return (
     <div 
       ref={loaderRef}
-      className="bg-[#1b1b1b] p-4 sm:p-6 md:p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all transform hover:-translate-y-1 duration-300"
+      className="bg-[#1b1b1b] p-4 sm:p-6 md:p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all transform hover:-translate-y-1 duration-300"
     >
       <div className="flex items-center justify-between mb-4 sm:mb-6">
         <div className="flex items-center gap-2 sm:gap-3">
           {currentPhase === 'design' ? (
-            <Paintbrush className="w-5 h-5 sm:w-6 sm:h-6 text-[#A3D1FF]" />
+            <Paintbrush className="w-5 h-5 sm:w-6 sm:h-6 text-[#A78BFA]" />
           ) : (
-            <Code className="w-5 h-5 sm:w-6 sm:h-6 text-[#A3D1FF]" />
+            <Code className="w-5 h-5 sm:w-6 sm:h-6 text-[#A78BFA]" />
           )}
           <span className="text-white font-semibold text-sm sm:text-base">
             {currentPhase === 'design' ? 'Designing' : 'Coding'} in Progress...
           </span>
         </div>
-        <span className="text-[#A3D1FF] font-mono text-sm sm:text-base">{progress}%</span>
+        <span className="text-[#A78BFA] font-mono text-sm sm:text-base">{progress}%</span>
       </div>
 
       {/* Progress Bar */}
       <div className="h-2 sm:h-3 bg-white/10 rounded-full overflow-hidden mb-3 sm:mb-4">
         <div 
-          className="h-full bg-gradient-to-r from-[#A3D1FF] to-[#92bce6] rounded-full transition-all duration-300 relative"
+          className="h-full bg-gradient-to-r from-[#A78BFA] to-[#8B5CF6] rounded-full transition-all duration-300 relative"
           style={{ width: `${progress}%` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-[#A3D1FF]/0 via-white/20 to-[#A3D1FF]/0 animate-[shine_1s_ease-in-out_infinite]"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#A78BFA]/0 via-white/20 to-[#A78BFA]/0 animate-[shine_1s_ease-in-out_infinite]"></div>
         </div>
       </div>
 
       {/* Phases */}
       <div className="grid grid-cols-2 gap-3 sm:gap-4">
-        <div className={`p-3 sm:p-4 rounded-lg ${currentPhase === 'design' ? 'bg-[#A3D1FF]/10 border border-[#A3D1FF]' : 'bg-white/5'}`}>
+        <div className={`p-3 sm:p-4 rounded-lg ${currentPhase === 'design' ? 'bg-[#A78BFA]/10 border border-[#A78BFA]' : 'bg-white/5'}`}>
           <div className="flex items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
-            <Paintbrush className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${currentPhase === 'design' ? 'text-[#A3D1FF]' : 'text-gray-400'}`} />
-            <span className={`text-xs sm:text-sm ${currentPhase === 'design' ? 'text-[#A3D1FF]' : 'text-gray-400'}`}>Design Phase</span>
+            <Paintbrush className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${currentPhase === 'design' ? 'text-[#A78BFA]' : 'text-gray-400'}`} />
+            <span className={`text-xs sm:text-sm ${currentPhase === 'design' ? 'text-[#A78BFA]' : 'text-gray-400'}`}>Design Phase</span>
           </div>
           <ul className="space-y-1 text-xs sm:text-sm">
-            <li className={`flex items-center gap-1.5 sm:gap-2 ${progress >= 20 ? 'text-[#A3D1FF]' : 'text-gray-500'}`}>
+            <li className={`flex items-center gap-1.5 sm:gap-2 ${progress >= 20 ? 'text-[#A78BFA]' : 'text-gray-500'}`}>
               ✓ User Research
             </li>
-            <li className={`flex items-center gap-1.5 sm:gap-2 ${progress >= 30 ? 'text-[#A3D1FF]' : 'text-gray-500'}`}>
+            <li className={`flex items-center gap-1.5 sm:gap-2 ${progress >= 30 ? 'text-[#A78BFA]' : 'text-gray-500'}`}>
               ✓ Wireframing
             </li>
-            <li className={`flex items-center gap-1.5 sm:gap-2 ${progress >= 40 ? 'text-[#A3D1FF]' : 'text-gray-500'}`}>
+            <li className={`flex items-center gap-1.5 sm:gap-2 ${progress >= 40 ? 'text-[#A78BFA]' : 'text-gray-500'}`}>
               ✓ UI Design
             </li>
           </ul>
         </div>
-        <div className={`p-3 sm:p-4 rounded-lg ${currentPhase === 'code' ? 'bg-[#A3D1FF]/10 border border-[#A3D1FF]' : 'bg-white/5'}`}>
+        <div className={`p-3 sm:p-4 rounded-lg ${currentPhase === 'code' ? 'bg-[#A78BFA]/10 border border-[#A78BFA]' : 'bg-white/5'}`}>
           <div className="flex items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
-            <Code className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${currentPhase === 'code' ? 'text-[#A3D1FF]' : 'text-gray-400'}`} />
-            <span className={`text-xs sm:text-sm ${currentPhase === 'code' ? 'text-[#A3D1FF]' : 'text-gray-400'}`}>Development Phase</span>
+            <Code className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${currentPhase === 'code' ? 'text-[#A78BFA]' : 'text-gray-400'}`} />
+            <span className={`text-xs sm:text-sm ${currentPhase === 'code' ? 'text-[#A78BFA]' : 'text-gray-400'}`}>Development Phase</span>
           </div>
           <ul className="space-y-1 text-xs sm:text-sm">
-            <li className={`flex items-center gap-1.5 sm:gap-2 ${progress >= 60 ? 'text-[#A3D1FF]' : 'text-gray-500'}`}>
+            <li className={`flex items-center gap-1.5 sm:gap-2 ${progress >= 60 ? 'text-[#A78BFA]' : 'text-gray-500'}`}>
               ✓ Frontend
             </li>
-            <li className={`flex items-center gap-1.5 sm:gap-2 ${progress >= 80 ? 'text-[#A3D1FF]' : 'text-gray-500'}`}>
+            <li className={`flex items-center gap-1.5 sm:gap-2 ${progress >= 80 ? 'text-[#A78BFA]' : 'text-gray-500'}`}>
               ✓ Backend
             </li>
-            <li className={`flex items-center gap-1.5 sm:gap-2 ${progress >= 90 ? 'text-[#A3D1FF]' : 'text-gray-500'}`}>
+            <li className={`flex items-center gap-1.5 sm:gap-2 ${progress >= 90 ? 'text-[#A78BFA]' : 'text-gray-500'}`}>
               ✓ Testing
             </li>
           </ul>
@@ -121,7 +121,7 @@ export default function SkillsLoader() {
 
       {/* Completion Message */}
       {isComplete && (
-        <div className="mt-3 sm:mt-4 text-center text-[#A3D1FF] font-semibold text-xs sm:text-sm animate-fade-in">
+        <div className="mt-3 sm:mt-4 text-center text-[#A78BFA] font-semibold text-xs sm:text-sm animate-fade-in">
           Project Successfully Completed! 🎉
         </div>
       )}

@@ -71,7 +71,7 @@ export default function CookieBanner() {
         </button>
         <Link
           to="/cookies-policy"
-          className="text-[#A3D1FF] px-4 py-2 text-sm hover:underline"
+          className="text-[#A78BFA] px-4 py-2 text-sm hover:underline"
         >
           Cookie Settings & Policy
         </Link>

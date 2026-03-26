@@ -8,11 +8,11 @@ function FeatureCard({ icon: Icon, title, description }: {
   description: string;
 }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group">
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all group">
       <div className="relative mb-6">
-        <div className="absolute inset-0 bg-[#A3D1FF]/20 blur-xl rounded-full"></div>
-        <div className="bg-[#A3D1FF]/10 p-4 rounded-xl relative">
-          <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
+        <div className="absolute inset-0 bg-[#A78BFA]/20 blur-xl rounded-full"></div>
+        <div className="bg-[#A78BFA]/10 p-4 rounded-xl relative">
+          <Icon className="w-8 h-8 text-[#A78BFA] group-hover:scale-110 transition-transform" />
         </div>
       </div>
       <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
@@ -23,8 +23,8 @@ function FeatureCard({ icon: Icon, title, description }: {
 
 function StatCard({ value, label }: { value: string; label: string }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center">
-      <div className="text-4xl font-bold text-[#A3D1FF] mb-2">{value}</div>
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all text-center">
+      <div className="text-4xl font-bold text-[#A78BFA] mb-2">{value}</div>
       <div className="text-gray-400">{label}</div>
     </div>
   );
@@ -112,7 +112,7 @@ function ILightPage() {
                   'React',
                   'Node.js'
                 ].map((tag) => (
-                  <span key={tag} className="px-4 py-2 bg-white/5 rounded-full text-sm text-[#A3D1FF]">
+                  <span key={tag} className="px-4 py-2 bg-white/5 rounded-full text-sm text-[#A78BFA]">
                     {tag}
                   </span>
                 ))}
@@ -123,19 +123,19 @@ function ILightPage() {
                 <h3 className="text-xl font-semibold text-white mb-4">Healthcare Innovation</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     Improved patient outcomes
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     Streamlined healthcare delivery
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     Enhanced accessibility
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     Data-driven insights
                   </li>
                 </ul>

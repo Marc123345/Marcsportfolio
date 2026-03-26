@@ -93,19 +93,19 @@ export default function WebsiteAnalyzerPage() {
               
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">In-depth analysis of your specific business goals</p>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">Custom conversion strategy tailored to your audience</p>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">Competitive analysis and positioning recommendations</p>
                 </li>
                 <li className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">Actionable roadmap for implementation</p>
                 </li>
               </ul>

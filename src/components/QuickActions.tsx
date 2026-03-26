@@ -21,7 +21,7 @@ export default function QuickActions() {
       label: 'Free Consultation',
       description: 'Get expert advice on your project',
       action: () => navigate('/contact'),
-      color: 'bg-[#A3D1FF]/10 text-[#A3D1FF] hover:bg-[#A3D1FF]/20',
+      color: 'bg-[#A78BFA]/10 text-[#A78BFA] hover:bg-[#A78BFA]/20',
       badge: 'Popular'
     },
     {

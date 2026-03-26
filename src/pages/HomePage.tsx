@@ -186,9 +186,9 @@ export default function HomePage() {
             />
           </motion.div>
 
-          {/* Subtle Gradient Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1a2332]/60 via-transparent to-[#1a2332]/60"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1a2332]/80 via-transparent to-[#1a2332]/40"></div>
+          {/* Stronger Gradient Overlays — headline dominates */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1a2332]/80 via-[#1a2332]/50 to-[#1a2332]/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1a2332]/95 via-[#1a2332]/60 to-[#1a2332]/40"></div>
         </div>
 
         <div className="container mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 relative z-10">
@@ -247,7 +247,7 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <Shield className="w-5 h-5 text-[#A3D1FF]" />
+                  <Shield className="w-5 h-5 text-[#A78BFA]" />
                   <span className="text-white font-bold text-sm uppercase tracking-wider">20+ Verified 5 Star Reviews</span>
                 </div>
 
@@ -322,7 +322,7 @@ export default function HomePage() {
                     <div className="w-7 h-7 rounded-full border-2 border-[#1a2332] overflow-hidden">
                       <img src="https://ik.imagekit.io/qcvroy8xpd/1732338426448%20(1).jpeg?updatedAt=1749337717019" alt="Client" className="w-full h-full object-cover" />
                     </div>
-                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#A3D1FF] to-blue-500 border-2 border-[#1a2332] flex items-center justify-center">
+                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#A78BFA] to-blue-500 border-2 border-[#1a2332] flex items-center justify-center">
                       <span className="text-[9px] font-bold text-white">20+</span>
                     </div>
                   </div>
@@ -350,7 +350,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-6 border-4 border-[#A3D1FF] shadow-lg">
+            <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-6 border-4 border-[#A78BFA] shadow-lg">
               <img
                 src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
                 alt="Marc Friedman - web designer and developer based in Tel Aviv"
@@ -358,7 +358,7 @@ export default function HomePage() {
               />
             </div>
             <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-black mb-6 leading-tight text-white">
-              Featured <span className="text-[#A3D1FF]">Work</span>
+              Featured <span className="text-[#A78BFA]">Work</span>
             </h2>
             <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
               Explore my portfolio of results-driven digital solutions that combine thoughtful design with robust development.
@@ -371,7 +371,7 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-[#1b1b1b] rounded-3xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group mb-12"
+            className="bg-[#1b1b1b] rounded-3xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group mb-12"
           >
             <div className="grid md:grid-cols-2 gap-8">
               <div className="aspect-[16/10] overflow-hidden relative">
@@ -382,26 +382,26 @@ export default function HomePage() {
                 />
               </div>
               <div className="p-8 flex flex-col justify-center">
-                <span className="text-[#A3D1FF] text-sm bg-[#A3D1FF]/10 px-4 py-2 rounded-full inline-block w-fit mb-4">Featured Project</span>
+                <span className="text-[#A78BFA] text-sm bg-[#A78BFA]/10 px-4 py-2 rounded-full inline-block w-fit mb-4">Featured Project</span>
                 <h3 className="text-3xl font-bold text-white mb-4">Untapped Africa</h3>
                 <p className="text-gray-400 mb-6">Revolutionizing water infrastructure solutions across Africa with innovative technology and sustainable practices. A comprehensive platform for project management, data visualization, and community engagement.</p>
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-[#A3D1FF] mr-2" />
+                    <CheckCircle className="w-5 h-5 text-[#A78BFA] mr-2" />
                     <span className="text-gray-300">250% increase in engagement</span>
                   </div>
                   <div className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-[#A3D1FF] mr-2" />
+                    <CheckCircle className="w-5 h-5 text-[#A78BFA] mr-2" />
                     <span className="text-gray-300">8 countries impacted</span>
                   </div>
                   <div className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-[#A3D1FF] mr-2" />
+                    <CheckCircle className="w-5 h-5 text-[#A78BFA] mr-2" />
                     <span className="text-gray-300">500,000+ people served</span>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2 mb-6">
                   {["Next.js", "TypeScript", "Supabase", "Mapbox GL"].map((tech, i) => (
-                    <span key={i} className="px-3 py-1 bg-white/5 text-[#A3D1FF] rounded-full text-sm">{tech}</span>
+                    <span key={i} className="px-3 py-1 bg-white/5 text-[#A78BFA] rounded-full text-sm">{tech}</span>
                   ))}
                 </div>
                 <div className="flex gap-3">
@@ -452,7 +452,7 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="bg-[#1b1b1b] border border-white/10 rounded-2xl overflow-hidden hover:border-[#A3D1FF] transition-all group"
+                className="bg-[#1b1b1b] border border-white/10 rounded-2xl overflow-hidden hover:border-[#A78BFA] transition-all group"
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
@@ -466,10 +466,10 @@ export default function HomePage() {
                   <p className="text-gray-400 text-sm mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.slice(0, 3).map((tech, i) => (
-                      <span key={i} className="px-2 py-1 bg-white/5 text-[#A3D1FF] rounded-full text-xs">{tech}</span>
+                      <span key={i} className="px-2 py-1 bg-white/5 text-[#A78BFA] rounded-full text-xs">{tech}</span>
                     ))}
                     {project.tech.length > 3 && (
-                      <span className="px-2 py-1 bg-white/5 text-[#A3D1FF] rounded-full text-xs">+{project.tech.length - 3}</span>
+                      <span className="px-2 py-1 bg-white/5 text-[#A78BFA] rounded-full text-xs">+{project.tech.length - 3}</span>
                     )}
                   </div>
                   <div className="flex gap-2">
@@ -478,7 +478,7 @@ export default function HomePage() {
                         View Live
                       </a>
                     )}
-                    <Link to={project.caseStudy} className="flex-1 inline-flex items-center justify-center px-4 py-2 bg-[#A3D1FF]/10 text-[#A3D1FF] text-sm rounded-lg hover:bg-[#A3D1FF]/20 transition-all">
+                    <Link to={project.caseStudy} className="flex-1 inline-flex items-center justify-center px-4 py-2 bg-[#A78BFA]/10 text-[#A78BFA] text-sm rounded-lg hover:bg-[#A78BFA]/20 transition-all">
                       Case Study
                     </Link>
                   </div>
@@ -509,7 +509,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-6 border-4 border-[#A3D1FF] shadow-lg">
+            <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-6 border-4 border-[#A78BFA] shadow-lg">
               <img
                 src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
                 alt="Marc Friedman - web designer and developer based in Tel Aviv"
@@ -517,7 +517,7 @@ export default function HomePage() {
               />
             </div>
             <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-black mb-6 leading-tight text-white">
-              Press & <span className="text-[#A3D1FF]">Recognition</span>
+              Press & <span className="text-[#A78BFA]">Recognition</span>
             </h2>
             <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
               Featured in leading design publications and recognized for excellence in web development.
@@ -534,12 +534,12 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="bg-[#1b1b1b] border border-white/10 rounded-2xl overflow-hidden hover:border-[#A3D1FF] transition-all group relative"
+              className="bg-[#1b1b1b] border border-white/10 rounded-2xl overflow-hidden hover:border-[#A78BFA] transition-all group relative"
             >
-              <div className="absolute top-4 right-4 bg-[#A3D1FF] text-black px-3 py-1 rounded-full text-xs font-bold z-10">
+              <div className="absolute top-4 right-4 bg-[#A78BFA] text-black px-3 py-1 rounded-full text-xs font-bold z-10">
                 Featured
               </div>
-              <div className="aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#A3D1FF]/10 to-transparent">
+              <div className="aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#A78BFA]/10 to-transparent">
                 <img
                   src="https://ik.imagekit.io/qcvroy8xpd/Screenshot.png?updatedAt=1754018965491"
                   alt="Untapped Africa Featured on DesignRush"
@@ -551,7 +551,7 @@ export default function HomePage() {
                   <Star className="w-4 h-4 text-[#FFD700]" />
                   <span className="text-xs text-[#FFD700] font-semibold uppercase">Feature</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#A78BFA] transition-colors">
                   Untapped Africa Website Design Featured
                 </h3>
                 <p className="text-gray-400 text-sm mb-4">
@@ -559,7 +559,7 @@ export default function HomePage() {
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-white font-semibold text-sm">DesignRush</span>
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </motion.a>
@@ -573,11 +573,11 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-[#1b1b1b] border border-white/10 rounded-2xl overflow-hidden hover:border-[#A3D1FF] transition-all group"
+              className="bg-[#1b1b1b] border border-white/10 rounded-2xl overflow-hidden hover:border-[#A78BFA] transition-all group"
             >
-              <div className="aspect-[16/10] bg-gradient-to-br from-[#A3D1FF]/5 to-transparent flex items-center justify-center">
+              <div className="aspect-[16/10] bg-gradient-to-br from-[#A78BFA]/5 to-transparent flex items-center justify-center">
                 <div className="text-center p-8">
-                  <Award className="w-16 h-16 text-[#A3D1FF] mx-auto mb-4" />
+                  <Award className="w-16 h-16 text-[#A78BFA] mx-auto mb-4" />
                   <h4 className="text-white font-bold text-lg">Agency Profile</h4>
                 </div>
               </div>
@@ -586,7 +586,7 @@ export default function HomePage() {
                   <Star className="w-4 h-4 text-[#FFD700]" />
                   <span className="text-xs text-[#FFD700] font-semibold uppercase">Profile</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#A78BFA] transition-colors">
                   Marc Friedman Design Agency
                 </h3>
                 <p className="text-gray-400 text-sm mb-4">
@@ -594,7 +594,7 @@ export default function HomePage() {
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-white font-semibold text-sm">DesignRush</span>
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </motion.a>
@@ -608,7 +608,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="bg-[#1b1b1b] border border-white/10 rounded-2xl overflow-hidden hover:border-[#A3D1FF] transition-all group"
+              className="bg-[#1b1b1b] border border-white/10 rounded-2xl overflow-hidden hover:border-[#A78BFA] transition-all group"
             >
               <div className="aspect-[16/10] bg-gradient-to-br from-[#FFB800]/5 to-transparent flex items-center justify-center">
                 <div className="text-center p-8">
@@ -621,7 +621,7 @@ export default function HomePage() {
                   <Award className="w-4 h-4 text-[#FFB800]" />
                   <span className="text-xs text-[#FFB800] font-semibold uppercase">Award</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#A78BFA] transition-colors">
                   Award Recognition
                 </h3>
                 <p className="text-gray-400 text-sm mb-4">
@@ -629,7 +629,7 @@ export default function HomePage() {
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-white font-semibold text-sm">Awwwards</span>
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </motion.a>
@@ -657,7 +657,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-6 border-4 border-[#A3D1FF] shadow-lg">
+            <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-6 border-4 border-[#A78BFA] shadow-lg">
               <img
                 src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
                 alt="Marc Friedman - web designer and developer based in Tel Aviv"
@@ -665,7 +665,7 @@ export default function HomePage() {
               />
             </div>
             <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-black mb-6 leading-tight text-white">
-              How It <span className="text-[#A3D1FF]">Works</span>
+              How It <span className="text-[#A78BFA]">Works</span>
             </h2>
             <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
               Simple. No surprises. Just results.
@@ -696,9 +696,9 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="card flex items-start gap-8 bg-[#1b1b1b] border border-white/10 p-10 rounded-3xl hover:border-[#A3D1FF] transition-all duration-300"
+                className="card flex items-start gap-8 bg-[#1b1b1b] border border-white/10 p-10 rounded-3xl hover:border-[#A78BFA] transition-all duration-300"
               >
-                <div className="text-6xl font-black text-[#A3D1FF] opacity-20">{step.number}</div>
+                <div className="text-6xl font-black text-[#A78BFA] opacity-20">{step.number}</div>
                 <div className="flex-1">
                   <h3 className="text-3xl font-bold mb-3 text-white">{step.title}</h3>
                   <p className="text-xl text-gray-400">{step.description}</p>
@@ -734,7 +734,7 @@ export default function HomePage() {
               viewport={{ once: true }}
             >
               <h2 className="text-5xl font-black mb-6 text-white">
-                Work With Me,<br />Not a <span className="text-[#A3D1FF]">Team of Interns</span>
+                Work With Me,<br />Not a <span className="text-[#A78BFA]">Team of Interns</span>
               </h2>
               <div className="space-y-6 text-xl text-gray-300 mb-8">
                 <p>
@@ -773,7 +773,7 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-black mb-6 leading-tight text-white">
-              Got <span className="text-[#A3D1FF]">Questions?</span>
+              Got <span className="text-[#A78BFA]">Questions?</span>
             </h2>
           </motion.div>
 
@@ -811,9 +811,9 @@ export default function HomePage() {
                 <details className="group">
                   <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-white/5 transition-colors">
                     <h3 className="text-xl font-bold pr-4 text-white">{item.q}</h3>
-                    <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-[#A3D1FF]/30 flex-shrink-0">
-                      <div className="w-4 h-0.5 bg-[#A3D1FF] group-open:rotate-90 transition-transform"></div>
-                      <div className="w-0.5 h-4 bg-[#A3D1FF] absolute group-open:opacity-0 transition-opacity"></div>
+                    <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-[#A78BFA]/30 flex-shrink-0">
+                      <div className="w-4 h-0.5 bg-[#A78BFA] group-open:rotate-90 transition-transform"></div>
+                      <div className="w-0.5 h-4 bg-[#A78BFA] absolute group-open:opacity-0 transition-opacity"></div>
                     </div>
                   </summary>
                   <div className="px-6 pb-6">
@@ -852,7 +852,7 @@ export default function HomePage() {
                   href={calendlyLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#A3D1FF] font-bold hover:underline"
+                  className="text-[#A78BFA] font-bold hover:underline"
                 >
                   book directly on my calendar
                 </a>
@@ -927,7 +927,7 @@ function FAQSection() {
                 >
                   <span className="text-white font-medium text-base sm:text-lg pr-4">{item.q}</span>
                   <ChevronDown
-                    className="w-5 h-5 text-[#A3D1FF] flex-shrink-0 transition-transform duration-300"
+                    className="w-5 h-5 text-[#A78BFA] flex-shrink-0 transition-transform duration-300"
                     style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
                   />
                 </button>

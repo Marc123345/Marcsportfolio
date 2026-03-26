@@ -197,7 +197,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                       onClick={() => handleSelect(result)}
                       className={`w-full text-left p-3 rounded-lg transition-colors ${
                         index === selectedIndex
-                          ? 'bg-[#A3D1FF]/10 border border-[#A3D1FF]/30'
+                          ? 'bg-[#A78BFA]/10 border border-[#A78BFA]/30'
                           : 'hover:bg-white/5'
                       }`}
                     >

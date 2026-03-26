@@ -10,11 +10,11 @@ function FeatureCard({ icon: Icon, title, description }: {
   description: string;
 }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group">
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all group">
       <div className="relative mb-6">
-        <div className="absolute inset-0 bg-[#A3D1FF]/20 blur-xl rounded-full"></div>
-        <div className="bg-[#A3D1FF]/10 p-4 rounded-xl relative">
-          <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
+        <div className="absolute inset-0 bg-[#A78BFA]/20 blur-xl rounded-full"></div>
+        <div className="bg-[#A78BFA]/10 p-4 rounded-xl relative">
+          <Icon className="w-8 h-8 text-[#A78BFA] group-hover:scale-110 transition-transform" />
         </div>
       </div>
       <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
@@ -100,7 +100,7 @@ export default function BrandDesignPage() {
           <h2 className="text-3xl font-bold text-white mb-12">Brand Design Process</h2>
           <div className="space-y-12">
             <div className="flex items-start">
-              <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
+              <div className="bg-[#A78BFA] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
                 1
               </div>
               <div>
@@ -109,7 +109,7 @@ export default function BrandDesignPage() {
               </div>
             </div>
             <div className="flex items-start">
-              <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
+              <div className="bg-[#A78BFA] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
                 2
               </div>
               <div>
@@ -118,7 +118,7 @@ export default function BrandDesignPage() {
               </div>
             </div>
             <div className="flex items-start">
-              <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
+              <div className="bg-[#A78BFA] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
                 3
               </div>
               <div>
@@ -127,7 +127,7 @@ export default function BrandDesignPage() {
               </div>
             </div>
             <div className="flex items-start">
-              <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
+              <div className="bg-[#A78BFA] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
                 4
               </div>
               <div>

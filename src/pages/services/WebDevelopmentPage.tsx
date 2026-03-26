@@ -11,11 +11,11 @@ function FeatureCard({ icon: Icon, title, description }: {
   description: string;
 }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group">
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all group">
       <div className="relative mb-6">
-        <div className="absolute inset-0 bg-[#A3D1FF]/20 blur-xl rounded-full"></div>
-        <div className="bg-[#A3D1FF]/10 p-4 rounded-xl relative">
-          <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
+        <div className="absolute inset-0 bg-[#A78BFA]/20 blur-xl rounded-full"></div>
+        <div className="bg-[#A78BFA]/10 p-4 rounded-xl relative">
+          <Icon className="w-8 h-8 text-[#A78BFA] group-hover:scale-110 transition-transform" />
         </div>
       </div>
       <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
@@ -31,8 +31,8 @@ function TechnologyStack({ icon: Icon, name, description }: {
 }) {
   return (
     <div className="flex items-start space-x-4">
-      <div className="bg-[#A3D1FF]/10 p-3 rounded-lg">
-        <Icon className="w-6 h-6 text-[#A3D1FF]" />
+      <div className="bg-[#A78BFA]/10 p-3 rounded-lg">
+        <Icon className="w-6 h-6 text-[#A78BFA]" />
       </div>
       <div>
         <h4 className="font-semibold text-white mb-1">{name}</h4>
@@ -50,9 +50,9 @@ function ServicePackage({ title, features, recommended = false }: {
   const navigate = useNavigate();
   
   return (
-    <div className={`bg-[#1b1b1b] p-8 rounded-xl border ${recommended ? 'border-[#A3D1FF]' : 'border-white/10'} hover:border-[#A3D1FF] transition-all relative`}>
+    <div className={`bg-[#1b1b1b] p-8 rounded-xl border ${recommended ? 'border-[#A78BFA]' : 'border-white/10'} hover:border-[#A78BFA] transition-all relative`}>
       {recommended && (
-        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#A3D1FF] text-black px-4 py-1 rounded-full text-sm font-medium">
+        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#A78BFA] text-black px-4 py-1 rounded-full text-sm font-medium">
           Most Popular
         </div>
       )}
@@ -60,7 +60,7 @@ function ServicePackage({ title, features, recommended = false }: {
       <ul className="space-y-3 mb-8">
         {features.map((feature, index) => (
           <li key={index} className="flex items-center text-gray-300">
-            <ArrowRight className="w-4 h-4 text-[#A3D1FF] mr-2" />
+            <ArrowRight className="w-4 h-4 text-[#A78BFA] mr-2" />
             <strong>{feature}</strong>
           </li>
         ))}
@@ -155,7 +155,7 @@ export default function WebDevelopmentPage() {
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
               Web Development Services
             </h1>
-            <h2 className="text-xl sm:text-2xl text-[#A3D1FF] mb-6">
+            <h2 className="text-xl sm:text-2xl text-[#A78BFA] mb-6">
               Custom Websites That Convert Visitors Into Customers
             </h2>
             <p className="text-xl text-gray-300 mb-8">As a freelance website designer and developer, operating as a dedicated website design agency, I create <strong className="text-white">custom, high-performing websites</strong>.
@@ -317,7 +317,7 @@ export default function WebDevelopmentPage() {
           </div>
           <div className="mt-8 text-center">
             <p className="text-gray-400">
-              Need a custom solution? <button onClick={() => navigate('/contact')} className="text-[#A3D1FF] hover:underline">Contact us</button> for a personalized quote.
+              Need a custom solution? <button onClick={() => navigate('/contact')} className="text-[#A78BFA] hover:underline">Contact us</button> for a personalized quote.
             </p>
           </div>
         </div>
@@ -329,7 +329,7 @@ export default function WebDevelopmentPage() {
           <h2 className="text-3xl font-bold text-white mb-12">Development Process</h2>
           <div className="space-y-12">
             <div className="flex items-start">
-              <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
+              <div className="bg-[#A78BFA] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
                 1
               </div>
               <div>
@@ -338,7 +338,7 @@ export default function WebDevelopmentPage() {
               </div>
             </div>
             <div className="flex items-start">
-              <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
+              <div className="bg-[#A78BFA] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
                 2
               </div>
               <div>
@@ -347,7 +347,7 @@ export default function WebDevelopmentPage() {
               </div>
             </div>
             <div className="flex items-start">
-              <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
+              <div className="bg-[#A78BFA] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
                 3
               </div>
               <div>
@@ -356,7 +356,7 @@ export default function WebDevelopmentPage() {
               </div>
             </div>
             <div className="flex items-start">
-              <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
+              <div className="bg-[#A78BFA] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
                 4
               </div>
               <div>
@@ -411,34 +411,34 @@ export default function WebDevelopmentPage() {
             <div className="grid md:grid-cols-4 gap-4">
               <Link 
                 to="/services/design" 
-                className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A3D1FF] transition-colors group"
+                className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A78BFA] transition-colors group"
                 title="UI/UX design services"
               >
-                <h4 className="text-white font-medium group-hover:text-[#A3D1FF] transition-colors">UI/UX Design</h4>
+                <h4 className="text-white font-medium group-hover:text-[#A78BFA] transition-colors">UI/UX Design</h4>
                 <p className="text-gray-400 text-sm mt-1">User-centered design</p>
               </Link>
               <Link 
                 to="/services/saas" 
-                className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A3D1FF] transition-colors group"
+                className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A78BFA] transition-colors group"
                 title="SaaS development services"
               >
-                <h4 className="text-white font-medium group-hover:text-[#A3D1FF] transition-colors">SaaS Development</h4>
+                <h4 className="text-white font-medium group-hover:text-[#A78BFA] transition-colors">SaaS Development</h4>
                 <p className="text-gray-400 text-sm mt-1">Scalable solutions</p>
               </Link>
               <Link 
                 to="/services/api" 
-                className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A3D1FF] transition-colors group"
+                className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A78BFA] transition-colors group"
                 title="API development services"
               >
-                <h4 className="text-white font-medium group-hover:text-[#A3D1FF] transition-colors">API Development</h4>
+                <h4 className="text-white font-medium group-hover:text-[#A78BFA] transition-colors">API Development</h4>
                 <p className="text-gray-400 text-sm mt-1">Robust integrations</p>
               </Link>
               <Link 
                 to="/tools/roi-calculator" 
-                className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A3D1FF] transition-colors group"
+                className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A78BFA] transition-colors group"
                 title="Calculate website ROI"
               >
-                <h4 className="text-white font-medium group-hover:text-[#A3D1FF] transition-colors">ROI Calculator</h4>
+                <h4 className="text-white font-medium group-hover:text-[#A78BFA] transition-colors">ROI Calculator</h4>
                 <p className="text-gray-400 text-sm mt-1">Investment planning</p>
               </Link>
             </div>

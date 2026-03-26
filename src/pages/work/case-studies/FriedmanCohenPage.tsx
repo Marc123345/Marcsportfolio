@@ -8,11 +8,11 @@ function FeatureCard({ icon: Icon, title, description }: {
   description: string;
 }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group">
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all group">
       <div className="relative mb-6">
-        <div className="absolute inset-0 bg-[#A3D1FF]/20 blur-xl rounded-full"></div>
-        <div className="bg-[#A3D1FF]/10 p-4 rounded-xl relative">
-          <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
+        <div className="absolute inset-0 bg-[#A78BFA]/20 blur-xl rounded-full"></div>
+        <div className="bg-[#A78BFA]/10 p-4 rounded-xl relative">
+          <Icon className="w-8 h-8 text-[#A78BFA] group-hover:scale-110 transition-transform" />
         </div>
       </div>
       <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
@@ -23,8 +23,8 @@ function FeatureCard({ icon: Icon, title, description }: {
 
 function StatCard({ value, label }: { value: string; label: string }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center">
-      <div className="text-4xl font-bold text-[#A3D1FF] mb-2">{value}</div>
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all text-center">
+      <div className="text-4xl font-bold text-[#A78BFA] mb-2">{value}</div>
       <div className="text-gray-400">{label}</div>
     </div>
   );
@@ -32,12 +32,12 @@ function StatCard({ value, label }: { value: string; label: string }) {
 
 function TestimonialCard({ name, role, quote }: { name: string; role: string; quote: string }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all">
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all">
       <div className="flex items-center gap-1 mb-4">
         {[...Array(5)].map((_, i) => (
           <Star 
             key={i}
-            className="w-4 h-4 fill-[#A3D1FF] text-[#A3D1FF]"
+            className="w-4 h-4 fill-[#A78BFA] text-[#A78BFA]"
           />
         ))}
       </div>
@@ -70,8 +70,8 @@ export default function FriedmanCohenPage() {
         {/* Content */}
         <div className="container-custom relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm rounded-full px-4 py-2 border border-white/10 hover:border-[#A3D1FF] transition-all duration-300 mb-6">
-              <span className="text-[#A3D1FF] text-sm font-medium">100+ Years of Excellence</span>
+            <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm rounded-full px-4 py-2 border border-white/10 hover:border-[#A78BFA] transition-all duration-300 mb-6">
+              <span className="text-[#A78BFA] text-sm font-medium">100+ Years of Excellence</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               Friedman & Cohen
@@ -128,21 +128,21 @@ export default function FriedmanCohenPage() {
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <div>
                     <p className="text-white font-medium">Role</p>
                     <p className="text-gray-400">Lead Product Designer</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <div>
                     <p className="text-white font-medium">Timeline</p>
                     <p className="text-gray-400">14 months</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <div>
                     <p className="text-white font-medium">Team</p>
                     <p className="text-gray-400">Cross-functional team of designers, developers, and stakeholders</p>
@@ -155,19 +155,19 @@ export default function FriedmanCohenPage() {
                 <h3 className="text-xl font-semibold text-white mb-4">Key Achievements</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     100+ years of trusted service
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     4.4/5 rating from 1,351+ Google reviews
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     Successful digital transformation
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     Nationwide B2B procurement service
                   </li>
                 </ul>
@@ -207,7 +207,7 @@ export default function FriedmanCohenPage() {
           <h2 className="text-3xl font-bold text-white mb-12">Our Process</h2>
           <div className="space-y-12">
             <div className="flex items-start">
-              <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
+              <div className="bg-[#A78BFA] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
                 1
               </div>
               <div>
@@ -216,7 +216,7 @@ export default function FriedmanCohenPage() {
               </div>
             </div>
             <div className="flex items-start">
-              <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
+              <div className="bg-[#A78BFA] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
                 2
               </div>
               <div>
@@ -225,7 +225,7 @@ export default function FriedmanCohenPage() {
               </div>
             </div>
             <div className="flex items-start">
-              <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
+              <div className="bg-[#A78BFA] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
                 3
               </div>
               <div>
@@ -234,7 +234,7 @@ export default function FriedmanCohenPage() {
               </div>
             </div>
             <div className="flex items-start">
-              <div className="bg-[#A3D1FF] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
+              <div className="bg-[#A78BFA] text-black w-12 h-12 rounded-full flex items-center justify-center font-bold mr-6">
                 4
               </div>
               <div>
@@ -307,7 +307,7 @@ export default function FriedmanCohenPage() {
               <div className="space-y-4">
                 <a 
                   href="mailto:marcf@marcfriedmanwebdesign.com"
-                  className="flex items-center gap-3 text-gray-300 hover:text-[#A3D1FF] transition-colors"
+                  className="flex items-center gap-3 text-gray-300 hover:text-[#A78BFA] transition-colors"
                 >
                   <Mail className="w-5 h-5" />
                   marcf@marcfriedmanwebdesign.com
@@ -325,7 +325,7 @@ export default function FriedmanCohenPage() {
             <div>
               <button 
                 onClick={() => navigate('/contact')}
-                className="w-full bg-[#A3D1FF] text-black px-6 py-3 rounded-lg hover:bg-[#92bce6] transition-colors inline-flex items-center justify-center"
+                className="w-full bg-[#A78BFA] text-black px-6 py-3 rounded-lg hover:bg-[#8B5CF6] transition-colors inline-flex items-center justify-center"
               >
                 Request a Quote
                 <ArrowRight className="ml-2 w-5 h-5" />

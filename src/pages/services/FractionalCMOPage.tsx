@@ -12,11 +12,11 @@ function FeatureCard({ icon: Icon, title, description }: {
   description: string;
 }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group">
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all group">
       <div className="relative mb-6">
-        <div className="absolute inset-0 bg-[#A3D1FF]/20 blur-xl rounded-full"></div>
-        <div className="bg-[#A3D1FF]/10 p-4 rounded-xl relative">
-          <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
+        <div className="absolute inset-0 bg-[#A78BFA]/20 blur-xl rounded-full"></div>
+        <div className="bg-[#A78BFA]/10 p-4 rounded-xl relative">
+          <Icon className="w-8 h-8 text-[#A78BFA] group-hover:scale-110 transition-transform" />
         </div>
       </div>
       <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
@@ -28,7 +28,7 @@ function FeatureCard({ icon: Icon, title, description }: {
 function BenefitItem({ title, description }: { title: string; description: string }) {
   return (
     <div className="flex items-start">
-      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3 flex-shrink-0" />
+      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3 flex-shrink-0" />
       <div>
         <p className="text-white font-medium">{title}</p>
         <p className="text-gray-400">{description}</p>
@@ -40,7 +40,7 @@ function BenefitItem({ title, description }: { title: string; description: strin
 function TechItem({ name }: { name: string }) {
   return (
     <div className="flex items-center bg-[#2d3035] px-4 py-2 rounded-lg">
-      <span className="w-2 h-2 bg-[#A3D1FF] rounded-full mr-3"></span>
+      <span className="w-2 h-2 bg-[#A78BFA] rounded-full mr-3"></span>
       <span className="text-white">{name}</span>
     </div>
   );
@@ -63,8 +63,8 @@ export default function FractionalCMOPage() {
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm rounded-full px-4 py-2 border border-white/10 hover:border-[#A3D1FF] transition-all duration-300 mb-6">
-              <span className="text-[#A3D1FF] text-sm font-medium">🔧 Web Partner for Fractional CMOs</span>
+            <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm rounded-full px-4 py-2 border border-white/10 hover:border-[#A78BFA] transition-all duration-300 mb-6">
+              <span className="text-[#A78BFA] text-sm font-medium">🔧 Web Partner for Fractional CMOs</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               Design & Dev Execution for Go-To-Market Strategy, Without the Bottlenecks
@@ -192,21 +192,21 @@ export default function FractionalCMOPage() {
               </p>
               <div className="space-y-3 mb-6">
                 <div className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <span>40% increase in demo requests</span>
                 </div>
                 <div className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <span>2.1s average page load time</span>
                 </div>
                 <div className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <span>Delivered in 14 days from concept to launch</span>
                 </div>
               </div>
               <button 
                 onClick={() => navigate('/work')}
-                className="text-[#A3D1FF] hover:underline flex items-center gap-1"
+                className="text-[#A78BFA] hover:underline flex items-center gap-1"
               >
                 View Case Study
                 <ArrowRight className="w-4 h-4" />
@@ -219,21 +219,21 @@ export default function FractionalCMOPage() {
               </p>
               <div className="space-y-3 mb-6">
                 <div className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <span>65% increase in conversion rate</span>
                 </div>
                 <div className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <span>Reduced bounce rate by 40%</span>
                 </div>
                 <div className="flex items-center text-gray-300">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                   <span>White-labeled under agency brand</span>
                 </div>
               </div>
               <button 
                 onClick={() => navigate('/work')}
-                className="text-[#A3D1FF] hover:underline flex items-center gap-1"
+                className="text-[#A78BFA] hover:underline flex items-center gap-1"
               >
                 View Case Study
                 <ArrowRight className="w-4 h-4" />

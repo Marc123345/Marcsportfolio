@@ -19,8 +19,8 @@ export default function SiteMapGenerator() {
     <div className="bg-[#1b1b1b] rounded-xl border border-white/10 overflow-hidden">
       <div className="p-8">
         <div className="flex items-center gap-3 mb-4">
-          <div className="bg-[#A3D1FF]/10 p-3 rounded-lg">
-            <FileText className="w-6 h-6 text-[#A3D1FF]" />
+          <div className="bg-[#A78BFA]/10 p-3 rounded-lg">
+            <FileText className="w-6 h-6 text-[#A78BFA]" />
           </div>
           <h3 className="text-2xl font-bold text-white">Sitemap Generator</h3>
         </div>
@@ -34,19 +34,19 @@ export default function SiteMapGenerator() {
             <h4 className="font-medium text-white mb-2">Benefits of a Sitemap</h4>
             <ul className="space-y-2">
               <li className="flex items-start gap-2 text-sm">
-                <ArrowRight className="w-4 h-4 text-[#A3D1FF] mt-0.5" />
+                <ArrowRight className="w-4 h-4 text-[#A78BFA] mt-0.5" />
                 <span className="text-gray-300">Helps search engines discover and index all your pages</span>
               </li>
               <li className="flex items-start gap-2 text-sm">
-                <ArrowRight className="w-4 h-4 text-[#A3D1FF] mt-0.5" />
+                <ArrowRight className="w-4 h-4 text-[#A78BFA] mt-0.5" />
                 <span className="text-gray-300">Improves AI crawlers' understanding of your site structure</span>
               </li>
               <li className="flex items-start gap-2 text-sm">
-                <ArrowRight className="w-4 h-4 text-[#A3D1FF] mt-0.5" />
+                <ArrowRight className="w-4 h-4 text-[#A78BFA] mt-0.5" />
                 <span className="text-gray-300">Provides metadata about content types and update frequency</span>
               </li>
               <li className="flex items-start gap-2 text-sm">
-                <ArrowRight className="w-4 h-4 text-[#A3D1FF] mt-0.5" />
+                <ArrowRight className="w-4 h-4 text-[#A78BFA] mt-0.5" />
                 <span className="text-gray-300">Essential for large websites with many pages</span>
               </li>
             </ul>
@@ -56,7 +56,7 @@ export default function SiteMapGenerator() {
             <div className="bg-[#2d3035] p-4 rounded-lg">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
-                  <FileText className="w-5 h-5 text-[#A3D1FF]" />
+                  <FileText className="w-5 h-5 text-[#A78BFA]" />
                   <span className="text-white font-medium">sitemap.xml</span>
                 </div>
                 <span className="text-sm text-gray-400">12KB</span>
@@ -84,7 +84,7 @@ export default function SiteMapGenerator() {
               <a 
                 href="/sitemap.xml" 
                 download
-                className="inline-flex items-center px-4 py-2 bg-[#A3D1FF] text-black rounded-lg hover:bg-[#92bce6] transition-colors"
+                className="inline-flex items-center px-4 py-2 bg-[#A78BFA] text-black rounded-lg hover:bg-[#8B5CF6] transition-colors"
               >
                 <Download className="w-4 h-4 mr-2" />
                 Download Sitemap
@@ -94,7 +94,7 @@ export default function SiteMapGenerator() {
             <button
               onClick={handleGenerate}
               disabled={isGenerating}
-              className="w-full inline-flex items-center justify-center px-6 py-3 bg-[#A3D1FF] text-black rounded-lg hover:bg-[#92bce6] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full inline-flex items-center justify-center px-6 py-3 bg-[#A78BFA] text-black rounded-lg hover:bg-[#8B5CF6] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isGenerating ? (
                 <>

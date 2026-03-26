@@ -90,7 +90,7 @@ export default function ContactPage() {
             Let's Build Your High-Converting Website
           </motion.h1>
           <motion.h2
-            className="font-body text-xl sm:text-2xl text-[#A3D1FF] mb-6"
+            className="font-body text-xl sm:text-2xl text-[#A78BFA] mb-6"
             variants={fadeInUp}
             custom={1}
           >
@@ -124,7 +124,7 @@ export default function ContactPage() {
               <div>
                 <label className="block text-sm text-gray-400 mb-2">Estimated Budget</label>
                 <select
-                  className="w-full bg-[#0f0f0f] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#A3D1FF] focus:outline-none transition-colors appearance-none cursor-pointer"
+                  className="w-full bg-[#0f0f0f] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#A78BFA] focus:outline-none transition-colors appearance-none cursor-pointer"
                   defaultValue=""
                 >
                   <option value="" disabled>Select your budget range</option>
@@ -138,7 +138,7 @@ export default function ContactPage() {
               <div>
                 <label className="block text-sm text-gray-400 mb-2">Project Timeline</label>
                 <select
-                  className="w-full bg-[#0f0f0f] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#A3D1FF] focus:outline-none transition-colors appearance-none cursor-pointer"
+                  className="w-full bg-[#0f0f0f] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#A78BFA] focus:outline-none transition-colors appearance-none cursor-pointer"
                   defaultValue=""
                 >
                   <option value="" disabled>When do you need this?</option>
@@ -173,11 +173,11 @@ export default function ContactPage() {
             {/* Trust Signals */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-4 pt-4 border-t border-white/5">
               <div className="flex items-center gap-2 text-gray-400 text-sm">
-                <Lock className="w-4 h-4 text-[#A3D1FF]" />
+                <Lock className="w-4 h-4 text-[#A78BFA]" />
                 <span>Your information is 100% secure</span>
               </div>
               <div className="flex items-center gap-2 text-gray-400 text-sm">
-                <Clock className="w-4 h-4 text-[#A3D1FF]" />
+                <Clock className="w-4 h-4 text-[#A78BFA]" />
                 <span>Average response time: under 2 hours</span>
               </div>
             </div>
@@ -210,8 +210,8 @@ export default function ContactPage() {
               }
             ].map((item, idx) => (
               <HoverCard3D key={idx} className="bg-[#2d3035] p-6 rounded-xl border border-white/10">
-                <div className="bg-[#A3D1FF]/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                  <span className="text-[#A3D1FF] text-xl font-bold">{item.step}</span>
+                <div className="bg-[#A78BFA]/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                  <span className="text-[#A78BFA] text-xl font-bold">{item.step}</span>
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
                 <p className="text-gray-400">{item.desc}</p>

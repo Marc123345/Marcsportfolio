@@ -10,11 +10,11 @@ function FeatureCard({ icon: Icon, title, description }: {
   description: string;
 }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group">
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all group">
       <div className="relative mb-6">
-        <div className="absolute inset-0 bg-[#A3D1FF]/20 blur-xl rounded-full"></div>
-        <div className="bg-[#A3D1FF]/10 p-4 rounded-xl relative">
-          <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
+        <div className="absolute inset-0 bg-[#A78BFA]/20 blur-xl rounded-full"></div>
+        <div className="bg-[#A78BFA]/10 p-4 rounded-xl relative">
+          <Icon className="w-8 h-8 text-[#A78BFA] group-hover:scale-110 transition-transform" />
         </div>
       </div>
       <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
@@ -103,15 +103,15 @@ export default function DesignSystemsPage() {
               <h3 className="text-2xl font-semibold text-white mb-6">For Development Teams</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">40% faster development with reusable components</p>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">Reduced bugs and inconsistencies</p>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">Easier maintenance and updates</p>
                 </li>
               </ul>
@@ -120,15 +120,15 @@ export default function DesignSystemsPage() {
               <h3 className="text-2xl font-semibold text-white mb-6">For Design Teams</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">Consistent brand experience across platforms</p>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">Focus on innovation instead of repetitive tasks</p>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <p className="text-gray-300">Better collaboration with developers</p>
                 </li>
               </ul>

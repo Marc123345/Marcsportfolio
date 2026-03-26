@@ -90,7 +90,7 @@ export default function MonthlyRetainerPackage() {
         <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0a0a0a] to-black"></div>
 
         <div className="container-custom relative z-10 text-center">
-          <div className="inline-block px-4 py-2 bg-[#A3D1FF]/10 border border-[#A3D1FF]/20 rounded-full text-[#A3D1FF] text-sm font-medium mb-6">
+          <div className="inline-block px-4 py-2 bg-[#A78BFA]/10 border border-[#A78BFA]/20 rounded-full text-[#A78BFA] text-sm font-medium mb-6">
             Monthly Retainer
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -100,7 +100,7 @@ export default function MonthlyRetainerPackage() {
             Transform your website into a high-performing growth engine with ongoing management and optimization
           </p>
           <div className="flex items-baseline justify-center mb-8">
-            <div className="text-5xl font-bold text-[#A3D1FF]">
+            <div className="text-5xl font-bold text-[#A78BFA]">
               $500
             </div>
             <span className="text-2xl text-gray-400 ml-2">/month</span>
@@ -129,7 +129,7 @@ export default function MonthlyRetainerPackage() {
             <p className="text-lg text-gray-300 mb-6">
               You'll receive ongoing updates, UX improvements, unlimited landing pages (for ads/campaigns), a 24/7 lead-capture chatbot, monthly SEO blogs, backlink building, and performance monitoring. Everything is delivered using tools like React, Next.js, Figma, Cloudflare, GA4, and SEO-optimized workflows.
             </p>
-            <p className="text-lg text-[#A3D1FF] font-semibold">
+            <p className="text-lg text-[#A78BFA] font-semibold">
               Perfect for businesses that want consistent traffic, higher rankings, better conversions, and a professional website that is always improving.
             </p>
           </div>
@@ -143,7 +143,7 @@ export default function MonthlyRetainerPackage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {includedFeatures.map((feature, index) => (
               <div key={index} className="flex items-start">
-                <Check className="w-6 h-6 text-[#A3D1FF] mr-3 mt-0.5 flex-shrink-0" />
+                <Check className="w-6 h-6 text-[#A78BFA] mr-3 mt-0.5 flex-shrink-0" />
                 <span className="text-gray-300">{feature}</span>
               </div>
             ))}
@@ -159,7 +159,7 @@ export default function MonthlyRetainerPackage() {
             {technologies.map((tech, index) => (
               <div
                 key={index}
-                className="px-6 py-3 bg-[#1b1b1b] border border-[#A3D1FF]/30 rounded-lg text-[#A3D1FF] font-medium"
+                className="px-6 py-3 bg-[#1b1b1b] border border-[#A78BFA]/30 rounded-lg text-[#A78BFA] font-medium"
               >
                 {tech}
               </div>
@@ -174,25 +174,25 @@ export default function MonthlyRetainerPackage() {
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Why Choose a Monthly Retainer?</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-black/50 p-6 rounded-xl border border-white/10">
-              <h3 className="text-xl font-semibold text-[#A3D1FF] mb-3">Consistent Growth</h3>
+              <h3 className="text-xl font-semibold text-[#A78BFA] mb-3">Consistent Growth</h3>
               <p className="text-gray-300">
                 Your website is always improving with regular updates, content, and optimization strategies that drive measurable results.
               </p>
             </div>
             <div className="bg-black/50 p-6 rounded-xl border border-white/10">
-              <h3 className="text-xl font-semibold text-[#A3D1FF] mb-3">Higher Rankings</h3>
+              <h3 className="text-xl font-semibold text-[#A78BFA] mb-3">Higher Rankings</h3>
               <p className="text-gray-300">
                 Monthly SEO work ensures your site climbs search rankings and attracts more organic traffic consistently.
               </p>
             </div>
             <div className="bg-black/50 p-6 rounded-xl border border-white/10">
-              <h3 className="text-xl font-semibold text-[#A3D1FF] mb-3">Better Conversions</h3>
+              <h3 className="text-xl font-semibold text-[#A78BFA] mb-3">Better Conversions</h3>
               <p className="text-gray-300">
                 Continuous UX improvements and A/B testing lead to higher conversion rates and more qualified leads.
               </p>
             </div>
             <div className="bg-black/50 p-6 rounded-xl border border-white/10">
-              <h3 className="text-xl font-semibold text-[#A3D1FF] mb-3">Peace of Mind</h3>
+              <h3 className="text-xl font-semibold text-[#A78BFA] mb-3">Peace of Mind</h3>
               <p className="text-gray-300">
                 Professional website management means you can focus on your business while we handle all technical aspects.
               </p>
@@ -209,7 +209,7 @@ export default function MonthlyRetainerPackage() {
             {relatedServices.map((service, index) => (
               <span
                 key={index}
-                className="px-4 py-2 bg-[#1b1b1b] border border-white/10 rounded-lg text-gray-300 text-sm hover:border-[#A3D1FF] hover:text-[#A3D1FF] transition-colors cursor-pointer"
+                className="px-4 py-2 bg-[#1b1b1b] border border-white/10 rounded-lg text-gray-300 text-sm hover:border-[#A78BFA] hover:text-[#A78BFA] transition-colors cursor-pointer"
               >
                 {service.name}
               </span>

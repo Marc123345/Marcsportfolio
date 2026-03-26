@@ -63,7 +63,7 @@ export default function PavingContractorWebsiteDesignGuidePage() {
         <div className="max-w-4xl mx-auto">
           <button
             onClick={() => navigate('/blog')}
-            className="flex items-center gap-2 text-[#A3D1FF] hover:underline mb-6"
+            className="flex items-center gap-2 text-[#A78BFA] hover:underline mb-6"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Blog
@@ -104,7 +104,7 @@ export default function PavingContractorWebsiteDesignGuidePage() {
 
             <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 my-8">
               <h4 className="text-white font-semibold mb-2 flex items-center">
-                <CheckCircle className="w-5 h-5 text-[#A3D1FF] mr-2" />
+                <CheckCircle className="w-5 h-5 text-[#A78BFA] mr-2" />
                 The Reality of Contractor Website Performance
               </h4>
               <ul className="text-gray-300 list-disc pl-5 space-y-2">
@@ -446,39 +446,39 @@ export default function PavingContractorWebsiteDesignGuidePage() {
               <h4 className="text-white font-semibold mb-3">Pre-Launch Essentials:</h4>
               <ul className="text-gray-300 space-y-2">
                 <li className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span>Gather 20-30 high-quality photos of completed projects</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span>Collect customer testimonials and reviews</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span>List all services you offer with descriptions</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span>Define your exact service area and territories</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span>Gather certification and insurance documentation</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span>Write company history and team bios</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span>Create or update your logo and branding</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span>Set up business email addresses</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-[#A78BFA] mr-2 mt-1 flex-shrink-0" />
                   <span>Choose your domain name and purchase it</span>
                 </li>
               </ul>
@@ -522,7 +522,7 @@ export default function PavingContractorWebsiteDesignGuidePage() {
               <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#0077B5]/20 text-[#0077B5] transition-colors">
                 <Linkedin className="w-5 h-5" />
               </button>
-              <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#A3D1FF]/20 text-[#A3D1FF] transition-colors">
+              <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#A78BFA]/20 text-[#A78BFA] transition-colors">
                 <Link className="w-5 h-5" />
               </button>
             </div>
@@ -531,7 +531,7 @@ export default function PavingContractorWebsiteDesignGuidePage() {
           <div className="mt-12 pt-8 border-t border-white/10">
             <h3 className="text-2xl font-semibold text-white mb-6">Related Articles</h3>
             <div className="grid sm:grid-cols-2 gap-6">
-              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group">
+              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group">
                 <div className="aspect-[16/9] overflow-hidden">
                   <img
                     src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&w=2000&q=80"
@@ -540,11 +540,11 @@ export default function PavingContractorWebsiteDesignGuidePage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">Local SEO for Paving Contractors: Dominate Your Market</h4>
+                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A78BFA] transition-colors">Local SEO for Paving Contractors: Dominate Your Market</h4>
                   <p className="text-gray-400 text-sm mb-4">Master local search optimization to ensure your paving business appears first when customers search.</p>
                   <button
                     onClick={() => navigate('/blog/local-seo-for-paving-contractors')}
-                    className="text-[#A3D1FF] text-sm flex items-center gap-1 hover:underline"
+                    className="text-[#A78BFA] text-sm flex items-center gap-1 hover:underline"
                   >
                     Read Article
                     <ArrowRight className="w-3 h-3" />
@@ -552,7 +552,7 @@ export default function PavingContractorWebsiteDesignGuidePage() {
                 </div>
               </div>
 
-              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group">
+              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group">
                 <div className="aspect-[16/9] overflow-hidden">
                   <img
                     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2000&q=80"
@@ -561,11 +561,11 @@ export default function PavingContractorWebsiteDesignGuidePage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">Digital Marketing Strategy for Asphalt Contractors</h4>
+                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A78BFA] transition-colors">Digital Marketing Strategy for Asphalt Contractors</h4>
                   <p className="text-gray-400 text-sm mb-4">Complete guide to attracting more customers through strategic online marketing.</p>
                   <button
                     onClick={() => navigate('/blog/digital-marketing-asphalt-contractors')}
-                    className="text-[#A3D1FF] text-sm flex items-center gap-1 hover:underline"
+                    className="text-[#A78BFA] text-sm flex items-center gap-1 hover:underline"
                   >
                     Read Article
                     <ArrowRight className="w-3 h-3" />

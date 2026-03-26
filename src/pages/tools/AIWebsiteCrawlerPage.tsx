@@ -10,11 +10,11 @@ function FeatureCard({ icon: Icon, title, description }: {
   description: string;
 }) {
   return (
-    <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group">
+    <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all group">
       <div className="relative mb-4">
-        <div className="absolute inset-0 bg-[#A3D1FF]/20 blur-xl rounded-full"></div>
-        <div className="bg-[#A3D1FF]/10 p-3 rounded-lg relative">
-          <Icon className="w-6 h-6 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
+        <div className="absolute inset-0 bg-[#A78BFA]/20 blur-xl rounded-full"></div>
+        <div className="bg-[#A78BFA]/10 p-3 rounded-lg relative">
+          <Icon className="w-6 h-6 text-[#A78BFA] group-hover:scale-110 transition-transform" />
         </div>
       </div>
       <h3 className="text-lg font-semibold mb-2 text-white">{title}</h3>
@@ -134,8 +134,8 @@ export default function AIWebsiteCrawlerPage() {
         <div className="max-w-4xl mx-auto">
           <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 mb-16">
             <div className="flex items-center gap-3 mb-6">
-              <div className="bg-[#A3D1FF]/10 p-3 rounded-lg">
-                <Bot className="w-6 h-6 text-[#A3D1FF]" />
+              <div className="bg-[#A78BFA]/10 p-3 rounded-lg">
+                <Bot className="w-6 h-6 text-[#A78BFA]" />
               </div>
               <h3 className="text-2xl font-bold text-white">AI Crawler Analyzer</h3>
             </div>
@@ -156,7 +156,7 @@ export default function AIWebsiteCrawlerPage() {
                     value={url}
                     onChange={(e) => setUrl(e.target.value)}
                     placeholder="https://yourwebsite.com"
-                    className="w-full px-4 py-3 bg-[#2d3035] border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#A3D1FF] focus:border-transparent"
+                    className="w-full px-4 py-3 bg-[#2d3035] border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:border-transparent"
                     disabled={isAnalyzing}
                   />
                 </div>
@@ -175,7 +175,7 @@ export default function AIWebsiteCrawlerPage() {
                   <h4 className="text-xl font-semibold text-white">Analysis Results</h4>
                   <div className="flex items-center gap-2">
                     <span className="text-gray-400">AI Readiness Score:</span>
-                    <span className="text-lg font-bold text-[#A3D1FF]">{result.score}/100</span>
+                    <span className="text-lg font-bold text-[#A78BFA]">{result.score}/100</span>
                   </div>
                 </div>
                 
@@ -210,7 +210,7 @@ export default function AIWebsiteCrawlerPage() {
                   <div className="space-y-2">
                     {result.recommendations.map((recommendation, index) => (
                       <div key={index} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mt-0.5" />
+                        <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mt-0.5" />
                         <span className="text-gray-300">{recommendation}</span>
                       </div>
                     ))}

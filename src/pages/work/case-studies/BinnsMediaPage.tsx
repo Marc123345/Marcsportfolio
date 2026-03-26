@@ -13,15 +13,15 @@ const BinnsMediaPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-[#0a0a0a] text-white selection:bg-[#A3D1FF] selection:text-black min-h-screen font-sans">
+    <div className="bg-[#0a0a0a] text-white selection:bg-[#A78BFA] selection:text-black min-h-screen font-sans">
       
       {/* --- HERO SECTION: The Visual Hook --- */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
         <div className="max-w-4xl text-center z-10 pt-20">
-          <div className="inline-flex items-center gap-2 py-1 px-4 rounded-full bg-white/5 border border-white/10 text-[#A3D1FF] text-sm font-medium mb-8">
+          <div className="inline-flex items-center gap-2 py-1 px-4 rounded-full bg-white/5 border border-white/10 text-[#A78BFA] text-sm font-medium mb-8">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A3D1FF] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#A3D1FF]"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A78BFA] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#A78BFA]"></span>
             </span>
             2025 Case Study
           </div>
@@ -56,7 +56,7 @@ const BinnsMediaPage = () => {
             { label: 'Architecture', value: 'Type-Safe', icon: ShieldCheck },
           ].map((stat, i) => (
             <div key={i} className="group cursor-default">
-              <stat.icon className="w-6 h-6 text-gray-600 group-hover:text-[#A3D1FF] transition-colors mx-auto mb-4" />
+              <stat.icon className="w-6 h-6 text-gray-600 group-hover:text-[#A78BFA] transition-colors mx-auto mb-4" />
               <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
               <div className="text-gray-500 uppercase text-xs tracking-widest">{stat.label}</div>
             </div>
@@ -77,8 +77,8 @@ const BinnsMediaPage = () => {
             className="w-full rounded-xl mb-8 border border-white/5"
           />
           <div className="space-y-6">
-            <div className="flex gap-4 p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#A3D1FF]/50 transition-colors">
-              <Star className="text-[#A3D1FF] shrink-0" />
+            <div className="flex gap-4 p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#A78BFA]/50 transition-colors">
+              <Star className="text-[#A78BFA] shrink-0" />
               <p className="text-gray-300"><strong className="text-white">Goal:</strong> Centralize podcasts, TV, and exclusive talent interviews into one seamless ecosystem.</p>
             </div>
           </div>
@@ -86,7 +86,7 @@ const BinnsMediaPage = () => {
         
         {/* Technical Deep Dive Block */}
         <div className="relative group">
-          <div className="absolute -inset-1 bg-gradient-to-r from-[#A3D1FF] to-blue-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+          <div className="absolute -inset-1 bg-gradient-to-r from-[#A78BFA] to-blue-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
           <div className="relative bg-[#111] border border-white/10 p-10 rounded-3xl shadow-3xl">
             <h3 className="text-2xl font-bold mb-6">Engineering Decisions</h3>
             <img 
@@ -115,7 +115,7 @@ const BinnsMediaPage = () => {
           <div className="relative inline-block mb-10">
             <img 
               src="https://ik.imagekit.io/qcvroy8xpd/67eb0c3957638498868399.jpeg" 
-              className="w-28 h-28 rounded-full border-4 border-[#A3D1FF] shadow-2xl relative z-10 object-cover" 
+              className="w-28 h-28 rounded-full border-4 border-[#A78BFA] shadow-2xl relative z-10 object-cover" 
               alt="Omar Turner, BMG CEO" 
             />
             <div className="absolute -bottom-2 -right-2 bg-white text-black p-2 rounded-full z-20">
@@ -126,7 +126,7 @@ const BinnsMediaPage = () => {
             "Marc executed the vision perfectly. He’s big on communication and ensures the client is completely satisfied at each step. He didn't just build a site; he built our future platform."
           </blockquote>
           <p className="font-bold text-white text-xl">Omar Turner</p>
-          <p className="text-[#A3D1FF] uppercase text-xs tracking-[0.2em] mt-2 font-bold">CEO, Binns Media Group</p>
+          <p className="text-[#A78BFA] uppercase text-xs tracking-[0.2em] mt-2 font-bold">CEO, Binns Media Group</p>
         </div>
       </section>
 

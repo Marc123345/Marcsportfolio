@@ -114,7 +114,7 @@ export default function LoadingScreen({ minDuration = 1500 }: LoadingScreenProps
         >
           <div className="w-32 h-32 mb-8 relative">
             {/* Logo with glow effect */}
-            <div className="absolute inset-0 bg-[#A3D1FF]/20 blur-xl rounded-full animate-pulse"></div>
+            <div className="absolute inset-0 bg-[#A78BFA]/20 blur-xl rounded-full animate-pulse"></div>
             <motion.div 
               className="w-full h-full flex items-center justify-center relative"
               initial={{ scale: 0.8, opacity: 0 }}
@@ -134,7 +134,7 @@ export default function LoadingScreen({ minDuration = 1500 }: LoadingScreenProps
           {/* Progress bar */}
           <div className="w-64 h-1 bg-[#1b1b1b] rounded-full overflow-hidden mb-4">
             <motion.div 
-              className="h-full bg-[#A3D1FF]"
+              className="h-full bg-[#A78BFA]"
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.3 }}
@@ -146,7 +146,7 @@ export default function LoadingScreen({ minDuration = 1500 }: LoadingScreenProps
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="text-[#A3D1FF] font-mono text-sm"
+            className="text-[#A78BFA] font-mono text-sm"
           >
             {Math.round(progress)}%
           </motion.div>

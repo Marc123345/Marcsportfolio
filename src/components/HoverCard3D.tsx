@@ -118,7 +118,7 @@ export default function HoverCard3D({
       {/* Background gradient effect */}
       {backgroundGradient && isHovering && (
         <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-[#A3D1FF]/20 to-transparent z-0"
+          className="absolute inset-0 bg-gradient-to-br from-[#A78BFA]/20 to-transparent z-0"
           style={{
             background: `radial-gradient(circle at ${gradientX}% ${gradientY}%, rgba(163, 209, 255, 0.3), transparent 50%)`,
           }}

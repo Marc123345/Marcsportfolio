@@ -64,7 +64,7 @@ export default function GDPRComplianceWithTermlyPage() {
         <div className="max-w-4xl mx-auto">
           <button
             onClick={() => navigate('/blog')}
-            className="flex items-center gap-2 text-[#A3D1FF] hover:underline mb-6"
+            className="flex items-center gap-2 text-[#A78BFA] hover:underline mb-6"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Blog
@@ -101,7 +101,7 @@ export default function GDPRComplianceWithTermlyPage() {
             <h2>The High Cost of Non-Compliance</h2>
             <p>In 2024, GDPR fines reached an all-time high, with companies facing penalties up to €20 million or 4% of annual global turnover—whichever is higher. The message is clear: data privacy compliance isn't optional anymore. Yet many businesses struggle with the complexity of creating compliant privacy policies, managing user consent, and keeping up with evolving regulations.</p>
 
-            <p>This is where <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A3D1FF] hover:underline">Termly</a> becomes an invaluable tool. As a comprehensive compliance platform, Termly simplifies the entire process of achieving and maintaining GDPR, CCPA, and other privacy law compliance—without requiring expensive legal teams or months of development work.</p>
+            <p>This is where <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A78BFA] hover:underline">Termly</a> becomes an invaluable tool. As a comprehensive compliance platform, Termly simplifies the entire process of achieving and maintaining GDPR, CCPA, and other privacy law compliance—without requiring expensive legal teams or months of development work.</p>
 
             <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 my-8">
               <h4 className="text-white font-semibold mb-2 flex items-center">
@@ -143,16 +143,16 @@ export default function GDPRComplianceWithTermlyPage() {
               <li><strong>State-Level Laws:</strong> Virginia, Colorado, Connecticut, and other states have enacted their own privacy laws</li>
             </ul>
 
-            <p>The complexity of complying with multiple jurisdictions makes automated compliance tools like <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A3D1FF] hover:underline">Termly</a> essential for modern businesses.</p>
+            <p>The complexity of complying with multiple jurisdictions makes automated compliance tools like <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A78BFA] hover:underline">Termly</a> essential for modern businesses.</p>
 
             <h2>How Termly Simplifies GDPR Compliance</h2>
 
             <h3>1. Automated Policy Generation</h3>
-            <p>Creating legally compliant privacy policies from scratch is time-consuming and risky. <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A3D1FF] hover:underline">Termly's policy generator</a> uses a simple questionnaire to create customized policies that match your specific business needs:</p>
+            <p>Creating legally compliant privacy policies from scratch is time-consuming and risky. <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A78BFA] hover:underline">Termly's policy generator</a> uses a simple questionnaire to create customized policies that match your specific business needs:</p>
 
             <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 my-8">
               <h4 className="text-white font-semibold mb-2 flex items-center">
-                <FileText className="w-5 h-5 text-[#A3D1FF] mr-2" />
+                <FileText className="w-5 h-5 text-[#A78BFA] mr-2" />
                 Policies Termly Can Generate
               </h4>
               <ul className="text-gray-300 list-none space-y-2">
@@ -186,7 +186,7 @@ export default function GDPRComplianceWithTermlyPage() {
             <p>Each policy is written in clear language while maintaining legal accuracy. Termly's AI-powered system stays updated with the latest regulatory changes, automatically updating your policies when laws change.</p>
 
             <h3>2. Consent Management Platform</h3>
-            <p>GDPR requires explicit, informed consent before collecting personal data. <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A3D1FF] hover:underline">Termly's Consent Management Platform</a> provides:</p>
+            <p>GDPR requires explicit, informed consent before collecting personal data. <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A78BFA] hover:underline">Termly's Consent Management Platform</a> provides:</p>
 
             <ul>
               <li><strong>Customizable Cookie Banners:</strong> Beautiful, compliant banners that match your brand</li>
@@ -218,7 +218,7 @@ export default function GDPRComplianceWithTermlyPage() {
             </div>
 
             <h3>3. Automatic Cookie Scanning</h3>
-            <p>One of the most challenging aspects of GDPR compliance is knowing exactly what cookies and trackers your website uses. <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A3D1FF] hover:underline">Termly's cookie scanner</a> automatically:</p>
+            <p>One of the most challenging aspects of GDPR compliance is knowing exactly what cookies and trackers your website uses. <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A78BFA] hover:underline">Termly's cookie scanner</a> automatically:</p>
 
             <ul>
               <li>Discovers all cookies on your website</li>
@@ -231,7 +231,7 @@ export default function GDPRComplianceWithTermlyPage() {
             <p>This automation is crucial because manual cookie audits are time-consuming and error-prone. Missing even one tracking cookie could result in non-compliance.</p>
 
             <h3>4. Embedded Policy Management</h3>
-            <p>Rather than copying and pasting static policies onto your website, <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A3D1FF] hover:underline">Termly's embed feature</a> dynamically loads your policies. This means:</p>
+            <p>Rather than copying and pasting static policies onto your website, <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A78BFA] hover:underline">Termly's embed feature</a> dynamically loads your policies. This means:</p>
 
             <ul>
               <li><strong>Automatic Updates:</strong> When laws change, your policies update automatically</li>
@@ -269,11 +269,11 @@ export default function GDPRComplianceWithTermlyPage() {
             </ul>
 
             <h3>The Solution</h3>
-            <p>We integrated <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A3D1FF] hover:underline">Termly</a> into our standard development workflow. Here's how it transformed our compliance approach:</p>
+            <p>We integrated <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A78BFA] hover:underline">Termly</a> into our standard development workflow. Here's how it transformed our compliance approach:</p>
 
             <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 my-8">
               <h4 className="text-white font-semibold mb-2 flex items-center">
-                <Shield className="w-5 h-5 text-[#A3D1FF] mr-2" />
+                <Shield className="w-5 h-5 text-[#A78BFA] mr-2" />
                 Implementation Benefits
               </h4>
               <ul className="text-gray-300 space-y-3">
@@ -308,7 +308,7 @@ export default function GDPRComplianceWithTermlyPage() {
             <h2>Best Practices for Using Termly</h2>
 
             <h3>1. Complete Setup Thoroughly</h3>
-            <p>When configuring <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A3D1FF] hover:underline">Termly</a>, take time to answer all questionnaire items accurately:</p>
+            <p>When configuring <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A78BFA] hover:underline">Termly</a>, take time to answer all questionnaire items accurately:</p>
             <ul>
               <li>List all data collection points (forms, analytics, marketing tools)</li>
               <li>Identify all third-party services that process user data</li>
@@ -351,7 +351,7 @@ export default function GDPRComplianceWithTermlyPage() {
               <h4 className="text-white font-semibold mb-4">Termly Plans Overview</h4>
 
               <div className="space-y-4">
-                <div className="border-l-4 border-[#A3D1FF] pl-4">
+                <div className="border-l-4 border-[#A78BFA] pl-4">
                   <h5 className="text-white font-semibold">Free Plan</h5>
                   <p className="text-gray-300 text-sm">Perfect for small websites and testing</p>
                   <ul className="text-gray-300 text-sm mt-2 space-y-1">
@@ -387,7 +387,7 @@ export default function GDPRComplianceWithTermlyPage() {
                 </div>
               </div>
 
-              <p className="text-gray-400 text-sm mt-4">Visit <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A3D1FF] hover:underline">Termly's website</a> for current pricing and detailed feature comparisons.</p>
+              <p className="text-gray-400 text-sm mt-4">Visit <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A78BFA] hover:underline">Termly's website</a> for current pricing and detailed feature comparisons.</p>
             </div>
 
             <h2>Common GDPR Compliance Mistakes to Avoid</h2>
@@ -400,7 +400,7 @@ export default function GDPRComplianceWithTermlyPage() {
             <h3>2. Pre-Checked Consent Boxes</h3>
             <p>Consent boxes cannot be pre-checked. Users must actively opt-in to data collection.</p>
 
-            <p><strong>Correct Approach:</strong> Use <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A3D1FF] hover:underline">Termly's consent management</a> which ensures all consent is explicit and properly recorded.</p>
+            <p><strong>Correct Approach:</strong> Use <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A78BFA] hover:underline">Termly's consent management</a> which ensures all consent is explicit and properly recorded.</p>
 
             <h3>3. Vague or Unclear Language</h3>
             <p>Policies must be written in clear, plain language that users can understand.</p>
@@ -420,7 +420,7 @@ export default function GDPRComplianceWithTermlyPage() {
             <h2>The Future of Privacy Compliance</h2>
 
             <h3>Evolving Regulations</h3>
-            <p>Privacy laws are constantly evolving. New regulations are being introduced globally, and existing laws are being strengthened. Tools like <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A3D1FF] hover:underline">Termly</a> become essential as they:</p>
+            <p>Privacy laws are constantly evolving. New regulations are being introduced globally, and existing laws are being strengthened. Tools like <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A78BFA] hover:underline">Termly</a> become essential as they:</p>
 
             <ul>
               <li>Monitor regulatory changes across jurisdictions</li>
@@ -453,12 +453,12 @@ export default function GDPRComplianceWithTermlyPage() {
 
             <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 my-8">
               <h4 className="text-white font-semibold mb-4 flex items-center">
-                <Globe className="w-5 h-5 text-[#A3D1FF] mr-2" />
+                <Globe className="w-5 h-5 text-[#A78BFA] mr-2" />
                 Quick Start Guide
               </h4>
               <ol className="text-gray-300 space-y-3">
                 <li>
-                  <strong className="text-white">1. Sign up:</strong> Create a free account at <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A3D1FF] hover:underline">Termly.io</a>
+                  <strong className="text-white">1. Sign up:</strong> Create a free account at <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A78BFA] hover:underline">Termly.io</a>
                 </li>
                 <li>
                   <strong className="text-white">2. Generate Policies:</strong> Answer the questionnaire to create your custom policies
@@ -494,7 +494,7 @@ export default function GDPRComplianceWithTermlyPage() {
 
             <h2>Conclusion: Compliance Doesn't Have to Be Complicated</h2>
 
-            <p>GDPR and other privacy regulations can seem overwhelming, but tools like <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A3D1FF] hover:underline">Termly</a> make compliance accessible to businesses of all sizes. By automating policy generation, consent management, and cookie tracking, Termly eliminates the complexity and risk of manual compliance efforts.</p>
+            <p>GDPR and other privacy regulations can seem overwhelming, but tools like <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A78BFA] hover:underline">Termly</a> make compliance accessible to businesses of all sizes. By automating policy generation, consent management, and cookie tracking, Termly eliminates the complexity and risk of manual compliance efforts.</p>
 
             <p>The cost of non-compliance—both in regulatory fines and lost customer trust—far exceeds the investment in proper compliance tools. With Termly, you get:</p>
 
@@ -507,11 +507,11 @@ export default function GDPRComplianceWithTermlyPage() {
               <li>Peace of mind knowing you're protected</li>
             </ul>
 
-            <p>Whether you're launching a new website, managing multiple client projects, or updating an existing business for compliance, <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A3D1FF] hover:underline">Termly</a> provides the tools you need to protect your business while building trust with your users.</p>
+            <p>Whether you're launching a new website, managing multiple client projects, or updating an existing business for compliance, <a href="https://termly.io/" target="_blank" rel="noopener noreferrer" className="text-[#A78BFA] hover:underline">Termly</a> provides the tools you need to protect your business while building trust with your users.</p>
 
-            <div className="bg-[#1b1b1b] p-6 rounded-xl border border-[#A3D1FF] my-8">
+            <div className="bg-[#1b1b1b] p-6 rounded-xl border border-[#A78BFA] my-8">
               <h4 className="text-white font-semibold mb-2 flex items-center">
-                <Lock className="w-5 h-5 text-[#A3D1FF] mr-2" />
+                <Lock className="w-5 h-5 text-[#A78BFA] mr-2" />
                 Ready to Achieve Compliance?
               </h4>
               <p className="text-gray-300 mb-4">Don't wait for a compliance issue to force your hand. Start protecting your business today with Termly's comprehensive privacy compliance platform.</p>
@@ -519,7 +519,7 @@ export default function GDPRComplianceWithTermlyPage() {
                 href="https://termly.io/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 bg-[#A3D1FF] text-black rounded-lg hover:bg-[#92bce6] transition-colors font-semibold"
+                className="inline-flex items-center px-6 py-3 bg-[#A78BFA] text-black rounded-lg hover:bg-[#8B5CF6] transition-colors font-semibold"
               >
                 Get Started with Termly
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -553,7 +553,7 @@ export default function GDPRComplianceWithTermlyPage() {
               <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#0077B5]/20 text-[#0077B5] transition-colors">
                 <Linkedin className="w-5 h-5" />
               </button>
-              <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#A3D1FF]/20 text-[#A3D1FF] transition-colors">
+              <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#A78BFA]/20 text-[#A78BFA] transition-colors">
                 <Link className="w-5 h-5" />
               </button>
             </div>
@@ -562,7 +562,7 @@ export default function GDPRComplianceWithTermlyPage() {
           <div className="mt-12 pt-8 border-t border-white/10">
             <h3 className="text-2xl font-semibold text-white mb-6">Related Articles</h3>
             <div className="grid sm:grid-cols-2 gap-6">
-              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group">
+              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group">
                 <div className="aspect-[16/9] overflow-hidden">
                   <img
                     src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=2000&q=80"
@@ -571,11 +571,11 @@ export default function GDPRComplianceWithTermlyPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">Cybersecurity Best Practices for Modern Websites</h4>
+                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A78BFA] transition-colors">Cybersecurity Best Practices for Modern Websites</h4>
                   <p className="text-gray-400 text-sm mb-4">Learn essential security measures to protect your website and user data from emerging threats.</p>
                   <button
                     onClick={() => navigate('/services/cybersecurity')}
-                    className="text-[#A3D1FF] text-sm flex items-center gap-1 hover:underline"
+                    className="text-[#A78BFA] text-sm flex items-center gap-1 hover:underline"
                   >
                     Learn More
                     <ArrowRight className="w-3 h-3" />
@@ -583,7 +583,7 @@ export default function GDPRComplianceWithTermlyPage() {
                 </div>
               </div>
 
-              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group">
+              <div className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group">
                 <div className="aspect-[16/9] overflow-hidden">
                   <img
                     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2000&q=80"
@@ -592,11 +592,11 @@ export default function GDPRComplianceWithTermlyPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">7 Proven Conversion Rate Optimization Techniques</h4>
+                  <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-[#A78BFA] transition-colors">7 Proven Conversion Rate Optimization Techniques</h4>
                   <p className="text-gray-400 text-sm mb-4">Discover actionable strategies to boost your website's conversion rates and drive business growth.</p>
                   <button
                     onClick={() => navigate('/blog/conversion-rate-optimization-techniques')}
-                    className="text-[#A3D1FF] text-sm flex items-center gap-1 hover:underline"
+                    className="text-[#A78BFA] text-sm flex items-center gap-1 hover:underline"
                   >
                     Read Article
                     <ArrowRight className="w-3 h-3" />

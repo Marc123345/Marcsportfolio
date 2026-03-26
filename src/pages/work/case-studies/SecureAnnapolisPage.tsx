@@ -8,11 +8,11 @@ function FeatureCard({ icon: Icon, title, description }: {
   description: string;
 }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group">
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all group">
       <div className="relative mb-6">
-        <div className="absolute inset-0 bg-[#A3D1FF]/20 blur-xl rounded-full"></div>
-        <div className="bg-[#A3D1FF]/10 p-4 rounded-xl relative">
-          <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
+        <div className="absolute inset-0 bg-[#A78BFA]/20 blur-xl rounded-full"></div>
+        <div className="bg-[#A78BFA]/10 p-4 rounded-xl relative">
+          <Icon className="w-8 h-8 text-[#A78BFA] group-hover:scale-110 transition-transform" />
         </div>
       </div>
       <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
@@ -23,8 +23,8 @@ function FeatureCard({ icon: Icon, title, description }: {
 
 function StatCard({ value, label }: { value: string; label: string }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center">
-      <div className="text-4xl font-bold text-[#A3D1FF] mb-2">{value}</div>
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all text-center">
+      <div className="text-4xl font-bold text-[#A78BFA] mb-2">{value}</div>
       <div className="text-gray-400">{label}</div>
     </div>
   );
@@ -90,7 +90,7 @@ function SecureAnnapolisPage() {
                   'Professional Services',
                   'Annapolis'
                 ].map((tag) => (
-                  <span key={tag} className="px-4 py-2 bg-white/5 rounded-full text-sm text-[#A3D1FF]">
+                  <span key={tag} className="px-4 py-2 bg-white/5 rounded-full text-sm text-[#A78BFA]">
                     {tag}
                   </span>
                 ))}
@@ -101,19 +101,19 @@ function SecureAnnapolisPage() {
                 <h3 className="text-xl font-semibold text-white mb-4">Key Results</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     150% increase in qualified leads
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     Top 3 local search rankings
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     85% mobile conversion rate
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     4.8/5 customer rating
                   </li>
                 </ul>
@@ -227,10 +227,10 @@ function SecureAnnapolisPage() {
       {/* Client Testimonial */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1b1b1b]">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-[#2d3035] p-8 rounded-xl border-l-4 border-[#A3D1FF]">
+          <div className="bg-[#2d3035] p-8 rounded-xl border-l-4 border-[#A78BFA]">
             <div className="flex items-center gap-8">
-              <div className="w-24 h-24 rounded-full bg-[#2d3035] flex items-center justify-center border-2 border-[#A3D1FF]">
-                <span className="text-2xl font-bold text-[#A3D1FF]">RM</span>
+              <div className="w-24 h-24 rounded-full bg-[#2d3035] flex items-center justify-center border-2 border-[#A78BFA]">
+                <span className="text-2xl font-bold text-[#A78BFA]">RM</span>
               </div>
               <div>
                 <p className="text-xl text-gray-300 italic mb-4">

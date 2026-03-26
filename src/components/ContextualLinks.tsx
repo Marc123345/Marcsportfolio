@@ -35,7 +35,7 @@ export default function ContextualLinks({
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-[#A3D1FF] hover:text-white transition-colors hover:underline"
+              className="inline-flex items-center text-[#A78BFA] hover:text-white transition-colors hover:underline"
               title={link.title || `Visit ${link.text}`}
             >
               {link.text}
@@ -44,7 +44,7 @@ export default function ContextualLinks({
           ) : (
             <Link
               to={link.href}
-              className="inline-flex items-center text-[#A3D1FF] hover:text-white transition-colors hover:underline"
+              className="inline-flex items-center text-[#A78BFA] hover:text-white transition-colors hover:underline"
               title={link.title || `Learn more about ${link.text}`}
             >
               {link.text}

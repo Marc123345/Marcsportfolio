@@ -202,7 +202,7 @@ export default function ChatBot() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-6 right-6 z-50 bg-[#A3D1FF] text-black p-4 rounded-full shadow-2xl hover:bg-[#92bce6] transition-colors"
+            className="fixed bottom-6 right-6 z-50 bg-[#A78BFA] text-black p-4 rounded-full shadow-2xl hover:bg-[#8B5CF6] transition-colors"
             aria-label="Open chat"
           >
             <MessageCircle className="w-6 h-6" />
@@ -221,7 +221,7 @@ export default function ChatBot() {
             className="fixed bottom-6 right-6 z-50 w-[400px] max-w-[calc(100vw-3rem)] h-[600px] max-h-[calc(100vh-3rem)] bg-[#1b1b1b] border border-white/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-[#A3D1FF] to-[#7db3e6] p-4 flex items-center justify-between">
+            <div className="bg-gradient-to-r from-[#A78BFA] to-[#7db3e6] p-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-white/20 backdrop-blur rounded-full flex items-center justify-center">
                   <MessageCircle className="w-5 h-5 text-white" />
@@ -253,7 +253,7 @@ export default function ChatBot() {
                   <div
                     className={`max-w-[80%] p-3 rounded-2xl ${
                       message.type === 'user'
-                        ? 'bg-[#A3D1FF] text-black rounded-br-sm'
+                        ? 'bg-[#A78BFA] text-black rounded-br-sm'
                         : 'bg-[#2d3035] text-white rounded-bl-sm'
                     }`}
                   >
@@ -304,7 +304,7 @@ export default function ChatBot() {
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       onClick={() => handleProjectTypeSelect(type.value)}
-                      className="bg-[#2d3035] hover:bg-[#3d4045] border border-white/10 hover:border-[#A3D1FF] p-3 rounded-xl text-left transition-all group"
+                      className="bg-[#2d3035] hover:bg-[#3d4045] border border-white/10 hover:border-[#A78BFA] p-3 rounded-xl text-left transition-all group"
                     >
                       <div className="font-medium text-white text-sm mb-1">{type.label}</div>
                       <div className="text-xs text-gray-400">{type.description}</div>
@@ -326,7 +326,7 @@ export default function ChatBot() {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="flex items-center justify-center gap-2 bg-[#A3D1FF] hover:bg-[#92bce6] text-black font-semibold p-4 rounded-xl transition-all"
+                    className="flex items-center justify-center gap-2 bg-[#A78BFA] hover:bg-[#8B5CF6] text-black font-semibold p-4 rounded-xl transition-all"
                   >
                     <Calendar className="w-5 h-5" />
                     Schedule a Call Now
@@ -346,7 +346,7 @@ export default function ChatBot() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="flex items-center justify-center gap-2 text-[#A3D1FF]"
+                  className="flex items-center justify-center gap-2 text-[#A78BFA]"
                 >
                   <Loader2 className="w-5 h-5 animate-spin" />
                   <span className="text-sm">Submitting your information...</span>
@@ -382,7 +382,7 @@ export default function ChatBot() {
                         ? 'your@email.com'
                         : 'e.g., $5,000 - $10,000'
                     }
-                    className="flex-1 bg-[#2d3035] text-white px-4 py-3 rounded-xl border border-white/10 focus:border-[#A3D1FF] focus:outline-none transition-colors placeholder-gray-500"
+                    className="flex-1 bg-[#2d3035] text-white px-4 py-3 rounded-xl border border-white/10 focus:border-[#A78BFA] focus:outline-none transition-colors placeholder-gray-500"
                     disabled={isSubmitting}
                     autoFocus
                   />
@@ -391,7 +391,7 @@ export default function ChatBot() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     disabled={isSubmitting || !inputValue.trim()}
-                    className="bg-[#A3D1FF] hover:bg-[#92bce6] disabled:bg-gray-600 disabled:cursor-not-allowed text-black p-3 rounded-xl transition-colors"
+                    className="bg-[#A78BFA] hover:bg-[#8B5CF6] disabled:bg-gray-600 disabled:cursor-not-allowed text-black p-3 rounded-xl transition-colors"
                   >
                     <Send className="w-5 h-5" />
                   </motion.button>

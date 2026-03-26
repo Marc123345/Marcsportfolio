@@ -8,11 +8,11 @@ function FeatureCard({ icon: Icon, title, description }: {
   description: string;
 }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group">
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all group">
       <div className="relative mb-6">
-        <div className="absolute inset-0 bg-[#A3D1FF]/20 blur-xl rounded-full"></div>
-        <div className="bg-[#A3D1FF]/10 p-4 rounded-xl relative">
-          <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
+        <div className="absolute inset-0 bg-[#A78BFA]/20 blur-xl rounded-full"></div>
+        <div className="bg-[#A78BFA]/10 p-4 rounded-xl relative">
+          <Icon className="w-8 h-8 text-[#A78BFA] group-hover:scale-110 transition-transform" />
         </div>
       </div>
       <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
@@ -23,8 +23,8 @@ function FeatureCard({ icon: Icon, title, description }: {
 
 function StatCard({ value, label }: { value: string; label: string }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center">
-      <div className="text-4xl font-bold text-[#A3D1FF] mb-2">{value}</div>
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all text-center">
+      <div className="text-4xl font-bold text-[#A78BFA] mb-2">{value}</div>
       <div className="text-gray-400">{label}</div>
     </div>
   );
@@ -99,7 +99,7 @@ export default function UzaEntertainmentPage() {
                   'Yelp Integration',
                   'Performance Optimization'
                 ].map((tag) => (
-                  <span key={tag} className="px-4 py-2 bg-white/5 rounded-full text-sm text-[#A3D1FF]">
+                  <span key={tag} className="px-4 py-2 bg-white/5 rounded-full text-sm text-[#A78BFA]">
                     {tag}
                   </span>
                 ))}
@@ -110,19 +110,19 @@ export default function UzaEntertainmentPage() {
                 <h3 className="text-xl font-semibold text-white mb-4">Key Achievements</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     85% increase in online inquiries
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     90% faster page load times
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     40% higher user engagement
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     Top 3 ranking for local dance entertainment searches
                   </li>
                 </ul>
@@ -221,19 +221,19 @@ export default function UzaEntertainmentPage() {
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Responsive design for all devices
                     </li>
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Image optimization and lazy loading
                     </li>
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Smooth animations with Framer Motion
                     </li>
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Integrated contact forms with validation
                     </li>
                   </ul>
@@ -244,19 +244,19 @@ export default function UzaEntertainmentPage() {
                     <div>
                       <div className="flex justify-between text-sm mb-1">
                         <span className="text-gray-300">Page Load Time</span>
-                        <span className="text-[#A3D1FF]">0.8s</span>
+                        <span className="text-[#A78BFA]">0.8s</span>
                       </div>
                       <div className="h-2 bg-white/10 rounded-full">
-                        <div className="h-2 bg-[#A3D1FF] rounded-full" style={{ width: '90%' }}></div>
+                        <div className="h-2 bg-[#A78BFA] rounded-full" style={{ width: '90%' }}></div>
                       </div>
                     </div>
                     <div>
                       <div className="flex justify-between text-sm mb-1">
                         <span className="text-gray-300">Core Web Vitals</span>
-                        <span className="text-[#A3D1FF]">95/100</span>
+                        <span className="text-[#A78BFA]">95/100</span>
                       </div>
                       <div className="h-2 bg-white/10 rounded-full">
-                        <div className="h-2 bg-[#A3D1FF] rounded-full" style={{ width: '95%' }}></div>
+                        <div className="h-2 bg-[#A78BFA] rounded-full" style={{ width: '95%' }}></div>
                       </div>
                     </div>
                   </div>
@@ -273,19 +273,19 @@ export default function UzaEntertainmentPage() {
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Local keyword optimization
                     </li>
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Google Business Profile optimization
                     </li>
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Yelp business profile enhancement
                     </li>
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Local citation building
                     </li>
                   </ul>
@@ -296,19 +296,19 @@ export default function UzaEntertainmentPage() {
                     <div>
                       <div className="flex justify-between text-sm mb-1">
                         <span className="text-gray-300">Local Search Visibility</span>
-                        <span className="text-[#A3D1FF]">85%</span>
+                        <span className="text-[#A78BFA]">85%</span>
                       </div>
                       <div className="h-2 bg-white/10 rounded-full">
-                        <div className="h-2 bg-[#A3D1FF] rounded-full" style={{ width: '85%' }}></div>
+                        <div className="h-2 bg-[#A78BFA] rounded-full" style={{ width: '85%' }}></div>
                       </div>
                     </div>
                     <div>
                       <div className="flex justify-between text-sm mb-1">
                         <span className="text-gray-300">Keyword Rankings</span>
-                        <span className="text-[#A3D1FF]">Top 3</span>
+                        <span className="text-[#A78BFA]">Top 3</span>
                       </div>
                       <div className="h-2 bg-white/10 rounded-full">
-                        <div className="h-2 bg-[#A3D1FF] rounded-full" style={{ width: '90%' }}></div>
+                        <div className="h-2 bg-[#A78BFA] rounded-full" style={{ width: '90%' }}></div>
                       </div>
                     </div>
                   </div>

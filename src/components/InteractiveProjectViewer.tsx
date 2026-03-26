@@ -225,7 +225,7 @@ export default function InteractiveProjectViewer() {
                 loading="lazy"
               />
               <div className="absolute top-4 right-4 z-20">
-                <span className="px-3 py-1 bg-[#A3D1FF]/20 text-[#A3D1FF] rounded-full text-sm backdrop-blur-sm">
+                <span className="px-3 py-1 bg-[#A78BFA]/20 text-[#A78BFA] rounded-full text-sm backdrop-blur-sm">
                   {currentProject.category}
                 </span>
               </div>
@@ -254,7 +254,7 @@ export default function InteractiveProjectViewer() {
               <span className="hidden sm:inline">Swipe to explore</span>
               <div className="w-12 sm:w-16 h-1 bg-white/20 rounded-full overflow-hidden">
                 <div 
-                  className="h-full bg-[#A3D1FF] rounded-full"
+                  className="h-full bg-[#A78BFA] rounded-full"
                   style={{ width: `${((currentIndex + 1) / projects.length) * 100}%` }}
                 ></div>
               </div>
@@ -266,7 +266,7 @@ export default function InteractiveProjectViewer() {
       <button
         onClick={prevProject}
         disabled={currentIndex === 0}
-        className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-30 w-8 h-8 sm:w-10 sm:h-10 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-[#A3D1FF] hover:text-black transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+        className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-30 w-8 h-8 sm:w-10 sm:h-10 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-[#A78BFA] hover:text-black transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
         aria-label="Previous project"
       >
         <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -275,7 +275,7 @@ export default function InteractiveProjectViewer() {
       <button
         onClick={nextProject}
         disabled={currentIndex === projects.length - 1}
-        className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-30 w-8 h-8 sm:w-10 sm:h-10 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-[#A3D1FF] hover:text-black transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+        className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-30 w-8 h-8 sm:w-10 sm:h-10 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-[#A78BFA] hover:text-black transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
         aria-label="Next project"
       >
         <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />

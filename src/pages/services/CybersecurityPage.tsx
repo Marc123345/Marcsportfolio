@@ -9,11 +9,11 @@ function FeatureCard({ icon: Icon, title, description }: {
   description: string;
 }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group">
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all group">
       <div className="relative mb-6">
-        <div className="absolute inset-0 bg-[#A3D1FF]/20 blur-xl rounded-full"></div>
-        <div className="bg-[#A3D1FF]/10 p-4 rounded-xl relative">
-          <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
+        <div className="absolute inset-0 bg-[#A78BFA]/20 blur-xl rounded-full"></div>
+        <div className="bg-[#A78BFA]/10 p-4 rounded-xl relative">
+          <Icon className="w-8 h-8 text-[#A78BFA] group-hover:scale-110 transition-transform" />
         </div>
       </div>
       <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
@@ -28,13 +28,13 @@ function ServiceCard({ title, description, features }: {
   features: string[];
 }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all">
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all">
       <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
       <p className="text-gray-400 mb-6">{description}</p>
       <ul className="space-y-3">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start text-gray-300">
-            <ArrowRight className="w-4 h-4 text-[#A3D1FF] mt-1 mr-2" />
+            <ArrowRight className="w-4 h-4 text-[#A78BFA] mt-1 mr-2" />
             <strong>{feature}</strong>
           </li>
         ))}
@@ -188,22 +188,22 @@ export default function CybersecurityPage() {
           <h2 className="text-3xl font-bold text-white mb-12 text-center">The Benefits of Our Approach</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10 text-center">
-              <ShieldCheck className="w-12 h-12 text-[#A3D1FF] mx-auto mb-4" />
+              <ShieldCheck className="w-12 h-12 text-[#A78BFA] mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-white mb-2">Rock-Solid Security</h3>
               <p className="text-gray-400"><strong className="text-white">Strong breach prevention</strong> with a technology stack that safeguards your data and protects against threats.</p>
             </div>
             <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10 text-center">
-              <Users className="w-12 h-12 text-[#A3D1FF] mx-auto mb-4" />
+              <Users className="w-12 h-12 text-[#A78BFA] mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-white mb-2">Seamless Experience</h3>
               <p className="text-gray-400"><strong className="text-white">Reduction</strong> in security-related friction with interfaces that make security intuitive, not a burden.</p>
             </div>
             <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10 text-center">
-              <Lock className="w-12 h-12 text-[#A3D1FF] mx-auto mb-4" />
+              <Lock className="w-12 h-12 text-[#A78BFA] mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-white mb-2">Compliance Built-In</h3>
               <p className="text-gray-400"><strong className="text-white">Regulatory compliance</strong> at every layer, reducing legal and business risk.</p>
             </div>
             <div className="bg-[#2d3035] p-6 rounded-xl border border-white/10 text-center">
-              <Eye className="w-12 h-12 text-[#A3D1FF] mx-auto mb-4" />
+              <Eye className="w-12 h-12 text-[#A78BFA] mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-white mb-2">Proactive Protection</h3>
               <p className="text-gray-400"><strong className="text-white">Threats detected</strong> before they cause damage through ongoing monitoring and threat intelligence.</p>
             </div>

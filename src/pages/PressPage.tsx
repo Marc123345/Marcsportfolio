@@ -95,9 +95,9 @@ function PressCard({ item }: { item: PressItem }) {
   };
 
   return (
-    <HoverCard3D className={`bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group h-full ${item.featured ? 'border-[#A3D1FF]/50' : ''}`}>
+    <HoverCard3D className={`bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group h-full ${item.featured ? 'border-[#A78BFA]/50' : ''}`}>
       {item.featured && (
-        <div className="absolute -top-3 left-4 bg-[#A3D1FF] text-black px-3 py-1 rounded-full text-xs font-medium z-10">
+        <div className="absolute -top-3 left-4 bg-[#A78BFA] text-black px-3 py-1 rounded-full text-xs font-medium z-10">
           Featured
         </div>
       )}
@@ -120,7 +120,7 @@ function PressCard({ item }: { item: PressItem }) {
           </span>
         </div>
         
-        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#A3D1FF] transition-colors">
+        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#A78BFA] transition-colors">
           {item.title}
         </h3>
         
@@ -139,7 +139,7 @@ function PressCard({ item }: { item: PressItem }) {
           href={item.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center text-[#A3D1FF] hover:underline text-sm font-medium"
+          className="inline-flex items-center text-[#A78BFA] hover:underline text-sm font-medium"
         >
           Read Full Article
           <ExternalLink className="ml-1 w-3 h-3" />
@@ -175,7 +175,7 @@ export default function PressPage() {
             <h1 className="font-heading text-[clamp(2.2rem,4vw,3rem)] font-semibold tracking-[-0.01em] text-white leading-[1.15] mb-6">
               Press & Media Coverage
             </h1>
-            <h2 className="font-body text-xl sm:text-2xl text-[#A3D1FF] mb-6">
+            <h2 className="font-body text-xl sm:text-2xl text-[#A78BFA] mb-6">
               Recognition & Industry Features
             </h2>
             <p className="font-body text-xl leading-[1.7] text-gray-400 max-w-3xl">
@@ -236,7 +236,7 @@ export default function PressPage() {
           
           <div className="grid md:grid-cols-4 gap-6">
             <motion.div 
-              className="bg-[#2d3035] p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center group"
+              className="bg-[#2d3035] p-6 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all text-center group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -248,7 +248,7 @@ export default function PressPage() {
             </motion.div>
             
             <motion.div 
-              className="bg-[#2d3035] p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center group"
+              className="bg-[#2d3035] p-6 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all text-center group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -260,7 +260,7 @@ export default function PressPage() {
             </motion.div>
             
             <motion.div 
-              className="bg-[#2d3035] p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center group"
+              className="bg-[#2d3035] p-6 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all text-center group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -272,7 +272,7 @@ export default function PressPage() {
             </motion.div>
             
             <motion.div 
-              className="bg-[#2d3035] p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center group"
+              className="bg-[#2d3035] p-6 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all text-center group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -299,21 +299,21 @@ export default function PressPage() {
               
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <div>
                     <p className="text-white font-medium">High-resolution project images</p>
                     <p className="text-gray-400 text-sm">Professional screenshots and mockups</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <div>
                     <p className="text-white font-medium">Company background & bio</p>
                     <p className="text-gray-400 text-sm">Professional biography and company information</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <ArrowRight className="w-5 h-5 text-[#A3D1FF] mt-1 mr-3" />
+                  <ArrowRight className="w-5 h-5 text-[#A78BFA] mt-1 mr-3" />
                   <div>
                     <p className="text-white font-medium">Project case studies</p>
                     <p className="text-gray-400 text-sm">Detailed project information and results</p>

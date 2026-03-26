@@ -31,7 +31,7 @@ export default function DynamicBackground({
   className = '',
   streakCount = 15,
   particleCount = 50,
-  color = '#A3D1FF'
+  color = '#A78BFA'
 }: DynamicBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const streaksRef = useRef<Streak[]>([]);

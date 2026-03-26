@@ -177,8 +177,8 @@ export default function AIWebsiteAnalyzer() {
     <div className="bg-[#1b1b1b] rounded-xl border border-white/10 overflow-hidden">
       <div className="p-8">
         <div className="flex items-center gap-3 mb-4">
-          <div className="bg-[#A3D1FF]/10 p-3 rounded-lg">
-            <Search className="w-6 h-6 text-[#A3D1FF]" />
+          <div className="bg-[#A78BFA]/10 p-3 rounded-lg">
+            <Search className="w-6 h-6 text-[#A78BFA]" />
           </div>
           <h3 className="text-2xl font-bold text-white">AI Website Analyzer</h3>
         </div>
@@ -199,7 +199,7 @@ export default function AIWebsiteAnalyzer() {
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
                 placeholder="https://yourcompany.com"
-                className="w-full px-4 py-3 bg-[#2d3035] border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#A3D1FF] focus:border-transparent"
+                className="w-full px-4 py-3 bg-[#2d3035] border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:border-transparent"
                 disabled={isAnalyzing}
                 required
                 aria-required="true"
@@ -246,7 +246,7 @@ export default function AIWebsiteAnalyzer() {
               <h4 className="text-xl font-semibold text-white">Analysis Results</h4>
               <div className="flex items-center gap-2">
                 <span className="text-gray-400">Overall Score:</span>
-                <span className="text-lg font-bold text-[#A3D1FF]">{result.score}/100</span>
+                <span className="text-lg font-bold text-[#A78BFA]">{result.score}/100</span>
               </div>
             </div>
             
@@ -256,13 +256,13 @@ export default function AIWebsiteAnalyzer() {
               <div className="bg-[#2d3035] p-4 rounded-lg">
                 <div className="flex items-center justify-between mb-2">
                   <h5 className="font-semibold text-white">Design</h5>
-                  <span className="text-[#A3D1FF]">{result.design.score}/100</span>
+                  <span className="text-[#A78BFA]">{result.design.score}/100</span>
                 </div>
                 <p className="text-gray-400 text-sm mb-3">{result.design.feedback}</p>
                 <div className="space-y-2">
                   {result.design.improvements.map((improvement, index) => (
                     <div key={index} className="flex items-start gap-2 text-sm">
-                      <CheckCircle2 className="w-4 h-4 text-[#A3D1FF] mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#A78BFA] mt-0.5" />
                       <span className="text-gray-300">{improvement}</span>
                     </div>
                   ))}
@@ -272,13 +272,13 @@ export default function AIWebsiteAnalyzer() {
               <div className="bg-[#2d3035] p-4 rounded-lg">
                 <div className="flex items-center justify-between mb-2">
                   <h5 className="font-semibold text-white">Performance</h5>
-                  <span className="text-[#A3D1FF]">{result.performance.score}/100</span>
+                  <span className="text-[#A78BFA]">{result.performance.score}/100</span>
                 </div>
                 <p className="text-gray-400 text-sm mb-3">{result.performance.feedback}</p>
                 <div className="space-y-2">
                   {result.performance.improvements.map((improvement, index) => (
                     <div key={index} className="flex items-start gap-2 text-sm">
-                      <CheckCircle2 className="w-4 h-4 text-[#A3D1FF] mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#A78BFA] mt-0.5" />
                       <span className="text-gray-300">{improvement}</span>
                     </div>
                   ))}
@@ -288,13 +288,13 @@ export default function AIWebsiteAnalyzer() {
               <div className="bg-[#2d3035] p-4 rounded-lg">
                 <div className="flex items-center justify-between mb-2">
                   <h5 className="font-semibold text-white">Conversion Potential</h5>
-                  <span className="text-[#A3D1FF]">{result.conversion.score}/100</span>
+                  <span className="text-[#A78BFA]">{result.conversion.score}/100</span>
                 </div>
                 <p className="text-gray-400 text-sm mb-3">{result.conversion.feedback}</p>
                 <div className="space-y-2">
                   {result.conversion.improvements.map((improvement, index) => (
                     <div key={index} className="flex items-start gap-2 text-sm">
-                      <CheckCircle2 className="w-4 h-4 text-[#A3D1FF] mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#A78BFA] mt-0.5" />
                       <span className="text-gray-300">{improvement}</span>
                     </div>
                   ))}
@@ -314,7 +314,7 @@ export default function AIWebsiteAnalyzer() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="your@email.com"
-                    className="flex-1 px-4 py-2 bg-[#1b1b1b] border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#A3D1FF] focus:border-transparent"
+                    className="flex-1 px-4 py-2 bg-[#1b1b1b] border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:border-transparent"
                   />
                   <button
                     type="submit"
@@ -329,7 +329,7 @@ export default function AIWebsiteAnalyzer() {
               </form>
             ) : (
               <div className="mt-6 p-4 bg-[#2d3035] rounded-lg">
-                <div className="flex items-center gap-3 text-[#A3D1FF]">
+                <div className="flex items-center gap-3 text-[#A78BFA]">
                   <CheckCircle2 className="w-5 h-5" />
                   <p className="font-medium">Report sent! Check your inbox in 2-3 minutes.</p>
                 </div>
@@ -343,7 +343,7 @@ export default function AIWebsiteAnalyzer() {
                   setUrl('');
                   setShowEmailForm(false);
                 }}
-                className="text-[#A3D1FF] hover:underline flex items-center gap-2"
+                className="text-[#A78BFA] hover:underline flex items-center gap-2"
               >
                 Analyze another website
                 <ArrowRight className="w-4 h-4" />

@@ -11,11 +11,11 @@ function FeatureCard({ icon: Icon, title, description }: {
   description: string;
 }) {
   return (
-    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all group">
+    <div className="bg-[#1b1b1b] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all group">
       <div className="relative mb-6">
-        <div className="absolute inset-0 bg-[#A3D1FF]/20 blur-xl rounded-full"></div>
-        <div className="bg-[#A3D1FF]/10 p-4 rounded-xl relative">
-          <Icon className="w-8 h-8 text-[#A3D1FF] group-hover:scale-110 transition-transform" />
+        <div className="absolute inset-0 bg-[#A78BFA]/20 blur-xl rounded-full"></div>
+        <div className="bg-[#A78BFA]/10 p-4 rounded-xl relative">
+          <Icon className="w-8 h-8 text-[#A78BFA] group-hover:scale-110 transition-transform" />
         </div>
       </div>
       <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
@@ -31,7 +31,7 @@ function StatCard({ value, label, icon: Icon }: { value: string; label: string; 
   return (
     <motion.div
       ref={ref}
-      className="bg-gradient-to-br from-[#1b1b1b] to-[#0a0a0a] p-8 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center group"
+      className="bg-gradient-to-br from-[#1b1b1b] to-[#0a0a0a] p-8 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all text-center group"
       initial={{ opacity: 0, scale: 0.9 }}
       animate={isInView ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 0.5 }}
@@ -39,12 +39,12 @@ function StatCard({ value, label, icon: Icon }: { value: string; label: string; 
     >
       {Icon && (
         <div className="flex justify-center mb-4">
-          <div className="p-3 bg-[#A3D1FF]/10 rounded-lg">
-            <Icon className="w-6 h-6 text-[#A3D1FF]" />
+          <div className="p-3 bg-[#A78BFA]/10 rounded-lg">
+            <Icon className="w-6 h-6 text-[#A78BFA]" />
           </div>
         </div>
       )}
-      <div className="text-5xl font-bold text-[#A3D1FF] mb-3">
+      <div className="text-5xl font-bold text-[#A78BFA] mb-3">
         {value.includes('+') ? (
           <span>{value}</span>
         ) : value.includes('%') ? (
@@ -77,7 +77,7 @@ export default function ChadLeClosPage() {
 
         {/* Hero Image */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0051a3]/20 via-transparent to-[#A3D1FF]/20 mix-blend-overlay"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0051a3]/20 via-transparent to-[#A78BFA]/20 mix-blend-overlay"></div>
           <img
             src="https://i.imgur.com/ApfYPlH.jpg"
             alt="Chad Le Clos Swimming"
@@ -88,7 +88,7 @@ export default function ChadLeClosPage() {
 
         {/* Floating Elements */}
         <motion.div
-          className="absolute top-20 left-10 w-24 h-24 rounded-full bg-[#A3D1FF]/10 blur-3xl"
+          className="absolute top-20 left-10 w-24 h-24 rounded-full bg-[#A78BFA]/10 blur-3xl"
           animate={{ y: [0, 30, 0], scale: [1, 1.2, 1] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -112,7 +112,7 @@ export default function ChadLeClosPage() {
             </motion.div>
 
             <h1 className="text-5xl sm:text-7xl font-bold text-white mb-8 tracking-tight">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-[#A3D1FF] to-white">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-[#A78BFA] to-white">
                 Chad Le Clos Swimming
               </span>
             </h1>
@@ -156,7 +156,7 @@ export default function ChadLeClosPage() {
                   'Conversion Design',
                   'Performance'
                 ].map((tag) => (
-                  <span key={tag} className="px-4 py-2 bg-white/5 rounded-full text-sm text-[#A3D1FF]">
+                  <span key={tag} className="px-4 py-2 bg-white/5 rounded-full text-sm text-[#A78BFA]">
                     {tag}
                   </span>
                 ))}
@@ -167,19 +167,19 @@ export default function ChadLeClosPage() {
                 <h3 className="text-xl font-semibold text-white mb-4">Key Achievements</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     200+ sign-ups in just 6 days
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     95% form completion rate
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     2.1s average page load time
                   </li>
                   <li className="flex items-center text-gray-300">
-                    <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                    <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                     75% mobile conversion rate
                   </li>
                 </ul>
@@ -255,19 +255,19 @@ export default function ChadLeClosPage() {
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Sophisticated visual design
                     </li>
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Strategic social proof placement
                     </li>
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Clear service packages
                     </li>
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Compelling storytelling
                     </li>
                   </ul>
@@ -278,19 +278,19 @@ export default function ChadLeClosPage() {
                     <div>
                       <div className="flex justify-between text-sm mb-1">
                         <span className="text-gray-300">Form Completion Rate</span>
-                        <span className="text-[#A3D1FF]">95%</span>
+                        <span className="text-[#A78BFA]">95%</span>
                       </div>
                       <div className="h-2 bg-white/10 rounded-full">
-                        <div className="h-2 bg-[#A3D1FF] rounded-full" style={{ width: '95%' }}></div>
+                        <div className="h-2 bg-[#A78BFA] rounded-full" style={{ width: '95%' }}></div>
                       </div>
                     </div>
                     <div>
                       <div className="flex justify-between text-sm mb-1">
                         <span className="text-gray-300">Mobile Conversions</span>
-                        <span className="text-[#A3D1FF]">75%</span>
+                        <span className="text-[#A78BFA]">75%</span>
                       </div>
                       <div className="h-2 bg-white/10 rounded-full">
-                        <div className="h-2 bg-[#A3D1FF] rounded-full" style={{ width: '75%' }}></div>
+                        <div className="h-2 bg-[#A78BFA] rounded-full" style={{ width: '75%' }}></div>
                       </div>
                     </div>
                   </div>
@@ -307,19 +307,19 @@ export default function ChadLeClosPage() {
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Strategic CTA placement
                     </li>
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Trust-building elements
                     </li>
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Clear pricing tiers
                     </li>
                     <li className="flex items-center text-gray-300">
-                      <CheckCircle2 className="w-5 h-5 text-[#A3D1FF] mr-3" />
+                      <CheckCircle2 className="w-5 h-5 text-[#A78BFA] mr-3" />
                       Testimonial integration
                     </li>
                   </ul>
@@ -330,19 +330,19 @@ export default function ChadLeClosPage() {
                     <div>
                       <div className="flex justify-between text-sm mb-1">
                         <span className="text-gray-300">Lead Quality</span>
-                        <span className="text-[#A3D1FF]">90%</span>
+                        <span className="text-[#A78BFA]">90%</span>
                       </div>
                       <div className="h-2 bg-white/10 rounded-full">
-                        <div className="h-2 bg-[#A3D1FF] rounded-full" style={{ width: '90%' }}></div>
+                        <div className="h-2 bg-[#A78BFA] rounded-full" style={{ width: '90%' }}></div>
                       </div>
                     </div>
                     <div>
                       <div className="flex justify-between text-sm mb-1">
                         <span className="text-gray-300">Client Satisfaction</span>
-                        <span className="text-[#A3D1FF]">95%</span>
+                        <span className="text-[#A78BFA]">95%</span>
                       </div>
                       <div className="h-2 bg-white/10 rounded-full">
-                        <div className="h-2 bg-[#A3D1FF] rounded-full" style={{ width: '95%' }}></div>
+                        <div className="h-2 bg-[#A78BFA] rounded-full" style={{ width: '95%' }}></div>
                       </div>
                     </div>
                   </div>
@@ -378,7 +378,7 @@ export default function ChadLeClosPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="text-[#A3D1FF] text-5xl font-bold mb-2">6 Days</div>
+              <div className="text-[#A78BFA] text-5xl font-bold mb-2">6 Days</div>
               <div className="text-white font-semibold mb-2">From Launch to Success</div>
               <div className="text-gray-400 text-sm">Rapid deployment with immediate impact</div>
             </motion.div>
@@ -390,7 +390,7 @@ export default function ChadLeClosPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="text-[#A3D1FF] text-5xl font-bold mb-2">90%</div>
+              <div className="text-[#A78BFA] text-5xl font-bold mb-2">90%</div>
               <div className="text-white font-semibold mb-2">Lead Quality Score</div>
               <div className="text-gray-400 text-sm">High-intent qualified registrations</div>
             </motion.div>
@@ -402,7 +402,7 @@ export default function ChadLeClosPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="text-[#A3D1FF] text-5xl font-bold mb-2">100%</div>
+              <div className="text-[#A78BFA] text-5xl font-bold mb-2">100%</div>
               <div className="text-white font-semibold mb-2">Mobile Responsive</div>
               <div className="text-gray-400 text-sm">Optimized for all devices</div>
             </motion.div>
