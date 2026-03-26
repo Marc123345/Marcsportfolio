@@ -1,6 +1,7 @@
 import { useNavigate, Link } from 'react-router-dom';
-import { useEffect, useRef } from 'react';
-import { ArrowRight, CircleCheck as CheckCircle, Target, TrendingUp, Zap, Shield, Users, Award, Clock, Star, Sparkles, MessageSquare, Rocket, ChartBar as BarChart3, Code as Code2 } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
+import { useEffect, useRef, useState } from 'react';
+import { ArrowRight, CircleCheck as CheckCircle, Target, TrendingUp, Zap, Shield, Users, Award, Clock, Star, Sparkles, MessageSquare, Rocket, ChartBar as BarChart3, Code as Code2, ChevronDown } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import TrustedBy from '@/components/TrustedBy';
 import SEO from '@/components/SEO';
@@ -81,6 +82,53 @@ const homeSchema = {
   }
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does it take to build a custom website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most projects take 4–8 weeks from kickoff to launch, depending on complexity. Simple landing pages can be ready in 2 weeks, while complex web apps or SaaS platforms may take 8–12 weeks. I'll give you a clear timeline during our first call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's included in your web design services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every project includes UI/UX design, responsive development, SEO optimization, performance tuning, and 30 days of post-launch support. I build with React, Next.js, and TypeScript for maximum performance and scalability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with clients outside of Israel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. While I'm based in Tel Aviv, over 60% of my clients are international — from the US, UK, South Africa, and across Europe. I work async-first with clear communication via Slack, email, and scheduled video calls."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I already have a website that needs improvement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I offer comprehensive website audits and redesign services. I'll analyze your current site's performance, UX, and conversion rates, then provide a clear roadmap for improvement. Many clients see a 40%+ increase in leads after a redesign."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a custom website cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pricing depends on scope and complexity. A professional business website typically starts around $3,000, while complex web applications and SaaS platforms range from $8,000–$20,000+. I offer flexible payment plans and always provide a detailed quote before starting."
+      }
+    }
+  ]
+};
+
 export default function HomePage() {
   const navigate = useNavigate();
   const heroRef = useRef<HTMLElement>(null);
@@ -133,7 +181,7 @@ export default function HomePage() {
           >
             <img
               src="https://ik.imagekit.io/qcvroy8xpd/Container.png"
-              alt="Marc Friedman Portfolio Websites"
+              alt="Award-winning web design portfolio showcasing high-converting business websites"
               className="w-full h-full object-cover"
             />
           </motion.div>
@@ -162,6 +210,9 @@ export default function HomePage() {
                 <h1 className="font-heading text-[clamp(3rem,6vw,4.5rem)] font-semibold tracking-[-0.01em] text-white leading-[1.15] mb-6">
                   Award Winning Websites That Turn Attention Into Revenue
                 </h1>
+                <p className="text-lg sm:text-xl text-gray-300/80 max-w-lg leading-relaxed">
+                  I design and develop high-converting websites for B2B companies, agencies, and ecommerce brands — so you get more leads, more sales, and a brand people remember.
+                </p>
               </motion.div>
 
               {/* CTA Buttons */}
@@ -302,7 +353,7 @@ export default function HomePage() {
             <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-6 border-4 border-[#A3D1FF] shadow-lg">
               <img
                 src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
-                alt="Marc Friedman"
+                alt="Marc Friedman - web designer and developer based in Tel Aviv"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -461,7 +512,7 @@ export default function HomePage() {
             <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-6 border-4 border-[#A3D1FF] shadow-lg">
               <img
                 src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
-                alt="Marc Friedman"
+                alt="Marc Friedman - web designer and developer based in Tel Aviv"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -609,7 +660,7 @@ export default function HomePage() {
             <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-6 border-4 border-[#A3D1FF] shadow-lg">
               <img
                 src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
-                alt="Marc Friedman"
+                alt="Marc Friedman - web designer and developer based in Tel Aviv"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -671,7 +722,7 @@ export default function HomePage() {
             >
               <img
                 src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
-                alt="Marc Friedman"
+                alt="Marc Friedman - web designer and developer based in Tel Aviv"
                 className="w-full h-auto rounded-3xl shadow-2xl"
               />
             </motion.div>
@@ -810,6 +861,87 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQSection />
+
+      {/* FAQ Schema */}
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
     </>
+  );
+}
+
+/* ── FAQ Accordion ── */
+const FAQ_ITEMS = [
+  {
+    q: "How long does it take to build a custom website?",
+    a: "Most projects take 4–8 weeks from kickoff to launch, depending on complexity. Simple landing pages can be ready in 2 weeks, while complex web apps or SaaS platforms may take 8–12 weeks. I'll give you a clear timeline during our first call."
+  },
+  {
+    q: "What's included in your web design services?",
+    a: "Every project includes UI/UX design, responsive development, SEO optimization, performance tuning, and 30 days of post-launch support. I build with React, Next.js, and TypeScript for maximum performance and scalability."
+  },
+  {
+    q: "Do you work with clients outside of Israel?",
+    a: "Absolutely. While I'm based in Tel Aviv, over 60% of my clients are international — from the US, UK, South Africa, and across Europe. I work async-first with clear communication via Slack, email, and scheduled video calls."
+  },
+  {
+    q: "What if I already have a website that needs improvement?",
+    a: "I offer comprehensive website audits and redesign services. I'll analyze your current site's performance, UX, and conversion rates, then provide a clear roadmap for improvement. Many clients see a 40%+ increase in leads after a redesign."
+  },
+  {
+    q: "How much does a custom website cost?",
+    a: "Pricing depends on scope and complexity. A professional business website typically starts around $3,000, while complex web applications and SaaS platforms range from $8,000–$20,000+. I offer flexible payment plans and always provide a detailed quote before starting."
+  },
+];
+
+function FAQSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0f0f0f]">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center mb-4">
+          Got Questions?
+        </h2>
+        <p className="text-lg text-gray-400 text-center mb-12 max-w-xl mx-auto">
+          Everything you need to know before we start working together.
+        </p>
+
+        <div className="space-y-3">
+          {FAQ_ITEMS.map((item, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <div
+                key={i}
+                className="border border-white/10 rounded-xl overflow-hidden transition-colors"
+                style={{ background: isOpen ? '#1b1b1b' : 'transparent' }}
+              >
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : i)}
+                  className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"
+                >
+                  <span className="text-white font-medium text-base sm:text-lg pr-4">{item.q}</span>
+                  <ChevronDown
+                    className="w-5 h-5 text-[#A3D1FF] flex-shrink-0 transition-transform duration-300"
+                    style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                  />
+                </button>
+                <div
+                  className="overflow-hidden transition-all duration-300"
+                  style={{ maxHeight: isOpen ? 300 : 0, opacity: isOpen ? 1 : 0 }}
+                >
+                  <p className="px-6 pb-5 text-gray-400 leading-relaxed">{item.a}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 }

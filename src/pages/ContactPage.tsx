@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
+import { Lock, Clock } from 'lucide-react';
 import TextReveal from '@/components/TextReveal';
 import HoverCard3D from '@/components/HoverCard3D';
 
@@ -118,6 +119,37 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-white mb-6">Get Your Free Project Quote</h2>
             </TextReveal>
 
+            {/* Quick Qualifier Fields */}
+            <div className="grid sm:grid-cols-2 gap-4 mb-6">
+              <div>
+                <label className="block text-sm text-gray-400 mb-2">Estimated Budget</label>
+                <select
+                  className="w-full bg-[#0f0f0f] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#A3D1FF] focus:outline-none transition-colors appearance-none cursor-pointer"
+                  defaultValue=""
+                >
+                  <option value="" disabled>Select your budget range</option>
+                  <option value="under-3k">Under $3,000</option>
+                  <option value="3k-5k">$3,000 – $5,000</option>
+                  <option value="5k-10k">$5,000 – $10,000</option>
+                  <option value="10k-20k">$10,000 – $20,000</option>
+                  <option value="20k-plus">$20,000+</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm text-gray-400 mb-2">Project Timeline</label>
+                <select
+                  className="w-full bg-[#0f0f0f] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#A3D1FF] focus:outline-none transition-colors appearance-none cursor-pointer"
+                  defaultValue=""
+                >
+                  <option value="" disabled>When do you need this?</option>
+                  <option value="asap">ASAP</option>
+                  <option value="1-month">Within 1 month</option>
+                  <option value="1-3-months">1–3 months</option>
+                  <option value="exploring">Just exploring</option>
+                </select>
+              </div>
+            </div>
+
             {/* JotForm React Implementation */}
             <div className="w-full">
               <iframe
@@ -136,6 +168,18 @@ export default function ContactPage() {
                 }}
                 scrolling="no"
               />
+            </div>
+
+            {/* Trust Signals */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-4 pt-4 border-t border-white/5">
+              <div className="flex items-center gap-2 text-gray-400 text-sm">
+                <Lock className="w-4 h-4 text-[#A3D1FF]" />
+                <span>Your information is 100% secure</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-400 text-sm">
+                <Clock className="w-4 h-4 text-[#A3D1FF]" />
+                <span>Average response time: under 2 hours</span>
+              </div>
             </div>
           </HoverCard3D>
         </div>

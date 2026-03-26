@@ -180,7 +180,7 @@ export default function TrustedBy() {
             <div className="transition-all duration-300 hover:scale-110 flex-shrink-0">
               <img
                 src="https://ik.imagekit.io/qcvroy8xpd/image%201%20(5).png?updatedAt=1763319654171"
-                alt="Partner Company"
+                alt="Web development client company logo"
                 className="h-12 md:h-14 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
               />
             </div>
@@ -216,7 +216,7 @@ export default function TrustedBy() {
             <div className="transition-all duration-300 hover:scale-110 flex-shrink-0">
               <img
                 src="https://ik.imagekit.io/qcvroy8xpd/f9f3cab4-1ac2-4216-9590-33ea4b61faea.jpeg?updatedAt=1751550631056"
-                alt="Partner Company"
+                alt="Digital agency partner company logo"
                 className="h-12 md:h-14 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
               />
             </div>
@@ -271,7 +271,7 @@ export default function TrustedBy() {
             <div className="transition-all duration-300 hover:scale-110 flex-shrink-0">
               <img
                 src="https://ik.imagekit.io/qcvroy8xpd/image%201%20(5).png?updatedAt=1763319654171"
-                alt="Partner Company"
+                alt="Web development client company logo"
                 className="h-12 md:h-14 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
               />
             </div>
@@ -307,7 +307,7 @@ export default function TrustedBy() {
             <div className="transition-all duration-300 hover:scale-110 flex-shrink-0">
               <img
                 src="https://ik.imagekit.io/qcvroy8xpd/f9f3cab4-1ac2-4216-9590-33ea4b61faea.jpeg?updatedAt=1751550631056"
-                alt="Partner Company"
+                alt="Digital agency partner company logo"
                 className="h-12 md:h-14 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
               />
             </div>
