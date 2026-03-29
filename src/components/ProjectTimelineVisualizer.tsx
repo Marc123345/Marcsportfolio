@@ -129,8 +129,8 @@ export default function ProjectTimelineVisualizer() {
         </p>
         
         {/* Timeline Navigation */}
-        <div className="relative mb-12">
-          <div className="absolute top-1/2 left-0 right-0 h-1 bg-[#2d3035] -translate-y-1/2"></div>
+        <div className="relative mb-12 pt-5">
+          <div className="absolute top-5 left-0 right-0 h-1 bg-[#2d3035]"></div>
           
           <div className="relative flex justify-between">
             {phases.map((phase, index) => (
