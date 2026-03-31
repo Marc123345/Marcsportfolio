@@ -305,7 +305,7 @@ export default function HomePage() {
                     to="/contact"
                     className="mr_btn mr_btn_primary inline-flex items-center gap-2"
                   >
-                    <span>Check If Your City Is Available</span>
+                    <span>Book a Consultation</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </MagneticButton>
@@ -320,26 +320,6 @@ export default function HomePage() {
               >
                 No contracts · No upfront risk · One clinic per city
               </motion.p>
-
-              {/* Social Proof Quote */}
-              <motion.div
-                className="max-w-md bg-black/40 backdrop-blur-sm px-5 py-4 rounded-lg border border-[#A3D1FF]/20"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.75 }}
-              >
-                <div className="flex items-start gap-3">
-                  <div className="flex gap-0.5 shrink-0 mt-0.5">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-[#FFD700] text-[#FFD700]" />
-                    ))}
-                  </div>
-                  <div>
-                    <p className="text-gray-300 text-sm italic leading-snug">"Showing up in the Google map pack within 3 weeks changed everything for our clinic."</p>
-                    <p className="text-gray-500 text-xs mt-1">— IV Therapy Clinic Owner, Austin TX</p>
-                  </div>
-                </div>
-              </motion.div>
 
               {/* Verified Reviews Badge */}
               <motion.div
