@@ -293,33 +293,86 @@ export default function HomePage() {
                 We handle everything — design, development, Google Business Profile setup, and 3 months of local SEO — so you show up on Google and convert visitors into booked clients.
               </motion.p>
 
-              {/* CTA Buttons */}
+              {/* CTA Block */}
               <motion.div
-                className="flex flex-col sm:flex-row gap-4"
+                className="relative"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
-                <MagneticButton strength={20}>
-                  <Link
-                    to="/contact"
-                    className="mr_btn mr_btn_primary inline-flex items-center gap-2"
-                  >
-                    <span>Book a Consultation</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </MagneticButton>
-              </motion.div>
+                {/* Hand-drawn arrow pointing to CTA */}
+                <motion.svg
+                  className="absolute -top-10 left-48 sm:left-56 w-16 h-16 text-[#A3D1FF] hidden sm:block"
+                  viewBox="0 0 64 64"
+                  fill="none"
+                  initial={{ opacity: 0, pathLength: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 1.2 }}
+                >
+                  <motion.path
+                    d="M10 8C20 12 35 20 40 35C42 40 42 48 38 55"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    fill="none"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 1.2, delay: 1.3, ease: "easeOut" }}
+                  />
+                  <motion.path
+                    d="M32 50L38 56L44 48"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    fill="none"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 0.4, delay: 2.5, ease: "easeOut" }}
+                  />
+                </motion.svg>
 
-              {/* Micro-copy */}
-              <motion.p
-                className="text-gray-500 text-sm"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.65 }}
-              >
-                No contracts · No upfront risk · One clinic per city
-              </motion.p>
+                <div className="flex items-center gap-5">
+                  {/* Marc's Photo */}
+                  <motion.div
+                    className="relative flex-shrink-0"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.7 }}
+                  >
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-3 border-[#A3D1FF] shadow-[0_0_20px_rgba(163,209,255,0.3)]">
+                      <img
+                        src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
+                        alt="Marc Friedman"
+                        className="w-full h-full object-cover"
+                        loading="eager"
+                      />
+                    </div>
+                    <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-[#1a2332] flex items-center justify-center">
+                      <span className="text-white text-[8px] font-bold">ON</span>
+                    </div>
+                  </motion.div>
+
+                  <div className="flex flex-col gap-3">
+                    <MagneticButton strength={20}>
+                      <Link
+                        to="/contact"
+                        className="group relative inline-flex items-center gap-3 bg-[#A3D1FF] hover:bg-white text-[#0a0f1a] font-bold text-lg sm:text-xl px-8 py-4 sm:py-5 rounded-lg transition-all duration-300 shadow-[0_0_30px_rgba(163,209,255,0.4)] hover:shadow-[0_0_50px_rgba(163,209,255,0.6)]"
+                      >
+                        <span className="relative z-[2]">Book a Free Consultation</span>
+                        <ArrowRight className="w-5 h-5 relative z-[2] group-hover:translate-x-1 transition-transform" />
+                        <motion.span
+                          className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#A3D1FF] to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        />
+                      </Link>
+                    </MagneticButton>
+                    <div className="flex items-center gap-3 text-gray-400 text-sm">
+                      <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-green-400" /> No contracts</span>
+                      <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-green-400" /> No upfront risk</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
 
               {/* Verified Reviews Badge - mobile only */}
               <motion.div
