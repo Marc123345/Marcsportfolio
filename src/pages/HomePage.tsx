@@ -134,7 +134,7 @@ export default function HomePage() {
           style={{ scale }}
         >
           <img
-            src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=2400&q=80"
+            src="https://ik.imagekit.io/qcvroy8xpd/Frame%201%20(1).png"
             alt=""
             className="absolute inset-0 w-full h-full object-cover"
             loading="eager"
