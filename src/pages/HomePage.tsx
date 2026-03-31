@@ -282,11 +282,11 @@ export default function HomePage() {
                 <div>
                   <div className="flex items-center gap-1 mb-0.5">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-[#FFD700] text-[#FFD700]" />
+                      <Star key={i} className={`w-3.5 h-3.5 ${i < 5 ? 'fill-[#FFD700] text-[#FFD700]' : 'fill-gray-600 text-gray-600'}`} />
                     ))}
-                    <span className="text-gray-400 text-xs ml-1.5">5.0</span>
+                    <span className="text-gray-400 text-xs ml-1.5">4.8</span>
                   </div>
-                  <p className="text-gray-400 text-xs">Trusted by 20+ clinic owners across the U.S.</p>
+                  <p className="text-gray-400 text-xs">5-star reviews on Google, Clutch, LinkedIn & DesignRush</p>
                 </div>
               </motion.div>
 
@@ -379,29 +379,6 @@ export default function HomePage() {
             <div className="w-1.5 h-3 rounded-full bg-[#A3D1FF]" />
           </motion.div>
         </motion.div>
-      </section>
-
-      {/* Social Proof Bar */}
-      <section className="bg-black border-y border-white/5 py-6 px-6">
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <div className="flex items-center gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-[#FFD700] text-[#FFD700]" />
-              ))}
-            </div>
-            <p className="text-gray-300 text-sm sm:text-base text-center italic">
-              "Showing up in the Google map pack within 3 weeks changed everything for our clinic."
-            </p>
-            <p className="text-gray-500 text-xs whitespace-nowrap">-- IV Therapy Clinic Owner, Austin TX</p>
-          </motion.div>
-        </div>
       </section>
 
       {/* Testimonials */}
