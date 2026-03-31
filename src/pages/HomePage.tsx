@@ -128,191 +128,98 @@ export default function HomePage() {
       <AccessibilityPanel />
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20" style={{ backgroundColor: '#1a2332' }}>
-        {/* Animated Background Layers */}
+      <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden pt-28 pb-16 lg:pt-32 lg:pb-20" style={{ backgroundColor: '#0d1117' }}>
         <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
-          {/* Video Background with parallax and scale */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0d1117] via-[#0d1117] to-[#0a1628]" />
           <motion.div
-            className="absolute inset-[-30px] w-[calc(100%+60px)] h-[calc(100%+60px)]"
-            style={{ y, scale }}
-            animate={{
-              x: [0, -8, 4, -12, 6, 0],
-              y: [0, 6, -8, 3, -10, 0],
-              scale: [1.02, 1.04, 1.02, 1.05, 1.03, 1.02],
-            }}
-            transition={{
-              duration: 30,
-              repeat: Infinity,
-              ease: [0.45, 0.05, 0.55, 0.95],
-              times: [0, 0.2, 0.4, 0.6, 0.8, 1],
-            }}
-          >
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover opacity-40"
-              poster="https://ik.imagekit.io/qcvroy8xpd/Container.png"
-            >
-              <source
-                src="https://cdn.pixabay.com/video/2023/12/15/192827-895963123_large.mp4"
-                type="video/mp4"
-              />
-              <img
-                src="https://ik.imagekit.io/qcvroy8xpd/Container.png"
-                alt="Marc Friedman Portfolio Websites"
-                className="w-full h-full object-cover"
-              />
-            </video>
-          </motion.div>
-
-          {/* Animated Gradient Layer 1 */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-br from-[#A3D1FF]/20 via-transparent to-transparent"
-            style={{ y: y2 }}
-            animate={{
-              opacity: [0.3, 0.5, 0.3],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+            className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#00F5C4]/5 rounded-full blur-[120px]"
+            animate={{ opacity: [0.3, 0.5, 0.3], scale: [1, 1.1, 1] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           />
-
-          {/* Animated Gradient Layer 2 */}
           <motion.div
-            className="absolute inset-0 bg-gradient-to-tl from-[#1a2332]/60 via-transparent to-[#A3D1FF]/10"
-            style={{ y: y3 }}
-            animate={{
-              opacity: [0.4, 0.6, 0.4],
-              scale: [1.1, 1, 1.1],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1,
-            }}
+            className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-[#A3D1FF]/5 rounded-full blur-[100px]"
+            animate={{ opacity: [0.2, 0.4, 0.2] }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
           />
-
-          {/* Floating Orbs */}
-          <motion.div
-            className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#A3D1FF]/10 rounded-full blur-3xl"
-            animate={{
-              x: [0, 100, 0],
-              y: [0, -50, 0],
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3],
-            }}
-            transition={{
-              duration: 12,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-
-          <motion.div
-            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#A3D1FF]/10 rounded-full blur-3xl"
-            animate={{
-              x: [0, -80, 0],
-              y: [0, 60, 0],
-              scale: [1, 1.3, 1],
-              opacity: [0.2, 0.4, 0.2],
-            }}
-            transition={{
-              duration: 15,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 2,
-            }}
-          />
-
-          <motion.div
-            className="absolute top-1/2 right-1/3 w-48 h-48 bg-blue-400/10 rounded-full blur-3xl"
-            animate={{
-              x: [0, -60, 0],
-              y: [0, -80, 0],
-              scale: [1.2, 1, 1.2],
-              opacity: [0.25, 0.45, 0.25],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 3,
-            }}
-          />
-
-          {/* Static Gradient Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1a2332]/60 via-transparent to-[#1a2332]/80" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1a2332]/80 via-transparent to-[#1a2332]/40" />
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2240%22%20height%3D%2240%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%221%22%20cy%3D%221%22%20r%3D%220.5%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%2F%3E%3C%2Fsvg%3E')] bg-repeat" />
         </div>
 
         <div className="container mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 relative z-10">
-          <div className="grid lg:grid-cols-[1fr_420px] gap-20 items-start">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-            {/* Left Side - Content + Reviews */}
+            {/* Left Side - Content */}
             <motion.div
-              className="text-left space-y-8"
+              className="text-left space-y-7"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
-              {/* Pre-headline */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="inline-flex items-center gap-2 bg-[#A3D1FF]/10 border border-[#A3D1FF]/20 rounded-full px-4 py-2"
+                className="inline-flex items-center gap-2 bg-[#00F5C4]/10 border border-[#00F5C4]/20 rounded-full px-4 py-2"
               >
-                <span className="w-2 h-2 rounded-full bg-[#A3D1FF] animate-pulse" />
-                <span className="text-[#A3D1FF] text-sm font-medium tracking-wide">For Biohacking &amp; Longevity Clinics — U.S. Only</span>
+                <span className="w-2 h-2 rounded-full bg-[#00F5C4] animate-pulse" />
+                <span className="text-[#00F5C4] text-sm font-medium tracking-wide">Exclusively for Biohacking Clinics — Limited by City</span>
               </motion.div>
 
-              {/* Main Headline */}
-              <div className="overflow-hidden mb-6">
-                <h1 className="font-heading text-[clamp(3rem,5.5vw,5.5rem)] font-semibold tracking-[-0.02em] text-white leading-[1.1]">
+              <div className="overflow-hidden">
+                <h1 className="text-[clamp(2.4rem,5vw,4.2rem)] font-black tracking-[-0.02em] text-white leading-[1.1]">
                   <SplitTextReveal
-                    text="Get a Premium Website + 3 Months of Free SEO Built Exclusively for Biohacking Clinics"
+                    text="Your Clinic Should Own Page 1 of Google."
                     delay={0.2}
-                    staggerDelay={0.05}
+                    staggerDelay={0.04}
                   />
+                  <span className="block mt-2">
+                    <SplitTextReveal
+                      text="We'll Make It Happen."
+                      delay={0.6}
+                      staggerDelay={0.04}
+                    />
+                  </span>
                 </h1>
               </div>
 
-              {/* Sub-headline */}
               <motion.p
-                className="text-gray-300 text-xl leading-relaxed max-w-2xl"
+                className="text-gray-400 text-lg sm:text-xl leading-relaxed max-w-xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.35 }}
               >
-                We handle everything — design, development, Google Business Profile setup, and 3 months of local SEO — so you show up on Google and convert visitors into booked clients.
+                We build high-converting websites for biohacking clinics and include complete Google Business Profile setup + 3 months of done-for-you SEO — at no extra cost.
               </motion.p>
+
+              <motion.div
+                className="flex flex-wrap items-center gap-4 text-sm"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.45 }}
+              >
+                {["IV Therapy", "NAD+", "Cryotherapy", "Red Light Therapy", "Peptides"].map((service) => (
+                  <span key={service} className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-gray-400">{service}</span>
+                ))}
+              </motion.div>
 
               {/* CTA Block */}
               <motion.div
-                className="relative"
+                className="relative pt-2"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
-                {/* Hand-drawn arrow pointing to CTA */}
                 <motion.svg
-                  className="absolute -top-10 left-48 sm:left-56 w-16 h-16 text-[#A3D1FF] hidden sm:block"
-                  viewBox="0 0 64 64"
+                  className="absolute -top-8 left-[280px] sm:left-[320px] w-20 h-20 text-[#00F5C4] hidden md:block"
+                  viewBox="0 0 80 80"
                   fill="none"
-                  initial={{ opacity: 0, pathLength: 0 }}
+                  initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 1.2 }}
                 >
                   <motion.path
-                    d="M10 8C20 12 35 20 40 35C42 40 42 48 38 55"
+                    d="M8 10C18 14 38 22 44 40C46 46 45 55 40 64"
                     stroke="currentColor"
-                    strokeWidth="2.5"
+                    strokeWidth="2"
                     strokeLinecap="round"
                     fill="none"
                     initial={{ pathLength: 0 }}
@@ -320,9 +227,9 @@ export default function HomePage() {
                     transition={{ duration: 1.2, delay: 1.3, ease: "easeOut" }}
                   />
                   <motion.path
-                    d="M32 50L38 56L44 48"
+                    d="M34 58L40 65L47 56"
                     stroke="currentColor"
-                    strokeWidth="2.5"
+                    strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     fill="none"
@@ -332,15 +239,14 @@ export default function HomePage() {
                   />
                 </motion.svg>
 
-                <div className="flex items-center gap-5">
-                  {/* Marc's Photo */}
+                <div className="flex items-start gap-4">
                   <motion.div
-                    className="relative flex-shrink-0"
+                    className="relative flex-shrink-0 hidden sm:block"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.7 }}
                   >
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-3 border-[#A3D1FF] shadow-[0_0_20px_rgba(163,209,255,0.3)]">
+                    <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#00F5C4] shadow-[0_0_20px_rgba(0,245,196,0.3)]">
                       <img
                         src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
                         alt="Marc Friedman"
@@ -348,312 +254,221 @@ export default function HomePage() {
                         loading="eager"
                       />
                     </div>
-                    <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-[#1a2332] flex items-center justify-center">
-                      <span className="text-white text-[8px] font-bold">ON</span>
-                    </div>
+                    <div className="absolute -bottom-0.5 -right-0.5 w-5 h-5 bg-[#00F5C4] rounded-full border-2 border-[#0d1117]" />
                   </motion.div>
 
                   <div className="flex flex-col gap-3">
-                    <MagneticButton strength={20}>
+                    <MagneticButton strength={15}>
                       <Link
                         to="/contact"
-                        className="group relative inline-flex items-center gap-3 bg-[#A3D1FF] hover:bg-white text-[#0a0f1a] font-bold text-lg sm:text-xl px-8 py-4 sm:py-5 rounded-lg transition-all duration-300 shadow-[0_0_30px_rgba(163,209,255,0.4)] hover:shadow-[0_0_50px_rgba(163,209,255,0.6)]"
+                        className="group relative inline-flex items-center gap-3 bg-[#00F5C4] hover:bg-[#00ddb0] text-[#0d1117] font-black text-lg sm:text-xl px-8 sm:px-10 py-4 sm:py-5 rounded-xl transition-all duration-300 shadow-[0_0_40px_rgba(0,245,196,0.3)] hover:shadow-[0_0_60px_rgba(0,245,196,0.5)] hover:scale-[1.02]"
                       >
-                        <span className="relative z-[2]">Book a Free Consultation</span>
-                        <ArrowRight className="w-5 h-5 relative z-[2] group-hover:translate-x-1 transition-transform" />
-                        <motion.span
-                          className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#A3D1FF] to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        />
+                        <span className="relative z-[2]">Check If Your City Is Available</span>
+                        <ArrowRight className="w-5 h-5 relative z-[2] group-hover:translate-x-1.5 transition-transform" />
                       </Link>
                     </MagneticButton>
-                    <div className="flex items-center gap-3 text-gray-400 text-sm">
-                      <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-green-400" /> No contracts</span>
-                      <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-green-400" /> No upfront risk</span>
+
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-gray-500 text-sm">
+                      <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-[#00F5C4]" /> No contracts</span>
+                      <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-[#00F5C4]" /> No upfront risk</span>
+                      <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-[#00F5C4]" /> One clinic per city</span>
                     </div>
                   </div>
                 </div>
               </motion.div>
 
-              {/* Verified Reviews Badge - mobile only */}
+              {/* Social Proof - Compact */}
               <motion.div
-                className="lg:hidden bg-black/60 backdrop-blur-sm px-6 py-5 rounded-lg border border-white/10 shadow-2xl"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                className="flex items-center gap-4 pt-4 border-t border-white/5"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.9 }}
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <Shield className="w-5 h-5 text-[#A3D1FF]" />
-                  <span className="text-white font-bold text-sm uppercase tracking-wider">25 Total Verified Reviews</span>
-                </div>
-
-                {/* Review Platforms */}
-                <div className="space-y-3">
-                  {/* Google Business */}
-                  <a
-                    href="https://share.google/eF48yRJKqiZppBvfN"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between hover:bg-white/5 p-2 -m-2 rounded-lg transition-colors"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-white rounded flex items-center justify-center p-1">
-                        <svg viewBox="0 0 24 24" className="w-full h-full">
-                          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                        </svg>
-                      </div>
-                      <div>
-                        <div className="text-white font-semibold text-sm">Google Business</div>
-                        <div className="text-gray-400 text-xs">10 reviews</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-[#FFD700] text-[#FFD700]" />
-                      ))}
-                      <span className="text-white font-bold text-sm ml-2">5.0</span>
-                    </div>
-                  </a>
-
-                  {/* Clutch */}
-                  <a
-                    href="https://clutch.co/profile/marc-friedman-design-agency"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between hover:bg-white/5 p-2 -m-2 rounded-lg transition-colors"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-white rounded flex items-center justify-center overflow-hidden p-1">
-                        <svg viewBox="0 0 200 200" className="w-full h-full">
-                          <circle cx="100" cy="100" r="90" fill="#FF3D2E"/>
-                          <circle cx="100" cy="100" r="60" fill="white"/>
-                          <circle cx="100" cy="100" r="35" fill="#FF3D2E"/>
-                        </svg>
-                      </div>
-                      <div>
-                        <div className="text-white font-semibold text-sm">Clutch</div>
-                        <div className="text-gray-400 text-xs">5 reviews</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className={`w-4 h-4 ${i < 4 || (i === 4) ? 'fill-[#FFD700] text-[#FFD700]' : 'fill-[#FFD700]/50 text-[#FFD700]/50'}`} />
-                      ))}
-                      <span className="text-white font-bold text-sm ml-2">4.8</span>
-                    </div>
-                  </a>
-
-                  {/* DesignRush */}
-                  <a
-                    href="https://www.designrush.com/agency/profile/marc-friedman"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between hover:bg-white/5 p-2 -m-2 rounded-lg transition-colors"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-white rounded flex items-center justify-center overflow-hidden">
-                        <img src="https://ik.imagekit.io/qcvroy8xpd/download%20(4).jpeg" alt="DesignRush" className="w-full h-full object-cover" />
-                      </div>
-                      <div>
-                        <div className="text-white font-semibold text-sm">DesignRush</div>
-                        <div className="text-gray-400 text-xs">3 reviews</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className={`w-4 h-4 ${i < 4 || (i === 4) ? 'fill-[#FFD700] text-[#FFD700]' : 'fill-[#FFD700]/50 text-[#FFD700]/50'}`} />
-                      ))}
-                      <span className="text-white font-bold text-sm ml-2">4.5</span>
-                    </div>
-                  </a>
-
-                  {/* LinkedIn */}
-                  <a
-                    href="https://www.linkedin.com/in/portfolio2/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between hover:bg-white/5 p-2 -m-2 rounded-lg transition-colors"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-[#0A66C2] rounded flex items-center justify-center">
-                        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white">
-                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                      </div>
-                      <div>
-                        <div className="text-white font-semibold text-sm">LinkedIn</div>
-                        <div className="text-gray-400 text-xs">8 reviews</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className={`w-4 h-4 ${i < 4 ? 'fill-[#FFD700] text-[#FFD700]' : 'fill-[#FFD700]/50 text-[#FFD700]/50'}`} />
-                      ))}
-                      <span className="text-white font-bold text-sm ml-2">4.9</span>
-                    </div>
-                  </a>
-                </div>
-
-                {/* Client photos */}
-                <div className="flex items-center gap-2 mt-4 pt-4 border-t border-white/10">
-                  <span className="text-gray-400 text-xs">Trusted by:</span>
-                  <div className="flex items-center -space-x-2">
-                    <div className="w-7 h-7 rounded-full border-2 border-[#1a2332] overflow-hidden">
-                      <img src="https://ik.imagekit.io/qcvroy8xpd/1682479506906.jpeg?updatedAt=1754019693073" alt="Client" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="w-7 h-7 rounded-full border-2 border-[#1a2332] overflow-hidden">
-                      <img src="https://ik.imagekit.io/qcvroy8xpd/4c91361b-27ee-453b-88e0-af3026cac747_1_ro3hez_e_background_removal_f_png_vkfbub.png?updatedAt=1754023286922" alt="Client" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="w-7 h-7 rounded-full border-2 border-[#1a2332] overflow-hidden">
-                      <img src="https://ik.imagekit.io/qcvroy8xpd/1732338426448%20(1).jpeg?updatedAt=1749337717019" alt="Client" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#A3D1FF] to-blue-500 border-2 border-[#1a2332] flex items-center justify-center">
-                      <span className="text-[9px] font-bold text-white">20+</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-            </motion.div>
-
-            {/* Right Side - Reviews Badge (desktop) */}
-            <motion.div
-              className="hidden lg:block bg-black/60 backdrop-blur-sm px-6 py-5 rounded-lg border border-white/10 shadow-2xl sticky top-32"
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <Shield className="w-5 h-5 text-[#A3D1FF]" />
-                <span className="text-white font-bold text-sm uppercase tracking-wider">25 Total Verified Reviews</span>
-              </div>
-
-              <div className="space-y-3">
-                <a
-                  href="https://share.google/eF48yRJKqiZppBvfN"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between hover:bg-white/5 p-2 -m-2 rounded-lg transition-colors"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-white rounded flex items-center justify-center p-1">
-                      <svg viewBox="0 0 24 24" className="w-full h-full">
-                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="text-white font-semibold text-sm">Google Business</div>
-                      <div className="text-gray-400 text-xs">10 reviews</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#FFD700] text-[#FFD700]" />
-                    ))}
-                    <span className="text-white font-bold text-sm ml-2">5.0</span>
-                  </div>
-                </a>
-
-                <a
-                  href="https://clutch.co/profile/marc-friedman-design-agency"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between hover:bg-white/5 p-2 -m-2 rounded-lg transition-colors"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-white rounded flex items-center justify-center overflow-hidden p-1">
-                      <svg viewBox="0 0 200 200" className="w-full h-full">
-                        <circle cx="100" cy="100" r="90" fill="#FF3D2E"/>
-                        <circle cx="100" cy="100" r="60" fill="white"/>
-                        <circle cx="100" cy="100" r="35" fill="#FF3D2E"/>
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="text-white font-semibold text-sm">Clutch</div>
-                      <div className="text-gray-400 text-xs">5 reviews</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#FFD700] text-[#FFD700]" />
-                    ))}
-                    <span className="text-white font-bold text-sm ml-2">4.8</span>
-                  </div>
-                </a>
-
-                <a
-                  href="https://www.designrush.com/agency/profile/marc-friedman"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between hover:bg-white/5 p-2 -m-2 rounded-lg transition-colors"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-white rounded flex items-center justify-center overflow-hidden">
-                      <img src="https://ik.imagekit.io/qcvroy8xpd/download%20(4).jpeg" alt="DesignRush" className="w-full h-full object-cover" />
-                    </div>
-                    <div>
-                      <div className="text-white font-semibold text-sm">DesignRush</div>
-                      <div className="text-gray-400 text-xs">3 reviews</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#FFD700] text-[#FFD700]" />
-                    ))}
-                    <span className="text-white font-bold text-sm ml-2">4.5</span>
-                  </div>
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/in/portfolio2/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between hover:bg-white/5 p-2 -m-2 rounded-lg transition-colors"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#0A66C2] rounded flex items-center justify-center">
-                      <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="text-white font-semibold text-sm">LinkedIn</div>
-                      <div className="text-gray-400 text-xs">8 reviews</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className={`w-4 h-4 ${i < 4 ? 'fill-[#FFD700] text-[#FFD700]' : 'fill-[#FFD700]/50 text-[#FFD700]/50'}`} />
-                    ))}
-                    <span className="text-white font-bold text-sm ml-2">4.9</span>
-                  </div>
-                </a>
-              </div>
-
-              <div className="flex items-center gap-2 mt-4 pt-4 border-t border-white/10">
-                <span className="text-gray-400 text-xs">Trusted by:</span>
                 <div className="flex items-center -space-x-2">
-                  <div className="w-7 h-7 rounded-full border-2 border-[#1a2332] overflow-hidden">
+                  <div className="w-8 h-8 rounded-full border-2 border-[#0d1117] overflow-hidden">
                     <img src="https://ik.imagekit.io/qcvroy8xpd/1682479506906.jpeg?updatedAt=1754019693073" alt="Client" className="w-full h-full object-cover" />
                   </div>
-                  <div className="w-7 h-7 rounded-full border-2 border-[#1a2332] overflow-hidden">
+                  <div className="w-8 h-8 rounded-full border-2 border-[#0d1117] overflow-hidden">
                     <img src="https://ik.imagekit.io/qcvroy8xpd/4c91361b-27ee-453b-88e0-af3026cac747_1_ro3hez_e_background_removal_f_png_vkfbub.png?updatedAt=1754023286922" alt="Client" className="w-full h-full object-cover" />
                   </div>
-                  <div className="w-7 h-7 rounded-full border-2 border-[#1a2332] overflow-hidden">
+                  <div className="w-8 h-8 rounded-full border-2 border-[#0d1117] overflow-hidden">
                     <img src="https://ik.imagekit.io/qcvroy8xpd/1732338426448%20(1).jpeg?updatedAt=1749337717019" alt="Client" className="w-full h-full object-cover" />
                   </div>
-                  <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#A3D1FF] to-blue-500 border-2 border-[#1a2332] flex items-center justify-center">
-                    <span className="text-[9px] font-bold text-white">20+</span>
+                </div>
+                <div>
+                  <div className="flex items-center gap-1 mb-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-3.5 h-3.5 fill-[#FFD700] text-[#FFD700]" />
+                    ))}
+                  </div>
+                  <p className="text-gray-500 text-xs">Trusted by 20+ clinic owners across the U.S.</p>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Right Side - Visual Mockup */}
+            <motion.div
+              className="hidden lg:flex flex-col gap-5"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            >
+              {/* Website Mockup */}
+              <div className="relative">
+                <div className="bg-[#1a1f2e] rounded-xl border border-white/10 overflow-hidden shadow-2xl shadow-black/40">
+                  <div className="flex items-center gap-2 px-4 py-3 bg-[#13171f] border-b border-white/5">
+                    <div className="flex gap-1.5">
+                      <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                      <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                      <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                    </div>
+                    <div className="flex-1 mx-4">
+                      <div className="bg-white/5 rounded-md px-3 py-1.5 text-xs text-gray-500 flex items-center gap-2">
+                        <Shield className="w-3 h-3 text-green-400" />
+                        yourbiohackingclinic.com
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-6 space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-[#00F5C4]/20 flex items-center justify-center">
+                          <Zap className="w-4 h-4 text-[#00F5C4]" />
+                        </div>
+                        <span className="text-white font-bold text-sm">BioHack Clinic</span>
+                      </div>
+                      <div className="flex gap-3 text-gray-500 text-xs">
+                        <span>Services</span>
+                        <span>About</span>
+                        <span>Book</span>
+                      </div>
+                    </div>
+                    <div className="bg-gradient-to-br from-[#0a1628] to-[#1a1f2e] rounded-lg p-5">
+                      <p className="text-[#00F5C4] text-[10px] uppercase tracking-wider mb-2 font-medium">Optimize Your Biology</p>
+                      <p className="text-white font-bold text-lg leading-tight mb-3">Advanced IV Therapy &<br />Longevity Treatments</p>
+                      <div className="inline-flex items-center gap-2 bg-[#00F5C4] text-[#0d1117] text-xs font-bold px-4 py-2 rounded-lg">
+                        Book Your Session <ArrowRight className="w-3 h-3" />
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-3 gap-2">
+                      <div className="bg-white/5 rounded-lg p-3 text-center">
+                        <p className="text-[#00F5C4] font-bold text-lg">NAD+</p>
+                        <p className="text-gray-500 text-[10px]">IV Therapy</p>
+                      </div>
+                      <div className="bg-white/5 rounded-lg p-3 text-center">
+                        <p className="text-[#00F5C4] font-bold text-lg">Cryo</p>
+                        <p className="text-gray-500 text-[10px]">Recovery</p>
+                      </div>
+                      <div className="bg-white/5 rounded-lg p-3 text-center">
+                        <p className="text-[#00F5C4] font-bold text-lg">RLT</p>
+                        <p className="text-gray-500 text-[10px]">Red Light</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <motion.div
+                  className="absolute -top-3 -right-3 bg-[#00F5C4] text-[#0d1117] text-xs font-black px-3 py-1.5 rounded-full shadow-lg"
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  YOUR SITE
+                </motion.div>
+              </div>
+
+              {/* Google Map Pack Mockup */}
+              <div className="bg-white rounded-xl overflow-hidden shadow-2xl shadow-black/40 border border-gray-200">
+                <div className="px-4 py-3 flex items-center gap-2 border-b border-gray-100">
+                  <svg viewBox="0 0 24 24" className="w-5 h-5">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                  </svg>
+                  <span className="text-gray-800 text-sm font-medium">biohacking clinic near me</span>
+                </div>
+                <div className="p-4 space-y-3">
+                  <div className="flex items-start gap-3 bg-blue-50 p-3 rounded-lg border border-blue-100">
+                    <div className="w-5 h-5 rounded-full bg-[#4285F4] flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-white text-[9px] font-bold">1</span>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-gray-900 font-bold text-sm">Your Biohacking Clinic</p>
+                      <div className="flex items-center gap-1 mt-0.5">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-3 h-3 fill-[#FFB800] text-[#FFB800]" />
+                        ))}
+                        <span className="text-gray-600 text-xs ml-1">5.0 (47)</span>
+                      </div>
+                      <p className="text-gray-500 text-xs mt-0.5">IV Therapy &middot; Biohacking &middot; Open now</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 opacity-50">
+                    <div className="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-gray-600 text-[9px] font-bold">2</span>
+                    </div>
+                    <div>
+                      <p className="text-gray-600 text-sm font-medium">Competitor Clinic A</p>
+                      <div className="flex items-center gap-1 mt-0.5">
+                        {[...Array(4)].map((_, i) => (
+                          <Star key={i} className="w-3 h-3 fill-gray-400 text-gray-400" />
+                        ))}
+                        <Star className="w-3 h-3 text-gray-300" />
+                        <span className="text-gray-500 text-xs ml-1">4.1 (12)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 opacity-30">
+                    <div className="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-gray-600 text-[9px] font-bold">3</span>
+                    </div>
+                    <div>
+                      <p className="text-gray-600 text-sm font-medium">Competitor Clinic B</p>
+                      <div className="flex items-center gap-1 mt-0.5">
+                        {[...Array(3)].map((_, i) => (
+                          <Star key={i} className="w-3 h-3 fill-gray-400 text-gray-400" />
+                        ))}
+                        <Star className="w-3 h-3 text-gray-300" />
+                        <Star className="w-3 h-3 text-gray-300" />
+                        <span className="text-gray-500 text-xs ml-1">3.8 (5)</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
+
+              <motion.p
+                className="text-center text-gray-600 text-xs"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.5 }}
+              >
+                This is what your Google presence will look like
+              </motion.p>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Social Proof Bar */}
+      <section className="bg-[#0d1117] border-y border-white/5 py-6 px-6">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center gap-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-5 h-5 fill-[#FFD700] text-[#FFD700]" />
+              ))}
+            </div>
+            <p className="text-gray-300 text-sm sm:text-base text-center italic">
+              "Showing up in the Google map pack within 3 weeks changed everything for our clinic."
+            </p>
+            <p className="text-gray-500 text-xs whitespace-nowrap">-- IV Therapy Clinic Owner, Austin TX</p>
+          </motion.div>
         </div>
       </section>
 
