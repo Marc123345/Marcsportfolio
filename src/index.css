@@ -541,6 +541,29 @@
     color: #000000;
   }
 
+  .hero-cta-btn {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-cta-btn::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -75%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-20deg);
+    animation: ctaShimmer 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes ctaShimmer {
+    0%, 100% { left: -75%; }
+    50% { left: 125%; }
+  }
+
   .card {
     @apply bg-[#1b1b1b] border border-white/10 rounded-xl p-6 hover:border-[#A3D1FF] transition-colors;
   }

@@ -223,20 +223,10 @@ export default function HomePage() {
                     <div className="absolute -bottom-0.5 -right-0.5 w-5 h-5 bg-green-500 rounded-full border-2 border-black" />
                   </motion.div>
 
-                  <MagneticButton strength={20}>
-                    <Link
-                      to="/contact"
-                      className="mr_btn mr_btn_primary inline-flex items-center gap-3 text-xl shadow-[0_0_40px_rgba(163,209,255,0.25)] hover:shadow-[0_0_60px_rgba(163,209,255,0.45)]"
-                    >
-                      <span>Book a Free Consultation</span>
-                      <ArrowRight className="w-5 h-5 relative z-[2]" />
-                    </Link>
-                  </MagneticButton>
-                </div>
-
-                <div className="flex items-center gap-4 text-gray-300 text-sm">
-                  <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-[#A3D1FF]" /> No contracts</span>
-                  <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-[#A3D1FF]" /> No upfront risk</span>
+                  <div className="flex items-center gap-4 text-gray-300 text-sm">
+                    <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-[#A3D1FF]" /> No contracts</span>
+                    <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-[#A3D1FF]" /> No upfront risk</span>
+                  </div>
                 </div>
               </motion.div>
 
@@ -267,104 +257,94 @@ export default function HomePage() {
                   <p className="text-gray-400 text-xs">Trusted by 20+ clinic owners across the U.S.</p>
                 </div>
               </motion.div>
+
+              <motion.div
+                className="lg:hidden pt-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1 }}
+              >
+                <MagneticButton strength={15}>
+                  <Link
+                    to="/contact"
+                    className="hero-cta-btn group relative inline-flex items-center justify-center gap-3 w-full bg-[#A3D1FF] text-[#0a0f1a] text-lg font-black uppercase tracking-wide px-8 py-5 rounded-2xl shadow-[0_0_50px_rgba(163,209,255,0.4)] transition-all duration-300 active:scale-[0.98]"
+                  >
+                    <span>Book a Free Consultation</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                </MagneticButton>
+              </motion.div>
             </motion.div>
 
             <motion.div
-              className="lg:col-span-5 hidden lg:block"
-              initial={{ opacity: 0, y: 40, rotateY: -5 }}
-              animate={{ opacity: 1, y: 0, rotateY: 0 }}
-              transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:col-span-5 hidden lg:flex flex-col items-center justify-center"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="relative" style={{ perspective: '1200px' }}>
+              <motion.div
+                className="relative w-full max-w-md"
+                style={{ y: y3 }}
+              >
                 <motion.div
-                  className="relative"
-                  style={{ y: y3 }}
-                >
-                  <div className="bg-[#0d1117]/90 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden shadow-[0_20px_80px_rgba(0,0,0,0.6)]">
-                    <div className="flex items-center gap-2 px-4 py-3 bg-black/40 border-b border-white/5">
-                      <div className="flex gap-1.5">
-                        <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                        <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                        <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                  className="absolute -inset-[2px] rounded-3xl bg-gradient-to-br from-[#A3D1FF] via-[#5BB5FF] to-[#A3D1FF] opacity-60 blur-sm"
+                  animate={{ opacity: [0.4, 0.7, 0.4] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <div className="relative bg-[#0a0f1a]/95 backdrop-blur-xl rounded-3xl border border-[#A3D1FF]/30 p-8 text-center space-y-6">
+                  <motion.div
+                    className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#A3D1FF] text-[#0a0f1a] text-xs font-black uppercase tracking-wider px-5 py-1.5 rounded-full shadow-[0_4px_20px_rgba(163,209,255,0.5)]"
+                    animate={{ scale: [1, 1.06, 1] }}
+                    transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    Limited Spots Available
+                  </motion.div>
+
+                  <div className="pt-2">
+                    <p className="text-[#A3D1FF] text-sm font-semibold uppercase tracking-wider mb-2">Free 30-Min Strategy Call</p>
+                    <h3 className="text-white text-2xl font-black leading-tight">
+                      Get a Roadmap to <span className="text-[#A3D1FF]">More Patients</span>
+                    </h3>
+                  </div>
+
+                  <div className="space-y-3 text-left">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-[#A3D1FF]/15 flex items-center justify-center flex-shrink-0">
+                        <Target className="w-4 h-4 text-[#A3D1FF]" />
                       </div>
-                      <div className="flex-1 mx-4">
-                        <div className="bg-white/5 rounded-md px-3 py-1.5 text-xs text-gray-500 flex items-center gap-2">
-                          <Shield className="w-3 h-3 text-green-400" />
-                          yourbiohackingclinic.com
-                        </div>
-                      </div>
+                      <p className="text-gray-300 text-sm">Custom website strategy for your clinic</p>
                     </div>
-                    <div className="p-5 space-y-4">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-lg bg-[#A3D1FF]/20 flex items-center justify-center">
-                            <Zap className="w-4 h-4 text-[#A3D1FF]" />
-                          </div>
-                          <span className="text-white font-bold text-sm">BioHack Clinic</span>
-                        </div>
-                        <div className="flex gap-3 text-gray-500 text-xs">
-                          <span>Services</span>
-                          <span>About</span>
-                          <span>Book</span>
-                        </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-[#A3D1FF]/15 flex items-center justify-center flex-shrink-0">
+                        <TrendingUp className="w-4 h-4 text-[#A3D1FF]" />
                       </div>
-                      <div className="bg-gradient-to-br from-[#0a1628] to-[#1b1b1b] rounded-lg p-5">
-                        <p className="text-[#A3D1FF] text-[10px] uppercase tracking-wider mb-2 font-medium">Optimize Your Biology</p>
-                        <p className="text-white font-bold text-lg leading-tight mb-3">Advanced IV Therapy &<br />Longevity Treatments</p>
-                        <div className="inline-flex items-center gap-2 bg-[#A3D1FF] text-[#0a0f1a] text-xs font-bold px-4 py-2 rounded-lg">
-                          Book Your Session <ArrowRight className="w-3 h-3" />
-                        </div>
+                      <p className="text-gray-300 text-sm">SEO plan to rank #1 locally</p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-[#A3D1FF]/15 flex items-center justify-center flex-shrink-0">
+                        <Zap className="w-4 h-4 text-[#A3D1FF]" />
                       </div>
-                      <div className="grid grid-cols-3 gap-2">
-                        <div className="bg-white/5 rounded-lg p-3 text-center">
-                          <p className="text-[#A3D1FF] font-bold text-lg">NAD+</p>
-                          <p className="text-gray-500 text-[10px]">IV Therapy</p>
-                        </div>
-                        <div className="bg-white/5 rounded-lg p-3 text-center">
-                          <p className="text-[#A3D1FF] font-bold text-lg">Cryo</p>
-                          <p className="text-gray-500 text-[10px]">Recovery</p>
-                        </div>
-                        <div className="bg-white/5 rounded-lg p-3 text-center">
-                          <p className="text-[#A3D1FF] font-bold text-lg">RLT</p>
-                          <p className="text-gray-500 text-[10px]">Red Light</p>
-                        </div>
-                      </div>
+                      <p className="text-gray-300 text-sm">Conversion optimization audit</p>
                     </div>
                   </div>
 
-                  <motion.div
-                    className="absolute -top-3 -right-3 bg-[#A3D1FF] text-[#0a0f1a] text-xs font-black px-3 py-1.5 rounded-full shadow-[0_4px_20px_rgba(163,209,255,0.4)]"
-                    animate={{ scale: [1, 1.05, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    YOUR SITE
-                  </motion.div>
+                  <MagneticButton strength={15}>
+                    <Link
+                      to="/contact"
+                      className="hero-cta-btn group relative inline-flex items-center justify-center gap-3 w-full bg-[#A3D1FF] text-[#0a0f1a] text-lg font-black uppercase tracking-wide px-8 py-5 rounded-2xl shadow-[0_0_50px_rgba(163,209,255,0.4)] hover:shadow-[0_0_80px_rgba(163,209,255,0.6)] transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                    >
+                      <span>Book a Free Consultation</span>
+                      <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                    </Link>
+                  </MagneticButton>
 
-                  <motion.div
-                    className="absolute -bottom-6 -left-6 bg-white rounded-xl p-3 shadow-[0_8px_40px_rgba(0,0,0,0.4)] border border-gray-100 max-w-[220px]"
-                    initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 1.2 }}
-                  >
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <svg viewBox="0 0 24 24" className="w-4 h-4">
-                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                      </svg>
-                      <span className="text-gray-800 text-xs font-bold">#1 on Google</span>
-                    </div>
-                    <p className="text-gray-900 font-bold text-sm leading-tight">Your Biohacking Clinic</p>
-                    <div className="flex items-center gap-0.5 mt-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3 h-3 fill-[#FFB800] text-[#FFB800]" />
-                      ))}
-                      <span className="text-gray-500 text-[10px] ml-1">5.0 (47)</span>
-                    </div>
-                  </motion.div>
-                </motion.div>
-              </div>
+                  <div className="flex items-center justify-center gap-6 text-gray-400 text-xs">
+                    <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 text-[#A3D1FF]" /> 30 min</span>
+                    <span className="flex items-center gap-1.5"><Shield className="w-3.5 h-3.5 text-[#A3D1FF]" /> 100% Free</span>
+                    <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-[#A3D1FF]" /> No obligation</span>
+                  </div>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
