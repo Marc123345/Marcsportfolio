@@ -161,10 +161,25 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="inline-flex items-center gap-2.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-5 py-2.5"
+                className="lg:inline-flex hidden items-center gap-2.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-5 py-2.5"
               >
                 <span className="w-2 h-2 rounded-full bg-[#A3D1FF] animate-pulse" />
                 <span className="text-[#A3D1FF] text-sm font-semibold tracking-wide uppercase">For Biohacking &amp; Longevity Clinics</span>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="lg:hidden flex items-center gap-4 bg-white/5 backdrop-blur-sm border border-[#A3D1FF]/20 rounded-2xl px-5 py-3.5 max-w-fit"
+              >
+                <div className="w-10 h-10 rounded-xl bg-[#A3D1FF]/15 flex items-center justify-center flex-shrink-0">
+                  <Sparkles className="w-5 h-5 text-[#A3D1FF]" />
+                </div>
+                <div>
+                  <p className="text-white font-bold text-base leading-tight">3 Months Free Google Business &amp; SEO</p>
+                  <p className="text-gray-400 text-xs">Included with every new website</p>
+                </div>
               </motion.div>
 
               <div className="overflow-hidden">
@@ -185,7 +200,24 @@ export default function HomePage() {
               </div>
 
               <motion.div
-                className="flex items-center gap-4 bg-white/5 backdrop-blur-sm border border-[#A3D1FF]/20 rounded-2xl px-6 py-4 max-w-fit"
+                className="lg:hidden"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <MagneticButton strength={15}>
+                  <Link
+                    to="/contact"
+                    className="hero-cta-btn group relative inline-flex items-center justify-center gap-3 w-full bg-[#A3D1FF] text-[#0a0f1a] text-lg font-black uppercase tracking-wide px-8 py-5 rounded-2xl shadow-[0_0_50px_rgba(163,209,255,0.4)] transition-all duration-300 active:scale-[0.98]"
+                  >
+                    <span>Book a Free Consultation</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                </MagneticButton>
+              </motion.div>
+
+              <motion.div
+                className="hidden lg:flex items-center gap-4 bg-white/5 backdrop-blur-sm border border-[#A3D1FF]/20 rounded-2xl px-6 py-4 max-w-fit"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, delay: 0.4 }}
@@ -259,20 +291,38 @@ export default function HomePage() {
               </motion.div>
 
               <motion.div
-                className="lg:hidden pt-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1 }}
+                className="hidden lg:flex items-center gap-3 pt-4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
               >
-                <MagneticButton strength={15}>
-                  <Link
-                    to="/contact"
-                    className="hero-cta-btn group relative inline-flex items-center justify-center gap-3 w-full bg-[#A3D1FF] text-[#0a0f1a] text-lg font-black uppercase tracking-wide px-8 py-5 rounded-2xl shadow-[0_0_50px_rgba(163,209,255,0.4)] transition-all duration-300 active:scale-[0.98]"
-                  >
-                    <span>Book a Free Consultation</span>
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
-                </MagneticButton>
+                <span className="text-[#A3D1FF] text-sm font-semibold">Book your free call</span>
+                <motion.svg
+                  width="120"
+                  height="60"
+                  viewBox="0 0 120 60"
+                  fill="none"
+                  className="text-[#A3D1FF] -mt-1"
+                  animate={{ x: [0, 6, 0] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <path
+                    d="M8 45 C20 48, 30 30, 45 25 C60 20, 55 42, 70 35 C85 28, 80 15, 95 18 C102 19, 108 22, 112 28"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    fill="none"
+                    strokeDasharray="4 4"
+                  />
+                  <path
+                    d="M105 22 L112 28 L104 32"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    fill="none"
+                  />
+                </motion.svg>
               </motion.div>
             </motion.div>
 
