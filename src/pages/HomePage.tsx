@@ -290,39 +290,6 @@ export default function HomePage() {
                 </div>
               </motion.div>
 
-              <motion.div
-                className="hidden lg:flex items-center gap-3 pt-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
-              >
-                <motion.svg
-                  width="120"
-                  height="60"
-                  viewBox="0 0 120 60"
-                  fill="none"
-                  className="text-[#A3D1FF] -mt-1"
-                  animate={{ x: [0, 6, 0] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <path
-                    d="M8 45 C20 48, 30 30, 45 25 C60 20, 55 42, 70 35 C85 28, 80 15, 95 18 C102 19, 108 22, 112 28"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    fill="none"
-                    strokeDasharray="4 4"
-                  />
-                  <path
-                    d="M105 22 L112 28 L104 32"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    fill="none"
-                  />
-                </motion.svg>
-              </motion.div>
             </motion.div>
 
             <motion.div
