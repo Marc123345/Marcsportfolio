@@ -128,11 +128,11 @@ export default function HomePage() {
       <AccessibilityPanel />
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden pt-28 pb-16 lg:pt-32 lg:pb-20" style={{ backgroundColor: '#0d1117' }}>
+      <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden pt-28 pb-16 lg:pt-32 lg:pb-20" style={{ backgroundColor: '#1a2332' }}>
         <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0d1117] via-[#0d1117] to-[#0a1628]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#1a2332] via-[#1a2332] to-[#0f1923]" />
           <motion.div
-            className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#00F5C4]/5 rounded-full blur-[120px]"
+            className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#A3D1FF]/5 rounded-full blur-[120px]"
             animate={{ opacity: [0.3, 0.5, 0.3], scale: [1, 1.1, 1] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           />
@@ -141,7 +141,6 @@ export default function HomePage() {
             animate={{ opacity: [0.2, 0.4, 0.2] }}
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
           />
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2240%22%20height%3D%2240%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%221%22%20cy%3D%221%22%20r%3D%220.5%22%20fill%3D%22rgba(255%2C255%2C255%2C0.03)%22%2F%3E%3C%2Fsvg%3E')] bg-repeat" />
         </div>
 
         <div className="container mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 relative z-10">
@@ -149,7 +148,7 @@ export default function HomePage() {
 
             {/* Left Side - Content */}
             <motion.div
-              className="text-left space-y-7"
+              className="text-left space-y-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -158,95 +157,47 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="inline-flex items-center gap-2 bg-[#00F5C4]/10 border border-[#00F5C4]/20 rounded-full px-4 py-2"
+                className="inline-flex items-center gap-2 bg-[#A3D1FF]/10 border border-[#A3D1FF]/20 rounded-full px-4 py-2"
               >
-                <span className="w-2 h-2 rounded-full bg-[#00F5C4] animate-pulse" />
-                <span className="text-[#00F5C4] text-sm font-medium tracking-wide">Exclusively for Biohacking Clinics — Limited by City</span>
+                <span className="w-2 h-2 rounded-full bg-[#A3D1FF] animate-pulse" />
+                <span className="text-[#A3D1FF] text-sm font-medium tracking-wide">For Biohacking &amp; Longevity Clinics — U.S. Only</span>
               </motion.div>
 
               <div className="overflow-hidden">
                 <h1 className="text-[clamp(2.4rem,5vw,4.2rem)] font-black tracking-[-0.02em] text-white leading-[1.1]">
                   <SplitTextReveal
-                    text="Your Clinic Should Own Page 1 of Google."
+                    text="A Premium Website for Your Biohacking Clinic."
                     delay={0.2}
                     staggerDelay={0.04}
                   />
-                  <span className="block mt-2">
-                    <SplitTextReveal
-                      text="We'll Make It Happen."
-                      delay={0.6}
-                      staggerDelay={0.04}
-                    />
-                  </span>
                 </h1>
               </div>
 
-              <motion.p
-                className="text-gray-400 text-lg sm:text-xl leading-relaxed max-w-xl"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.35 }}
-              >
-                We build high-converting websites for biohacking clinics and include complete Google Business Profile setup + 3 months of done-for-you SEO — at no extra cost.
-              </motion.p>
-
               <motion.div
-                className="flex flex-wrap items-center gap-4 text-sm"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.45 }}
+                className="inline-flex items-center gap-3 bg-[#A3D1FF]/10 border border-[#A3D1FF]/20 rounded-xl px-5 py-3"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.35 }}
               >
-                {["IV Therapy", "NAD+", "Cryotherapy", "Red Light Therapy", "Peptides"].map((service) => (
-                  <span key={service} className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-gray-400">{service}</span>
-                ))}
+                <Sparkles className="w-5 h-5 text-[#A3D1FF] flex-shrink-0" />
+                <span className="text-white font-bold text-base sm:text-lg">3 Months Free Google Business Profile &amp; SEO Included</span>
               </motion.div>
 
               {/* CTA Block */}
               <motion.div
-                className="relative pt-2"
+                className="relative"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
+                transition={{ duration: 0.8, delay: 0.45 }}
               >
-                <motion.svg
-                  className="absolute -top-8 left-[280px] sm:left-[320px] w-20 h-20 text-[#00F5C4] hidden md:block"
-                  viewBox="0 0 80 80"
-                  fill="none"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 1.2 }}
-                >
-                  <motion.path
-                    d="M8 10C18 14 38 22 44 40C46 46 45 55 40 64"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    fill="none"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 1.2, delay: 1.3, ease: "easeOut" }}
-                  />
-                  <motion.path
-                    d="M34 58L40 65L47 56"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    fill="none"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 0.4, delay: 2.5, ease: "easeOut" }}
-                  />
-                </motion.svg>
-
-                <div className="flex items-start gap-4">
+                <div className="flex items-center gap-5">
                   <motion.div
-                    className="relative flex-shrink-0 hidden sm:block"
+                    className="relative flex-shrink-0"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.7 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
                   >
-                    <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#00F5C4] shadow-[0_0_20px_rgba(0,245,196,0.3)]">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-3 border-[#A3D1FF] shadow-[0_0_20px_rgba(163,209,255,0.3)]">
                       <img
                         src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
                         alt="Marc Friedman"
@@ -254,24 +205,24 @@ export default function HomePage() {
                         loading="eager"
                       />
                     </div>
-                    <div className="absolute -bottom-0.5 -right-0.5 w-5 h-5 bg-[#00F5C4] rounded-full border-2 border-[#0d1117]" />
+                    <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-[#1a2332] flex items-center justify-center">
+                      <span className="text-white text-[8px] font-bold">ON</span>
+                    </div>
                   </motion.div>
 
                   <div className="flex flex-col gap-3">
-                    <MagneticButton strength={15}>
+                    <MagneticButton strength={20}>
                       <Link
                         to="/contact"
-                        className="group relative inline-flex items-center gap-3 bg-[#00F5C4] hover:bg-[#00ddb0] text-[#0d1117] font-black text-lg sm:text-xl px-8 sm:px-10 py-4 sm:py-5 rounded-xl transition-all duration-300 shadow-[0_0_40px_rgba(0,245,196,0.3)] hover:shadow-[0_0_60px_rgba(0,245,196,0.5)] hover:scale-[1.02]"
+                        className="mr_btn mr_btn_primary inline-flex items-center gap-3 text-xl shadow-[0_0_30px_rgba(163,209,255,0.3)] hover:shadow-[0_0_50px_rgba(163,209,255,0.5)]"
                       >
-                        <span className="relative z-[2]">Check If Your City Is Available</span>
-                        <ArrowRight className="w-5 h-5 relative z-[2] group-hover:translate-x-1.5 transition-transform" />
+                        <span>Book a Free Consultation</span>
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                       </Link>
                     </MagneticButton>
-
-                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-gray-500 text-sm">
-                      <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-[#00F5C4]" /> No contracts</span>
-                      <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-[#00F5C4]" /> No upfront risk</span>
-                      <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-[#00F5C4]" /> One clinic per city</span>
+                    <div className="flex items-center gap-3 text-gray-400 text-sm">
+                      <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-[#A3D1FF]" /> No contracts</span>
+                      <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-[#A3D1FF]" /> No upfront risk</span>
                     </div>
                   </div>
                 </div>
@@ -282,16 +233,16 @@ export default function HomePage() {
                 className="flex items-center gap-4 pt-4 border-t border-white/5"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.9 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
               >
                 <div className="flex items-center -space-x-2">
-                  <div className="w-8 h-8 rounded-full border-2 border-[#0d1117] overflow-hidden">
+                  <div className="w-8 h-8 rounded-full border-2 border-[#1a2332] overflow-hidden">
                     <img src="https://ik.imagekit.io/qcvroy8xpd/1682479506906.jpeg?updatedAt=1754019693073" alt="Client" className="w-full h-full object-cover" />
                   </div>
-                  <div className="w-8 h-8 rounded-full border-2 border-[#0d1117] overflow-hidden">
+                  <div className="w-8 h-8 rounded-full border-2 border-[#1a2332] overflow-hidden">
                     <img src="https://ik.imagekit.io/qcvroy8xpd/4c91361b-27ee-453b-88e0-af3026cac747_1_ro3hez_e_background_removal_f_png_vkfbub.png?updatedAt=1754023286922" alt="Client" className="w-full h-full object-cover" />
                   </div>
-                  <div className="w-8 h-8 rounded-full border-2 border-[#0d1117] overflow-hidden">
+                  <div className="w-8 h-8 rounded-full border-2 border-[#1a2332] overflow-hidden">
                     <img src="https://ik.imagekit.io/qcvroy8xpd/1732338426448%20(1).jpeg?updatedAt=1749337717019" alt="Client" className="w-full h-full object-cover" />
                   </div>
                 </div>
@@ -313,10 +264,9 @@ export default function HomePage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
-              {/* Website Mockup */}
               <div className="relative">
-                <div className="bg-[#1a1f2e] rounded-xl border border-white/10 overflow-hidden shadow-2xl shadow-black/40">
-                  <div className="flex items-center gap-2 px-4 py-3 bg-[#13171f] border-b border-white/5">
+                <div className="bg-[#1b1b1b] rounded-xl border border-white/10 overflow-hidden shadow-2xl shadow-black/40">
+                  <div className="flex items-center gap-2 px-4 py-3 bg-[#111] border-b border-white/5">
                     <div className="flex gap-1.5">
                       <div className="w-3 h-3 rounded-full bg-red-500/80" />
                       <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
@@ -332,8 +282,8 @@ export default function HomePage() {
                   <div className="p-6 space-y-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-lg bg-[#00F5C4]/20 flex items-center justify-center">
-                          <Zap className="w-4 h-4 text-[#00F5C4]" />
+                        <div className="w-8 h-8 rounded-lg bg-[#A3D1FF]/20 flex items-center justify-center">
+                          <Zap className="w-4 h-4 text-[#A3D1FF]" />
                         </div>
                         <span className="text-white font-bold text-sm">BioHack Clinic</span>
                       </div>
@@ -343,31 +293,31 @@ export default function HomePage() {
                         <span>Book</span>
                       </div>
                     </div>
-                    <div className="bg-gradient-to-br from-[#0a1628] to-[#1a1f2e] rounded-lg p-5">
-                      <p className="text-[#00F5C4] text-[10px] uppercase tracking-wider mb-2 font-medium">Optimize Your Biology</p>
+                    <div className="bg-gradient-to-br from-[#1a2332] to-[#1b1b1b] rounded-lg p-5">
+                      <p className="text-[#A3D1FF] text-[10px] uppercase tracking-wider mb-2 font-medium">Optimize Your Biology</p>
                       <p className="text-white font-bold text-lg leading-tight mb-3">Advanced IV Therapy &<br />Longevity Treatments</p>
-                      <div className="inline-flex items-center gap-2 bg-[#00F5C4] text-[#0d1117] text-xs font-bold px-4 py-2 rounded-lg">
+                      <div className="inline-flex items-center gap-2 bg-[#A3D1FF] text-[#0a0f1a] text-xs font-bold px-4 py-2 rounded-lg">
                         Book Your Session <ArrowRight className="w-3 h-3" />
                       </div>
                     </div>
                     <div className="grid grid-cols-3 gap-2">
                       <div className="bg-white/5 rounded-lg p-3 text-center">
-                        <p className="text-[#00F5C4] font-bold text-lg">NAD+</p>
+                        <p className="text-[#A3D1FF] font-bold text-lg">NAD+</p>
                         <p className="text-gray-500 text-[10px]">IV Therapy</p>
                       </div>
                       <div className="bg-white/5 rounded-lg p-3 text-center">
-                        <p className="text-[#00F5C4] font-bold text-lg">Cryo</p>
+                        <p className="text-[#A3D1FF] font-bold text-lg">Cryo</p>
                         <p className="text-gray-500 text-[10px]">Recovery</p>
                       </div>
                       <div className="bg-white/5 rounded-lg p-3 text-center">
-                        <p className="text-[#00F5C4] font-bold text-lg">RLT</p>
+                        <p className="text-[#A3D1FF] font-bold text-lg">RLT</p>
                         <p className="text-gray-500 text-[10px]">Red Light</p>
                       </div>
                     </div>
                   </div>
                 </div>
                 <motion.div
-                  className="absolute -top-3 -right-3 bg-[#00F5C4] text-[#0d1117] text-xs font-black px-3 py-1.5 rounded-full shadow-lg"
+                  className="absolute -top-3 -right-3 bg-[#A3D1FF] text-[#0a0f1a] text-xs font-black px-3 py-1.5 rounded-full shadow-lg"
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 >
@@ -375,7 +325,6 @@ export default function HomePage() {
                 </motion.div>
               </div>
 
-              {/* Google Map Pack Mockup */}
               <div className="bg-white rounded-xl overflow-hidden shadow-2xl shadow-black/40 border border-gray-200">
                 <div className="px-4 py-3 flex items-center gap-2 border-b border-gray-100">
                   <svg viewBox="0 0 24 24" className="w-5 h-5">
@@ -450,7 +399,7 @@ export default function HomePage() {
       </section>
 
       {/* Social Proof Bar */}
-      <section className="bg-[#0d1117] border-y border-white/5 py-6 px-6">
+      <section className="bg-[#1a2332] border-y border-white/5 py-6 px-6">
         <div className="max-w-5xl mx-auto">
           <motion.div
             className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8"
