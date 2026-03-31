@@ -134,7 +134,7 @@ export default function HomePage() {
           style={{ scale }}
         >
           <img
-            src="https://ik.imagekit.io/qcvroy8xpd/Frame%201%20(1).png"
+            src="https://ik.imagekit.io/qcvroy8xpd/Container%20(4).png"
             alt=""
             className="absolute inset-0 w-full h-full object-cover"
             loading="eager"
