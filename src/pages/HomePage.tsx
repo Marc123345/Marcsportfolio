@@ -296,7 +296,6 @@ export default function HomePage() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 1.2 }}
               >
-                <span className="text-[#A3D1FF] text-sm font-semibold">Book your free call</span>
                 <motion.svg
                   width="120"
                   height="60"
