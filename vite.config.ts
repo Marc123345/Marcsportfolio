@@ -90,51 +90,22 @@ export default defineConfig({
       },
     },
     rollupOptions: {
-      treeshake: {
-        preset: 'recommended',
-        moduleSideEffects: false
-      },
       output: {
-        // Use a more predictable chunk naming strategy
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js',
         assetFileNames: 'assets/[ext]/[name]-[hash].[ext]',
-        // Improve chunking strategy
         manualChunks: (id) => {
-          // Vendor chunks
           if (id.includes('node_modules')) {
-            // Large libraries get their own chunks
+            if (id.includes('react/') || id.includes('react-dom/') || id.includes('react-router-dom/')) return 'vendor-react';
             if (id.includes('framer-motion')) return 'vendor-framer';
             if (id.includes('lucide-react')) return 'vendor-icons';
             if (id.includes('@supabase')) return 'vendor-supabase';
-            
-            // Group smaller vendor packages
             return 'vendor';
           }
-          
-          // Core React packages
-          if (id.includes('node_modules/react/') || 
-              id.includes('node_modules/react-dom/') || 
-              id.includes('node_modules/react-router-dom/')) {
-            return 'vendor-react';
-          }
-          
-          // Group page components by section
-          if (id.includes('/pages/blog/')) {
-            return 'page-blog';
-          }
-          
-          if (id.includes('/pages/work/')) {
-            return 'page-work';
-          }
-          
-          if (id.includes('/pages/tools/')) {
-            return 'page-tools';
-          }
-          
-          if (id.includes('/pages/services/')) {
-            return 'page-services';
-          }
+          if (id.includes('/pages/blog/')) return 'page-blog';
+          if (id.includes('/pages/work/')) return 'page-work';
+          if (id.includes('/pages/tools/')) return 'page-tools';
+          if (id.includes('/pages/services/')) return 'page-services';
         }
       },
     },
@@ -147,15 +118,5 @@ export default defineConfig({
       strict: true,
     },
   },
-  // Ensure base path is set correctly
   base: '/',
-  // Add cache busting for dynamic imports
-  experimental: {
-    renderBuiltUrl(filename, { hostType }) {
-      if (hostType === 'js') {
-        return { runtime: `globalThis.__vite_public_path + ${JSON.stringify(filename)}` };
-      }
-      return { relative: true };
-    }
-  }
 });
