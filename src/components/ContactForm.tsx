@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Send, CheckCircle } from 'lucide-react';
+import { Send, CircleCheck as CheckCircle } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { toast } from 'sonner';
 import { FORM_SUBMIT_COOLDOWN_MS } from '@/lib/constants';
@@ -10,6 +10,10 @@ interface FormData {
   email: string;
   phone: string;
   company: string;
+  city: string;
+  business_address: string;
+  zip_code: string;
+  npi_number: string;
   service: string;
   message: string;
 }
@@ -18,6 +22,7 @@ interface FormErrors {
   name?: string;
   email?: string;
   phone?: string;
+  zip_code?: string;
   message?: string;
 }
 
@@ -30,6 +35,10 @@ export default function ContactForm() {
     email: '',
     phone: '',
     company: '',
+    city: '',
+    business_address: '',
+    zip_code: '',
+    npi_number: '',
     service: '',
     message: '',
   });
@@ -69,6 +78,10 @@ export default function ContactForm() {
       if (!/^\d{7,15}$/.test(cleanPhone)) {
         newErrors.phone = 'Please enter a valid phone number (7-15 digits)';
       }
+    }
+
+    if (formData.zip_code.trim() && !/^\d{5}(-\d{4})?$/.test(formData.zip_code.trim())) {
+      newErrors.zip_code = 'Please enter a valid zip code';
     }
 
     if (!formData.message.trim()) {
@@ -116,6 +129,10 @@ export default function ContactForm() {
           email: formData.email,
           phone: formData.phone || null,
           company: formData.company || null,
+          city: formData.city || null,
+          business_address: formData.business_address || null,
+          zip_code: formData.zip_code || null,
+          npi_number: formData.npi_number || null,
           service: formData.service || null,
           message: formData.message,
           status: 'new',
@@ -135,6 +152,10 @@ export default function ContactForm() {
         email: '',
         phone: '',
         company: '',
+        city: '',
+        business_address: '',
+        zip_code: '',
+        npi_number: '',
         service: '',
         message: '',
       });
@@ -223,9 +244,79 @@ export default function ContactForm() {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-[#2d3035] border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#A3D1FF] transition-colors"
+            className={`w-full px-4 py-3 bg-[#2d3035] border ${
+              errors.phone ? 'border-red-500' : 'border-white/10'
+            } rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#A3D1FF] transition-colors`}
             placeholder="+1 (555) 123-4567"
           />
+          {errors.phone && <p className="mt-1 text-sm text-red-500">{errors.phone}</p>}
+        </div>
+
+        <div>
+          <label htmlFor="npi_number" className="block text-sm font-medium text-gray-300 mb-2">
+            NPI Number
+          </label>
+          <input
+            type="text"
+            id="npi_number"
+            name="npi_number"
+            value={formData.npi_number}
+            onChange={handleChange}
+            className="w-full px-4 py-3 bg-[#2d3035] border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#A3D1FF] transition-colors"
+            placeholder="1234567890"
+          />
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-6">
+        <div>
+          <label htmlFor="business_address" className="block text-sm font-medium text-gray-300 mb-2">
+            Business Address
+          </label>
+          <input
+            type="text"
+            id="business_address"
+            name="business_address"
+            value={formData.business_address}
+            onChange={handleChange}
+            className="w-full px-4 py-3 bg-[#2d3035] border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#A3D1FF] transition-colors"
+            placeholder="123 Main St"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="city" className="block text-sm font-medium text-gray-300 mb-2">
+            City
+          </label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            value={formData.city}
+            onChange={handleChange}
+            className="w-full px-4 py-3 bg-[#2d3035] border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#A3D1FF] transition-colors"
+            placeholder="New York"
+          />
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-6">
+        <div>
+          <label htmlFor="zip_code" className="block text-sm font-medium text-gray-300 mb-2">
+            Zip Code
+          </label>
+          <input
+            type="text"
+            id="zip_code"
+            name="zip_code"
+            value={formData.zip_code}
+            onChange={handleChange}
+            className={`w-full px-4 py-3 bg-[#2d3035] border ${
+              errors.zip_code ? 'border-red-500' : 'border-white/10'
+            } rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#A3D1FF] transition-colors`}
+            placeholder="10001"
+          />
+          {errors.zip_code && <p className="mt-1 text-sm text-red-500">{errors.zip_code}</p>}
         </div>
 
         <div>
