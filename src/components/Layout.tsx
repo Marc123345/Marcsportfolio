@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import MagneticButton from '@/components/MagneticButton';
 import FloatingChatbot from '@/components/FloatingChatbot';
-import { CALENDLY_LINK } from '@/lib/constants';
+const CALENDLY_LINK = "https://calendly.com/marc-friedman-web-design--meeting-link/30min";
 
 interface NavigationItem {
   label: string;
@@ -267,7 +267,6 @@ export default function Layout() {
         <title>{`${getPageTitle()} | Marc Friedman`}</title>
         <meta name="description" content="Full-stack design and development solutions that transform your vision into exceptional digital experiences." />
         <link rel="canonical" href={`https://www.marcfriedmanportfolio.com${location.pathname}`} />
-        <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
       </Helmet>
 
       {/* Navigation */}

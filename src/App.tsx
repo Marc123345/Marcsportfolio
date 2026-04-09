@@ -18,6 +18,7 @@ function lazyWithRetry(importFunc: () => Promise<any>) {
 }
 
 const HomePage = lazyWithRetry(() => import('@/pages/HomePage'));
+const BiohackingClinicsPage = lazyWithRetry(() => import('@/pages/industries/BiohackingClinicsPage'));
 const WorkPage = lazyWithRetry(() => import('@/pages/WorkPage'));
 const CaseStudiesPage = lazyWithRetry(() => import('@/pages/work/CaseStudiesPage'));
 const ServicesPage = lazyWithRetry(() => import('@/pages/ServicesPage'));
@@ -199,6 +200,8 @@ function App() {
           <Route path="tools/roi-calculator" element={<Suspense fallback={<PageLoader />}><ROICalculatorPage /></Suspense>} />
           <Route path="tools/project-timeline" element={<Suspense fallback={<PageLoader />}><ProjectTimelinePage /></Suspense>} />
           <Route path="tools/ai-crawler-optimization" element={<Suspense fallback={<PageLoader />}><AIWebsiteCrawlerPage /></Suspense>} />
+
+          <Route path="industries/biohacking-clinics" element={<Suspense fallback={<PageLoader />}><BiohackingClinicsPage /></Suspense>} />
 
           <Route path="services/design-systems" element={<Suspense fallback={<PageLoader />}><DesignSystemsPage /></Suspense>} />
           <Route path="services/premium-web-package" element={<Suspense fallback={<PageLoader />}><PremiumWebPackage /></Suspense>} />

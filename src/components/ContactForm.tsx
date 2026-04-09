@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Send, CheckCircle } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { toast } from 'sonner';
-import { FORM_SUBMIT_COOLDOWN_MS } from '@/lib/constants';
+const FORM_SUBMIT_COOLDOWN_MS = 30000;
 
 interface FormData {
   name: string;

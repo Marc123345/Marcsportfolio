@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Loader2, CheckCircle2, AlertCircle, Search } from 'lucide-react';
 import { toast } from 'sonner';
-import { ANALYSIS_TIMEOUT_MS } from '@/lib/constants';
+const ANALYSIS_TIMEOUT_MS = 30000;
 
 interface AnalysisResult {
   score: number;
