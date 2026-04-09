@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Lock, Clock } from 'lucide-react';
 import TextReveal from '@/components/TextReveal';
 import HoverCard3D from '@/components/HoverCard3D';
+import JotFormEmbed from '@/components/JotFormEmbed';
 
 const contactSchema = {
   "@context": "https://schema.org",
@@ -32,20 +33,6 @@ const contactSchema = {
 export default function ContactPage() {
   const calendlyUXAuditLink = "https://calendly.com/marc-friedman-web-design--meeting-link/30min";
 
-  // Trigger JotForm handler after mount
-  useEffect(() => {
-    const handleJotForm = () => {
-      // Check if the global handler from the script is available
-      if (window.jotformEmbedHandler) {
-        window.jotformEmbedHandler("iframe[id='JotFormIFrame-253586719410462']", "https://form.jotform.com/");
-      }
-    };
-
-    // Small delay to ensure script from Helmet is processed
-    const timer = setTimeout(handleJotForm, 500);
-    return () => clearTimeout(timer);
-  }, []);
-
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: (custom: number) => ({
@@ -67,8 +54,6 @@ export default function ContactPage() {
         <script type="application/ld+json">
           {JSON.stringify(contactSchema)}
         </script>
-        {/* Load JotForm Script via Helmet */}
-        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
       </Helmet>
 
       {/* Hero Section */}
@@ -89,13 +74,6 @@ export default function ContactPage() {
           >
             Tell Me What's Not Working. I'll Tell You How to Fix It — Free.
           </motion.h1>
-          <motion.h2
-            className="font-body text-xl sm:text-2xl text-[#A78BFA] mb-6"
-            variants={fadeInUp}
-            custom={1}
-          >
-            Every project starts with a conversation. No pressure, no commitment — just honest advice about your website.
-          </motion.h2>
           <motion.div 
             className="flex flex-wrap gap-4"
             variants={fadeInUp}
@@ -119,68 +97,7 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-white mb-6">Get Your Free Project Quote</h2>
             </TextReveal>
 
-            {/* Quick Qualifier Fields */}
-            <div className="grid sm:grid-cols-2 gap-4 mb-6">
-              <div>
-                <label className="block text-sm text-gray-400 mb-2">Estimated Budget</label>
-                <select
-                  className="w-full bg-[#0f0f0f] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#A78BFA] focus:outline-none transition-colors appearance-none cursor-pointer"
-                  defaultValue=""
-                >
-                  <option value="" disabled>Select your budget range</option>
-                  <option value="under-3k">Under $3,000</option>
-                  <option value="3k-5k">$3,000 – $5,000</option>
-                  <option value="5k-10k">$5,000 – $10,000</option>
-                  <option value="10k-20k">$10,000 – $20,000</option>
-                  <option value="20k-plus">$20,000+</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm text-gray-400 mb-2">Project Timeline</label>
-                <select
-                  className="w-full bg-[#0f0f0f] border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:border-[#A78BFA] focus:outline-none transition-colors appearance-none cursor-pointer"
-                  defaultValue=""
-                >
-                  <option value="" disabled>When do you need this?</option>
-                  <option value="asap">ASAP</option>
-                  <option value="1-month">Within 1 month</option>
-                  <option value="1-3-months">1–3 months</option>
-                  <option value="exploring">Just exploring</option>
-                </select>
-              </div>
-            </div>
-
-            {/* JotForm React Implementation */}
-            <div className="w-full">
-              <iframe
-                id="JotFormIFrame-253586719410462"
-                title="Marc Friedman Contact Form"
-                onLoad={() => window.parent.scrollTo(0,0)}
-                allowTransparency={true}
-                allow="geolocation; microphone; camera; fullscreen; payment"
-                src="https://form.jotform.com/253586719410462"
-                frameBorder="0"
-                style={{
-                  minWidth: '100%',
-                  maxWidth: '100%',
-                  height: '539px',
-                  border: 'none',
-                }}
-                scrolling="no"
-              />
-            </div>
-
-            {/* Trust Signals */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-4 pt-4 border-t border-white/5">
-              <div className="flex items-center gap-2 text-gray-400 text-sm">
-                <Lock className="w-4 h-4 text-[#A78BFA]" />
-                <span>Your information is 100% secure</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-400 text-sm">
-                <Clock className="w-4 h-4 text-[#A78BFA]" />
-                <span>Average response time: under 2 hours</span>
-              </div>
-            </div>
+            <JotFormEmbed />
           </HoverCard3D>
         </div>
       </section>

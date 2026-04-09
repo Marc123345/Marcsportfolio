@@ -74,16 +74,23 @@ export default function ROICalculator() {
     
     // Projected monthly revenue
     const projectedMonthlyRevenue = (inputs.monthlyVisitors * (projectedConversionRate / 100) * inputs.averageValue);
-    
+
+    // Additional revenue per month
+    const additionalMonthlyRevenue = projectedMonthlyRevenue - currentMonthlyRevenue;
+
     // Additional annual revenue
-    const additionalAnnualRevenue = (projectedMonthlyRevenue - currentMonthlyRevenue) * 12;
-    
+    const additionalAnnualRevenue = additionalMonthlyRevenue * 12;
+
     // ROI calculation (additional annual revenue / project cost)
-    const roi = (additionalAnnualRevenue / inputs.projectCost) * 100;
-    
+    // Protect against division by zero
+    const roi = inputs.projectCost > 0 ? (additionalAnnualRevenue / inputs.projectCost) * 100 : 0;
+
     // Payback period in months
-    const paybackPeriod = inputs.projectCost / (projectedMonthlyRevenue - currentMonthlyRevenue);
-    
+    // If there's no additional revenue, payback is infinite (will never pay back)
+    const paybackPeriod = additionalMonthlyRevenue > 0
+      ? inputs.projectCost / additionalMonthlyRevenue
+      : Infinity;
+
     setResults({
       currentMonthlyRevenue,
       projectedConversionRate,
@@ -107,6 +114,12 @@ export default function ROICalculator() {
   };
   
   const formatMonths = (value: number) => {
+    if (!isFinite(value)) {
+      return 'Never (no additional revenue)';
+    }
+    if (value < 0) {
+      return 'Immediate (generating revenue from day 1)';
+    }
     return `${value.toFixed(1)} months`;
   };
   
@@ -134,9 +147,9 @@ export default function ROICalculator() {
                   <label className="flex items-center text-gray-300 text-sm">
                     <Users className="w-4 h-4 mr-2" />
                     Monthly Visitors
-                    <button 
-                      type="button" 
-                      className="ml-2 text-gray-400 hover:text-[#A78BFA]"
+                    <button
+                      type="button"
+                      className="ml-2 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-400 hover:text-[#A3D1FF]"
                       onMouseEnter={() => setActiveTooltip('visitors')}
                       onMouseLeave={() => setActiveTooltip(null)}
                       aria-label="More information about monthly visitors metric"
@@ -182,7 +195,7 @@ export default function ROICalculator() {
                     Current Conversion Rate (%)
                     <button 
                       type="button" 
-                      className="ml-2 text-gray-400 hover:text-[#A78BFA]"
+                      className="ml-2 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-400 hover:text-[#A3D1FF]"
                       onMouseEnter={() => setActiveTooltip('conversion')}
                       onMouseLeave={() => setActiveTooltip(null)}
                       aria-label="More information about conversion rate metric"
@@ -228,7 +241,7 @@ export default function ROICalculator() {
                     Average Order/Lead Value
                     <button 
                       type="button" 
-                      className="ml-2 text-gray-400 hover:text-[#A78BFA]"
+                      className="ml-2 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-400 hover:text-[#A3D1FF]"
                       onMouseEnter={() => setActiveTooltip('value')}
                       onMouseLeave={() => setActiveTooltip(null)}
                       aria-label="More information about average order value metric"
@@ -274,7 +287,7 @@ export default function ROICalculator() {
                     Website Project Investment
                     <button 
                       type="button" 
-                      className="ml-2 text-gray-400 hover:text-[#A78BFA]"
+                      className="ml-2 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-400 hover:text-[#A3D1FF]"
                       onMouseEnter={() => setActiveTooltip('cost')}
                       onMouseLeave={() => setActiveTooltip(null)}
                       aria-label="More information about project investment metric"

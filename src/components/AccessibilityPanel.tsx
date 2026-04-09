@@ -1,17 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Accessibility, 
-  X, 
-  Type, 
-  Contrast, 
-  MousePointer, 
-  Zap, 
+import {
+  Accessibility,
+  X,
+  Type,
+  Contrast,
+  MousePointer,
+  Zap,
   RotateCcw,
   Sun,
   Moon,
   Volume2,
-  Eye,
   Languages,
   HelpCircle
 } from 'lucide-react';
@@ -85,56 +84,7 @@ export default function AccessibilityPanel({ className = '' }: AccessibilityPane
   // Get translations based on selected language
   const t = settings.language === 'he' ? hebrewTranslations : englishTranslations;
 
-  // Load settings from localStorage on mount
-  useEffect(() => {
-    const savedSettings = localStorage.getItem('accessibility-settings');
-    if (savedSettings) {
-      setSettings(JSON.parse(savedSettings));
-      applySettings(JSON.parse(savedSettings));
-    }
-  }, []);
-
-  // Save settings to localStorage when they change
-  useEffect(() => {
-    localStorage.setItem('accessibility-settings', JSON.stringify(settings));
-    applySettings(settings);
-  }, [settings]);
-
-  // Close panel when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (panelRef.current && !panelRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-    
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isOpen]);
-
-  // Handle keyboard navigation
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isOpen) {
-        setIsOpen(false);
-      }
-      
-      // Alt+A to toggle panel (common accessibility shortcut)
-      if (e.altKey && e.key === 'a') {
-        setIsOpen(prev => !prev);
-      }
-    };
-    
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen]);
-
-  const applySettings = (currentSettings: typeof settings) => {
+  const applySettings = useCallback((currentSettings: typeof settings) => {
     // Apply font size
     const htmlElement = document.documentElement;
     
@@ -207,7 +157,56 @@ export default function AccessibilityPanel({ className = '' }: AccessibilityPane
       htmlElement.setAttribute('dir', 'ltr');
       htmlElement.setAttribute('lang', 'en');
     }
-  };
+  }, []);
+
+  // Load settings from localStorage on mount
+  useEffect(() => {
+    const savedSettings = localStorage.getItem('accessibility-settings');
+    if (savedSettings) {
+      setSettings(JSON.parse(savedSettings));
+      applySettings(JSON.parse(savedSettings));
+    }
+  }, [applySettings]);
+
+  // Save settings to localStorage when they change
+  useEffect(() => {
+    localStorage.setItem('accessibility-settings', JSON.stringify(settings));
+    applySettings(settings);
+  }, [settings, applySettings]);
+
+  // Close panel when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (panelRef.current && !panelRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
+
+  // Handle keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false);
+      }
+
+      // Alt+A to toggle panel (common accessibility shortcut)
+      if (e.altKey && e.key === 'a') {
+        setIsOpen(prev => !prev);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen]);
 
   const resetSettings = () => {
     const defaultSettings = {

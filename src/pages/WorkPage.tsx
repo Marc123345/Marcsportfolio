@@ -1,14 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, ArrowUpRight, Star, CheckCircle2, Globe, Palette, Award } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
 import TextReveal from '@/components/TextReveal';
-import HoverCard3D from '@/components/HoverCard3D';
 import ProjectCard3D from '@/components/ProjectCard3D';
-import ParticleBackground from '@/components/ParticleBackground';
-import DynamicBackground from '@/components/DynamicBackground';
-import PortfolioFilter from '@/components/PortfolioFilter';
 
 interface Project {
   title: string;
@@ -28,7 +23,7 @@ const projects: Project[] = [
   {
     title: "Untapped Africa",
     description: "Revolutionizing water infrastructure solutions across Africa with innovative technology and sustainable practices. A comprehensive platform for project management, data visualization, and community engagement.",
-    image: "https://ik.imagekit.io/qcvroy8xpd/Screenshot.png?updatedAt=1754018965491",
+    image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(1).png?updatedAt=1767539579782",
     liveUrl: "https://untappedafrica.co.za",
     caseStudyUrl: "/work/case-studies/untapped-africa",
     impact: [
@@ -44,8 +39,8 @@ const projects: Project[] = [
   // Original Featured Project now as regular
   {
     title: "Binns Media Group Platform",
-    description: "NYC media company needed a platform to compete for listener attention. I built a content hub for their podcasts, TV shows, and exclusive content that changed how their audience discovers media.",
-    image: "https://i.imgur.com/IU0mmH7.jpeg",
+    description: "A cutting-edge digital media platform designed to showcase BMG's diverse content portfolio including podcasts, TV shows, and exclusive content. The platform serves as both a content hub and a representation of BMG's commitment to amplifying diverse voices in media.",
+    image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9.png?updatedAt=1767539579710",
     liveUrl: "https://www.binnsmediagroup.com",
     caseStudyUrl: "/work/case-studies/binns-media",
     impact: [
@@ -57,12 +52,26 @@ const projects: Project[] = [
     technologies: ["React 18", "TypeScript", "Supabase", "GSAP"],
     category: "website"
   },
+  {
+    title: "Paving Leads",
+    description: "High-velocity SEO engine that dominated search results and ranked #1 on Google for competitive keywords.",
+    image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016_9.png?updatedAt=1767539579010",
+    liveUrl: "https://pavinglead.com/",
+    caseStudyUrl: "/work/case-studies/paving-leads",
+    impact: [
+      "#1 Google ranking",
+      "300% increase in organic traffic",
+      "Strong lead conversion"
+    ],
+    technologies: ["React", "Node.js", "SEO Optimization", "Analytics"],
+    category: "website"
+  },
 
   // Websites
   {
     title: "A Secure Annapolis Locksmith",
-    description: "Local locksmith was invisible on Google and losing every lead to HomeAdvisor. Now they rank #1 locally and the phone doesn't stop ringing.",
-    image: "https://images.unsplash.com/photo-1587613864521-9ef8dfe617cc?auto=format&fit=crop&w=2000&q=80",
+    description: "Professional locksmith website showcasing residential, commercial, and automotive services.",
+    image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(2).png?updatedAt=1767539579194",
     liveUrl: "https://www.asecureannapolislocksmith.com",
     caseStudyUrl: "/work/case-studies/secure-annapolis",
     impact: [
@@ -76,7 +85,7 @@ const projects: Project[] = [
   {
     title: "Friedman & Cohen",
     description: "Professional B2B procurement platform for property developers.",
-    image: "https://i.imgur.com/6kjURhx.jpeg",
+    image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(3).png?updatedAt=1767539579776",
     liveUrl: "https://b2b.fandc.co.za",
     caseStudyUrl: "/work/case-studies/friedman-cohen",
     impact: [
@@ -85,6 +94,20 @@ const projects: Project[] = [
       "Multiple property partners"
     ],
     technologies: ["React", "Node.js", "PostgreSQL"],
+    category: "saas"
+  },
+  {
+    title: "Tar & Chip Paving",
+    description: "Specialized surface solutions showcase for tar and chip paving applications.",
+    image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9(5).png?updatedAt=1767539578933",
+    liveUrl: "https://cumberlandtarchip.org/",
+    caseStudyUrl: "/work/case-studies/tar-chip-paving",
+    impact: [
+      "Professional web presence",
+      "Mobile-optimized design",
+      "Industry-focused aesthetic"
+    ],
+    technologies: ["React", "Tailwind CSS", "Responsive Design"],
     category: "website"
   },
 
@@ -103,26 +126,26 @@ const projects: Project[] = [
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     category: "landing"
   },
-  {
-    title: "Irreplicable",
-    description: "High-converting landing page for premium ghostwriting services.",
-    image: "https://i.imgur.com/y4U7SPl.jpeg",
-    liveUrl: "https://irreplicable.net",
-    caseStudyUrl: "/work/case-studies/irreplicable",
-    impact: [
-      "Increased conversions",
-      "Improved lead quality",
-      "High client satisfaction"
-    ],
-    technologies: ["React", "Tailwind CSS", "GSAP"],
-    category: "landing"
-  },
 
   // SaaS Projects
   {
+    title: "iLight",
+    description: "Modern lighting e-commerce platform with seamless user experience.",
+    image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9(4).png?updatedAt=1767539579060",
+    liveUrl: "https://ilight.co.za",
+    caseStudyUrl: "/work/case-studies/ilight",
+    impact: [
+      "Modern shopping experience",
+      "Increased conversions",
+      "Excellent mobile performance"
+    ],
+    technologies: ["Next.js", "Shopify", "TypeScript"],
+    category: "saas"
+  },
+  {
     title: "MyTube Platform",
     description: "Video metadata management system for media and manufacturing.",
-    image: "https://i.imgur.com/QNHXpzT.jpeg",
+    image: "https://ik.imagekit.io/qcvroy8xpd/QNHXpzT%20(1).jpeg",
     caseStudyUrl: "/work/case-studies/mytube",
     impact: [
       "Faster metadata processing",
@@ -208,21 +231,16 @@ function FeaturedProjectCard({ project }: { project: Project }) {
   const navigate = useNavigate();
   
   return (
-    <motion.div 
-      className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group col-span-full mb-12"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      viewport={{ once: true, amount: 0.3 }}
+    <div
+      className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group col-span-full mb-12"
     >
       <div className="grid md:grid-cols-2 gap-8">
         <div className="aspect-[16/10] overflow-hidden relative">
-          <img 
-            src={project.image} 
-            alt={project.title} 
-            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1b1b1b] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </div>
         <div className="p-6 md:p-8">
           <div className="flex items-center justify-between mb-4">
@@ -250,19 +268,19 @@ function FeaturedProjectCard({ project }: { project: Project }) {
           </div>
           <div className="flex flex-wrap gap-3">
             {project.liveUrl && (
-              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="mr_btn mr_btn_outline">
-                <span>View Live Website</span>
+              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="mr_btn mr_btn_outline inline-flex items-center gap-2">
+                <span>View Live</span>
               </a>
             )}
             {project.caseStudyUrl && (
-              <button onClick={() => navigate(project.caseStudyUrl)} className="mr_btn mr_btn_primary">
-                <span>Read Case Study</span>
+              <button onClick={() => navigate(project.caseStudyUrl)} className="mr_btn mr_btn_primary inline-flex items-center gap-2">
+                <span>Case Study</span>
               </button>
             )}
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -288,7 +306,6 @@ function CategoryButton({ children, isActive = false, onClick }: {
 export default function WorkPage() {
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState('all');
-  const [scrollY, setScrollY] = useState(0);
   const heroRef = useRef<HTMLElement>(null);
   
   // Get filter from URL params
@@ -300,22 +317,22 @@ export default function WorkPage() {
     }
   }, []);
   
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
+  const filteredProjects = activeFilter === 'all'
+    ? projects
     : projects.filter(project => {
         switch (activeFilter) {
           case 'media':
             return ['Binns Media Group Platform', 'Videoleap', 'MyTube Platform'].includes(project.title);
           case 'saas':
             return project.category === 'saas';
-          case 'wellness':
-            return ['iLight Care'].includes(project.title);
+          case 'ecommerce':
+            return ['Friedman & Cohen'].includes(project.title);
           case 'automotive':
             return ['AutoMarginX', 'Fleet Management System'].includes(project.title);
           case 'professional':
-            return ['A Secure Annapolis Locksmith', 'Friedman & Cohen', 'Irreplicable'].includes(project.title);
+            return ['A Secure Annapolis Locksmith', 'Tar & Chip Paving', 'Paving Leads'].includes(project.title);
           case 'social-impact':
-            return ['Untapped Africa', 'Give 2 Grow'].includes(project.title);
+            return ['Untapped Africa'].includes(project.title);
           case 'sports':
             return ['Chad Le Clos Swimming'].includes(project.title);
           default:
@@ -327,22 +344,12 @@ export default function WorkPage() {
     { id: 'all', label: 'All Projects' },
     { id: 'media', label: 'Media & Entertainment' },
     { id: 'saas', label: 'SaaS & Technology' },
-    { id: 'wellness', label: 'Health & Wellness' },
+    { id: 'ecommerce', label: 'E-commerce' },
     { id: 'automotive', label: 'Automotive' },
     { id: 'professional', label: 'Professional Services' },
     { id: 'social-impact', label: 'Social Impact' },
     { id: 'sports', label: 'Sports & Entertainment' }
   ];
-  
-  // Handle scroll effects
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <>
@@ -375,22 +382,15 @@ export default function WorkPage() {
         </script>
       </Helmet>
 
-      <section 
+      <section
         ref={heroRef}
         className="relative min-h-[60vh] md:min-h-[80vh] flex items-center justify-center bg-black overflow-hidden"
       >
-        {/* Dynamic Background with Depth */}
-        <DynamicBackground streakCount={15} particleCount={40} color="#A78BFA" />
-        
         <div className="absolute inset-0 z-0">
-          <img 
+          <img
             src="https://i.imgur.com/IU0mmH7.jpeg"
             alt="Featured portfolio projects by Marc Friedman - web development and design showcase"
             className="w-full h-full object-cover"
-            style={{ 
-              transform: `translateY(${scrollY * 0.2}px)`,
-              transition: 'transform 0.2s ease-out'
-            }}
           />
           <div 
             className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black/90"
@@ -408,29 +408,22 @@ export default function WorkPage() {
             </p>
           </TextReveal>
 
-          <motion.div 
+          <div
             className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-8 mt-8 md:mt-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
           >
             <div className="bg-[#1b1b1b]/80 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all text-center">
               <div className="text-2xl md:text-4xl font-bold text-[#A78BFA] mb-1 md:mb-2 counter">50+</div>
               <div className="text-xs md:text-base text-gray-400">Projects Completed</div>
             </div>
-            <div className="bg-[#1b1b1b]/80 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all text-center">
-              <div className="text-2xl md:text-4xl font-bold text-[#A78BFA] mb-1 md:mb-2 counter">40+</div>
-              <div className="text-xs md:text-base text-gray-400">Happy Clients</div>
-            </div>
-            <div className="bg-[#1b1b1b]/80 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all text-center">
-              <div className="text-2xl md:text-4xl font-bold text-[#A78BFA] mb-1 md:mb-2 counter">5+</div>
+            <div className="bg-[#1b1b1b]/80 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 hover:border-[#A3D1FF] transition-all text-center">
+              <div className="text-2xl md:text-4xl font-bold text-[#A3D1FF] mb-1 md:mb-2 counter">6+</div>
               <div className="text-xs md:text-base text-gray-400">Years Experience</div>
             </div>
             <div className="bg-[#1b1b1b]/80 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/10 hover:border-[#A78BFA] transition-all text-center">
               <div className="text-2xl md:text-4xl font-bold text-[#A78BFA] mb-1 md:mb-2 counter">99%</div>
               <div className="text-xs md:text-base text-gray-400">Client Satisfaction</div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -458,11 +451,8 @@ export default function WorkPage() {
       <section className="py-8 md:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">Portfolio Projects</h2>
-          <motion.div 
+          <div
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.9 }}
           >
             {filteredProjects.map((project, index) => (
               project.featured ? (
@@ -481,7 +471,7 @@ export default function WorkPage() {
                 />
               )
             ))}
-          </motion.div>
+          </div>
           
           {/* Related Content Links */}
           <div className="mt-16 bg-[#1b1b1b] p-8 rounded-xl border border-white/10">
@@ -571,8 +561,6 @@ export default function WorkPage() {
       </section>
 
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#1b1b1b] to-black relative overflow-hidden">
-        <DynamicBackground streakCount={8} particleCount={20} color="#A78BFA" />
-        
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <TextReveal>
             <h2 className="font-heading text-[clamp(1.75rem,3.5vw,2.5rem)] font-semibold tracking-[-0.01em] text-white leading-[1.15] mb-4 md:mb-6">Ready to Create Your Success Story?</h2>

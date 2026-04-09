@@ -1,25 +1,30 @@
 import { useNavigate, Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
-import { useEffect, useRef, useState } from 'react';
-import { ArrowRight, CircleCheck as CheckCircle, Target, TrendingUp, Zap, Shield, Users, Award, Clock, Star, Sparkles, MessageSquare, Rocket, ChartBar as BarChart3, Code as Code2, ChevronDown } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import { ArrowRight, CircleCheck as CheckCircle, Target, TrendingUp, Zap, Shield, Users, Award, Clock, Star, Sparkles, MessageSquare, Rocket, ChartBar as BarChart3, Code as Code2 } from 'lucide-react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import TrustedBy from '@/components/TrustedBy';
 import SEO from '@/components/SEO';
 import MagneticButton from '@/components/MagneticButton';
 import AccessibilityPanel from '@/components/AccessibilityPanel';
-import JotFormEmbed from '@/components/JotFormEmbed';
+import ContactForm from '@/components/ContactForm';
+import Reveal from '@/components/Reveal';
+import SplitTextReveal from '@/components/SplitTextReveal';
+import Spotlight from '@/components/Spotlight';
+import AnimatedFAQ from '@/components/AnimatedFAQ';
+import ConnectedSteps from '@/components/ConnectedSteps';
+import FeaturedWorkCarousel from '@/components/FeaturedWorkCarousel';
 
 const homeSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Marc Friedman Design & Development",
-  "description": "High-performance React/Node websites built to attract, convert, and close clients for agencies, ecommerce, and B2B companies.",
+  "name": "Marc Friedman - Web Designer Tel Aviv",
+  "description": "Professional web designer in Tel Aviv creating high-performance React/Node websites for agencies, ecommerce, and B2B companies. Expert in web development and conversion optimization.",
   "image": "https://marcfriedmanportfolio.com/wp-content/uploads/2024/12/image-1.webp",
   "url": "https://marcfriedmanportfolio.com",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Tel Aviv",
-    "addressRegion": "TA",
+    "addressRegion": "Tel Aviv District",
     "addressCountry": "IL"
   },
   "geo": {
@@ -29,12 +34,13 @@ const homeSchema = {
   },
   "sameAs": [
     "https://www.linkedin.com/in/portfolio2/",
+    "https://www.behance.net/marcfriedmanweb",
     "https://g.co/kgs/78fRZ6r"
   ],
   "founder": {
     "@type": "Person",
     "name": "Marc Friedman",
-    "jobTitle": "Full Stack Designer & Developer"
+    "jobTitle": "Web Designer Tel Aviv | Full Stack Designer & Developer"
   },
   "areaServed": {
     "@type": "GeoCircle",
@@ -77,7 +83,7 @@ const homeSchema = {
   },
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "4.9",
+    "ratingValue": "4.8",
     "reviewCount": "40"
   }
 };
@@ -141,22 +147,27 @@ export default function HomePage() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 300]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
     <>
       <SEO
-        title="Websites That Convert for Agencies, Ecommerce, B2B"
-        description="High-performance React/Node websites built to attract, convert, and close clients. Increase leads by 40% with websites that load in under 2 seconds."
+        title="Web Designer Tel Aviv | Award-Winning Websites That Convert"
+        description="Professional web designer in Tel Aviv specializing in high-performance websites for agencies, ecommerce, and B2B. Expert in React development and conversion optimization."
         canonicalUrl="https://www.marcfriedmanportfolio.com/"
         keywords={[
+          'Web Designer Tel Aviv',
+          'Tel Aviv web design',
+          'website designer Tel Aviv',
+          'web development Tel Aviv',
+          'Tel Aviv developer',
+          'Israel web designer',
           'B2B web design',
           'lead generation websites',
-          'agency websites',
-          'ecommerce website design',
-          'high-performance websites',
-          'React development',
-          'conversion optimization'
+          'React development'
         ]}
         structuredData={homeSchema}
       />
@@ -164,177 +175,257 @@ export default function HomePage() {
       <AccessibilityPanel />
 
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20" style={{ backgroundColor: '#1a2332' }}>
-        {/* Animated Background Image - Portfolio Websites */}
-        <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
+      <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
+        <motion.div
+          className="absolute inset-0 w-full h-full z-0"
+          style={{ scale }}
+        >
+          <img
+            src="https://ik.imagekit.io/qcvroy8xpd/Container%20(4).png"
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
           <motion.div
-            className="absolute inset-0 w-[120%] h-full"
-            initial={{ opacity: 0, x: 0 }}
-            animate={{
-              opacity: 0.4,
-              x: ['0%', '-20%']
-            }}
-            transition={{
-              opacity: { duration: 1.5, ease: "easeOut" },
-              x: { duration: 40, repeat: Infinity, ease: "linear", repeatType: "reverse" }
-            }}
-          >
-            <img
-              src="https://ik.imagekit.io/qcvroy8xpd/Container.png"
-              alt="Award-winning web design portfolio showcasing high-converting business websites"
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
+            className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#A3D1FF]/8 rounded-full blur-[150px]"
+            animate={{ opacity: [0.3, 0.6, 0.3] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </motion.div>
 
-          {/* Stronger Gradient Overlays — headline dominates */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1a2332]/80 via-[#1a2332]/50 to-[#1a2332]/90"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1a2332]/95 via-[#1a2332]/60 to-[#1a2332]/40"></div>
-        </div>
+        <div className="container mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 relative z-10 pt-32 pb-20 lg:pt-36 lg:pb-24">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
-        <div className="container mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-
-            {/* Left Side - Content + Reviews */}
             <motion.div
-              className="text-left space-y-8"
+              className="lg:col-span-7 space-y-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
-              {/* Main Headline */}
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="lg:inline-flex hidden items-center gap-2.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-5 py-2.5"
               >
-                <h1 className="font-heading text-[clamp(3rem,6vw,4.5rem)] font-semibold tracking-[-0.01em] text-white leading-[1.15] mb-6">
-                  Your Website Should Be Your Best Salesperson. I'll Make It One.
-                </h1>
-                <p className="text-lg sm:text-xl text-gray-300/80 max-w-lg leading-relaxed">
-                  I build custom React websites for B2B companies, agencies, and ecommerce brands that actually bring in customers — not just traffic.
-                </p>
+                <span className="w-2 h-2 rounded-full bg-[#A3D1FF] animate-pulse" />
+                <span className="text-[#A3D1FF] text-sm font-semibold tracking-wide uppercase">For Biohacking &amp; Longevity Clinics</span>
               </motion.div>
 
-              {/* CTA Buttons */}
               <motion.div
-                className="flex flex-col sm:flex-row gap-4"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="lg:hidden flex items-center gap-4 bg-white/5 backdrop-blur-sm border border-[#A3D1FF]/20 rounded-2xl px-5 py-3.5 max-w-fit"
+              >
+                <div className="w-10 h-10 rounded-xl bg-[#A3D1FF]/15 flex items-center justify-center flex-shrink-0">
+                  <Sparkles className="w-5 h-5 text-[#A3D1FF]" />
+                </div>
+                <div>
+                  <p className="text-white font-bold text-base leading-tight">3 Months Free Google Business &amp; SEO</p>
+                  <p className="text-gray-400 text-xs">Included with every new website</p>
+                </div>
+              </motion.div>
+
+              <div className="overflow-hidden">
+                <h1 className="text-[clamp(2.8rem,6vw,5rem)] font-black tracking-[-0.03em] text-white leading-[1.05]">
+                  <SplitTextReveal
+                    text="A Premium Website"
+                    delay={0.2}
+                    staggerDelay={0.04}
+                  />
+                  <span className="block">
+                    <SplitTextReveal
+                      text="for Your Clinic."
+                      delay={0.5}
+                      staggerDelay={0.04}
+                    />
+                  </span>
+                </h1>
+              </div>
+
+              <motion.div
+                className="lg:hidden"
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                <Link
-                  to="/contact"
-                  className="mr_btn mr_btn_primary inline-flex items-center gap-2"
-                >
-                  <span>Contact Me</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-
-                <Link
-                  to="/tools/website-analyzer"
-                  className="mr_btn mr_btn_outline inline-flex items-center gap-2"
-                >
-                  <Sparkles className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                  <span>Free Website Analysis</span>
-                </Link>
+                <MagneticButton strength={15}>
+                  <Link
+                    to="/contact"
+                    className="hero-cta-btn group relative inline-flex items-center justify-center gap-3 w-full bg-[#A3D1FF] text-[#0a0f1a] text-lg font-black uppercase tracking-wide px-8 py-5 rounded-2xl shadow-[0_0_50px_rgba(163,209,255,0.4)] transition-all duration-300 active:scale-[0.98]"
+                  >
+                    <span>Book a Free Consultation</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                </MagneticButton>
               </motion.div>
 
-              {/* Verified Reviews Badge */}
               <motion.div
-                className="max-w-md bg-black/60 backdrop-blur-sm px-6 py-5 rounded-lg border border-white/10 shadow-2xl"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
+                className="hidden lg:flex items-center gap-4 bg-white/5 backdrop-blur-sm border border-[#A3D1FF]/20 rounded-2xl px-6 py-4 max-w-fit"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: 0.4 }}
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <Shield className="w-5 h-5 text-[#A78BFA]" />
-                  <span className="text-white font-bold text-sm uppercase tracking-wider">20+ Verified 5 Star Reviews</span>
+                <div className="w-12 h-12 rounded-xl bg-[#A3D1FF]/15 flex items-center justify-center flex-shrink-0">
+                  <Sparkles className="w-6 h-6 text-[#A3D1FF]" />
                 </div>
+                <div>
+                  <p className="text-white font-bold text-lg leading-tight">3 Months Free Google Business &amp; SEO</p>
+                  <p className="text-gray-400 text-sm">Included with every new website</p>
+                </div>
+              </motion.div>
 
-                {/* Review Platforms */}
-                <div className="space-y-3">
-                  {/* Google Business */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-white rounded flex items-center justify-center p-1">
-                        <svg viewBox="0 0 24 24" className="w-full h-full">
-                          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                        </svg>
-                      </div>
-                      <span className="text-white font-semibold text-sm">Google Business</span>
+              <motion.div
+                className="flex flex-col sm:flex-row items-start sm:items-center gap-5 pt-2"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.55 }}
+              >
+                <div className="flex items-center gap-4">
+                  <motion.div
+                    className="relative flex-shrink-0"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.7 }}
+                  >
+                    <div className="w-14 h-14 rounded-full overflow-hidden ring-2 ring-[#A3D1FF]/50 ring-offset-2 ring-offset-black/50">
+                      <img
+                        src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
+                        alt="Marc Friedman"
+                        className="w-full h-full object-cover"
+                        loading="eager"
+                      />
                     </div>
-                    <div className="flex items-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-[#FFD700] text-[#FFD700]" />
-                      ))}
-                      <span className="text-white font-bold text-sm ml-2">5.0</span>
-                    </div>
-                  </div>
+                    <div className="absolute -bottom-0.5 -right-0.5 w-5 h-5 bg-green-500 rounded-full border-2 border-black" />
+                  </motion.div>
 
-                  {/* DesignRush */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-white rounded flex items-center justify-center overflow-hidden">
-                        <img src="https://ik.imagekit.io/qcvroy8xpd/download%20(4).jpeg" alt="DesignRush" className="w-full h-full object-cover" />
-                      </div>
-                      <span className="text-white font-semibold text-sm">DesignRush</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className={`w-4 h-4 ${i < 4 ? 'fill-[#FFD700] text-[#FFD700]' : 'fill-[#FFD700]/50 text-[#FFD700]/50'}`} />
-                      ))}
-                      <span className="text-white font-bold text-sm ml-2">4.9</span>
-                    </div>
-                  </div>
-
-                  {/* LinkedIn */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-[#0A66C2] rounded flex items-center justify-center">
-                        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white">
-                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                      </div>
-                      <span className="text-white font-semibold text-sm">LinkedIn</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className={`w-4 h-4 ${i < 4 ? 'fill-[#FFD700] text-[#FFD700]' : 'fill-[#FFD700]/50 text-[#FFD700]/50'}`} />
-                      ))}
-                      <span className="text-white font-bold text-sm ml-2">4.9</span>
-                    </div>
+                  <div className="flex items-center gap-4 text-gray-300 text-sm">
+                    <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-[#A3D1FF]" /> No contracts</span>
+                    <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-[#A3D1FF]" /> No upfront risk</span>
                   </div>
                 </div>
+              </motion.div>
 
-                {/* Client photos */}
-                <div className="flex items-center gap-2 mt-4 pt-4 border-t border-white/10">
-                  <span className="text-gray-400 text-xs">Trusted by:</span>
-                  <div className="flex items-center -space-x-2">
-                    <div className="w-7 h-7 rounded-full border-2 border-[#1a2332] overflow-hidden">
-                      <img src="https://ik.imagekit.io/qcvroy8xpd/1682479506906.jpeg?updatedAt=1754019693073" alt="Client" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="w-7 h-7 rounded-full border-2 border-[#1a2332] overflow-hidden">
-                      <img src="https://ik.imagekit.io/qcvroy8xpd/4c91361b-27ee-453b-88e0-af3026cac747_1_ro3hez_e_background_removal_f_png_vkfbub.png?updatedAt=1754023286922" alt="Client" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="w-7 h-7 rounded-full border-2 border-[#1a2332] overflow-hidden">
-                      <img src="https://ik.imagekit.io/qcvroy8xpd/1732338426448%20(1).jpeg?updatedAt=1749337717019" alt="Client" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#A78BFA] to-blue-500 border-2 border-[#1a2332] flex items-center justify-center">
-                      <span className="text-[9px] font-bold text-white">20+</span>
-                    </div>
+              <motion.div
+                className="flex items-center gap-4 pt-6 border-t border-white/10"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+              >
+                <div className="flex items-center -space-x-2.5">
+                  <div className="w-9 h-9 rounded-full border-2 border-black overflow-hidden">
+                    <img src="https://ik.imagekit.io/qcvroy8xpd/1682479506906.jpeg?updatedAt=1754019693073" alt="Client" className="w-full h-full object-cover" />
                   </div>
+                  <div className="w-9 h-9 rounded-full border-2 border-black overflow-hidden">
+                    <img src="https://ik.imagekit.io/qcvroy8xpd/4c91361b-27ee-453b-88e0-af3026cac747_1_ro3hez_e_background_removal_f_png_vkfbub.png?updatedAt=1754023286922" alt="Client" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="w-9 h-9 rounded-full border-2 border-black overflow-hidden">
+                    <img src="https://ik.imagekit.io/qcvroy8xpd/1732338426448%20(1).jpeg?updatedAt=1749337717019" alt="Client" className="w-full h-full object-cover" />
+                  </div>
+                </div>
+                <div>
+                  <div className="flex items-center gap-1 mb-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className={`w-3.5 h-3.5 ${i < 5 ? 'fill-[#FFD700] text-[#FFD700]' : 'fill-gray-600 text-gray-600'}`} />
+                    ))}
+                    <span className="text-gray-400 text-xs ml-1.5">4.8</span>
+                  </div>
+                  <p className="text-gray-400 text-xs">5-star reviews on Google, Clutch, LinkedIn & DesignRush</p>
                 </div>
               </motion.div>
 
             </motion.div>
 
-            {/* Right Side - Empty Space */}
-            <div className="hidden lg:block"></div>
+            <motion.div
+              className="lg:col-span-5 hidden lg:flex flex-col items-center justify-center"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <motion.div
+                className="relative w-full max-w-md"
+                style={{ y: y3 }}
+              >
+                <motion.div
+                  className="absolute -inset-[2px] rounded-3xl bg-gradient-to-br from-[#A3D1FF] via-[#5BB5FF] to-[#A3D1FF] opacity-60 blur-sm"
+                  animate={{ opacity: [0.4, 0.7, 0.4] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <div className="relative bg-[#0a0f1a]/95 backdrop-blur-xl rounded-3xl border border-[#A3D1FF]/30 p-8 text-center space-y-6">
+                  <motion.div
+                    className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#A3D1FF] text-[#0a0f1a] text-xs font-black uppercase tracking-wider px-5 py-1.5 rounded-full shadow-[0_4px_20px_rgba(163,209,255,0.5)]"
+                    animate={{ scale: [1, 1.06, 1] }}
+                    transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    Limited Spots Available
+                  </motion.div>
+
+                  <div className="pt-2">
+                    <p className="text-[#A3D1FF] text-sm font-semibold uppercase tracking-wider mb-2">Free 30-Min Strategy Call</p>
+                    <h3 className="text-white text-2xl font-black leading-tight">
+                      Get a Roadmap to <span className="text-[#A3D1FF]">More Patients</span>
+                    </h3>
+                  </div>
+
+                  <div className="space-y-3 text-left">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-[#A3D1FF]/15 flex items-center justify-center flex-shrink-0">
+                        <Target className="w-4 h-4 text-[#A3D1FF]" />
+                      </div>
+                      <p className="text-gray-300 text-sm">Custom website strategy for your clinic</p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-[#A3D1FF]/15 flex items-center justify-center flex-shrink-0">
+                        <TrendingUp className="w-4 h-4 text-[#A3D1FF]" />
+                      </div>
+                      <p className="text-gray-300 text-sm">SEO plan to rank #1 locally</p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-[#A3D1FF]/15 flex items-center justify-center flex-shrink-0">
+                        <Zap className="w-4 h-4 text-[#A3D1FF]" />
+                      </div>
+                      <p className="text-gray-300 text-sm">Conversion optimization audit</p>
+                    </div>
+                  </div>
+
+                  <MagneticButton strength={15}>
+                    <Link
+                      to="/contact"
+                      className="hero-cta-btn group relative inline-flex items-center justify-center gap-3 w-full bg-[#A3D1FF] text-[#0a0f1a] text-lg font-black uppercase tracking-wide px-8 py-5 rounded-2xl shadow-[0_0_50px_rgba(163,209,255,0.4)] hover:shadow-[0_0_80px_rgba(163,209,255,0.6)] transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                    >
+                      <span>Book a Free Consultation</span>
+                      <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                    </Link>
+                  </MagneticButton>
+
+                  <div className="flex items-center justify-center gap-6 text-gray-400 text-xs">
+                    <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 text-[#A3D1FF]" /> 30 min</span>
+                    <span className="flex items-center gap-1.5"><Shield className="w-3.5 h-3.5 text-[#A3D1FF]" /> 100% Free</span>
+                    <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5 text-[#A3D1FF]" /> No obligation</span>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
+
+        <motion.div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2 }}
+        >
+          <motion.div
+            className="w-6 h-10 rounded-full border-2 border-white/20 flex items-start justify-center p-1.5"
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <div className="w-1.5 h-3 rounded-full bg-[#A3D1FF]" />
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Testimonials */}
@@ -355,6 +446,9 @@ export default function HomePage() {
                 src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
                 alt="Marc Friedman - web designer and developer based in Tel Aviv"
                 className="w-full h-full object-cover"
+                referrerPolicy="no-referrer-when-downgrade"
+                crossOrigin="anonymous"
+                loading="eager"
               />
             </div>
             <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-black mb-6 leading-tight text-white">
@@ -367,135 +461,141 @@ export default function HomePage() {
 
           {/* Featured Project - Untapped Africa */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group col-span-full mb-12"
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-[#1b1b1b] rounded-3xl overflow-hidden border border-white/10 hover:border-[#A78BFA] transition-all group mb-12"
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             <div className="grid md:grid-cols-2 gap-8">
               <div className="aspect-[16/10] overflow-hidden relative">
                 <img
-                  src="https://ik.imagekit.io/qcvroy8xpd/Screenshot.png?updatedAt=1754018965491"
+                  src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(1).png?updatedAt=1767539579782"
                   alt="Untapped Africa"
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1b1b1b] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <div className="p-8 flex flex-col justify-center">
-                <span className="text-[#A78BFA] text-sm bg-[#A78BFA]/10 px-4 py-2 rounded-full inline-block w-fit mb-4">Featured Project</span>
-                <h3 className="text-3xl font-bold text-white mb-4">Untapped Africa</h3>
-                <p className="text-gray-400 mb-6">Revolutionizing water infrastructure solutions across Africa with innovative technology and sustainable practices. A comprehensive platform for project management, data visualization, and community engagement.</p>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-[#A78BFA] mr-2" />
+              <div className="p-6 md:p-8">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[#A3D1FF] text-sm bg-[#A3D1FF]/10 px-4 py-2 rounded-full">Featured Project</span>
+                </div>
+                <h3 className="text-xl md:text-3xl font-bold text-white mb-3 md:mb-4">Untapped Africa</h3>
+                <p className="text-sm md:text-base text-gray-400 mb-4 md:mb-6">Revolutionizing water infrastructure solutions across Africa with innovative technology and sustainable practices. A comprehensive platform for project management, data visualization, and community engagement.</p>
+                <div className="space-y-3 md:space-y-4 mb-4 md:mb-6">
+                  <div className="flex items-center text-xs md:text-sm">
+                    <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 flex-shrink-0" />
                     <span className="text-gray-300">250% increase in engagement</span>
                   </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-[#A78BFA] mr-2" />
+                  <div className="flex items-center text-xs md:text-sm">
+                    <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 flex-shrink-0" />
                     <span className="text-gray-300">8 countries impacted</span>
                   </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-[#A78BFA] mr-2" />
+                  <div className="flex items-center text-xs md:text-sm">
+                    <CheckCircle className="w-4 h-4 text-[#A3D1FF] mr-2 flex-shrink-0" />
                     <span className="text-gray-300">500,000+ people served</span>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {["Next.js", "TypeScript", "Supabase", "Mapbox GL"].map((tech, i) => (
-                    <span key={i} className="px-3 py-1 bg-white/5 text-[#A78BFA] rounded-full text-sm">{tech}</span>
+                <div className="flex flex-wrap gap-2 mb-4 md:mb-6">
+                  {["Next.js", "TypeScript", "Supabase", "Mapbox GL"].map((tech, index) => (
+                    <span
+                      key={index}
+                      className="px-2 md:px-3 py-1 bg-white/5 text-[#A3D1FF] rounded-full text-xs md:text-sm"
+                    >
+                      {tech}
+                    </span>
                   ))}
                 </div>
-                <div className="flex gap-3">
-                  <a href="https://untappedafrica.co.za" target="_blank" rel="noopener noreferrer" className="mr_btn mr_btn_outline inline-flex items-center gap-2">
+                <div className="flex flex-wrap gap-3">
+                  <a href="https://untappedafrica.co.za" target="_blank" rel="noopener noreferrer" className="mr_btn mr_btn_outline">
                     <span>View Live Website</span>
-                    <ArrowRight className="w-4 h-4" />
                   </a>
-                  <Link to="/work/case-studies/untapped-africa" className="mr_btn mr_btn_primary inline-flex items-center gap-2">
+                  <Link to="/work/case-studies/untapped-africa" className="mr_btn mr_btn_primary">
                     <span>Read Case Study</span>
-                    <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Portfolio Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {[
-              {
-                title: "Untapped Africa",
-                image: "https://ik.imagekit.io/qcvroy8xpd/Screenshot.png?updatedAt=1754018965491",
-                description: "Water infrastructure solutions across Africa",
-                tech: ["Next.js", "TypeScript", "Supabase", "Mapbox GL"],
-                liveUrl: "https://untappedafrica.co.za",
-                caseStudy: "/work/case-studies/untapped-africa"
-              },
-              {
-                title: "Binns Media Group Platform",
-                image: "https://i.imgur.com/IU0mmH7.jpeg",
-                description: "A cutting-edge digital media platform",
-                tech: ["React 18", "TypeScript", "Supabase"],
-                liveUrl: "https://www.binnsmediagroup.com",
-                caseStudy: "/work/case-studies/binns-media"
-              },
-              {
-                title: "Chad Le Clos Swimming",
-                image: "https://i.imgur.com/ApfYPlH.jpg",
-                description: "Olympic champion's swimming clinics",
-                tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-                liveUrl: "https://chadleclosswimming.com",
-                caseStudy: "/work/case-studies/chad-le-clos"
-              }
-            ].map((project, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
-                viewport={{ once: true }}
-                className="bg-[#1b1b1b] border border-white/10 rounded-2xl overflow-hidden hover:border-[#A78BFA] transition-all group"
-              >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                  <p className="text-gray-400 text-sm mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.slice(0, 3).map((tech, i) => (
-                      <span key={i} className="px-2 py-1 bg-white/5 text-[#A78BFA] rounded-full text-xs">{tech}</span>
-                    ))}
-                    {project.tech.length > 3 && (
-                      <span className="px-2 py-1 bg-white/5 text-[#A78BFA] rounded-full text-xs">+{project.tech.length - 3}</span>
-                    )}
-                  </div>
-                  <div className="flex gap-2">
-                    {project.liveUrl && (
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex-1 inline-flex items-center justify-center px-4 py-2 bg-white/5 text-white text-sm rounded-lg hover:bg-white/10 transition-all">
-                        View Live
-                      </a>
-                    )}
-                    <Link to={project.caseStudy} className="flex-1 inline-flex items-center justify-center px-4 py-2 bg-[#A78BFA]/10 text-[#A78BFA] text-sm rounded-lg hover:bg-[#A78BFA]/20 transition-all">
-                      Case Study
-                    </Link>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          {/* Portfolio Carousel */}
+          <Reveal direction="up" delay={0.2}>
+            <FeaturedWorkCarousel
+              projects={[
+                {
+                  title: "Binns Media Group Platform",
+                  image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9.png?updatedAt=1767539579710",
+                  description: "A cutting-edge digital media platform transforming the way content creators connect with audiences",
+                  tech: ["React 18", "TypeScript", "Supabase", "Framer Motion"],
+                  liveUrl: "https://www.binnsmediagroup.com",
+                  caseStudy: "/work/case-studies/binns-media"
+                },
+                {
+                  title: "Paving Leads",
+                  image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016_9.png?updatedAt=1767539579010",
+                  description: "High-velocity SEO engine ranked #1 on Google, generating qualified leads for paving contractors",
+                  tech: ["React", "Node.js", "SEO Optimization", "Lead Generation"],
+                  liveUrl: "https://pavinglead.com/",
+                  caseStudy: "/work/case-studies/paving-leads"
+                },
+                {
+                  title: "A Secure Annapolis Locksmith",
+                  image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(2).png?updatedAt=1767539579194",
+                  description: "Professional locksmith website with emergency service booking and local SEO dominance",
+                  tech: ["React", "Node.js", "Tailwind CSS", "Local SEO"],
+                  liveUrl: "https://www.asecureannapolislocksmith.com",
+                  caseStudy: "/work/case-studies/secure-annapolis"
+                },
+                {
+                  title: "Friedman & Cohen",
+                  image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(3).png?updatedAt=1767539579776",
+                  description: "B2B procurement platform streamlining wholesale operations for retail businesses",
+                  tech: ["React", "Node.js", "PostgreSQL", "Real-time Data"],
+                  liveUrl: "https://b2b.fandc.co.za",
+                  caseStudy: "/work/case-studies/friedman-cohen"
+                },
+                {
+                  title: "iLight Care",
+                  image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(5).png?updatedAt=1767539579818",
+                  description: "AI-powered healthcare platform revolutionizing patient care and medical diagnostics",
+                  tech: ["React", "Node.js", "AI/ML", "Healthcare Tech"],
+                  liveUrl: "https://www.ilight.care",
+                  caseStudy: "/work/case-studies/ilight"
+                },
+                {
+                  title: "Chad Le Clos Swimming",
+                  image: "https://i.imgur.com/ApfYPlH.jpg",
+                  description: "Olympic champion's swimming clinics platform with booking and athlete management",
+                  tech: ["Next.js", "Tailwind CSS", "Framer Motion", "Booking System"],
+                  liveUrl: "https://chadleclosswimming.com",
+                  caseStudy: "/work/case-studies/chad-le-clos"
+                },
+                {
+                  title: "Tar & Chip Paving",
+                  image: "https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(6).png?updatedAt=1767539579420",
+                  description: "Specialized surface solutions showcase with project portfolio and instant quote generation",
+                  tech: ["React", "Tailwind CSS", "Responsive Design", "Quote System"],
+                  liveUrl: "https://cumberlandtarchip.org/",
+                  caseStudy: "/work/case-studies/tar-chip-paving"
+                }
+              ]}
+              autoplayInterval={6000}
+            />
+          </Reveal>
 
-          <div className="text-center">
-            <Link
-              to="/work"
-              className="mr_btn mr_btn_primary inline-flex items-center gap-2 text-xl"
-            >
-              <span>View All Projects</span>
-              <ArrowRight className="w-6 h-6" />
-            </Link>
-          </div>
+          <Reveal direction="up" delay={0.3}>
+            <div className="text-center">
+              <MagneticButton>
+                <Link
+                  to="/work"
+                  className="mr_btn mr_btn_primary inline-flex items-center gap-2 text-xl"
+                >
+                  <span>View All Projects</span>
+                  <ArrowRight className="w-6 h-6" />
+                </Link>
+              </MagneticButton>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -514,6 +614,9 @@ export default function HomePage() {
                 src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
                 alt="Marc Friedman - web designer and developer based in Tel Aviv"
                 className="w-full h-full object-cover"
+                referrerPolicy="no-referrer-when-downgrade"
+                crossOrigin="anonymous"
+                loading="eager"
               />
             </div>
             <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-black mb-6 leading-tight text-white">
@@ -524,15 +627,31 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-3 gap-8 mb-12" style={{ perspective: '1000px' }}>
             {/* DesignRush Feature */}
             <motion.a
               href="https://www.designrush.com/best-designs/websites/untapped-africa-website-design"
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              initial={{ opacity: 0, rotateX: 15 }}
+              whileInView={{ opacity: 1, rotateX: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.1,
+                type: 'spring',
+                stiffness: 400,
+                damping: 30,
+              }}
+              whileHover={{
+                y: -10,
+                scale: 1.02,
+                rotateX: -2,
+                transition: {
+                  type: 'spring',
+                  stiffness: 400,
+                  damping: 20,
+                },
+              }}
               viewport={{ once: true }}
               className="bg-[#1b1b1b] border border-white/10 rounded-2xl overflow-hidden hover:border-[#A78BFA] transition-all group relative"
             >
@@ -569,9 +688,25 @@ export default function HomePage() {
               href="https://www.designrush.com/agency/profile/marc-friedman-design-agency"
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              initial={{ opacity: 0, rotateX: 15 }}
+              whileInView={{ opacity: 1, rotateX: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.2,
+                type: 'spring',
+                stiffness: 400,
+                damping: 30,
+              }}
+              whileHover={{
+                y: -10,
+                scale: 1.02,
+                rotateX: -2,
+                transition: {
+                  type: 'spring',
+                  stiffness: 400,
+                  damping: 20,
+                },
+              }}
               viewport={{ once: true }}
               className="bg-[#1b1b1b] border border-white/10 rounded-2xl overflow-hidden hover:border-[#A78BFA] transition-all group"
             >
@@ -604,9 +739,25 @@ export default function HomePage() {
               href="https://www.awwwards.com/marc-friedman/"
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              initial={{ opacity: 0, rotateX: 15 }}
+              whileInView={{ opacity: 1, rotateX: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.3,
+                type: 'spring',
+                stiffness: 400,
+                damping: 30,
+              }}
+              whileHover={{
+                y: -10,
+                scale: 1.02,
+                rotateX: -2,
+                transition: {
+                  type: 'spring',
+                  stiffness: 400,
+                  damping: 20,
+                },
+              }}
               viewport={{ once: true }}
               className="bg-[#1b1b1b] border border-white/10 rounded-2xl overflow-hidden hover:border-[#A78BFA] transition-all group"
             >
@@ -662,6 +813,9 @@ export default function HomePage() {
                 src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
                 alt="Marc Friedman - web designer and developer based in Tel Aviv"
                 className="w-full h-full object-cover"
+                referrerPolicy="no-referrer-when-downgrade"
+                crossOrigin="anonymous"
+                loading="eager"
               />
             </div>
             <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-black mb-6 leading-tight text-white">
@@ -672,8 +826,8 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="space-y-8">
-            {[
+          <ConnectedSteps
+            steps={[
               {
                 number: "01",
                 title: "Book a Call",
@@ -689,23 +843,8 @@ export default function HomePage() {
                 title: "You Launch & Grow",
                 description: "I deploy, test, and hand over a website that actually brings you customers. Plus 30 days of support to make sure everything runs smooth."
               }
-            ].map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="card flex items-start gap-8 bg-[#1b1b1b] border border-white/10 p-10 rounded-3xl hover:border-[#A78BFA] transition-all duration-300"
-              >
-                <div className="text-6xl font-black text-[#A78BFA] opacity-20">{step.number}</div>
-                <div className="flex-1">
-                  <h3 className="text-3xl font-bold mb-3 text-white">{step.title}</h3>
-                  <p className="text-xl text-gray-400">{step.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+            ]}
+          />
 
         </div>
       </section>
@@ -714,50 +853,61 @@ export default function HomePage() {
       <section className="py-32 px-6 sm:px-8 lg:px-12 bg-[#0a0a0a]">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <img
-                src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
-                alt="Marc Friedman - web designer and developer based in Tel Aviv"
-                className="w-full h-auto rounded-3xl shadow-2xl"
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-5xl font-black mb-6 text-white">
-                Work With Me,<br />Not a <span className="text-[#A78BFA]">Team of Interns</span>
-              </h2>
-              <div className="space-y-6 text-xl text-gray-300 mb-8">
-                <p>
-                  Hey, I'm Marc. I've spent 5+ years building websites for agencies, local businesses, and jewellery brands across three continents.
-                </p>
-                <p>
-                  Unlike big agencies that hand your project off to junior devs, you work directly with me from start to finish. That means faster turnaround, better communication, and no surprises.
-                </p>
-                <p>
-                  I care about your success because your results are my reputation. When your website brings in leads and grows your business, we both win.
-                </p>
-              </div>
-
-              <a
-                href={calendlyLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mr_btn mr_btn_primary inline-flex items-center gap-2 text-xl"
+            <div className="overflow-hidden rounded-3xl">
+              <motion.div
+                initial={{ opacity: 0, scale: 1.4 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 1.2,
+                  type: 'spring',
+                  stiffness: 400,
+                  damping: 30,
+                }}
+                viewport={{ once: true }}
               >
-                <span>Let's Talk</span>
-                <MessageSquare className="w-6 h-6" />
-              </a>
-            </motion.div>
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
+                  alt="Marc Friedman"
+                  className="w-full h-auto shadow-2xl"
+                />
+              </motion.div>
+            </div>
+
+            <div>
+              <Reveal direction="right" delay={0.2}>
+                <h2 className="text-5xl font-black mb-6 text-white">
+                  Work With Me,<br />Not a <span className="text-[#A3D1FF]">Team of Interns</span>
+                </h2>
+              </Reveal>
+
+              <Reveal direction="right" delay={0.3}>
+                <div className="space-y-6 text-xl text-gray-300 mb-8">
+                  <p>
+                    Hey, I'm Marc. I've been building websites for agencies, local businesses, and jewellery brands across three continents.
+                  </p>
+                  <p>
+                    Unlike big agencies that hand your project off to junior devs, you work directly with me from start to finish. That means faster turnaround, better communication, and no surprises.
+                  </p>
+                  <p>
+                    I care about your success because your results are my reputation. When your website brings in leads and grows your business, we both win.
+                  </p>
+                </div>
+              </Reveal>
+
+              <Reveal direction="right" delay={0.4}>
+                <MagneticButton>
+                  <a
+                    href={calendlyLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mr_btn mr_btn_primary inline-flex items-center gap-2 text-xl"
+                  >
+                    <span>Let's Talk</span>
+                    <MessageSquare className="w-6 h-6" />
+                  </a>
+                </MagneticButton>
+              </Reveal>
+            </div>
           </div>
         </div>
       </section>
@@ -777,8 +927,8 @@ export default function HomePage() {
             </h2>
           </motion.div>
 
-          <div className="space-y-4">
-            {[
+          <AnimatedFAQ
+            items={[
               {
                 q: "How long does it take?",
                 a: "Most projects: 4-8 weeks. Complex apps: 12-16 weeks. I'll give you a clear timeline on our first call."
@@ -799,53 +949,31 @@ export default function HomePage() {
                 q: "How do I pay?",
                 a: "50% to start, 25% at design approval, 25% at launch. Payment plans available—just ask."
               }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                viewport={{ once: true }}
-                className="bg-[#1b1b1b] border border-white/10 rounded-2xl overflow-hidden"
-              >
-                <details className="group">
-                  <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-white/5 transition-colors">
-                    <h3 className="text-xl font-bold pr-4 text-white">{item.q}</h3>
-                    <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-[#A78BFA]/30 flex-shrink-0">
-                      <div className="w-4 h-0.5 bg-[#A78BFA] group-open:rotate-90 transition-transform"></div>
-                      <div className="w-0.5 h-4 bg-[#A78BFA] absolute group-open:opacity-0 transition-opacity"></div>
-                    </div>
-                  </summary>
-                  <div className="px-6 pb-6">
-                    <p className="text-lg text-gray-300">{item.a}</p>
-                  </div>
-                </details>
-              </motion.div>
-            ))}
-          </div>
+            ]}
+          />
 
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="py-32 px-6 sm:px-8 lg:px-12 bg-[#0a0a0a]">
+      <Spotlight className="py-32 px-6 sm:px-8 lg:px-12 bg-[#0a0a0a]" spotlightColor="rgba(163, 209, 255, 0.2)">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <Reveal direction="up" delay={0.1}>
             <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-black mb-8 leading-tight text-white">
               Ready to Stop<br />Losing Customers?
             </h2>
+          </Reveal>
+
+          <Reveal direction="up" delay={0.2}>
             <p className="text-2xl mb-12 max-w-2xl mx-auto text-gray-300">
               Book a free strategy call. I'll learn about your goals and show you exactly how I can help you grow.
             </p>
+          </Reveal>
 
+          <Reveal direction="blur-in" delay={0.3}>
             <div className="bg-[#1b1b1b] border border-white/10 p-10 rounded-3xl text-left max-w-2xl mx-auto">
-              <JotFormEmbed />
-              
+              <ContactForm />
+
               <p className="text-center text-sm text-gray-400 mt-6">
                 Or{' '}
                 <a
@@ -858,19 +986,9 @@ export default function HomePage() {
                 </a>
               </p>
             </div>
-          </motion.div>
+          </Reveal>
         </div>
-      </section>
-
-      {/* FAQ Section */}
-      <FAQSection />
-
-      {/* FAQ Schema */}
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
-      </Helmet>
+      </Spotlight>
     </>
   );
 }

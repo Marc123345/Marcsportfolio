@@ -10,7 +10,7 @@ export default function JotFormEmbed() {
       const win = window as any;
       if (win.jotformEmbedHandler) {
         win.jotformEmbedHandler(
-          "iframe[id='JotFormIFrame-253586719410462']",
+          "iframe[id='JotFormIFrame-260742948581063']",
           "https://form.jotform.com/"
         );
       }
@@ -34,6 +34,12 @@ export default function JotFormEmbed() {
 
     // 3. Listen for JotForm submission events
     const handleJotFormSubmission = (event: MessageEvent) => {
+      // Ignore messages from null origin (development/iframe loading)
+      if (!event.origin || event.origin === 'null') {
+        return;
+      }
+
+      // Only process messages from trusted JotForm origins
       if (event.origin === 'https://form.jotform.com' || event.origin === 'https://www.jotform.com') {
         if (typeof event.data === 'string') {
           try {
@@ -41,7 +47,7 @@ export default function JotFormEmbed() {
             if (data.action === 'submission-completed' || data.type === 'form-submit') {
               trackEvent('Contact Form Submitted', {
                 props: {
-                  formId: '253586719410462',
+                  formId: '260742948581063',
                   source: 'JotForm',
                 },
               });
@@ -62,12 +68,11 @@ export default function JotFormEmbed() {
 
   return (
     <iframe
-      id="JotFormIFrame-253586719410462"
+      id="JotFormIFrame-260742948581063"
       title="Marc Friedman Contact Form"
-      onLoad={() => window.parent.scrollTo(0, 0)}
       allowTransparency={true}
       allow="geolocation; microphone; camera; fullscreen; payment"
-      src="https://form.jotform.com/253586719410462"
+      src="https://form.jotform.com/260742948581063"
       frameBorder="0"
       style={{
         minWidth: '100%',

@@ -34,6 +34,186 @@ const blogSchema = {
 // Blog post data
 const blogPosts = [
   {
+    id: 'what-is-geo',
+    title: 'What Is GEO? Generative Engine Optimization Explained for Modern Search',
+    excerpt: 'Learn what Generative Engine Optimization (GEO) is, how it differs from SEO and AEO, and how to optimize your content to appear in AI-generated search results from Google AI Overviews, ChatGPT, Perplexity, and more.',
+    content: 'Full content here...',
+    date: 'March 3, 2026',
+    readTime: '20 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=2000&q=80',
+    categories: ['SEO', 'AI', 'GEO', 'Marketing'],
+    featured: true
+  },
+  {
+    id: 'what-is-aeo',
+    title: 'What Is AEO? Answer Engine Optimization Explained for 2026 and Beyond',
+    excerpt: 'Learn what Answer Engine Optimization (AEO) is, how it differs from traditional SEO, and why optimizing for AI-powered answer engines like ChatGPT, Perplexity, and Google AI Overviews is essential for modern visibility.',
+    content: 'Full content here...',
+    date: 'March 3, 2026',
+    readTime: '18 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2000&q=80',
+    categories: ['SEO', 'AI', 'AEO', 'Marketing'],
+    featured: true
+  },
+  {
+    id: 'minimal-fast-sustainable-ux',
+    title: 'Minimal, Fast, and Sustainable UX: Designing for Performance, Calm, and the Planet',
+    excerpt: 'Explore how leaner layouts, fewer heavy scripts, image optimization, and green UX considerations are shaping modern design. Learn to build calmer, faster, more sustainable digital experiences.',
+    content: 'Full content here...',
+    date: 'February 26, 2026',
+    readTime: '16 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80',
+    categories: ['UX', 'Performance', 'Sustainability', 'Design'],
+    featured: true
+  },
+  {
+    id: 'google-search-console-ai-reports',
+    title: 'Stop Guessing in GSC: A Practical Guide to AI-Powered Configuration for SEOs',
+    excerpt: 'Google just added AI-powered configuration to Search Console. Learn how to use prompts to build reports, diagnose traffic drops faster, and spot AI search opportunities.',
+    content: 'Full content here...',
+    date: 'February 19, 2026',
+    readTime: '14 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=80',
+    categories: ['SEO', 'Google', 'AI', 'Marketing'],
+    featured: true
+  },
+  {
+    id: 'ngo-website-attract-donors-volunteers',
+    title: 'How to Build an NGO Website That Attracts Donors, Volunteers, and Long-Term Supporters',
+    excerpt: 'A practical, section-by-section guide to designing and building a nonprofit website that converts visitors into donors, recruits volunteers, and cultivates lasting supporter relationships.',
+    content: 'Full content here...',
+    date: 'February 17, 2026',
+    readTime: '18 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=2000&q=80',
+    categories: ['Web Design', 'Nonprofit', 'Conversion', 'Strategy'],
+    featured: true
+  },
+  {
+    id: 'context-driven-design-decisions',
+    title: 'Why Context Matters: A Junior Designer\'s Guide to Making Better Design Decisions',
+    excerpt: 'Learn why understanding context is the most critical skill for junior UX/UI designers and how to develop contextual thinking for better design decisions.',
+    content: 'Full content here...',
+    date: 'February 4, 2026',
+    readTime: '12 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: '/generated-1770282657147-xuhu1.png',
+    categories: ['UX', 'Design', 'Education', 'Best Practices'],
+    featured: true
+  },
+  {
+    id: 'ai-ready-design-systems',
+    title: 'AI-Ready Design Systems: Building for Human-AI Collaboration',
+    excerpt: 'Learn how to structure design tokens, components, and content so AI tools can generate on-brand layouts, copy, and variants reliably. Discover common pitfalls when AI fights your system and how to avoid them.',
+    content: 'Full content here...',
+    date: 'February 3, 2026',
+    readTime: '18 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: '/generated-1770282657147-xuhu1.png',
+    categories: ['AI', 'Design Systems', 'Development', 'Best Practices'],
+    featured: true
+  },
+  {
+    id: 'ai-native-ux-personalization',
+    title: 'AI-Native UX and Personalization: Designing Experiences That Adapt',
+    excerpt: 'Explore the paradigm shift from traditional UX with AI features to AI-native experiences designed from the ground up around adaptive, personalized intelligence. Learn how to design interfaces that predict, adapt, and evolve with users.',
+    content: 'Full content here...',
+    date: 'January 27, 2026',
+    readTime: '18 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=2000&q=80',
+    categories: ['AI', 'UX', 'Personalization', 'Innovation'],
+    featured: true
+  },
+  {
+    id: 'ai-as-codesigner',
+    title: 'AI as Co-Designer: Moving Beyond Tools to True Creative Partnership',
+    excerpt: 'Explore how AI is evolving from a simple design tool into a true creative partner. Learn how to collaborate with AI as a co-designer, the key differences from traditional tools, and best practices for human-AI creative partnerships.',
+    content: 'Full content here...',
+    date: 'January 22, 2026',
+    readTime: '15 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=80',
+    categories: ['AI', 'Design', 'Collaboration', 'Innovation'],
+    featured: true
+  },
+  {
+    id: 'google-algorithm-update-2026',
+    title: 'Google\'s 2026 Algorithm Update: Essential Strategies to Rank in the AI-First Era',
+    excerpt: 'Comprehensive guide to Google\'s latest algorithm update focusing on AI-generated content detection, E-E-A-T signals, user experience metrics, and practical strategies to maintain and improve your search rankings.',
+    content: 'Full content here...',
+    date: 'January 22, 2026',
+    readTime: '18 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: 'https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?auto=format&fit=crop&w=2000&q=80',
+    categories: ['SEO', 'Google', 'Algorithm', 'Marketing'],
+    featured: true
+  },
+  {
+    id: 'ai-imperfect-aesthetics',
+    title: 'AI + Human Imperfection: The New Aesthetic Revolution',
+    excerpt: 'Discover how designers are layering hand-made, tactile, and deliberately messy aesthetics on AI-generated content to create authentic, emotionally resonant experiences that reject generic perfection.',
+    content: 'Full content here...',
+    date: 'January 21, 2026',
+    readTime: '14 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: 'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=2000&q=80',
+    categories: ['AI', 'Design', 'Trends'],
+    featured: true
+  },
+  {
+    id: 'brutalism-anti-design-web-trends',
+    title: 'Brutalism & Anti-Design: The Raw, Unpolished Web Design Revolution',
+    excerpt: 'Explore the rise of brutalist web design and anti-design movements. Learn how raw grids, minimal imagery, monochrome palettes, and imperfect layouts create authentic, human-centered digital experiences.',
+    content: 'Full content here...',
+    date: 'December 29, 2025',
+    readTime: '12 min read',
+    author: {
+      name: 'Marc Friedman',
+      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
+    },
+    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=2000&q=80',
+    categories: ['Design', 'Trends', 'Brutalism'],
+    featured: true
+  },
+  {
     id: 'ai-personalization-ecommerce',
     title: 'The Rise of AI-Driven Personalization in Ecommerce: A Practical Guide for 2025',
     excerpt: 'Explore how AI-powered personalization is transforming ecommerce. Learn practical strategies for implementing personalization, real-world case studies, privacy considerations, and omnichannel best practices.',
@@ -44,7 +224,7 @@ const blogPosts = [
       name: 'Marc Friedman',
       image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
     },
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2000&q=80',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=2000&q=80',
     categories: ['AI', 'Ecommerce', 'Personalization'],
     featured: true
   },
@@ -136,21 +316,6 @@ const blogPosts = [
     },
     image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=2000&q=80',
     categories: ['Design', 'SaaS', 'UX'],
-    featured: true
-  },
-  {
-    id: 'gdpr-compliance-with-termly',
-    title: 'GDPR Compliance Made Simple: How Termly Protects Your Business',
-    excerpt: 'Learn how to achieve GDPR compliance efficiently using Termly\'s automated policy generation and consent management tools. Protect your business from costly fines while building user trust.',
-    content: 'Full content here...',
-    date: 'May 1, 2025',
-    readTime: '10 min read',
-    author: {
-      name: 'Marc Friedman',
-      image: 'https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp'
-    },
-    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=2000&q=80',
-    categories: ['Legal', 'Compliance', 'Privacy'],
     featured: true
   },
   {
@@ -464,7 +629,7 @@ export default function BlogPage() {
     <>
       <Helmet>
         <title>Design & Development Blog - Expert Insights by Marc Friedman</title>
-        <meta name="description" content="Expert insights on web development, UI/UX design, and digital innovation. Learn from 5+ years of experience creating exceptional digital solutions for clients worldwide." />
+        <meta name="description" content="Expert insights on web development, UI/UX design, and digital innovation. Learn from experience creating exceptional digital solutions for clients worldwide." />
         <meta name="keywords" content="web development blog, UI/UX design insights, digital innovation, design systems, SaaS development, mobile-first design, conversion optimization" />
         <script type="application/ld+json">
           {JSON.stringify(blogSchema)}

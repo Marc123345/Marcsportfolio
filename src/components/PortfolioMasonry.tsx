@@ -19,9 +19,19 @@ const projects: Project[] = [
     id: 'binns-media',
     title: 'Binns Media Group',
     description: 'Digital media platform showcasing diverse content portfolio.',
-    image: 'https://i.imgur.com/IU0mmH7.jpeg',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9.png?updatedAt=1767539579710',
     caseStudyUrl: '/work/case-studies/binns-media',
     liveUrl: 'https://www.binnsmediagroup.com',
+    category: 'website',
+    size: 'large'
+  },
+  {
+    id: 'paving-leads',
+    title: 'Paving Leads',
+    description: 'SEO-first lead generation site ranked #1 on Google.',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016_9.png?updatedAt=1767539579010',
+    caseStudyUrl: '/work/case-studies/paving-leads',
+    liveUrl: 'https://pavinglead.com/',
     category: 'website',
     size: 'large'
   },

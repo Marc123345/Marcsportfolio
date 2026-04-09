@@ -1,6 +1,6 @@
 import React from 'react';
-import { ArrowRight, ShieldCheck, Lock, Search, Database, Server, FileCode, Users, Eye } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { ArrowRight, ShieldCheck, Lock, Search, Database, Server, FileCode, Users, Eye, ExternalLink } from 'lucide-react';
+import { useNavigate, Link } from 'react-router-dom';
 import ServiceLeadForm from '@/components/ServiceLeadForm';
 
 function FeatureCard({ icon: Icon, title, description }: {
@@ -207,6 +207,89 @@ export default function CybersecurityPage() {
               <h3 className="text-xl font-semibold text-white mb-2">Proactive Protection</h3>
               <p className="text-gray-400"><strong className="text-white">Threats detected</strong> before they cause damage through ongoing monitoring and threat intelligence.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-4">Security-Focused Projects</h2>
+          <p className="text-gray-400 mb-12 max-w-2xl">
+            Explore projects where we've implemented enterprise-grade security measures.
+          </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Link
+              to="/work/case-studies/fleet-management"
+              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="https://i.imgur.com/EwgHAuK.png"
+                  alt="Fleet Management Security"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
+                  Fleet Management
+                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
+                </h3>
+                <p className="text-gray-400 mb-4">Secure real-time tracking with encrypted data transmission.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Encryption</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Real-time</span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              to="/work/case-studies/friedman-cohen"
+              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(3).png?updatedAt=1767539579776"
+                  alt="Friedman & Cohen Security"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
+                  Friedman & Cohen
+                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
+                </h3>
+                <p className="text-gray-400 mb-4">Enterprise B2B platform with secure transaction processing.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">B2B Security</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Compliance</span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              to="/work/case-studies/automarginx"
+              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="https://i.imgur.com/PiKh199.png"
+                  alt="AutoMarginX Security"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
+                  AutoMarginX
+                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
+                </h3>
+                <p className="text-gray-400 mb-4">Secure dealership platform with role-based access control.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">RBAC</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Data Protection</span>
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
       </section>

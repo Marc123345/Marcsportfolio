@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Send, MessageCircle, Calendar, CheckCircle2, Loader2 } from 'lucide-react';
-import { supabase } from '@/lib/supabase';
+import { X, Send, MessageCircle, Calendar, Loader2 } from 'lucide-react';
 import { trackEvent } from '@/lib/plausible';
+import { CALENDLY_LINK, API_TIMEOUT_MS } from '@/lib/constants';
 
 interface Message {
   id: string;
@@ -31,9 +31,10 @@ export default function ChatBot() {
   const [error, setError] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const timeoutRefs = useRef<NodeJS.Timeout[]>([]);
 
-  // Calendly link - using the one from ContactPage
-  const calendlyLink = "https://calendly.com/marc-friedman-web-design--meeting-link/30min";
+  // Calendly link
+  const calendlyLink = CALENDLY_LINK;
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -45,16 +46,24 @@ export default function ChatBot() {
 
   useEffect(() => {
     if (isOpen && messages.length === 0) {
-      setTimeout(() => {
+      const timeoutId = setTimeout(() => {
         addBotMessage("Hi there! 👋 I'm here to help you get started with your project. What type of project are you interested in?");
         setCurrentStep('projectType');
       }, 500);
+      timeoutRefs.current.push(timeoutId);
     }
   }, [isOpen]);
 
+  useEffect(() => {
+    return () => {
+      timeoutRefs.current.forEach(clearTimeout);
+      timeoutRefs.current = [];
+    };
+  }, []);
+
   const addBotMessage = (text: string) => {
     setIsTyping(true);
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       const newMessage: Message = {
         id: Date.now().toString(),
         type: 'bot',
@@ -64,6 +73,7 @@ export default function ChatBot() {
       setMessages(prev => [...prev, newMessage]);
       setIsTyping(false);
     }, 800);
+    timeoutRefs.current.push(timeoutId);
   };
 
   const addUserMessage = (text: string) => {
@@ -77,17 +87,18 @@ export default function ChatBot() {
   };
 
   const validateEmail = (email: string): boolean => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
     return emailRegex.test(email);
   };
 
   const handleProjectTypeSelect = (type: string) => {
     addUserMessage(type);
     setLeadData(prev => ({ ...prev, projectType: type }));
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       addBotMessage("Great choice! What's your name?");
       setCurrentStep('name');
     }, 1000);
+    timeoutRefs.current.push(timeoutId);
   };
 
   const handleInputSubmit = async (e: React.FormEvent) => {
@@ -102,10 +113,13 @@ export default function ChatBot() {
       case 'name':
         addUserMessage(value);
         setLeadData(prev => ({ ...prev, name: value }));
-        setTimeout(() => {
-          addBotMessage(`Nice to meet you, ${value}! What's the best email to reach you?`);
-          setCurrentStep('email');
-        }, 1000);
+        {
+          const timeoutId = setTimeout(() => {
+            addBotMessage(`Nice to meet you, ${value}! What's the best email to reach you?`);
+            setCurrentStep('email');
+          }, 1000);
+          timeoutRefs.current.push(timeoutId);
+        }
         break;
 
       case 'email':
@@ -115,10 +129,13 @@ export default function ChatBot() {
         }
         addUserMessage(value);
         setLeadData(prev => ({ ...prev, email: value }));
-        setTimeout(() => {
-          addBotMessage("What's your estimated budget for this project?");
-          setCurrentStep('budget');
-        }, 1000);
+        {
+          const timeoutId = setTimeout(() => {
+            addBotMessage("What's your estimated budget for this project?");
+            setCurrentStep('budget');
+          }, 1000);
+          timeoutRefs.current.push(timeoutId);
+        }
         break;
 
       case 'budget':
@@ -144,16 +161,31 @@ export default function ChatBot() {
     setIsSubmitting(true);
 
     try {
-      // Submit to Edge Function
+      // Submit to Edge Function with timeout
       const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/submit-lead`;
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
-      });
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), API_TIMEOUT_MS);
+
+      let response;
+      try {
+        response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+          signal: controller.signal
+        });
+      } catch (fetchError) {
+        clearTimeout(timeoutId);
+        if (fetchError instanceof Error && fetchError.name === 'AbortError') {
+          throw new Error('Request timeout - please try again');
+        }
+        throw fetchError;
+      }
+
+      clearTimeout(timeoutId);
 
       if (!response.ok) {
         throw new Error('Failed to submit lead');
@@ -169,11 +201,12 @@ export default function ChatBot() {
       });
 
       setCurrentStep('complete');
-      setTimeout(() => {
+      const timeoutId = setTimeout(() => {
         addBotMessage(
           `Perfect! I've received your information, ${data.name}. Our team will review your ${data.projectType} project and get back to you at ${data.email} within 24 hours. Would you like to schedule a call right now to discuss your project in detail?`
         );
       }, 1000);
+      timeoutRefs.current.push(timeoutId);
     } catch (err) {
       console.error('Error submitting lead:', err);
       setError('There was an error submitting your information. Please try again.');

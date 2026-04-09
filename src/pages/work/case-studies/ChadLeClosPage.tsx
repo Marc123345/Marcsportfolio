@@ -127,11 +127,10 @@ export default function ChadLeClosPage() {
                 href="https://chadleclosswimming.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mr_btn mr_btn_primary group relative overflow-hidden"
+                className="mr_btn mr_btn_primary inline-flex items-center gap-2"
               >
-                <span className="relative z-10">Visit Website</span>
-                <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-                <ArrowUpRight className="ml-2 w-5 h-5" />
+                <span>Visit Website</span>
+                <ArrowUpRight className="w-5 h-5" />
               </a>
             </div>
           </motion.div>
@@ -419,11 +418,10 @@ export default function ChadLeClosPage() {
           </p>
           <button
             onClick={() => navigate('/contact')}
-            className="mr_btn mr_btn_primary group relative overflow-hidden"
+            className="mr_btn mr_btn_primary inline-flex items-center gap-2"
           >
-            <span className="relative z-10">Start Your Project</span>
-            <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-            <ArrowRight className="ml-2 w-5 h-5 relative z-10 group-hover:rotate-45 transition-transform duration-300" />
+            <span>Start Your Project</span>
+            <ArrowRight className="w-5 h-5" />
           </button>
         </div>
       </section>

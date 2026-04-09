@@ -1,9 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Calendar, Clock, Share2, Linkedin, Twitter, Facebook, Link, ArrowRight, Target, Users, Zap, Eye, BarChart } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, Share2, Linkedin, Facebook, Link, ArrowRight, Target, Users, Zap, Eye, BarChart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import MagneticButton from '@/components/MagneticButton';
+import TwitterIcon from '@/components/TwitterIcon';
 
 export default function ConversionRateOptimizationTechniquesPage() {
   const navigate = useNavigate();
@@ -212,11 +213,6 @@ export default function ConversionRateOptimizationTechniquesPage() {
             </ul>
             
             <p>The most effective CTAs don't just tell users what to do—they communicate why taking that action is valuable and make the next step feel like a natural progression in the user journey.</p>
-            
-            <div className="bg-[#1b1b1b] p-6 rounded-xl border border-white/10 my-8">
-              <h4 className="text-white font-semibold mb-2">Case Study: Irreplicable</h4>
-              <p className="text-gray-300">For the Irreplicable landing page, we tested various CTA approaches and found that changing from a generic "Get Started" to a more specific "Get Your Custom Quote" increased click-through rates. The more specific language set clear expectations about what would happen next, reducing uncertainty and increasing user confidence.</p>
-            </div>
 
             <h2>Implementing Your CRO Strategy</h2>
             <p>To implement these techniques effectively, follow these steps:</p>
@@ -262,7 +258,7 @@ export default function ConversionRateOptimizationTechniquesPage() {
                 <Facebook className="w-5 h-5" />
               </button>
               <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#1DA1F2]/20 text-[#1DA1F2] transition-colors">
-                <Twitter className="w-5 h-5" />
+                <TwitterIcon className="w-5 h-5" />
               </button>
               <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#0077B5]/20 text-[#0077B5] transition-colors">
                 <Linkedin className="w-5 h-5" />

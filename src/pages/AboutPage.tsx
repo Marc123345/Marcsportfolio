@@ -102,23 +102,27 @@ export default function AboutPage() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Marc Friedman",
-    "jobTitle": "Full Stack Designer & Developer",
-    "description": "A passionate full-stack designer and developer creating websites that bring businesses customers.",
+    "jobTitle": "Web Designer Tel Aviv | Full Stack Designer & Developer",
+    "description": "Professional web designer based in Tel Aviv creating exceptional digital experiences for clients worldwide. Expert in web development, UI/UX design, and conversion optimization.",
     "knowsAbout": [
+      "Web Design",
       "Web Development",
       "UI/UX Design",
       "SaaS Development",
       "API Development",
-      "Design Systems"
+      "Design Systems",
+      "Conversion Optimization"
     ],
     "url": "https://www.marcfriedmanportfolio.com/about",
     "sameAs": [
       "https://www.linkedin.com/in/portfolio2/",
+      "https://www.behance.net/marcfriedmanweb",
       "https://g.co/kgs/78fRZ6r"
     ],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Tel Aviv",
+      "addressRegion": "Tel Aviv District",
       "addressCountry": "IL"
     }
   };
@@ -139,21 +143,21 @@ export default function AboutPage() {
   return (
     <>
       <Helmet>
-        <title>About Marc Friedman - Full Stack Designer & Developer</title>
-        <meta name="description" content="Meet Marc Friedman, a passionate full-stack designer and developer creating websites that bring businesses customers. Specializing in web development, UI/UX design, and SaaS solutions for clients across three continents." />
+        <title>About Marc Friedman - Web Designer Tel Aviv</title>
+        <meta name="description" content="Meet Marc Friedman, a professional web designer based in Tel Aviv creating exceptional digital experiences. Specializing in web development, UI/UX design, and SaaS solutions for clients across three continents." />
         
         <meta property="og:type" content="profile" />
-        <meta property="og:title" content="About Marc Friedman - Full Stack Designer & Developer" />
-        <meta property="og:description" content="Meet Marc Friedman, a passionate full-stack designer and developer creating websites that bring businesses customers." />
+        <meta property="og:title" content="About Marc Friedman - Web Designer Tel Aviv" />
+        <meta property="og:description" content="Meet Marc Friedman, a professional web designer based in Tel Aviv creating exceptional digital experiences for clients worldwide." />
         <meta property="og:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
         <meta property="og:url" content="https://marcfriedmanportfolio.com/about" />
-        
+
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Marc Friedman - Full Stack Designer & Developer" />
-        <meta name="twitter:description" content="Meet Marc Friedman, a passionate full-stack designer and developer creating websites that bring businesses customers." />
+        <meta name="twitter:title" content="About Marc Friedman - Web Designer Tel Aviv" />
+        <meta name="twitter:description" content="Meet Marc Friedman, a professional web designer based in Tel Aviv creating exceptional digital experiences for clients worldwide." />
         <meta name="twitter:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
-        
-        <meta name="keywords" content="Marc Friedman, Full Stack Developer, UI/UX Designer, Web Development, SaaS Development, Design Systems, Portfolio" />
+
+        <meta name="keywords" content="Web Designer Tel Aviv, Marc Friedman, Tel Aviv web design, website designer, Full Stack Developer, UI/UX Designer, Web Development Tel Aviv, SaaS Development, Design Systems" />
         <meta name="author" content="Marc Friedman" />
         <link rel="canonical" href="https://www.marcfriedmanportfolio.com/about" />
         
@@ -206,11 +210,11 @@ export default function AboutPage() {
             >
               The websites I build pay for themselves.
             </motion.p>
-            <motion.p 
+            <motion.p
               className="text-xl text-gray-300 mb-8"
               variants={fadeInUp}
-            > 
-              I design and build websites that bring businesses customers. Not traffic. Not impressions. <strong className="text-white">Actual paying customers.</strong> Over the last 6 years, I've done this for 50+ businesses across the US, Israel, and Africa — from locksmith shops to fintech startups to Olympic athletes.
+            >
+              I'm a full-stack designer and developer who bridges the gap between stunning visuals and robust functionality. Transforming ideas into digital realities for clients across three continents, I've built a reputation for creating <strong className="text-white">conversion-focused experiences that solve real business problems</strong>.
             </motion.p>
             <motion.p className="text-xl text-gray-300 mb-8" variants={fadeInUp}>As a freelance designer and developer, I build custom websites from scratch — React, Next.js, TypeScript. No templates, no page builders, no junior devs. Just me and your project.</motion.p>
             <motion.div 

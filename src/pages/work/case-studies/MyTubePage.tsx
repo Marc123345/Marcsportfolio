@@ -58,8 +58,8 @@ export default function MyTubePage() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-8">
               <div className="aspect-[4/3] overflow-hidden rounded-xl">
-                <img 
-                  src="https://i.imgur.com/QNHXpzT.jpeg"
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/QNHXpzT%20(1).jpeg"
                   alt="MyTube Dashboard Interface"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
@@ -105,8 +105,8 @@ export default function MyTubePage() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-semibold text-white mb-4">Interface Design</h3>
-                  <img 
-                    src="https://i.imgur.com/QNHXpzT.jpeg"
+                  <img
+                    src="https://ik.imagekit.io/qcvroy8xpd/QNHXpzT%20(1).jpeg"
                     alt="Interface Design"
                     className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 mb-4"
                   />
@@ -434,13 +434,12 @@ export default function MyTubePage() {
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
             Ready to transform your digital presence with innovative solutions?
           </p>
-          <button 
+          <button
             onClick={() => navigate('/contact')}
-            className="mr_btn mr_btn_primary group relative overflow-hidden"
+            className="mr_btn mr_btn_primary inline-flex items-center gap-2"
           >
-            <span className="relative z-10">Start Your Project</span>
-            <div className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-            <ArrowRight className="ml-2 w-5 h-5 relative z-10 group-hover:rotate-45 transition-transform duration-300" />
+            <span>Start Your Project</span>
+            <ArrowRight className="w-5 h-5" />
           </button>
         </div>
       </section>

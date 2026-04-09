@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import WebDevelopmentPage from './services/WebDevelopmentPage';
 import DesignPage from './services/DesignPage';
-import { APIPage, StartupMVPPage, SaaSPage, FractionalCMOPage, DesignSystemsPage, BrandDesignPage } from './services';
+import { StartupMVPPage, SaaSPage, FractionalCMOPage, DesignSystemsPage, ExternalWebDepartmentPage, ImpactStorySitePage } from './services';
 import MentorshipPage from './services/MentorshipPage';
 import AIIntegrationPage from './services/AIIntegrationPage';
 import CybersecurityPage from './services/CybersecurityPage';
@@ -12,13 +12,19 @@ import CybersecurityPage from './services/CybersecurityPage';
 const servicesSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Digital Design & Development Services - Marc Friedman",
-  "description": "Expert web development, UI/UX design, and SaaS development services. Transform your digital presence with custom solutions that drive real results.",
+  "name": "Web Design Services Tel Aviv - Marc Friedman",
+  "description": "Professional web designer in Tel Aviv offering expert web development, UI/UX design, and SaaS development services. Transform your digital presence with custom solutions that drive real results.",
   "provider": {
     "@type": "Person",
     "name": "Marc Friedman",
-    "jobTitle": "Full Stack Designer & Developer",
-    "url": "https://marcfriedmanportfolio.com"
+    "jobTitle": "Web Designer Tel Aviv | Full Stack Designer & Developer",
+    "url": "https://marcfriedmanportfolio.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tel Aviv",
+      "addressRegion": "Tel Aviv District",
+      "addressCountry": "IL"
+    }
   },
   "offers": {
     "@type": "AggregateOffer",
@@ -37,11 +43,6 @@ const servicesSchema = {
         "@type": "Offer",
         "name": "SaaS Development",
         "description": "End-to-end SaaS platform development"
-      },
-      {
-        "@type": "Offer",
-        "name": "API Development",
-        "description": "Custom API development and integration"
       },
       {
         "@type": "Offer",
@@ -67,6 +68,11 @@ const servicesSchema = {
         "@type": "Offer",
         "name": "Fractional CMO Partner",
         "description": "Design & dev execution for go-to-market strategy"
+      },
+      {
+        "@type": "Offer",
+        "name": "External Web Department",
+        "description": "Award-winning websites for multi-location and multi-brand companies"
       }
     ]
   }
@@ -76,24 +82,24 @@ export default function ServicesPage() {
   return (
     <>
       <Helmet>
-        <title>Digital Design & Development Services - Marc Friedman</title>
-        <meta name="description" content="Transform your digital presence with expert web development, UI/UX design, and SaaS development services. Custom solutions that drive real results for your business." />
-        
+        <title>Web Design Services Tel Aviv - Marc Friedman</title>
+        <meta name="description" content="Professional web design and development services in Tel Aviv. Expert in UI/UX design, SaaS development, and custom websites that drive real results for your business." />
+
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Digital Design & Development Services - Marc Friedman" />
-        <meta property="og:description" content="Transform your digital presence with expert web development, UI/UX design, and SaaS development services. Custom solutions that drive real results for your business." />
+        <meta property="og:title" content="Web Design Services Tel Aviv - Marc Friedman" />
+        <meta property="og:description" content="Professional web design and development services in Tel Aviv. Expert in UI/UX design, SaaS development, and custom websites that drive real results for your business." />
         <meta property="og:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
         <meta property="og:url" content="https://marcfriedmanportfolio.com/services" />
-        
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Digital Design & Development Services - Marc Friedman" />
-        <meta name="twitter:description" content="Transform your digital presence with expert web development, UI/UX design, and SaaS development services. Custom solutions that drive real results for your business." />
+        <meta name="twitter:title" content="Web Design Services Tel Aviv - Marc Friedman" />
+        <meta name="twitter:description" content="Professional web design and development services in Tel Aviv. Expert in UI/UX design, SaaS development, and custom websites that drive real results for your business." />
         <meta name="twitter:image" content="https://marcfriedmanportfolio.com/og-image.jpg" />
-        
+
         {/* Additional SEO meta tags */}
-        <meta name="keywords" content="web development, UI/UX design, SaaS development, API development, startup MVP, mentorship, digital services, AI integration, cybersecurity" />
+        <meta name="keywords" content="Web Designer Tel Aviv, web design Tel Aviv, web development Tel Aviv, UI/UX design, SaaS development, API development, startup MVP, mentorship, digital services, AI integration, cybersecurity" />
         <meta name="author" content="Marc Friedman" />
         <link rel="canonical" href="https://www.marcfriedmanportfolio.com/services" />
         
@@ -106,15 +112,15 @@ export default function ServicesPage() {
       <Routes>
         <Route path="web-development" element={<WebDevelopmentPage />} />
         <Route path="design" element={<DesignPage />} />
-        <Route path="api" element={<APIPage />} />
         <Route path="startup-mvp" element={<StartupMVPPage />} />
         <Route path="saas" element={<SaaSPage />} />
         <Route path="mentorship" element={<MentorshipPage />} />
         <Route path="ai-integration" element={<AIIntegrationPage />} />
         <Route path="cybersecurity" element={<CybersecurityPage />} />
         <Route path="design-systems" element={<DesignSystemsPage />} />
-        <Route path="brand-design" element={<BrandDesignPage />} />
         <Route path="fractional-cmo" element={<FractionalCMOPage />} />
+        <Route path="external-web-department" element={<ExternalWebDepartmentPage />} />
+        <Route path="impact-story-site" element={<ImpactStorySitePage />} />
         <Route path="*" element={<Navigate to="/services" replace />} />
       </Routes>
     </>

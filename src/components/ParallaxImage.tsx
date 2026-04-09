@@ -10,10 +10,10 @@ interface ParallaxImageProps {
   sizes?: string;
 }
 
-export default function ParallaxImage({ 
-  src, 
-  alt, 
-  className = '', 
+export default function ParallaxImage({
+  src,
+  alt,
+  className = '',
   speed = 0.2,
   loading = 'lazy',
   sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
@@ -23,7 +23,8 @@ export default function ParallaxImage({
   const [clientHeight, setClientHeight] = useState(0);
   const [isInView, setIsInView] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
-  
+  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   const { scrollY } = useScroll();
   
   // Update measurements on resize or scroll
@@ -91,7 +92,7 @@ export default function ParallaxImage({
   
   return (
     <div ref={ref} className={`overflow-hidden ${className}`}>
-      <motion.div style={{ y: isInView ? springY : 0, height: '100%', width: '100%' }}>
+      <motion.div style={{ y: (isInView && !prefersReducedMotion) ? springY : 0, height: '100%', width: '100%' }}>
         {!isLoaded && (
           <div className="w-full h-full bg-gray-800 animate-pulse flex items-center justify-center">
             <div className="text-gray-400">Loading...</div>

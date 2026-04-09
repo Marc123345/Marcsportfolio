@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { Menu as MenuIcon, X, ChevronDown, Linkedin, Calendar, Trophy, ArrowRight, Globe, Palette, Award, ShoppingCart } from 'lucide-react';
+import { Menu as MenuIcon, X, ChevronDown, Linkedin, Calendar, Trophy, ArrowRight, Globe, Palette, Award } from 'lucide-react';
 import { useAppStore } from '@/stores/useAppStore';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import MagneticButton from '@/components/MagneticButton';
+import FloatingChatbot from '@/components/FloatingChatbot';
+import { CALENDLY_LINK } from '@/lib/constants';
 
 interface NavigationItem {
   label: string;
@@ -35,11 +37,6 @@ const navigationLinks: NavigationItem[] = [
             label: 'Design Systems',
             to: '/services/design-systems',
             description: 'Scalable design frameworks'
-          },
-          {
-            label: 'Brand Design',
-            to: '/services/brand-design',
-            description: 'Complete brand identity solutions'
           }
         ]
       },
@@ -55,11 +52,6 @@ const navigationLinks: NavigationItem[] = [
             label: 'SaaS Development',
             to: '/services/saas',
             description: 'End-to-end SaaS solutions'
-          },
-          {
-            label: 'API Development',
-            to: '/services/api',
-            description: 'Robust APIs and integrations'
           }
         ]
       },
@@ -90,125 +82,53 @@ const navigationLinks: NavigationItem[] = [
             label: 'Marketing Partner',
             to: '/services/fractional-cmo',
             description: 'Design & dev execution for marketing strategy'
-          }
-        ]
-      }
-    ]
-  },
-  { 
-    label: 'Case Studies',
-    children: [
-      {
-        title: 'Featured Projects',
-        items: [
-          { 
-            label: 'Binns Media Group', 
-            to: '/work/case-studies/binns-media',
-            description: 'Digital media platform transformation'
           },
-          { 
-            label: 'Untapped Africa', 
-            to: '/work/case-studies/untapped-africa',
-            description: 'Water infrastructure solutions platform'
-          },
-          { 
-            label: 'iLight Care', 
-            to: '/work/case-studies/ilight',
-            description: 'Healthcare technology platform'
+          {
+            label: 'External Web Department',
+            to: '/services/external-web-department',
+            description: 'For multi-location & multi-brand companies'
           }
         ]
       },
       {
-        title: 'All Case Studies',
+        title: 'Specialized Packages',
         items: [
-          { 
-            label: 'View All Projects', 
-            to: '/work',
-            description: 'Complete portfolio and case studies'
+          {
+            label: 'Premium Web Package',
+            to: '/services/premium-web-package',
+            description: 'Complete high-end website solution'
+          },
+          {
+            label: 'Monthly Retainer',
+            to: '/services/monthly-retainer',
+            description: 'Ongoing design & development support'
           }
         ]
       }
     ]
   },
-  { 
-    label: 'Work By Industry',
+  {
+    label: 'Industries',
     children: [
       {
-        title: 'Industries',
+        title: 'Industry Solutions',
         items: [
-          { 
-            label: 'Media & Entertainment', 
-            to: '/work?filter=media',
-            description: 'Content platforms and media websites'
-          },
-          { 
-            label: 'SaaS & Technology', 
-            to: '/work?filter=saas',
-            description: 'Software platforms and tech solutions'
-          },
-          { 
-            label: 'Health & Wellness', 
-            to: '/work?filter=wellness',
-            description: 'Healthcare technology platforms'
-          },
-          { 
-            label: 'Automotive', 
-            to: '/work?filter=automotive',
-            description: 'Dealership and automotive solutions'
-          },
-          { 
-            label: 'Professional Services', 
-            to: '/work?filter=professional',
-            description: 'B2B, legal, and professional services'
-          },
-          { 
-            label: 'Social Impact', 
-            to: '/work?filter=social-impact',
-            description: 'Non-profit and social good platforms'
-          },
-          { 
-            label: 'Sports & Entertainment', 
-            to: '/work?filter=sports',
-            description: 'Sports coaching and entertainment'
+          {
+            label: 'NGO & Non-Profits',
+            to: '/services/impact-story-site',
+            description: 'Mission-first storytelling platforms'
           }
         ]
       }
     ]
+  },
+  {
+    label: 'Work',
+    to: '/work'
   },
   { label: 'Blog', to: '/blog' },
-  { label: 'Press', to: '/press' },
-  { 
-    label: 'Tools',
-    children: [
-      {
-        title: 'Free Tools',
-        items: [
-          { 
-            label: 'Website Analyzer', 
-            to: '/tools/website-analyzer',
-            description: 'Get an instant analysis of your website'
-          },
-          { 
-            label: 'ROI Calculator', 
-            to: '/tools/roi-calculator',
-            description: 'Calculate your website investment returns'
-          },
-          { 
-            label: 'Project Timeline', 
-            to: '/tools/project-timeline',
-            description: 'See our transparent development process'
-          },
-          { 
-            label: 'AI Optimization', 
-            to: '/tools/ai-crawler-optimization',
-            description: 'Optimize your site for AI crawlers'
-          }
-        ]
-      },
-    ]
-  },
   { label: 'About', to: '/about' },
-  { label: 'Contact', to: '/contact', badge: 'Free Consultation' }
+  { label: 'Contact', to: '/contact' }
 ];
 
 export default function Layout() {
@@ -224,7 +144,7 @@ export default function Layout() {
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
 
   // UX Audit Calendly link
-  const calendlyUXAuditLink = "https://calendly.com/marc-friedman-web-design--meeting-link/30min";
+  const calendlyUXAuditLink = CALENDLY_LINK;
 
   // Handle scroll events for sticky header
   useEffect(() => {
@@ -391,9 +311,85 @@ export default function Layout() {
               </MagneticButton>
             </div>
 
-            {/* Menu Button */}
-            <div className="flex items-center gap-4">
-              <button 
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center gap-8" aria-label="Main Navigation">
+              {navigationLinks.map((item) => (
+                <div key={item.label} className="relative">
+                  {item.children ? (
+                    <div
+                      className="relative"
+                      onMouseEnter={() => setExpandedDesktopSection(item.label)}
+                      onMouseLeave={() => setExpandedDesktopSection(null)}
+                    >
+                      <button
+                        className="text-white hover:text-[#A3D1FF] transition-colors font-medium flex items-center gap-1"
+                        aria-expanded={expandedDesktopSection === item.label}
+                      >
+                        {item.label}
+                        <ChevronDown className="w-4 h-4" />
+                      </button>
+
+                      <AnimatePresence>
+                        {expandedDesktopSection === item.label && (
+                          <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 10 }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute top-full left-0 mt-2 w-[600px] bg-[#1b1b1b]/95 backdrop-blur-md rounded-lg shadow-2xl border border-white/10 p-6 z-50"
+                          >
+                            <div className="grid grid-cols-1 gap-6">
+                              {item.children.map((section, idx) => (
+                                <div key={idx}>
+                                  <h3 className="text-sm font-semibold text-[#A3D1FF] mb-3">
+                                    {section.title}
+                                  </h3>
+                                  <div className="grid grid-cols-2 gap-2">
+                                    {section.items.map((subItem, subIdx) => (
+                                      <Link
+                                        key={subIdx}
+                                        to={subItem.to}
+                                        className="block px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-colors group"
+                                        onClick={() => setExpandedDesktopSection(null)}
+                                      >
+                                        <span className="block font-medium group-hover:text-[#A3D1FF] transition-colors text-sm">
+                                          {subItem.label}
+                                        </span>
+                                        {subItem.description && (
+                                          <span className="block text-xs text-gray-400 mt-1">
+                                            {subItem.description}
+                                          </span>
+                                        )}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : (
+                    <Link
+                      to={item.to || '/'}
+                      className="text-white hover:text-[#A3D1FF] transition-colors font-medium flex items-center gap-2"
+                    >
+                      {item.label}
+                      {item.badge && (
+                        <span className="px-2 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-xs">
+                          {item.badge}
+                        </span>
+                      )}
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <div className="flex lg:hidden items-center gap-4">
+              <button
                 onClick={() => setMenuOpen(!isMenuOpen)}
                 className="p-2 text-white hover:text-[#A78BFA] transition-colors"
                 aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
@@ -542,7 +538,7 @@ export default function Layout() {
 
                   {/* Social Links */}
                   <div className="mt-[2.618rem] px-4 space-y-[1.618rem]">
-                    <a 
+                    <a
                       href="https://www.linkedin.com/in/portfolio2/"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -553,7 +549,18 @@ export default function Layout() {
                       <Linkedin className="w-5 h-5" aria-hidden="true" />
                       <span>LinkedIn</span>
                     </a>
-                    <a 
+                    <a
+                      href="https://www.behance.net/marcfriedmanweb"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 text-gray-300 hover:text-[#1769FF] transition-colors"
+                      aria-label="Marc Friedman's Behance profile"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      <Palette className="w-5 h-5" aria-hidden="true" />
+                      <span>Behance</span>
+                    </a>
+                    <a
                       href={calendlyUXAuditLink}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -564,7 +571,7 @@ export default function Layout() {
                       <Calendar className="w-5 h-5" aria-hidden="true" />
                       <span>Schedule a Call</span>
                     </a>
-                    <a 
+                    <a
                       href="https://www.awwwards.com/marc-friedman/"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -588,10 +595,13 @@ export default function Layout() {
         <Outlet />
       </main>
 
+      {/* Floating Chatbot */}
+      <FloatingChatbot />
+
       {/* Footer */}
       <footer className="bg-[#1b1b1b] border-t border-white/10">
         <div className="container-custom section-spacing-sm">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 lg:gap-12">
             {/* Brand Section */}
             <div>
               <div className="mb-6">
@@ -609,7 +619,7 @@ export default function Layout() {
               
               {/* Social Links */}
               <div className="flex gap-3">
-                <a 
+                <a
                   href="https://www.linkedin.com/in/portfolio2/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -618,7 +628,16 @@ export default function Layout() {
                 >
                   <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </a>
-                <a 
+                <a
+                  href="https://www.behance.net/marcfriedmanweb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-[#2d3035] rounded-lg flex items-center justify-center text-gray-400 hover:text-[#1769FF] hover:bg-[#1769FF]/10 transition-all group"
+                  aria-label="Behance"
+                >
+                  <Palette className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                </a>
+                <a
                   href={calendlyUXAuditLink}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -627,7 +646,7 @@ export default function Layout() {
                 >
                   <Calendar className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </a>
-                <a 
+                <a
                   href="https://www.awwwards.com/marc-friedman/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -661,6 +680,14 @@ export default function Layout() {
                 </li>
                 <li>
                   <Link
+                    to="/services/design-systems"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Design Systems
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     to="/services/saas"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
@@ -669,10 +696,18 @@ export default function Layout() {
                 </li>
                 <li>
                   <Link
-                    to="/services/api"
+                    to="/services/ai-integration"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    API Development
+                    AI Integration
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/cybersecurity"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Cybersecurity
                   </Link>
                 </li>
                 <li>
@@ -691,12 +726,36 @@ export default function Layout() {
                     Mentorship
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    to="/services/fractional-cmo"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Marketing Partner
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/external-web-department"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    External Web Department
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/impact-story-site"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Impact Story Site
+                  </Link>
+                </li>
               </ul>
             </div>
             
-            {/* Portfolio */}
+            {/* Work */}
             <div>
-              <h3 className="text-white font-semibold mb-6 text-lg">Portfolio</h3>
+              <h3 className="text-white font-semibold mb-6 text-lg">Work</h3>
               <ul className="space-y-2">
                 <li>
                   <Link
@@ -730,60 +789,12 @@ export default function Layout() {
                     AutoMarginX
                   </Link>
                 </li>
-                <li>
-                  <a 
-                    href="https://dribbble.com/marcf9199/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22marcf9199%22&utm_content=%22About%20marcf9199%22&utm_medium=Social_Share"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-400 hover:text-[#EA4C89] transition-colors group"
-                    aria-label="View Marc Friedman's Dribbble profile"
-                  >
-                    <Award className="w-5 h-5 group-hover:scale-110 transition-transform" aria-hidden="true" />
-                    <span>Dribbble</span>
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="https://g.co/kgs/a8iqMhU"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-400 hover:text-[#4285F4] transition-colors group"
-                    aria-label="Google Business Profile"
-                  >
-                    <Globe className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                    <span>5.0/5 Google Reviews</span>
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="https://www.designrush.com/agency/profile/marc-friedman-design-agency"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-400 hover:text-[#FF3D2E] transition-colors group"
-                    aria-label="Design Rush Profile"
-                  >
-                    <Palette className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                    <span>Design Rush</span>
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="https://clutch.co/profile/marc-friedman-design-agency"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-400 hover:text-[#FF6B35] transition-colors group"
-                    aria-label="Clutch Profile"
-                  >
-                    <Award className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                    <span>Clutch</span>
-                  </a>
-                </li>
               </ul>
             </div>
             
-            {/* Free Tools */}
+            {/* Tools */}
             <div>
-              <h3 className="text-white font-semibold mb-6 text-lg">Free Tools</h3>
+              <h3 className="text-white font-semibold mb-6 text-lg">Tools</h3>
               <ul className="space-y-2">
                 <li>
                   <Link
@@ -791,6 +802,14 @@ export default function Layout() {
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     Website Analyzer
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/tools/ai-website-crawler"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    AI Website Crawler
                   </Link>
                 </li>
                 <li>
@@ -809,17 +828,54 @@ export default function Layout() {
                     Project Timeline
                   </Link>
                 </li>
+              </ul>
+            </div>
+
+            {/* Resources */}
+            <div>
+              <h3 className="text-white font-semibold mb-6 text-lg">Resources</h3>
+              <ul className="space-y-2">
                 <li>
                   <Link
-                    to="/tools/ai-crawler-optimization"
+                    to="/blog"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    AI Optimization
+                    Blog
                   </Link>
+                </li>
+                <li>
+                  <a
+                    href="https://www.behance.net/marcfriedmanweb"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Behance
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://dribbble.com/marcf9199/about"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Dribbble
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://clutch.co/profile/marc-friedman-design-agency"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Clutch Reviews
+                  </a>
                 </li>
               </ul>
             </div>
-            
+
             {/* Company */}
             <div>
               <h3 className="text-white font-semibold mb-6 text-lg">Company</h3>
@@ -829,23 +885,7 @@ export default function Layout() {
                     to="/about"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    About Marc
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/blog"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Blog & Insights
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/press"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Press & Media
+                    About
                   </Link>
                 </li>
                 <li>
@@ -856,35 +896,16 @@ export default function Layout() {
                     Contact
                   </Link>
                 </li>
+                <li>
+                  <a
+                    href="mailto:marcf@marcfriedmanwebdesign.com"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    Email Us
+                  </a>
+                </li>
               </ul>
             </div>
-
-            {/* Get In Touch */}
-            <div>
-              <h3 className="text-white font-semibold mb-6 text-lg">Get In Touch</h3>
-              <div className="space-y-2">
-                <a 
-                  href="mailto:marcf@marcfriedmanwebdesign.com"
-                  className="text-gray-400 hover:text-white transition-colors block"
-                >
-                  marcf@marcfriedmanwebdesign.com
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Clutch Widget */}
-          <div className="mt-12 pt-8 border-t border-white/10 flex justify-center">
-            <div
-              className="clutch-widget"
-              data-url="https://widget.clutch.co"
-              data-widget-type="1"
-              data-height="40"
-              data-nofollow="false"
-              data-expandifr="true"
-              data-scale="100"
-              data-clutchcompany-id="2527093"
-            ></div>
           </div>
 
           <div className="mt-12 pt-8 border-t border-white/10 text-center text-gray-400">
@@ -902,9 +923,6 @@ export default function Layout() {
                 <a href="/accessibility-statement.html" className="hover:text-white transition-colors">Accessibility</a>
                 <Link to="/cookies-policy" className="hover:text-white transition-colors">Cookies</Link>
                 <Link to="/disclaimer" className="hover:text-white transition-colors">Disclaimer</Link>
-                <a href="#" className="termly-display-preferences hover:text-white transition-colors">Consent Preferences</a>
-                <a href="https://app.termly.io/notify/03f555bd-c705-46c1-a042-acea6d9e1ddf" className="hover:text-white transition-colors">Do Not Sell My Info</a>
-                <a href="https://app.termly.io/notify/03f555bd-c705-46c1-a042-acea6d9e1ddf" className="hover:text-white transition-colors">Limit Use of Sensitive Info</a>
                 <a href="/sitemap.xml" className="hover:text-white transition-colors">Sitemap</a>
               </div>
             </div>

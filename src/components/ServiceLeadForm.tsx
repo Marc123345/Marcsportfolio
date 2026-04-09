@@ -48,8 +48,8 @@ export default function ServiceLeadForm({ benefits }: Props) {
           </div>
         </div>
 
-        {/* Right Column: Properly Handled Form */}
-        <div className="w-full min-h-[539px]">
+        {/* Right Column: Contact Form */}
+        <div className="w-full">
           <JotFormEmbed />
         </div>
       </div>

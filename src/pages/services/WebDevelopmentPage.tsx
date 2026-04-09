@@ -1,8 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, Code, Database, Globe, Zap, Shield, Gauge } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { ArrowRight, Code, Database, Globe, Zap, Shield, Gauge, ExternalLink } from 'lucide-react';
+import { useNavigate, Link } from 'react-router-dom';
 import ServiceLeadForm from '@/components/ServiceLeadForm';
 
 function FeatureCard({ icon: Icon, title, description }: {
@@ -84,22 +83,22 @@ export default function WebDevelopmentPage() {
   return (
     <>
       <Helmet>
-        <title>Professional Web Development Services | Marc Friedman</title>
-        <meta name="description" content="Custom web development services that drive 40% more leads. SEO-ready websites with 98/100 PageSpeed scores, mobile-first design, and conversion optimization. Get your free quote today." />
-        <meta name="keywords" content="web development services, custom website development, SEO-ready websites, mobile-first design, conversion optimization, React development, Next.js development" />
+        <title>Professional Web Design Services | Marc Friedman</title>
+        <meta name="description" content="Custom web design services that drive 40% more leads. SEO-ready websites with 98/100 PageSpeed scores, mobile-first design, and conversion optimization. Get your free quote today." />
+        <meta name="keywords" content="web design services, custom website design, SEO-ready websites, mobile-first design, conversion optimization, React development, Next.js development" />
         <link rel="canonical" href="https://www.marcfriedmanportfolio.com/services/web-development" />
         
         <meta property="og:type" content="service" />
-        <meta property="og:title" content="Professional Web Development Services | Marc Friedman" />
-        <meta property="og:description" content="Custom web development services that drive 40% more leads. SEO-ready websites with 98/100 PageSpeed scores." />
+        <meta property="og:title" content="Professional Web Design Services | Marc Friedman" />
+        <meta property="og:description" content="Custom web design services that drive 40% more leads. SEO-ready websites with 98/100 PageSpeed scores." />
         <meta property="og:url" content="https://www.marcfriedmanportfolio.com/services/web-development" />
-        
+
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            "name": "Web Development Services",
-            "description": "Custom web development services that drive 40% more leads with SEO-ready websites.",
+            "name": "Web Design Services",
+            "description": "Custom web design services that drive 40% more leads with SEO-ready websites.",
             "provider": {
               "@type": "Person",
               "name": "Marc Friedman",
@@ -153,7 +152,7 @@ export default function WebDevelopmentPage() {
         <div className="container-custom relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-              Web Development Services
+              Web Design Services
             </h1>
             <h2 className="text-xl sm:text-2xl text-[#A78BFA] mb-6">
               Custom Websites That Convert Visitors Into Customers
@@ -184,7 +183,7 @@ export default function WebDevelopmentPage() {
       {/* Features Grid */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">Why Work With Me</h2>
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Why Choose Our Web Design Services</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <div className="grid gap-8">
@@ -367,11 +366,142 @@ export default function WebDevelopmentPage() {
         </div>
       </section>
 
+      {/* Case Studies Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-4">Web Design Projects</h2>
+          <p className="text-gray-400 mb-12 max-w-2xl">
+            Explore our portfolio of high-performance websites that deliver exceptional results.
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Link
+              to="/work/case-studies/binns-media"
+              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9.png?updatedAt=1767539579710"
+                  alt="Binns Media Group Platform"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
+                  Binns Media Group
+                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
+                </h3>
+                <p className="text-gray-400 mb-4">Digital media platform with high performance and engagement.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">React 18</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">GSAP</span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              to="/work/case-studies/untapped-africa"
+              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(1).png?updatedAt=1767539579782"
+                  alt="Untapped Africa Platform"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
+                  Untapped Africa
+                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
+                </h3>
+                <p className="text-gray-400 mb-4">Comprehensive platform serving 500,000+ people across Africa.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Next.js</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Supabase</span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              to="/work/case-studies/secure-annapolis"
+              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(2).png?updatedAt=1767539579194"
+                  alt="A Secure Annapolis Locksmith"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
+                  A Secure Annapolis
+                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
+                </h3>
+                <p className="text-gray-400 mb-4">Professional locksmith website with strong mobile conversion.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">React</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Local SEO</span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              to="/work/case-studies/paving-leads"
+              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016_9.png?updatedAt=1767539579010"
+                  alt="Paving Leads Platform"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
+                  Paving Leads
+                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
+                </h3>
+                <p className="text-gray-400 mb-4">#1 Google ranking with 300% increase in organic traffic.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">React</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">SEO</span>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              to="/work/case-studies/tarchip"
+              className="bg-[#1b1b1b] rounded-xl overflow-hidden border border-white/10 hover:border-[#A3D1FF] transition-all group"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9(5).png?updatedAt=1767539578933"
+                  alt="Cumberland Tar & Chip"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-2 flex items-center justify-between">
+                  Cumberland Tar & Chip
+                  <ExternalLink className="w-5 h-5 text-[#A3D1FF]" />
+                </h3>
+                <p className="text-gray-400 mb-4">Specialty paving website with professional showcase design.</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">React</span>
+                  <span className="px-3 py-1 bg-[#A3D1FF]/10 text-[#A3D1FF] rounded-full text-sm">Portfolio</span>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Service Lead Form Section */}
       <section id="contact-form" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <ServiceLeadForm 
-            service="Web Development"
+          <ServiceLeadForm
+            service="Web Design"
             benefits={[
               "Increase in conversion rates",
               "High PageSpeed scores standard",
@@ -416,29 +546,29 @@ export default function WebDevelopmentPage() {
                 <h4 className="text-white font-medium group-hover:text-[#A78BFA] transition-colors">UI/UX Design</h4>
                 <p className="text-gray-400 text-sm mt-1">User-centered design</p>
               </Link>
-              <Link 
-                to="/services/saas" 
-                className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A78BFA] transition-colors group"
+              <Link
+                to="/services/saas"
+                className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A3D1FF] transition-colors group"
                 title="SaaS development services"
               >
                 <h4 className="text-white font-medium group-hover:text-[#A78BFA] transition-colors">SaaS Development</h4>
                 <p className="text-gray-400 text-sm mt-1">Scalable solutions</p>
               </Link>
-              <Link 
-                to="/services/api" 
-                className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A78BFA] transition-colors group"
-                title="API development services"
+              <Link
+                to="/services/ai-integration"
+                className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A3D1FF] transition-colors group"
+                title="AI integration services"
               >
-                <h4 className="text-white font-medium group-hover:text-[#A78BFA] transition-colors">API Development</h4>
-                <p className="text-gray-400 text-sm mt-1">Robust integrations</p>
+                <h4 className="text-white font-medium group-hover:text-[#A3D1FF] transition-colors">AI Integration</h4>
+                <p className="text-gray-400 text-sm mt-1">Smart automation</p>
               </Link>
-              <Link 
-                to="/tools/roi-calculator" 
-                className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A78BFA] transition-colors group"
-                title="Calculate website ROI"
+              <Link
+                to="/services/cybersecurity"
+                className="p-4 bg-[#1b1b1b] rounded-lg border border-white/10 hover:border-[#A3D1FF] transition-colors group"
+                title="Cybersecurity services"
               >
-                <h4 className="text-white font-medium group-hover:text-[#A78BFA] transition-colors">ROI Calculator</h4>
-                <p className="text-gray-400 text-sm mt-1">Investment planning</p>
+                <h4 className="text-white font-medium group-hover:text-[#A3D1FF] transition-colors">Cybersecurity</h4>
+                <p className="text-gray-400 text-sm mt-1">Secure solutions</p>
               </Link>
             </div>
           </div>

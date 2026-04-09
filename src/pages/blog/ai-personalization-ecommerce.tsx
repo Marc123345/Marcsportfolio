@@ -1,8 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, Calendar, Clock, Share2, Linkedin, Twitter, Facebook, Link as LinkIcon, ArrowRight, Brain, ShoppingCart, Zap, Shield, TrendingUp, CheckCircle, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, Share2, Linkedin, Facebook, Link as LinkIcon, ArrowRight, Brain, ShoppingCart, Zap, Shield, TrendingUp, CheckCircle, AlertTriangle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import MagneticButton from '@/components/MagneticButton';
+import TwitterIcon from '@/components/TwitterIcon';
 
 export default function AIPersonalizationEcommercePage() {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ export default function AIPersonalizationEcommercePage() {
     "@type": "BlogPosting",
     "headline": "The Rise of AI-Driven Personalization in Ecommerce: A Practical Guide for 2025",
     "description": "Explore how AI-powered personalization is transforming ecommerce. Learn practical strategies for implementing personalization, real-world case studies, privacy considerations, and omnichannel best practices.",
-    "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2000&q=80",
+    "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=2000&q=80",
     "datePublished": "2025-11-05T08:00:00+00:00",
     "dateModified": "2025-11-05T08:00:00+00:00",
     "author": {
@@ -46,13 +47,13 @@ export default function AIPersonalizationEcommercePage() {
         <meta property="og:type" content="article" />
         <meta property="og:title" content="The Rise of AI-Driven Personalization in Ecommerce: A Practical Guide for 2025" />
         <meta property="og:description" content="Explore how AI-powered personalization is transforming ecommerce with practical strategies and real-world insights." />
-        <meta property="og:image" content="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2000&q=80" />
+        <meta property="og:image" content="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=2000&q=80" />
         <meta property="og:url" content="https://marcfriedmanportfolio.com/blog/ai-personalization-ecommerce" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="The Rise of AI-Driven Personalization in Ecommerce: A Practical Guide for 2025" />
         <meta name="twitter:description" content="Explore how AI-powered personalization is transforming ecommerce with practical strategies and real-world insights." />
-        <meta name="twitter:image" content="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2000&q=80" />
+        <meta name="twitter:image" content="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=2000&q=80" />
 
         <script type="application/ld+json">
           {JSON.stringify(blogPostSchema)}
@@ -86,7 +87,7 @@ export default function AIPersonalizationEcommercePage() {
 
           <div className="aspect-[21/9] overflow-hidden rounded-xl mb-8">
             <img
-              src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2000&q=80"
+              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=2000&q=80"
               alt="AI-Driven Ecommerce Personalization"
               className="w-full h-full object-cover"
             />
@@ -776,7 +777,7 @@ export default function AIPersonalizationEcommercePage() {
                 <Facebook className="w-5 h-5" />
               </button>
               <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#1DA1F2]/20 text-[#1DA1F2] transition-colors">
-                <Twitter className="w-5 h-5" />
+                <TwitterIcon className="w-5 h-5" />
               </button>
               <button className="p-3 bg-[#1b1b1b] rounded-full hover:bg-[#0077B5]/20 text-[#0077B5] transition-colors">
                 <Linkedin className="w-5 h-5" />

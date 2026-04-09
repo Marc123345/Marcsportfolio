@@ -16,16 +16,24 @@ const projects: Project[] = [
   {
     id: 'binns-media',
     title: 'Binns Media Group',
-    description: 'NYC media company's content hub for podcasts, TV shows, and exclusive content.',
-    image: 'https://i.imgur.com/IU0mmH7.jpeg',
+    description: 'A cutting-edge digital media platform showcasing diverse content portfolio.',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016x9.png?updatedAt=1767539579710',
     caseStudyUrl: '/work/case-studies/binns-media',
     liveUrl: 'https://www.binnsmediagroup.com'
+  },
+  {
+    id: 'paving-leads',
+    title: 'Paving Leads',
+    description: 'High-velocity SEO engine that dominated search results and ranked #1 on Google.',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%204%20-%2016_9.png?updatedAt=1767539579010',
+    caseStudyUrl: '/work/case-studies/paving-leads',
+    liveUrl: 'https://pavinglead.com/'
   },
   {
     id: 'untapped-africa',
     title: 'Untapped Africa',
     description: 'Revolutionizing water infrastructure solutions across Africa.',
-    image: 'https://ik.imagekit.io/qcvroy8xpd/Screenshot.png?updatedAt=1754018965491',
+    image: 'https://ik.imagekit.io/qcvroy8xpd/New%20Folder/Mockup%201%20-%201x1(1).png?updatedAt=1767539579782',
     caseStudyUrl: '/work/case-studies/untapped-africa',
     liveUrl: 'https://untappedafrica.co.za'
   },
@@ -45,7 +53,12 @@ export default function PortfolioShowcase() {
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
   const isVisibleRef = useRef(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  
+  const currentIndexRef = useRef(0);
+
+  useEffect(() => {
+    currentIndexRef.current = currentIndex;
+  }, [currentIndex]);
+
   const currentProject = projects[currentIndex];
   
   // Set up visibility observer
@@ -80,12 +93,13 @@ export default function PortfolioShowcase() {
     if (autoplayRef.current) {
       clearInterval(autoplayRef.current);
     }
-    
+
     autoplayRef.current = setInterval(() => {
       if (isVisibleRef.current) {
-        if (currentIndex < projects.length - 1) {
+        const currentIdx = currentIndexRef.current;
+        if (currentIdx < projects.length - 1) {
           setDirection(1);
-          setCurrentIndex(currentIndex + 1);
+          setCurrentIndex(currentIdx + 1);
         } else {
           setDirection(-1);
           setCurrentIndex(0);

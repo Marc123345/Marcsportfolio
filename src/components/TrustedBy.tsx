@@ -230,15 +230,6 @@ export default function TrustedBy() {
               />
             </div>
 
-            {/* Uza Entertainment */}
-            <div className="transition-all duration-300 hover:scale-110 flex-shrink-0">
-              <img
-                src="https://ik.imagekit.io/qcvroy8xpd/downloads/logo-uzan-1-mv02DeERKlcy9DzM%20(1).avif?updatedAt=1755253233172"
-                alt="Uza Entertainment"
-                className="h-12 md:h-14 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
-              />
-            </div>
-
             {/* Duplicate set for seamless loop */}
             {/* Binns Media Group */}
             <div className="transition-all duration-300 hover:scale-110 flex-shrink-0">
@@ -320,15 +311,6 @@ export default function TrustedBy() {
                 className="h-12 md:h-14 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
               />
             </div>
-
-            {/* Uza Entertainment */}
-            <div className="transition-all duration-300 hover:scale-110 flex-shrink-0">
-              <img
-                src="https://ik.imagekit.io/qcvroy8xpd/downloads/logo-uzan-1-mv02DeERKlcy9DzM%20(1).avif?updatedAt=1755253233172"
-                alt="Uza Entertainment"
-                className="h-12 md:h-14 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
-              />
-            </div>
         </div>
       </div>
 
@@ -345,9 +327,9 @@ export default function TrustedBy() {
           style={{ transitionDelay: '0.4s' }}
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {reviews.slice(0, showAllReviews ? reviews.length : 6).map((review, index) => (
+            {reviews.slice(0, showAllReviews ? reviews.length : 6).map((review) => (
               <ReviewCard
-                key={index}
+                key={review.name}
                 {...review}
               />
             ))}
