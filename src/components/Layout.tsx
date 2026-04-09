@@ -806,7 +806,7 @@ export default function Layout() {
                 </li>
                 <li>
                   <Link
-                    to="/tools/ai-website-crawler"
+                    to="/tools/ai-crawler-optimization"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     AI Website Crawler

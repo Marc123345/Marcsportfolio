@@ -162,7 +162,9 @@ export default function ChatBot() {
 
     try {
       // Submit to Edge Function with timeout
-      const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/submit-lead`;
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      if (!supabaseUrl) { throw new Error('Supabase not configured'); }
+      const apiUrl = `${supabaseUrl}/functions/v1/submit-lead`;
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), API_TIMEOUT_MS);
 
@@ -171,7 +173,7 @@ export default function ChatBot() {
         response = await fetch(apiUrl, {
           method: 'POST',
           headers: {
-            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY || ''}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data),

@@ -73,8 +73,9 @@ export default function AIWebsiteAnalyzer() {
 
     try {
       // Call the edge function for real analysis with timeout
-      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
+      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+      if (!supabaseUrl || !supabaseAnonKey) { throw new Error('Analysis service not configured'); }
 
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), ANALYSIS_TIMEOUT_MS); // 30 second timeout for analysis
