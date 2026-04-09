@@ -57,88 +57,8 @@
     <!-- Google Site Verification -->
     <meta name="google-site-verification" content="google65e4eba86e82f0a1" />
 
-    <!-- Meta Pixel Code -->
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1612974989906035');
-      fbq('track', 'PageView');
-    </script>
-    <!-- End Meta Pixel Code -->
-
-    <!-- Leadsy.ai Tracking Pixel -->
-    <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="apv5xf2DFlUrZF0M" data-version="062024"></script>
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "url": "https://www.marcfriedmanportfolio.com",
-        "name": "Marc Friedman - Full Stack Designer & Developer | Website Design Agency",
-        "description": "Expert full-stack designer & developer in Tel Aviv. 40% more leads with SEO-ready websites. 6+ years experience. As a leading website design agency, we offer web development, UI/UX design, and SaaS solutions.",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.marcfriedmanportfolio.com/search?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      }
-    </script>
-
-    <script>
-      if ('caches' in window) {
-        caches.keys().then(function(names) {
-          names.forEach(function(name) {
-            if (name.indexOf('marc-friedman-portfolio-v') === 0 || name.indexOf('runtime-cache-v') === 0) {
-              caches.delete(name);
-            }
-          });
-        });
-      }
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.getRegistrations().then(function(regs) {
-            regs.forEach(function(r) { r.update(); });
-          });
-          navigator.serviceWorker.register('/sw.js').catch(function() {});
-        });
-      }
-    </script>
-
-    <!-- Defer Analytics - Load after page is interactive -->
-    <script>
-      window.addEventListener('load', function() {
-        // Only load Google Analytics in production environment
-        if (window.location.hostname === 'marcfriedmanportfolio.com' ||
-            window.location.hostname === 'www.marcfriedmanportfolio.com') {
-          setTimeout(function() {
-            // Google Analytics
-            var gaScript = document.createElement('script');
-            gaScript.async = true;
-            gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-X9V20XWRG8';
-            document.head.appendChild(gaScript);
-
-            gaScript.onload = function() {
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-X9V20XWRG8', { 'send_page_view': false });
-              gtag('config', 'AW-17688433013');
-            };
-          }, 2000);
-        }
-      });
-    </script>
 </head>
   <body>
-    <!-- Meta Pixel noscript fallback -->
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1612974989906035&ev=PageView&noscript=1" /></noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
