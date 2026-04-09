@@ -1,7 +1,5 @@
-"use client";
-
 import React from 'react';
-import JotFormEmbed from '@/components/JotFormEmbed';
+import ContactForm from '@/components/ContactForm';
 
 interface Props {
   benefits: string[];
@@ -50,7 +48,7 @@ export default function ServiceLeadForm({ benefits }: Props) {
 
         {/* Right Column: Contact Form */}
         <div className="w-full">
-          <JotFormEmbed />
+          <ContactForm />
         </div>
       </div>
     </div>

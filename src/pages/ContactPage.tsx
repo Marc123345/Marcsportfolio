@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import TextReveal from '@/components/TextReveal';
 import HoverCard3D from '@/components/HoverCard3D';
-import JotFormEmbed from '@/components/JotFormEmbed';
+import ContactForm from '@/components/ContactForm';
 
 const contactSchema = {
   "@context": "https://schema.org",
@@ -96,7 +96,7 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-white mb-6">Get Your Free Project Quote</h2>
             </TextReveal>
 
-            <JotFormEmbed />
+            <ContactForm />
           </HoverCard3D>
         </div>
       </section>
