@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import MagneticButton from '@/components/MagneticButton';
 import FloatingChatbot from '@/components/FloatingChatbot';
+import ConsentBanner from '@/components/ConsentBanner';
 import { CALENDLY_LINK } from '@/lib/constants';
 
 interface NavigationItem {
@@ -929,6 +930,8 @@ export default function Layout() {
           </div>
         </div>
       </footer>
+
+      <ConsentBanner />
     </div>
   );
 }
