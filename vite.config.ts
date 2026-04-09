@@ -72,7 +72,6 @@ export default defineConfig({
             if (id.includes('framer-motion')) return 'vendor-framer';
             if (id.includes('lucide-react')) return 'vendor-icons';
             if (id.includes('@supabase')) return 'vendor-supabase';
-            if (id.includes('gsap')) return 'vendor-gsap';
             return 'vendor';
           }
         }

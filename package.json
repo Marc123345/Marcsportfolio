@@ -18,10 +18,8 @@
     "cloudflare:enable-all": "node scripts/cloudflare-transformations.js enable-all"
   },
   "dependencies": {
-    "@plausible-analytics/tracker": "^0.4.4",
     "@supabase/supabase-js": "^2.96.0",
     "@tailwindcss/typography": "^0.5.19",
-    "@tanstack/react-query": "^5.90.21",
     "framer-motion": "^12.34.1",
     "gsap": "^3.14.2",
     "lucide-react": "^0.574.0",

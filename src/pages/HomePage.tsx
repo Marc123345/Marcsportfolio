@@ -1,6 +1,6 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
-import { ArrowRight, CircleCheck as CheckCircle, Target, TrendingUp, Zap, Shield, Users, Award, Clock, Star, Sparkles, MessageSquare, Rocket, ChartBar as BarChart3, Code as Code2 } from 'lucide-react';
+import { ArrowRight, CircleCheck as CheckCircle, Target, TrendingUp, Zap, Shield, Clock, Star, Sparkles, MessageSquare } from 'lucide-react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import TrustedBy from '@/components/TrustedBy';
 import SEO from '@/components/SEO';
@@ -147,7 +147,6 @@ export default function HomePage() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 300]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const y3 = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);

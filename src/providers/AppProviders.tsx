@@ -1,19 +1,9 @@
 import React from 'react';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from 'react-error-boundary';
 import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from 'sonner';
 import { SupabaseProvider } from './SupabaseProvider';
 import { MotionConfig } from 'framer-motion';
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 5 * 60 * 1000,
-      retry: 1,
-    },
-  },
-});
 
 interface Props {
   children: React.ReactNode;
@@ -40,14 +30,12 @@ export function AppProviders({ children }: Props) {
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
       <HelmetProvider>
-        <QueryClientProvider client={queryClient}>
-          <SupabaseProvider>
-            <MotionConfig reducedMotion="user">
-              {children}
-              <Toaster position="top-right" expand={true} richColors />
-            </MotionConfig>
-          </SupabaseProvider>
-        </QueryClientProvider>
+        <SupabaseProvider>
+          <MotionConfig reducedMotion="user">
+            {children}
+            <Toaster position="top-right" expand={true} richColors />
+          </MotionConfig>
+        </SupabaseProvider>
       </HelmetProvider>
     </ErrorBoundary>
   );
