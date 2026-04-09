@@ -12,7 +12,7 @@ export function NotFoundPage() {
         <title>404 - Page Not Found | Marc Friedman</title>
         <meta name="description" content="The page you're looking for doesn't exist. Find what you need using our navigation or search." />
         <meta name="robots" content="noindex, follow" />
-        <link rel="canonical" href="https://marcfriedmanportfolio.com/404" />
+        <link rel="canonical" href="https://www.marcfriedmanportfolio.com/404" />
       </Helmet>
       
       <div className="min-h-screen flex items-center justify-center bg-black px-4">

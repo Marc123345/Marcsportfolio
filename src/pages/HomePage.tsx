@@ -295,7 +295,6 @@ export default function HomePage() {
                         src="https://ik.imagekit.io/qcvroy8xpd/PW8VUKH.png?updatedAt=1759693058055&tr=f-webp"
                         alt="Marc Friedman"
                         className="w-full h-full object-cover"
-                        loading="eager"
                       />
                     </div>
                     <div className="absolute -bottom-0.5 -right-0.5 w-5 h-5 bg-green-500 rounded-full border-2 border-black" />
@@ -447,7 +446,7 @@ export default function HomePage() {
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer-when-downgrade"
                 crossOrigin="anonymous"
-                loading="eager"
+                loading="lazy"
               />
             </div>
             <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-black mb-6 leading-tight text-white">
@@ -615,7 +614,7 @@ export default function HomePage() {
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer-when-downgrade"
                 crossOrigin="anonymous"
-                loading="eager"
+                loading="lazy"
               />
             </div>
             <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-black mb-6 leading-tight text-white">
@@ -814,7 +813,7 @@ export default function HomePage() {
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer-when-downgrade"
                 crossOrigin="anonymous"
-                loading="eager"
+                loading="lazy"
               />
             </div>
             <h2 className="text-[clamp(2.5rem,6vw,5rem)] font-black mb-6 leading-tight text-white">

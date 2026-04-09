@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { Menu as MenuIcon, X, ChevronDown, Linkedin, Calendar, Trophy, ArrowRight, Globe, Palette, Award } from 'lucide-react';
+import { Menu as MenuIcon, X, ChevronDown, Linkedin, Calendar, Trophy, ArrowRight, Palette } from 'lucide-react';
 import { useAppStore } from '@/stores/useAppStore';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -144,7 +144,6 @@ export default function Layout() {
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
 
   // UX Audit Calendly link
-  const calendlyUXAuditLink = CALENDLY_LINK;
 
   // Handle scroll events for sticky header
   useEffect(() => {
@@ -560,7 +559,7 @@ export default function Layout() {
                       <span>Behance</span>
                     </a>
                     <a
-                      href={calendlyUXAuditLink}
+                      href={CALENDLY_LINK}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 text-gray-300 hover:text-[#00A2FF] transition-colors"
@@ -637,7 +636,7 @@ export default function Layout() {
                   <Palette className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </a>
                 <a
-                  href={calendlyUXAuditLink}
+                  href={CALENDLY_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-[#2d3035] rounded-lg flex items-center justify-center text-gray-400 hover:text-[#00A2FF] hover:bg-[#00A2FF]/10 transition-all group"

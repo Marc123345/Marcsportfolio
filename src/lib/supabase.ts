@@ -55,33 +55,3 @@ export async function checkSupabaseConnection(): Promise<boolean> {
     return false;
   }
 }
-
-// Helper function to test basic network connectivity
-export async function testNetworkConnectivity(): Promise<boolean> {
-  try {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 5000);
-
-    try {
-      const response = await fetch('https://httpbin.org/get', {
-        method: 'GET',
-        signal: controller.signal,
-        mode: 'cors'
-      });
-
-      clearTimeout(timeoutId);
-      return response.ok;
-    } catch (error) {
-      clearTimeout(timeoutId);
-      if (import.meta.env.DEV) {
-        console.warn('Network connectivity test failed:', error);
-      }
-      return false;
-    }
-  } catch (error) {
-    if (import.meta.env.DEV) {
-      console.warn('Network connectivity test error:', error);
-    }
-    return false;
-  }
-}

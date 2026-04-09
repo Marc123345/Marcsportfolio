@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
-import { supabase, checkSupabaseConnection, testNetworkConnectivity } from '@/lib/supabase';
+import { supabase, checkSupabaseConnection } from '@/lib/supabase';
 
 interface SupabaseContextType {
   isConnected: boolean;
