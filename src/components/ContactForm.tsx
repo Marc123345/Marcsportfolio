@@ -14,8 +14,6 @@ interface FormData {
   business_address: string;
   zip_code: string;
   npi_number: string;
-  service: string;
-  message: string;
 }
 
 interface FormErrors {
@@ -23,7 +21,6 @@ interface FormErrors {
   email?: string;
   phone?: string;
   zip_code?: string;
-  message?: string;
 }
 
 export default function ContactForm() {
@@ -39,8 +36,6 @@ export default function ContactForm() {
     business_address: '',
     zip_code: '',
     npi_number: '',
-    service: '',
-    message: '',
   });
 
   useEffect(() => {
@@ -82,10 +77,6 @@ export default function ContactForm() {
 
     if (formData.zip_code.trim() && !/^\d{5}(-\d{4})?$/.test(formData.zip_code.trim())) {
       newErrors.zip_code = 'Please enter a valid zip code';
-    }
-
-    if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
     }
 
     setErrors(newErrors);
@@ -133,8 +124,6 @@ export default function ContactForm() {
           business_address: formData.business_address || null,
           zip_code: formData.zip_code || null,
           npi_number: formData.npi_number || null,
-          service: formData.service || null,
-          message: formData.message,
           status: 'new',
         },
       ]);
@@ -156,8 +145,6 @@ export default function ContactForm() {
         business_address: '',
         zip_code: '',
         npi_number: '',
-        service: '',
-        message: '',
       });
 
       timeoutRef.current = setTimeout(() => {
@@ -335,48 +322,6 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div>
-        <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-2">
-          Service Interested In
-        </label>
-        <select
-          id="service"
-          name="service"
-          value={formData.service}
-          onChange={handleChange}
-          className="w-full px-4 py-3 bg-[#2d3035] border border-white/10 rounded-lg text-white focus:outline-none focus:border-[#A3D1FF] transition-colors"
-        >
-          <option value="">Select a service</option>
-          <option value="web-development">Web Development</option>
-          <option value="ui-ux-design">UI/UX Design</option>
-          <option value="saas-development">SaaS Development</option>
-          <option value="api-integration">API Integration</option>
-          <option value="design-systems">Design Systems</option>
-          <option value="ai-integration">AI Integration</option>
-          <option value="cybersecurity">Cybersecurity</option>
-          <option value="fractional-cmo">Fractional CMO</option>
-          <option value="mentorship">Mentorship</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-          Project Details <span className="text-red-500">*</span>
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          rows={6}
-          className={`w-full px-4 py-3 bg-[#2d3035] border ${
-            errors.message ? 'border-red-500' : 'border-white/10'
-          } rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#A3D1FF] transition-colors resize-none`}
-          placeholder="Tell me about your project, goals, timeline, and budget..."
-        />
-        {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
-      </div>
 
       <motion.button
         type="submit"
