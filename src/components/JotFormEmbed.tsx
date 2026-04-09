@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect } from 'react';
-import { trackEvent } from '@/lib/plausible';
 
 export default function JotFormEmbed() {
   useEffect(() => {
@@ -45,12 +44,6 @@ export default function JotFormEmbed() {
           try {
             const data = JSON.parse(event.data);
             if (data.action === 'submission-completed' || data.type === 'form-submit') {
-              trackEvent('Contact Form Submitted', {
-                props: {
-                  formId: '260742948581063',
-                  source: 'JotForm',
-                },
-              });
             }
           } catch (e) {
             // Not JSON or not relevant

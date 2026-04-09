@@ -3,9 +3,6 @@ import { BrowserRouter } from 'react-router-dom';
 import { AppProviders } from '@/providers/AppProviders';
 import App from '@/App';
 import '@/index.css';
-import { initPlausible } from '@/lib/plausible';
-
-initPlausible();
 
 const prefetchRoutes = () => {
   if ('connection' in navigator) {

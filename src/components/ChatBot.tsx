@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send, MessageCircle, Calendar, Loader2 } from 'lucide-react';
-import { trackEvent } from '@/lib/plausible';
 import { CALENDLY_LINK, API_TIMEOUT_MS } from '@/lib/constants';
 
 interface Message {
@@ -195,12 +194,6 @@ export default function ChatBot() {
 
       const result = await response.json();
 
-      trackEvent('ChatBot Lead Submitted', {
-        props: {
-          projectType: data.projectType,
-          budget: data.budget,
-        },
-      });
 
       setCurrentStep('complete');
       const timeoutId = setTimeout(() => {
