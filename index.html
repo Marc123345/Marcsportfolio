@@ -91,13 +91,22 @@
       }
     </script>
 
-    <!-- Service Worker for caching -->
     <script>
+      if ('caches' in window) {
+        caches.keys().then(function(names) {
+          names.forEach(function(name) {
+            if (name.indexOf('marc-friedman-portfolio-v') === 0 || name.indexOf('runtime-cache-v') === 0) {
+              caches.delete(name);
+            }
+          });
+        });
+      }
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/sw.js').catch(function(err) {
-            console.log('ServiceWorker registration failed: ', err);
+          navigator.serviceWorker.getRegistrations().then(function(regs) {
+            regs.forEach(function(r) { r.update(); });
           });
+          navigator.serviceWorker.register('/sw.js').catch(function() {});
         });
       }
     </script>

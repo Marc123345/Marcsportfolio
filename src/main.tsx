@@ -5,67 +5,31 @@ import App from '@/App';
 import '@/index.css';
 import { initPlausible } from '@/lib/plausible';
 
-// Global postMessage error handler to prevent console spam
-window.addEventListener('message', (event) => {
-  if (!event.origin || event.origin === 'null') {
-    return;
-  }
-}, true);
+initPlausible();
 
-// Suppress postMessage errors in development
-const originalPostMessage = window.postMessage;
-window.postMessage = function(message: any, targetOrigin: string, transfer?: any[]) {
-  try {
-    if (targetOrigin && targetOrigin !== 'null') {
-      originalPostMessage.call(window, message, targetOrigin, transfer);
-    }
-  } catch (error) {
-    if (import.meta.env.DEV) {
-      // Suppress in development only
+const prefetchRoutes = () => {
+  if ('connection' in navigator) {
+    const connection = (navigator as any).connection;
+    if (connection.saveData || connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
       return;
     }
   }
-};
 
-// Performance optimizations
-const initializeApp = () => {
-  // Initialize Plausible Analytics
-  initPlausible();
+  const routes = ['/work', '/services', '/about', '/contact'];
 
-  // Define public path for dynamic imports
-  window.__vite_public_path = window.location.origin + '/';
-
-  // Prefetch critical routes only on fast connections
-  const prefetchRoutes = () => {
-    // Check connection quality and data saver mode
-    if ('connection' in navigator) {
-      const connection = (navigator as any).connection;
-      if (connection.saveData || connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
-        return; // Skip prefetching on slow connections
-      }
-    }
-    
-    const routes = ['/work', '/services', '/about', '/contact'];
-    
-    // Use requestIdleCallback for better performance
-    if ('requestIdleCallback' in window) {
-      (window as any).requestIdleCallback(() => {
-        routes.forEach(route => {
-          const link = document.createElement('link');
-          link.rel = 'prefetch';
-          link.href = route;
-          link.as = 'document';
-          document.head.appendChild(link);
-        });
+  if ('requestIdleCallback' in window) {
+    (window as any).requestIdleCallback(() => {
+      routes.forEach(route => {
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.href = route;
+        link.as = 'document';
+        document.head.appendChild(link);
       });
-    }
-  };
-  
-  // Delay prefetching until after initial render
-  setTimeout(prefetchRoutes, 3000);
+    });
+  }
 };
 
-// Use a more performant approach to rendering
 const root = document.getElementById('root');
 if (root) {
   createRoot(root).render(
@@ -75,14 +39,6 @@ if (root) {
       </AppProviders>
     </BrowserRouter>
   );
-  
-  // Initialize performance optimizations
-  initializeApp();
-} else {
-  console.error('Root element not found');
-}
 
-// Cleanup on page unload
-window.addEventListener('pagehide', () => {
-  // Minimal cleanup for better performance
-}, { passive: true });
+  setTimeout(prefetchRoutes, 3000);
+}

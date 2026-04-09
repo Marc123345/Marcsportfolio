@@ -4,7 +4,9 @@ const supabaseUrl = String(import.meta.env.VITE_SUPABASE_URL || '');
 const supabaseAnonKey = String(import.meta.env.VITE_SUPABASE_ANON_KEY || '');
 
 if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing required Supabase environment variables. Please check your .env file.');
+  if (import.meta.env.DEV) {
+    console.warn('Missing Supabase environment variables. Check your .env file.');
+  }
 }
 
 export const supabase = createClient(
